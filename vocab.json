@@ -23,7 +23,18 @@
       "nextReview": 1777620662742
     }
   ],
-  "tekisei": [],
+  "tekisei": [
+    {
+      "id": "1777627299214",
+      "jp": "私利私欲",
+      "kana": "しりしよく",
+      "meaning": "lợi ích cá nhân, tư lợi, ích kỷ, tư lợi cá nhân",
+      "exJp": "彼は私利私欲のために行動する。 (Anh ta hành động vì tư lợi cá nhân.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777627299214
+    }
+  ],
   "senmon": [
     {
       "id": "1777626620858",
