@@ -212,20 +212,29 @@ const DOM = {
     
     exportBtn: document.getElementById('export-vocab-btn'),
     importBtn: document.getElementById('import-vocab-btn'),
-    importInput: document.getElementById('vocab-import-input')
+    importInput: document.getElementById('vocab-import-input'),
+    
+    cloudPushBtn: document.getElementById('cloud-push-btn'),
+    cloudPullBtn: document.getElementById('cloud-pull-btn'),
+    
+    ghUsername: document.getElementById('gh-username'),
+    ghRepo: document.getElementById('gh-repo'),
+    ghToken: document.getElementById('gh-token')
 };
 
 // --- INITIALIZATION ---
 function init() {
-    // Load API Key if exists
     const savedGeminiKey = localStorage.getItem('learn_to_die_gemini_key');
-    if (savedGeminiKey && DOM.geminiApiKey) {
-        DOM.geminiApiKey.value = savedGeminiKey;
-    }
-    const savedDeepseekKey = localStorage.getItem('learn_to_die_deepseek_key');
-    if (savedDeepseekKey && DOM.deepseekApiKey) {
-        DOM.deepseekApiKey.value = savedDeepseekKey;
-    }
+    if (savedGeminiKey && DOM.geminiApiKey) DOM.geminiApiKey.value = savedGeminiKey;
+    
+    const savedGhUser = localStorage.getItem('learn_to_die_gh_user');
+    if (savedGhUser && DOM.ghUsername) DOM.ghUsername.value = savedGhUser;
+    
+    const savedGhRepo = localStorage.getItem('learn_to_die_gh_repo');
+    if (savedGhRepo && DOM.ghRepo) DOM.ghRepo.value = savedGhRepo;
+    
+    const savedGhToken = localStorage.getItem('learn_to_die_gh_token');
+    if (savedGhToken && DOM.ghToken) DOM.ghToken.value = savedGhToken;
 
     setupEventListeners();
     
@@ -263,6 +272,9 @@ function setupEventListeners() {
     if (DOM.importBtn) DOM.importBtn.addEventListener('click', () => DOM.importInput.click());
     if (DOM.importInput) DOM.importInput.addEventListener('change', (e) => importVocab(e));
     
+    if (DOM.cloudPushBtn) DOM.cloudPushBtn.addEventListener('click', syncToGitHub);
+    if (DOM.cloudPullBtn) DOM.cloudPullBtn.addEventListener('click', loadFromGitHub);
+    
     // Navigation
     const logo = document.querySelector('.logo');
     if (logo) {
@@ -292,13 +304,14 @@ function setupEventListeners() {
     }
     if(DOM.saveApiKeyBtn) {
         DOM.saveApiKeyBtn.addEventListener('click', () => {
-            const gKey = DOM.geminiApiKey.value.trim();
-            const dsKey = DOM.deepseekApiKey.value.trim();
-            if(gKey) localStorage.setItem('learn_to_die_gemini_key', gKey);
-            if(dsKey) localStorage.setItem('learn_to_die_deepseek_key', dsKey);
-            DOM.aiSettingsPanel.classList.add('hidden');
-            simulateAiResponse('API Keys saved successfully!');
-        });
+        if (DOM.geminiApiKey) localStorage.setItem('learn_to_die_gemini_key', DOM.geminiApiKey.value);
+        if (DOM.ghUsername) localStorage.setItem('learn_to_die_gh_user', DOM.ghUsername.value);
+        if (DOM.ghRepo) localStorage.setItem('learn_to_die_gh_repo', DOM.ghRepo.value);
+        if (DOM.ghToken) localStorage.setItem('learn_to_die_gh_token', DOM.ghToken.value);
+        
+        DOM.aiSettingsPanel.classList.add('hidden');
+        alert('Settings saved successfully!');
+    });
     }
     
     // Quick Add Vocab Panel
@@ -1320,4 +1333,102 @@ function importVocab(event) {
     };
     reader.readAsText(file);
     DOM.importInput.value = '';
+}
+
+async function syncToGitHub() {
+    const user = localStorage.getItem('learn_to_die_gh_user');
+    const repo = localStorage.getItem('learn_to_die_gh_repo');
+    const token = localStorage.getItem('learn_to_die_gh_token');
+    
+    if (!user || !repo || !token) {
+        alert("⚠️ Vui lòng cấu hình GitHub Username, Repo và Token trong phần Settings trước!");
+        DOM.aiSettingsPanel.classList.remove('hidden');
+        return;
+    }
+
+    DOM.cloudPushBtn.disabled = true;
+    DOM.cloudPushBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang lưu...';
+
+    try {
+        const path = 'vocab.json';
+        const url = `https://api.github.com/repos/${user}/${repo}/contents/${path}`;
+        
+        // 1. Get current file SHA
+        let sha = null;
+        const getRes = await fetch(url, {
+            headers: { 'Authorization': `token ${token}` }
+        });
+        if (getRes.status === 200) {
+            const getData = await getRes.json();
+            sha = getData.sha;
+        }
+
+        // 2. Push content
+        const content = btoa(unescape(encodeURIComponent(JSON.stringify(STATE.vocab, null, 2))));
+        const putRes = await fetch(url, {
+            method: 'PUT',
+            headers: {
+                'Authorization': `token ${token}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                message: `Sync vocab: ${new Date().toLocaleString()}`,
+                content: content,
+                sha: sha
+            })
+        });
+
+        if (putRes.ok) {
+            alert("✅ Đã đồng bộ lên Cloud thành công!");
+        } else {
+            const err = await putRes.json();
+            throw new Error(err.message);
+        }
+    } catch (err) {
+        alert("❌ Lỗi đồng bộ: " + err.message);
+    } finally {
+        DOM.cloudPushBtn.disabled = false;
+        DOM.cloudPushBtn.innerHTML = '<i class="fa-solid fa-cloud-arrow-up"></i> Lưu lên';
+    }
+}
+
+async function loadFromGitHub() {
+    const user = localStorage.getItem('learn_to_die_gh_user');
+    const repo = localStorage.getItem('learn_to_die_gh_repo');
+    const token = localStorage.getItem('learn_to_die_gh_token');
+    
+    if (!user || !repo || !token) {
+        alert("⚠️ Vui lòng cấu hình GitHub trong phần Settings trước!");
+        DOM.aiSettingsPanel.classList.remove('hidden');
+        return;
+    }
+
+    DOM.cloudPullBtn.disabled = true;
+    DOM.cloudPullBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang tải...';
+
+    try {
+        // Fetch using API to bypass cache
+        const url = `https://api.github.com/repos/${user}/${repo}/contents/vocab.json?t=${Date.now()}`;
+        const res = await fetch(url, {
+            headers: { 'Authorization': `token ${token}` }
+        });
+
+        if (res.ok) {
+            const data = await res.json();
+            const content = decodeURIComponent(escape(atob(data.content)));
+            STATE.vocab = JSON.parse(content);
+            saveVocab();
+            updateVocabStats();
+            renderMasteredList();
+            alert("✅ Đã tải dữ liệu từ Cloud thành công!");
+            location.reload();
+        } else {
+            alert("❌ Không tìm thấy file vocab.json trên GitHub.");
+        }
+    } catch (err) {
+        alert("❌ Lỗi tải dữ liệu: " + err.message);
+    } finally {
+        DOM.cloudPullBtn.disabled = false;
+        DOM.cloudPullBtn.innerHTML = '<i class="fa-solid fa-cloud-arrow-down"></i> Tải về';
+    }
 }

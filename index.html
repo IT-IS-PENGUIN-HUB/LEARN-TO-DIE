@@ -215,12 +215,21 @@
             </div>
 
             <!-- BACKUP ACTIONS -->
-            <div style="margin-top: auto; padding-top: 1.5rem; border-top: 1px solid var(--border-color); display: flex; gap: 0.75rem; justify-content: space-between; align-items: center;">
-                <span style="font-size: 0.75rem; color: var(--text-muted);">Backup & Sync Data:</span>
-                <div style="display: flex; gap: 0.5rem;">
-                    <button id="export-vocab-btn" class="btn btn-sm btn-outline" style="font-size: 0.75rem; padding: 0.3rem 0.6rem;"><i class="fa-solid fa-download"></i> Xuất file (Save)</button>
-                    <button id="import-vocab-btn" class="btn btn-sm btn-outline" style="font-size: 0.75rem; padding: 0.3rem 0.6rem;"><i class="fa-solid fa-upload"></i> Nhập file (Load)</button>
-                    <input type="file" id="vocab-import-input" accept=".json" class="hidden">
+            <div style="margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                    <span style="font-size: 0.75rem; color: var(--text-muted);"><i class="fa-solid fa-cloud"></i> Cloud Sync:</span>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button id="cloud-pull-btn" class="btn btn-sm" style="font-size: 0.75rem; padding: 0.3rem 0.6rem; background: #3b82f6; color: white;"><i class="fa-solid fa-cloud-arrow-down"></i> Tải về</button>
+                        <button id="cloud-push-btn" class="btn btn-sm" style="font-size: 0.75rem; padding: 0.3rem 0.6rem; background: #10b981; color: white;"><i class="fa-solid fa-cloud-arrow-up"></i> Lưu lên</button>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 0.5rem; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; color: var(--text-muted);"><i class="fa-solid fa-file-export"></i> Local File:</span>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button id="export-vocab-btn" class="btn btn-sm btn-outline" style="font-size: 0.75rem; padding: 0.3rem 0.6rem;"><i class="fa-solid fa-download"></i> Xuất file</button>
+                        <button id="import-vocab-btn" class="btn btn-sm btn-outline" style="font-size: 0.75rem; padding: 0.3rem 0.6rem;"><i class="fa-solid fa-upload"></i> Nhập file</button>
+                        <input type="file" id="vocab-import-input" accept=".json" class="hidden">
+                    </div>
                 </div>
             </div>
         </div>
