@@ -158,9 +158,9 @@ const DOM = {
     // AI Settings
     aiSettingsBtn: document.getElementById('ai-settings-btn'),
     aiSettingsPanel: document.getElementById('ai-settings-panel'),
+    closeSettingsBtn: document.getElementById('close-ai-settings'),
     geminiApiKey: document.getElementById('gemini-api-key'),
-    deepseekApiKey: document.getElementById('deepseek-api-key'),
-    saveApiKeyBtn: document.getElementById('save-api-key-btn'),
+    saveSettingsBtn: document.getElementById('save-settings-btn'),
     
     // Quick Add Vocab
     quickWordJp: document.getElementById('quick-word-jp'),
@@ -302,22 +302,27 @@ function setupEventListeners() {
     DOM.backToDash.addEventListener('click', showDashboard);
     DOM.backToExams.addEventListener('click', () => openSubject(STATE.currentSubject));
     
-    // AI Settings
-    if(DOM.aiSettingsBtn) {
-        DOM.aiSettingsBtn.addEventListener('click', () => {
-            DOM.aiSettingsPanel.classList.toggle('hidden');
+    // Settings Actions
+    if (DOM.settingsBtn) {
+        DOM.settingsBtn.addEventListener('click', () => {
+            DOM.aiSettingsPanel.classList.remove('hidden');
         });
     }
-    if(DOM.saveApiKeyBtn) {
-        DOM.saveApiKeyBtn.addEventListener('click', () => {
-        if (DOM.geminiApiKey) localStorage.setItem('learn_to_die_gemini_key', DOM.geminiApiKey.value);
-        if (DOM.ghUsername) localStorage.setItem('learn_to_die_gh_user', DOM.ghUsername.value);
-        if (DOM.ghRepo) localStorage.setItem('learn_to_die_gh_repo', DOM.ghRepo.value);
-        if (DOM.ghToken) localStorage.setItem('learn_to_die_gh_token', DOM.ghToken.value);
-        
-        DOM.aiSettingsPanel.classList.add('hidden');
-        alert('Settings saved successfully!');
-    });
+    if (DOM.saveSettingsBtn) {
+        DOM.saveSettingsBtn.addEventListener('click', () => {
+            if (DOM.geminiApiKey) localStorage.setItem('learn_to_die_gemini_key', DOM.geminiApiKey.value);
+            if (DOM.ghUsername) localStorage.setItem('learn_to_die_gh_user', DOM.ghUsername.value);
+            if (DOM.ghRepo) localStorage.setItem('learn_to_die_gh_repo', DOM.ghRepo.value);
+            if (DOM.ghToken) localStorage.setItem('learn_to_die_gh_token', DOM.ghToken.value);
+            
+            DOM.aiSettingsPanel.classList.add('hidden');
+            alert('Settings saved successfully!');
+        });
+    }
+    if (DOM.closeSettingsBtn) {
+        DOM.closeSettingsBtn.addEventListener('click', () => {
+            DOM.aiSettingsPanel.classList.add('hidden');
+        });
     }
     
     // Quick Add Vocab Panel
@@ -1438,3 +1443,6 @@ async function loadFromGitHub() {
         DOM.cloudPullBtn.innerHTML = '<i class="fa-solid fa-cloud-arrow-down"></i> Tải về';
     }
 }
+
+// Start app
+document.addEventListener('DOMContentLoaded', init);
