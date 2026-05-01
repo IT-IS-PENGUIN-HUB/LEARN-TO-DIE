@@ -69,6 +69,10 @@ button {
     background: none;
 }
 
+.hidden {
+    display: none !important;
+}
+
 /* Header */
 .header {
     position: sticky;

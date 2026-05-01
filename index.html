@@ -266,6 +266,36 @@
         </div>
     </div>
 
+    <!-- SETTINGS MODAL (AI + SYNC) -->
+    <div class="modal hidden" id="ai-settings-panel">
+        <div class="modal-content" style="max-width: 450px;">
+            <button class="close-btn" id="close-ai-settings"><i class="fa-solid fa-xmark"></i></button>
+            <h2 style="margin-bottom: 1.5rem; color: var(--primary);"><i class="fa-solid fa-gear"></i> Settings</h2>
+            
+            <div style="margin-bottom: 1.5rem;">
+                <h3 style="font-size: 0.9rem; margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;"><i class="fa-solid fa-robot"></i> AI Configuration</h3>
+                <label style="display: block; font-size: 0.8rem; margin-bottom: 0.4rem;">Gemini API Key:</label>
+                <input type="password" id="gemini-api-key" placeholder="Enter your Gemini API Key" style="width: 100%; padding: 0.6rem; border: 1px solid var(--border-color); border-radius: 4px; background: var(--bg-alt); color: var(--text-main); margin-bottom: 1rem;">
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+                <h3 style="font-size: 0.9rem; margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;"><i class="fa-solid fa-cloud"></i> GitHub Cloud Sync</h3>
+                <p style="font-size: 0.7rem; color: var(--text-muted); margin-bottom: 0.75rem;">Dùng để đồng bộ từ vựng giữa máy tính và iPhone.</p>
+                
+                <label style="display: block; font-size: 0.8rem; margin-bottom: 0.4rem;">GitHub Username:</label>
+                <input type="text" id="gh-username" placeholder="Ví dụ: IT-IS-PENGUIN-HUB" style="width: 100%; padding: 0.6rem; border: 1px solid var(--border-color); border-radius: 4px; background: var(--bg-alt); color: var(--text-main); margin-bottom: 0.75rem;">
+                
+                <label style="display: block; font-size: 0.8rem; margin-bottom: 0.4rem;">Repository Name:</label>
+                <input type="text" id="gh-repo" placeholder="Ví dụ: LEARN-TO-DIE" style="width: 100%; padding: 0.6rem; border: 1px solid var(--border-color); border-radius: 4px; background: var(--bg-alt); color: var(--text-main); margin-bottom: 0.75rem;">
+                
+                <label style="display: block; font-size: 0.8rem; margin-bottom: 0.4rem;">Personal Access Token (PAT):</label>
+                <input type="password" id="gh-token" placeholder="ghp_xxxxxxxxxxxx" style="width: 100%; padding: 0.6rem; border: 1px solid var(--border-color); border-radius: 4px; background: var(--bg-alt); color: var(--text-main);">
+            </div>
+
+            <button id="save-settings-btn" class="btn btn-primary" style="width: 100%; justify-content: center;">Save All Settings</button>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
