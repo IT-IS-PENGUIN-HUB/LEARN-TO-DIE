@@ -1,0 +1,28 @@
+{
+  "kiso": [
+    {
+      "id": "1",
+      "jp": "製造物",
+      "kana": "せいぞうぶつ",
+      "meaning": "Sản phẩm / Đồ được chế tạo",
+      "exJp": "製造物責任法",
+      "exVi": "Luật trách nhiệm sản phẩm",
+      "score": 0,
+      "mastered": false,
+      "nextReview": 1777626145210
+    },
+    {
+      "id": "2",
+      "jp": "欠陥",
+      "kana": "けっかん",
+      "meaning": "Khuyết tật / Lỗi",
+      "exJp": "システムに欠陥がある",
+      "exVi": "Hệ thống có khuyết tật",
+      "score": 0,
+      "mastered": false,
+      "nextReview": 1777626145210
+    }
+  ],
+  "tekisei": [],
+  "senmon": []
+}
