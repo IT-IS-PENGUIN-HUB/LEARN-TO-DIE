@@ -111,6 +111,7 @@ function generateMockQuestion(subject, examId, qNum) {
 // --- DOM ELEMENTS ---
 const DOM = {
     themeBtn: document.getElementById('theme-toggle'),
+    settingsBtn: document.getElementById('settings-btn'),
     vocabBtn: document.getElementById('vocab-btn'),
     startBtn: document.getElementById('start-practice-btn'),
     studyVocabBtn: document.getElementById('study-vocab-btn'),
@@ -261,6 +262,11 @@ function init() {
 function setupEventListeners() {
     // Top bar actions
     DOM.themeBtn.addEventListener('click', () => toggleTheme());
+    if (DOM.settingsBtn) {
+        DOM.settingsBtn.addEventListener('click', () => {
+            DOM.aiSettingsPanel.classList.remove('hidden');
+        });
+    }
     DOM.vocabBtn.addEventListener('click', openVocabModal);
     DOM.studyVocabBtn.addEventListener('click', openVocabModal);
     DOM.startBtn.addEventListener('click', () => {
