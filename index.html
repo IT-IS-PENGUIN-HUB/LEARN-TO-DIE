@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>GIVE UP IS LOSE | LEARN TO DIE</title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,6 +10,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     <!-- FontAwesome for minimal icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- PWA & iOS -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="LEARN">
+    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/3407/3407024.png">
+    
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -102,9 +109,9 @@
                         <button id="ai-settings-btn" class="icon-btn" style="font-size: 0.9rem;" title="Settings"><i class="fa-solid fa-gear"></i></button>
                     </div>
                     
-                    <div id="ai-settings-panel" class="hidden" style="padding: 1rem; background: var(--bg-color); border-bottom: 1px solid var(--border-color); font-size: 0.9rem;">
+                    <div id="inline-ai-settings" class="hidden" style="padding: 1rem; background: var(--bg-color); border-bottom: 1px solid var(--border-color); font-size: 0.9rem;">
                         <label for="gemini-api-key" style="display: block; margin-bottom: 0.2rem;">Gemini API Key (Chat):</label>
-                        <input type="password" id="gemini-api-key" placeholder="Enter Gemini key..." style="width: 100%; padding: 0.5rem; margin-bottom: 0.5rem; border: 1px solid var(--border-color); border-radius: 4px; background: var(--bg-color); color: var(--text-color);">
+                        <input type="password" id="gemini-api-key-inline" placeholder="Enter Gemini key..." style="width: 100%; padding: 0.5rem; margin-bottom: 0.5rem; border: 1px solid var(--border-color); border-radius: 4px; background: var(--bg-color); color: var(--text-color);">
                         
                         <label for="deepseek-api-key" style="display: block; margin-bottom: 0.2rem;">DeepSeek API Key (Auto-fill):</label>
                         <input type="password" id="deepseek-api-key" placeholder="Enter DeepSeek key..." style="width: 100%; padding: 0.5rem; margin-bottom: 0.5rem; border: 1px solid var(--border-color); border-radius: 4px; background: var(--bg-color); color: var(--text-color);">
@@ -233,6 +240,10 @@
                     </div>
                 </div>
             </div>
+            <!-- iOS Install Hint -->
+            <div id="ios-install-hint" class="hidden" style="margin-top: 1rem; padding: 0.75rem; background: rgba(58, 134, 255, 0.1); border: 1px dashed var(--primary); border-radius: 8px; font-size: 0.75rem; color: var(--text-main);">
+                <p><i class="fa-solid fa-circle-info"></i> <strong>Mẹo cho iPhone:</strong> Nhấn <i class="fa-solid fa-share-from-square"></i> và chọn <strong>"Thêm vào MH chính"</strong> để ứng dụng chạy mượt hơn và không bị mất dữ liệu.</p>
+            </div>
         </div>
     </div>
 
@@ -267,7 +278,7 @@
     </div>
 
     <!-- SETTINGS MODAL (AI + SYNC) -->
-    <div class="modal hidden" id="ai-settings-panel">
+    <div class="modal hidden" id="settings-modal">
         <div class="modal-content" style="max-width: 450px;">
             <button class="close-btn" id="close-ai-settings"><i class="fa-solid fa-xmark"></i></button>
             <h2 style="margin-bottom: 1.5rem; color: var(--primary);"><i class="fa-solid fa-gear"></i> Settings</h2>
@@ -275,7 +286,7 @@
             <div style="margin-bottom: 1.5rem;">
                 <h3 style="font-size: 0.9rem; margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;"><i class="fa-solid fa-robot"></i> AI Configuration</h3>
                 <label style="display: block; font-size: 0.8rem; margin-bottom: 0.4rem;">Gemini API Key:</label>
-                <input type="password" id="gemini-api-key" placeholder="Enter your Gemini API Key" style="width: 100%; padding: 0.6rem; border: 1px solid var(--border-color); border-radius: 4px; background: var(--bg-alt); color: var(--text-main); margin-bottom: 1rem;">
+                <input type="password" id="gemini-api-key-modal" placeholder="Enter your Gemini API Key" style="width: 100%; padding: 0.6rem; border: 1px solid var(--border-color); border-radius: 4px; background: var(--bg-alt); color: var(--text-main); margin-bottom: 1rem;">
             </div>
 
             <div style="margin-bottom: 1.5rem;">
@@ -289,7 +300,12 @@
                 <input type="text" id="gh-repo" placeholder="Ví dụ: LEARN-TO-DIE" style="width: 100%; padding: 0.6rem; border: 1px solid var(--border-color); border-radius: 4px; background: var(--bg-alt); color: var(--text-main); margin-bottom: 0.75rem;">
                 
                 <label style="display: block; font-size: 0.8rem; margin-bottom: 0.4rem;">Personal Access Token (PAT):</label>
-                <input type="password" id="gh-token" placeholder="ghp_xxxxxxxxxxxx" style="width: 100%; padding: 0.6rem; border: 1px solid var(--border-color); border-radius: 4px; background: var(--bg-alt); color: var(--text-main);">
+                <input type="password" id="gh-token" placeholder="ghp_xxxxxxxxxxxx" style="width: 100%; padding: 0.6rem; border: 1px solid var(--border-color); border-radius: 4px; background: var(--bg-alt); color: var(--text-main); margin-bottom: 1rem;">
+            </div>
+
+            <div style="display: flex; gap: 0.5rem; margin-bottom: 1.5rem;">
+                <button id="settings-pull-btn" class="btn btn-sm" style="flex: 1; justify-content: center; background: #3b82f6; color: white;"><i class="fa-solid fa-cloud-arrow-down"></i> Tải dữ liệu về</button>
+                <button id="settings-push-btn" class="btn btn-sm" style="flex: 1; justify-content: center; background: #10b981; color: white;"><i class="fa-solid fa-cloud-arrow-up"></i> Lưu dữ liệu lên</button>
             </div>
 
             <button id="save-settings-btn" class="btn btn-primary" style="width: 100%; justify-content: center;">Save All Settings</button>

@@ -1,0 +1,17 @@
+{
+  "name": "LEARN TO DIE",
+  "short_name": "LEARN",
+  "description": "Bilingual study application for Gijutsushi-ho exam.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#3a86ff",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/3407/3407024.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

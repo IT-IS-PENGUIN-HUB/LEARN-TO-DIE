@@ -157,10 +157,13 @@ const DOM = {
     
     // AI Settings
     aiSettingsBtn: document.getElementById('ai-settings-btn'),
-    aiSettingsPanel: document.getElementById('ai-settings-panel'),
+    aiSettingsPanel: document.getElementById('settings-modal'),
+    inlineAiSettings: document.getElementById('inline-ai-settings'),
     closeSettingsBtn: document.getElementById('close-ai-settings'),
-    geminiApiKey: document.getElementById('gemini-api-key'),
+    geminiApiKeyInline: document.getElementById('gemini-api-key-inline'),
+    geminiApiKeyModal: document.getElementById('gemini-api-key-modal'),
     saveSettingsBtn: document.getElementById('save-settings-btn'),
+    saveApiKeyBtn: document.getElementById('save-api-key-btn'),
     
     // Quick Add Vocab
     quickWordJp: document.getElementById('quick-word-jp'),
@@ -220,13 +223,18 @@ const DOM = {
     
     ghUsername: document.getElementById('gh-username'),
     ghRepo: document.getElementById('gh-repo'),
-    ghToken: document.getElementById('gh-token')
+    ghToken: document.getElementById('gh-token'),
+    settingsPullBtn: document.getElementById('settings-pull-btn'),
+    settingsPushBtn: document.getElementById('settings-push-btn')
 };
 
 // --- INITIALIZATION ---
 function init() {
     const savedGeminiKey = localStorage.getItem('learn_to_die_gemini_key');
-    if (savedGeminiKey && DOM.geminiApiKey) DOM.geminiApiKey.value = savedGeminiKey;
+    if (savedGeminiKey) {
+        if (DOM.geminiApiKeyInline) DOM.geminiApiKeyInline.value = savedGeminiKey;
+        if (DOM.geminiApiKeyModal) DOM.geminiApiKeyModal.value = savedGeminiKey;
+    }
     
     const savedGhUser = localStorage.getItem('learn_to_die_gh_user');
     if (savedGhUser && DOM.ghUsername) DOM.ghUsername.value = savedGhUser;
@@ -256,6 +264,15 @@ function init() {
             .catch(err => console.log("No initial vocab.json found, using defaults."));
     }
     updateVocabStats();
+
+    // iOS Detection & Handling
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    const isStandalone = window.navigator.standalone === true || window.matchMedia('(display-mode: standalone)').matches;
+    if (isIOS && !isStandalone) {
+        const hint = document.getElementById('ios-install-hint');
+        if (hint) hint.classList.remove('hidden');
+    }
+    STATE.isIOS = isIOS;
 }
 
 // --- EVENT LISTENERS ---
@@ -264,7 +281,12 @@ function setupEventListeners() {
     DOM.themeBtn.addEventListener('click', () => toggleTheme());
     if (DOM.settingsBtn) {
         DOM.settingsBtn.addEventListener('click', () => {
-            DOM.aiSettingsPanel.classList.remove('hidden');
+            if (DOM.aiSettingsPanel) DOM.aiSettingsPanel.classList.remove('hidden');
+        });
+    }
+    if (DOM.aiSettingsBtn) {
+        DOM.aiSettingsBtn.addEventListener('click', () => {
+            if (DOM.inlineAiSettings) DOM.inlineAiSettings.classList.toggle('hidden');
         });
     }
     DOM.vocabBtn.addEventListener('click', openVocabModal);
@@ -280,6 +302,8 @@ function setupEventListeners() {
     
     if (DOM.cloudPushBtn) DOM.cloudPushBtn.addEventListener('click', syncToGitHub);
     if (DOM.cloudPullBtn) DOM.cloudPullBtn.addEventListener('click', loadFromGitHub);
+    if (DOM.settingsPushBtn) DOM.settingsPushBtn.addEventListener('click', syncToGitHub);
+    if (DOM.settingsPullBtn) DOM.settingsPullBtn.addEventListener('click', loadFromGitHub);
     
     // Navigation
     const logo = document.querySelector('.logo');
@@ -303,20 +327,33 @@ function setupEventListeners() {
     DOM.backToExams.addEventListener('click', () => openSubject(STATE.currentSubject));
     
     // Settings Actions
-    if (DOM.settingsBtn) {
-        DOM.settingsBtn.addEventListener('click', () => {
-            DOM.aiSettingsPanel.classList.remove('hidden');
-        });
-    }
+    // Header gear icon is already handled above
     if (DOM.saveSettingsBtn) {
         DOM.saveSettingsBtn.addEventListener('click', () => {
-            if (DOM.geminiApiKey) localStorage.setItem('learn_to_die_gemini_key', DOM.geminiApiKey.value);
+            const key = DOM.geminiApiKeyModal ? DOM.geminiApiKeyModal.value : '';
+            localStorage.setItem('learn_to_die_gemini_key', key);
+            if (DOM.geminiApiKeyInline) DOM.geminiApiKeyInline.value = key;
+            
             if (DOM.ghUsername) localStorage.setItem('learn_to_die_gh_user', DOM.ghUsername.value);
             if (DOM.ghRepo) localStorage.setItem('learn_to_die_gh_repo', DOM.ghRepo.value);
             if (DOM.ghToken) localStorage.setItem('learn_to_die_gh_token', DOM.ghToken.value);
             
             DOM.aiSettingsPanel.classList.add('hidden');
             alert('Settings saved successfully!');
+        });
+    }
+
+    if (DOM.saveApiKeyBtn) {
+        DOM.saveApiKeyBtn.addEventListener('click', () => {
+            const key = DOM.geminiApiKeyInline ? DOM.geminiApiKeyInline.value : '';
+            localStorage.setItem('learn_to_die_gemini_key', key);
+            if (DOM.geminiApiKeyModal) DOM.geminiApiKeyModal.value = key;
+            
+            // Also save deepseek if exists
+            const dsKey = document.getElementById('deepseek-api-key');
+            if (dsKey) localStorage.setItem('learn_to_die_deepseek_key', dsKey.value);
+            
+            alert('API Keys saved successfully!');
         });
     }
     if (DOM.closeSettingsBtn) {
@@ -672,6 +709,24 @@ function openQuestion(exam) {
     // Load PDF into iframe
     if (exam.pdfPath) {
         DOM.pdfViewer.src = exam.pdfPath + '#view=FitH&navpanes=0';
+        
+        // Fix for iOS PDF viewing
+        if (STATE.isIOS) {
+            const pdfContainer = DOM.pdfViewer.parentElement;
+            let link = document.getElementById('ios-pdf-link');
+            if (!link) {
+                link = document.createElement('a');
+                link.id = 'ios-pdf-link';
+                link.className = 'btn btn-primary';
+                link.style.marginBottom = '1rem';
+                link.style.justifyContent = 'center';
+                link.innerHTML = '<i class="fa-solid fa-file-pdf"></i> Xem PDF (iPhone tối ưu)';
+                link.target = '_blank';
+                pdfContainer.insertBefore(link, DOM.pdfViewer);
+            }
+            link.href = exam.pdfPath;
+            DOM.pdfViewer.style.height = '300px'; // Shrink iframe on iOS
+        }
     } else {
         DOM.pdfViewer.src = 'about:blank';
         simulateAiResponse('Sorry, the PDF for this exam is not available.');
@@ -1116,7 +1171,7 @@ function handleSrsScore(score) {
 }
 
 // Start app
-document.addEventListener('DOMContentLoaded', init);
+// Redundant listener removed
 
 // --- IMAGE CROP LOGIC ---
 let cropImg = new Image();
@@ -1357,8 +1412,13 @@ async function syncToGitHub() {
         return;
     }
 
-    DOM.cloudPushBtn.disabled = true;
-    DOM.cloudPushBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang lưu...';
+    const syncButtons = [DOM.cloudPushBtn, DOM.settingsPushBtn];
+    syncButtons.forEach(btn => {
+        if (btn) {
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang lưu...';
+        }
+    });
 
     try {
         const path = 'vocab.json';
@@ -1398,8 +1458,12 @@ async function syncToGitHub() {
     } catch (err) {
         alert("❌ Lỗi đồng bộ: " + err.message);
     } finally {
-        DOM.cloudPushBtn.disabled = false;
-        DOM.cloudPushBtn.innerHTML = '<i class="fa-solid fa-cloud-arrow-up"></i> Lưu lên';
+    syncButtons.forEach(btn => {
+        if (btn) {
+            btn.disabled = false;
+            btn.innerHTML = '<i class="fa-solid fa-cloud-arrow-up"></i> Lưu lên';
+        }
+    });
     }
 }
 
@@ -1414,8 +1478,13 @@ async function loadFromGitHub() {
         return;
     }
 
-    DOM.cloudPullBtn.disabled = true;
-    DOM.cloudPullBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang tải...';
+    const pullButtons = [DOM.cloudPullBtn, DOM.settingsPullBtn];
+    pullButtons.forEach(btn => {
+        if (btn) {
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang tải...';
+        }
+    });
 
     try {
         // Fetch using API to bypass cache
@@ -1439,8 +1508,12 @@ async function loadFromGitHub() {
     } catch (err) {
         alert("❌ Lỗi tải dữ liệu: " + err.message);
     } finally {
-        DOM.cloudPullBtn.disabled = false;
-        DOM.cloudPullBtn.innerHTML = '<i class="fa-solid fa-cloud-arrow-down"></i> Tải về';
+    pullButtons.forEach(btn => {
+        if (btn) {
+            btn.disabled = false;
+            btn.innerHTML = '<i class="fa-solid fa-cloud-arrow-down"></i> Tải về';
+        }
+    });
     }
 }
 
