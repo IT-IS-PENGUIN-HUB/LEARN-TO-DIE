@@ -9,7 +9,7 @@
       "exVi": "Luật trách nhiệm sản phẩm",
       "score": 0,
       "mastered": false,
-      "nextReview": 1777626145210
+      "nextReview": 1777620662742
     },
     {
       "id": "2",
@@ -20,9 +20,20 @@
       "exVi": "Hệ thống có khuyết tật",
       "score": 0,
       "mastered": false,
-      "nextReview": 1777626145210
+      "nextReview": 1777620662742
     }
   ],
   "tekisei": [],
-  "senmon": []
+  "senmon": [
+    {
+      "id": "1777626620858",
+      "jp": "鉛直",
+      "kana": "えんちょく",
+      "meaning": "thẳng đứng, chiều thẳng đứng, phương thẳng đứng",
+      "exJp": "鉛直方向の動き。Chuyển động theo phương thẳng đứng.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777626620858
+    }
+  ]
 }
