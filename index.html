@@ -202,10 +202,22 @@
             
             <!-- ADD WORD UI -->
             <div class="add-word-container hidden" id="add-word-container" style="background: var(--bg-alt); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-color);">
-                <h3 style="margin-bottom: 1rem; font-size: 1.1rem; text-align: center;">Add New Vocabulary</h3>
-                <input type="text" id="new-word-jp" placeholder="Word in Japanese (e.g. 製造物)" style="width: 100%; margin-bottom: 0.75rem; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: 4px; background: var(--card-bg); color: var(--text-main);">
-                <input type="text" id="new-word-kana" placeholder="Hiragana (e.g. せいぞうぶつ)" style="width: 100%; margin-bottom: 0.75rem; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: 4px; background: var(--card-bg); color: var(--text-main);">
-                <input type="text" id="new-word-vi" placeholder="Meaning in Vietnamese" style="width: 100%; margin-bottom: 0.75rem; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: 4px; background: var(--card-bg); color: var(--text-main);">
+                <h3 style="margin-bottom: 1rem; font-size: 1.1rem; text-align: center;">Thêm Từ Mới (Hỗ trợ AI)</h3>
+                
+                <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem;">
+                    <input type="text" id="new-word-jp" placeholder="Từ tiếng Nhật (Kanji/Kana)" style="flex: 1; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: 4px; background: var(--card-bg); color: var(--text-main);">
+                    <button id="new-auto-fill-btn" class="btn btn-outline" style="padding: 0 1rem;" title="Dùng AI điền tự động"><i class="fa-solid fa-wand-magic-sparkles"></i> AI</button>
+                </div>
+                
+                <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem;">
+                    <input type="text" id="new-word-kana" placeholder="Hiragana" style="width: 50%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: 4px; background: var(--card-bg); color: var(--text-main);">
+                    <input type="text" id="new-word-vi" placeholder="Nghĩa tiếng Việt" style="width: 50%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: 4px; background: var(--card-bg); color: var(--text-main);">
+                </div>
+                
+                <div style="margin-bottom: 1rem;">
+                    <textarea id="new-word-ex" placeholder="Ví dụ (AI sẽ tự động tạo)" rows="2" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: 4px; background: var(--card-bg); color: var(--text-main); font-family: inherit; resize: vertical;"></textarea>
+                </div>
+                
                 <button class="btn btn-primary" id="save-new-word-btn" style="width: 100%; justify-content: center;">Save to List</button>
                 <p id="add-word-msg" style="color: #10b981; font-size: 0.85rem; margin-top: 0.5rem; text-align: center; height: 1.2rem;"></p>
             </div>
@@ -340,7 +352,7 @@
 
     <!-- PDF Fullscreen Overlay -->
     <div id="pdf-fullscreen-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#000; z-index:3000; flex-direction:column;">
-        <div style="display:flex; justify-content:flex-end; align-items:center; padding:0.5rem 1rem; background:rgba(0,0,0,0.8); gap:0.75rem;">
+        <div style="display:flex; justify-content:flex-end; align-items:center; padding: max(0.5rem, env(safe-area-inset-top)) 1rem 0.5rem 1rem; background:rgba(0,0,0,0.8); gap:0.75rem;">
             <span style="color:#aaa; font-size:0.85rem;"><i class="fa-solid fa-expand"></i> Toàn màn hình &nbsp;|&nbsp; Nhấn <kbd style="background:#333; padding:0.1rem 0.4rem; border-radius:3px; font-size:0.8rem;">Esc</kbd> để thoát</span>
             <button id="pdf-fullscreen-close" style="background:#ef4444; color:white; border:none; border-radius:6px; padding:0.4rem 0.9rem; cursor:pointer; font-size:0.9rem;"><i class="fa-solid fa-xmark"></i> Đóng</button>
         </div>

@@ -211,6 +211,8 @@ const DOM = {
     newWordJp: document.getElementById('new-word-jp'),
     newWordKana: document.getElementById('new-word-kana'),
     newWordVi: document.getElementById('new-word-vi'),
+    newWordEx: document.getElementById('new-word-ex'),
+    newAutoFillBtn: document.getElementById('new-auto-fill-btn'),
     saveNewWordBtn: document.getElementById('save-new-word-btn'),
     addWordMsg: document.getElementById('add-word-msg'),
     
@@ -234,6 +236,12 @@ function init() {
     if (savedGeminiKey) {
         if (DOM.geminiApiKeyInline) DOM.geminiApiKeyInline.value = savedGeminiKey;
         if (DOM.geminiApiKeyModal) DOM.geminiApiKeyModal.value = savedGeminiKey;
+    }
+
+    const savedDeepSeekKey = localStorage.getItem('learn_to_die_deepseek_key');
+    const dsKeyInput = document.getElementById('deepseek-api-key');
+    if (savedDeepSeekKey && dsKeyInput) {
+        dsKeyInput.value = savedDeepSeekKey;
     }
     
     const savedGhUser = localStorage.getItem('learn_to_die_gh_user');
@@ -334,6 +342,9 @@ function setupEventListeners() {
             localStorage.setItem('learn_to_die_gemini_key', key);
             if (DOM.geminiApiKeyInline) DOM.geminiApiKeyInline.value = key;
             
+            const dsKey = document.getElementById('deepseek-api-key');
+            if (dsKey) localStorage.setItem('learn_to_die_deepseek_key', dsKey.value);
+
             if (DOM.ghUsername) localStorage.setItem('learn_to_die_gh_user', DOM.ghUsername.value);
             if (DOM.ghRepo) localStorage.setItem('learn_to_die_gh_repo', DOM.ghRepo.value);
             if (DOM.ghToken) localStorage.setItem('learn_to_die_gh_token', DOM.ghToken.value);
@@ -397,65 +408,104 @@ function setupEventListeners() {
         });
     }
 
-    if (DOM.quickAutoFillBtn) {
-        DOM.quickAutoFillBtn.addEventListener('click', async () => {
-            const word = DOM.quickWordJp.value.trim();
-            if (!word) return;
-            
-            const apiKey = localStorage.getItem('learn_to_die_gemini_key');
-            if (!apiKey) {
-                DOM.quickVocabMsg.textContent = 'Missing Gemini API Key in Settings!';
-                DOM.quickVocabMsg.style.color = '#ef4444';
-                DOM.aiSettingsPanel.classList.remove('hidden');
-                return;
-            }
-            
-            DOM.quickAutoFillBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>';
-            DOM.quickAutoFillBtn.disabled = true;
-            
+    async function performAiAutoFill(wordInput, kanaInput, viInput, exInput, btn, msgEl) {
+        const word = wordInput.value.trim();
+        if (!word) return;
+        
+        const geminiKey = localStorage.getItem('learn_to_die_gemini_key');
+        const deepseekKey = localStorage.getItem('learn_to_die_deepseek_key');
+
+        if (!geminiKey && !deepseekKey) {
+            msgEl.textContent = 'Vui lòng nhập Gemini hoặc DeepSeek API Key trong Settings!';
+            msgEl.style.color = '#ef4444';
+            DOM.aiSettingsPanel.classList.remove('hidden');
+            return;
+        }
+        
+        const originalBtnHtml = btn.innerHTML;
+        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>';
+        btn.disabled = true;
+        
+        const prompt = `You are a Japanese to Vietnamese dictionary. Given the Japanese word "${word}", return exactly a JSON object in this format: {"kana": "hiragana reading", "meaning": "vietnamese meaning", "example": "A short Japanese example sentence with its Vietnamese translation"}. Do not include any other text or markdown.`;
+
+        // Try DeepSeek first if available
+        if (deepseekKey) {
             try {
-                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
+                const response = await fetch('https://api.deepseek.com/chat/completions', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${deepseekKey}`
+                    },
                     body: JSON.stringify({
-                        contents: [{
-                            parts: [{
-                                text: `You are a Japanese to Vietnamese dictionary. Given the Japanese word "${word}", return exactly a JSON object in this format: {"kana": "hiragana reading", "meaning": "vietnamese meaning", "example": "A short Japanese example sentence with its Vietnamese translation"}. Do not include any other text or markdown.`
-                            }]
-                        }],
-                        generationConfig: {
-                            responseMimeType: "application/json"
-                        }
+                        model: "deepseek-chat",
+                        messages: [{ role: "user", content: prompt }],
+                        response_format: { type: 'json_object' }
                     })
                 });
                 
                 const data = await response.json();
-                DOM.quickAutoFillBtn.innerHTML = '<i class="fa-solid fa-wand-magic-sparkles"></i> AI';
-                DOM.quickAutoFillBtn.disabled = false;
-                
-                if (data.error) {
-                    DOM.quickVocabMsg.textContent = 'API Error: ' + data.error.message;
-                    DOM.quickVocabMsg.style.color = '#ef4444';
+                if (data.choices && data.choices[0]) {
+                    const result = JSON.parse(data.choices[0].message.content);
+                    applyVocabResult(result);
                     return;
                 }
+            } catch (err) {
+                console.log("DeepSeek failed, falling back to Gemini:", err);
+            }
+        }
+
+        // Fallback to Gemini
+        if (geminiKey) {
+            try {
+                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${geminiKey}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        contents: [{ parts: [{ text: prompt }] }],
+                        generationConfig: { responseMimeType: "application/json" }
+                    })
+                });
+                
+                const data = await response.json();
+                if (data.error) throw new Error(data.error.message);
                 
                 let resultText = data.candidates[0].content.parts[0].text;
                 resultText = resultText.replace(/```json\n?|```/g, '').trim();
                 const result = JSON.parse(resultText);
-                
-                if (result.kana) DOM.quickWordKana.value = result.kana;
-                if (result.meaning) DOM.quickWordVi.value = result.meaning;
-                if (result.example && DOM.quickWordEx) DOM.quickWordEx.value = result.example;
-                
-                DOM.quickVocabMsg.textContent = 'Auto-filled successfully!';
-                DOM.quickVocabMsg.style.color = '#10b981';
-                setTimeout(() => { DOM.quickVocabMsg.textContent = ''; }, 2000);
+                applyVocabResult(result);
             } catch (err) {
-                DOM.quickAutoFillBtn.innerHTML = '<i class="fa-solid fa-wand-magic-sparkles"></i> AI';
-                DOM.quickAutoFillBtn.disabled = false;
-                DOM.quickVocabMsg.textContent = 'Error: ' + err.message;
-                DOM.quickVocabMsg.style.color = '#ef4444';
+                finishAutoFill(false, 'Lỗi: ' + err.message);
             }
+        } else {
+            finishAutoFill(false, 'DeepSeek lỗi và không có Gemini Key.');
+        }
+
+        function applyVocabResult(result) {
+            if (result.kana) kanaInput.value = result.kana;
+            if (result.meaning) viInput.value = result.meaning;
+            if (result.example && exInput) exInput.value = result.example;
+            finishAutoFill(true, 'Auto-filled successfully!');
+        }
+
+        function finishAutoFill(success, msg) {
+            btn.innerHTML = originalBtnHtml;
+            btn.disabled = false;
+            msgEl.textContent = msg;
+            msgEl.style.color = success ? '#10b981' : '#ef4444';
+            if (success) setTimeout(() => { msgEl.textContent = ''; }, 2000);
+        }
+    }
+
+    if (DOM.quickAutoFillBtn) {
+        DOM.quickAutoFillBtn.addEventListener('click', () => {
+            performAiAutoFill(DOM.quickWordJp, DOM.quickWordKana, DOM.quickWordVi, DOM.quickWordEx, DOM.quickAutoFillBtn, DOM.quickVocabMsg);
+        });
+    }
+
+    if (DOM.newAutoFillBtn) {
+        DOM.newAutoFillBtn.addEventListener('click', () => {
+            performAiAutoFill(DOM.newWordJp, DOM.newWordKana, DOM.newWordVi, DOM.newWordEx, DOM.newAutoFillBtn, DOM.addWordMsg);
         });
     }
     
@@ -535,6 +585,7 @@ function setupEventListeners() {
             const jp = DOM.newWordJp.value.trim();
             const kana = DOM.newWordKana.value.trim();
             const vi = DOM.newWordVi.value.trim();
+            const exJp = DOM.newWordEx ? DOM.newWordEx.value.trim() : '';
             
             if (!jp || !vi) {
                 DOM.addWordMsg.textContent = 'Please fill Japanese word and Vietnamese meaning!';
@@ -547,7 +598,7 @@ function setupEventListeners() {
                 jp: jp,
                 kana: kana || 'N/A',
                 meaning: vi,
-                exJp: '',
+                exJp: exJp,
                 exVi: '',
                 score: 0,
                 nextReview: Date.now()
@@ -561,6 +612,7 @@ function setupEventListeners() {
             DOM.newWordJp.value = '';
             DOM.newWordKana.value = '';
             DOM.newWordVi.value = '';
+            if (DOM.newWordEx) DOM.newWordEx.value = '';
             
             setTimeout(() => { DOM.addWordMsg.textContent = ''; }, 2000);
         });
