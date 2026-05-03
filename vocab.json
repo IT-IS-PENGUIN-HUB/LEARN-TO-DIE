@@ -1,0 +1,330 @@
+{
+  "kiso": [
+    {
+      "id": "1",
+      "jp": "製造物",
+      "kana": "せいぞうぶつ",
+      "meaning": "Sản phẩm / Đồ được chế tạo",
+      "exJp": "製造物責任法",
+      "exVi": "Luật trách nhiệm sản phẩm",
+      "score": 0,
+      "mastered": false,
+      "nextReview": 1777620662742
+    },
+    {
+      "id": "2",
+      "jp": "欠陥",
+      "kana": "けっかん",
+      "meaning": "Khuyết tật / Lỗi",
+      "exJp": "システムに欠陥がある",
+      "exVi": "Hệ thống có khuyết tật",
+      "score": 0,
+      "mastered": false,
+      "nextReview": 1777620662742
+    },
+    {
+      "id": "1777720257134",
+      "jp": "直列",
+      "kana": "ちょくれつ",
+      "meaning": "nối tiếp, mắc nối tiếp (điện)",
+      "exJp": "電池を直列につなぐ。\nMắc nối tiếp các cục pin.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777720257134
+    },
+    {
+      "id": "1777720404851",
+      "jp": "並列",
+      "kana": "へいれつ",
+      "meaning": "song song, song hành",
+      "exJp": "このシステムは並列処理を採用しています。(Hệ thống này sử dụng xử lý song song.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777720404851
+    },
+    {
+      "id": "1777720903916",
+      "jp": "待ち行列長",
+      "kana": "まちぎょうれつちょう",
+      "meaning": "độ dài hàng đợi, chiều dài hàng đợi",
+      "exJp": "待ち行列長が長くなると、システムの応答時間が遅くなる可能性があります。\n(Nếu độ dài hàng đợi tăng lên, thời gian phản hồi của hệ thống có thể bị chậm lại.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777720903916
+    },
+    {
+      "id": "1777721241746",
+      "jp": "代入",
+      "kana": "だいにゅう",
+      "meaning": "sự thay thế, sự gán (giá trị)",
+      "exJp": "変数に値を代入する。: Gán giá trị vào biến.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777721241746
+    },
+    {
+      "id": "1777721495585",
+      "jp": "アロ ーダイアグラム",
+      "kana": "あろーだいあぐらむ",
+      "meaning": "sơ đồ mũi tên, biểu đồ dòng chảy",
+      "exJp": "アローダイアグラムを作成する。\nTạo sơ đồ mũi tên.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777721495585
+    },
+    {
+      "id": "1777721509635",
+      "jp": "投じる",
+      "kana": "とうじる",
+      "meaning": "ném, quăng, bỏ vào, đầu tư, gửi gắm",
+      "exJp": "このプロジェクトに資金を投じる。: Đầu tư vốn vào dự án này.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777721509635
+    },
+    {
+      "id": "1777728417104",
+      "jp": "相関",
+      "kana": "そうかん",
+      "meaning": "tương quan",
+      "exJp": "二つの事柄には相関関係がある。\n(Hai sự việc có mối quan hệ tương quan.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777728417104
+    },
+    {
+      "id": "1777728443422",
+      "jp": "利得表",
+      "kana": "りとくひょう",
+      "meaning": "bảng lợi ích, bảng lợi nhuận, bảng chi phí lợi ích",
+      "exJp": "このゲームの利得表を分析する。 (Phân tích bảng lợi ích của trò chơi này.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777728443422
+    },
+    {
+      "id": "1777729167593",
+      "jp": "最適化",
+      "kana": "さいてきか",
+      "meaning": "tối ưu hóa",
+      "exJp": "このソフトウェアは、システム性能を最適化するために設計されています。\nPhần mềm này được thiết kế để tối ưu hóa hiệu suất hệ thống.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777729167593
+    },
+    {
+      "id": "1777730105218",
+      "jp": "玉掛け",
+      "kana": "たまかけ",
+      "meaning": "công việc treo móc cẩu vật nặng, công việc móc cẩu hàng hóa",
+      "exJp": "玉掛け作業は危険を伴うため、慎重に行う必要があります。 (Công việc móc cẩu tiềm ẩn nguy hiểm, nên cần thực hiện hết sức cẩn thận.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777730105218
+    },
+    {
+      "id": "1777730129573",
+      "jp": "摂取",
+      "kana": "せっしゅ",
+      "meaning": "hấp thụ, nạp vào, dung nạp, tiếp thu (chất dinh dưỡng, năng lượng, kiến thức, v.v.)",
+      "exJp": "この薬は食後に摂取してください。 (Xin hãy uống thuốc này sau bữa ăn.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777730129573
+    },
+    {
+      "id": "1777730342568",
+      "jp": "絞れる",
+      "kana": "しぼれる",
+      "meaning": "có thể vắt được, có thể ép được, có thể bóp được",
+      "exJp": "このタオルはまだ絞れる。 (Cái khăn này vẫn còn có thể vắt được.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777730342568
+    },
+    {
+      "id": "1777733234617",
+      "jp": "2 進数",
+      "kana": "にしんすう",
+      "meaning": "số nhị phân",
+      "exJp": "コンピュータは2進数で動作します。(Máy tính hoạt động bằng số nhị phân.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777733234617
+    },
+    {
+      "id": "1777737979254",
+      "jp": "等価な論理式",
+      "kana": "とうかなろんりしき",
+      "meaning": "biểu thức logic tương đương",
+      "exJp": "「PならばQ」と「QでないならばPでない」は等価な論理式です。\n\"Nếu P thì Q\" và \"Nếu không Q thì không P\" là các biểu thức logic tương đương.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777737979254
+    },
+    {
+      "id": "1777782561338",
+      "jp": "一次キャッシュ",
+      "kana": "いちじキャッシュ",
+      "meaning": "bộ nhớ đệm cấp 1; cache cấp 1",
+      "exJp": "CPUには高速な一次キャッシュが搭載されています。\n(CPU được trang bị bộ nhớ đệm cấp 1 tốc độ cao.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777782561338
+    },
+    {
+      "id": "1777782588356",
+      "jp": "主記憶",
+      "kana": "しゅきおく",
+      "meaning": "bộ nhớ chính (của máy tính), bộ nhớ sơ cấp",
+      "exJp": "主記憶はコンピュータの主要な部品です。\nBộ nhớ chính là một thành phần quan trọng của máy tính.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777782588356
+    },
+    {
+      "id": "1777789282324",
+      "jp": "記述",
+      "kana": "きじゅつ",
+      "meaning": "miêu tả, mô tả, sự ghi chép",
+      "exJp": "この本の記述は正確だ。\nMô tả trong cuốn sách này rất chính xác.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777789282324
+    },
+    {
+      "id": "1777790675213",
+      "jp": "流出",
+      "kana": "りゅうしゅつ",
+      "meaning": "rò rỉ, chảy ra, tiết lộ, lọt ra ngoài",
+      "exJp": "会社の機密情報が流出した。\nThông tin mật của công ty đã bị rò rỉ.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777790675213
+    },
+    {
+      "id": "1777793253869",
+      "jp": "文字列",
+      "kana": "もじれつ",
+      "meaning": "chuỗi ký tự, chuỗi",
+      "exJp": "文字列を結合する。Nối các chuỗi ký tự lại với nhau.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777793253869
+    },
+    {
+      "id": "1777820745662",
+      "jp": "歪み",
+      "kana": "ひずみ",
+      "meaning": "sự méo mó, sự biến dạng, sự lệch lạc",
+      "exJp": "このレンズには歪みがある。 (Thấu kính này bị méo mó/biến dạng.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777820745662
+    },
+    {
+      "id": "1777820913264",
+      "jp": "依存",
+      "kana": "いぞん",
+      "meaning": "sự phụ thuộc, sự lệ thuộc",
+      "exJp": "彼は親に依存している。\nAnh ấy phụ thuộc vào cha mẹ.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777820913264
+    },
+    {
+      "id": "1777821592079",
+      "jp": "内挿",
+      "kana": "ないそう",
+      "meaning": "nội suy",
+      "exJp": "内挿法は未知のデータ点を推定するために使用されます。\n(Phương pháp nội suy được sử dụng để ước tính các điểm dữ liệu chưa biết.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777821592079
+    },
+    {
+      "id": "1777821748096",
+      "jp": "遠方",
+      "kana": "えんぽう",
+      "meaning": "xa xôi, nơi xa, từ xa",
+      "exJp": "遠方からのお客様。\n(Khách hàng từ nơi xa.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777821748096
+    },
+    {
+      "id": "1777821755365",
+      "jp": "楕円孔",
+      "kana": "だえんこう",
+      "meaning": "lỗ hình bầu dục, lỗ elip",
+      "exJp": "この板には楕円孔が開いています。 (Trên tấm ván này có một lỗ hình bầu dục.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777821755365
+    },
+    {
+      "id": "1777824763133",
+      "jp": "熱伝導率",
+      "kana": "ねつでんどうりつ",
+      "meaning": "Hệ số dẫn nhiệt, độ dẫn nhiệt",
+      "exJp": "この材料は熱伝導率が高い。Vật liệu này có hệ số dẫn nhiệt cao.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777824763133
+    },
+    {
+      "id": "1777825688981",
+      "jp": "感覚",
+      "kana": "かんかく",
+      "meaning": "giác quan, cảm giác",
+      "exJp": "鋭い感覚を持っています。(Anh ấy có giác quan nhạy bén.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777825688981
+    },
+    {
+      "id": "1777826511195",
+      "jp": "酢酸",
+      "kana": "さくさん",
+      "meaning": "axit axetic",
+      "exJp": "酢酸は食品の保存料として使われます。 (Axit axetic được sử dụng làm chất bảo quản thực phẩm.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777826511195
+    },
+    {
+      "id": "1777826634538",
+      "jp": "酸性度",
+      "kana": "さんせいど",
+      "meaning": "độ axit, tính axit",
+      "exJp": "この土壌は酸性度が高い。\nĐộ axit của loại đất này cao.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777826634538
+    }
+  ],
+  "tekisei": [
+    {
+      "id": "1777627299214",
+      "jp": "私利私欲",
+      "kana": "しりしよく",
+      "meaning": "lợi ích cá nhân, tư lợi, ích kỷ, tư lợi cá nhân",
+      "exJp": "彼は私利私欲のために行動する。 (Anh ta hành động vì tư lợi cá nhân.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777627299214
+    }
+  ],
+  "senmon": [
+    {
+      "id": "1777626620858",
+      "jp": "鉛直",
+      "kana": "えんちょく",
+      "meaning": "thẳng đứng, chiều thẳng đứng, phương thẳng đứng",
+      "exJp": "鉛直方向の動き。Chuyển động theo phương thẳng đứng.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777626620858
+    }
+  ]
+}
