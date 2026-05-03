@@ -191,6 +191,116 @@
       "exVi": "",
       "score": 0,
       "nextReview": 1777789282324
+    },
+    {
+      "id": "1777790675213",
+      "jp": "流出",
+      "kana": "りゅうしゅつ",
+      "meaning": "rò rỉ, chảy ra, tiết lộ, lọt ra ngoài",
+      "exJp": "会社の機密情報が流出した。\nThông tin mật của công ty đã bị rò rỉ.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777790675213
+    },
+    {
+      "id": "1777793253869",
+      "jp": "文字列",
+      "kana": "もじれつ",
+      "meaning": "chuỗi ký tự, chuỗi",
+      "exJp": "文字列を結合する。Nối các chuỗi ký tự lại với nhau.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777793253869
+    },
+    {
+      "id": "1777820745662",
+      "jp": "歪み",
+      "kana": "ひずみ",
+      "meaning": "sự méo mó, sự biến dạng, sự lệch lạc",
+      "exJp": "このレンズには歪みがある。 (Thấu kính này bị méo mó/biến dạng.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777820745662
+    },
+    {
+      "id": "1777820913264",
+      "jp": "依存",
+      "kana": "いぞん",
+      "meaning": "sự phụ thuộc, sự lệ thuộc",
+      "exJp": "彼は親に依存している。\nAnh ấy phụ thuộc vào cha mẹ.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777820913264
+    },
+    {
+      "id": "1777821592079",
+      "jp": "内挿",
+      "kana": "ないそう",
+      "meaning": "nội suy",
+      "exJp": "内挿法は未知のデータ点を推定するために使用されます。\n(Phương pháp nội suy được sử dụng để ước tính các điểm dữ liệu chưa biết.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777821592079
+    },
+    {
+      "id": "1777821748096",
+      "jp": "遠方",
+      "kana": "えんぽう",
+      "meaning": "xa xôi, nơi xa, từ xa",
+      "exJp": "遠方からのお客様。\n(Khách hàng từ nơi xa.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777821748096
+    },
+    {
+      "id": "1777821755365",
+      "jp": "楕円孔",
+      "kana": "だえんこう",
+      "meaning": "lỗ hình bầu dục, lỗ elip",
+      "exJp": "この板には楕円孔が開いています。 (Trên tấm ván này có một lỗ hình bầu dục.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777821755365
+    },
+    {
+      "id": "1777824763133",
+      "jp": "熱伝導率",
+      "kana": "ねつでんどうりつ",
+      "meaning": "Hệ số dẫn nhiệt, độ dẫn nhiệt",
+      "exJp": "この材料は熱伝導率が高い。Vật liệu này có hệ số dẫn nhiệt cao.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777824763133
+    },
+    {
+      "id": "1777825688981",
+      "jp": "感覚",
+      "kana": "かんかく",
+      "meaning": "giác quan, cảm giác",
+      "exJp": "鋭い感覚を持っています。(Anh ấy có giác quan nhạy bén.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777825688981
+    },
+    {
+      "id": "1777826511195",
+      "jp": "酢酸",
+      "kana": "さくさん",
+      "meaning": "axit axetic",
+      "exJp": "酢酸は食品の保存料として使われます。 (Axit axetic được sử dụng làm chất bảo quản thực phẩm.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777826511195
+    },
+    {
+      "id": "1777826634538",
+      "jp": "酸性度",
+      "kana": "さんせいど",
+      "meaning": "độ axit, tính axit",
+      "exJp": "この土壌は酸性度が高い。\nĐộ axit của loại đất này cao.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777826634538
     }
   ],
   "tekisei": [
