@@ -305,19 +305,19 @@ function speakJapanese(text) {
 }
 
 // Word of the Day
-function loadWordOfTheDay() {
+function loadWordOfTheDay(forceNew = false) {
     if (!DOM.wotdJp) return;
     const today = new Date().toDateString();
     const savedDate = localStorage.getItem('learn_to_die_wotd_date');
     let wotd = null;
 
-    if (savedDate === today) {
+    if (!forceNew && savedDate === today) {
         try {
             wotd = JSON.parse(localStorage.getItem('learn_to_die_wotd_data'));
         } catch(e){}
     }
 
-    if (!wotd) {
+    if (!wotd || forceNew) {
         // Pick random unmastered word
         let unmastered = [];
         for (const subj in STATE.vocab) {
@@ -419,7 +419,7 @@ function setupEventListeners() {
     if (DOM.wotdNextBtn) {
         DOM.wotdNextBtn.addEventListener('click', (e) => {
             e.stopPropagation();
-            loadWordOfTheDay();
+            loadWordOfTheDay(true);
         });
     }
 
