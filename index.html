@@ -49,7 +49,8 @@
     <!-- Main Dashboard: Subject Selection -->
     <section class="dashboard container" id="dashboard">
         <!-- Word of the Day -->
-        <div class="wotd-container" id="wotd-container" style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; display: flex; flex-direction: column; align-items: center; text-align: center; box-shadow: var(--shadow-sm); transition: all 0.2s;">
+        <div class="wotd-container" id="wotd-container" style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; display: flex; flex-direction: column; align-items: center; text-align: center; box-shadow: var(--shadow-sm); transition: all 0.2s; position: relative;">
+            <button id="wotd-next-btn" style="position: absolute; right: 1rem; top: 1rem; background: transparent; border: none; color: var(--text-muted); font-size: 1.2rem; cursor: pointer; padding: 0.5rem; border-radius: 50%;" title="Từ tiếp theo (Bỏ qua)"><i class="fa-solid fa-arrow-rotate-right"></i></button>
             <h3 style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;"><i class="fa-regular fa-calendar"></i> Từ Vựng Hôm Nay</h3>
             <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
                 <h2 class="jp-text" id="wotd-jp" style="font-size: 2.5rem; color: var(--primary);">---</h2>

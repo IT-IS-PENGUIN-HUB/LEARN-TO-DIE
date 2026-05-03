@@ -221,6 +221,8 @@ const DOM = {
     wotdKana: document.getElementById('wotd-kana'),
     wotdVi: document.getElementById('wotd-vi'),
     wotdTtsBtn: document.getElementById('wotd-tts-btn'),
+    wotdContainer: document.getElementById('wotd-container'),
+    wotdNextBtn: document.getElementById('wotd-next-btn'),
     
     timerDisplay: document.getElementById('timer-display'),
     timerToggleBtn: document.getElementById('timer-toggle-btn'),
@@ -411,10 +413,20 @@ function setupEventListeners() {
         });
     }
     DOM.vocabBtn.addEventListener('click', openVocabModal);
+    if (DOM.wotdContainer) {
+        DOM.wotdContainer.addEventListener('click', openVocabModal);
+    }
+    if (DOM.wotdNextBtn) {
+        DOM.wotdNextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            loadWordOfTheDay();
+        });
+    }
 
     // TTS Buttons
     if (DOM.wotdTtsBtn) {
-        DOM.wotdTtsBtn.addEventListener('click', () => {
+        DOM.wotdTtsBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
             speakJapanese(DOM.wotdJp.textContent);
         });
     }
