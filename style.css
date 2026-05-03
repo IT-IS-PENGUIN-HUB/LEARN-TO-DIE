@@ -262,6 +262,16 @@ button {
     font-size: 0.9rem;
 }
 
+.wotd-container {
+    cursor: pointer;
+}
+
+.wotd-container:hover {
+    border-color: var(--primary) !important;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md) !important;
+}
+
 /* Exam List */
 .exam-list-container {
     padding: 3rem 1.5rem;
@@ -646,7 +656,10 @@ button {
 
 .srs-controls {
     display: flex;
-    gap: 1rem;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
 }
 
 .srs-btn {

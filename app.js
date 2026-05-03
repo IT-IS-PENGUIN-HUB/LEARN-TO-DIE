@@ -139,21 +139,9 @@ const DOM = {
     sendTranslateBtn: document.getElementById('send-translate-btn'),
     sendExplainBtn: document.getElementById('send-explain-btn'),
     
-    openAiChatBtn: document.getElementById('open-ai-chat-modal'),
-    aiChatModal: document.getElementById('ai-chat-modal'),
-    closeAiChat: document.getElementById('close-ai-chat'),
-    
-    aiImageUpload: document.getElementById('ai-image-upload'),
-    btnUploadImage: document.getElementById('btn-upload-image'),
-    btnCaptureScreen: document.getElementById('btn-capture-screen'),
-    aiImagePreviewContainer: document.getElementById('ai-image-preview-container'),
     aiImagePreview: document.getElementById('ai-image-preview'),
     removeAiImage: document.getElementById('remove-ai-image'),
     
-    cropModal: document.getElementById('crop-modal'),
-    cropCanvas: document.getElementById('crop-canvas'),
-    btnCancelCrop: document.getElementById('btn-cancel-crop'),
-    btnConfirmCrop: document.getElementById('btn-confirm-crop'),
     
     // AI Settings
     aiSettingsBtn: document.getElementById('ai-settings-btn'),
@@ -227,7 +215,19 @@ const DOM = {
     ghRepo: document.getElementById('gh-repo'),
     ghToken: document.getElementById('gh-token'),
     settingsPullBtn: document.getElementById('settings-pull-btn'),
-    settingsPushBtn: document.getElementById('settings-push-btn')
+    settingsPushBtn: document.getElementById('settings-push-btn'),
+    
+    wotdJp: document.getElementById('wotd-jp'),
+    wotdKana: document.getElementById('wotd-kana'),
+    wotdVi: document.getElementById('wotd-vi'),
+    wotdTtsBtn: document.getElementById('wotd-tts-btn'),
+    
+    timerDisplay: document.getElementById('timer-display'),
+    timerToggleBtn: document.getElementById('timer-toggle-btn'),
+    timerResetBtn: document.getElementById('timer-reset-btn'),
+    
+    quizTtsBtn: document.getElementById('quiz-tts-btn'),
+    fcTtsBtn: document.getElementById('fc-tts-btn')
 };
 
 // --- INITIALIZATION ---
@@ -281,6 +281,114 @@ function init() {
         if (hint) hint.classList.remove('hidden');
     }
     STATE.isIOS = isIOS;
+    
+    loadWordOfTheDay();
+    updateTimerDisplay();
+}
+
+// --- NEW FEATURES ---
+// TTS
+function speakJapanese(text) {
+    if (!window.speechSynthesis || !text) return;
+    window.speechSynthesis.cancel();
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'ja-JP';
+    utterance.rate = 0.85; // slightly slower for learning
+    window.speechSynthesis.speak(utterance);
+}
+
+// Word of the Day
+function loadWordOfTheDay() {
+    if (!DOM.wotdJp) return;
+    const today = new Date().toDateString();
+    const savedDate = localStorage.getItem('learn_to_die_wotd_date');
+    let wotd = null;
+
+    if (savedDate === today) {
+        try {
+            wotd = JSON.parse(localStorage.getItem('learn_to_die_wotd_data'));
+        } catch(e){}
+    }
+
+    if (!wotd) {
+        // Pick random unmastered word
+        let unmastered = [];
+        for (const subj in STATE.vocab) {
+            unmastered = unmastered.concat(STATE.vocab[subj].filter(w => !w.mastered));
+        }
+        if (unmastered.length === 0) {
+            // fallback to all
+            for (const subj in STATE.vocab) {
+                unmastered = unmastered.concat(STATE.vocab[subj]);
+            }
+        }
+        if (unmastered.length > 0) {
+            wotd = unmastered[Math.floor(Math.random() * unmastered.length)];
+            localStorage.setItem('learn_to_die_wotd_date', today);
+            localStorage.setItem('learn_to_die_wotd_data', JSON.stringify(wotd));
+        }
+    }
+
+    if (wotd) {
+        DOM.wotdJp.textContent = wotd.jp;
+        DOM.wotdKana.textContent = wotd.kana !== 'N/A' ? wotd.kana : '';
+        DOM.wotdVi.textContent = wotd.meaning;
+    }
+}
+
+// Pomodoro Timer
+let pomodoroTimer = null;
+let pomodoroTimeLeft = 25 * 60;
+let isPomodoroRunning = false;
+
+function updateTimerDisplay() {
+    if (!DOM.timerDisplay) return;
+    const m = Math.floor(pomodoroTimeLeft / 60).toString().padStart(2, '0');
+    const s = (pomodoroTimeLeft % 60).toString().padStart(2, '0');
+    DOM.timerDisplay.textContent = `${m}:${s}`;
+}
+
+function toggleTimer() {
+    if (!DOM.timerToggleBtn) return;
+    if (isPomodoroRunning) {
+        clearInterval(pomodoroTimer);
+        isPomodoroRunning = false;
+        DOM.timerToggleBtn.innerHTML = '<i class="fa-solid fa-play"></i> Start';
+        DOM.timerToggleBtn.classList.remove('btn-outline');
+        DOM.timerToggleBtn.classList.add('btn-primary');
+    } else {
+        isPomodoroRunning = true;
+        DOM.timerToggleBtn.innerHTML = '<i class="fa-solid fa-pause"></i> Pause';
+        DOM.timerToggleBtn.classList.remove('btn-primary');
+        DOM.timerToggleBtn.classList.add('btn-outline');
+        
+        pomodoroTimer = setInterval(() => {
+            if (pomodoroTimeLeft > 0) {
+                pomodoroTimeLeft--;
+                updateTimerDisplay();
+            } else {
+                clearInterval(pomodoroTimer);
+                isPomodoroRunning = false;
+                DOM.timerToggleBtn.innerHTML = '<i class="fa-solid fa-play"></i> Start';
+                DOM.timerToggleBtn.classList.remove('btn-outline');
+                DOM.timerToggleBtn.classList.add('btn-primary');
+                alert('⏰ Hết giờ tập trung! Hãy nghỉ ngơi một chút nhé.');
+                pomodoroTimeLeft = 5 * 60; // 5 min break
+                updateTimerDisplay();
+            }
+        }, 1000);
+    }
+}
+
+function resetTimer() {
+    if (!DOM.timerToggleBtn) return;
+    clearInterval(pomodoroTimer);
+    isPomodoroRunning = false;
+    pomodoroTimeLeft = 25 * 60;
+    updateTimerDisplay();
+    DOM.timerToggleBtn.innerHTML = '<i class="fa-solid fa-play"></i> Start';
+    DOM.timerToggleBtn.classList.remove('btn-outline');
+    DOM.timerToggleBtn.classList.add('btn-primary');
 }
 
 // --- EVENT LISTENERS ---
@@ -298,6 +406,31 @@ function setupEventListeners() {
         });
     }
     DOM.vocabBtn.addEventListener('click', openVocabModal);
+
+    // TTS Buttons
+    if (DOM.wotdTtsBtn) {
+        DOM.wotdTtsBtn.addEventListener('click', () => {
+            speakJapanese(DOM.wotdJp.textContent);
+        });
+    }
+    if (DOM.quizTtsBtn) {
+        DOM.quizTtsBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            speakJapanese(DOM.quizQ.textContent);
+        });
+    }
+    if (DOM.fcTtsBtn) {
+        DOM.fcTtsBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            speakJapanese(DOM.fcWord.textContent);
+        });
+    }
+    
+    // Timer Buttons
+    if (DOM.timerToggleBtn) {
+        DOM.timerToggleBtn.addEventListener('click', toggleTimer);
+        DOM.timerResetBtn.addEventListener('click', resetTimer);
+    }
     DOM.studyVocabBtn.addEventListener('click', openVocabModal);
     DOM.startBtn.addEventListener('click', () => {
         window.scrollTo({ top: DOM.sections.dashboard.offsetTop, behavior: 'smooth' });
@@ -509,25 +642,8 @@ function setupEventListeners() {
         });
     }
     
-    // AI Interactions (Modal)
-    DOM.openAiChatBtn.addEventListener('click', () => {
-        DOM.aiChatModal.classList.remove('hidden');
-    });
-    DOM.closeAiChat.addEventListener('click', () => {
-        DOM.aiChatModal.classList.add('hidden');
-    });
+    // AI Interactions (Modal removed, only keeping necessary parts if any)
     
-    DOM.sendTranslateBtn.addEventListener('click', () => handleAiChat('translate'));
-    DOM.sendExplainBtn.addEventListener('click', () => handleAiChat('explain'));
-    if (DOM.btnCaptureScreen) {
-        DOM.btnCaptureScreen.addEventListener('click', captureScreen);
-    }
-    DOM.aiInput.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' && !e.shiftKey) {
-            e.preventDefault();
-            handleAiChat('explain');
-        }
-    });
     
     // Flashcard interactions
     DOM.closeVocab.addEventListener('click', closeVocabModal);
@@ -787,181 +903,7 @@ function openQuestion(exam) {
     window.scrollTo(0, 0);
 }
 
-// --- AI CHAT WITH GEMINI ---
-let currentAttachedImage = null;
-
-async function handleAiChat(mode = 'explain') {
-    const text = DOM.aiInput.value.trim();
-    if (!text && !currentAttachedImage) return;
-    
-    const apiKey = localStorage.getItem('learn_to_die_gemini_key');
-    if (!apiKey) {
-        simulateAiResponse('⚠️ Vui lòng nhập Gemini API Key trong phần Settings (biểu tượng bánh răng) trước khi chat.');
-        DOM.aiSettingsPanel.classList.remove('hidden');
-        return;
-    }
-    
-    DOM.aiInput.value = '';
-    
-    // Append user message
-    const userMsg = document.createElement('div');
-    userMsg.style.background = 'var(--primary)';
-    userMsg.style.color = '#fff';
-    userMsg.style.padding = '0.75rem 1rem';
-    userMsg.style.borderRadius = '1.2rem 1.2rem 0 1.2rem';
-    userMsg.style.alignSelf = 'flex-end';
-    userMsg.style.maxWidth = '85%';
-    userMsg.style.boxShadow = '0 4px 12px rgba(var(--primary-rgb), 0.3)';
-    
-    if (text) {
-        const textSpan = document.createElement('div');
-        textSpan.style.whiteSpace = 'pre-wrap';
-        textSpan.textContent = text;
-        userMsg.appendChild(textSpan);
-    }
-    
-    if (currentAttachedImage) {
-        const imgNode = document.createElement('img');
-        imgNode.src = currentAttachedImage;
-        imgNode.style.maxWidth = '100%';
-        imgNode.style.borderRadius = '4px';
-        imgNode.style.marginTop = text ? '0.5rem' : '0';
-        userMsg.appendChild(imgNode);
-    }
-    
-    DOM.aiResponse.appendChild(userMsg);
-    
-    // Scroll to bottom
-    DOM.aiResponse.scrollTop = DOM.aiResponse.scrollHeight;
-    
-    // Add typing indicator
-    const thinkingMsg = document.createElement('div');
-    thinkingMsg.className = 'typing-indicator';
-    thinkingMsg.style.alignSelf = 'flex-start';
-    thinkingMsg.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> AI đang suy nghĩ...';
-    thinkingMsg.style.color = 'var(--primary)';
-    DOM.aiResponse.appendChild(thinkingMsg);
-    
-    const parts = [];
-    let promptTemplate = '';
-    
-    if (mode === 'translate') {
-        promptTemplate = "Hãy dịch đoạn văn bản tiếng Nhật sau (hoặc văn bản trong ảnh) sang tiếng Việt một cách chính xác. CHỈ DỊCH, không giải thích thêm.";
-    } else {
-        promptTemplate = "Bạn là chuyên gia ôn thi Gijutsushi-ho (技術士補). Hãy giải thích câu hỏi trong văn bản hoặc ảnh đính kèm bằng tiếng Việt, đưa ra đáp án đúng và giải thích lý do tại sao đáp án đó đúng.";
-    }
-
-    if (text) {
-        parts.push({ text: `${promptTemplate}\n\n${text}` });
-    } else {
-        parts.push({ text: `${promptTemplate}` });
-    }
-    
-    if (currentAttachedImage) {
-        const base64Data = currentAttachedImage.split(',')[1];
-        const mimeType = currentAttachedImage.match(/data:([a-zA-Z0-9]+\/[a-zA-Z0-9-.+]+).*,.*/)[1];
-        parts.push({
-            inlineData: {
-                mimeType: mimeType,
-                data: base64Data
-            }
-        });
-        
-        currentAttachedImage = null;
-        DOM.aiImagePreviewContainer.classList.add('hidden');
-    }
-    
-    try {
-        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                contents: [{ parts: parts }]
-            })
-        });
-        
-        const data = await response.json();
-        thinkingMsg.remove();
-        
-        if (data.error) {
-            simulateAiResponse(`API Error: ${data.error.message}`);
-            return;
-        }
-        
-        const replyText = data.candidates[0].content.parts[0].text;
-        
-        const aiMsg = document.createElement('div');
-        aiMsg.style.background = 'var(--card-bg)';
-        aiMsg.style.border = '1px solid var(--border-color)';
-        aiMsg.style.padding = '0.5rem 1rem';
-        aiMsg.style.borderRadius = '1rem 1rem 1rem 0';
-        aiMsg.style.alignSelf = 'flex-start';
-        aiMsg.style.maxWidth = '90%';
-        // Simple markdown parsing for bold and line breaks
-        aiMsg.innerHTML = replyText
-            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-            .replace(/\n/g, '<br>');
-            
-        DOM.aiResponse.appendChild(aiMsg);
-        DOM.aiResponse.scrollTop = DOM.aiResponse.scrollHeight;
-        
-    } catch (err) {
-        thinkingMsg.remove();
-        simulateAiResponse(`Error connecting to AI: ${err.message}`);
-    }
-}
-
-function simulateAiResponse(text) {
-    const aiMsg = document.createElement('div');
-    aiMsg.style.background = 'var(--card-bg)';
-    aiMsg.style.border = '1px solid var(--border-color)';
-    aiMsg.style.padding = '0.75rem 1rem';
-    aiMsg.style.borderRadius = '0 1.2rem 1.2rem 1.2rem';
-    aiMsg.style.alignSelf = 'flex-start';
-    aiMsg.style.maxWidth = '90%';
-    aiMsg.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
-    aiMsg.style.lineHeight = '1.5';
-    aiMsg.innerHTML = text;
-    DOM.aiResponse.appendChild(aiMsg);
-    DOM.aiResponse.scrollTop = DOM.aiResponse.scrollHeight;
-}
-
-async function captureScreen() {
-    try {
-        const stream = await navigator.mediaDevices.getDisplayMedia({ video: true });
-        const video = document.createElement('video');
-        video.srcObject = stream;
-        video.play();
-        
-        video.onloadedmetadata = () => {
-            setTimeout(() => {
-                const canvas = document.createElement('canvas');
-                canvas.width = video.videoWidth;
-                canvas.height = video.videoHeight;
-                const ctx = canvas.getContext('2d');
-                ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-                
-                const imageData = canvas.toDataURL('image/jpeg');
-                
-                // Stop all tracks
-                stream.getTracks().forEach(track => track.stop());
-                
-                // Convert to file to use existing crop logic
-                fetch(imageData)
-                    .then(res => res.blob())
-                    .then(blob => {
-                        const file = new File([blob], "screenshot.jpg", { type: "image/jpeg" });
-                        openCropModal(file);
-                    });
-            }, 500); // Small delay to ensure frame is ready
-        };
-    } catch (err) {
-        console.error("Error capturing screen: ", err);
-        if (err.name !== 'NotAllowedError') {
-            alert("Không thể chụp màn hình: " + err.message);
-        }
-    }
-}
+// --- AI Functions removed ---
 
 
 

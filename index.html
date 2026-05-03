@@ -48,6 +48,17 @@
 
     <!-- Main Dashboard: Subject Selection -->
     <section class="dashboard container" id="dashboard">
+        <!-- Word of the Day -->
+        <div class="wotd-container" id="wotd-container" style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; display: flex; flex-direction: column; align-items: center; text-align: center; box-shadow: var(--shadow-sm); transition: all 0.2s;">
+            <h3 style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;"><i class="fa-regular fa-calendar"></i> Từ Vựng Hôm Nay</h3>
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+                <h2 class="jp-text" id="wotd-jp" style="font-size: 2.5rem; color: var(--primary);">---</h2>
+                <button class="btn btn-outline tts-btn" id="wotd-tts-btn" style="border-radius: 50%; width: 40px; height: 40px; padding: 0; display: flex; justify-content: center; align-items: center;"><i class="fa-solid fa-volume-high"></i></button>
+            </div>
+            <p id="wotd-kana" style="color: var(--text-muted); font-size: 1.2rem; margin-bottom: 0.5rem;">---</p>
+            <p id="wotd-vi" style="font-size: 1.2rem; font-weight: 500;">---</p>
+        </div>
+
         <div class="card-grid">
             <div class="subject-card" data-subject="kiso">
                 <i class="fa-solid fa-cube card-icon"></i>
@@ -108,6 +119,16 @@
                         <span><i class="fa-solid fa-robot"></i> Assistant & Vocab</span>
                         <button id="ai-settings-btn" class="icon-btn" style="font-size: 0.9rem;" title="Settings"><i class="fa-solid fa-gear"></i></button>
                     </div>
+
+                    <!-- Pomodoro Timer -->
+                    <div class="pomodoro-timer" style="background: var(--bg-alt); padding: 1rem; border-radius: 8px; margin-bottom: 1rem; border: 1px solid var(--border-color); text-align: center;">
+                        <h4 style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;"><i class="fa-solid fa-clock"></i> Focus Timer</h4>
+                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--primary); font-family: monospace; margin-bottom: 0.5rem;" id="timer-display">25:00</div>
+                        <div style="display: flex; gap: 0.5rem; justify-content: center;">
+                            <button id="timer-toggle-btn" class="btn btn-sm btn-primary" style="width: 80px;"><i class="fa-solid fa-play"></i> Start</button>
+                            <button id="timer-reset-btn" class="btn btn-sm btn-outline"><i class="fa-solid fa-rotate-right"></i></button>
+                        </div>
+                    </div>
                     
                     <div id="inline-ai-settings" class="hidden" style="padding: 1rem; background: var(--bg-color); border-bottom: 1px solid var(--border-color); font-size: 0.9rem;">
                         <label for="gemini-api-key" style="display: block; margin-bottom: 0.2rem;">Gemini API Key (Chat):</label>
@@ -138,11 +159,7 @@
                         <p id="quick-vocab-msg" style="color: #10b981; font-size: 0.8rem; margin-top: 0.5rem; text-align: center; height: 1rem;"></p>
                     </div>
 
-                    <div style="padding: 1.5rem; text-align: center; flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                        <i class="fa-solid fa-comments" style="font-size: 2.5rem; color: var(--text-muted); margin-bottom: 1rem; opacity: 0.5;"></i>
-                        <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.85rem;">Need explanation or translation?</p>
-                        <button id="open-ai-chat-modal" class="btn btn-primary" style="padding: 0.4rem 1.2rem; font-size: 0.85rem;"><i class="fa-solid fa-comment-dots"></i> Mở AI Chat</button>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -171,7 +188,10 @@
             </div>
             
             <div class="quiz-container hidden" id="quiz-container">
-                <h3 class="jp-text" id="quiz-q" style="font-size: 2.5rem; text-align: center; margin-bottom: 0.5rem; color: var(--primary);">製造物</h3>
+                <div style="display: flex; justify-content: center; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+                    <h3 class="jp-text" id="quiz-q" style="font-size: 2.5rem; text-align: center; color: var(--primary); margin: 0;">製造物</h3>
+                    <button class="btn btn-outline tts-btn" id="quiz-tts-btn" style="border-radius: 50%; width: 40px; height: 40px; padding: 0; display: flex; justify-content: center; align-items: center;"><i class="fa-solid fa-volume-high"></i></button>
+                </div>
                 <p id="quiz-hint" style="text-align: center; color: var(--text-muted); margin-bottom: 2rem;">Choose the correct meaning</p>
                 <div id="quiz-options" style="display: flex; flex-direction: column; gap: 1rem; max-width: 500px; margin: 0 auto; width: 100%; margin-bottom: 1.5rem;">
                     <!-- Options generated by JS -->
@@ -187,6 +207,7 @@
                     <div class="flashcard-inner">
                         <div class="flashcard-front">
                             <h2 class="jp-text" id="fc-word">技術</h2>
+                            <button class="btn btn-outline tts-btn" id="fc-tts-btn" style="margin-top: 1.5rem; border-radius: 50%; width: 45px; height: 45px; padding: 0; display: flex; justify-content: center; align-items: center; font-size: 1.1rem; position: absolute; bottom: 3rem;" title="Đọc phát âm (Nhấn vào nút, không lật thẻ)"><i class="fa-solid fa-volume-high"></i></button>
                             <p class="click-hint">Click to flip</p>
                         </div>
                         <div class="flashcard-back">
@@ -259,35 +280,6 @@
         </div>
     </div>
 
-    <!-- AI Chat Modal -->
-    <div class="modal hidden" id="ai-chat-modal">
-        <div class="modal-content" style="width: 95%; max-width: 900px; height: 90vh; display: flex; flex-direction: column; padding: 1.5rem;">
-            <button class="close-btn" id="close-ai-chat"><i class="fa-solid fa-xmark"></i></button>
-            <h2 style="margin-bottom: 1rem; color: var(--primary); font-size: 1.1rem;"><i class="fa-solid fa-robot"></i> AI Tutor</h2>
-            
-            <div id="ai-response-modal" style="flex: 1; overflow-y: auto; padding: 1rem; background: var(--bg-alt); border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 1rem; display: flex; flex-direction: column; gap: 1rem; font-size: 0.85rem;">
-                <p class="text-muted" style="text-align: center;">Dán câu hỏi hoặc văn bản cần giải thích vào đây, AI sẽ hỗ trợ bạn bằng tiếng Việt.</p>
-            </div>
-            
-            <div id="ai-image-preview-container" class="hidden" style="margin-bottom: 0.5rem; position: relative; display: inline-block; align-self: flex-start;">
-                <img id="ai-image-preview" src="" style="max-height: 100px; border-radius: 4px; border: 1px solid var(--border-color);">
-                <button id="remove-ai-image" style="position: absolute; top: -8px; right: -8px; background: #ef4444; color: white; border: none; border-radius: 50%; width: 22px; height: 22px; cursor: pointer; font-size: 0.7rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0,0,0,0.2);"><i class="fa-solid fa-times"></i></button>
-            </div>
-            
-                <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                <div style="display: flex; gap: 0.5rem; align-items: stretch;">
-                    <input type="file" id="ai-image-upload" accept="image/*" class="hidden">
-                    <button id="btn-upload-image" class="btn btn-outline" style="padding: 0 1rem;" title="Đính kèm ảnh / Chụp màn hình"><i class="fa-solid fa-image"></i></button>
-                    <button id="btn-capture-screen" class="btn btn-outline" style="padding: 0 1rem;" title="Chụp vùng màn hình (Desktop)"><i class="fa-solid fa-crop-simple"></i></button>
-                    <textarea id="ai-input-modal" placeholder="Nhập câu hỏi, văn bản hoặc dán ảnh (Ctrl+V)..." rows="3" style="flex: 1; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: 8px; background: var(--bg-color); color: var(--text-main); font-family: inherit; resize: none; font-size: 0.85rem;"></textarea>
-                </div>
-                <div style="display: flex; gap: 0.5rem; justify-content: flex-end;">
-                    <button id="send-translate-btn" class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;"><i class="fa-solid fa-language"></i> Chỉ Dịch</button>
-                    <button id="send-explain-btn" class="btn btn-primary" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;"><i class="fa-solid fa-chalkboard-user"></i> Giải thích & Đáp án</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- SETTINGS MODAL (AI + SYNC) -->
     <div class="modal hidden" id="settings-modal">
