@@ -167,7 +167,7 @@ const DOM = {
     vocabModal: document.getElementById('vocab-modal'),
     closeVocab: document.getElementById('close-vocab'),
     flashcard: document.getElementById('flashcard'),
-    srsControls: document.getElementById('srs-controls'),
+    fcControls: document.getElementById('fc-controls'),
     
     fcWord: document.getElementById('fc-word'),
     fcHiragana: document.getElementById('fc-hiragana'),
@@ -195,6 +195,7 @@ const DOM = {
     quizNextBtn: document.getElementById('quiz-next-btn'),
     quizMasterBtn: document.getElementById('quiz-master-btn'),
     fcMasterBtn: document.getElementById('fc-master-btn'),
+    fcNextBtn: document.getElementById('fc-next-btn'),
     
     newWordJp: document.getElementById('new-word-jp'),
     newWordKana: document.getElementById('new-word-kana'),
@@ -666,11 +667,21 @@ function setupEventListeners() {
     DOM.closeVocab.addEventListener('click', closeVocabModal);
     DOM.flashcard.addEventListener('click', flipCard);
     
-    document.querySelectorAll('.srs-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            handleSrsScore(parseInt(e.target.dataset.score));
+    if (DOM.fcNextBtn) {
+        DOM.fcNextBtn.addEventListener('click', () => {
+            const activeList = (STATE.vocab[STATE.currentVocabSubject] || []).filter(v => !v.mastered);
+            let currentIndex = activeList.findIndex(v => v.id === STATE.vocab[STATE.currentVocabSubject][STATE.currentVocabIndex]?.id);
+            if (currentIndex === -1) currentIndex = 0;
+            
+            currentIndex++;
+            if (currentIndex < activeList.length) {
+                STATE.currentVocabIndex = STATE.vocab[STATE.currentVocabSubject].indexOf(activeList[currentIndex]);
+                loadFlashcard(activeList[currentIndex]);
+            } else {
+                loadFlashcard(null);
+            }
         });
-    });
+    }
 
     if(DOM.modeFlashcardBtn) {
         DOM.modeFlashcardBtn.addEventListener('click', () => setVocabMode('flashcard'));
@@ -773,8 +784,10 @@ function setVocabMode(mode) {
     DOM.fcContainer.classList.add('hidden');
     DOM.quizContainer.classList.add('hidden');
     DOM.addWordContainer.classList.add('hidden');
-    DOM.srsControls.classList.add('hidden');
+    DOM.fcControls.classList.add('hidden');
     if (DOM.quizNextBtn) { DOM.quizNextBtn.style.visibility = 'hidden'; }
+    if (DOM.fcNextBtn) { DOM.fcNextBtn.style.visibility = 'hidden'; }
+    if (DOM.fcMasterBtn) { DOM.fcMasterBtn.style.visibility = 'hidden'; }
     
     if(mode === 'flashcard') {
         DOM.modeFlashcardBtn.classList.replace('btn-outline', 'btn-primary');
@@ -960,7 +973,12 @@ function openVocabModal() {
         loadRandomQuiz();
     } else if (vocabMode !== 'add') {
         const activeList = (STATE.vocab[STATE.currentVocabSubject] || []).filter(v => !v.mastered);
-        loadFlashcard(activeList[0]);
+        if (activeList.length > 0) {
+            STATE.currentVocabIndex = STATE.vocab[STATE.currentVocabSubject].indexOf(activeList[0]);
+            loadFlashcard(activeList[0]);
+        } else {
+            loadFlashcard(null);
+        }
     }
     renderMasteredList();
 }
@@ -968,7 +986,9 @@ function openVocabModal() {
 function closeVocabModal() {
     DOM.vocabModal.classList.add('hidden');
     DOM.flashcard.classList.remove('flipped');
-    DOM.srsControls.classList.add('hidden');
+    DOM.fcControls.classList.add('hidden');
+    if (DOM.fcNextBtn) DOM.fcNextBtn.style.visibility = 'hidden';
+    if (DOM.fcMasterBtn) DOM.fcMasterBtn.style.visibility = 'hidden';
 }
 
 function renderMasteredList() {
@@ -1046,13 +1066,16 @@ function loadFlashcard(wordObj) {
         DOM.fcHiragana.textContent = '';
         DOM.fcMeaning.textContent = 'You have reviewed all due words.';
         DOM.flashcard.style.pointerEvents = 'none';
-        DOM.srsControls.classList.add('hidden');
+        DOM.fcControls.classList.add('hidden');
         return;
     }
     
     DOM.flashcard.style.pointerEvents = 'auto';
     DOM.flashcard.classList.remove('flipped');
-    DOM.srsControls.classList.add('hidden');
+    DOM.fcControls.classList.remove('hidden');
+    
+    if (DOM.fcNextBtn) DOM.fcNextBtn.style.visibility = 'hidden';
+    if (DOM.fcMasterBtn) DOM.fcMasterBtn.style.visibility = 'hidden';
     
     if (vocabMode === 'quiz') {
         DOM.fcContainer.classList.add('hidden');
@@ -1150,36 +1173,16 @@ function flipCard() {
     DOM.flashcard.classList.toggle('flipped');
     if (DOM.flashcard.classList.contains('flipped')) {
         setTimeout(() => {
-            DOM.srsControls.classList.remove('hidden');
+            if (DOM.fcNextBtn) DOM.fcNextBtn.style.visibility = 'visible';
+            if (DOM.fcMasterBtn) DOM.fcMasterBtn.style.visibility = 'visible';
         }, 300); // Wait for flip animation
     } else {
-        DOM.srsControls.classList.add('hidden');
+        if (DOM.fcNextBtn) DOM.fcNextBtn.style.visibility = 'hidden';
+        if (DOM.fcMasterBtn) DOM.fcMasterBtn.style.visibility = 'hidden';
     }
 }
 
-function handleSrsScore(score) {
-    // Simple SRS logic
-    const word = STATE.vocab[STATE.currentVocabSubject][STATE.currentVocabIndex];
-    if (!word) return;
-    
-    let daysToAdd = 0;
-    if (score === 1) daysToAdd = 0; // Again (review soon)
-    else if (score === 2) daysToAdd = 1; // Hard (1 day)
-    else if (score === 3) daysToAdd = 3; // Easy (3 days)
-    
-    word.score = score;
-    word.nextReview = Date.now() + (daysToAdd * 24 * 60 * 60 * 1000);
-    
-    saveVocab();
-    
-    // Next word
-    STATE.currentVocabIndex++;
-    if (STATE.currentVocabIndex < STATE.vocab[STATE.currentVocabSubject].length) {
-        loadFlashcard(STATE.vocab[STATE.currentVocabSubject][STATE.currentVocabIndex]);
-    } else {
-        loadFlashcard(null);
-    }
-}
+
 
 // Start app
 // Redundant listener removed
@@ -1247,7 +1250,20 @@ function importVocab(event) {
                 updateVocabStats();
                 renderMasteredList();
                 alert("✅ Đã nhập dữ liệu thành công!");
-                location.reload(); // Refresh to update everything
+                
+                if (!DOM.vocabModal.classList.contains('hidden')) {
+                    if (vocabMode === 'quiz') {
+                        loadRandomQuiz();
+                    } else if (vocabMode === 'flashcard') {
+                        const activeList = (STATE.vocab[STATE.currentVocabSubject] || []).filter(v => !v.mastered);
+                        if (activeList.length > 0) {
+                            STATE.currentVocabIndex = STATE.vocab[STATE.currentVocabSubject].indexOf(activeList[0]);
+                            loadFlashcard(activeList[0]);
+                        } else {
+                            loadFlashcard(null);
+                        }
+                    }
+                }
             } else {
                 alert("❌ File không đúng định dạng dữ liệu từ vựng.");
             }
@@ -1359,7 +1375,21 @@ async function loadFromGitHub() {
             updateVocabStats();
             renderMasteredList();
             alert("✅ Đã tải dữ liệu từ Cloud thành công!");
-            location.reload();
+            
+            // Re-render UI instead of reloading page
+            if (!DOM.vocabModal.classList.contains('hidden')) {
+                if (vocabMode === 'quiz') {
+                    loadRandomQuiz();
+                } else if (vocabMode === 'flashcard') {
+                    const activeList = (STATE.vocab[STATE.currentVocabSubject] || []).filter(v => !v.mastered);
+                    if (activeList.length > 0) {
+                        STATE.currentVocabIndex = STATE.vocab[STATE.currentVocabSubject].indexOf(activeList[0]);
+                        loadFlashcard(activeList[0]);
+                    } else {
+                        loadFlashcard(null);
+                    }
+                }
+            }
         } else {
             alert("❌ Không tìm thấy file vocab.json trên GitHub.");
         }

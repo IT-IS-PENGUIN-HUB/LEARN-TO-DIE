@@ -244,11 +244,9 @@
                 <p id="add-word-msg" style="color: #10b981; font-size: 0.85rem; margin-top: 0.5rem; text-align: center; height: 1.2rem;"></p>
             </div>
             
-            <div class="srs-controls hidden" id="srs-controls">
-                <button class="btn srs-btn btn-again" data-score="1">❌ Again</button>
-                <button class="btn srs-btn btn-hard" data-score="2">⚠️ Hard</button>
-                <button class="btn srs-btn btn-easy" data-score="3">✅ Easy</button>
-                <button class="btn" id="fc-master-btn" style="background: #10b981; color: white; border: none; padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer;"><i class="fa-solid fa-star"></i> Đã nhớ!</button>
+            <div class="fc-controls hidden" id="fc-controls" style="display: flex; gap: 0.75rem; justify-content: center; align-items: center; margin-top: 1rem;">
+                <button id="fc-master-btn" class="btn btn-outline" style="color: #10b981; border-color: #10b981;"><i class="fa-solid fa-star"></i> Đã nhớ!</button>
+                <button id="fc-next-btn" class="btn btn-primary">Từ tiếp theo <i class="fa-solid fa-arrow-right"></i></button>
             </div>
 
             <div class="hidden" id="mastered-container" style="max-height: 250px; overflow-y: auto;">
