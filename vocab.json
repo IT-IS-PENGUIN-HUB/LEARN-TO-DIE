@@ -323,6 +323,86 @@
       "exVi": "",
       "score": 0,
       "nextReview": 1777627299214
+    },
+    {
+      "id": "1778509072386",
+      "jp": "義務",
+      "kana": "ぎむ",
+      "meaning": "nghĩa vụ, bổn phận",
+      "exJp": "親には子供を育てる義務がある。\n(Cha mẹ có nghĩa vụ nuôi dạy con cái.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778509072386
+    },
+    {
+      "id": "1778509130716",
+      "jp": "掲げる",
+      "kana": "かかげる",
+      "meaning": "giương lên, treo lên, nêu cao (biểu ngữ, khẩu hiệu), đặt lên",
+      "exJp": "国旗を掲げる。(Giương quốc kỳ.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778509130716
+    },
+    {
+      "id": "1778509263718",
+      "jp": "失墜",
+      "kana": "しっつい",
+      "meaning": "sự sụp đổ, sự mất đi (quyền uy, danh tiếng, v.v.)",
+      "exJp": "彼の名声は失墜した。\nDanh tiếng của anh ta đã sụp đổ.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778509263718
+    },
+    {
+      "id": "1778509312281",
+      "jp": "傷つけ",
+      "kana": "きずつけ",
+      "meaning": "làm tổn thương, gây thương tích, làm đau lòng",
+      "exJp": "彼の言葉は彼女を傷つけた。 (Lời nói của anh ấy đã làm tổn thương cô ấy.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778509312281
+    },
+    {
+      "id": "1778509341391",
+      "jp": "不名誉",
+      "kana": "ふめいよ",
+      "meaning": "tai tiếng, ô nhục, mất danh dự",
+      "exJp": "それは彼の人生にとって不名誉な出来事だった。 (Đó là một sự kiện ô nhục trong cuộc đời anh ta.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778509341391
+    },
+    {
+      "id": "1778509460977",
+      "jp": "正当",
+      "kana": "せいとう",
+      "meaning": "chính đáng, hợp pháp",
+      "exJp": "正当な理由がない。 (Không có lý do chính đáng.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778509460977
+    },
+    {
+      "id": "1778509817911",
+      "jp": "盗用",
+      "kana": "とうよう",
+      "meaning": "đạo văn, sao chép, ăn cắp (ý tưởng)",
+      "exJp": "論文の盗用が発覚した。\n(Việc đạo văn của bài luận đã bị phát hiện.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778509817911
+    },
+    {
+      "id": "1778509880123",
+      "jp": "努め",
+      "kana": "つとめ",
+      "meaning": "công việc, bổn phận, nhiệm vụ, sự cố gắng, nỗ lực",
+      "exJp": "自分の努めを果たす。- Hoàn thành bổn phận của mình.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778509880123
     }
   ],
   "senmon": [
