@@ -403,6 +403,96 @@
       "exVi": "",
       "score": 0,
       "nextReview": 1778509880123
+    },
+    {
+      "id": "1778542895270",
+      "jp": "組織",
+      "kana": "そしき",
+      "meaning": "tổ chức",
+      "exJp": "私たちは新しい組織を設立した。(Chúng tôi đã thành lập một tổ chức mới.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778542895270
+    },
+    {
+      "id": "1778542957404",
+      "jp": "負う",
+      "kana": "おう",
+      "meaning": "mang, gánh vác, chịu đựng",
+      "exJp": "彼は会社の責任を負っている。(Anh ấy đang gánh vác trách nhiệm của công ty.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778542957404
+    },
+    {
+      "id": "1778543246998",
+      "jp": "関与",
+      "kana": "かんよ",
+      "meaning": "liên quan, tham gia, dính líu",
+      "exJp": "彼はその事件に関与している。\nAnh ấy có liên quan đến vụ án đó.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778543246998
+    },
+    {
+      "id": "1778543281382",
+      "jp": "怠る",
+      "kana": "おこたる",
+      "meaning": "sao nhãng, bỏ bê, lơ là",
+      "exJp": "勉強を怠るな。(Đừng lơ là việc học.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778543281382
+    },
+    {
+      "id": "1778543301906",
+      "jp": "公衆",
+      "kana": "こうしゅう",
+      "meaning": "công chúng, quần chúng, cộng đồng",
+      "exJp": "公衆の面前で話す。 (Nói trước công chúng.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778543301906
+    },
+    {
+      "id": "1778543306841",
+      "jp": "損なう",
+      "kana": "そこなう",
+      "meaning": "làm hỏng, làm tổn hại, làm thiệt hại, gây hại, phá hoại",
+      "exJp": "健康を損なう。 (Làm tổn hại sức khỏe.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778543306841
+    },
+    {
+      "id": "1778543319897",
+      "jp": "良心",
+      "kana": "りょうしん",
+      "meaning": "lương tâm",
+      "exJp": "彼は良心の呵責を感じた。\nAnh ấy cảm thấy lương tâm cắn rứt.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778543319897
+    },
+    {
+      "id": "1778543327268",
+      "jp": "信念",
+      "kana": "しんねん",
+      "meaning": "niềm tin, tín ngưỡng, lòng tin vững chắc",
+      "exJp": "彼は自分の信念を貫いた。(Anh ấy đã kiên định với niềm tin của mình.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778543327268
+    },
+    {
+      "id": "1778543337498",
+      "jp": "利益相反",
+      "kana": "りえきそうはん",
+      "meaning": "xung đột lợi ích",
+      "exJp": "利益相反は組織の信頼を損なう可能性があります。(Xung đột lợi ích có thể làm tổn hại đến sự tin cậy của tổ chức.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778543337498
     }
   ],
   "senmon": [
