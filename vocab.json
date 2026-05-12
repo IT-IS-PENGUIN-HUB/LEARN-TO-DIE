@@ -553,6 +553,56 @@
       "exVi": "",
       "score": 0,
       "nextReview": 1778544752711
+    },
+    {
+      "id": "1778627330926",
+      "jp": "破壊",
+      "kana": "はかい",
+      "meaning": "sự phá hoại, sự hủy diệt, sự phá hủy",
+      "exJp": "環境破壊は深刻な問題だ。(Phá hủy môi trường là một vấn đề nghiêm trọng.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778627330926
+    },
+    {
+      "id": "1778628229554",
+      "jp": "重視",
+      "kana": "じゅうし",
+      "meaning": "coi trọng, xem trọng, chú trọng, đặt nặng",
+      "exJp": "彼は結果を重視するタイプだ。 (Anh ấy là kiểu người coi trọng kết quả.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778628229554
+    },
+    {
+      "id": "1778628764378",
+      "jp": "守秘",
+      "kana": "しゅひ",
+      "meaning": "bảo mật, giữ bí mật",
+      "exJp": "守秘義務を守る必要があります。(Cần phải tuân thủ nghĩa vụ bảo mật.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778628764378
+    },
+    {
+      "id": "1778628837412",
+      "jp": "委ねる",
+      "kana": "ゆだねる",
+      "meaning": "giao phó, phó thác, ủy thác, trao cho (quyết định, số phận, trách nhiệm)",
+      "exJp": "運命に身を委ねる。(Phó mặc bản thân cho số phận.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778628837412
+    },
+    {
+      "id": "1778628875859",
+      "jp": "独自",
+      "kana": "どくじ",
+      "meaning": "độc đáo, riêng biệt, tự mình",
+      "exJp": "彼は独自の方法で問題を解決した。\n(Anh ấy đã giải quyết vấn đề bằng phương pháp độc đáo của riêng mình.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778628875859
     }
   ],
   "senmon": [
