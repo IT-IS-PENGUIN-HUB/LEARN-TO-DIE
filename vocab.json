@@ -493,6 +493,46 @@
       "exVi": "",
       "score": 0,
       "nextReview": 1778543337498
+    },
+    {
+      "id": "1778543950191",
+      "jp": "利益相反",
+      "kana": "りえきそうはん",
+      "meaning": "xung đột lợi ích",
+      "exJp": "彼は利益相反の疑いで調査されている。\nAnh ấy đang bị điều tra vì nghi ngờ xung đột lợi ích.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778543950191
+    },
+    {
+      "id": "1778543985312",
+      "jp": "公正さ",
+      "kana": "こうせいさ",
+      "meaning": "sự công bằng; tính công bằng; sự chính trực",
+      "exJp": "彼の公正さは皆に認められている。 - Sự công bằng của anh ấy được mọi người công nhận.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778543985312
+    },
+    {
+      "id": "1778544053502",
+      "jp": "雇用者",
+      "kana": "こようしゃ",
+      "meaning": "người lao động, người làm công, người được tuyển dụng",
+      "exJp": "雇用者の権利を保護する。 (Bảo vệ quyền lợi của người lao động.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778544053502
+    },
+    {
+      "id": "1778544086544",
+      "jp": "依頼者",
+      "kana": "いらいしゃ",
+      "meaning": "người yêu cầu, người ủy thác, khách hàng",
+      "exJp": "依頼者の希望に応じる。 (Đáp ứng mong muốn của người yêu cầu.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778544086544
     }
   ],
   "senmon": [
