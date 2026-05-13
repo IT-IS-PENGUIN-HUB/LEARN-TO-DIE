@@ -724,6 +724,26 @@
       "exVi": "",
       "score": 0,
       "nextReview": 1778686065151
+    },
+    {
+      "id": "1778686396424",
+      "jp": "図る",
+      "kana": "はかる",
+      "meaning": "lên kế hoạch, âm mưu, toan tính",
+      "exJp": "彼は世界征服を図っている。 (Anh ta đang âm mưu thống trị thế giới.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778686396424
+    },
+    {
+      "id": "1778686435200",
+      "jp": "位置付ける",
+      "kana": "いちづける",
+      "meaning": "định vị, xếp đặt, đặt vào vị trí, coi là",
+      "exJp": "この商品は市場でどのように位置付けられていますか？ (Sản phẩm này được định vị như thế nào trên thị trường?)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778686435200
     }
   ],
   "senmon": [
