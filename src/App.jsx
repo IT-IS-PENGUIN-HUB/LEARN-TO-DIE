@@ -6,17 +6,21 @@ import ExamList from './components/ExamList.jsx';
 import ExamView from './components/ExamView.jsx';
 import Footer from './components/Footer.jsx';
 import WordOfTheDay from './components/WordOfTheDay.jsx';
+import SettingsModal from './components/SettingsModal.jsx';
 import VocabModal from './components/vocab/VocabModal.jsx';
-import { VocabProvider } from './context/VocabProvider.jsx';
+import BackupPanel from './components/vocab/BackupPanel.jsx';
+import { VocabProvider, useVocab } from './context/VocabProvider.jsx';
 import { useTheme } from './hooks/useTheme.js';
-import { useVocab } from './context/VocabProvider.jsx';
+import { useSync } from './hooks/useSync.js';
 
 function AppInner() {
   const { theme, toggleTheme } = useTheme();
   const { dueTotal } = useVocab();
+  const sync = useSync();
   // view: {name:'home'} | {name:'subject', subjectId} | {name:'exam', subjectId, examId}
   const [view, setView] = useState({ name: 'home' });
   const [vocabOpen, setVocabOpen] = useState(false);
+  const [settingsOpen, setSettingsOpen] = useState(false);
 
   const goHome = () => setView({ name: 'home' });
   const openSubject = (subjectId) => setView({ name: 'subject', subjectId });
@@ -31,7 +35,7 @@ function AppInner() {
         onToggleTheme={toggleTheme}
         onSelectSubject={openSubject}
         onOpenVocab={() => setVocabOpen(true)}
-        onOpenSettings={() => {}}
+        onOpenSettings={() => setSettingsOpen(true)}
         dueCount={dueTotal}
       />
 
@@ -58,7 +62,15 @@ function AppInner() {
         <ExamView subjectId={view.subjectId} examId={view.examId} onBack={() => openSubject(view.subjectId)} />
       )}
 
-      {vocabOpen && <VocabModal onClose={() => setVocabOpen(false)} initialSubject={currentSubject} />}
+      {vocabOpen && (
+        <VocabModal
+          onClose={() => setVocabOpen(false)}
+          initialSubject={currentSubject}
+          backupSlot={<BackupPanel sync={sync} />}
+        />
+      )}
+
+      {settingsOpen && <SettingsModal onClose={() => setSettingsOpen(false)} sync={sync} />}
 
       <Footer />
     </>
