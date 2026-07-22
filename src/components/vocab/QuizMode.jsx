@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useVocab } from '../../context/VocabProvider.jsx';
 import { buildQueue } from '../../lib/srs.js';
 import { speakJapanese } from '../../services/tts.js';
@@ -37,14 +37,27 @@ export default function QuizMode({ subject, onRecordAnswer }) {
   const word = queue[idx] ?? null;
   const finished = queue.length > 0 && idx >= queue.length;
 
-  // 4 đáp án: nghĩa đúng + 3 nghĩa nhiễu (ưu tiên cùng môn, thiếu thì lấy môn khác)
-  const options = useMemo(() => {
-    if (!word) return [];
-    const samePool = vocab[subject].filter((w) => w.id !== word.id && w.meaning);
-    const otherPool = allWords.filter((w) => w.id !== word.id && w.meaning && !samePool.includes(w));
+  // Dữ liệu mới nhất cho việc TẠO câu hỏi, nhưng không được là dependency —
+  // auto-sync đổi vocab ngầm không được phép xáo lại đáp án đang hiển thị.
+  const poolRef = useRef({ vocab, allWords });
+  poolRef.current = { vocab, allWords };
+
+  // 4 đáp án: nghĩa đúng + 3 nghĩa nhiễu (ưu tiên cùng môn, thiếu thì lấy môn khác).
+  // CHỈ tạo một lần khi sang câu mới (idx/word đổi), sau đó đóng băng cho tới
+  // khi user trả lời xong và bấm "Câu tiếp theo".
+  const [options, setOptions] = useState([]);
+  useEffect(() => {
+    if (!word) {
+      setOptions([]);
+      return;
+    }
+    const { vocab: v, allWords: all } = poolRef.current;
+    const samePool = v[subject].filter((w) => w.id !== word.id && w.meaning);
+    const otherPool = all.filter((w) => w.id !== word.id && w.meaning && !samePool.includes(w));
     const distractors = shuffle([...shuffle(samePool).slice(0, 3), ...shuffle(otherPool)]).slice(0, 3);
-    return shuffle([word, ...distractors]);
-  }, [word, vocab, subject, allWords]);
+    setOptions(shuffle([word, ...distractors]));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [word, idx, session, subject]);
 
   const answered = chosen !== null;
 
