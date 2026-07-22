@@ -13,12 +13,14 @@ import BackupPanel from './components/vocab/BackupPanel.jsx';
 import { VocabProvider, useVocab } from './context/VocabProvider.jsx';
 import { useTheme } from './hooks/useTheme.js';
 import { useSync } from './hooks/useSync.js';
+import { useVocabReminder } from './hooks/useVocabReminder.js';
 import { recordAnswer } from './lib/stats.js';
 
 function AppInner() {
   const { theme, toggleTheme } = useTheme();
-  const { dueTotal } = useVocab();
+  const { dueTotal, allWords } = useVocab();
   const sync = useSync();
+  useVocabReminder(allWords);
   // view: {name:'home'} | {name:'subject', subjectId} | {name:'exam', subjectId, examId}
   const [view, setView] = useState({ name: 'home' });
   const [vocabOpen, setVocabOpen] = useState(false);

@@ -12,6 +12,8 @@ export const KEYS = {
   wotdDate: 'learn_to_die_wotd_date',
   wotdData: 'learn_to_die_wotd_data',
   stats: 'learn_to_die_stats',
+  reminderMin: 'learn_to_die_reminder_min',
+  reminderLast: 'learn_to_die_reminder_last',
 };
 
 export function loadJSON(key, fallback = null) {

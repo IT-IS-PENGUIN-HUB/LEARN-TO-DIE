@@ -8,6 +8,7 @@ export default function SettingsModal({ onClose, sync }) {
   const [ghUser, setGhUser] = useState(() => loadString(KEYS.ghUser));
   const [ghRepo, setGhRepo] = useState(() => loadString(KEYS.ghRepo));
   const [ghToken, setGhToken] = useState(() => loadString(KEYS.ghToken));
+  const [reminderMin, setReminderMin] = useState(() => loadString(KEYS.reminderMin) || '0');
   const [savedMsg, setSavedMsg] = useState('');
 
   const saveAll = () => {
@@ -16,6 +17,9 @@ export default function SettingsModal({ onClose, sync }) {
     saveString(KEYS.ghUser, ghUser.trim());
     saveString(KEYS.ghRepo, ghRepo.trim());
     saveString(KEYS.ghToken, ghToken.trim());
+    saveString(KEYS.reminderMin, reminderMin);
+    // Đổi chu kỳ thì cho phép nhắc ngay ở tick kế tiếp
+    saveString(KEYS.reminderLast, '0');
     setSavedMsg('Đã lưu cài đặt ✓');
     setTimeout(() => setSavedMsg(''), 2500);
   };
@@ -113,11 +117,26 @@ export default function SettingsModal({ onClose, sync }) {
         </div>
 
         <div className="settings-section">
-          <h3>Nhắc ôn tập</h3>
+          <h3>Nhắc từ vựng định kỳ (PC)</h3>
           <p className="settings-note">
-            Trên PC: hiện thông báo "N từ cần ôn" mỗi lần mở app. (iPhone không hỗ trợ thông báo nền cho web
-            app — hãy nhìn badge đỏ trên nút Từ vựng.)
+            Trong lúc trình duyệt/app còn mở (kể cả thu nhỏ), cứ mỗi chu kỳ sẽ hiện một từ cần ôn ở góc màn
+            hình. Cần bấm nút cấp quyền thông báo một lần. (iPhone không hỗ trợ thông báo nền cho web app —
+            hãy nhìn badge đỏ trên nút Từ vựng, hoặc dùng Phím tắt iOS.)
           </p>
+          <label htmlFor="set-reminder">Chu kỳ nhắc:</label>
+          <select
+            id="set-reminder"
+            className="dropdown"
+            style={{ width: '100%', marginBottom: '0.75rem' }}
+            value={reminderMin}
+            onChange={(e) => setReminderMin(e.target.value)}
+          >
+            <option value="0">Tắt</option>
+            <option value="10">Mỗi 10 phút</option>
+            <option value="20">Mỗi 20 phút</option>
+            <option value="30">Mỗi 30 phút</option>
+            <option value="60">Mỗi 1 giờ</option>
+          </select>
           <button
             type="button"
             className="btn btn-sm btn-outline"
@@ -128,10 +147,10 @@ export default function SettingsModal({ onClose, sync }) {
                 return;
               }
               const perm = await Notification.requestPermission();
-              setSavedMsg(perm === 'granted' ? 'Đã bật thông báo nhắc ôn ✓' : 'Bạn đã từ chối quyền thông báo.');
+              setSavedMsg(perm === 'granted' ? 'Đã cấp quyền thông báo ✓ (nhớ chọn chu kỳ rồi Lưu)' : 'Bạn đã từ chối quyền thông báo.');
             }}
           >
-            🔔 Bật thông báo nhắc ôn (desktop)
+            🔔 Cấp quyền thông báo
           </button>
         </div>
 
