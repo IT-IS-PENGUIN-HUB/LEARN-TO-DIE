@@ -1,0 +1,761 @@
+{
+  "kiso": [
+    {
+      "id": "1",
+      "jp": "製造物",
+      "kana": "せいぞうぶつ",
+      "meaning": "Sản phẩm / Đồ được chế tạo",
+      "exJp": "製造物責任法",
+      "exVi": "Luật trách nhiệm sản phẩm",
+      "score": 0,
+      "mastered": false,
+      "nextReview": 1777620662742
+    },
+    {
+      "id": "2",
+      "jp": "欠陥",
+      "kana": "けっかん",
+      "meaning": "Khuyết tật / Lỗi",
+      "exJp": "システムに欠陥がある",
+      "exVi": "Hệ thống có khuyết tật",
+      "score": 0,
+      "mastered": false,
+      "nextReview": 1777620662742
+    },
+    {
+      "id": "1777720257134",
+      "jp": "直列",
+      "kana": "ちょくれつ",
+      "meaning": "nối tiếp, mắc nối tiếp (điện)",
+      "exJp": "電池を直列につなぐ。\nMắc nối tiếp các cục pin.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777720257134
+    },
+    {
+      "id": "1777720404851",
+      "jp": "並列",
+      "kana": "へいれつ",
+      "meaning": "song song, song hành",
+      "exJp": "このシステムは並列処理を採用しています。(Hệ thống này sử dụng xử lý song song.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777720404851
+    },
+    {
+      "id": "1777720903916",
+      "jp": "待ち行列長",
+      "kana": "まちぎょうれつちょう",
+      "meaning": "độ dài hàng đợi, chiều dài hàng đợi",
+      "exJp": "待ち行列長が長くなると、システムの応答時間が遅くなる可能性があります。\n(Nếu độ dài hàng đợi tăng lên, thời gian phản hồi của hệ thống có thể bị chậm lại.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777720903916
+    },
+    {
+      "id": "1777721241746",
+      "jp": "代入",
+      "kana": "だいにゅう",
+      "meaning": "sự thay thế, sự gán (giá trị)",
+      "exJp": "変数に値を代入する。: Gán giá trị vào biến.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777721241746
+    },
+    {
+      "id": "1777721495585",
+      "jp": "アロ ーダイアグラム",
+      "kana": "あろーだいあぐらむ",
+      "meaning": "sơ đồ mũi tên, biểu đồ dòng chảy",
+      "exJp": "アローダイアグラムを作成する。\nTạo sơ đồ mũi tên.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777721495585
+    },
+    {
+      "id": "1777721509635",
+      "jp": "投じる",
+      "kana": "とうじる",
+      "meaning": "ném, quăng, bỏ vào, đầu tư, gửi gắm",
+      "exJp": "このプロジェクトに資金を投じる。: Đầu tư vốn vào dự án này.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777721509635
+    },
+    {
+      "id": "1777728417104",
+      "jp": "相関",
+      "kana": "そうかん",
+      "meaning": "tương quan",
+      "exJp": "二つの事柄には相関関係がある。\n(Hai sự việc có mối quan hệ tương quan.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777728417104
+    },
+    {
+      "id": "1777728443422",
+      "jp": "利得表",
+      "kana": "りとくひょう",
+      "meaning": "bảng lợi ích, bảng lợi nhuận, bảng chi phí lợi ích",
+      "exJp": "このゲームの利得表を分析する。 (Phân tích bảng lợi ích của trò chơi này.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777728443422
+    },
+    {
+      "id": "1777729167593",
+      "jp": "最適化",
+      "kana": "さいてきか",
+      "meaning": "tối ưu hóa",
+      "exJp": "このソフトウェアは、システム性能を最適化するために設計されています。\nPhần mềm này được thiết kế để tối ưu hóa hiệu suất hệ thống.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777729167593
+    },
+    {
+      "id": "1777730105218",
+      "jp": "玉掛け",
+      "kana": "たまかけ",
+      "meaning": "công việc treo móc cẩu vật nặng, công việc móc cẩu hàng hóa",
+      "exJp": "玉掛け作業は危険を伴うため、慎重に行う必要があります。 (Công việc móc cẩu tiềm ẩn nguy hiểm, nên cần thực hiện hết sức cẩn thận.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777730105218
+    },
+    {
+      "id": "1777730129573",
+      "jp": "摂取",
+      "kana": "せっしゅ",
+      "meaning": "hấp thụ, nạp vào, dung nạp, tiếp thu (chất dinh dưỡng, năng lượng, kiến thức, v.v.)",
+      "exJp": "この薬は食後に摂取してください。 (Xin hãy uống thuốc này sau bữa ăn.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777730129573
+    },
+    {
+      "id": "1777730342568",
+      "jp": "絞れる",
+      "kana": "しぼれる",
+      "meaning": "có thể vắt được, có thể ép được, có thể bóp được",
+      "exJp": "このタオルはまだ絞れる。 (Cái khăn này vẫn còn có thể vắt được.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777730342568
+    },
+    {
+      "id": "1777733234617",
+      "jp": "2 進数",
+      "kana": "にしんすう",
+      "meaning": "số nhị phân",
+      "exJp": "コンピュータは2進数で動作します。(Máy tính hoạt động bằng số nhị phân.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777733234617
+    },
+    {
+      "id": "1777737979254",
+      "jp": "等価な論理式",
+      "kana": "とうかなろんりしき",
+      "meaning": "biểu thức logic tương đương",
+      "exJp": "「PならばQ」と「QでないならばPでない」は等価な論理式です。\n\"Nếu P thì Q\" và \"Nếu không Q thì không P\" là các biểu thức logic tương đương.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777737979254
+    },
+    {
+      "id": "1777782561338",
+      "jp": "一次キャッシュ",
+      "kana": "いちじキャッシュ",
+      "meaning": "bộ nhớ đệm cấp 1; cache cấp 1",
+      "exJp": "CPUには高速な一次キャッシュが搭載されています。\n(CPU được trang bị bộ nhớ đệm cấp 1 tốc độ cao.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777782561338
+    },
+    {
+      "id": "1777782588356",
+      "jp": "主記憶",
+      "kana": "しゅきおく",
+      "meaning": "bộ nhớ chính (của máy tính), bộ nhớ sơ cấp",
+      "exJp": "主記憶はコンピュータの主要な部品です。\nBộ nhớ chính là một thành phần quan trọng của máy tính.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777782588356
+    },
+    {
+      "id": "1777789282324",
+      "jp": "記述",
+      "kana": "きじゅつ",
+      "meaning": "miêu tả, mô tả, sự ghi chép",
+      "exJp": "この本の記述は正確だ。\nMô tả trong cuốn sách này rất chính xác.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777789282324
+    },
+    {
+      "id": "1777790675213",
+      "jp": "流出",
+      "kana": "りゅうしゅつ",
+      "meaning": "rò rỉ, chảy ra, tiết lộ, lọt ra ngoài",
+      "exJp": "会社の機密情報が流出した。\nThông tin mật của công ty đã bị rò rỉ.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777790675213
+    },
+    {
+      "id": "1777793253869",
+      "jp": "文字列",
+      "kana": "もじれつ",
+      "meaning": "chuỗi ký tự, chuỗi",
+      "exJp": "文字列を結合する。Nối các chuỗi ký tự lại với nhau.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777793253869
+    },
+    {
+      "id": "1777820745662",
+      "jp": "歪み",
+      "kana": "ひずみ",
+      "meaning": "sự méo mó, sự biến dạng, sự lệch lạc",
+      "exJp": "このレンズには歪みがある。 (Thấu kính này bị méo mó/biến dạng.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777820745662
+    },
+    {
+      "id": "1777820913264",
+      "jp": "依存",
+      "kana": "いぞん",
+      "meaning": "sự phụ thuộc, sự lệ thuộc",
+      "exJp": "彼は親に依存している。\nAnh ấy phụ thuộc vào cha mẹ.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777820913264
+    },
+    {
+      "id": "1777821592079",
+      "jp": "内挿",
+      "kana": "ないそう",
+      "meaning": "nội suy",
+      "exJp": "内挿法は未知のデータ点を推定するために使用されます。\n(Phương pháp nội suy được sử dụng để ước tính các điểm dữ liệu chưa biết.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777821592079
+    },
+    {
+      "id": "1777821748096",
+      "jp": "遠方",
+      "kana": "えんぽう",
+      "meaning": "xa xôi, nơi xa, từ xa",
+      "exJp": "遠方からのお客様。\n(Khách hàng từ nơi xa.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777821748096
+    },
+    {
+      "id": "1777821755365",
+      "jp": "楕円孔",
+      "kana": "だえんこう",
+      "meaning": "lỗ hình bầu dục, lỗ elip",
+      "exJp": "この板には楕円孔が開いています。 (Trên tấm ván này có một lỗ hình bầu dục.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777821755365
+    },
+    {
+      "id": "1777824763133",
+      "jp": "熱伝導率",
+      "kana": "ねつでんどうりつ",
+      "meaning": "Hệ số dẫn nhiệt, độ dẫn nhiệt",
+      "exJp": "この材料は熱伝導率が高い。Vật liệu này có hệ số dẫn nhiệt cao.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777824763133
+    },
+    {
+      "id": "1777825688981",
+      "jp": "感覚",
+      "kana": "かんかく",
+      "meaning": "giác quan, cảm giác",
+      "exJp": "鋭い感覚を持っています。(Anh ấy có giác quan nhạy bén.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777825688981
+    },
+    {
+      "id": "1777826511195",
+      "jp": "酢酸",
+      "kana": "さくさん",
+      "meaning": "axit axetic",
+      "exJp": "酢酸は食品の保存料として使われます。 (Axit axetic được sử dụng làm chất bảo quản thực phẩm.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777826511195
+    },
+    {
+      "id": "1777826634538",
+      "jp": "酸性度",
+      "kana": "さんせいど",
+      "meaning": "độ axit, tính axit",
+      "exJp": "この土壌は酸性度が高い。\nĐộ axit của loại đất này cao.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777826634538
+    },
+    {
+      "id": "1777830220518",
+      "jp": "遮蔽",
+      "kana": "しゃへい",
+      "meaning": "che chắn, che đậy, chắn, làm khuất, sự che chắn",
+      "exJp": "放射線を遮蔽する。(Che chắn bức xạ.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777830220518
+    }
+  ],
+  "tekisei": [
+    {
+      "id": "1777627299214",
+      "jp": "私利私欲",
+      "kana": "しりしよく",
+      "meaning": "lợi ích cá nhân, tư lợi, ích kỷ, tư lợi cá nhân",
+      "exJp": "彼は私利私欲のために行動する。 (Anh ta hành động vì tư lợi cá nhân.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777627299214,
+      "mastered": true
+    },
+    {
+      "id": "1778509072386",
+      "jp": "義務",
+      "kana": "ぎむ",
+      "meaning": "nghĩa vụ, bổn phận",
+      "exJp": "親には子供を育てる義務がある。\n(Cha mẹ có nghĩa vụ nuôi dạy con cái.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778509072386
+    },
+    {
+      "id": "1778509130716",
+      "jp": "掲げる",
+      "kana": "かかげる",
+      "meaning": "giương lên, treo lên, nêu cao (biểu ngữ, khẩu hiệu), đặt lên",
+      "exJp": "国旗を掲げる。(Giương quốc kỳ.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778509130716
+    },
+    {
+      "id": "1778509263718",
+      "jp": "失墜",
+      "kana": "しっつい",
+      "meaning": "sự sụp đổ, sự mất đi (quyền uy, danh tiếng, v.v.)",
+      "exJp": "彼の名声は失墜した。\nDanh tiếng của anh ta đã sụp đổ.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778509263718
+    },
+    {
+      "id": "1778509312281",
+      "jp": "傷つけ",
+      "kana": "きずつけ",
+      "meaning": "làm tổn thương, gây thương tích, làm đau lòng",
+      "exJp": "彼の言葉は彼女を傷つけた。 (Lời nói của anh ấy đã làm tổn thương cô ấy.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778509312281
+    },
+    {
+      "id": "1778509341391",
+      "jp": "不名誉",
+      "kana": "ふめいよ",
+      "meaning": "tai tiếng, ô nhục, mất danh dự",
+      "exJp": "それは彼の人生にとって不名誉な出来事だった。 (Đó là một sự kiện ô nhục trong cuộc đời anh ta.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778509341391
+    },
+    {
+      "id": "1778509460977",
+      "jp": "正当",
+      "kana": "せいとう",
+      "meaning": "chính đáng, hợp pháp",
+      "exJp": "正当な理由がない。 (Không có lý do chính đáng.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778509460977
+    },
+    {
+      "id": "1778509817911",
+      "jp": "盗用",
+      "kana": "とうよう",
+      "meaning": "đạo văn, sao chép, ăn cắp (ý tưởng)",
+      "exJp": "論文の盗用が発覚した。\n(Việc đạo văn của bài luận đã bị phát hiện.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778509817911
+    },
+    {
+      "id": "1778509880123",
+      "jp": "努め",
+      "kana": "つとめ",
+      "meaning": "công việc, bổn phận, nhiệm vụ, sự cố gắng, nỗ lực",
+      "exJp": "自分の努めを果たす。- Hoàn thành bổn phận của mình.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778509880123
+    },
+    {
+      "id": "1778542895270",
+      "jp": "組織",
+      "kana": "そしき",
+      "meaning": "tổ chức",
+      "exJp": "私たちは新しい組織を設立した。(Chúng tôi đã thành lập một tổ chức mới.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778542895270
+    },
+    {
+      "id": "1778542957404",
+      "jp": "負う",
+      "kana": "おう",
+      "meaning": "mang, gánh vác, chịu đựng",
+      "exJp": "彼は会社の責任を負っている。(Anh ấy đang gánh vác trách nhiệm của công ty.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778542957404
+    },
+    {
+      "id": "1778543246998",
+      "jp": "関与",
+      "kana": "かんよ",
+      "meaning": "liên quan, tham gia, dính líu",
+      "exJp": "彼はその事件に関与している。\nAnh ấy có liên quan đến vụ án đó.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778543246998
+    },
+    {
+      "id": "1778543281382",
+      "jp": "怠る",
+      "kana": "おこたる",
+      "meaning": "sao nhãng, bỏ bê, lơ là",
+      "exJp": "勉強を怠るな。(Đừng lơ là việc học.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778543281382
+    },
+    {
+      "id": "1778543301906",
+      "jp": "公衆",
+      "kana": "こうしゅう",
+      "meaning": "công chúng, quần chúng, cộng đồng",
+      "exJp": "公衆の面前で話す。 (Nói trước công chúng.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778543301906
+    },
+    {
+      "id": "1778543306841",
+      "jp": "損なう",
+      "kana": "そこなう",
+      "meaning": "làm hỏng, làm tổn hại, làm thiệt hại, gây hại, phá hoại",
+      "exJp": "健康を損なう。 (Làm tổn hại sức khỏe.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778543306841
+    },
+    {
+      "id": "1778543319897",
+      "jp": "良心",
+      "kana": "りょうしん",
+      "meaning": "lương tâm",
+      "exJp": "彼は良心の呵責を感じた。\nAnh ấy cảm thấy lương tâm cắn rứt.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778543319897
+    },
+    {
+      "id": "1778543327268",
+      "jp": "信念",
+      "kana": "しんねん",
+      "meaning": "niềm tin, tín ngưỡng, lòng tin vững chắc",
+      "exJp": "彼は自分の信念を貫いた。(Anh ấy đã kiên định với niềm tin của mình.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778543327268
+    },
+    {
+      "id": "1778543337498",
+      "jp": "利益相反",
+      "kana": "りえきそうはん",
+      "meaning": "xung đột lợi ích",
+      "exJp": "利益相反は組織の信頼を損なう可能性があります。(Xung đột lợi ích có thể làm tổn hại đến sự tin cậy của tổ chức.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778543337498
+    },
+    {
+      "id": "1778543950191",
+      "jp": "利益相反",
+      "kana": "りえきそうはん",
+      "meaning": "xung đột lợi ích",
+      "exJp": "彼は利益相反の疑いで調査されている。\nAnh ấy đang bị điều tra vì nghi ngờ xung đột lợi ích.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778543950191
+    },
+    {
+      "id": "1778543985312",
+      "jp": "公正さ",
+      "kana": "こうせいさ",
+      "meaning": "sự công bằng; tính công bằng; sự chính trực",
+      "exJp": "彼の公正さは皆に認められている。 - Sự công bằng của anh ấy được mọi người công nhận.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778543985312
+    },
+    {
+      "id": "1778544053502",
+      "jp": "雇用者",
+      "kana": "こようしゃ",
+      "meaning": "người lao động, người làm công, người được tuyển dụng",
+      "exJp": "雇用者の権利を保護する。 (Bảo vệ quyền lợi của người lao động.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778544053502
+    },
+    {
+      "id": "1778544086544",
+      "jp": "依頼者",
+      "kana": "いらいしゃ",
+      "meaning": "người yêu cầu, người ủy thác, khách hàng",
+      "exJp": "依頼者の希望に応じる。 (Đáp ứng mong muốn của người yêu cầu.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778544086544
+    },
+    {
+      "id": "1778544726741",
+      "jp": "遂行",
+      "kana": "すいこう",
+      "meaning": "thực hiện, thi hành, tiến hành, hoàn thành",
+      "exJp": "計画を遂行する。(Thực hiện kế hoạch.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778544726741
+    },
+    {
+      "id": "1778544752711",
+      "jp": "与える",
+      "kana": "あたえる",
+      "meaning": "cho, ban, cung cấp, gây ra",
+      "exJp": "人に喜びを与える。(Mang lại niềm vui cho mọi người.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778544752711
+    },
+    {
+      "id": "1778627330926",
+      "jp": "破壊",
+      "kana": "はかい",
+      "meaning": "sự phá hoại, sự hủy diệt, sự phá hủy",
+      "exJp": "環境破壊は深刻な問題だ。(Phá hủy môi trường là một vấn đề nghiêm trọng.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778627330926
+    },
+    {
+      "id": "1778628229554",
+      "jp": "重視",
+      "kana": "じゅうし",
+      "meaning": "coi trọng, xem trọng, chú trọng, đặt nặng",
+      "exJp": "彼は結果を重視するタイプだ。 (Anh ấy là kiểu người coi trọng kết quả.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778628229554
+    },
+    {
+      "id": "1778628764378",
+      "jp": "守秘",
+      "kana": "しゅひ",
+      "meaning": "bảo mật, giữ bí mật",
+      "exJp": "守秘義務を守る必要があります。(Cần phải tuân thủ nghĩa vụ bảo mật.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778628764378
+    },
+    {
+      "id": "1778628837412",
+      "jp": "委ねる",
+      "kana": "ゆだねる",
+      "meaning": "giao phó, phó thác, ủy thác, trao cho (quyết định, số phận, trách nhiệm)",
+      "exJp": "運命に身を委ねる。(Phó mặc bản thân cho số phận.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778628837412
+    },
+    {
+      "id": "1778628875859",
+      "jp": "独自",
+      "kana": "どくじ",
+      "meaning": "độc đáo, riêng biệt, tự mình",
+      "exJp": "彼は独自の方法で問題を解決した。\n(Anh ấy đã giải quyết vấn đề bằng phương pháp độc đáo của riêng mình.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778628875859
+    },
+    {
+      "id": "1778684305762",
+      "jp": "予備校生",
+      "kana": "よびこうせい",
+      "meaning": "học sinh trường luyện thi; học sinh ôn thi đại học",
+      "exJp": "彼は予備校生として大学合格を目指している。 (Anh ấy đang đặt mục tiêu đỗ đại học với tư cách là một học sinh trường luyện thi.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778684305762
+    },
+    {
+      "id": "1778684360237",
+      "jp": "カンニング",
+      "kana": "かんにんぐ",
+      "meaning": "Quay cóp, gian lận (thi cử)",
+      "exJp": "試験中にカンニングをするのは許されません。\nKhông được phép quay cóp trong giờ thi.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778684360237
+    },
+    {
+      "id": "1778684412094",
+      "jp": "手口",
+      "kana": "てぐち",
+      "meaning": "thủ đoạn, mánh khóe, phương thức (gây án)",
+      "exJp": "警察は犯人の手口を捜査している。\nCảnh sát đang điều tra thủ đoạn của tội phạm.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778684412094
+    },
+    {
+      "id": "1778684448781",
+      "jp": "投稿",
+      "kana": "とうこう",
+      "meaning": "đăng bài, đăng tải, gửi bài (báo, tạp chí)",
+      "exJp": "記事を投稿する。\nĐăng bài viết.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778684448781
+    },
+    {
+      "id": "1778684499021",
+      "jp": "新聞報道",
+      "kana": "しんぶんほうどう",
+      "meaning": "tin tức báo chí, tường thuật của báo chí",
+      "exJp": "新聞報道によると、事故の原因はまだ不明です。\nTheo tin tức báo chí, nguyên nhân vụ tai nạn vẫn chưa được làm rõ.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778684499021
+    },
+    {
+      "id": "1778684735290",
+      "jp": "相次いで",
+      "kana": "あいついで",
+      "meaning": "liên tiếp, nối tiếp nhau",
+      "exJp": "相次いで事件が起こった。Các vụ án xảy ra liên tiếp.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778684735290
+    },
+    {
+      "id": "1778684776293",
+      "jp": "偽計",
+      "kana": "ぎけい",
+      "meaning": "âm mưu, thủ đoạn gian lận, kế sách gian xảo",
+      "exJp": "偽計を用いて人を騙す。 (Dùng mưu mẹo để lừa gạt người khác.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778684776293
+    },
+    {
+      "id": "1778684989287",
+      "jp": "妨害罪",
+      "kana": "ぼうがいざい",
+      "meaning": "Tội gây cản trở, tội cản trở",
+      "exJp": "彼は公務執行妨害罪で逮捕された。Anh ta bị bắt vì tội cản trở người thi hành công vụ.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778684989287
+    },
+    {
+      "id": "1778685017659",
+      "jp": "偽計業務妨害罪",
+      "kana": "ぎけいぎょうむぼうがいざい",
+      "meaning": "Tội cản trở hoạt động kinh doanh bằng thủ đoạn gian lận/lừa dối",
+      "exJp": "偽計業務妨害罪で逮捕された。 (Anh ta đã bị bắt vì tội cản trở kinh doanh bằng thủ đoạn gian lận.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778685017659
+    },
+    {
+      "id": "1778685050478",
+      "jp": "捜査",
+      "kana": "そうさ",
+      "meaning": "điều tra, tìm kiếm, khám xét",
+      "exJp": "警察は事件の捜査を開始した。\nCảnh sát đã bắt đầu điều tra vụ án.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778685050478
+    },
+    {
+      "id": "1778685087407",
+      "jp": "容疑者",
+      "kana": "ようぎしゃ",
+      "meaning": "nghi phạm, đối tượng tình nghi",
+      "exJp": "容疑者は犯行を否認している。\nNghi phạm phủ nhận hành vi phạm tội.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778685087407
+    },
+    {
+      "id": "1778686065151",
+      "jp": "逮捕",
+      "kana": "たいほ",
+      "meaning": "bắt giữ, sự bắt giữ, sự bắt bớ",
+      "exJp": "犯人を逮捕する。(Bắt giữ tội phạm.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778686065151
+    },
+    {
+      "id": "1778686396424",
+      "jp": "図る",
+      "kana": "はかる",
+      "meaning": "lên kế hoạch, âm mưu, toan tính",
+      "exJp": "彼は世界征服を図っている。 (Anh ta đang âm mưu thống trị thế giới.)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778686396424
+    },
+    {
+      "id": "1778686435200",
+      "jp": "位置付ける",
+      "kana": "いちづける",
+      "meaning": "định vị, xếp đặt, đặt vào vị trí, coi là",
+      "exJp": "この商品は市場でどのように位置付けられていますか？ (Sản phẩm này được định vị như thế nào trên thị trường?)",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1778686435200
+    }
+  ],
+  "senmon": [
+    {
+      "id": "1777626620858",
+      "jp": "鉛直",
+      "kana": "えんちょく",
+      "meaning": "thẳng đứng, chiều thẳng đứng, phương thẳng đứng",
+      "exJp": "鉛直方向の動き。Chuyển động theo phương thẳng đứng.",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1777626620858
+    }
+  ]
+}

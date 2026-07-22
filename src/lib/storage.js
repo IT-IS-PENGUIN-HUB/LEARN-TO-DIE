@@ -1,0 +1,48 @@
+// localStorage helpers — giữ nguyên toàn bộ key learn_to_die_* của bản cũ
+// để thiết bị đang dùng không mất dữ liệu khi lên bản mới.
+
+export const KEYS = {
+  vocab: 'learn_to_die_vocab',
+  theme: 'learn_to_die_theme',
+  geminiKey: 'learn_to_die_gemini_key',
+  deepseekKey: 'learn_to_die_deepseek_key',
+  ghUser: 'learn_to_die_gh_user',
+  ghRepo: 'learn_to_die_gh_repo',
+  ghToken: 'learn_to_die_gh_token',
+  wotdDate: 'learn_to_die_wotd_date',
+  wotdData: 'learn_to_die_wotd_data',
+  stats: 'learn_to_die_stats',
+};
+
+export function loadJSON(key, fallback = null) {
+  try {
+    const raw = localStorage.getItem(key);
+    return raw === null ? fallback : JSON.parse(raw);
+  } catch {
+    return fallback;
+  }
+}
+
+export function saveJSON(key, value) {
+  try {
+    localStorage.setItem(key, JSON.stringify(value));
+  } catch (e) {
+    console.error('Không lưu được localStorage:', e);
+  }
+}
+
+export function loadString(key, fallback = '') {
+  try {
+    return localStorage.getItem(key) ?? fallback;
+  } catch {
+    return fallback;
+  }
+}
+
+export function saveString(key, value) {
+  try {
+    localStorage.setItem(key, value);
+  } catch (e) {
+    console.error('Không lưu được localStorage:', e);
+  }
+}
