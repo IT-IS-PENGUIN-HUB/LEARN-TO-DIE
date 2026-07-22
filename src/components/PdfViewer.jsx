@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import * as pdfjsLib from 'pdfjs-dist';
+import { TextLayer } from 'pdfjs-dist';
 import workerUrl from 'pdfjs-dist/build/pdf.worker.min.mjs?url';
 import { IconArrowLeft, IconArrowRight, IconExpand, IconX } from './icons.jsx';
 
@@ -17,6 +18,8 @@ const ZOOM_MAX = 4;
 export default function PdfViewer({ url, title }) {
   const wrapRef = useRef(null);
   const canvasRef = useRef(null);
+  const pageRef = useRef(null);
+  const textLayerRef = useRef(null);
   const [doc, setDoc] = useState(null);
   const [pageNum, setPageNum] = useState(1);
   const [zoom, setZoom] = useState(1); // hệ số nhân trên scale fit-width
@@ -32,15 +35,27 @@ export default function PdfViewer({ url, title }) {
     setPageNum(1);
     setZoom(1);
     (async () => {
-      try {
+      const load = () => {
         task = pdfjsLib.getDocument(url);
-        const d = await task.promise;
+        return task.promise;
+      };
+      try {
+        let d;
+        try {
+          d = await load();
+        } catch (e) {
+          // StrictMode (dev) có thể destroy worker giữa chừng → thử lại 1 lần với worker mới
+          if (!cancelled && /destroyed/i.test(e?.message ?? '')) d = await load();
+          else throw e;
+        }
         if (cancelled) return;
         setDoc(d);
         setStatus('ready');
       } catch (e) {
-        console.error('PDF.js không tải được PDF:', e);
-        if (!cancelled) setStatus('error');
+        if (!cancelled) {
+          console.error('PDF.js không tải được PDF:', e);
+          setStatus('error');
+        }
       }
     })();
     return () => {
@@ -49,11 +64,12 @@ export default function PdfViewer({ url, title }) {
     };
   }, [url]);
 
-  // Render trang hiện tại
+  // Render trang hiện tại (canvas + text layer để bôi đen/copy được chữ)
   useEffect(() => {
     if (!doc) return undefined;
     let cancelled = false;
     let renderTask = null;
+    let textLayerTask = null;
     (async () => {
       try {
         const page = await doc.getPage(pageNum);
@@ -74,7 +90,29 @@ export default function PdfViewer({ url, title }) {
           viewport: vp,
           transform: dpr !== 1 ? [dpr, 0, 0, dpr, 0, 0] : undefined,
         });
-        await renderTask.promise;
+
+        // Text layer (lớp chữ trong suốt để bôi đen/copy) chạy SONG SONG với
+        // canvas render — không phụ thuộc nhau, trang có chữ chọn được sớm hơn.
+        // PDF dạng scan không có chữ thì lớp này rỗng, không sao.
+        const textDiv = textLayerRef.current;
+        const pageDiv = pageRef.current;
+        let textPromise = Promise.resolve();
+        if (textDiv && pageDiv) {
+          textDiv.replaceChildren();
+          textDiv.style.width = canvas.style.width;
+          textDiv.style.height = canvas.style.height;
+          pageDiv.style.setProperty('--scale-factor', String(vp.scale));
+          textLayerTask = new TextLayer({
+            textContentSource: page.streamTextContent(),
+            container: textDiv,
+            viewport: vp,
+          });
+          textPromise = textLayerTask.render().catch((e) => {
+            console.warn('Không tạo được text layer (PDF dạng scan?):', e);
+          });
+        }
+
+        await Promise.allSettled([renderTask.promise, textPromise]);
       } catch (e) {
         if (e?.name !== 'RenderingCancelledException') console.error('Lỗi render trang PDF:', e);
       }
@@ -82,6 +120,7 @@ export default function PdfViewer({ url, title }) {
     return () => {
       cancelled = true;
       renderTask?.cancel();
+      textLayerTask?.cancel();
     };
   }, [doc, pageNum, zoom, fullscreen]);
 
@@ -169,7 +208,10 @@ export default function PdfViewer({ url, title }) {
       </div>
       <div className="pdf-canvas-wrap" ref={wrapRef}>
         {status === 'loading' && <p className="pdf-status">Đang tải PDF…</p>}
-        <canvas ref={canvasRef} role="img" aria-label={`${title} — trang ${pageNum}`} />
+        <div className="pdf-page" ref={pageRef}>
+          <canvas ref={canvasRef} role="img" aria-label={`${title} — trang ${pageNum}`} />
+          <div className="textLayer" ref={textLayerRef} />
+        </div>
       </div>
     </div>
   );
