@@ -55,10 +55,10 @@
       "meaning": "độ dài hàng đợi, chiều dài hàng đợi",
       "exJp": "待ち行列長が長くなると、システムの応答時間が遅くなる可能性があります。\n(Nếu độ dài hàng đợi tăng lên, thời gian phản hồi của hệ thống có thể bị chậm lại.)",
       "exVi": "",
-      "score": 0,
-      "nextReview": 1777720903916,
+      "score": 1,
+      "nextReview": 1784848381507,
       "mastered": false,
-      "updatedAt": 0
+      "updatedAt": 1784761981507
     },
     {
       "id": "1777721241746",
