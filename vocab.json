@@ -7,10 +7,10 @@
       "meaning": "Sản phẩm / Đồ được chế tạo",
       "exJp": "製造物責任法",
       "exVi": "Luật trách nhiệm sản phẩm",
-      "score": 0,
-      "nextReview": 1777620662742,
-      "mastered": false,
-      "updatedAt": 0
+      "score": 1,
+      "nextReview": 1784818107210,
+      "mastered": true,
+      "updatedAt": 1784731711078
     },
     {
       "id": "2",
@@ -406,9 +406,9 @@
       "exJp": "親には子供を育てる義務がある。\n(Cha mẹ có nghĩa vụ nuôi dạy con cái.)",
       "exVi": "",
       "score": 0,
-      "nextReview": 1778509072386,
+      "nextReview": 1784731589852,
       "mastered": false,
-      "updatedAt": 0
+      "updatedAt": 1784731589852
     },
     {
       "id": "1778509130716",
