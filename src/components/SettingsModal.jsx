@@ -112,6 +112,29 @@ export default function SettingsModal({ onClose, sync }) {
           )}
         </div>
 
+        <div className="settings-section">
+          <h3>Nhắc ôn tập</h3>
+          <p className="settings-note">
+            Trên PC: hiện thông báo "N từ cần ôn" mỗi lần mở app. (iPhone không hỗ trợ thông báo nền cho web
+            app — hãy nhìn badge đỏ trên nút Từ vựng.)
+          </p>
+          <button
+            type="button"
+            className="btn btn-sm btn-outline"
+            style={{ width: '100%' }}
+            onClick={async () => {
+              if (typeof Notification === 'undefined') {
+                setSavedMsg('Trình duyệt này không hỗ trợ thông báo.');
+                return;
+              }
+              const perm = await Notification.requestPermission();
+              setSavedMsg(perm === 'granted' ? 'Đã bật thông báo nhắc ôn ✓' : 'Bạn đã từ chối quyền thông báo.');
+            }}
+          >
+            🔔 Bật thông báo nhắc ôn (desktop)
+          </button>
+        </div>
+
         <button type="button" className="btn btn-primary" style={{ width: '100%' }} onClick={saveAll}>
           Lưu tất cả cài đặt
         </button>
