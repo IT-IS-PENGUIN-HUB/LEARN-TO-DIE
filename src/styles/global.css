@@ -1205,35 +1205,24 @@ textarea.text-input {
 }
 
 /* ============ PDF fullscreen ============ */
-.pdf-fullscreen-overlay {
+.pdf-shell-fullscreen {
   position: fixed;
   inset: 0;
-  background: #000;
+  background: #1a1c1e;
   z-index: 3000;
   display: flex;
   flex-direction: column;
+  padding: max(0.5rem, env(safe-area-inset-top)) 0.5rem calc(0.5rem + env(safe-area-inset-bottom));
 }
 
-.pdf-fullscreen-bar {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: max(0.5rem, env(safe-area-inset-top)) 1rem 0.5rem;
-  background: rgba(0, 0, 0, 0.8);
-  gap: 0.75rem;
-  color: #aaa;
-  font-size: 0.85rem;
+.pdf-shell-fullscreen .pdf-toolbar {
+  padding: 0 0.25rem;
 }
 
-.pdf-fullscreen-body {
+.pdf-shell-fullscreen .pdf-canvas-wrap {
   flex: 1;
+  height: auto;
   min-height: 0;
-}
-
-.pdf-fullscreen-body .pdf-canvas-wrap,
-.pdf-fullscreen-body .pdf-frame {
-  height: 100%;
-  border-radius: 0;
 }
 
 .btn-danger {
