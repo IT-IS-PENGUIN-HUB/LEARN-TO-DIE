@@ -3,6 +3,9 @@ import { KEYS, loadString, saveString } from '../lib/storage.js';
 import { isDue } from '../lib/srs.js';
 
 const CHECK_EVERY_MS = 15 * 1000;
+// Thông báo đứng yên trên màn hình chừng này rồi tự biến mất hẳn
+// (không trượt vào Action Center, không dồn đống thông báo cũ)
+const DISPLAY_MS = 15 * 1000;
 
 /**
  * Vẽ từ vựng thành ảnh lớn (chữ Hán + cách đọc in đậm) để đính vào thông báo —
@@ -67,7 +70,9 @@ async function showWordNotification(w, dueCount) {
   const body = `${w.meaning}${dueCount ? `\nCòn ${dueCount} từ cần ôn hôm nay` : ''}`;
   const icon = `${import.meta.env.BASE_URL}icons/icon-192.png`;
 
-  // Ưu tiên thông báo qua service worker: cho phép đính ảnh hero cỡ lớn
+  // Ưu tiên thông báo qua service worker: cho phép đính ảnh hero cỡ lớn.
+  // requireInteraction giữ thông báo đứng yên trên màn hình (thay vì tự trượt
+  // đi sau ~5s), rồi ta chủ động đóng sau DISPLAY_MS → biến mất hẳn.
   try {
     const reg = await navigator.serviceWorker?.getRegistration?.();
     if (reg?.showNotification) {
@@ -76,17 +81,25 @@ async function showWordNotification(w, dueCount) {
         body,
         tag: 'ltd-vocab-reminder',
         icon,
+        requireInteraction: true,
         ...(image ? { image } : {}),
       });
-      if (image) setTimeout(() => URL.revokeObjectURL(image), 60 * 1000);
+      setTimeout(async () => {
+        try {
+          const shown = await reg.getNotifications({ tag: 'ltd-vocab-reminder' });
+          shown.forEach((n) => n.close());
+        } catch {}
+        if (image) URL.revokeObjectURL(image);
+      }, DISPLAY_MS);
       return;
     }
   } catch (e) {
     console.warn('showNotification qua SW lỗi, dùng Notification thường:', e);
   }
 
-  const n = new Notification(title, { body, tag: 'ltd-vocab-reminder', icon });
+  const n = new Notification(title, { body, tag: 'ltd-vocab-reminder', icon, requireInteraction: true });
   n.onclick = () => window.focus();
+  setTimeout(() => n.close(), DISPLAY_MS);
 }
 
 /**
