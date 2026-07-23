@@ -132,6 +132,7 @@ export default function SettingsModal({ onClose, sync }) {
             onChange={(e) => setReminderMin(e.target.value)}
           >
             <option value="0">Tắt</option>
+            <option value="5">Mỗi 5 phút</option>
             <option value="10">Mỗi 10 phút</option>
             <option value="20">Mỗi 20 phút</option>
             <option value="30">Mỗi 30 phút</option>
