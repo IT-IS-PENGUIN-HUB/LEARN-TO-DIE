@@ -187,10 +187,10 @@
       "meaning": "biểu thức logic tương đương",
       "exJp": "「PならばQ」と「QでないならばPでない」は等価な論理式です。\n\"Nếu P thì Q\" và \"Nếu không Q thì không P\" là các biểu thức logic tương đương.",
       "exVi": "",
-      "score": 0,
-      "nextReview": 1777737979254,
+      "score": 1,
+      "nextReview": 1784962031815,
       "mastered": false,
-      "updatedAt": 0
+      "updatedAt": 1784875631815
     },
     {
       "id": "1777782561338",
