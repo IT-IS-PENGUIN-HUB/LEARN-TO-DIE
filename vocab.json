@@ -199,10 +199,10 @@
       "meaning": "bộ nhớ đệm cấp 1; cache cấp 1",
       "exJp": "CPUには高速な一次キャッシュが搭載されています。\n(CPU được trang bị bộ nhớ đệm cấp 1 tốc độ cao.)",
       "exVi": "",
-      "score": 0,
-      "nextReview": 1777782561338,
-      "mastered": false,
-      "updatedAt": 0
+      "score": 1,
+      "nextReview": 1784969954712,
+      "mastered": true,
+      "updatedAt": 1784883558573
     },
     {
       "id": "1777782588356",
