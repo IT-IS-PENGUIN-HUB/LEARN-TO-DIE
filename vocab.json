@@ -127,10 +127,10 @@
       "meaning": "tối ưu hóa",
       "exJp": "このソフトウェアは、システム性能を最適化するために設計されています。\nPhần mềm này được thiết kế để tối ưu hóa hiệu suất hệ thống.",
       "exVi": "",
-      "score": 0,
-      "nextReview": 1777729167593,
-      "mastered": false,
-      "updatedAt": 0
+      "score": 1,
+      "nextReview": 1785430246245,
+      "mastered": true,
+      "updatedAt": 1785343849713
     },
     {
       "id": "1777730105218",
@@ -211,10 +211,10 @@
       "meaning": "bộ nhớ chính (của máy tính), bộ nhớ sơ cấp",
       "exJp": "主記憶はコンピュータの主要な部品です。\nBộ nhớ chính là một thành phần quan trọng của máy tính.",
       "exVi": "",
-      "score": 0,
-      "nextReview": 1777782588356,
+      "score": 1,
+      "nextReview": 1785430263527,
       "mastered": false,
-      "updatedAt": 0
+      "updatedAt": 1785343863527
     },
     {
       "id": "1777789282324",
@@ -223,10 +223,10 @@
       "meaning": "miêu tả, mô tả, sự ghi chép",
       "exJp": "この本の記述は正確だ。\nMô tả trong cuốn sách này rất chính xác.",
       "exVi": "",
-      "score": 0,
-      "nextReview": 1777789282324,
-      "mastered": false,
-      "updatedAt": 0
+      "score": 1,
+      "nextReview": 1785430268914,
+      "mastered": true,
+      "updatedAt": 1785343871213
     },
     {
       "id": "1777790675213",
@@ -235,10 +235,10 @@
       "meaning": "rò rỉ, chảy ra, tiết lộ, lọt ra ngoài",
       "exJp": "会社の機密情報が流出した。\nThông tin mật của công ty đã bị rò rỉ.",
       "exVi": "",
-      "score": 0,
-      "nextReview": 1777790675213,
+      "score": 1,
+      "nextReview": 1785430276993,
       "mastered": false,
-      "updatedAt": 0
+      "updatedAt": 1785343876993
     },
     {
       "id": "1777793253869",
@@ -247,10 +247,10 @@
       "meaning": "chuỗi ký tự, chuỗi",
       "exJp": "文字列を結合する。Nối các chuỗi ký tự lại với nhau.",
       "exVi": "",
-      "score": 0,
-      "nextReview": 1777793253869,
+      "score": 1,
+      "nextReview": 1785430282913,
       "mastered": false,
-      "updatedAt": 0
+      "updatedAt": 1785343882913
     },
     {
       "id": "1777820745662",
@@ -259,10 +259,10 @@
       "meaning": "sự méo mó, sự biến dạng, sự lệch lạc",
       "exJp": "このレンズには歪みがある。 (Thấu kính này bị méo mó/biến dạng.)",
       "exVi": "",
-      "score": 0,
-      "nextReview": 1777820745662,
+      "score": 1,
+      "nextReview": 1785430288716,
       "mastered": false,
-      "updatedAt": 0
+      "updatedAt": 1785343888716
     },
     {
       "id": "1777820913264",
