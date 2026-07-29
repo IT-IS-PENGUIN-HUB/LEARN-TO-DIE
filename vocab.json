@@ -283,10 +283,10 @@
       "meaning": "nội suy",
       "exJp": "内挿法は未知のデータ点を推定するために使用されます。\n(Phương pháp nội suy được sử dụng để ước tính các điểm dữ liệu chưa biết.)",
       "exVi": "",
-      "score": 0,
-      "nextReview": 1777821592079,
+      "score": 1,
+      "nextReview": 1785430352404,
       "mastered": false,
-      "updatedAt": 0
+      "updatedAt": 1785343952404
     },
     {
       "id": "1777821748096",
@@ -295,10 +295,10 @@
       "meaning": "xa xôi, nơi xa, từ xa",
       "exJp": "遠方からのお客様。\n(Khách hàng từ nơi xa.)",
       "exVi": "",
-      "score": 0,
-      "nextReview": 1777821748096,
+      "score": 1,
+      "nextReview": 1785430359405,
       "mastered": false,
-      "updatedAt": 0
+      "updatedAt": 1785343959405
     },
     {
       "id": "1777821755365",
