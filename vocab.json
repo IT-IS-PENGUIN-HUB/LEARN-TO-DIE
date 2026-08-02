@@ -949,6 +949,18 @@
       "nextReview": 1785683960055,
       "mastered": false,
       "updatedAt": 1785683960055
+    },
+    {
+      "id": "1785683983715",
+      "jp": "資質向上",
+      "kana": "ししつこうじょう",
+      "meaning": "Nâng cao năng lực/phẩm chất chuyên môn",
+      "exJp": "技術者の資質向上は、プロジェクトの品質確保に直結する。",
+      "exVi": "Việc nâng cao năng lực của kỹ sư liên quan trực tiếp đến việc đảm bảo chất lượng dự án.",
+      "score": 0,
+      "nextReview": 1785683983715,
+      "mastered": false,
+      "updatedAt": 1785683983715
     }
   ],
   "senmon": [
