@@ -925,6 +925,18 @@
       "nextReview": 1785683648372,
       "mastered": false,
       "updatedAt": 1785683648372
+    },
+    {
+      "id": "1785683730650",
+      "jp": "証拠",
+      "kana": "しょうこ",
+      "meaning": "bằng chứng, chứng cứ",
+      "exJp": "工事の品質管理には、確実な証拠の記録が重要である。",
+      "exVi": "Đối với quản lý chất lượng công trình, việc ghi chép các bằng chứng chắc chắn là rất quan trọng.",
+      "score": 0,
+      "nextReview": 1785683730650,
+      "mastered": false,
+      "updatedAt": 1785683730650
     }
   ],
   "senmon": [
