@@ -901,6 +901,18 @@
       "nextReview": 1778686435200,
       "mastered": false,
       "updatedAt": 0
+    },
+    {
+      "id": "1785683546607",
+      "jp": "継続研さん",
+      "kana": "けいぞくけんさん",
+      "meaning": "Không ngừng trau dồi/nâng cao kỹ năng",
+      "exJp": "技術士補には、専門技術の継続研さんが常に求められています。",
+      "exVi": "Kỹ sư phụ tá luôn được yêu cầu phải không ngừng trau dồi và nâng cao kỹ năng chuyên môn.",
+      "score": 0,
+      "nextReview": 1785683546607,
+      "mastered": false,
+      "updatedAt": 1785683546607
     }
   ],
   "senmon": [
