@@ -913,6 +913,18 @@
       "nextReview": 1785683546607,
       "mastered": false,
       "updatedAt": 1785683546607
+    },
+    {
+      "id": "1785683648372",
+      "jp": "執筆",
+      "kana": "しっぴつ",
+      "meaning": "Viết lách, biên soạn (tài liệu, báo cáo kỹ thuật)",
+      "exJp": "設計変更に関する報告書の執筆を担当する。",
+      "exVi": "Tôi phụ trách việc biên soạn báo cáo liên quan đến thay đổi thiết kế.",
+      "score": 0,
+      "nextReview": 1785683648372,
+      "mastered": false,
+      "updatedAt": 1785683648372
     }
   ],
   "senmon": [
