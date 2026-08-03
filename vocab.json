@@ -1033,6 +1033,30 @@
       "nextReview": 1785794747871,
       "mastered": false,
       "updatedAt": 1785794747871
+    },
+    {
+      "id": "1785796443226",
+      "jp": "保護方策",
+      "kana": "ほごほうさく",
+      "meaning": "Biện pháp bảo vệ; Phương sách bảo hộ",
+      "exJp": "建設プロジェクトでは、周辺環境への影響を考慮し、適切な保護方策を立案する必要がある。",
+      "exVi": "Trong các dự án xây dựng, cần phải lập kế hoạch các biện pháp bảo vệ thích hợp, có tính đến tác động đến môi trường xung quanh.",
+      "score": 0,
+      "nextReview": 1785796443226,
+      "mastered": false,
+      "updatedAt": 1785796443226
+    },
+    {
+      "id": "1785796450484",
+      "jp": "倫理",
+      "kana": "りんり",
+      "meaning": "Đạo đức nghề nghiệp, luân lý",
+      "exJp": "技術士は、公共の安全と福祉を最優先する倫理的義務があります。",
+      "exVi": "Kỹ sư chuyên nghiệp (技術士) có nghĩa vụ đạo đức phải ưu tiên hàng đầu sự an toàn và phúc lợi của cộng đồng.",
+      "score": 0,
+      "nextReview": 1785796450484,
+      "mastered": false,
+      "updatedAt": 1785796450484
     }
   ],
   "senmon": [
