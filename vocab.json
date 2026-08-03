@@ -997,6 +997,18 @@
       "nextReview": 1785794426255,
       "mastered": false,
       "updatedAt": 1785794426255
+    },
+    {
+      "id": "1785794445105",
+      "jp": "保有",
+      "kana": "ほうゆう",
+      "meaning": "Sở hữu, nắm giữ, duy trì (tài sản, thiết bị, công nghệ, dữ liệu)",
+      "exJp": "建設業者は、現場作業に必要な重機を保有する。",
+      "exVi": "Nhà thầu xây dựng sở hữu máy móc hạng nặng cần thiết cho công việc tại công trường.",
+      "score": 0,
+      "nextReview": 1785794445105,
+      "mastered": false,
+      "updatedAt": 1785794445105
     }
   ],
   "senmon": [
