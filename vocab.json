@@ -985,6 +985,18 @@
       "nextReview": 1785688428168,
       "mastered": false,
       "updatedAt": 1785688428168
+    },
+    {
+      "id": "1785794426255",
+      "jp": "代替",
+      "kana": "だいたい",
+      "meaning": "thay thế, vật thay thế, phương án thay thế",
+      "exJp": "環境負荷低減のため、コンクリートの代替材料を検討します。",
+      "exVi": "Để giảm tải trọng môi trường, chúng tôi sẽ xem xét vật liệu thay thế cho bê tông.",
+      "score": 0,
+      "nextReview": 1785794426255,
+      "mastered": false,
+      "updatedAt": 1785794426255
     }
   ],
   "senmon": [
