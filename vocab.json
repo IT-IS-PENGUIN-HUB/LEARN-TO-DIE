@@ -1021,6 +1021,18 @@
       "nextReview": 1785794725408,
       "mastered": false,
       "updatedAt": 1785794725408
+    },
+    {
+      "id": "1785794747871",
+      "jp": "見合う",
+      "kana": "みあう",
+      "meaning": "Tương xứng, phù hợp, cân xứng",
+      "exJp": "建物の耐震性能は、その規模と重要度に見合ったものであるべきだ。",
+      "exVi": "Hiệu suất chống động đất của tòa nhà nên tương xứng với quy mô và mức độ quan trọng của nó.",
+      "score": 0,
+      "nextReview": 1785794747871,
+      "mastered": false,
+      "updatedAt": 1785794747871
     }
   ],
   "senmon": [
