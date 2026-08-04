@@ -633,10 +633,10 @@
       "meaning": "người lao động, người làm công, người được tuyển dụng",
       "exJp": "雇用者の権利を保護する。 (Bảo vệ quyền lợi của người lao động.)",
       "exVi": "",
-      "score": 0,
-      "nextReview": 1778544053502,
+      "score": 1,
+      "nextReview": 1785970298047,
       "mastered": false,
-      "updatedAt": 0
+      "updatedAt": 1785883898047
     },
     {
       "id": "1778544086544",
@@ -647,8 +647,8 @@
       "exVi": "",
       "score": 0,
       "nextReview": 1778544086544,
-      "mastered": false,
-      "updatedAt": 0
+      "mastered": true,
+      "updatedAt": 1785883906033
     },
     {
       "id": "1778544726741",
