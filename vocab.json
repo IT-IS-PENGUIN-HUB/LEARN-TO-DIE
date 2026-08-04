@@ -19,10 +19,10 @@
       "meaning": "Khuyết tật / Lỗi",
       "exJp": "システムに欠陥がある",
       "exVi": "Hệ thống có khuyết tật",
-      "score": 1,
-      "nextReview": 1784848319489,
+      "score": 0,
+      "nextReview": 1785811305757,
       "mastered": false,
-      "updatedAt": 1784761919489
+      "updatedAt": 1785811305757
     },
     {
       "id": "1777720257134",
@@ -31,10 +31,10 @@
       "meaning": "nối tiếp, mắc nối tiếp (điện)",
       "exJp": "電池を直列につなぐ。\nMắc nối tiếp các cục pin.",
       "exVi": "",
-      "score": 1,
-      "nextReview": 1784848339157,
+      "score": 0,
+      "nextReview": 1785811305927,
       "mastered": false,
-      "updatedAt": 1784761939157
+      "updatedAt": 1785811305927
     },
     {
       "id": "1777720404851",
@@ -43,10 +43,10 @@
       "meaning": "song song, song hành",
       "exJp": "このシステムは並列処理を採用しています。(Hệ thống này sử dụng xử lý song song.)",
       "exVi": "",
-      "score": 1,
-      "nextReview": 1784848355343,
+      "score": 0,
+      "nextReview": 1785811306383,
       "mastered": false,
-      "updatedAt": 1784761955343
+      "updatedAt": 1785811306383
     },
     {
       "id": "1777720903916",
@@ -55,10 +55,10 @@
       "meaning": "độ dài hàng đợi, chiều dài hàng đợi",
       "exJp": "待ち行列長が長くなると、システムの応答時間が遅くなる可能性があります。\n(Nếu độ dài hàng đợi tăng lên, thời gian phản hồi của hệ thống có thể bị chậm lại.)",
       "exVi": "",
-      "score": 1,
-      "nextReview": 1784848381507,
+      "score": 0,
+      "nextReview": 1785811306622,
       "mastered": false,
-      "updatedAt": 1784761981507
+      "updatedAt": 1785811306622
     },
     {
       "id": "1777721241746",
@@ -67,10 +67,10 @@
       "meaning": "sự thay thế, sự gán (giá trị)",
       "exJp": "変数に値を代入する。: Gán giá trị vào biến.",
       "exVi": "",
-      "score": 1,
-      "nextReview": 1784848407314,
+      "score": 2,
+      "nextReview": 1785984108959,
       "mastered": false,
-      "updatedAt": 1784762007314
+      "updatedAt": 1785811308959
     },
     {
       "id": "1777721495585",
@@ -79,10 +79,10 @@
       "meaning": "sơ đồ mũi tên, biểu đồ dòng chảy",
       "exJp": "アローダイアグラムを作成する。\nTạo sơ đồ mũi tên.",
       "exVi": "",
-      "score": 1,
-      "nextReview": 1784961886308,
+      "score": 2,
+      "nextReview": 1785984110131,
       "mastered": false,
-      "updatedAt": 1784875486308
+      "updatedAt": 1785811310131
     },
     {
       "id": "1777721509635",
@@ -91,10 +91,10 @@
       "meaning": "ném, quăng, bỏ vào, đầu tư, gửi gắm",
       "exJp": "このプロジェクトに資金を投じる。: Đầu tư vốn vào dự án này.",
       "exVi": "",
-      "score": 1,
-      "nextReview": 1784848446468,
+      "score": 2,
+      "nextReview": 1785984109451,
       "mastered": false,
-      "updatedAt": 1784762046468
+      "updatedAt": 1785811309451
     },
     {
       "id": "1777728417104",
@@ -115,10 +115,10 @@
       "meaning": "bảng lợi ích, bảng lợi nhuận, bảng chi phí lợi ích",
       "exJp": "このゲームの利得表を分析する。 (Phân tích bảng lợi ích của trò chơi này.)",
       "exVi": "",
-      "score": 1,
-      "nextReview": 1784848519287,
+      "score": 2,
+      "nextReview": 1785984109907,
       "mastered": false,
-      "updatedAt": 1784762119287
+      "updatedAt": 1785811309907
     },
     {
       "id": "1777729167593",
@@ -320,9 +320,9 @@
       "exJp": "この材料は熱伝導率が高い。Vật liệu này có hệ số dẫn nhiệt cao.",
       "exVi": "",
       "score": 0,
-      "nextReview": 1777824763133,
+      "nextReview": 1785811300892,
       "mastered": false,
-      "updatedAt": 0
+      "updatedAt": 1785811300892
     },
     {
       "id": "1777825688981",
@@ -332,9 +332,9 @@
       "exJp": "鋭い感覚を持っています。(Anh ấy có giác quan nhạy bén.)",
       "exVi": "",
       "score": 0,
-      "nextReview": 1777825688981,
+      "nextReview": 1785811303677,
       "mastered": false,
-      "updatedAt": 0
+      "updatedAt": 1785811303677
     },
     {
       "id": "1777826511195",
@@ -344,9 +344,9 @@
       "exJp": "酢酸は食品の保存料として使われます。 (Axit axetic được sử dụng làm chất bảo quản thực phẩm.)",
       "exVi": "",
       "score": 0,
-      "nextReview": 1777826511195,
+      "nextReview": 1785811304525,
       "mastered": false,
-      "updatedAt": 0
+      "updatedAt": 1785811304525
     },
     {
       "id": "1777826634538",
@@ -356,9 +356,9 @@
       "exJp": "この土壌は酸性度が高い。\nĐộ axit của loại đất này cao.",
       "exVi": "",
       "score": 0,
-      "nextReview": 1777826634538,
+      "nextReview": 1785811305045,
       "mastered": false,
-      "updatedAt": 0
+      "updatedAt": 1785811305045
     },
     {
       "id": "1777830220518",
@@ -368,9 +368,9 @@
       "exJp": "放射線を遮蔽する。(Che chắn bức xạ.)",
       "exVi": "",
       "score": 0,
-      "nextReview": 1777830220518,
+      "nextReview": 1785811305390,
       "mastered": false,
-      "updatedAt": 0
+      "updatedAt": 1785811305390
     },
     {
       "id": "1784733013152",
@@ -380,9 +380,9 @@
       "exJp": "このラーメン構造の不静定次数を計算してください。",
       "exVi": "Hãy tính bậc siêu tĩnh của kết cấu khung này.",
       "score": 0,
-      "nextReview": 1784733013152,
+      "nextReview": 1785811305581,
       "mastered": false,
-      "updatedAt": 1784733013152
+      "updatedAt": 1785811305581
     }
   ],
   "tekisei": [
@@ -903,18 +903,6 @@
       "updatedAt": 0
     },
     {
-      "id": "1785367529618",
-      "jp": "著しく",
-      "kana": "いちじるしく",
-      "meaning": "Đáng kể, rõ rệt, đặc biệt, cực kỳ",
-      "exJp": "地震により、橋の構造が著しく損傷した。",
-      "exVi": "Cấu trúc cầu đã bị hư hại đáng kể do động đất.",
-      "score": 0,
-      "nextReview": 1785367529618,
-      "mastered": false,
-      "updatedAt": 1785367529618
-    },
-    {
       "id": "1785683546607",
       "jp": "継続研さん",
       "kana": "けいぞくけんさん",
@@ -999,18 +987,6 @@
       "updatedAt": 1785688428168
     },
     {
-      "id": "1785712765570",
-      "jp": "ハザード同定",
-      "kana": "ハザードどうてい",
-      "meaning": "Định danh mối nguy; Xác định mối nguy",
-      "exJp": "建設プロジェクトにおけるハザード同定は、事故防止のための重要な初期段階です。",
-      "exVi": "Việc định danh mối nguy trong dự án xây dựng là một giai đoạn khởi đầu quan trọng để phòng ngừa tai nạn.",
-      "score": 0,
-      "nextReview": 1785712765570,
-      "mastered": false,
-      "updatedAt": 1785712765570
-    },
-    {
       "id": "1785794426255",
       "jp": "代替",
       "kana": "だいたい",
@@ -1081,6 +1057,30 @@
       "nextReview": 1785796450484,
       "mastered": false,
       "updatedAt": 1785796450484
+    },
+    {
+      "id": "1785367529618",
+      "jp": "著しく",
+      "kana": "いちじるしく",
+      "meaning": "Đáng kể, rõ rệt, đặc biệt, cực kỳ",
+      "exJp": "地震により、橋の構造が著しく損傷した。",
+      "exVi": "Cấu trúc cầu đã bị hư hại đáng kể do động đất.",
+      "score": 0,
+      "nextReview": 1785367529618,
+      "mastered": false,
+      "updatedAt": 1785367529618
+    },
+    {
+      "id": "1785712765570",
+      "jp": "ハザード同定",
+      "kana": "ハザードどうてい",
+      "meaning": "Định danh mối nguy; Xác định mối nguy",
+      "exJp": "建設プロジェクトにおけるハザード同定は、事故防止のための重要な初期段階です。",
+      "exVi": "Việc định danh mối nguy trong dự án xây dựng là một giai đoạn khởi đầu quan trọng để phòng ngừa tai nạn.",
+      "score": 0,
+      "nextReview": 1785712765570,
+      "mastered": false,
+      "updatedAt": 1785712765570
     },
     {
       "id": "1785798374423",
