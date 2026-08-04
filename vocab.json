@@ -67,10 +67,10 @@
       "meaning": "sự thay thế, sự gán (giá trị)",
       "exJp": "変数に値を代入する。: Gán giá trị vào biến.",
       "exVi": "",
-      "score": 2,
-      "nextReview": 1785984108959,
+      "score": 3,
+      "nextReview": 1786230437230,
       "mastered": false,
-      "updatedAt": 1785811308959
+      "updatedAt": 1785884837230
     },
     {
       "id": "1777721495585",
@@ -115,10 +115,10 @@
       "meaning": "bảng lợi ích, bảng lợi nhuận, bảng chi phí lợi ích",
       "exJp": "このゲームの利得表を分析する。 (Phân tích bảng lợi ích của trò chơi này.)",
       "exVi": "",
-      "score": 2,
-      "nextReview": 1785984109907,
+      "score": 3,
+      "nextReview": 1786230439948,
       "mastered": false,
-      "updatedAt": 1785811309907
+      "updatedAt": 1785884839948
     },
     {
       "id": "1777729167593",
