@@ -407,8 +407,8 @@
       "exVi": "",
       "score": 0,
       "nextReview": 1784731589852,
-      "mastered": false,
-      "updatedAt": 1784731589852
+      "mastered": true,
+      "updatedAt": 1785884419451
     },
     {
       "id": "1778509130716",
@@ -897,10 +897,10 @@
       "meaning": "định vị, xếp đặt, đặt vào vị trí, coi là",
       "exJp": "この商品は市場でどのように位置付けられていますか？ (Sản phẩm này được định vị như thế nào trên thị trường?)",
       "exVi": "",
-      "score": 0,
-      "nextReview": 1778686435200,
+      "score": 1,
+      "nextReview": 1785970813599,
       "mastered": false,
-      "updatedAt": 0
+      "updatedAt": 1785884413599
     },
     {
       "id": "1785367529618",
