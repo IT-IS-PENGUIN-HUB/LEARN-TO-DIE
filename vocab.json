@@ -993,10 +993,10 @@
       "meaning": "áp đặt, quy định, bắt buộc (tiêu chuẩn, nghĩa vụ, hình phạt)",
       "exJp": "建築基準法は、建物に耐震基準を課している。",
       "exVi": "Luật tiêu chuẩn xây dựng quy định các tiêu chuẩn chống động đất cho công trình.",
-      "score": 0,
-      "nextReview": 1785688428168,
+      "score": 1,
+      "nextReview": 1785970914741,
       "mastered": false,
-      "updatedAt": 1785688428168
+      "updatedAt": 1785884514741
     },
     {
       "id": "1785712765570",
@@ -1005,10 +1005,10 @@
       "meaning": "Định danh mối nguy; Xác định mối nguy",
       "exJp": "建設プロジェクトにおけるハザード同定は、事故防止のための重要な初期段階です。",
       "exVi": "Việc định danh mối nguy trong dự án xây dựng là một giai đoạn khởi đầu quan trọng để phòng ngừa tai nạn.",
-      "score": 0,
-      "nextReview": 1785712765570,
+      "score": 1,
+      "nextReview": 1785970921859,
       "mastered": false,
-      "updatedAt": 1785712765570
+      "updatedAt": 1785884521859
     },
     {
       "id": "1785794426255",
