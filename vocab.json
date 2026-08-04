@@ -187,10 +187,10 @@
       "meaning": "biểu thức logic tương đương",
       "exJp": "「PならばQ」と「QでないならばPでない」は等価な論理式です。\n\"Nếu P thì Q\" và \"Nếu không Q thì không P\" là các biểu thức logic tương đương.",
       "exVi": "",
-      "score": 1,
-      "nextReview": 1784962031815,
+      "score": 2,
+      "nextReview": 1786057527687,
       "mastered": false,
-      "updatedAt": 1784875631815
+      "updatedAt": 1785884727687
     },
     {
       "id": "1777782561338",
@@ -211,10 +211,10 @@
       "meaning": "bộ nhớ chính (của máy tính), bộ nhớ sơ cấp",
       "exJp": "主記憶はコンピュータの主要な部品です。\nBộ nhớ chính là một thành phần quan trọng của máy tính.",
       "exVi": "",
-      "score": 1,
-      "nextReview": 1785430263527,
+      "score": 2,
+      "nextReview": 1786057532856,
       "mastered": false,
-      "updatedAt": 1785343863527
+      "updatedAt": 1785884732856
     },
     {
       "id": "1777789282324",
@@ -235,10 +235,10 @@
       "meaning": "rò rỉ, chảy ra, tiết lộ, lọt ra ngoài",
       "exJp": "会社の機密情報が流出した。\nThông tin mật của công ty đã bị rò rỉ.",
       "exVi": "",
-      "score": 1,
-      "nextReview": 1785430276993,
+      "score": 2,
+      "nextReview": 1786057537789,
       "mastered": false,
-      "updatedAt": 1785343876993
+      "updatedAt": 1785884737789
     },
     {
       "id": "1777793253869",
@@ -247,10 +247,10 @@
       "meaning": "chuỗi ký tự, chuỗi",
       "exJp": "文字列を結合する。Nối các chuỗi ký tự lại với nhau.",
       "exVi": "",
-      "score": 1,
-      "nextReview": 1785430282913,
+      "score": 2,
+      "nextReview": 1786057544556,
       "mastered": false,
-      "updatedAt": 1785343882913
+      "updatedAt": 1785884744556
     },
     {
       "id": "1777820745662",
@@ -259,10 +259,10 @@
       "meaning": "sự méo mó, sự biến dạng, sự lệch lạc",
       "exJp": "このレンズには歪みがある。 (Thấu kính này bị méo mó/biến dạng.)",
       "exVi": "",
-      "score": 1,
-      "nextReview": 1785430288716,
+      "score": 2,
+      "nextReview": 1786057550124,
       "mastered": false,
-      "updatedAt": 1785343888716
+      "updatedAt": 1785884750124
     },
     {
       "id": "1777820913264",
