@@ -19,10 +19,10 @@
       "meaning": "Khuyết tật / Lỗi",
       "exJp": "システムに欠陥がある",
       "exVi": "Hệ thống có khuyết tật",
-      "score": 0,
-      "nextReview": 1785811305757,
+      "score": 1,
+      "nextReview": 1785971218746,
       "mastered": false,
-      "updatedAt": 1785811305757
+      "updatedAt": 1785884818746
     },
     {
       "id": "1777720257134",
@@ -31,10 +31,10 @@
       "meaning": "nối tiếp, mắc nối tiếp (điện)",
       "exJp": "電池を直列につなぐ。\nMắc nối tiếp các cục pin.",
       "exVi": "",
-      "score": 0,
-      "nextReview": 1785811305927,
+      "score": 1,
+      "nextReview": 1785971220763,
       "mastered": false,
-      "updatedAt": 1785811305927
+      "updatedAt": 1785884820763
     },
     {
       "id": "1777720404851",
@@ -43,10 +43,10 @@
       "meaning": "song song, song hành",
       "exJp": "このシステムは並列処理を採用しています。(Hệ thống này sử dụng xử lý song song.)",
       "exVi": "",
-      "score": 0,
-      "nextReview": 1785811306383,
+      "score": 1,
+      "nextReview": 1785971222767,
       "mastered": false,
-      "updatedAt": 1785811306383
+      "updatedAt": 1785884822767
     },
     {
       "id": "1777720903916",
