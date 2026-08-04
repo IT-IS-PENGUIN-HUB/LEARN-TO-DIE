@@ -55,10 +55,10 @@
       "meaning": "độ dài hàng đợi, chiều dài hàng đợi",
       "exJp": "待ち行列長が長くなると、システムの応答時間が遅くなる可能性があります。\n(Nếu độ dài hàng đợi tăng lên, thời gian phản hồi của hệ thống có thể bị chậm lại.)",
       "exVi": "",
-      "score": 0,
-      "nextReview": 1785811306622,
+      "score": 1,
+      "nextReview": 1785971259184,
       "mastered": false,
-      "updatedAt": 1785811306622
+      "updatedAt": 1785884859184
     },
     {
       "id": "1777721241746",
@@ -67,10 +67,10 @@
       "meaning": "sự thay thế, sự gán (giá trị)",
       "exJp": "変数に値を代入する。: Gán giá trị vào biến.",
       "exVi": "",
-      "score": 3,
-      "nextReview": 1786230437230,
+      "score": 4,
+      "nextReview": 1786489660551,
       "mastered": false,
-      "updatedAt": 1785884837230
+      "updatedAt": 1785884860551
     },
     {
       "id": "1777721495585",
@@ -79,10 +79,10 @@
       "meaning": "sơ đồ mũi tên, biểu đồ dòng chảy",
       "exJp": "アローダイアグラムを作成する。\nTạo sơ đồ mũi tên.",
       "exVi": "",
-      "score": 2,
-      "nextReview": 1785984110131,
+      "score": 3,
+      "nextReview": 1786230454051,
       "mastered": false,
-      "updatedAt": 1785811310131
+      "updatedAt": 1785884854051
     },
     {
       "id": "1777721509635",
@@ -91,10 +91,10 @@
       "meaning": "ném, quăng, bỏ vào, đầu tư, gửi gắm",
       "exJp": "このプロジェクトに資金を投じる。: Đầu tư vốn vào dự án này.",
       "exVi": "",
-      "score": 2,
-      "nextReview": 1785984109451,
+      "score": 3,
+      "nextReview": 1786230450932,
       "mastered": false,
-      "updatedAt": 1785811309451
+      "updatedAt": 1785884850932
     },
     {
       "id": "1777728417104",
@@ -271,10 +271,10 @@
       "meaning": "sự phụ thuộc, sự lệ thuộc",
       "exJp": "彼は親に依存している。\nAnh ấy phụ thuộc vào cha mẹ.",
       "exVi": "",
-      "score": 1,
-      "nextReview": 1785430307883,
+      "score": 2,
+      "nextReview": 1786057657651,
       "mastered": false,
-      "updatedAt": 1785343907883
+      "updatedAt": 1785884857651
     },
     {
       "id": "1777821592079",
