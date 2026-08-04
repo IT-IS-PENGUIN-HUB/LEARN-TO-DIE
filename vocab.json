@@ -307,10 +307,10 @@
       "meaning": "lỗ hình bầu dục, lỗ elip",
       "exJp": "この板には楕円孔が開いています。 (Trên tấm ván này có một lỗ hình bầu dục.)",
       "exVi": "",
-      "score": 1,
-      "nextReview": 1785430370438,
+      "score": 2,
+      "nextReview": 1786057577925,
       "mastered": false,
-      "updatedAt": 1785343970438
+      "updatedAt": 1785884777925
     },
     {
       "id": "1777824763133",
@@ -319,10 +319,10 @@
       "meaning": "Hệ số dẫn nhiệt, độ dẫn nhiệt",
       "exJp": "この材料は熱伝導率が高い。Vật liệu này có hệ số dẫn nhiệt cao.",
       "exVi": "",
-      "score": 0,
-      "nextReview": 1785811300892,
+      "score": 1,
+      "nextReview": 1785971182677,
       "mastered": false,
-      "updatedAt": 1785811300892
+      "updatedAt": 1785884782677
     },
     {
       "id": "1777825688981",
@@ -331,10 +331,10 @@
       "meaning": "giác quan, cảm giác",
       "exJp": "鋭い感覚を持っています。(Anh ấy có giác quan nhạy bén.)",
       "exVi": "",
-      "score": 0,
-      "nextReview": 1785811303677,
+      "score": 1,
+      "nextReview": 1785971186243,
       "mastered": false,
-      "updatedAt": 1785811303677
+      "updatedAt": 1785884786243
     },
     {
       "id": "1777826511195",
@@ -343,10 +343,10 @@
       "meaning": "axit axetic",
       "exJp": "酢酸は食品の保存料として使われます。 (Axit axetic được sử dụng làm chất bảo quản thực phẩm.)",
       "exVi": "",
-      "score": 0,
-      "nextReview": 1785811304525,
+      "score": 1,
+      "nextReview": 1785971190595,
       "mastered": false,
-      "updatedAt": 1785811304525
+      "updatedAt": 1785884790595
     },
     {
       "id": "1777826634538",
@@ -355,10 +355,10 @@
       "meaning": "độ axit, tính axit",
       "exJp": "この土壌は酸性度が高い。\nĐộ axit của loại đất này cao.",
       "exVi": "",
-      "score": 0,
-      "nextReview": 1785811305045,
+      "score": 1,
+      "nextReview": 1785971195293,
       "mastered": false,
-      "updatedAt": 1785811305045
+      "updatedAt": 1785884795293
     },
     {
       "id": "1777830220518",
@@ -367,10 +367,10 @@
       "meaning": "che chắn, che đậy, chắn, làm khuất, sự che chắn",
       "exJp": "放射線を遮蔽する。(Che chắn bức xạ.)",
       "exVi": "",
-      "score": 0,
-      "nextReview": 1785811305390,
+      "score": 1,
+      "nextReview": 1785971199228,
       "mastered": false,
-      "updatedAt": 1785811305390
+      "updatedAt": 1785884799228
     },
     {
       "id": "1784733013152",
@@ -379,10 +379,10 @@
       "meaning": "Bậc siêu tĩnh / Bậc bất định tĩnh",
       "exJp": "このラーメン構造の不静定次数を計算してください。",
       "exVi": "Hãy tính bậc siêu tĩnh của kết cấu khung này.",
-      "score": 0,
-      "nextReview": 1785811305581,
+      "score": 1,
+      "nextReview": 1785971201095,
       "mastered": false,
-      "updatedAt": 1785811305581
+      "updatedAt": 1785884801095
     }
   ],
   "tekisei": [
