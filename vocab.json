@@ -1065,10 +1065,10 @@
       "meaning": "Biện pháp bảo vệ; Phương sách bảo hộ",
       "exJp": "建設プロジェクトでは、周辺環境への影響を考慮し、適切な保護方策を立案する必要がある。",
       "exVi": "Trong các dự án xây dựng, cần phải lập kế hoạch các biện pháp bảo vệ thích hợp, có tính đến tác động đến môi trường xung quanh.",
-      "score": 0,
-      "nextReview": 1785796443226,
+      "score": 1,
+      "nextReview": 1785970966596,
       "mastered": false,
-      "updatedAt": 1785796443226
+      "updatedAt": 1785884566596
     },
     {
       "id": "1785796450484",
@@ -1077,10 +1077,10 @@
       "meaning": "Đạo đức nghề nghiệp, luân lý",
       "exJp": "技術士は、公共の安全と福祉を最優先する倫理的義務があります。",
       "exVi": "Kỹ sư chuyên nghiệp (技術士) có nghĩa vụ đạo đức phải ưu tiên hàng đầu sự an toàn và phúc lợi của cộng đồng.",
-      "score": 0,
-      "nextReview": 1785796450484,
+      "score": 1,
+      "nextReview": 1785970970679,
       "mastered": false,
-      "updatedAt": 1785796450484
+      "updatedAt": 1785884570679
     },
     {
       "id": "1785798374423",
@@ -1089,10 +1089,10 @@
       "meaning": "khách hàng, khách, chủ đầu tư, bên đặt hàng",
       "exJp": "顧客のニーズを正確に把握し、設計に反映させる必要があります。",
       "exVi": "Cần nắm bắt chính xác nhu cầu của khách hàng và phản ánh chúng vào thiết kế.",
-      "score": 0,
-      "nextReview": 1785798374423,
+      "score": 1,
+      "nextReview": 1785970974614,
       "mastered": false,
-      "updatedAt": 1785798374423
+      "updatedAt": 1785884574614
     },
     {
       "id": "1785798416166",
@@ -1101,10 +1101,10 @@
       "meaning": "Chủ lao động, Chủ đầu tư",
       "exJp": "建設会社は雇用主の要求に応じて建物を建設する。",
       "exVi": "Công ty xây dựng thi công công trình theo yêu cầu của chủ đầu tư.",
-      "score": 0,
-      "nextReview": 1785798416166,
+      "score": 1,
+      "nextReview": 1785970978413,
       "mastered": false,
-      "updatedAt": 1785798416166
+      "updatedAt": 1785884578413
     },
     {
       "id": "1785798455335",
@@ -1113,10 +1113,10 @@
       "meaning": "Lợi ích và thiệt hại; Quyền lợi",
       "exJp": "公共事業の実施にあたり、関係者の利害を公平に調整することが求められる。",
       "exVi": "Khi triển khai các dự án công trình công cộng, cần điều hòa công bằng lợi ích và quyền lợi của các bên liên quan.",
-      "score": 0,
-      "nextReview": 1785798455335,
+      "score": 1,
+      "nextReview": 1785970985331,
       "mastered": false,
-      "updatedAt": 1785798455335
+      "updatedAt": 1785884585331
     }
   ],
   "senmon": [
