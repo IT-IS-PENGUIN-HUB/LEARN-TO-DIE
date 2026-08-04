@@ -417,10 +417,10 @@
       "meaning": "giương lên, treo lên, nêu cao (biểu ngữ, khẩu hiệu), đặt lên",
       "exJp": "国旗を掲げる。(Giương quốc kỳ.)",
       "exVi": "",
-      "score": 0,
-      "nextReview": 1778509130716,
+      "score": 1,
+      "nextReview": 1785970103114,
       "mastered": false,
-      "updatedAt": 0
+      "updatedAt": 1785883703114
     },
     {
       "id": "1778509263718",
@@ -429,10 +429,10 @@
       "meaning": "sự sụp đổ, sự mất đi (quyền uy, danh tiếng, v.v.)",
       "exJp": "彼の名声は失墜した。\nDanh tiếng của anh ta đã sụp đổ.",
       "exVi": "",
-      "score": 0,
-      "nextReview": 1778509263718,
+      "score": 1,
+      "nextReview": 1785970109097,
       "mastered": false,
-      "updatedAt": 0
+      "updatedAt": 1785883709097
     },
     {
       "id": "1778509312281",
@@ -441,10 +441,10 @@
       "meaning": "làm tổn thương, gây thương tích, làm đau lòng",
       "exJp": "彼の言葉は彼女を傷つけた。 (Lời nói của anh ấy đã làm tổn thương cô ấy.)",
       "exVi": "",
-      "score": 0,
-      "nextReview": 1778509312281,
+      "score": 1,
+      "nextReview": 1785970112834,
       "mastered": false,
-      "updatedAt": 0
+      "updatedAt": 1785883712834
     },
     {
       "id": "1778509341391",
@@ -455,8 +455,8 @@
       "exVi": "",
       "score": 0,
       "nextReview": 1778509341391,
-      "mastered": false,
-      "updatedAt": 0
+      "mastered": true,
+      "updatedAt": 1785883716030
     },
     {
       "id": "1778509460977",
@@ -467,8 +467,8 @@
       "exVi": "",
       "score": 0,
       "nextReview": 1778509460977,
-      "mastered": false,
-      "updatedAt": 0
+      "mastered": true,
+      "updatedAt": 1785883720214
     },
     {
       "id": "1778509817911",
@@ -479,8 +479,8 @@
       "exVi": "",
       "score": 0,
       "nextReview": 1778509817911,
-      "mastered": false,
-      "updatedAt": 0
+      "mastered": true,
+      "updatedAt": 1785883721447
     },
     {
       "id": "1778509880123",
@@ -491,8 +491,8 @@
       "exVi": "",
       "score": 0,
       "nextReview": 1778509880123,
-      "mastered": false,
-      "updatedAt": 0
+      "mastered": true,
+      "updatedAt": 1785883723782
     },
     {
       "id": "1778542895270",
@@ -503,8 +503,8 @@
       "exVi": "",
       "score": 0,
       "nextReview": 1778542895270,
-      "mastered": false,
-      "updatedAt": 0
+      "mastered": true,
+      "updatedAt": 1785883725349
     },
     {
       "id": "1778542957404",
@@ -903,6 +903,18 @@
       "updatedAt": 0
     },
     {
+      "id": "1785367529618",
+      "jp": "著しく",
+      "kana": "いちじるしく",
+      "meaning": "Đáng kể, rõ rệt, đặc biệt, cực kỳ",
+      "exJp": "地震により、橋の構造が著しく損傷した。",
+      "exVi": "Cấu trúc cầu đã bị hư hại đáng kể do động đất.",
+      "score": 0,
+      "nextReview": 1785367529618,
+      "mastered": false,
+      "updatedAt": 1785367529618
+    },
+    {
       "id": "1785683546607",
       "jp": "継続研さん",
       "kana": "けいぞくけんさん",
@@ -987,6 +999,18 @@
       "updatedAt": 1785688428168
     },
     {
+      "id": "1785712765570",
+      "jp": "ハザード同定",
+      "kana": "ハザードどうてい",
+      "meaning": "Định danh mối nguy; Xác định mối nguy",
+      "exJp": "建設プロジェクトにおけるハザード同定は、事故防止のための重要な初期段階です。",
+      "exVi": "Việc định danh mối nguy trong dự án xây dựng là một giai đoạn khởi đầu quan trọng để phòng ngừa tai nạn.",
+      "score": 0,
+      "nextReview": 1785712765570,
+      "mastered": false,
+      "updatedAt": 1785712765570
+    },
+    {
       "id": "1785794426255",
       "jp": "代替",
       "kana": "だいたい",
@@ -1059,30 +1083,6 @@
       "updatedAt": 1785796450484
     },
     {
-      "id": "1785367529618",
-      "jp": "著しく",
-      "kana": "いちじるしく",
-      "meaning": "Đáng kể, rõ rệt, đặc biệt, cực kỳ",
-      "exJp": "地震により、橋の構造が著しく損傷した。",
-      "exVi": "Cấu trúc cầu đã bị hư hại đáng kể do động đất.",
-      "score": 0,
-      "nextReview": 1785367529618,
-      "mastered": false,
-      "updatedAt": 1785367529618
-    },
-    {
-      "id": "1785712765570",
-      "jp": "ハザード同定",
-      "kana": "ハザードどうてい",
-      "meaning": "Định danh mối nguy; Xác định mối nguy",
-      "exJp": "建設プロジェクトにおけるハザード同定は、事故防止のための重要な初期段階です。",
-      "exVi": "Việc định danh mối nguy trong dự án xây dựng là một giai đoạn khởi đầu quan trọng để phòng ngừa tai nạn.",
-      "score": 0,
-      "nextReview": 1785712765570,
-      "mastered": false,
-      "updatedAt": 1785712765570
-    },
-    {
       "id": "1785798374423",
       "jp": "顧客",
       "kana": "こきゃく",
@@ -1105,6 +1105,18 @@
       "nextReview": 1785798416166,
       "mastered": false,
       "updatedAt": 1785798416166
+    },
+    {
+      "id": "1785798455335",
+      "jp": "利害",
+      "kana": "りがい",
+      "meaning": "Lợi ích và thiệt hại; Quyền lợi",
+      "exJp": "公共事業の実施にあたり、関係者の利害を公平に調整することが求められる。",
+      "exVi": "Khi triển khai các dự án công trình công cộng, cần điều hòa công bằng lợi ích và quyền lợi của các bên liên quan.",
+      "score": 0,
+      "nextReview": 1785798455335,
+      "mastered": false,
+      "updatedAt": 1785798455335
     }
   ],
   "senmon": [
