@@ -933,10 +933,10 @@
       "meaning": "Viết lách, biên soạn (tài liệu, báo cáo kỹ thuật)",
       "exJp": "設計変更に関する報告書の執筆を担当する。",
       "exVi": "Tôi phụ trách việc biên soạn báo cáo liên quan đến thay đổi thiết kế.",
-      "score": 0,
-      "nextReview": 1785683648372,
+      "score": 1,
+      "nextReview": 1785970861870,
       "mastered": false,
-      "updatedAt": 1785683648372
+      "updatedAt": 1785884461870
     },
     {
       "id": "1785683730650",
@@ -945,10 +945,10 @@
       "meaning": "bằng chứng, chứng cứ",
       "exJp": "工事の品質管理には、確実な証拠の記録が重要である。",
       "exVi": "Đối với quản lý chất lượng công trình, việc ghi chép các bằng chứng chắc chắn là rất quan trọng.",
-      "score": 0,
-      "nextReview": 1785683730650,
+      "score": 1,
+      "nextReview": 1785970863737,
       "mastered": false,
-      "updatedAt": 1785683730650
+      "updatedAt": 1785884463737
     },
     {
       "id": "1785683960055",
@@ -957,10 +957,10 @@
       "meaning": "",
       "exJp": "",
       "exVi": "",
-      "score": 0,
-      "nextReview": 1785683960055,
+      "score": 1,
+      "nextReview": 1785970864387,
       "mastered": false,
-      "updatedAt": 1785683960055
+      "updatedAt": 1785884464387
     },
     {
       "id": "1785683983715",
