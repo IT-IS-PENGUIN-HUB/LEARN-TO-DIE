@@ -1165,6 +1165,18 @@
       "nextReview": 1785930432808,
       "mastered": false,
       "updatedAt": 1785930432808
+    },
+    {
+      "id": "1785930471726",
+      "jp": "統合性",
+      "kana": "とうごうせい",
+      "meaning": "tính tích hợp, tính toàn vẹn",
+      "exJp": "BIMシステムは、設計から施工、維持管理まで、プロジェクト全体の統合性を高める。",
+      "exVi": "Hệ thống BIM nâng cao tính tích hợp của toàn bộ dự án, từ thiết kế đến thi công và quản lý bảo trì.",
+      "score": 0,
+      "nextReview": 1785930471726,
+      "mastered": false,
+      "updatedAt": 1785930471726
     }
   ],
   "senmon": [
