@@ -705,10 +705,10 @@
       "meaning": "bảo mật, giữ bí mật",
       "exJp": "守秘義務を守る必要があります。(Cần phải tuân thủ nghĩa vụ bảo mật.)",
       "exVi": "",
-      "score": 2,
-      "nextReview": 1786057442253,
+      "score": 3,
+      "nextReview": 1786272371871,
       "mastered": false,
-      "updatedAt": 1785884642253
+      "updatedAt": 1785926771871
     },
     {
       "id": "1778628837412",
@@ -717,10 +717,10 @@
       "meaning": "giao phó, phó thác, ủy thác, trao cho (quyết định, số phận, trách nhiệm)",
       "exJp": "運命に身を委ねる。(Phó mặc bản thân cho số phận.)",
       "exVi": "",
-      "score": 2,
-      "nextReview": 1786057407414,
+      "score": 3,
+      "nextReview": 1786272366594,
       "mastered": false,
-      "updatedAt": 1785884607414
+      "updatedAt": 1785926766594
     },
     {
       "id": "1778628875859",
@@ -777,10 +777,10 @@
       "meaning": "đăng bài, đăng tải, gửi bài (báo, tạp chí)",
       "exJp": "記事を投稿する。\nĐăng bài viết.",
       "exVi": "",
-      "score": 2,
-      "nextReview": 1786057767558,
+      "score": 3,
+      "nextReview": 1786272371140,
       "mastered": false,
-      "updatedAt": 1785884967558
+      "updatedAt": 1785926771140
     },
     {
       "id": "1778684499021",
@@ -789,10 +789,10 @@
       "meaning": "tin tức báo chí, tường thuật của báo chí",
       "exJp": "新聞報道によると、事故の原因はまだ不明です。\nTheo tin tức báo chí, nguyên nhân vụ tai nạn vẫn chưa được làm rõ.",
       "exVi": "",
-      "score": 1,
-      "nextReview": 1785970607367,
+      "score": 2,
+      "nextReview": 1786099569668,
       "mastered": false,
-      "updatedAt": 1785884207367
+      "updatedAt": 1785926769668
     },
     {
       "id": "1778684735290",
@@ -897,22 +897,10 @@
       "meaning": "định vị, xếp đặt, đặt vào vị trí, coi là",
       "exJp": "この商品は市場でどのように位置付けられていますか？ (Sản phẩm này được định vị như thế nào trên thị trường?)",
       "exVi": "",
-      "score": 1,
-      "nextReview": 1785970813599,
+      "score": 2,
+      "nextReview": 1786099563820,
       "mastered": false,
-      "updatedAt": 1785884413599
-    },
-    {
-      "id": "1785367529618",
-      "jp": "著しく",
-      "kana": "いちじるしく",
-      "meaning": "Đáng kể, rõ rệt, đặc biệt, cực kỳ",
-      "exJp": "地震により、橋の構造が著しく損傷した。",
-      "exVi": "Cấu trúc cầu đã bị hư hại đáng kể do động đất.",
-      "score": 1,
-      "nextReview": 1785970836985,
-      "mastered": false,
-      "updatedAt": 1785884436985
+      "updatedAt": 1785926763820
     },
     {
       "id": "1785683546607",
@@ -999,18 +987,6 @@
       "updatedAt": 1785884514741
     },
     {
-      "id": "1785712765570",
-      "jp": "ハザード同定",
-      "kana": "ハザードどうてい",
-      "meaning": "Định danh mối nguy; Xác định mối nguy",
-      "exJp": "建設プロジェクトにおけるハザード同定は、事故防止のための重要な初期段階です。",
-      "exVi": "Việc định danh mối nguy trong dự án xây dựng là một giai đoạn khởi đầu quan trọng để phòng ngừa tai nạn.",
-      "score": 1,
-      "nextReview": 1785970921859,
-      "mastered": false,
-      "updatedAt": 1785884521859
-    },
-    {
       "id": "1785794426255",
       "jp": "代替",
       "kana": "だいたい",
@@ -1081,6 +1057,30 @@
       "nextReview": 1785970970679,
       "mastered": false,
       "updatedAt": 1785884570679
+    },
+    {
+      "id": "1785367529618",
+      "jp": "著しく",
+      "kana": "いちじるしく",
+      "meaning": "Đáng kể, rõ rệt, đặc biệt, cực kỳ",
+      "exJp": "地震により、橋の構造が著しく損傷した。",
+      "exVi": "Cấu trúc cầu đã bị hư hại đáng kể do động đất.",
+      "score": 1,
+      "nextReview": 1785970836985,
+      "mastered": false,
+      "updatedAt": 1785884436985
+    },
+    {
+      "id": "1785712765570",
+      "jp": "ハザード同定",
+      "kana": "ハザードどうてい",
+      "meaning": "Định danh mối nguy; Xác định mối nguy",
+      "exJp": "建設プロジェクトにおけるハザード同定は、事故防止のための重要な初期段階です。",
+      "exVi": "Việc định danh mối nguy trong dự án xây dựng là một giai đoạn khởi đầu quan trọng để phòng ngừa tai nạn.",
+      "score": 1,
+      "nextReview": 1785970921859,
+      "mastered": false,
+      "updatedAt": 1785884521859
     },
     {
       "id": "1785798374423",
