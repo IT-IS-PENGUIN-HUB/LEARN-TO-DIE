@@ -1129,6 +1129,30 @@
       "nextReview": 1785930354867,
       "mastered": false,
       "updatedAt": 1785930354867
+    },
+    {
+      "id": "1785930406934",
+      "jp": "捉える",
+      "kana": "とらえる",
+      "meaning": "nắm bắt, hiểu rõ, nhận diện",
+      "exJp": "この地盤沈下の原因を正確に捉える必要があります。",
+      "exVi": "Cần phải nắm bắt chính xác nguyên nhân của sự lún nền này.",
+      "score": 0,
+      "nextReview": 1785930406934,
+      "mastered": false,
+      "updatedAt": 1785930406934
+    },
+    {
+      "id": "1785930408680",
+      "jp": "普遍性",
+      "kana": "",
+      "meaning": "",
+      "exJp": "",
+      "exVi": "",
+      "score": 0,
+      "nextReview": 1785930408680,
+      "mastered": false,
+      "updatedAt": 1785930408680
     }
   ],
   "senmon": [
