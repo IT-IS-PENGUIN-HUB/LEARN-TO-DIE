@@ -1153,6 +1153,18 @@
       "nextReview": 1785930408680,
       "mastered": false,
       "updatedAt": 1785930408680
+    },
+    {
+      "id": "1785930432808",
+      "jp": "普遍性",
+      "kana": "ふへんせい",
+      "meaning": "Tính phổ quát, tính phổ biến, khả năng áp dụng rộng rãi (universality, generality, widespread applicability)",
+      "exJp": "構造設計における安全性の**普遍性**は、どの地域でも確保されるべき原則である。",
+      "exVi": "Tính phổ quát về an toàn trong thiết kế kết cấu là nguyên tắc phải được đảm bảo ở bất kỳ khu vực nào.",
+      "score": 0,
+      "nextReview": 1785930432808,
+      "mastered": false,
+      "updatedAt": 1785930432808
     }
   ],
   "senmon": [
