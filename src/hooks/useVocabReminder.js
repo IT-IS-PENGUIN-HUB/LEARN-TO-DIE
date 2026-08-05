@@ -5,7 +5,7 @@ import { isDue } from '../lib/srs.js';
 const CHECK_EVERY_MS = 15 * 1000;
 // Thông báo đứng yên trên màn hình chừng này rồi tự biến mất hẳn
 // (không trượt vào Action Center, không dồn đống thông báo cũ)
-const DISPLAY_MS = 15 * 1000;
+const DISPLAY_MS = 7 * 1000;
 
 /**
  * Vẽ từ vựng thành ảnh lớn (chữ Hán + cách đọc in đậm) để đính vào thông báo —
@@ -122,9 +122,13 @@ export function useVocabReminder(allWords) {
       const last = parseInt(loadString(KEYS.reminderLast) || '0', 10);
       if (Date.now() - last < minutes * 60 * 1000) return;
 
+      // Ưu tiên từ đến hạn → chưa thuộc → cuối cùng là bất kỳ từ nào.
+      // Ôn hết từ đến hạn (hoặc đánh dấu "Đã nhớ" cả kho) vẫn phải có từ hiện
+      // ra, vì mục đích của thông báo là nhìn thấy từ đều đặn trong ngày.
       const words = wordsRef.current;
       const due = words.filter((w) => isDue(w));
-      const pool = due.length ? due : words.filter((w) => !w.mastered);
+      const notMastered = words.filter((w) => !w.mastered);
+      const pool = due.length ? due : notMastered.length ? notMastered : words;
       if (!pool.length) return;
 
       const w = pool[Math.floor(Math.random() * pool.length)];
