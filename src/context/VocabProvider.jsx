@@ -24,7 +24,9 @@ function reducer(state, action) {
     case 'add': {
       const { subject, fields, now } = action;
       const entry = {
-        id: `${now}`,
+        // Thêm hậu tố ngẫu nhiên: lưu hàng loạt (quét ảnh) có thể rơi vào cùng
+        // một millisecond → trùng id → migrateVocab khử trùng lặp làm mất từ
+        id: `${now}_${Math.random().toString(36).slice(2, 8)}`,
         jp: fields.jp.trim(),
         kana: (fields.kana ?? '').trim(),
         meaning: (fields.meaning ?? '').trim(),

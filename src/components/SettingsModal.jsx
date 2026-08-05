@@ -48,7 +48,7 @@ export default function SettingsModal({ onClose, sync }) {
             placeholder="sk-…"
             autoComplete="off"
           />
-          <label htmlFor="set-gemini">Gemini API Key (dự phòng):</label>
+          <label htmlFor="set-gemini">Gemini API Key (dự phòng + cần khi quét ảnh chụp):</label>
           <input
             id="set-gemini"
             type="password"
