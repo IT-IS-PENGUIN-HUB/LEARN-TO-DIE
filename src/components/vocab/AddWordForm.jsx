@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { useVocab } from '../../context/VocabProvider.jsx';
 import { autofillWord } from '../../services/ai.js';
+import DuplicateHint, { findDuplicates } from './DuplicateHint.jsx';
 import { IconWand } from '../icons.jsx';
 
-export default function AddWordForm({ subject }) {
-  const { addWord } = useVocab();
+export default function AddWordForm({ subject, onOpenInManager }) {
+  const { addWord, allWords } = useVocab();
   const [jp, setJp] = useState('');
   const [kana, setKana] = useState('');
   const [meaning, setMeaning] = useState('');
@@ -34,19 +35,25 @@ export default function AddWordForm({ subject }) {
     }
   };
 
+  const duplicate = findDuplicates(allWords, jp).exact;
+
   const save = (e) => {
     e.preventDefault();
     if (!jp.trim()) {
       setMsg({ ok: false, text: 'Từ tiếng Nhật không được để trống.' });
       return;
     }
+    const wasDuplicate = Boolean(duplicate);
     addWord(subject, { jp, kana, meaning, exJp, exVi });
     setJp('');
     setKana('');
     setMeaning('');
     setExJp('');
     setExVi('');
-    setMsg({ ok: true, text: 'Đã lưu từ mới ✓' });
+    setMsg({
+      ok: true,
+      text: wasDuplicate ? 'Đã lưu — lưu ý kho giờ có 2 từ giống nhau.' : 'Đã lưu từ mới ✓',
+    });
   };
 
   return (
@@ -70,6 +77,7 @@ export default function AddWordForm({ subject }) {
           <IconWand /> AI
         </button>
       </div>
+      <DuplicateHint jp={jp} onOpenInManager={onOpenInManager} />
       <div className="form-row">
         <input
           className="text-input"
@@ -106,8 +114,9 @@ export default function AddWordForm({ subject }) {
           rows={2}
         />
       </div>
-      <button type="submit" className="btn btn-primary btn-sm" style={{ width: '100%' }}>
-        Lưu từ mới
+      {/* Trùng thì vẫn cho lưu (có khi cố ý), nhưng đổi nhãn để không bấm nhầm */}
+      <button type="submit" className={`btn btn-sm ${duplicate ? 'btn-outline' : 'btn-primary'}`} style={{ width: '100%' }}>
+        {duplicate ? 'Vẫn lưu thành từ thứ hai' : 'Lưu từ mới'}
       </button>
       <p className={`form-msg ${msg ? (msg.ok ? 'ok' : 'err') : ''}`} role="status">
         {msg?.text}

@@ -24,6 +24,14 @@ export default function VocabModal({ onClose, initialSubject = 'kiso', backupSlo
   const [subject, setSubject] = useState(initialSubject);
   // Quiz là tính năng dùng nhiều nhất → mặc định
   const [mode, setMode] = useState('quiz');
+  // Từ cần tìm sẵn khi nhảy từ cảnh báo trùng sang tab Kho từ
+  const [managerQuery, setManagerQuery] = useState('');
+
+  const openInManager = (word) => {
+    setSubject(word.subject ?? subject);
+    setManagerQuery(word.jp);
+    setMode('manage');
+  };
 
   useEffect(() => {
     const onKey = (e) => {
@@ -66,7 +74,10 @@ export default function VocabModal({ onClose, initialSubject = 'kiso', backupSlo
               role="tab"
               aria-selected={mode === m.id}
               className={`btn btn-sm ${mode === m.id ? 'btn-primary' : 'btn-outline'}`}
-              onClick={() => setMode(m.id)}
+              onClick={() => {
+                setManagerQuery(''); // bấm tab thủ công thì không giữ ô tìm kiếm cũ
+                setMode(m.id);
+              }}
             >
               {m.label}
             </button>
@@ -87,9 +98,9 @@ export default function VocabModal({ onClose, initialSubject = 'kiso', backupSlo
 
         {mode === 'quiz' && <QuizMode subject={subject} onRecordAnswer={onRecordAnswer} />}
         {mode === 'flashcard' && <FlashcardMode subject={subject} onRecordAnswer={onRecordAnswer} />}
-        {mode === 'add' && <AddWordForm subject={subject} />}
+        {mode === 'add' && <AddWordForm subject={subject} onOpenInManager={openInManager} />}
         {mode === 'scan' && <ScanImport subject={subject} />}
-        {mode === 'manage' && <VocabManager subject={subject} />}
+        {mode === 'manage' && <VocabManager subject={subject} initialQuery={managerQuery} />}
         {mode === 'mastered' && <MasteredList subject={subject} />}
 
         {backupSlot}

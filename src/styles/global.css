@@ -884,6 +884,71 @@ textarea.text-input {
   border-color: rgba(var(--success-rgb), 0.5);
 }
 
+/* Cảnh báo trùng khi thêm từ */
+.dup-box {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.6rem;
+  margin-bottom: 0.5rem;
+  background: var(--card-bg);
+}
+
+.dup-box.dup-exact {
+  border-color: rgba(var(--danger-rgb), 0.6);
+  background: rgba(var(--danger-rgb), 0.08);
+}
+
+.dup-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--danger);
+  margin-bottom: 0.4rem;
+}
+
+.dup-title-soft {
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+.dup-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  margin-bottom: 0.4rem;
+}
+
+.dup-jp {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.dup-kana {
+  font-size: 0.8rem;
+  color: var(--primary);
+}
+
+.dup-meaning {
+  font-size: 0.85rem;
+}
+
+.dup-ex {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.dup-related {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.8rem;
+}
+
+.dup-related li {
+  padding: 0.15rem 0;
+  color: var(--text-main);
+}
+
 /* Kho từ: sửa / xoá từng từ */
 .manager-tools {
   display: flex;

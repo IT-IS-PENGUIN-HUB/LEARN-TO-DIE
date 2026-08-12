@@ -13,9 +13,9 @@ const emptyDraft = { jp: '', kana: '', meaning: '', exJp: '', exVi: '' };
  * Có bộ lọc "thiếu nội dung" vì đây là lý do chính phải mở màn này —
  * từ nhập thiếu nghĩa làm quiz hiện đáp án trống.
  */
-export default function VocabManager({ subject }) {
+export default function VocabManager({ subject, initialQuery = '' }) {
   const { vocab, updateWord, deleteWord } = useVocab();
-  const [q, setQ] = useState('');
+  const [q, setQ] = useState(initialQuery);
   const [onlyBroken, setOnlyBroken] = useState(false);
   const [editId, setEditId] = useState(null);
   const [draft, setDraft] = useState(emptyDraft);
