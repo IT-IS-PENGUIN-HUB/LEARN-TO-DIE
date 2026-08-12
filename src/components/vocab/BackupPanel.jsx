@@ -5,12 +5,14 @@ import { mergeVocab } from '../../services/github.js';
 import { IconCloudDown, IconCloudUp, IconDownload, IconUpload } from '../icons.jsx';
 
 export default function BackupPanel({ sync }) {
-  const { vocab, replaceAll } = useVocab();
+  // Dùng rawVocab: file dự phòng phải giữ cả dấu xoá, không thì nhập lại file
+  // cũ là các từ đã xoá sống dậy hết.
+  const { rawVocab, replaceAll } = useVocab();
   const fileInputRef = useRef(null);
   const [fileMsg, setFileMsg] = useState(null); // {ok, text}
 
   const exportFile = () => {
-    const blob = new Blob([JSON.stringify(vocab, null, 2)], { type: 'application/json' });
+    const blob = new Blob([JSON.stringify(rawVocab, null, 2)], { type: 'application/json' });
     const a = document.createElement('a');
     const d = new Date();
     const stamp = `${d.getFullYear()}${String(d.getMonth() + 1).padStart(2, '0')}${String(d.getDate()).padStart(2, '0')}`;
@@ -29,7 +31,7 @@ export default function BackupPanel({ sync }) {
       const looksValid = Array.isArray(parsed) || SUBJECT_IDS.some((s) => Array.isArray(parsed?.[s]));
       if (!looksValid) throw new Error('File không đúng định dạng vocab.');
       // Gộp thay vì ghi đè: không mất từ mới thêm trên máy này
-      replaceAll(mergeVocab(vocab, parsed));
+      replaceAll(mergeVocab(rawVocab, parsed));
       setFileMsg({ ok: true, text: 'Đã nhập và gộp dữ liệu từ file ✓' });
     } catch (err) {
       setFileMsg({ ok: false, text: `Không nhập được: ${err.message}` });

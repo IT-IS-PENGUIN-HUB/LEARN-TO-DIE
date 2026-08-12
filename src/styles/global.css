@@ -884,6 +884,104 @@ textarea.text-input {
   border-color: rgba(var(--success-rgb), 0.5);
 }
 
+/* Kho từ: sửa / xoá từng từ */
+.manager-tools {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.manager-tools .text-input {
+  flex: 1;
+  min-width: 0;
+}
+
+.manager-tools .btn {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.manager-count {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.manager-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 380px;
+  overflow-y: auto;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+.manager-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.5rem 0.6rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.manager-item:last-child {
+  border-bottom: none;
+}
+
+.manager-item.is-broken {
+  background: rgba(var(--danger-rgb), 0.08);
+}
+
+.manager-word {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.manager-jp {
+  font-size: 1.05rem;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.manager-kana {
+  font-size: 0.8rem;
+  color: var(--primary);
+}
+
+.manager-meaning {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.manager-missing {
+  color: var(--danger);
+  font-style: normal;
+  font-size: 0.78rem;
+}
+
+.manager-actions {
+  display: flex;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
+.manager-edit {
+  width: 100%;
+}
+
+.manager-edit-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.manager-edit-actions .btn {
+  flex: 1;
+}
+
 /* ============ Modals ============ */
 .modal {
   position: fixed;

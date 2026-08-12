@@ -7,6 +7,7 @@ import FlashcardMode from './FlashcardMode.jsx';
 import MasteredList from './MasteredList.jsx';
 import QuizMode from './QuizMode.jsx';
 import ScanImport from './ScanImport.jsx';
+import VocabManager from './VocabManager.jsx';
 import { IconInfo, IconShare, IconX } from '../icons.jsx';
 
 const MODES = [
@@ -14,6 +15,7 @@ const MODES = [
   { id: 'flashcard', label: 'Flashcard' },
   { id: 'add', label: '+ Thêm từ' },
   { id: 'scan', label: '📷 Quét ảnh' },
+  { id: 'manage', label: '🗂 Kho từ' },
   { id: 'mastered', label: '⭐ Đã nhớ' },
 ];
 
@@ -87,6 +89,7 @@ export default function VocabModal({ onClose, initialSubject = 'kiso', backupSlo
         {mode === 'flashcard' && <FlashcardMode subject={subject} onRecordAnswer={onRecordAnswer} />}
         {mode === 'add' && <AddWordForm subject={subject} />}
         {mode === 'scan' && <ScanImport subject={subject} />}
+        {mode === 'manage' && <VocabManager subject={subject} />}
         {mode === 'mastered' && <MasteredList subject={subject} />}
 
         {backupSlot}

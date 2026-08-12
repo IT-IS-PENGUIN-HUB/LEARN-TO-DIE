@@ -9,10 +9,12 @@ const AUTO_PUSH_DELAY_MS = 8000;
  * (pull khi mở app, push debounce sau khi dữ liệu đổi).
  */
 export function useSync() {
-  const { vocab, replaceAll } = useVocab();
+  // rawVocab (còn cả từ đã xoá) mới là thứ được đẩy lên: đẩy bản đã lọc thì
+  // máy khác không biết là đã xoá và sẽ đồng bộ ngược từ đó trở lại.
+  const { rawVocab, replaceAll } = useVocab();
   const [status, setStatus] = useState(null); // {kind:'busy'|'ok'|'err', text}
-  const vocabRef = useRef(vocab);
-  vocabRef.current = vocab;
+  const vocabRef = useRef(rawVocab);
+  vocabRef.current = rawVocab;
   const busyRef = useRef(false);
   const skipNextAutoPush = useRef(true); // lần render đầu + sau khi pull
   const timerRef = useRef(null);
@@ -77,7 +79,7 @@ export function useSync() {
     clearTimeout(timerRef.current);
     timerRef.current = setTimeout(() => doPush(true), AUTO_PUSH_DELAY_MS);
     return () => clearTimeout(timerRef.current);
-  }, [vocab, doPush]);
+  }, [rawVocab, doPush]);
 
   return { status, setStatus, doPull, doPush };
 }

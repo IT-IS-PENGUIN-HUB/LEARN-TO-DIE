@@ -14,7 +14,9 @@ export default function WordOfTheDay({ onOpenVocab }) {
   const [word, setWord] = useState(null);
 
   const pickNew = useCallback(() => {
-    const pool = allWords.filter((w) => !w.mastered);
+    // Bỏ từ chưa có nghĩa: thẻ "Từ của ngày" sẽ hiện một dòng nghĩa trống
+    const usable = allWords.filter((w) => !w.mastered && w.meaning.trim());
+    const pool = usable.length ? usable : allWords.filter((w) => !w.mastered);
     if (!pool.length) return;
     const next = pool[Math.floor(Math.random() * pool.length)];
     setWord(next);

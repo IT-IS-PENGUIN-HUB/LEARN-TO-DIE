@@ -7,6 +7,10 @@ import { IconArrowRight, IconCheck, IconStar, IconVolume, IconX } from '../icons
 const SESSION_SIZE = 10;
 const OPTION_KEYS = ['1', '2', '3', '4'];
 
+// Từ chưa có nghĩa không thể ra đề trắc nghiệm — đáp án sẽ là ô trống. Loại
+// khỏi phiên; user sửa hoặc xoá nó trong tab "🗂 Kho từ".
+const quizable = (list) => list.filter((w) => w.meaning.trim());
+
 function shuffle(arr) {
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {
@@ -19,7 +23,7 @@ function shuffle(arr) {
 export default function QuizMode({ subject, onRecordAnswer }) {
   const { vocab, allWords, answerWord, setMastered } = useVocab();
   const [session, setSession] = useState(0); // tăng để bắt đầu phiên mới
-  const [queue, setQueue] = useState(() => buildQueue(vocab[subject], { limit: SESSION_SIZE }));
+  const [queue, setQueue] = useState(() => buildQueue(quizable(vocab[subject]), { limit: SESSION_SIZE }));
   const [idx, setIdx] = useState(0);
   const [chosen, setChosen] = useState(null); // index option đã chọn
   const [result, setResult] = useState({ correct: 0, total: 0 });
@@ -27,7 +31,7 @@ export default function QuizMode({ subject, onRecordAnswer }) {
 
   // Phiên mới khi đổi subject hoặc bấm "Phiên mới"
   useEffect(() => {
-    setQueue(buildQueue(vocab[subject], { limit: SESSION_SIZE }));
+    setQueue(buildQueue(quizable(vocab[subject]), { limit: SESSION_SIZE }));
     setIdx(0);
     setChosen(null);
     setResult({ correct: 0, total: 0 });
@@ -52,9 +56,21 @@ export default function QuizMode({ subject, onRecordAnswer }) {
       return;
     }
     const { vocab: v, allWords: all } = poolRef.current;
-    const samePool = v[subject].filter((w) => w.id !== word.id && w.meaning);
-    const otherPool = all.filter((w) => w.id !== word.id && w.meaning && !samePool.includes(w));
-    const distractors = shuffle([...shuffle(samePool).slice(0, 3), ...shuffle(otherPool)]).slice(0, 3);
+    // allWords là bản sao ({...w, subject}) nên không so sánh được bằng tham
+    // chiếu — phải loại theo id, không thì từ cùng môn lọt vào 2 lần.
+    const sameIds = new Set(v[subject].map((w) => w.id));
+    const same = v[subject].filter((w) => w.id !== word.id && w.meaning.trim());
+    const other = all.filter((w) => !sameIds.has(w.id) && w.meaning.trim());
+    // Ưu tiên nhiễu cùng môn, và bỏ nghĩa trùng nhau để không có 2 đáp án y hệt
+    const seen = new Set([word.meaning.trim()]);
+    const distractors = [];
+    for (const w of [...shuffle(same), ...shuffle(other)]) {
+      const m = w.meaning.trim();
+      if (seen.has(m)) continue;
+      seen.add(m);
+      distractors.push(w);
+      if (distractors.length === 3) break;
+    }
     setOptions(shuffle([word, ...distractors]));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [word, idx, session, subject]);
@@ -98,7 +114,13 @@ export default function QuizMode({ subject, onRecordAnswer }) {
   });
 
   if (!queue.length) {
-    return <p className="quiz-hint">Chưa có từ nào để quiz. Thêm từ mới trước nhé!</p>;
+    return (
+      <p className="quiz-hint">
+        {vocab[subject].length
+          ? 'Môn này chưa có từ nào điền nghĩa nên không ra đề được. Vào tab "🗂 Kho từ" điền nghĩa hoặc xoá từ hỏng nhé!'
+          : 'Chưa có từ nào để quiz. Thêm từ mới trước nhé!'}
+      </p>
+    );
   }
 
   if (allWords.length < 4) {

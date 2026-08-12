@@ -43,6 +43,14 @@ function reducer(state, action) {
       return mapEntry(state, action.subject, action.id, (w) => ({ ...w, ...action.patch, updatedAt: action.now }));
     case 'answer':
       return mapEntry(state, action.subject, action.id, (w) => applyAnswer(w, action.correct, action.now));
+    case 'delete':
+      // Đánh dấu thay vì bỏ khỏi mảng — xem giải thích ở migrateEntry
+      return mapEntry(state, action.subject, action.id, (w) => ({
+        ...w,
+        deleted: true,
+        mastered: false,
+        updatedAt: action.now,
+      }));
     case 'setMastered':
       return mapEntry(state, action.subject, action.id, (w) => ({
         ...w,
@@ -81,23 +89,42 @@ export function VocabProvider({ children }) {
     dispatch({ type: 'setMastered', subject, id, mastered, now: Date.now() });
   }, []);
 
+  const deleteWord = useCallback((subject, id) => {
+    dispatch({ type: 'delete', subject, id, now: Date.now() });
+  }, []);
+
   const replaceAll = useCallback((next) => {
     dispatch({ type: 'replaceAll', vocab: next });
   }, []);
 
   const value = useMemo(() => {
+    // `vocab` mà màn hình dùng đã lọc bỏ từ đã xoá; `rawVocab` (còn bia mộ) chỉ
+    // dành cho sync/backup — đẩy bản đã lọc lên GitHub là mất dấu xoá.
+    const visible = Object.fromEntries(SUBJECT_IDS.map((s) => [s, vocab[s].filter((w) => !w.deleted)]));
     const statsFor = (subject) => {
-      const list = vocab[subject] ?? [];
+      const list = visible[subject] ?? [];
       return {
         total: list.length,
         mastered: list.filter((w) => w.mastered).length,
         due: countDue(list),
       };
     };
-    const allWords = SUBJECT_IDS.flatMap((s) => vocab[s].map((w) => ({ ...w, subject: s })));
+    const allWords = SUBJECT_IDS.flatMap((s) => visible[s].map((w) => ({ ...w, subject: s })));
     const dueTotal = countDue(allWords);
-    return { vocab, addWord, updateWord, answerWord, setMastered, replaceAll, statsFor, allWords, dueTotal };
-  }, [vocab, addWord, updateWord, answerWord, setMastered, replaceAll]);
+    return {
+      vocab: visible,
+      rawVocab: vocab,
+      addWord,
+      updateWord,
+      answerWord,
+      setMastered,
+      deleteWord,
+      replaceAll,
+      statsFor,
+      allWords,
+      dueTotal,
+    };
+  }, [vocab, addWord, updateWord, answerWord, setMastered, deleteWord, replaceAll]);
 
   return <VocabContext.Provider value={value}>{children}</VocabContext.Provider>;
 }

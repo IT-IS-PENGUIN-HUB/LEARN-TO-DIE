@@ -18,6 +18,9 @@ function migrateEntry(raw) {
     nextReview: Number.isFinite(raw.nextReview) ? raw.nextReview : 0,
     mastered: raw.mastered === true,
     updatedAt: Number.isFinite(raw.updatedAt) ? raw.updatedAt : 0,
+    // Từ đã xoá giữ lại làm "bia mộ": app ẩn đi, nhưng vẫn nằm trong file sync
+    // để máy khác biết là đã xoá — bỏ hẳn thì lần sync sau nó sống lại.
+    ...(raw.deleted === true ? { deleted: true } : {}),
   };
 }
 
