@@ -6411,6 +6411,18 @@
       "updatedAt": 1785926763820
     },
     {
+      "id": "1785367529618",
+      "jp": "著しく",
+      "kana": "いちじるしく",
+      "meaning": "Đáng kể, rõ rệt, đặc biệt, cực kỳ",
+      "exJp": "地震により、橋の構造が著しく損傷した。",
+      "exVi": "Cấu trúc cầu đã bị hư hại đáng kể do động đất.",
+      "score": 2,
+      "nextReview": 1786719157249,
+      "mastered": false,
+      "updatedAt": 1786546357249
+    },
+    {
       "id": "1785683546607",
       "jp": "継続研さん",
       "kana": "けいぞくけんさん",
@@ -6495,6 +6507,18 @@
       "updatedAt": 1786546403528
     },
     {
+      "id": "1785712765570",
+      "jp": "ハザード同定",
+      "kana": "ハザードどうてい",
+      "meaning": "Định danh mối nguy; Xác định mối nguy",
+      "exJp": "建設プロジェクトにおけるハザード同定は、事故防止のための重要な初期段階です。",
+      "exVi": "Việc định danh mối nguy trong dự án xây dựng là một giai đoạn khởi đầu quan trọng để phòng ngừa tai nạn.",
+      "score": 1,
+      "nextReview": 1785970921859,
+      "mastered": false,
+      "updatedAt": 1785884521859
+    },
+    {
       "id": "1785794426255",
       "jp": "代替",
       "kana": "だいたい",
@@ -6565,30 +6589,6 @@
       "nextReview": 1785970970679,
       "mastered": false,
       "updatedAt": 1785884570679
-    },
-    {
-      "id": "1785367529618",
-      "jp": "著しく",
-      "kana": "いちじるしく",
-      "meaning": "Đáng kể, rõ rệt, đặc biệt, cực kỳ",
-      "exJp": "地震により、橋の構造が著しく損傷した。",
-      "exVi": "Cấu trúc cầu đã bị hư hại đáng kể do động đất.",
-      "score": 2,
-      "nextReview": 1786719157249,
-      "mastered": false,
-      "updatedAt": 1786546357249
-    },
-    {
-      "id": "1785712765570",
-      "jp": "ハザード同定",
-      "kana": "ハザードどうてい",
-      "meaning": "Định danh mối nguy; Xác định mối nguy",
-      "exJp": "建設プロジェクトにおけるハザード同定は、事故防止のための重要な初期段階です。",
-      "exVi": "Việc định danh mối nguy trong dự án xây dựng là một giai đoạn khởi đầu quan trọng để phòng ngừa tai nạn.",
-      "score": 1,
-      "nextReview": 1785970921859,
-      "mastered": false,
-      "updatedAt": 1785884521859
     },
     {
       "id": "1785798374423",
@@ -6885,10 +6885,10 @@
       "meaning": "(lậu) làm lộ, rò rỉ",
       "exJp": "技術士は業務上の秘密を漏らしてはならない。",
       "exVi": "Kỹ sư chuyên nghiệp không được làm lộ bí mật trong công việc.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1786661256195,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786574856195
     },
     {
       "id": "1786573248380_zk8n11",
