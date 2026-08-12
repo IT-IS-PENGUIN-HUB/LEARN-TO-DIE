@@ -6897,10 +6897,10 @@
       "meaning": "(Đương cai) nói trên, liên quan, tương ứng (từ chỉ định)",
       "exJp": "当該工事の責任者は資格を有する必要がある。",
       "exVi": "Người phụ trách công trình nói trên cần có chứng chỉ.",
-      "score": 0,
-      "nextReview": 0,
-      "mastered": false,
-      "updatedAt": 1786573248380
+      "score": 1,
+      "nextReview": 1786661274320,
+      "mastered": true,
+      "updatedAt": 1786574875799
     },
     {
       "id": "1786573248380_le5ura",
