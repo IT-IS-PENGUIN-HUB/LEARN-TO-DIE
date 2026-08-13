@@ -6516,10 +6516,10 @@
       "meaning": "Định danh mối nguy; Xác định mối nguy",
       "exJp": "建設プロジェクトにおけるハザード同定は、事故防止のための重要な初期段階です。",
       "exVi": "Việc định danh mối nguy trong dự án xây dựng là một giai đoạn khởi đầu quan trọng để phòng ngừa tai nạn.",
-      "score": 1,
-      "nextReview": 1785970921859,
+      "score": 2,
+      "nextReview": 1786768721512,
       "mastered": false,
-      "updatedAt": 1785884521859
+      "updatedAt": 1786595921512
     },
     {
       "id": "1785794426255",
@@ -6528,10 +6528,10 @@
       "meaning": "thay thế, vật thay thế, phương án thay thế",
       "exJp": "環境負荷低減のため、コンクリートの代替材料を検討します。",
       "exVi": "Để giảm tải trọng môi trường, chúng tôi sẽ xem xét vật liệu thay thế cho bê tông.",
-      "score": 1,
-      "nextReview": 1785971305519,
+      "score": 2,
+      "nextReview": 1786768732810,
       "mastered": false,
-      "updatedAt": 1785884905519
+      "updatedAt": 1786595932810
     },
     {
       "id": "1785794445105",
@@ -6540,10 +6540,10 @@
       "meaning": "Sở hữu, nắm giữ, duy trì (tài sản, thiết bị, công nghệ, dữ liệu)",
       "exJp": "建設業者は、現場作業に必要な重機を保有する。",
       "exVi": "Nhà thầu xây dựng sở hữu máy móc hạng nặng cần thiết cho công việc tại công trường.",
-      "score": 1,
-      "nextReview": 1785970942777,
+      "score": 2,
+      "nextReview": 1786768728443,
       "mastered": false,
-      "updatedAt": 1785884542777
+      "updatedAt": 1786595928443
     },
     {
       "id": "1785794725408",
@@ -7610,10 +7610,10 @@
       "meaning": "(Tần độ) tần suất, số lần xảy ra",
       "exJp": "点検の頻度を上げて劣化を早期に発見する。",
       "exVi": "Tăng tần suất kiểm tra để phát hiện sớm sự xuống cấp.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1786682295158,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786595895158
     },
     {
       "id": "1786573248380_yw6oaf",
@@ -7850,10 +7850,10 @@
       "meaning": "(phó gia) phụ thêm, thêm vào",
       "exJp": "製品に新しい機能を付加する。",
       "exVi": "Thêm chức năng mới vào sản phẩm.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1786682301920,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786595901920
     },
     {
       "id": "1786573248380_p4h766",
@@ -8558,10 +8558,10 @@
       "meaning": "(khái niệm) Khái niệm",
       "exJp": "持続可能な開発という概念が広く普及した。",
       "exVi": "Khái niệm phát triển bền vững đã được phổ biến rộng rãi.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1786682308542,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786595908542
     },
     {
       "id": "1786573248380_tdk1ij",
@@ -9206,10 +9206,10 @@
       "meaning": "(cải đính) sửa đổi, hiệu đính (văn bản, tiêu chuẩn)",
       "exJp": "設計基準は最新の知見に基づき改訂された。",
       "exVi": "Tiêu chuẩn thiết kế đã được sửa đổi dựa trên kiến thức mới nhất.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1786682314925,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786595914925
     },
     {
       "id": "1786573248380_9wn3um",
