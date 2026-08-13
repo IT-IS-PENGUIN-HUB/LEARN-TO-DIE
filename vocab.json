@@ -7490,10 +7490,10 @@
       "meaning": "(tiết mục) Bước ngoặt, dấu mốc quan trọng",
       "exJp": "工事の節目ごとに安全点検を実施する。",
       "exVi": "Thực hiện kiểm tra an toàn tại mỗi mốc quan trọng của công trình.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1786748391323,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786661991323
     },
     {
       "id": "1786573248380_m0uikk",
