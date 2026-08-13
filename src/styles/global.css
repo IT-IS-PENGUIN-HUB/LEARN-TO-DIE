@@ -3438,3 +3438,23 @@ textarea.text-input {
     padding-right: calc(0.8rem + env(safe-area-inset-right)); }
   .header .btn-label { display: none; }
 }
+
+/* ---- Hết lặp logo/chữ giữa sidebar và header (ロン chốt 14/8) ---- */
+.sb-brand { justify-content: center; }
+.logo-text { display: flex; flex-direction: column; align-items: flex-start; line-height: 1.15; }
+.logo-text em {
+  font-style: normal;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+}
+@media (min-width: 900px) {
+  /* desktop: sidebar đã có logo → header chỉ chữ */
+  .logo-img { display: none; }
+}
+@media (max-width: 899px) {
+  /* mobile: sidebar ẩn → header chỉ logo tròn (đè rule font-size 0 cũ) */
+  .logo { font-size: inherit; }
+  .logo-text { display: none; }
+}

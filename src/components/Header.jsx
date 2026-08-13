@@ -19,11 +19,15 @@ export default function Header({
     <header className="header">
       {/* ☰ chỉ hiện trên mobile (<900px) — mở ngăn kéo điều hướng */}
       <button type="button" className="menu-btn" onClick={onOpenMenu} aria-label="Mở menu">☰</button>
-      {/* Logo + chữ chung MỘT nút — bấm đâu trong vùng này cũng về trang chủ
-          (khác app trung tâm, ロン yêu cầu 14/8) */}
+      {/* Phân vai với sidebar để không lặp (ロン chốt 14/8): desktop sidebar giữ
+          LOGO, header giữ CHỮ (kèm dòng phụ); mobile sidebar ẩn nên header hiện
+          logo tròn, giấu chữ. Cả nút vẫn bấm về trang chủ. */}
       <button type="button" className="logo" onClick={onGoHome} title="Về trang chủ" aria-label="Về trang chủ">
         <img className="logo-img" src={logoUrl} alt="" width="53" height="53" />
-        GIVE UP IS LOSE
+        <span className="logo-text">
+          GIVE UP IS LOSE
+          <em className="jp-text">技術士第一次試験</em>
+        </span>
       </button>
       <nav className="main-menu" aria-label="Chọn môn thi">
         {Object.values(SUBJECTS).map((s) => (

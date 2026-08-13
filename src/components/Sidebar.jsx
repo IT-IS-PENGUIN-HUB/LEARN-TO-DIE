@@ -58,12 +58,9 @@ export default function Sidebar({
       >
         {collapsed ? '›' : '‹'}
       </button>
-      <button type="button" className="sb-brand" onClick={go(onGoHome)} title="Về trang chủ">
-        <img src={logoUrl} alt="" className="sb-logo" width="51" height="51" />
-        <span>
-          <b>GIVE UP IS LOSE</b>
-          <em className="jp-text">技術士第一次試験</em>
-        </span>
+      {/* Chỉ LOGO — phần chữ nằm bên header để hai bên không lặp nhau (ロン chốt 14/8) */}
+      <button type="button" className="sb-brand" onClick={go(onGoHome)} title="GIVE UP IS LOSE — Về trang chủ">
+        <img src={logoUrl} alt="GIVE UP IS LOSE" className="sb-logo" width="51" height="51" />
       </button>
 
       <div className="sb-group">Học</div>
