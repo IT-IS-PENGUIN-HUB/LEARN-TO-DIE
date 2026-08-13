@@ -3433,7 +3433,7 @@ textarea.text-input {
      (giấu chữ bằng font-size 0 — chữ là text node trần trong nút), icon nhỏ lại,
      nút Từ vựng chỉ còn icon + huy hiệu (nhãn chữ đã có trong ngăn kéo) */
   .logo { font-size: 0; gap: 0; }
-  .logo-img { width: 48px; height: 48px; flex: 0 0 48px; } /* 42 +15% theo ロン */
+  .logo-img { width: 53px; height: 53px; flex: 0 0 53px; } /* 48 +10% nữa theo ロン */
   .header { gap: 0.45rem; padding-left: calc(0.8rem + env(safe-area-inset-left));
     padding-right: calc(0.8rem + env(safe-area-inset-right)); }
   .header .btn-label { display: none; }
