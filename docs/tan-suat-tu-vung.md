@@ -14,7 +14,7 @@ một kỳ thì chỉ là chủ đề của năm đó; một từ ra ở 14/16 k
 2. Động từ / tính từ bị chia đuôi trong đề nên dạng nguyên thể đếm ra ít hoặc bằng 0.
    Cột `stem_hits` trong file CSV đếm theo gốc từ (見合う → 見合) để bù chỗ này.
 
-Dữ liệu đầy đủ cho cả 1096 từ: [tan-suat-tu-vung.csv](tan-suat-tu-vung.csv) (mở bằng Excel).
+Dữ liệu đầy đủ cho cả 1095 từ: [tan-suat-tu-vung.csv](tan-suat-tu-vung.csv) (mở bằng Excel).
 
 ## 適性科目 — 284 từ, 16 kỳ thi
 
@@ -82,7 +82,7 @@ Dữ liệu đầy đủ cho cả 1096 từ: [tan-suat-tu-vung.csv](tan-suat-tu-
 
 </details>
 
-## 基礎科目 — 491 từ, 16 kỳ thi
+## 基礎科目 — 490 từ, 16 kỳ thi
 
 - Ra ở **mọi kỳ** (16/16): **7 từ**
 - Chưa từng thấy trong đề nào: **22 từ** (4%)

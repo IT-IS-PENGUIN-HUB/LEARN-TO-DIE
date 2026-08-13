@@ -72,12 +72,14 @@ def stem_of(word):
 
 
 def unique_words(entries):
-    """{từ: entry} — kho từ vẫn còn vài từ bị lưu hai lần, trong đó có bản rỗng
-    (chưa điền kana/nghĩa). Giữ bản đầy đủ nhất để báo cáo không ra ô trống."""
+    """{từ: entry} — bỏ qua "bia mộ" (`deleted: true`): từ đã xoá vẫn nằm lại
+    trong vocab.json để máy khác biết mà xoá theo, app ẩn chúng đi nên báo cáo
+    và nhãn tần suất cũng phải ẩn. Từ nào lỡ lưu hai bản thì giữ bản đầy đủ hơn.
+    """
     best = {}
     for entry in entries:
         word = (entry.get("jp") or "").strip()
-        if not word:
+        if not word or entry.get("deleted") is True:
             continue
         filled = sum(1 for k in ("kana", "meaning", "exJp") if (entry.get(k) or "").strip())
         cur = best.get(word)
