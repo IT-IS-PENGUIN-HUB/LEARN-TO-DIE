@@ -7370,10 +7370,10 @@
       "meaning": "(Thanh môn) Khoảng trống giữa các dây thanh quản",
       "exJp": "声門の開閉によって音の高さが変わる。",
       "exVi": "Độ cao của âm thanh thay đổi theo sự đóng mở của thanh môn.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1786748333470,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786661933470
     },
     {
       "id": "1786573248380_jk7ppi",
@@ -7406,10 +7406,10 @@
       "meaning": "(bì hạ) nội bì dưới da",
       "exJp": "皮下組織の静脈認証は個人識別に用いられる。",
       "exVi": "Xác thực tĩnh mạch dưới da được dùng để nhận dạng cá nhân.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1786748337052,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786661937052
     },
     {
       "id": "1786573248380_x7t96y",
@@ -7430,10 +7430,10 @@
       "meaning": "(đoan điểm) nút cuối, điểm mút",
       "exJp": "指紋の端点と分岐点で個人を照合する。",
       "exVi": "Đối chiếu cá nhân bằng điểm mút và điểm phân nhánh của vân tay.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1786748341234,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786661941234
     },
     {
       "id": "1786573248380_ocl4z6",
