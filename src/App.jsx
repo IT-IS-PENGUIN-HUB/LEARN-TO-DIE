@@ -41,6 +41,7 @@ function AppInner() {
 
   // Có bản mới đang chờ (service worker đã tải xong)
   const [updateReady, setUpdateReady] = useState(false);
+  const [updating, setUpdating] = useState(false);
   useEffect(() => onUpdateReady(() => setUpdateReady(true)), []);
 
   /**
@@ -184,9 +185,17 @@ function AppInner() {
           chừng không mất gì; chỉ phiên quiz TỪ VỰNG đang dở là mất. */}
       {updateReady && busy && (
         <div className="update-toast" role="status">
-          <span>Có bản mới của app</span>
-          <button type="button" className="btn btn-sm btn-primary" onClick={applyAppUpdate}>
-            Cập nhật ngay
+          <span>{updating ? 'Đang cập nhật, chờ một nhịp…' : 'Có bản mới của app'}</span>
+          <button
+            type="button"
+            className="btn btn-sm btn-primary"
+            disabled={updating}
+            onClick={() => {
+              setUpdating(true); // phản hồi ngay — bấm mà im lìm thì tưởng nút hỏng
+              applyAppUpdate();
+            }}
+          >
+            {updating ? '…' : 'Cập nhật ngay'}
           </button>
         </div>
       )}

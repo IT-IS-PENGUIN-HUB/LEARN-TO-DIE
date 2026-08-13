@@ -38,4 +38,9 @@ export function applyAppUpdate() {
   if (!ready) return;
   ready = false;
   applyUpdate?.(true);
+  // updateSW chỉ tải lại trang SAU khi service worker mới kịp kích hoạt — có
+  // máy mất vài giây, có ca kẹt hẳn (ロン bấm nút mà "chả thấy gì hiện ra",
+  // 14/8). Bản mới lúc này đã nằm sẵn trong máy nên quá 2,5s chưa thấy tải
+  // lại thì tự tải lại — không có gì để mất.
+  setTimeout(() => window.location.reload(), 2500);
 }
