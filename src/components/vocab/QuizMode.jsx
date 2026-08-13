@@ -8,9 +8,29 @@ import FreqBadge from './FreqBadge.jsx';
 const SESSION_SIZE = 10;
 const OPTION_KEYS = ['1', '2', '3', '4'];
 
-// Từ chưa có nghĩa không thể ra đề trắc nghiệm — đáp án sẽ là ô trống. Loại
-// khỏi phiên; user sửa hoặc xoá nó trong tab "🗂 Kho từ".
-const quizable = (list) => list.filter((w) => w.meaning.trim());
+/**
+ * Ba dạng câu hỏi TRỘN NGẪU NHIÊN trong cùng một phiên quiz — mỗi câu bốc một
+ * dạng. Cứ nhìn chữ Hán đoán nghĩa mãi thì thành học vẹt theo mặt chữ; đảo dạng
+ * liên tục buộc phải nhớ cả ba mặt của từ (chữ, cách đọc, nghĩa).
+ *
+ * Dù hỏi dạng nào thì `answerWord` cũng cộng điểm SRS cho CHÍNH TỪ ĐÓ — một bộ
+ * đếm lượt học duy nhất cho mỗi từ, không tách theo dạng câu hỏi.
+ *
+ * ask   = field làm câu hỏi
+ * pick  = field làm 4 đáp án
+ * speak = có được đọc to lúc CHƯA trả lời không. Dạng "chữ Hán → cách đọc" mà
+ *         đọc lên là lộ đáp án, nên tắt; trả lời xong mới có nút đọc.
+ */
+const FORMS = [
+  { id: 'meaning', ask: 'jp', pick: 'meaning', speak: true, hint: 'Chọn NGHĨA đúng' },
+  { id: 'kanji', ask: 'meaning', pick: 'jp', speak: false, hint: 'Chọn CHỮ HÁN đúng' },
+  { id: 'kana', ask: 'jp', pick: 'kana', speak: false, hint: 'Chọn CÁCH ĐỌC đúng' },
+];
+
+const val = (w, field) => (w?.[field] ?? '').trim();
+
+/** Ra đề được ít nhất một dạng: luôn cần chữ Hán, cộng thêm nghĩa hoặc cách đọc. */
+const quizable = (list) => list.filter((w) => val(w, 'jp') && (val(w, 'meaning') || val(w, 'kana')));
 
 function shuffle(arr) {
   const a = [...arr];
@@ -53,36 +73,59 @@ export default function QuizMode({ subject, onRecordAnswer, pool }) {
   const poolRef = useRef({ vocab, allWords });
   poolRef.current = { vocab, allWords };
 
-  // 4 đáp án: nghĩa đúng + 3 nghĩa nhiễu (ưu tiên cùng môn, thiếu thì lấy môn khác).
-  // CHỈ tạo một lần khi sang câu mới (idx/word đổi), sau đó đóng băng cho tới
-  // khi user trả lời xong và bấm "Câu tiếp theo".
-  const [options, setOptions] = useState([]);
+  // Câu hỏi hiện tại = {form, options}. Hai thứ phải sinh CÙNG LÚC, không thì
+  // có khoảnh khắc đáp án của dạng cũ nằm dưới câu hỏi của dạng mới.
+  const [question, setQuestion] = useState({ form: FORMS[0], options: [] });
   useEffect(() => {
     if (!word) {
-      setOptions([]);
+      setQuestion({ form: FORMS[0], options: [] });
       return;
     }
     const { vocab: v, allWords: all } = poolRef.current;
     // allWords là bản sao ({...w, subject}) nên không so sánh được bằng tham
     // chiếu — phải loại theo id, không thì từ cùng môn lọt vào 2 lần.
     const sameIds = new Set(v[subject].map((w) => w.id));
-    const same = v[subject].filter((w) => w.id !== word.id && w.meaning.trim());
-    const other = all.filter((w) => !sameIds.has(w.id) && w.meaning.trim());
-    // Ưu tiên nhiễu cùng môn, và bỏ nghĩa trùng nhau để không có 2 đáp án y hệt
-    const seen = new Set([word.meaning.trim()]);
-    const distractors = [];
-    for (const w of [...shuffle(same), ...shuffle(other)]) {
-      const m = w.meaning.trim();
-      if (seen.has(m)) continue;
-      seen.add(m);
-      distractors.push(w);
-      if (distractors.length === 3) break;
+    const others = [...shuffle(v[subject].filter((w) => w.id !== word.id)), ...shuffle(all.filter((w) => !sameIds.has(w.id)))];
+
+    const build = (form) => {
+      if (!val(word, form.ask) || !val(word, form.pick)) return null;
+      // Bỏ đáp án trùng chữ, và bỏ từ có cùng câu hỏi (vd 2 từ chung một nghĩa)
+      // vì như thế câu hỏi sẽ có 2 đáp án cùng đúng.
+      const asked = val(word, form.ask);
+      const seen = new Set([val(word, form.pick)]);
+      const distractors = [];
+      for (const w of others) {
+        const answer = val(w, form.pick);
+        if (!answer || seen.has(answer) || val(w, form.ask) === asked) continue;
+        seen.add(answer);
+        distractors.push(w);
+        if (distractors.length === 3) break;
+      }
+      return distractors.length === 3 ? { form, options: shuffle([word, ...distractors]) } : null;
+    };
+
+    // Bốc ngẫu nhiên một dạng ra được đủ 4 đáp án khác nhau cho từ này
+    let built = null;
+    for (const form of shuffle(FORMS)) {
+      built = build(form);
+      if (built) break;
     }
-    setOptions(shuffle([word, ...distractors]));
+    setQuestion(built ?? { form: FORMS[0], options: [word] });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [word, idx, session, subject]);
 
+  const { form, options } = question;
   const answered = chosen !== null;
+
+  // Trả lời xong thì kéo bảng nghĩa vào tầm mắt. Không có bước này thì trên
+  // iPhone bảng nằm ngay dưới mép màn hình (bị thanh nút che), phải tự cuộn mới
+  // đọc được — mà đọc lại từ vừa sai mới là phần đáng giá nhất của quiz.
+  // Nhảy thẳng, không cuộn mượt: mỗi câu trả lời là một lần nhảy, chờ animation
+  // 300ms mười lần một phiên là chậm thấy rõ.
+  const revealRef = useRef(null);
+  useEffect(() => {
+    if (answered) revealRef.current?.scrollIntoView({ block: 'end' });
+  }, [answered]);
 
   const choose = (i) => {
     if (!word || answered || !options[i]) return;
@@ -152,32 +195,28 @@ export default function QuizMode({ subject, onRecordAnswer, pool }) {
     );
   }
 
+  const askIsJapanese = form.ask === 'jp';
+
   return (
     <div>
       <p className="quiz-progress">
         Câu {idx + 1}/{queue.length} · Đúng {result.correct}/{result.total}
       </p>
       <div className="quiz-word-row">
-        <h3 className="jp-text quiz-word">{word.jp}</h3>
-        <button
-          type="button"
-          className="btn btn-outline tts-btn"
-          onClick={() => speakJapanese(word.jp)}
-          aria-label="Đọc phát âm"
-        >
-          <IconVolume />
-        </button>
-      </div>
-      <p className="quiz-hint">
-        {answered ? (
-          <>
-            {word.kana || ' '}
-            <FreqBadge jp={word.jp} subject={subject} full />
-          </>
-        ) : (
-          'Chọn nghĩa đúng (phím 1-4)'
+        <h3 className={`quiz-word${askIsJapanese ? ' jp-text' : ' quiz-word-vi'}`}>{val(word, form.ask)}</h3>
+        {form.speak && (
+          <button
+            type="button"
+            className="btn btn-outline tts-btn"
+            onClick={() => speakJapanese(word.jp)}
+            aria-label="Đọc phát âm"
+          >
+            <IconVolume />
+          </button>
         )}
-      </p>
+      </div>
+      {/* Dạng câu hỏi đổi liên tục nên phải nói rõ đang hỏi gì */}
+      {!answered && <p className="quiz-hint quiz-ask">{form.hint} (phím 1-4)</p>}
       <div className="quiz-options">
         {options.map((opt, i) => {
           const isCorrectOpt = opt.id === word.id;
@@ -187,7 +226,7 @@ export default function QuizMode({ subject, onRecordAnswer, pool }) {
           return (
             <button key={opt.id} type="button" className={cls} onClick={() => choose(i)} disabled={answered}>
               <span className="opt-letter">{i + 1}</span>
-              <span>{opt.meaning}</span>
+              <span className={form.pick === 'meaning' ? '' : 'jp-text'}>{val(opt, form.pick)}</span>
               {answered && isCorrectOpt && (
                 <span className="opt-result">
                   <IconCheck />
@@ -202,7 +241,38 @@ export default function QuizMode({ subject, onRecordAnswer, pool }) {
           );
         })}
       </div>
-      <div className="quiz-actions">
+
+      {/* Trả lời xong thì hiện đủ cả ba mặt của từ, dù vừa hỏi dạng nào */}
+      {answered && (
+        <div className="quiz-reveal" ref={revealRef}>
+          <div className="quiz-reveal-head">
+            <span className="jp-text quiz-reveal-jp">{word.jp}</span>
+            <button
+              type="button"
+              className="btn btn-outline tts-btn"
+              onClick={() => speakJapanese(word.jp)}
+              aria-label="Đọc phát âm"
+            >
+              <IconVolume />
+            </button>
+            <FreqBadge jp={word.jp} subject={subject} full />
+          </div>
+          {word.kana && <p className="quiz-reveal-kana jp-text">{word.kana}</p>}
+          {word.meaning && <p className="quiz-reveal-meaning">{word.meaning}</p>}
+          {(word.exJp || word.exVi) && (
+            <div className="quiz-reveal-ex">
+              {word.exJp && <p className="jp-text">{word.exJp}</p>}
+              {word.exVi && <p className="quiz-reveal-ex-vi">{word.exVi}</p>}
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Ghim xuống đáy sau khi trả lời: cả cụm câu hỏi + 4 đáp án + bảng nghĩa
+          vốn đã cao hơn màn hình iPhone, để nút chạy theo cuối trang thì mỗi câu
+          phải cuộn một lần mới bấm được. Chỉ ghim lúc đã trả lời — lúc đang cân
+          nhắc thì không có gì che đáp án. */}
+      <div className={`quiz-actions${answered ? ' is-pinned' : ''}`}>
         {answered && (
           <>
             <button

@@ -14,3 +14,6 @@ __pycache__/
 # "SCHEDULE/" nuốt luôn src/assets/schedule/ và app mất sạch ảnh lịch khi deploy.
 /テキスト/
 /SCHEDULE/
+
+# Kho đề kéo từ app của lớp — chỉ để học riêng, KHÔNG đưa vào repo app / KHÔNG deploy.
+/kho-de-thi/

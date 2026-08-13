@@ -76,13 +76,13 @@
       "id": "1777721495585",
       "jp": "アローダイヤグラム",
       "kana": "あろーだいやぐらむ",
-      "meaning": "sơ đồ mũi tên, sơ đồ mạng PERT (đề cũng viết アローダイアグラム)",
+      "meaning": "sơ đồ mũi tên, sơ đồ mạng PERT",
       "exJp": "アローダイヤグラムを作成して工程を管理する。",
       "exVi": "Lập sơ đồ mũi tên để quản lý tiến độ thi công.",
       "score": 3,
       "nextReview": 1786230454051,
       "mastered": false,
-      "updatedAt": 1786591376965
+      "updatedAt": 1786599733204
     },
     {
       "id": "1777721509635",
@@ -3041,13 +3041,13 @@
       "id": "1786573248380_3a31xt",
       "jp": "劣性",
       "kana": "れっせい",
-      "meaning": "(liệt tính) tính lặn (cách gọi cũ của 潜性)",
+      "meaning": "(liệt tính) tính lặn (cách gọi cũ)",
       "exJp": "劣性遺伝子は現在では潜性遺伝子と呼ばれる。",
       "exVi": "Gen lặn (劣性) hiện nay được gọi là 潜性遺伝子.",
       "score": 0,
       "nextReview": 0,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786599733204
     },
     {
       "id": "1786573248380_y89bwf",
@@ -4073,13 +4073,13 @@
       "id": "1786573248380_gikvt4",
       "jp": "図られた",
       "kana": "はかられた",
-      "meaning": "đã được tiến hành, được xúc tiến (dạng bị động của 図る)",
+      "meaning": "đã được tiến hành, được xúc tiến (dạng bị động)",
       "exJp": "工期短縮のため施工の効率化が図られた。",
       "exVi": "Việc nâng cao hiệu quả thi công đã được tiến hành để rút ngắn thời gian thi công.",
       "score": 0,
       "nextReview": 0,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786599733204
     },
     {
       "id": "1786573248380_tt7zxo",
@@ -4097,13 +4097,13 @@
       "id": "1786573248380_w995jv",
       "jp": "先駆けた",
       "kana": "さきがけた",
-      "meaning": "đi trước, tiên phong (dạng quá khứ của 先駆ける)",
+      "meaning": "đi trước, tiên phong (dạng quá khứ)",
       "exJp": "世界に先駆けた技術開発が進められた。",
       "exVi": "Việc phát triển công nghệ đi trước thế giới đã được xúc tiến.",
       "score": 0,
       "nextReview": 0,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786599733204
     },
     {
       "id": "1786573248380_k8aohk",
@@ -4289,13 +4289,13 @@
       "id": "1786573248380_8ley46",
       "jp": "有償",
       "kana": "ゆうしょう",
-      "meaning": "(hữu thường) có tính phí, có trả tiền (trái nghĩa với 無償)",
+      "meaning": "(hữu thường) có tính phí, có trả tiền (trái nghĩa với miễn phí)",
       "exJp": "技術資料は有償で提供される。",
       "exVi": "Tài liệu kỹ thuật được cung cấp có tính phí.",
       "score": 0,
       "nextReview": 0,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786599733204
     },
     {
       "id": "1786573248380_72gpwe",
@@ -4505,13 +4505,13 @@
       "id": "1786573248380_3s2s05",
       "jp": "棄てる",
       "kana": "すてる",
-      "meaning": "Bỏ, Vứt(捨てる)",
+      "meaning": "bỏ, vứt",
       "exJp": "産業廃棄物を不法に棄てることは禁止されている。",
       "exVi": "Cấm vứt bỏ chất thải công nghiệp trái phép.",
       "score": 0,
       "nextReview": 0,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786599733204
     },
     {
       "id": "1786573248380_rhsaex",
@@ -5249,13 +5249,13 @@
       "id": "1786573248380_br9zjg",
       "jp": "縮んで",
       "kana": "ちぢんで",
-      "meaning": "co lại, co ngót (dạng te của 縮む)",
+      "meaning": "co lại, co ngót (dạng te)",
       "exJp": "コンクリートは乾燥すると縮んでひび割れが生じる。",
       "exVi": "Bê tông khi khô sẽ co lại và sinh ra vết nứt.",
       "score": 0,
       "nextReview": 0,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786599733204
     },
     {
       "id": "1786573248380_qgqkyw",
@@ -5381,13 +5381,13 @@
       "id": "1786573248380_0jzae0",
       "jp": "進数",
       "kana": "しんすう",
-      "meaning": "(tiến số) hệ đếm, cơ số (2進数: hệ nhị phân)",
+      "meaning": "(tiến số) hệ đếm, cơ số (vd: cơ số 2 là hệ nhị phân)",
       "exJp": "10進数を2進数に変換して計算する。",
       "exVi": "Đổi số thập phân sang nhị phân để tính toán.",
       "score": 0,
       "nextReview": 0,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786599733204
     },
     {
       "id": "1786573248380_wxfmfs",
@@ -5417,13 +5417,13 @@
       "id": "1786573248380_x6hrvr",
       "jp": "浮動",
       "kana": "ふどう",
-      "meaning": "(phù động) nổi trôi; 浮動小数点: dấu phẩy động",
+      "meaning": "(phù động) nổi trôi; dùng trong thuật ngữ \"số dấu phẩy động\"",
       "exJp": "実数は浮動小数点方式で表現される。",
       "exVi": "Số thực được biểu diễn theo phương thức dấu phẩy động.",
       "score": 0,
       "nextReview": 0,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786599733204
     },
     {
       "id": "1786573248380_22zaxc",
@@ -7031,13 +7031,13 @@
       "id": "1786573248380_h2aanc",
       "jp": "造成",
       "kana": "ぞうせい",
-      "meaning": "(Tạo thành) San lấp, cải tạo đất tạo mặt bằng (vd: 宅地造成)",
+      "meaning": "(tạo thành) san lấp, cải tạo đất tạo mặt bằng (vd: san nền đất ở)",
       "exJp": "宅地の造成工事が来月から始まる。",
       "exVi": "Công trình san lấp tạo mặt bằng đất ở sẽ bắt đầu từ tháng sau.",
       "score": 1,
       "nextReview": 1786661530623,
       "mastered": false,
-      "updatedAt": 1786575130623
+      "updatedAt": 1786599733204
     },
     {
       "id": "1786573248380_pk1r3w",
@@ -7499,13 +7499,13 @@
       "id": "1786573248380_m0uikk",
       "jp": "未然",
       "kana": "みぜん",
-      "meaning": "(vị nhiên) 未然に防ぐ phòng ngừa, ngăn chặn",
+      "meaning": "(vị nhiên) khi chưa xảy ra; dùng trong cụm \"ngăn chặn từ trước, phòng ngừa\"",
       "exJp": "事故を未然に防ぐため点検を徹底する。",
       "exVi": "Kiểm tra triệt để nhằm ngăn chặn tai nạn trước khi xảy ra.",
-      "score": 1,
-      "nextReview": 1786682250985,
+      "score": 0,
+      "nextReview": 0,
       "mastered": false,
-      "updatedAt": 1786595850985
+      "updatedAt": 1786599733204
     },
     {
       "id": "1786573248380_7madh7",
@@ -9083,13 +9083,13 @@
       "id": "1786573248380_s42hwd",
       "jp": "則り",
       "kana": "のっとり",
-      "meaning": "(tắc) tuân theo, chiểu theo (則る)",
+      "meaning": "(tắc) tuân theo, chiểu theo",
       "exJp": "技術士は倫理綱領に則り行動しなければならない。",
       "exVi": "Kỹ sư chuyên nghiệp phải hành động tuân theo quy tắc đạo đức.",
       "score": 0,
       "nextReview": 0,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786599733204
     },
     {
       "id": "1786573248380_36k56k",
@@ -11005,13 +11005,13 @@
       "id": "1786573248380_h6tibo",
       "jp": "安息",
       "kana": "あんそく",
-      "meaning": "(an tức) nghỉ ngơi; 安息角 = góc nghỉ của đất",
+      "meaning": "(an tức) nghỉ ngơi; dùng trong thuật ngữ \"góc nghỉ của đất\"",
       "exJp": "盛土の勾配は土の安息角より緩くする。",
       "exVi": "Độ dốc của nền đắp phải thoải hơn góc nghỉ của đất.",
       "score": 0,
       "nextReview": 0,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786599733204
     },
     {
       "id": "1786573248380_pksrkt",
@@ -11089,13 +11089,13 @@
       "id": "1786573248380_6jgi9z",
       "jp": "外郭",
       "kana": "がいかく",
-      "meaning": "(ngoại quách) vòng ngoài; 外郭施設 = công trình bảo vệ ngoài của cảng",
+      "meaning": "(ngoại quách) vòng ngoài; dùng trong thuật ngữ \"công trình bảo vệ ngoài của cảng\"",
       "exJp": "防波堤は港湾の外郭施設の一つである。",
       "exVi": "Đê chắn sóng là một trong các công trình bảo vệ vòng ngoài của cảng.",
       "score": 0,
       "nextReview": 0,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786599733204
     },
     {
       "id": "1786573248380_dokw5g",
@@ -11197,13 +11197,13 @@
       "id": "1786573248380_1pt978",
       "jp": "遜色",
       "kana": "そんしょく",
-      "meaning": "(tốn sắc) sự thua kém; 遜色ない = không thua kém",
+      "meaning": "(tốn sắc) sự thua kém; thường dùng ở dạng phủ định \"không thua kém\"",
       "exJp": "再生材は新材と遜色ない強度を持つ。",
       "exVi": "Vật liệu tái chế có cường độ không thua kém vật liệu mới.",
       "score": 0,
       "nextReview": 0,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786599733204
     },
     {
       "id": "1786573248380_bffen4",
@@ -11245,13 +11245,13 @@
       "id": "1786573248380_og3l3n",
       "jp": "包蔵",
       "kana": "ほうぞう",
-      "meaning": "(bao tàng) hàm chứa, tiềm tàng; 包蔵水力 = tiềm năng thủy điện",
+      "meaning": "(bao tàng) hàm chứa, tiềm tàng; dùng trong thuật ngữ \"tiềm năng thủy điện\"",
       "exJp": "この河川には大きな包蔵水力が残されている。",
       "exVi": "Con sông này còn tiềm năng thủy điện lớn.",
       "score": 0,
       "nextReview": 0,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786599733204
     },
     {
       "id": "1786573248380_ppvbcn",
@@ -11749,13 +11749,13 @@
       "id": "1786573248380_8rkc2p",
       "jp": "踏まえ",
       "kana": "ふまえ",
-      "meaning": "dựa trên, căn cứ vào (踏まえる)",
+      "meaning": "dựa trên, căn cứ vào",
       "exJp": "調査結果を踏まえ、対策を検討する。",
       "exVi": "Dựa trên kết quả điều tra, xem xét biện pháp đối phó.",
       "score": 0,
       "nextReview": 0,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786599733204
     },
     {
       "id": "1786573248380_ixypn1",
@@ -12529,13 +12529,13 @@
       "id": "1786573248380_744ck0",
       "jp": "軌きょう",
       "kana": "ききょう",
-      "meaning": "(quỹ khuông) khung ray (kết cấu ray + tà vẹt liên kết thành khung, 軌框)",
+      "meaning": "(quỹ khuông) khung ray (ray và tà vẹt liên kết thành khung)",
       "exJp": "軌きょうをバラスト上に敷設する。",
       "exVi": "Lắp đặt khung ray trên lớp đá ba-lát.",
       "score": 0,
       "nextReview": 0,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786599733204
     },
     {
       "id": "1786573248380_i6xjnf",
@@ -12553,13 +12553,13 @@
       "id": "1786573248380_ai6t9o",
       "jp": "路盤",
       "kana": "ろばん",
-      "meaning": "(lộ bàn) lớp móng đường (nằm dưới lớp mặt đường, trên 路床)",
+      "meaning": "(lộ bàn) lớp móng đường (nằm dưới lớp mặt đường, trên lớp nền đường)",
       "exJp": "舗装の前に路盤をよく締め固める必要がある。",
       "exVi": "Trước khi rải mặt đường cần đầm chặt kỹ lớp móng đường.",
       "score": 0,
       "nextReview": 0,
       "mastered": false,
-      "updatedAt": 1786591376965
+      "updatedAt": 1786599733204
     },
     {
       "id": "1786573248380_vkzyea",

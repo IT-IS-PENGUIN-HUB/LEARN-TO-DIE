@@ -30,9 +30,9 @@
   --hero-pattern: radial-gradient(circle at 50% 0%, rgba(58, 134, 255, 0.15) 0%, transparent 70%);
   /* Nhãn "hay thi" — cam sáng để nổi trên nền tối */
   --freq-hot: #fb923c;
-  /* Sáng hơn --primary một bậc: chữ 11px màu #3a86ff trên nền thẻ tối chỉ được
-     4,2:1, chưa đạt ngưỡng đọc được 4,5:1 */
-  --freq-often: #60a5fa;
+  /* Xanh dùng cho CHỮ NHỎ. --primary (#3a86ff) chỉ đạt 4,2:1 trên nền thẻ tối,
+     dưới ngưỡng đọc được 4,5:1 — nhãn tần suất và dòng cách đọc đều cần bậc này. */
+  --accent-text: #60a5fa;
 }
 
 :root[data-theme='light'] {
@@ -48,9 +48,9 @@
   --shadow-header: 0 1px 3px rgba(0, 0, 0, 0.05);
   --hero-bg: #f8fafc;
   --hero-pattern: radial-gradient(circle at 50% 50%, rgba(58, 134, 255, 0.05) 0%, transparent 50%);
-  /* Nền sáng cần màu đậm hơn mới đủ tương phản cho chữ nhỏ 11px */
+  /* Nền sáng cần màu đậm hơn mới đủ tương phản cho chữ nhỏ */
   --freq-hot: #c2410c;
-  --freq-often: #1d4ed8;
+  --accent-text: #1d4ed8;
 }
 
 /* ============ Base ============ */
@@ -1464,9 +1464,9 @@ textarea.text-input {
 }
 
 .freq-badge.is-often {
-  border-color: color-mix(in srgb, var(--freq-often) 40%, transparent);
-  background: color-mix(in srgb, var(--freq-often) 14%, transparent);
-  color: var(--freq-often);
+  border-color: color-mix(in srgb, var(--accent-text) 40%, transparent);
+  background: color-mix(in srgb, var(--accent-text) 14%, transparent);
+  color: var(--accent-text);
 }
 
 .freq-badge.is-seen,
@@ -1729,6 +1729,69 @@ textarea.text-input {
   overflow-wrap: anywhere;
 }
 
+/* Câu hỏi là tiếng Việt (kiểu "Việt → 漢") thì dài hơn chữ Hán nhiều — cỡ chữ
+   phải nhỏ lại, không thì tràn màn hình điện thoại. */
+.quiz-word-vi {
+  font-size: clamp(1.1rem, 4.5vw, 1.5rem);
+  line-height: 1.4;
+}
+
+/* Dạng câu hỏi đổi mỗi câu nên dòng "đang hỏi gì" phải bắt mắt hơn chữ phụ */
+.quiz-ask {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+/* ============ Quiz: hiện đủ 3 mặt của từ sau khi trả lời ============ */
+.quiz-reveal {
+  background: var(--bg-alt);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 0.75rem 0.9rem;
+  margin-bottom: 1.25rem;
+  text-align: center;
+  /* Cuộn tự động phải dừng TRÊN thanh nút ghim đáy, không thì bảng chui xuống
+     dưới nó. Số này xấp xỉ chiều cao thanh nút. */
+  scroll-margin-bottom: 5.5rem;
+}
+
+.quiz-reveal-head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.quiz-reveal-jp {
+  font-size: 1.6rem;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.quiz-reveal-kana {
+  color: var(--accent-text);
+  font-size: 0.95rem;
+}
+
+.quiz-reveal-meaning {
+  margin-top: 0.2rem;
+}
+
+/* Ví dụ là phần "có thì tốt" — chữ nhỏ để không đẩy nút "Câu tiếp theo" xuống
+   dưới màn hình iPhone (phải cuộn mới bấm được thì học chậm hẳn, không đáng). */
+.quiz-reveal-ex {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px dashed var(--border-color);
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+.quiz-reveal-ex-vi {
+  color: var(--text-muted);
+}
+
 .quiz-hint {
   text-align: center;
   color: var(--text-muted);
@@ -1796,6 +1859,19 @@ textarea.text-input {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+}
+
+/* Hai nút luôn nằm trong tầm ngón cái: dính đáy khung cuộn khi nội dung còn dài
+   phía dưới, và tự trở về cuối trang khi đã cuộn hết. env(safe-area-inset-bottom)
+   chừa chỗ cho vạch home của iPhone. */
+.quiz-actions.is-pinned {
+  position: sticky;
+  bottom: 0;
+  z-index: 5;
+  margin-top: 0.75rem;
+  padding: 0.6rem 0 calc(0.6rem + env(safe-area-inset-bottom));
+  background: var(--card-bg);
+  border-top: 1px solid var(--border-color);
 }
 
 .quiz-progress {
