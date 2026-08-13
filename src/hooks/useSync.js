@@ -2,10 +2,13 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { useVocab } from '../context/VocabProvider.jsx';
 import { hasSyncToken, pullVocab, pushVocab } from '../services/github.js';
 import { pullProgress, pushProgress } from '../services/progressSync.js';
+import { pullExam, pushExam } from '../services/examSync.js';
 import { PROGRESS_EVENT } from '../lib/textbookProgress.js';
+import { EXAM_EVENT } from '../lib/examState.js';
 
 const AUTO_PUSH_DELAY_MS = 8000;
 const PROGRESS_PUSH_DELAY_MS = 10000;
+const EXAM_PUSH_DELAY_MS = 10000;
 
 /**
  * Quản lý đồng bộ GitHub: pull/push thủ công + tự động
@@ -33,6 +36,8 @@ export function useSync() {
         replaceAll(merged);
         // Tiến độ đọc giáo trình đi cùng chuyến: kéo về để đọc tiếp đúng chỗ máy kia dừng
         await pullProgress().catch((e) => console.warn('Pull tiến độ lỗi:', e.message));
+        // Trạng thái làm đề cũng vậy — catch riêng để lỗi đề không phá sync vocab
+        await pullExam().catch((e) => console.warn('Pull đề thi lỗi:', e.message));
         setStatus({ kind: 'ok', text: 'Đã tải về và gộp dữ liệu từ GitHub ✓' });
       } catch (e) {
         if (!silent) setStatus({ kind: 'err', text: e.message });
@@ -54,6 +59,7 @@ export function useSync() {
         skipNextAutoPush.current = true;
         replaceAll(merged);
         await pushProgress().catch((e) => console.warn('Push tiến độ lỗi:', e.message));
+        await pushExam().catch((e) => console.warn('Push đề thi lỗi:', e.message));
         setStatus(
           skipped
             ? { kind: 'ok', text: 'Dữ liệu đã khớp với GitHub, không cần lưu lại.' }
@@ -90,6 +96,23 @@ export function useSync() {
     return () => {
       clearTimeout(timer);
       window.removeEventListener(PROGRESS_EVENT, onChange);
+    };
+  }, []);
+
+  // Tự đẩy trạng thái làm đề sau mỗi câu trả lời/đánh dấu (debounce, im lặng)
+  useEffect(() => {
+    let timer = null;
+    const onChange = () => {
+      if (!hasSyncToken() || !navigator.onLine) return;
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        pushExam().catch((e) => console.warn('Auto-push đề thi lỗi:', e.message));
+      }, EXAM_PUSH_DELAY_MS);
+    };
+    window.addEventListener(EXAM_EVENT, onChange);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener(EXAM_EVENT, onChange);
     };
   }, []);
 

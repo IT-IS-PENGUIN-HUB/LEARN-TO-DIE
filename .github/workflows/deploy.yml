@@ -3,11 +3,14 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
-    # Commit "Sync vocab" / "Sync tiến độ đọc" từ app không cần deploy lại site:
-    # cả hai file đều được app đọc/ghi qua GitHub API, không đọc từ bản deploy.
+    # Commit "Sync vocab" / "Sync tiến độ đọc" / "Sync đề thi" từ app không cần
+    # deploy lại site: cả ba file đều được app đọc/ghi qua GitHub API, không đọc
+    # từ bản deploy. Thiếu dòng exam-progress.json thì MỖI 10 GIÂY làm bài lại
+    # kích một lần build+deploy, còn cancel ngang deploy code thật đang chạy.
     paths-ignore:
       - 'vocab.json'
       - 'progress.json'
+      - 'exam-progress.json'
   workflow_dispatch:
 
 permissions:

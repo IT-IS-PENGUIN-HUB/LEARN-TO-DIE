@@ -5,7 +5,7 @@ import { EXAM_YEARS, SUBJECT_META } from '../../data/examBank.js';
 import { loadYear, isCorrect } from '../../lib/examData.js';
 import {
   loadExamState, saveExamState, recordExamAnswer, toggleBookmark,
-  statsFor, saveSession, clearSession,
+  statsFor, saveSession, clearSession, activeSession, EXAM_EVENT,
 } from '../../lib/examState.js';
 import { KEYS, loadJSON, saveJSON } from '../../lib/storage.js';
 import { IconArrowLeft } from '../icons.jsx';
@@ -44,6 +44,26 @@ export default function PracticeModule({ onBack }) {
       saveExamState(next);
       return next;
     });
+  }, []);
+
+  // Sync kéo dữ liệu máy kia về ghi thẳng localStorage (notify:false) — nghe
+  // EXAM_EVENT thì không đủ. Đọc lại khi tab hiện ra / cửa sổ được focus:
+  // đúng nhịp người dùng chuyển từ iPhone sang PC.
+  useEffect(() => {
+    // Không chặn theo visibilityState: refresh chỉ là một phép so sánh rẻ,
+    // chạy lúc tab ẩn cũng vô hại — chặn thì có tình huống bỏ lỡ cập nhật.
+    const refresh = () => {
+      const disk = loadExamState();
+      setExamState((cur) => (JSON.stringify(disk) !== JSON.stringify(cur) ? disk : cur));
+    };
+    document.addEventListener('visibilitychange', refresh);
+    window.addEventListener('focus', refresh);
+    window.addEventListener(EXAM_EVENT, refresh);
+    return () => {
+      document.removeEventListener('visibilitychange', refresh);
+      window.removeEventListener('focus', refresh);
+      window.removeEventListener(EXAM_EVENT, refresh);
+    };
   }, []);
 
   const setPref = useCallback((patch) => {
@@ -95,7 +115,7 @@ export default function PracticeModule({ onBack }) {
     }));
   }, [screen, meta, index, answers, questions.length, commit]);
 
-  const resume = examState.session;
+  const resume = activeSession(examState);
 
   const select = useCallback((q, letter) => {
     if (answers[q.qid]) return;

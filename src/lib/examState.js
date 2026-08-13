@@ -8,16 +8,32 @@
 import { KEYS, loadJSON, saveJSON } from './storage.js';
 import { applyAnswer } from './srs.js';
 
-const EMPTY = { srs: {}, bookmarks: {}, session: null };
+// Sự kiện "trạng thái làm đề vừa đổi" — useSync nghe để hẹn giờ đẩy lên GitHub
+// (giống PROGRESS_EVENT của tiến độ đọc giáo trình).
+export const EXAM_EVENT = 'ltd-exam-changed';
 
 export function loadExamState() {
   const s = loadJSON(KEYS.examState, null);
-  if (!s || typeof s !== 'object') return { ...EMPTY, srs: {}, bookmarks: {} };
-  return { srs: s.srs ?? {}, bookmarks: s.bookmarks ?? {}, session: s.session ?? null };
+  if (!s || typeof s !== 'object') return { srs: {}, bookmarks: {}, attempts: {}, session: null };
+  return {
+    srs: s.srs ?? {},
+    bookmarks: s.bookmarks ?? {},
+    // attempts: lịch sử thi thử (GĐ5 mới ghi), khai sẵn để file sync đủ 3 nhánh
+    attempts: s.attempts ?? {},
+    session: s.session ?? null,
+  };
 }
 
-export function saveExamState(state) {
+/**
+ * `notify: false` dành RIÊNG cho luồng sync: sync ghi xong mà cũng phát sự kiện
+ * thì useSync lại hẹn push → push lại ghi → lặp vô hạn (đúng cái bẫy đã được
+ * cảnh báo ở progressSync.js).
+ */
+export function saveExamState(state, { notify = true } = {}) {
   saveJSON(KEYS.examState, state);
+  if (notify && typeof window !== 'undefined') {
+    window.dispatchEvent(new CustomEvent(EXAM_EVENT));
+  }
 }
 
 /** Bản ghi SRS mặc định cho câu chưa từng làm. srs.js chỉ cần score + nextReview. */
@@ -93,6 +109,17 @@ export function saveSession(state, session) {
   return { ...state, session };
 }
 
-export function clearSession(state) {
-  return { ...state, session: null };
+/**
+ * Xoá phiên bằng BIA MỘ chứ không phải null: file sync gộp theo mốc `at`,
+ * để null thì máy kia còn giữ phiên cũ sẽ đồng bộ ngược làm nó "sống lại"
+ * (đúng bài học tombstone deleted:true của kho từ vựng).
+ */
+export function clearSession(state, now = Date.now()) {
+  return { ...state, session: { cleared: true, at: now } };
+}
+
+/** Phiên có thật sự đang dở không (không phải bia mộ, đủ dữ liệu để mở lại). */
+export function activeSession(state) {
+  const s = state.session;
+  return s && !s.cleared && typeof s.year === 'number' ? s : null;
 }
