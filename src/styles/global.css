@@ -372,6 +372,16 @@ textarea {
   font-weight: 500;
 }
 
+/* Trong thẻ "Từ vựng hôm nay": nền thẻ đã là --card-bg nên ô ví dụ phải dùng
+   --bg-alt, không thì chìm hẳn vào thẻ. Selector kép để thắng .example-box
+   (khai báo sau trong file nên rule một class sẽ thua nó). */
+.example-box.wotd-example {
+  background-color: var(--bg-alt);
+  border: 1px solid var(--border-color);
+  margin-top: 0.9rem;
+  max-width: 34rem;
+}
+
 .wotd-next {
   position: absolute;
   right: 1rem;
@@ -446,6 +456,10 @@ textarea {
 .subject-card p {
   color: var(--text-muted);
   font-size: 0.9rem;
+}
+
+.stats-slot {
+  margin-top: 2rem;
 }
 
 /* ============ Lối tắt module (giáo trình / lịch học) ============ */
@@ -1948,6 +1962,18 @@ textarea.text-input {
   display: flex;
   flex-direction: column;
   padding: max(0.5rem, env(safe-area-inset-top)) 0.5rem calc(0.5rem + env(safe-area-inset-bottom));
+
+  /* Khung này LUÔN nền tối, kể cả khi app đang ở giao diện sáng. Không định nghĩa
+     lại token ở đây thì nút lấy --text-main của giao diện sáng (#111) và thành chữ
+     đen trên nền đen — tương phản 1.1:1, chỉ còn thấy cái viền rỗng. */
+  color-scheme: dark;
+  --text-main: #e5e7eb;
+  --text-muted: #94a3b8;
+  --border-color: #475569;
+  --card-bg: #24272b;
+  --bg-alt: #101214;
+  --primary-hover: #5a9bff;
+  color: var(--text-main);
 }
 
 /* Máy nằm ngang: bớt viền để trang chiếm nhiều màn hình hơn.
@@ -2117,14 +2143,59 @@ textarea.text-input {
     gap: 0.5rem;
   }
 
-  .card-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+  /* Trên điện thoại thứ tự ưu tiên khác hẳn PC: từ hôm nay → tiến độ → giáo trình
+     → đọc tiếp → môn thi → lịch học. Sắp bằng `order` chứ không đổi DOM, để bản PC
+     giữ nguyên. `display: contents` mở lưới module ra cho 3 thẻ tự sắp riêng lẻ. */
+  .dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
   }
 
+  .module-grid {
+    display: contents;
+  }
+
+  .dashboard > .wotd-card { order: 1; }
+  .stats-slot { order: 2; margin-top: 0.5rem; }
+  .module-textbook { order: 3; }
+  .module-resume { order: 4; }
+  .card-grid { order: 5; }
+  .module-schedule { order: 6; }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+
+  /* Môn thi xuống dưới nên thu gọn thành hàng ngang: icon | tên trên, mô tả dưới */
   .subject-card {
-    min-height: 140px;
-    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 0.1rem 0.85rem;
+    text-align: left;
+    min-height: 0;
+    padding: 0.85rem 1rem;
+  }
+
+  .subject-card .card-icon {
+    grid-row: 1 / 3;
+    font-size: 1.6rem;
+    margin-bottom: 0;
+  }
+
+  .subject-card h2 {
+    font-size: 1.15rem;
+    margin-bottom: 0;
+  }
+
+  .subject-card p {
+    font-size: 0.76rem;
+  }
+
+  .subject-card:hover {
+    transform: none;
   }
 
   .hero {

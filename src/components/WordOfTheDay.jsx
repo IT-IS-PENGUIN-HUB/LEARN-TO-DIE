@@ -58,6 +58,12 @@ export default function WordOfTheDay({ onOpenVocab }) {
       </div>
       <p className="wotd-kana">{word.kana}</p>
       <p className="wotd-meaning">{word.meaning}</p>
+      {(word.exJp || word.exVi) && (
+        <div className="example-box wotd-example">
+          {word.exJp && <p className="ex-jp jp-text">{word.exJp}</p>}
+          {word.exVi && <p className="ex-vi">{word.exVi}</p>}
+        </div>
+      )}
       {dueTotal > 0 && (
         <button type="button" className="due-reminder" onClick={onOpenVocab}>
           📚 Hôm nay có <strong>&nbsp;{dueTotal}&nbsp;</strong> từ cần ôn — bắt đầu ngay

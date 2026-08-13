@@ -96,7 +96,7 @@ function AppInner() {
               onResume={openChapter}
             />
             <WordOfTheDay onOpenVocab={openVocab} />
-            <div style={{ marginTop: '2rem' }}>
+            <div className="stats-slot">
               <StatsPanel refreshToken={statsToken} />
             </div>
           </section>

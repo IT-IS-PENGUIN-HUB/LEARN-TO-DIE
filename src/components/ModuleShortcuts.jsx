@@ -21,7 +21,7 @@ export default function ModuleShortcuts({ onOpenTextbooks, onOpenSchedule, onRes
 
   return (
     <div className="module-grid">
-      <button type="button" className="module-card" onClick={onOpenTextbooks}>
+      <button type="button" className="module-card module-textbook" onClick={onOpenTextbooks}>
         <span className="module-icon">
           <IconBookOpen />
         </span>
@@ -31,7 +31,7 @@ export default function ModuleShortcuts({ onOpenTextbooks, onOpenSchedule, onRes
         </span>
       </button>
 
-      <button type="button" className="module-card" onClick={onOpenSchedule}>
+      <button type="button" className="module-card module-schedule" onClick={onOpenSchedule}>
         <span className="module-icon">
           <IconCalendar />
         </span>
