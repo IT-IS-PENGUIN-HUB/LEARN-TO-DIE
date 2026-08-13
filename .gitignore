@@ -21,6 +21,11 @@ __pycache__/
 # đã bỏ các trường thừa). Muốn dựng lại public/exam-data/ thì cần thư mục này.
 /kho-de-thi/
 
+# Ảnh logo GỐC (1.8MB) — bản dùng thật đã được scripts/build_logo.py cắt tròn
+# và sinh vào src/assets/logo.png + public/icons/. Đổi logo: thay file gốc rồi
+# chạy lại script, không commit ảnh nguồn cho nặng repo.
+/logo/
+
 # Đáp án chính thức tải từ 日本技術士会 (9 PDF, ~2.7MB) — chỉ dùng để đối chiếu bằng
 # kho-de-thi/check_official.py, app không cần. Tải lại từ trang ban tổ chức lúc nào cũng được.
 /DAP AN（基礎・適性・建設部門）/

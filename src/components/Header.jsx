@@ -1,5 +1,7 @@
 import { SUBJECTS } from '../data/exams.js';
 import { IconBook, IconBookOpen, IconCalendar, IconGear, IconMoon, IconSun } from './icons.jsx';
+// Logo tròn cắt từ logo/logo.png bằng scripts/build_logo.py (đổi logo thì chạy lại script)
+import logoUrl from '../assets/logo.png';
 
 export default function Header({
   theme,
@@ -14,7 +16,10 @@ export default function Header({
 }) {
   return (
     <header className="header">
+      {/* Logo + chữ chung MỘT nút — bấm đâu trong vùng này cũng về trang chủ
+          (khác app trung tâm, ロン yêu cầu 14/8) */}
       <button type="button" className="logo" onClick={onGoHome} title="Về trang chủ" aria-label="Về trang chủ">
+        <img className="logo-img" src={logoUrl} alt="" width="34" height="34" />
         GIVE UP IS LOSE
       </button>
       <nav className="main-menu" aria-label="Chọn môn thi">
