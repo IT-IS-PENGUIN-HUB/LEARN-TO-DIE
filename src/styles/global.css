@@ -1723,16 +1723,16 @@ textarea.text-input {
 }
 
 .quiz-word {
-  font-size: clamp(1.8rem, 8vw, 2.5rem);
+  font-size: clamp(2.07rem, 9.2vw, 2.88rem);
   text-align: center;
   color: var(--primary);
   overflow-wrap: anywhere;
 }
 
-/* Câu hỏi là tiếng Việt (kiểu "Việt → 漢") thì dài hơn chữ Hán nhiều — cỡ chữ
-   phải nhỏ lại, không thì tràn màn hình điện thoại. */
+/* Câu hỏi là tiếng Việt (dạng "nghĩa → chữ Hán") thì dài hơn chữ Hán nhiều nên
+   vẫn phải nhỏ hơn, nhưng cùng được nới thêm 15% như các cỡ chữ khác. */
 .quiz-word-vi {
-  font-size: clamp(1.1rem, 4.5vw, 1.5rem);
+  font-size: clamp(1.27rem, 5.2vw, 1.73rem);
   line-height: 1.4;
 }
 
@@ -1751,8 +1751,8 @@ textarea.text-input {
   margin-bottom: 1.25rem;
   text-align: center;
   /* Cuộn tự động phải dừng TRÊN thanh nút ghim đáy, không thì bảng chui xuống
-     dưới nó. Số này xấp xỉ chiều cao thanh nút. */
-  scroll-margin-bottom: 5.5rem;
+     dưới nó. Thanh nút cao ~78px kể cả lề, để 6.5rem cho dư một khe hở. */
+  scroll-margin-bottom: 6.5rem;
 }
 
 .quiz-reveal-head {
@@ -1815,8 +1815,11 @@ textarea.text-input {
   transition: border-color 0.2s, background-color 0.2s;
   text-align: left;
   width: 100%;
-  font-size: 1rem;
-  min-height: 3.2rem;
+  /* To hơn 15% so với cỡ chuẩn: từ khi hai nút được ghim đáy thì không phải nén
+     chữ để giành chỗ nữa, mà đáp án giờ có cả chữ Hán — chữ Nhật cỡ nhỏ rất khó
+     nhìn ra nét. */
+  font-size: 1.15rem;
+  min-height: 3.4rem;
 }
 
 .answer-option:hover:not(:disabled) {
