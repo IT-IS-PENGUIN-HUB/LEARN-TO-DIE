@@ -1198,7 +1198,8 @@
       "score": 0,
       "nextReview": 0,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786583590768,
+      "deleted": true
     },
     {
       "id": "1786573248380_e6yf64",
@@ -6103,12 +6104,12 @@
       "jp": "利益相反",
       "kana": "りえきそうはん",
       "meaning": "xung đột lợi ích",
-      "exJp": "利益相反は組織の信頼を損なう可能性があります。(Xung đột lợi ích có thể làm tổn hại đến sự tin cậy của tổ chức.)",
-      "exVi": "",
+      "exJp": "利益相反は組織の信頼を損なう可能性があります。",
+      "exVi": "Xung đột lợi ích có thể làm tổn hại đến sự tin cậy của tổ chức.",
       "score": 2,
       "nextReview": 1786057412483,
       "mastered": false,
-      "updatedAt": 1785884612483
+      "updatedAt": 1786583590768
     },
     {
       "id": "1778543950191",
@@ -6120,7 +6121,8 @@
       "score": 2,
       "nextReview": 1786057439069,
       "mastered": false,
-      "updatedAt": 1785884639069
+      "updatedAt": 1786583590768,
+      "deleted": true
     },
     {
       "id": "1778543985312",
@@ -6468,7 +6470,8 @@
       "score": 2,
       "nextReview": 1786719186264,
       "mastered": false,
-      "updatedAt": 1786546386264
+      "updatedAt": 1786583590768,
+      "deleted": true
     },
     {
       "id": "1785683983715",
@@ -6552,7 +6555,8 @@
       "score": 1,
       "nextReview": 1785971309287,
       "mastered": false,
-      "updatedAt": 1785884909287
+      "updatedAt": 1786583590768,
+      "deleted": true
     },
     {
       "id": "1785794747871",
@@ -6660,19 +6664,20 @@
       "score": 1,
       "nextReview": 1786632491851,
       "mastered": false,
-      "updatedAt": 1786546091851
+      "updatedAt": 1786583590768,
+      "deleted": true
     },
     {
       "id": "1785930432808",
       "jp": "普遍性",
       "kana": "ふへんせい",
       "meaning": "Tính phổ quát, tính phổ biến, khả năng áp dụng rộng rãi (universality, generality, widespread applicability)",
-      "exJp": "構造設計における安全性の**普遍性**は、どの地域でも確保されるべき原則である。",
+      "exJp": "構造設計における安全性の普遍性は、どの地域でも確保されるべき原則である。",
       "exVi": "Tính phổ quát về an toàn trong thiết kế kết cấu là nguyên tắc phải được đảm bảo ở bất kỳ khu vực nào.",
       "score": 1,
       "nextReview": 1786632569946,
       "mastered": false,
-      "updatedAt": 1786546169946
+      "updatedAt": 1786583590768
     },
     {
       "id": "1785930471726",
@@ -9337,6 +9342,18 @@
       "nextReview": 0,
       "mastered": false,
       "updatedAt": 1786573248380
+    },
+    {
+      "id": "1786583590768_1yrvbb",
+      "jp": "性的指向",
+      "kana": "せいてきしこう",
+      "meaning": "khuynh hướng tình dục",
+      "exJp": "性的指向による差別をしてはならない。",
+      "exVi": "Không được phân biệt đối xử dựa trên khuynh hướng tình dục.",
+      "score": 0,
+      "nextReview": 0,
+      "mastered": false,
+      "updatedAt": 1786583590768
     }
   ],
   "senmon": [
