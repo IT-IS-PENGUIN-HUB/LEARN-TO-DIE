@@ -1,0 +1,5 @@
+# core.autocrlf=true trên máy này nên git tự đổi LF -> CRLF khi checkout.
+# Với dữ liệu đề thì KHÔNG được đụng vào: file phải giữ nguyên byte y như lúc
+# scripts/build_examdata.py sinh ra, để (a) kiểm chứng bằng hash còn đúng,
+# (b) checkout ở máy khác không sinh diff giả, (c) ảnh SVG không bị đổi nội dung.
+public/exam-data/** -text

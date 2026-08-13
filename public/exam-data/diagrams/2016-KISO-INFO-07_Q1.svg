@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 420" font-family="'Meiryo','Noto Sans JP',sans-serif">
+  <rect width="560" height="420" fill="white"/>
+  <defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#1f2937"/></marker></defs>
+  <!-- states -->
+  <circle cx="280" cy="80"  r="38" fill="#eef2f9" stroke="#1f2937" stroke-width="2"/>
+  <circle cx="120" cy="300" r="38" fill="#eef2f9" stroke="#1f2937" stroke-width="2"/>
+  <circle cx="440" cy="300" r="38" fill="#eef2f9" stroke="#1f2937" stroke-width="2"/>
+  <text x="280" y="88"  text-anchor="middle" font-size="26" fill="#1f2937">晴</text>
+  <text x="120" y="308" text-anchor="middle" font-size="26" fill="#1f2937">曇</text>
+  <text x="440" y="308" text-anchor="middle" font-size="26" fill="#1f2937">雨</text>
+  <!-- self loops -->
+  <path d="M 258 46 A 26 26 0 1 1 302 46" fill="none" stroke="#1f2937" stroke-width="1.8" marker-end="url(#a)"/>
+  <text x="280" y="14" text-anchor="middle" font-size="18" fill="#1f2937">1/2</text>
+  <path d="M 86 322 A 26 26 0 1 0 86 278" fill="none" stroke="#1f2937" stroke-width="1.8" marker-end="url(#a)"/>
+  <text x="38" y="306" text-anchor="middle" font-size="18" fill="#1f2937">1/2</text>
+  <path d="M 474 278 A 26 26 0 1 0 474 322" fill="none" stroke="#1f2937" stroke-width="1.8" marker-end="url(#a)"/>
+  <text x="522" y="306" text-anchor="middle" font-size="18" fill="#1f2937">1/2</text>
+  <!-- 晴 <-> 曇 -->
+  <path d="M 244 106 L 152 272" fill="none" stroke="#1f2937" stroke-width="1.8" marker-end="url(#a)"/>
+  <path d="M 132 264 L 224 98"  fill="none" stroke="#1f2937" stroke-width="1.8" marker-end="url(#a)"/>
+  <text x="158" y="180" text-anchor="middle" font-size="18" fill="#1f2937">1/4</text>
+  <!-- 晴 <-> 雨 -->
+  <path d="M 316 106 L 408 272" fill="none" stroke="#1f2937" stroke-width="1.8" marker-end="url(#a)"/>
+  <path d="M 428 264 L 336 98"  fill="none" stroke="#1f2937" stroke-width="1.8" marker-end="url(#a)"/>
+  <text x="402" y="180" text-anchor="middle" font-size="18" fill="#1f2937">1/4</text>
+  <!-- 曇 <-> 雨 -->
+  <path d="M 158 288 L 402 288" fill="none" stroke="#1f2937" stroke-width="1.8" marker-end="url(#a)"/>
+  <path d="M 402 314 L 158 314" fill="none" stroke="#1f2937" stroke-width="1.8" marker-end="url(#a)"/>
+  <text x="280" y="278" text-anchor="middle" font-size="18" fill="#1f2937">1/4</text>
+  <text x="280" y="336" text-anchor="middle" font-size="18" fill="#1f2937">1/4</text>
+  <text x="280" y="396" text-anchor="middle" font-size="15" fill="#475569">前日の天気 → 当日の天気 の遷移確率（自身へ 1/2、他へ各 1/4）</text>
+</svg>

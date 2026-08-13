@@ -49,7 +49,10 @@ export default defineConfig({
         // Precache app shell (js/css/html/font/icon) + ảnh lịch học (nhỏ, luôn cần offline)
         // — KHÔNG precache PDF đề (26MB) và PDF giáo trình (14MB)
         globPatterns: ['**/*.{js,mjs,css,html,png,svg,woff2,jpg,jpeg}'],
-        globIgnores: ['pdfs/**', 'textbooks/**'],
+        // exam-data/** phải nằm đây: 333 ảnh câu hỏi là .png nên KHỚP globPatterns,
+        // không chặn thì chúng tự chui vào precache → app phình ~8MB ngay lúc cài
+        // và mỗi lần deploy service worker phải kiểm lại 333 mục.
+        globIgnores: ['pdfs/**', 'textbooks/**', 'exam-data/**'],
         maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
         runtimeCaching: [
           {
@@ -69,6 +72,30 @@ export default defineConfig({
             options: {
               cacheName: 'pdf-cache',
               expiration: { maxEntries: 20, maxAgeSeconds: 90 * 24 * 60 * 60 },
+              cacheableResponse: { statuses: [0, 200] },
+            },
+          },
+          {
+            // Đề thi dạng text: 45 mảnh JSON. StaleWhileRevalidate chứ không CacheFirst
+            // — mở là có ngay (kể cả offline) nhưng vẫn tự lấy bản mới khi bổ sung đề.
+            // maxEntries 60 > 45 mảnh để không mảnh nào bị LRU đẩy ra.
+            urlPattern: ({ url }) => url.pathname.includes('/exam-data/')
+              && url.pathname.endsWith('.json'),
+            handler: 'StaleWhileRevalidate',
+            options: {
+              cacheName: 'exam-json-cache',
+              expiration: { maxEntries: 60, maxAgeSeconds: 180 * 24 * 60 * 60 },
+              cacheableResponse: { statuses: [0, 200] },
+            },
+          },
+          {
+            // Ảnh hình vẽ trong đề: 333 file. maxEntries phải > 333 — chép nguyên
+            // maxEntries 20 của pdf-cache thì ảnh cũ bị đuổi, lỗi rất khó hiểu.
+            urlPattern: ({ url }) => url.pathname.includes('/exam-data/diagrams/'),
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'exam-img-cache',
+              expiration: { maxEntries: 400, maxAgeSeconds: 180 * 24 * 60 * 60 },
               cacheableResponse: { statuses: [0, 200] },
             },
           },

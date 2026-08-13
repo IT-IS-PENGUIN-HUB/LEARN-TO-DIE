@@ -15,5 +15,16 @@ __pycache__/
 /テキスト/
 /SCHEDULE/
 
-# Kho đề kéo từ app của lớp — chỉ để học riêng, KHÔNG đưa vào repo app / KHÔNG deploy.
+# Kho đề GỐC kéo từ app của lớp + bộ công cụ Python + mock/plan: để ngoài repo.
+# questions.jsonl 14MB và viewer.html 14MB không có lý do gì phải nằm trong lịch sử git —
+# bản dùng cho app đã được scripts/build_examdata.py sinh ra ở public/exam-data/ (gọn hơn,
+# đã bỏ các trường thừa). Muốn dựng lại public/exam-data/ thì cần thư mục này.
 /kho-de-thi/
+
+# Đáp án chính thức tải từ 日本技術士会 (9 PDF, ~2.7MB) — chỉ dùng để đối chiếu bằng
+# kho-de-thi/check_official.py, app không cần. Tải lại từ trang ban tổ chức lúc nào cũng được.
+/DAP AN（基礎・適性・建設部門）/
+
+# public/exam-data/ CÓ commit và CÓ deploy — quyết định của ロン 13/8/2026:
+# repo giữ public để dùng GitHub Pages + sync PC↔iPhone; sau khi thi đỗ sẽ chuyển private.
+# Lưu ý: bản dịch tiếng Việt và lời giải là công sức của trung tâm 日越建設交流会.
