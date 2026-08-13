@@ -619,10 +619,10 @@
       "meaning": "hàng hóa",
       "exJp": "規制対象の貨物を輸出する際は許可が必要だ。",
       "exVi": "Khi xuất khẩu hàng hóa thuộc diện quản chế cần có giấy phép.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1786690865818,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786604465818
     },
     {
       "id": "1786573248380_yesd5n",
@@ -631,10 +631,10 @@
       "meaning": "vũ khí hủy diệt hàng loạt",
       "exJp": "大量破壊兵器の開発に転用される恐れがある。",
       "exVi": "Có nguy cơ bị chuyển dụng vào việc phát triển vũ khí hủy diệt hàng loạt.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1786690871850,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786604471850
     },
     {
       "id": "1786573248380_qqpv62",
@@ -643,10 +643,10 @@
       "meaning": "hơn nữa, càng thêm",
       "exJp": "安全対策を一層強化する必要がある。",
       "exVi": "Cần tăng cường hơn nữa các biện pháp an toàn.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1786690879218,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786604479218
     },
     {
       "id": "1786573248380_1w0fet",
@@ -7202,10 +7202,10 @@
       "meaning": "(Tư) Giúp đỡ, viện trợ, đóng góp",
       "exJp": "この研究は社会の発展に資するものである。",
       "exVi": "Nghiên cứu này đóng góp cho sự phát triển của xã hội.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1786690884718,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786604484718
     },
     {
       "id": "1786573248380_pkjxye",
