@@ -470,15 +470,15 @@
     },
     {
       "id": "1786573248380_k6vykh",
-      "jp": "脳力",
+      "jp": "能力",
       "kana": "のうりょく",
-      "meaning": "não lực",
-      "exJp": "継続研鑽により脳力を高める。",
-      "exVi": "Nâng cao năng lực trí não bằng cách trau dồi liên tục.",
+      "meaning": "(năng lực) năng lực, khả năng",
+      "exJp": "技術者は自らの専門能力を継続的に高める必要がある。",
+      "exVi": "Kỹ sư cần liên tục nâng cao năng lực chuyên môn của bản thân.",
       "score": 0,
       "nextReview": 0,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786579593976
     },
     {
       "id": "1786573248380_qqv7di",
@@ -1526,15 +1526,15 @@
     },
     {
       "id": "1786573248380_rgcqe0",
-      "jp": "石化",
-      "kana": "せきか",
-      "meaning": "hóa dầu (viết tắt của 石油化学); thạch hóa, hóa đá",
-      "exJp": "バイオマス由来の製品で石化製品を代替する。",
-      "exVi": "Thay thế các sản phẩm hóa dầu bằng sản phẩm có nguồn gốc sinh khối.",
+      "jp": "化石燃料",
+      "kana": "かせきねんりょう",
+      "meaning": "(hoá thạch nhiên liệu) nhiên liệu hoá thạch",
+      "exJp": "地熱発電は化石燃料のように枯渇する心配がない。",
+      "exVi": "Điện địa nhiệt không lo cạn kiệt như nhiên liệu hoá thạch.",
       "score": 0,
       "nextReview": 0,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786579593976
     },
     {
       "id": "1786573248380_r9ui9q",
@@ -1742,15 +1742,15 @@
     },
     {
       "id": "1786573248380_6advne",
-      "jp": "内臓",
+      "jp": "内蔵",
       "kana": "ないぞう",
-      "meaning": "nội tạng (cơ quan bên trong cơ thể)",
-      "exJp": "健康診断で内臓の検査を受けた。",
-      "exVi": "Đã được kiểm tra nội tạng trong đợt khám sức khỏe.",
+      "meaning": "(nội tàng) tích hợp sẵn bên trong, lắp sẵn",
+      "exJp": "ロボットに加速度センサーが内蔵されている。",
+      "exVi": "Cảm biến gia tốc được tích hợp sẵn bên trong con robot.",
       "score": 0,
       "nextReview": 0,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786579593976
     },
     {
       "id": "1786573248380_n6gdrj",
@@ -4082,15 +4082,15 @@
     },
     {
       "id": "1786573248380_tt7zxo",
-      "jp": "一万人支援計画",
-      "kana": "いちまんにんしえんけいかく",
-      "meaning": "(nhất vạn nhân chi viện kế hoạch) kế hoạch hỗ trợ một vạn người",
-      "exJp": "ポストドクター等一万人支援計画が実施された。",
-      "exVi": "Kế hoạch hỗ trợ một vạn người như nghiên cứu sinh sau tiến sĩ đã được thực hiện.",
+      "jp": "ポストドクター等1万人支援計画",
+      "kana": "ポストドクターとういちまんにんしえんけいかく",
+      "meaning": "Chương trình hỗ trợ 1 vạn nghiên cứu viên sau tiến sĩ (chính sách khoa học công nghệ Nhật)",
+      "exJp": "科学技術基本計画では「ポストドクター等1万人支援計画」が推進された。",
+      "exVi": "Trong Kế hoạch cơ bản về khoa học công nghệ, \"Chương trình hỗ trợ 1 vạn nghiên cứu viên sau tiến sĩ\" đã được thúc đẩy.",
       "score": 0,
       "nextReview": 0,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786579593976
     },
     {
       "id": "1786573248380_w995jv",
@@ -5654,15 +5654,15 @@
     },
     {
       "id": "1786573248380_egmqrv",
-      "jp": "投機",
+      "jp": "投棄",
       "kana": "とうき",
-      "meaning": "(đầu cơ) đầu cơ",
-      "exJp": "投機的な取引は市場を不安定にする。",
-      "exVi": "Giao dịch mang tính đầu cơ làm thị trường bất ổn.",
+      "meaning": "(đầu khí) sự vứt bỏ, đổ thải (rác, chất thải)",
+      "exJp": "陸域での不法投棄やポイ捨ての撲滅が重要である。",
+      "exVi": "Việc xoá bỏ nạn đổ thải trái phép và vứt rác bừa bãi trên đất liền là rất quan trọng.",
       "score": 0,
       "nextReview": 0,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786579593976
     },
     {
       "id": "1786573248380_y3oxlp",
@@ -8164,15 +8164,15 @@
     },
     {
       "id": "1786573248380_rz9pgs",
-      "jp": "半導体集積",
-      "kana": "はんどうたいしゅうせき",
-      "meaning": "tích hợp bán dẫn",
-      "exJp": "半導体集積回路の配置は法律で保護される。",
-      "exVi": "Bố trí mạch tích hợp bán dẫn được pháp luật bảo hộ.",
+      "jp": "半導体集積回路",
+      "kana": "はんどうたいしゅうせきかいろ",
+      "meaning": "(bán dẫn tập tích hồi lộ) mạch tích hợp bán dẫn (IC)",
+      "exJp": "半導体集積回路の回路配置利用権は知的財産権の一つである。",
+      "exVi": "Quyền sử dụng bố trí mạch của mạch tích hợp bán dẫn là một trong các quyền sở hữu trí tuệ.",
       "score": 0,
       "nextReview": 0,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786579593976
     },
     {
       "id": "1786573248380_otbugd",
