@@ -20,6 +20,8 @@ export const KEYS = {
   examState: 'learn_to_die_exam_state',
   // Tuỳ chọn hiển thị khi làm đề: ngôn ngữ, furigana, cỡ chữ
   examPrefs: 'learn_to_die_exam_prefs',
+  // Sidebar đang thu gọn thành dải icon hay mở rộng (chỉ desktop)
+  sidebarCollapsed: 'learn_to_die_sidebar_collapsed',
 };
 
 export function loadJSON(key, fallback = null) {

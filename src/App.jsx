@@ -22,7 +22,7 @@ import { useSync } from './hooks/useSync.js';
 import { useVocabReminder } from './hooks/useVocabReminder.js';
 import { applyAppUpdate, onUpdateReady } from './services/appUpdate.js';
 import { recordAnswer } from './lib/stats.js';
-import { KEYS, loadJSON } from './lib/storage.js';
+import { KEYS, loadJSON, saveJSON } from './lib/storage.js';
 
 // Module Đề thi kéo theo 1189 câu dữ liệu → tách chunk như PdfViewer, trang chủ giữ nhẹ
 const PracticeModule = lazy(() => import('./components/practice/PracticeModule.jsx'));
@@ -38,6 +38,14 @@ function AppInner() {
   const [view, setView] = useState({ name: 'home' });
   // Ngăn kéo điều hướng trên mobile (desktop sidebar luôn hiện)
   const [menuOpen, setMenuOpen] = useState(false);
+  // Desktop: thu sidebar thành dải icon (nút ‹ như app trung tâm), nhớ lựa chọn
+  const [sbCollapsed, setSbCollapsed] = useState(() => loadJSON(KEYS.sidebarCollapsed, false));
+  const toggleSidebar = () => {
+    setSbCollapsed((v) => {
+      saveJSON(KEYS.sidebarCollapsed, !v);
+      return !v;
+    });
+  };
   const examSnapshot = useExamSnapshot();
   const [vocabOpen, setVocabOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
@@ -135,6 +143,8 @@ function AppInner() {
         examState={examSnapshot}
         dueTotal={dueTotal}
         open={menuOpen}
+        collapsed={sbCollapsed}
+        onToggleCollapse={toggleSidebar}
         onGoHome={goHome}
         onOpenPractice={openPractice}
         onOpenTextbooks={openTextbooks}

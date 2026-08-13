@@ -4,7 +4,6 @@ import { IconCloudDown, IconCloudUp, IconGear, IconX } from './icons.jsx';
 
 export default function SettingsModal({ onClose, sync }) {
   const [geminiKey, setGeminiKey] = useState(() => loadString(KEYS.geminiKey));
-  const [deepseekKey, setDeepseekKey] = useState(() => loadString(KEYS.deepseekKey));
   const [ghUser, setGhUser] = useState(() => loadString(KEYS.ghUser));
   const [ghRepo, setGhRepo] = useState(() => loadString(KEYS.ghRepo));
   const [ghToken, setGhToken] = useState(() => loadString(KEYS.ghToken));
@@ -13,7 +12,9 @@ export default function SettingsModal({ onClose, sync }) {
 
   const saveAll = () => {
     saveString(KEYS.geminiKey, geminiKey.trim());
-    saveString(KEYS.deepseekKey, deepseekKey.trim());
+    // Ô DeepSeek đã bỏ (ロン chỉ dùng Gemini, 14/8) — xoá luôn key cũ còn sót
+    // trong máy để ai.js khỏi gọi DeepSeek bằng key rác rồi chờ lỗi mới fallback.
+    saveString(KEYS.deepseekKey, '');
     saveString(KEYS.ghUser, ghUser.trim());
     saveString(KEYS.ghRepo, ghRepo.trim());
     saveString(KEYS.ghToken, ghToken.trim());
@@ -38,17 +39,7 @@ export default function SettingsModal({ onClose, sync }) {
 
         <div className="settings-section">
           <h3>AI tự điền từ vựng</h3>
-          <label htmlFor="set-deepseek">DeepSeek API Key (ưu tiên):</label>
-          <input
-            id="set-deepseek"
-            type="password"
-            className="text-input"
-            value={deepseekKey}
-            onChange={(e) => setDeepseekKey(e.target.value)}
-            placeholder="sk-…"
-            autoComplete="off"
-          />
-          <label htmlFor="set-gemini">Gemini API Key (dự phòng + cần khi quét ảnh chụp):</label>
+          <label htmlFor="set-gemini">Gemini API Key (tự điền từ vựng + quét ảnh chụp):</label>
           <input
             id="set-gemini"
             type="password"

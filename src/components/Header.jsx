@@ -22,7 +22,7 @@ export default function Header({
       {/* Logo + chữ chung MỘT nút — bấm đâu trong vùng này cũng về trang chủ
           (khác app trung tâm, ロン yêu cầu 14/8) */}
       <button type="button" className="logo" onClick={onGoHome} title="Về trang chủ" aria-label="Về trang chủ">
-        <img className="logo-img" src={logoUrl} alt="" width="46" height="46" />
+        <img className="logo-img" src={logoUrl} alt="" width="53" height="53" />
         GIVE UP IS LOSE
       </button>
       <nav className="main-menu" aria-label="Chọn môn thi">

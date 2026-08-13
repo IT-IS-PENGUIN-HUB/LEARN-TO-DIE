@@ -123,15 +123,16 @@ async function callGemini(prompt, key) {
 }
 
 /**
- * Hỏi AI và parse kết quả: DeepSeek trước (lỗi mạng HOẶC trả sai format đều
- * chuyển sang Gemini), Gemini dự phòng.
+ * Hỏi AI và parse kết quả. Đường chính là Gemini (ロン chỉ dùng Gemini, ô nhập
+ * key DeepSeek đã bỏ khỏi Cài đặt 14/8); nhánh DeepSeek giữ lại cho máy nào
+ * còn key cũ trong localStorage — có key thì vẫn chạy, không thì đi thẳng Gemini.
  * @param {(text: string) => any} parse - trả null nếu response không dùng được
  */
 async function askAI(prompt, parse) {
   const deepseekKey = loadString(KEYS.deepseekKey);
   const geminiKey = loadString(KEYS.geminiKey);
   if (!deepseekKey && !geminiKey) {
-    throw new Error('Chưa có API key. Vào Cài đặt để nhập key DeepSeek hoặc Gemini.');
+    throw new Error('Chưa có API key. Vào Cài đặt để nhập key Gemini.');
   }
   if (deepseekKey) {
     try {
@@ -182,7 +183,7 @@ export async function autofillWords(jpList, onProgress) {
   if (!words.length) return filled;
 
   if (!loadString(KEYS.deepseekKey) && !loadString(KEYS.geminiKey)) {
-    throw new Error('Chưa có API key. Vào Cài đặt để nhập key DeepSeek hoặc Gemini.');
+    throw new Error('Chưa có API key. Vào Cài đặt để nhập key Gemini.');
   }
 
   let done = 0;

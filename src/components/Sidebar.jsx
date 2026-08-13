@@ -9,7 +9,7 @@ import logoUrl from '../assets/logo.png';
  * điều hướng để khỏi phải quay về trang chủ mỗi lần đổi module.
  */
 export default function Sidebar({
-  view, examState, dueTotal, open,
+  view, examState, dueTotal, open, collapsed, onToggleCollapse,
   onGoHome, onOpenPractice, onOpenTextbooks, onOpenVocab, onOpenSchedule, onClose,
 }) {
   const wrongCount = useMemo(
@@ -34,6 +34,7 @@ export default function Sidebar({
       type="button"
       className={`sb-item${opts.on ? ' is-on' : ''}`}
       onClick={opts.go}
+      title={label}
     >
       <span className="sb-ic">{opts.ic}</span>
       <span className="sb-label">{label}</span>
@@ -42,9 +43,23 @@ export default function Sidebar({
   );
 
   return (
-    <aside className={`sidebar${open ? ' is-open' : ''}`} aria-label="Điều hướng">
+    <aside
+      className={`sidebar${open ? ' is-open' : ''}${collapsed ? ' is-collapsed' : ''}`}
+      aria-label="Điều hướng"
+    >
+      {/* Nút thu gọn ‹ / › như app trung tâm — chỉ hiện trên desktop */}
+      <button
+        type="button"
+        className="sb-collapse"
+        onClick={onToggleCollapse}
+        title={collapsed ? 'Mở rộng menu' : 'Thu gọn menu'}
+        aria-label={collapsed ? 'Mở rộng menu' : 'Thu gọn menu'}
+        aria-expanded={!collapsed}
+      >
+        {collapsed ? '›' : '‹'}
+      </button>
       <button type="button" className="sb-brand" onClick={go(onGoHome)} title="Về trang chủ">
-        <img src={logoUrl} alt="" className="sb-logo" width="44" height="44" />
+        <img src={logoUrl} alt="" className="sb-logo" width="51" height="51" />
         <span>
           <b>GIVE UP IS LOSE</b>
           <em className="jp-text">技術士第一次試験</em>
