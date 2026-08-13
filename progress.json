@@ -5,8 +5,8 @@
       "at": 1786587725211
     },
     "ch01": {
-      "page": 20,
-      "at": 1786587764071
+      "page": 16,
+      "at": 1786599194660
     },
     "ch02": {
       "page": 23,
@@ -19,6 +19,6 @@
   },
   "last": {
     "subjectId": "tekisei",
-    "chapterId": "ch03"
+    "chapterId": "ch01"
   }
 }
