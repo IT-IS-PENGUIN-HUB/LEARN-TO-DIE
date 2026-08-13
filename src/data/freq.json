@@ -1,6572 +1,6584 @@
 {
-"製造物": {
-"hits": 206,
-"exams": 20,
-"ownHits": 37,
-"ownExams": 4
-},
-"欠陥": {
-"hits": 127,
-"exams": 29,
-"ownHits": 19,
-"ownExams": 7
-},
-"直列": {
-"hits": 18,
-"exams": 8,
-"ownHits": 18,
-"ownExams": 8
-},
-"並列": {
-"hits": 29,
-"exams": 11,
-"ownHits": 29,
-"ownExams": 11
-},
-"待ち行列長": {
-"hits": 9,
-"exams": 3,
-"ownHits": 9,
-"ownExams": 3
-},
-"代入": {
-"hits": 40,
-"exams": 21,
-"ownHits": 27,
-"ownExams": 12
-},
-"アロ ーダイアグラム": {
-"hits": 0,
-"exams": 0,
-"ownHits": 0,
-"ownExams": 0
-},
-"投じる": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"相関": {
-"hits": 15,
-"exams": 5,
-"ownHits": 14,
-"ownExams": 4
-},
-"利得表": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"最適化": {
-"hits": 16,
-"exams": 6,
-"ownHits": 14,
-"ownExams": 4
-},
-"玉掛け": {
-"hits": 3,
-"exams": 3,
-"ownHits": 2,
-"ownExams": 2
-},
-"摂取": {
-"hits": 3,
-"exams": 3,
-"ownHits": 2,
-"ownExams": 2
-},
-"絞れる": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"2 進数": {
-"hits": 11,
-"exams": 7,
-"ownHits": 11,
-"ownExams": 7
-},
-"等価な論理式": {
-"hits": 4,
-"exams": 4,
-"ownHits": 4,
-"ownExams": 4
-},
-"一次キャッシュ": {
-"hits": 5,
-"exams": 2,
-"ownHits": 5,
-"ownExams": 2
-},
-"主記憶": {
-"hits": 20,
-"exams": 4,
-"ownHits": 20,
-"ownExams": 4
-},
-"記述": {
-"hits": 817,
-"exams": 43,
-"ownHits": 232,
-"ownExams": 16
-},
-"流出": {
-"hits": 69,
-"exams": 17,
-"ownHits": 5,
-"ownExams": 4
-},
-"文字列": {
-"hits": 7,
-"exams": 5,
-"ownHits": 7,
-"ownExams": 5
-},
-"歪み": {
-"hits": 3,
-"exams": 1,
-"ownHits": 3,
-"ownExams": 1
-},
-"依存": {
-"hits": 32,
-"exams": 21,
-"ownHits": 16,
-"ownExams": 10
-},
-"内挿": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"遠方": {
-"hits": 3,
-"exams": 3,
-"ownHits": 2,
-"ownExams": 2
-},
-"楕円孔": {
-"hits": 6,
-"exams": 2,
-"ownHits": 6,
-"ownExams": 2
-},
-"熱伝導率": {
-"hits": 19,
-"exams": 3,
-"ownHits": 19,
-"ownExams": 3
-},
-"感覚": {
-"hits": 63,
-"exams": 14,
-"ownHits": 63,
-"ownExams": 14
-},
-"酢酸": {
-"hits": 23,
-"exams": 6,
-"ownHits": 23,
-"ownExams": 6
-},
-"酸性度": {
-"hits": 21,
-"exams": 5,
-"ownHits": 21,
-"ownExams": 5
-},
-"遮蔽": {
-"hits": 4,
-"exams": 2,
-"ownHits": 3,
-"ownExams": 1
-},
-"不静定次数": {
-"hits": 4,
-"exams": 1,
-"ownHits": 4,
-"ownExams": 1
-},
-"関わる": {
-"hits": 36,
-"exams": 16,
-"ownHits": 2,
-"ownExams": 2
-},
-"制約": {
-"hits": 44,
-"exams": 19,
-"ownHits": 14,
-"ownExams": 4
-},
-"誠実": {
-"hits": 16,
-"exams": 9,
-"ownHits": 0,
-"ownExams": 0
-},
-"如何なる": {
-"hits": 5,
-"exams": 5,
-"ownHits": 0,
-"ownExams": 0
-},
-"公益": {
-"hits": 116,
-"exams": 17,
-"ownHits": 1,
-"ownExams": 1
-},
-"水準": {
-"hits": 57,
-"exams": 24,
-"ownHits": 10,
-"ownExams": 6
-},
-"領域": {
-"hits": 53,
-"exams": 20,
-"ownHits": 27,
-"ownExams": 8
-},
-"能力": {
-"hits": 97,
-"exams": 26,
-"ownHits": 9,
-"ownExams": 5
-},
-"福利": {
-"hits": 11,
-"exams": 9,
-"ownHits": 0,
-"ownExams": 0
-},
-"背景": {
-"hits": 13,
-"exams": 10,
-"ownHits": 0,
-"ownExams": 0
-},
-"異にする": {
-"hits": 1,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"多数": {
-"hits": 20,
-"exams": 14,
-"ownHits": 3,
-"ownExams": 2
-},
-"散在": {
-"hits": 1,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"世論": {
-"hits": 2,
-"exams": 2,
-"ownHits": 0,
-"ownExams": 0
-},
-"携わる": {
-"hits": 14,
-"exams": 12,
-"ownHits": 2,
-"ownExams": 2
-},
-"自ら": {
-"hits": 69,
-"exams": 20,
-"ownHits": 8,
-"ownExams": 6
-},
-"相応に": {
-"hits": 1,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"安全保障貿易管理": {
-"hits": 8,
-"exams": 3,
-"ownHits": 0,
-"ownExams": 0
-},
-"先進国": {
-"hits": 26,
-"exams": 14,
-"ownHits": 9,
-"ownExams": 6
-},
-"貨物": {
-"hits": 18,
-"exams": 8,
-"ownHits": 0,
-"ownExams": 0
-},
-"大量破壊兵器": {
-"hits": 5,
-"exams": 3,
-"ownHits": 0,
-"ownExams": 0
-},
-"一層": {
-"hits": 2,
-"exams": 2,
-"ownHits": 1,
-"ownExams": 1
-},
-"深刻": {
-"hits": 12,
-"exams": 9,
-"ownHits": 0,
-"ownExams": 0
-},
-"人的": {
-"hits": 8,
-"exams": 6,
-"ownHits": 0,
-"ownExams": 0
-},
-"遵守": {
-"hits": 30,
-"exams": 13,
-"ownHits": 0,
-"ownExams": 0
-},
-"巻き込まれる": {
-"hits": 1,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"公知": {
-"hits": 9,
-"exams": 4,
-"ownHits": 0,
-"ownExams": 0
-},
-"渡航": {
-"hits": 2,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"貧困": {
-"hits": 5,
-"exams": 4,
-"ownHits": 0,
-"ownExams": 0
-},
-"終止符": {
-"hits": 1,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"享受": {
-"hits": 10,
-"exams": 6,
-"ownHits": 0,
-"ownExams": 0
-},
-"途上国": {
-"hits": 21,
-"exams": 14,
-"ownHits": 9,
-"ownExams": 8
-},
-"拘束力": {
-"hits": 3,
-"exams": 2,
-"ownHits": 1,
-"ownExams": 1
-},
-"処罰": {
-"hits": 6,
-"exams": 3,
-"ownHits": 0,
-"ownExams": 0
-},
-"貧富": {
-"hits": 1,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"紛争": {
-"hits": 6,
-"exams": 5,
-"ownHits": 0,
-"ownExams": 0
-},
-"難民": {
-"hits": 2,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"避難民": {
-"hits": 1,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"孫": {
-"hits": 4,
-"exams": 3,
-"ownHits": 1,
-"ownExams": 1
-},
-"危機感": {
-"hits": 1,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"振り返る": {
-"hits": 0,
-"exams": 0,
-"ownHits": 0,
-"ownExams": 0
-},
-"利活用": {
-"hits": 9,
-"exams": 4,
-"ownHits": 0,
-"ownExams": 0
-},
-"飛躍的": {
-"hits": 2,
-"exams": 2,
-"ownHits": 0,
-"ownExams": 0
-},
-"信頼": {
-"hits": 102,
-"exams": 25,
-"ownHits": 77,
-"ownExams": 12
-},
-"変革": {
-"hits": 5,
-"exams": 3,
-"ownHits": 0,
-"ownExams": 0
-},
-"推進": {
-"hits": 91,
-"exams": 30,
-"ownHits": 17,
-"ownExams": 8
-},
-"損害賠償": {
-"hits": 46,
-"exams": 19,
-"ownHits": 3,
-"ownExams": 3
-},
-"被る": {
-"hits": 3,
-"exams": 3,
-"ownHits": 0,
-"ownExams": 0
-},
-"事案": {
-"hits": 11,
-"exams": 9,
-"ownHits": 1,
-"ownExams": 1
-},
-"賠償請求": {
-"hits": 7,
-"exams": 6,
-"ownHits": 0,
-"ownExams": 0
-},
-"電磁鋼板": {
-"hits": 1,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"差止め": {
-"hits": 1,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"基幹": {
-"hits": 5,
-"exams": 4,
-"ownHits": 0,
-"ownExams": 0
-},
-"窃取": {
-"hits": 2,
-"exams": 2,
-"ownHits": 0,
-"ownExams": 0
-},
-"拡散": {
-"hits": 16,
-"exams": 8,
-"ownHits": 1,
-"ownExams": 1
-},
-"態様": {
-"hits": 4,
-"exams": 4,
-"ownHits": 0,
-"ownExams": 0
-},
-"製造物責任法": {
-"hits": 66,
-"exams": 20,
-"ownHits": 14,
-"ownExams": 4
-},
-"引き渡された": {
-"hits": 7,
-"exams": 3,
-"ownHits": 0,
-"ownExams": 0
-},
-"無体物": {
-"hits": 3,
-"exams": 3,
-"ownHits": 0,
-"ownExams": 0
-},
-"再生品": {
-"hits": 16,
-"exams": 6,
-"ownHits": 0,
-"ownExams": 0
-},
-"破損": {
-"hits": 11,
-"exams": 7,
-"ownHits": 7,
-"ownExams": 4
-},
-"多様性": {
-"hits": 71,
-"exams": 23,
-"ownHits": 25,
-"ownExams": 8
-},
-"人種": {
-"hits": 5,
-"exams": 3,
-"ownHits": 0,
-"ownExams": 0
-},
-"人材": {
-"hits": 21,
-"exams": 9,
-"ownHits": 2,
-"ownExams": 1
-},
-"活かし": {
-"hits": 6,
-"exams": 5,
-"ownHits": 0,
-"ownExams": 0
-},
-"価値創造": {
-"hits": 2,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"潜在的な": {
-"hits": 6,
-"exams": 5,
-"ownHits": 0,
-"ownExams": 0
-},
-"信条": {
-"hits": 3,
-"exams": 2,
-"ownHits": 0,
-"ownExams": 0
-},
-"価値観": {
-"hits": 12,
-"exams": 7,
-"ownHits": 0,
-"ownExams": 0
-},
-"国際安全規格": {
-"hits": 13,
-"exams": 6,
-"ownHits": 0,
-"ownExams": 0
-},
-"方策": {
-"hits": 29,
-"exams": 10,
-"ownHits": 0,
-"ownExams": 0
-},
-"装置": {
-"hits": 45,
-"exams": 21,
-"ownHits": 11,
-"ownExams": 7
-},
-"警告": {
-"hits": 20,
-"exams": 3,
-"ownHits": 0,
-"ownExams": 0
-},
-"取扱": {
-"hits": 34,
-"exams": 14,
-"ownHits": 1,
-"ownExams": 1
-},
-"制御": {
-"hits": 17,
-"exams": 12,
-"ownHits": 7,
-"ownExams": 4
-},
-"重機": {
-"hits": 2,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"明白": {
-"hits": 4,
-"exams": 3,
-"ownHits": 0,
-"ownExams": 0
-},
-"公用語": {
-"hits": 3,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"併記": {
-"hits": 2,
-"exams": 2,
-"ownHits": 0,
-"ownExams": 0
-},
-"労働安全衛生法": {
-"hits": 17,
-"exams": 11,
-"ownHits": 2,
-"ownExams": 1
-},
-"労働災害": {
-"hits": 13,
-"exams": 7,
-"ownHits": 0,
-"ownExams": 0
-},
-"原材料": {
-"hits": 16,
-"exams": 9,
-"ownHits": 2,
-"ownExams": 2
-},
-"情報提供者": {
-"hits": 2,
-"exams": 2,
-"ownHits": 0,
-"ownExams": 0
-},
-"周知": {
-"hits": 5,
-"exams": 5,
-"ownHits": 2,
-"ownExams": 2
-},
-"有望": {
-"hits": 1,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"見据える": {
-"hits": 0,
-"exams": 0,
-"ownHits": 0,
-"ownExams": 0
-},
-"炭素": {
-"hits": 94,
-"exams": 22,
-"ownHits": 76,
-"ownExams": 14
-},
-"産業革命": {
-"hits": 8,
-"exams": 5,
-"ownHits": 6,
-"ownExams": 3
-},
-"吸収": {
-"hits": 31,
-"exams": 14,
-"ownHits": 11,
-"ownExams": 7
-},
-"古代原生林": {
-"hits": 1,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"主原料": {
-"hits": 2,
-"exams": 2,
-"ownHits": 1,
-"ownExams": 1
-},
-"樹木": {
-"hits": 3,
-"exams": 2,
-"ownHits": 0,
-"ownExams": 0
-},
-"温熱": {
-"hits": 1,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"冷熱": {
-"hits": 1,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"化石燃料": {
-"hits": 8,
-"exams": 5,
-"ownHits": 0,
-"ownExams": 0
-},
-"家畜": {
-"hits": 1,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"糞尿": {
-"hits": 3,
-"exams": 3,
-"ownHits": 1,
-"ownExams": 1
-},
-"微生物": {
-"hits": 4,
-"exams": 4,
-"ownHits": 3,
-"ownExams": 3
-},
-"産業財産権制度": {
-"hits": 4,
-"exams": 4,
-"ownHits": 0,
-"ownExams": 0
-},
-"取引上": {
-"hits": 5,
-"exams": 5,
-"ownHits": 0,
-"ownExams": 0
-},
-"熟知": {
-"hits": 3,
-"exams": 3,
-"ownHits": 0,
-"ownExams": 0
-},
-"実用新案": {
-"hits": 24,
-"exams": 12,
-"ownHits": 0,
-"ownExams": 0
-},
-"扱う": {
-"hits": 17,
-"exams": 13,
-"ownHits": 2,
-"ownExams": 2
-},
-"塾": {
-"hits": 3,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"謝罪": {
-"hits": 2,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"照会": {
-"hits": 1,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"加盟店": {
-"hits": 3,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"勧誘": {
-"hits": 1,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"指針": {
-"hits": 33,
-"exams": 15,
-"ownHits": 1,
-"ownExams": 1
-},
-"残留": {
-"hits": 15,
-"exams": 10,
-"ownHits": 0,
-"ownExams": 0
-},
-"努める": {
-"hits": 19,
-"exams": 12,
-"ownHits": 0,
-"ownExams": 0
-},
-"果たす": {
-"hits": 22,
-"exams": 11,
-"ownHits": 1,
-"ownExams": 1
-},
-"内蔵": {
-"hits": 1,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"探る": {
-"hits": 1,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"に加えて": {
-"hits": 22,
-"exams": 14,
-"ownHits": 2,
-"ownExams": 1
-},
-"統一": {
-"hits": 7,
-"exams": 5,
-"ownHits": 0,
-"ownExams": 0
-},
-"自律": {
-"hits": 13,
-"exams": 8,
-"ownHits": 0,
-"ownExams": 0
-},
-"提訴": {
-"hits": 1,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"サイバー": {
-"hits": 10,
-"exams": 6,
-"ownHits": 1,
-"ownExams": 1
-},
-"小売店": {
-"hits": 2,
-"exams": 2,
-"ownHits": 1,
-"ownExams": 1
-},
-"録音再生機器": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"図記号": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"扉": {
-"hits": 5,
-"exams": 3,
-"ownHits": 4,
-"ownExams": 2
-},
-"取っ手": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"取扱説明書": {
-"hits": 6,
-"exams": 3,
-"ownHits": 1,
-"ownExams": 1
-},
-"点字": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"音声": {
-"hits": 3,
-"exams": 3,
-"ownHits": 2,
-"ownExams": 2
-},
-"映像": {
-"hits": 6,
-"exams": 5,
-"ownHits": 2,
-"ownExams": 2
-},
-"信頼度": {
-"hits": 58,
-"exams": 12,
-"ownHits": 57,
-"ownExams": 11
-},
-"平均故障間隔": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"修復": {
-"hits": 7,
-"exams": 4,
-"ownHits": 6,
-"ownExams": 3
-},
-"定常": {
-"hits": 19,
-"exams": 11,
-"ownHits": 2,
-"ownExams": 2
-},
-"稼働率": {
-"hits": 4,
-"exams": 2,
-"ownHits": 3,
-"ownExams": 1
-},
-"棒部材": {
-"hits": 13,
-"exams": 3,
-"ownHits": 13,
-"ownExams": 3
-},
-"幾何学的形状": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"縦弾性": {
-"hits": 8,
-"exams": 5,
-"ownHits": 8,
-"ownExams": 5
-},
-"座屈荷重": {
-"hits": 10,
-"exams": 4,
-"ownHits": 3,
-"ownExams": 2
-},
-"投影法": {
-"hits": 7,
-"exams": 5,
-"ownHits": 7,
-"ownExams": 5
-},
-"第一角法": {
-"hits": 5,
-"exams": 2,
-"ownHits": 5,
-"ownExams": 2
-},
-"描き方": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"相違": {
-"hits": 5,
-"exams": 4,
-"ownHits": 1,
-"ownExams": 1
-},
-"暗号": {
-"hits": 24,
-"exams": 8,
-"ownHits": 22,
-"ownExams": 6
-},
-"復号": {
-"hits": 8,
-"exams": 4,
-"ownHits": 8,
-"ownExams": 4
-},
-"認証局": {
-"hits": 3,
-"exams": 2,
-"ownHits": 3,
-"ownExams": 2
-},
-"等価": {
-"hits": 6,
-"exams": 5,
-"ownHits": 6,
-"ownExams": 5
-},
-"論理和": {
-"hits": 20,
-"exams": 7,
-"ownHits": 20,
-"ownExams": 7
-},
-"論理積": {
-"hits": 23,
-"exams": 7,
-"ownHits": 23,
-"ownExams": 7
-},
-"伝送": {
-"hits": 48,
-"exams": 5,
-"ownHits": 48,
-"ownExams": 5
-},
-"西暦年号": {
-"hits": 12,
-"exams": 2,
-"ownHits": 12,
-"ownExams": 2
-},
-"真": {
-"hits": 44,
-"exams": 20,
-"ownHits": 35,
-"ownExams": 13
-},
-"偽": {
-"hits": 12,
-"exams": 6,
-"ownHits": 6,
-"ownExams": 4
-},
-"演算式": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"演算子": {
-"hits": 5,
-"exams": 2,
-"ownHits": 5,
-"ownExams": 2
-},
-"記法": {
-"hits": 32,
-"exams": 4,
-"ownHits": 32,
-"ownExams": 4
-},
-"構文木": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"優先順": {
-"hits": 26,
-"exams": 13,
-"ownHits": 2,
-"ownExams": 2
-},
-"走査": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"漸近的": {
-"hits": 3,
-"exams": 2,
-"ownHits": 3,
-"ownExams": 2
-},
-"定義域": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"値域": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"関数": {
-"hits": 76,
-"exams": 20,
-"ownHits": 61,
-"ownExams": 12
-},
-"整数": {
-"hits": 28,
-"exams": 8,
-"ownHits": 28,
-"ownExams": 8
-},
-"解析": {
-"hits": 77,
-"exams": 29,
-"ownHits": 50,
-"ownExams": 16
-},
-"直交座標": {
-"hits": 9,
-"exams": 7,
-"ownHits": 9,
-"ownExams": 7
-},
-"任意": {
-"hits": 19,
-"exams": 13,
-"ownHits": 13,
-"ownExams": 7
-},
-"実数": {
-"hits": 18,
-"exams": 6,
-"ownHits": 18,
-"ownExams": 6
-},
-"積分": {
-"hits": 23,
-"exams": 8,
-"ownHits": 19,
-"ownExams": 6
-},
-"恒等的": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"線形弾性体": {
-"hits": 12,
-"exams": 7,
-"ownHits": 12,
-"ownExams": 7
-},
-"２次元": {
-"hits": 0,
-"exams": 0,
-"ownHits": 0,
-"ownExams": 0
-},
-"有限要素解析": {
-"hits": 10,
-"exams": 4,
-"ownHits": 10,
-"ownExams": 4
-},
-"節点": {
-"hits": 8,
-"exams": 5,
-"ownHits": 5,
-"ownExams": 2
-},
-"四辺形": {
-"hits": 2,
-"exams": 1,
-"ownHits": 2,
-"ownExams": 1
-},
-"有限要素": {
-"hits": 19,
-"exams": 12,
-"ownHits": 19,
-"ownExams": 12
-},
-"断面積": {
-"hits": 58,
-"exams": 21,
-"ownHits": 23,
-"ownExams": 11
-},
-"固定壁": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"引張": {
-"hits": 93,
-"exams": 22,
-"ownHits": 57,
-"ownExams": 12
-},
-"上端": {
-"hits": 7,
-"exams": 4,
-"ownHits": 7,
-"ownExams": 4
-},
-"下端": {
-"hits": 6,
-"exams": 5,
-"ownHits": 4,
-"ownExams": 3
-},
-"平衡": {
-"hits": 6,
-"exams": 5,
-"ownHits": 2,
-"ownExams": 1
-},
-"質点": {
-"hits": 31,
-"exams": 6,
-"ownHits": 31,
-"ownExams": 6
-},
-"静止": {
-"hits": 9,
-"exams": 7,
-"ownHits": 3,
-"ownExams": 3
-},
-"単振動": {
-"hits": 6,
-"exams": 3,
-"ownHits": 6,
-"ownExams": 3
-},
-"蓄える": {
-"hits": 0,
-"exams": 0,
-"ownHits": 0,
-"ownExams": 0
-},
-"重力加速度": {
-"hits": 13,
-"exams": 12,
-"ownHits": 3,
-"ownExams": 3
-},
-"半径": {
-"hits": 27,
-"exams": 15,
-"ownHits": 3,
-"ownExams": 3
-},
-"面密度": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"四分円": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"同位体": {
-"hits": 16,
-"exams": 6,
-"ownHits": 16,
-"ownExams": 6
-},
-"陽子": {
-"hits": 7,
-"exams": 3,
-"ownHits": 7,
-"ownExams": 3
-},
-"原子核": {
-"hits": 7,
-"exams": 5,
-"ownHits": 7,
-"ownExams": 5
-},
-"年代測定": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"酸化還元反応": {
-"hits": 2,
-"exams": 1,
-"ownHits": 2,
-"ownExams": 1
-},
-"製錬": {
-"hits": 2,
-"exams": 1,
-"ownHits": 2,
-"ownExams": 1
-},
-"地殻": {
-"hits": 5,
-"exams": 5,
-"ownHits": 4,
-"ownExams": 4
-},
-"鉄鉱石": {
-"hits": 8,
-"exams": 2,
-"ownHits": 8,
-"ownExams": 2
-},
-"石灰石": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"銑鉄": {
-"hits": 3,
-"exams": 1,
-"ownHits": 3,
-"ownExams": 1
-},
-"不純物": {
-"hits": 4,
-"exams": 4,
-"ownHits": 3,
-"ownExams": 3
-},
-"高炉": {
-"hits": 16,
-"exams": 5,
-"ownHits": 3,
-"ownExams": 1
-},
-"電炉": {
-"hits": 2,
-"exams": 1,
-"ownHits": 2,
-"ownExams": 1
-},
-"特殊": {
-"hits": 9,
-"exams": 9,
-"ownHits": 5,
-"ownExams": 5
-},
-"加水分解": {
-"hits": 6,
-"exams": 5,
-"ownHits": 6,
-"ownExams": 5
-},
-"側鎖": {
-"hits": 13,
-"exams": 6,
-"ownHits": 13,
-"ownExams": 6
-},
-"基": {
-"hits": 768,
-"exams": 43,
-"ownHits": 269,
-"ownExams": 16
-},
-"脂肪族炭化水素": {
-"hits": 3,
-"exams": 3,
-"ownHits": 3,
-"ownExams": 3
-},
-"芳香族": {
-"hits": 3,
-"exams": 3,
-"ownHits": 3,
-"ownExams": 3
-},
-"共有結合": {
-"hits": 14,
-"exams": 5,
-"ownHits": 14,
-"ownExams": 5
-},
-"親水": {
-"hits": 7,
-"exams": 3,
-"ownHits": 7,
-"ownExams": 3
-},
-"硫黄": {
-"hits": 15,
-"exams": 7,
-"ownHits": 14,
-"ownExams": 6
-},
-"窒素": {
-"hits": 27,
-"exams": 11,
-"ownHits": 20,
-"ownExams": 8
-},
-"突然変異": {
-"hits": 12,
-"exams": 1,
-"ownHits": 12,
-"ownExams": 1
-},
-"形質発現": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"置換": {
-"hits": 8,
-"exams": 3,
-"ownHits": 8,
-"ownExams": 3
-},
-"欠失": {
-"hits": 3,
-"exams": 1,
-"ownHits": 3,
-"ownExams": 1
-},
-"中立": {
-"hits": 9,
-"exams": 5,
-"ownHits": 2,
-"ownExams": 2
-},
-"読み枠": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"鎌状": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"赤血球貧血症": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"潜性": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"劣性": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"相同染色体": {
-"hits": 3,
-"exams": 1,
-"ownHits": 3,
-"ownExams": 1
-},
-"片方": {
-"hits": 3,
-"exams": 3,
-"ownHits": 2,
-"ownExams": 2
-},
-"主体": {
-"hits": 36,
-"exams": 18,
-"ownHits": 4,
-"ownExams": 4
-},
-"賄う": {
-"hits": 2,
-"exams": 2,
-"ownHits": 1,
-"ownExams": 1
-},
-"総裁": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"財務大臣": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"金融": {
-"hits": 4,
-"exams": 4,
-"ownHits": 1,
-"ownExams": 1
-},
-"支援": {
-"hits": 21,
-"exams": 14,
-"ownHits": 5,
-"ownExams": 4
-},
-"焼却": {
-"hits": 4,
-"exams": 4,
-"ownHits": 4,
-"ownExams": 4
-},
-"炉内": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"滞留": {
-"hits": 5,
-"exams": 5,
-"ownHits": 2,
-"ownExams": 2
-},
-"急冷": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"屋上緑化": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"居室": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"遮水工": {
-"hits": 3,
-"exams": 3,
-"ownHits": 2,
-"ownExams": 2
-},
-"原位置浄化": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"活性汚泥法": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"換算": {
-"hits": 16,
-"exams": 7,
-"ownHits": 13,
-"ownExams": 5
-},
-"原子核分裂": {
-"hits": 4,
-"exams": 4,
-"ownHits": 4,
-"ownExams": 4
-},
-"電磁波": {
-"hits": 6,
-"exams": 5,
-"ownHits": 6,
-"ownExams": 5
-},
-"蒸気機関": {
-"hits": 12,
-"exams": 8,
-"ownHits": 12,
-"ownExams": 8
-},
-"順不同": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"双方向": {
-"hits": 6,
-"exams": 6,
-"ownHits": 4,
-"ownExams": 4
-},
-"先駆け": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"復興": {
-"hits": 5,
-"exams": 4,
-"ownHits": 2,
-"ownExams": 2
-},
-"環境保全": {
-"hits": 25,
-"exams": 16,
-"ownHits": 12,
-"ownExams": 7
-},
-"対策技術": {
-"hits": 3,
-"exams": 2,
-"ownHits": 3,
-"ownExams": 2
-},
-"焼却施設": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"滞留時間確保": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"完全燃焼": {
-"hits": 7,
-"exams": 6,
-"ownHits": 7,
-"ownExams": 6
-},
-"再合成": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"排ガス": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"壁面": {
-"hits": 21,
-"exams": 7,
-"ownHits": 2,
-"ownExams": 2
-},
-"建物表面温度": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"抑える": {
-"hits": 14,
-"exams": 12,
-"ownHits": 4,
-"ownExams": 3
-},
-"居室内": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"侵入": {
-"hits": 11,
-"exams": 8,
-"ownHits": 2,
-"ownExams": 2
-},
-"空調": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"消費": {
-"hits": 175,
-"exams": 35,
-"ownHits": 72,
-"ownExams": 14
-},
-"削減": {
-"hits": 66,
-"exams": 21,
-"ownHits": 25,
-"ownExams": 9
-},
-"産業廃棄物": {
-"hits": 15,
-"exams": 10,
-"ownHits": 10,
-"ownExams": 7
-},
-"管理型処分場": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"環境保全対策": {
-"hits": 3,
-"exams": 3,
-"ownHits": 2,
-"ownExams": 2
-},
-"浸出水処理設備": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"義務付け": {
-"hits": 29,
-"exams": 16,
-"ownHits": 12,
-"ownExams": 6
-},
-"汚染物質": {
-"hits": 15,
-"exams": 9,
-"ownHits": 8,
-"ownExams": 6
-},
-"除去": {
-"hits": 20,
-"exams": 14,
-"ownHits": 9,
-"ownExams": 4
-},
-"原位置": {
-"hits": 4,
-"exams": 4,
-"ownHits": 1,
-"ownExams": 1
-},
-"対策措置": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"エネルギー情勢": {
-"hits": 5,
-"exams": 5,
-"ownHits": 5,
-"ownExams": 5
-},
-"数値": {
-"hits": 95,
-"exams": 18,
-"ownHits": 93,
-"ownExams": 16
-},
-"総発電電力量": {
-"hits": 9,
-"exams": 4,
-"ownHits": 9,
-"ownExams": 4
-},
-"再生可能": {
-"hits": 48,
-"exams": 15,
-"ownHits": 25,
-"ownExams": 10
-},
-"太陽光発電": {
-"hits": 14,
-"exams": 7,
-"ownHits": 9,
-"ownExams": 4
-},
-"導入量": {
-"hits": 6,
-"exams": 4,
-"ownHits": 6,
-"ownExams": 4
-},
-"近年": {
-"hits": 33,
-"exams": 21,
-"ownHits": 11,
-"ownExams": 8
-},
-"着実に": {
-"hits": 7,
-"exams": 7,
-"ownHits": 2,
-"ownExams": 2
-},
-"挙げられる": {
-"hits": 19,
-"exams": 16,
-"ownHits": 4,
-"ownExams": 4
-},
-"事業用": {
-"hits": 5,
-"exams": 4,
-"ownHits": 5,
-"ownExams": 4
-},
-"規模": {
-"hits": 89,
-"exams": 26,
-"ownHits": 15,
-"ownExams": 10
-},
-"平均": {
-"hits": 193,
-"exams": 26,
-"ownHits": 121,
-"ownExams": 12
-},
-"単純": {
-"hits": 68,
-"exams": 26,
-"ownHits": 46,
-"ownExams": 16
-},
-"風力": {
-"hits": 26,
-"exams": 10,
-"ownHits": 9,
-"ownExams": 4
-},
-"天候等": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"気象環境": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"風速": {
-"hits": 8,
-"exams": 5,
-"ownHits": 4,
-"ownExams": 2
-},
-"乗に比例する": {
-"hits": 18,
-"exams": 9,
-"ownHits": 3,
-"ownExams": 2
-},
-"国名": {
-"hits": 3,
-"exams": 3,
-"ownHits": 2,
-"ownExams": 2
-},
-"組合せ": {
-"hits": 296,
-"exams": 43,
-"ownHits": 147,
-"ownExams": 16
-},
-"一人当たり": {
-"hits": 0,
-"exams": 0,
-"ownHits": 0,
-"ownExams": 0
-},
-"相当する": {
-"hits": 9,
-"exams": 8,
-"ownHits": 2,
-"ownExams": 2
-},
-"科学技術の成果": {
-"hits": 3,
-"exams": 3,
-"ownHits": 3,
-"ownExams": 3
-},
-"工業的合成": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"確立": {
-"hits": 11,
-"exams": 8,
-"ownHits": 5,
-"ownExams": 3
-},
-"存在": {
-"hits": 109,
-"exams": 40,
-"ownHits": 56,
-"ownExams": 16
-},
-"改良": {
-"hits": 33,
-"exams": 18,
-"ownHits": 10,
-"ownExams": 9
-},
-"科学技術基本計画": {
-"hits": 4,
-"exams": 3,
-"ownHits": 3,
-"ownExams": 2
-},
-"特徴的": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"年代": {
-"hits": 25,
-"exams": 15,
-"ownHits": 22,
-"ownExams": 12
-},
-"遺伝子組み換え食品": {
-"hits": 2,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"倫理的": {
-"hits": 39,
-"exams": 16,
-"ownHits": 2,
-"ownExams": 2
-},
-"法的": {
-"hits": 14,
-"exams": 8,
-"ownHits": 2,
-"ownExams": 2
-},
-"観点": {
-"hits": 28,
-"exams": 19,
-"ownHits": 4,
-"ownExams": 2
-},
-"必要性": {
-"hits": 13,
-"exams": 11,
-"ownHits": 3,
-"ownExams": 2
-},
-"条件整備": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"図られた": {
-"hits": 3,
-"exams": 3,
-"ownHits": 1,
-"ownExams": 1
-},
-"ポストドクター等1万人支援計画": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"先駆けた": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"超": {
-"hits": 73,
-"exams": 26,
-"ownHits": 9,
-"ownExams": 8
-},
-"目指す": {
-"hits": 25,
-"exams": 14,
-"ownHits": 8,
-"ownExams": 5
-},
-"姿": {
-"hits": 19,
-"exams": 11,
-"ownHits": 2,
-"ownExams": 2
-},
-"東日本大震災": {
-"hits": 17,
-"exams": 14,
-"ownHits": 9,
-"ownExams": 7
-},
-"倫理規定": {
-"hits": 3,
-"exams": 3,
-"ownHits": 0,
-"ownExams": 0
-},
-"踏む": {
-"hits": 0,
-"exams": 0,
-"ownHits": 0,
-"ownExams": 0
-},
-"厳正な": {
-"hits": 5,
-"exams": 4,
-"ownHits": 0,
-"ownExams": 0
-},
-"捏造": {
-"hits": 6,
-"exams": 4,
-"ownHits": 0,
-"ownExams": 0
-},
-"捏ねる": {
-"hits": 0,
-"exams": 0,
-"ownHits": 0,
-"ownExams": 0
-},
-"改ざん": {
-"hits": 14,
-"exams": 12,
-"ownHits": 1,
-"ownExams": 1
-},
-"加担": {
-"hits": 3,
-"exams": 3,
-"ownHits": 0,
-"ownExams": 0
-},
-"担ぐ": {
-"hits": 0,
-"exams": 0,
-"ownHits": 0,
-"ownExams": 0
-},
-"所属": {
-"hits": 43,
-"exams": 15,
-"ownHits": 0,
-"ownExams": 0
-},
-"事態": {
-"hits": 6,
-"exams": 4,
-"ownHits": 0,
-"ownExams": 0
-},
-"弊害": {
-"hits": 2,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"有償": {
-"hits": 2,
-"exams": 2,
-"ownHits": 0,
-"ownExams": 0
-},
-"償う": {
-"hits": 0,
-"exams": 0,
-"ownHits": 0,
-"ownExams": 0
-},
-"兼業": {
-"hits": 4,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"兼ねる": {
-"hits": 0,
-"exams": 0,
-"ownHits": 0,
-"ownExams": 0
-},
-"査読": {
-"hits": 2,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"辞退": {
-"hits": 1,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"退く": {
-"hits": 0,
-"exams": 0,
-"ownHits": 0,
-"ownExams": 0
-},
-"未公開": {
-"hits": 2,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"未だ": {
-"hits": 2,
-"exams": 2,
-"ownHits": 0,
-"ownExams": 0
-},
-"名義": {
-"hits": 2,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"無償": {
-"hits": 3,
-"exams": 3,
-"ownHits": 0,
-"ownExams": 0
-},
-"甚だしい": {
-"hits": 0,
-"exams": 0,
-"ownHits": 0,
-"ownExams": 0
-},
-"精製": {
-"hits": 1,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"樹脂": {
-"hits": 1,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"脂": {
-"hits": 54,
-"exams": 11,
-"ownHits": 48,
-"ownExams": 8
-},
-"競合": {
-"hits": 1,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"競う": {
-"hits": 0,
-"exams": 0,
-"ownHits": 0,
-"ownExams": 0
-},
-"廃棄": {
-"hits": 120,
-"exams": 31,
-"ownHits": 55,
-"ownExams": 12
-},
-"棄てる": {
-"hits": 0,
-"exams": 0,
-"ownHits": 0,
-"ownExams": 0
-},
-"幹": {
-"hits": 30,
-"exams": 13,
-"ownHits": 0,
-"ownExams": 0
-},
-"創る": {
-"hits": 0,
-"exams": 0,
-"ownHits": 0,
-"ownExams": 0
-},
-"形状": {
-"hits": 67,
-"exams": 27,
-"ownHits": 17,
-"ownExams": 11
-},
-"品種": {
-"hits": 4,
-"exams": 4,
-"ownHits": 1,
-"ownExams": 1
-},
-"係る": {
-"hits": 78,
-"exams": 30,
-"ownHits": 20,
-"ownExams": 7
-},
-"抗弁": {
-"hits": 1,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"免責事由": {
-"hits": 1,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"特段": {
-"hits": 3,
-"exams": 3,
-"ownHits": 0,
-"ownExams": 0
-},
-"細かい": {
-"hits": 2,
-"exams": 2,
-"ownHits": 1,
-"ownExams": 1
-},
-"同定": {
-"hits": 5,
-"exams": 3,
-"ownHits": 0,
-"ownExams": 0
-},
-"妥当性": {
-"hits": 12,
-"exams": 9,
-"ownHits": 0,
-"ownExams": 0
-},
-"辿る": {
-"hits": 1,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"近道": {
-"hits": 1,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"心身機能": {
-"hits": 1,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"突発的": {
-"hits": 3,
-"exams": 3,
-"ownHits": 0,
-"ownExams": 0
-},
-"感染症": {
-"hits": 7,
-"exams": 4,
-"ownHits": 0,
-"ownExams": 0
-},
-"双方": {
-"hits": 9,
-"exams": 8,
-"ownHits": 4,
-"ownExams": 4
-},
-"廃熱": {
-"hits": 3,
-"exams": 3,
-"ownHits": 2,
-"ownExams": 2
-},
-"回生": {
-"hits": 1,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"永続的": {
-"hits": 3,
-"exams": 2,
-"ownHits": 0,
-"ownExams": 0
-},
-"永い": {
-"hits": 0,
-"exams": 0,
-"ownHits": 0,
-"ownExams": 0
-},
-"高効率": {
-"hits": 2,
-"exams": 2,
-"ownHits": 1,
-"ownExams": 1
-},
-"正味": {
-"hits": 4,
-"exams": 3,
-"ownHits": 2,
-"ownExams": 2
-},
-"万博": {
-"hits": 2,
-"exams": 2,
-"ownHits": 1,
-"ownExams": 1
-},
-"取組": {
-"hits": 98,
-"exams": 23,
-"ownHits": 10,
-"ownExams": 4
-},
-"汎用性": {
-"hits": 1,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"過剰": {
-"hits": 9,
-"exams": 8,
-"ownHits": 0,
-"ownExams": 0
-},
-"柔軟性": {
-"hits": 16,
-"exams": 6,
-"ownHits": 14,
-"ownExams": 4
-},
-"訴える": {
-"hits": 1,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"寛大": {
-"hits": 7,
-"exams": 4,
-"ownHits": 6,
-"ownExams": 3
-},
-"接近": {
-"hits": 6,
-"exams": 4,
-"ownHits": 4,
-"ownExams": 3
-},
-"整合": {
-"hits": 7,
-"exams": 6,
-"ownHits": 1,
-"ownExams": 1
-},
-"整う": {
-"hits": 0,
-"exams": 0,
-"ownHits": 0,
-"ownExams": 0
-},
-"終始する": {
-"hits": 1,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"弱者": {
-"hits": 2,
-"exams": 2,
-"ownHits": 0,
-"ownExams": 0
-},
-"事業場外勤務": {
-"hits": 1,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"臨機応変": {
-"hits": 1,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"離職": {
-"hits": 0,
-"exams": 0,
-"ownHits": 0,
-"ownExams": 0
-},
-"離れる": {
-"hits": 4,
-"exams": 4,
-"ownHits": 1,
-"ownExams": 1
-},
-"中抜け": {
-"hits": 1,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"明示": {
-"hits": 29,
-"exams": 15,
-"ownHits": 4,
-"ownExams": 2
-},
-"黙る": {
-"hits": 0,
-"exams": 0,
-"ownHits": 0,
-"ownExams": 0
-},
-"黙示": {
-"hits": 1,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"指揮": {
-"hits": 2,
-"exams": 2,
-"ownHits": 0,
-"ownExams": 0
-},
-"形質": {
-"hits": 7,
-"exams": 3,
-"ownHits": 3,
-"ownExams": 1
-},
-"付与": {
-"hits": 9,
-"exams": 6,
-"ownHits": 0,
-"ownExams": 0
-},
-"抱える": {
-"hits": 4,
-"exams": 3,
-"ownHits": 0,
-"ownExams": 0
-},
-"作出": {
-"hits": 1,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"危惧": {
-"hits": 0,
-"exams": 0,
-"ownHits": 0,
-"ownExams": 0
-},
-"是正": {
-"hits": 2,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"繋がる": {
-"hits": 2,
-"exams": 2,
-"ownHits": 0,
-"ownExams": 0
-},
-"北欧": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"直観的": {
-"hits": 6,
-"exams": 3,
-"ownHits": 4,
-"ownExams": 2
-},
-"論理的": {
-"hits": 11,
-"exams": 6,
-"ownHits": 10,
-"ownExams": 5
-},
-"下回る": {
-"hits": 7,
-"exams": 5,
-"ownHits": 5,
-"ownExams": 3
-},
-"偏差": {
-"hits": 29,
-"exams": 10,
-"ownHits": 27,
-"ownExams": 8
-},
-"正規分布": {
-"hits": 21,
-"exams": 5,
-"ownHits": 21,
-"ownExams": 5
-},
-"降伏": {
-"hits": 11,
-"exams": 9,
-"ownHits": 6,
-"ownExams": 5
-},
-"破断": {
-"hits": 8,
-"exams": 6,
-"ownHits": 5,
-"ownExams": 3
-},
-"細長い": {
-"hits": 4,
-"exams": 3,
-"ownHits": 4,
-"ownExams": 3
-},
-"直交": {
-"hits": 12,
-"exams": 7,
-"ownHits": 12,
-"ownExams": 7
-},
-"縮んで": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"圧壊": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"外形線": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"想像図": {
-"hits": 2,
-"exams": 1,
-"ownHits": 2,
-"ownExams": 1
-},
-"可逆": {
-"hits": 21,
-"exams": 8,
-"ownHits": 6,
-"ownExams": 2
-},
-"生起確率": {
-"hits": 4,
-"exams": 3,
-"ownHits": 2,
-"ownExams": 2
-},
-"標的": {
-"hits": 10,
-"exams": 3,
-"ownHits": 9,
-"ownExams": 2
-},
-"検知": {
-"hits": 3,
-"exams": 3,
-"ownHits": 2,
-"ownExams": 2
-},
-"多層": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"疑似": {
-"hits": 0,
-"exams": 0,
-"ownHits": 0,
-"ownExams": 0
-},
-"補数": {
-"hits": 22,
-"exams": 2,
-"ownHits": 22,
-"ownExams": 2
-},
-"進数": {
-"hits": 100,
-"exams": 11,
-"ownHits": 100,
-"ownExams": 11
-},
-"急勾配": {
-"hits": 9,
-"exams": 5,
-"ownHits": 3,
-"ownExams": 2
-},
-"近似": {
-"hits": 35,
-"exams": 11,
-"ownHits": 33,
-"ownExams": 9
-},
-"浮動": {
-"hits": 12,
-"exams": 7,
-"ownHits": 12,
-"ownExams": 7
-},
-"桁": {
-"hits": 72,
-"exams": 13,
-"ownHits": 55,
-"ownExams": 9
-},
-"級数": {
-"hits": 6,
-"exams": 3,
-"ownHits": 6,
-"ownExams": 3
-},
-"硬性": {
-"hits": 0,
-"exams": 0,
-"ownHits": 0,
-"ownExams": 0
-},
-"内心": {
-"hits": 2,
-"exams": 1,
-"ownHits": 2,
-"ownExams": 1
-},
-"外心": {
-"hits": 2,
-"exams": 1,
-"ownHits": 2,
-"ownExams": 1
-},
-"固定端": {
-"hits": 3,
-"exams": 3,
-"ownHits": 1,
-"ownExams": 1
-},
-"摩擦": {
-"hits": 75,
-"exams": 12,
-"ownHits": 2,
-"ownExams": 2
-},
-"脱離": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"転位": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"触媒": {
-"hits": 5,
-"exams": 3,
-"ownHits": 5,
-"ownExams": 3
-},
-"融点": {
-"hits": 10,
-"exams": 4,
-"ownHits": 10,
-"ownExams": 4
-},
-"酵母菌": {
-"hits": 4,
-"exams": 2,
-"ownHits": 4,
-"ownExams": 2
-},
-"基質": {
-"hits": 4,
-"exams": 2,
-"ownHits": 4,
-"ownExams": 2
-},
-"連鎖反応": {
-"hits": 5,
-"exams": 4,
-"ownHits": 5,
-"ownExams": 4
-},
-"系統": {
-"hits": 10,
-"exams": 7,
-"ownHits": 3,
-"ownExams": 2
-},
-"変性": {
-"hits": 19,
-"exams": 6,
-"ownHits": 19,
-"ownExams": 6
-},
-"伸長": {
-"hits": 9,
-"exams": 3,
-"ownHits": 9,
-"ownExams": 3
-},
-"廃": {
-"hits": 149,
-"exams": 34,
-"ownHits": 77,
-"ownExams": 13
-},
-"陸域": {
-"hits": 7,
-"exams": 5,
-"ownHits": 5,
-"ownExams": 3
-},
-"投棄": {
-"hits": 5,
-"exams": 4,
-"ownHits": 2,
-"ownExams": 2
-},
-"清掃": {
-"hits": 10,
-"exams": 8,
-"ownHits": 2,
-"ownExams": 2
-},
-"議定書": {
-"hits": 11,
-"exams": 7,
-"ownHits": 9,
-"ownExams": 5
-},
-"移入種": {
-"hits": 6,
-"exams": 2,
-"ownHits": 6,
-"ownExams": 2
-},
-"駆逐": {
-"hits": 2,
-"exams": 2,
-"ownHits": 1,
-"ownExams": 1
-},
-"動物愛護": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"駆除": {
-"hits": 4,
-"exams": 2,
-"ownHits": 4,
-"ownExams": 2
-},
-"発効": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"衡平": {
-"hits": 3,
-"exams": 3,
-"ownHits": 3,
-"ownExams": 3
-},
-"利便性": {
-"hits": 4,
-"exams": 4,
-"ownHits": 1,
-"ownExams": 1
-},
-"在来": {
-"hits": 12,
-"exams": 7,
-"ownHits": 7,
-"ownExams": 4
-},
-"非在来": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"顕著": {
-"hits": 8,
-"exams": 7,
-"ownHits": 5,
-"ownExams": 4
-},
-"明治維新": {
-"hits": 3,
-"exams": 1,
-"ownHits": 3,
-"ownExams": 1
-},
-"手工業": {
-"hits": 4,
-"exams": 4,
-"ownHits": 4,
-"ownExams": 4
-},
-"一式": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"官僚": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"種痘": {
-"hits": 4,
-"exams": 2,
-"ownHits": 4,
-"ownExams": 2
-},
-"周期律": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"三極真空管": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"私利私欲": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"義務": {
-"hits": 169,
-"exams": 29,
-"ownHits": 142,
-"ownExams": 16
-},
-"掲げる": {
-"hits": 9,
-"exams": 9,
-"ownHits": 9,
-"ownExams": 9
-},
-"失墜": {
-"hits": 10,
-"exams": 8,
-"ownHits": 10,
-"ownExams": 8
-},
-"傷つけ": {
-"hits": 17,
-"exams": 12,
-"ownHits": 17,
-"ownExams": 12
-},
-"不名誉": {
-"hits": 12,
-"exams": 8,
-"ownHits": 12,
-"ownExams": 8
-},
-"正当": {
-"hits": 34,
-"exams": 17,
-"ownHits": 30,
-"ownExams": 15
-},
-"盗用": {
-"hits": 29,
-"exams": 15,
-"ownHits": 29,
-"ownExams": 15
-},
-"努め": {
-"hits": 62,
-"exams": 18,
-"ownHits": 60,
-"ownExams": 16
-},
-"組織": {
-"hits": 154,
-"exams": 24,
-"ownHits": 142,
-"ownExams": 16
-},
-"負う": {
-"hits": 22,
-"exams": 17,
-"ownHits": 19,
-"ownExams": 14
-},
-"関与": {
-"hits": 13,
-"exams": 7,
-"ownHits": 13,
-"ownExams": 7
-},
-"怠る": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"公衆": {
-"hits": 53,
-"exams": 16,
-"ownHits": 50,
-"ownExams": 15
-},
-"損なう": {
-"hits": 12,
-"exams": 9,
-"ownHits": 10,
-"ownExams": 7
-},
-"良心": {
-"hits": 4,
-"exams": 4,
-"ownHits": 4,
-"ownExams": 4
-},
-"信念": {
-"hits": 3,
-"exams": 3,
-"ownHits": 3,
-"ownExams": 3
-},
-"利益相反": {
-"hits": 12,
-"exams": 5,
-"ownHits": 12,
-"ownExams": 5
-},
-"公正さ": {
-"hits": 6,
-"exams": 4,
-"ownHits": 6,
-"ownExams": 4
-},
-"雇用者": {
-"hits": 5,
-"exams": 5,
-"ownHits": 5,
-"ownExams": 5
-},
-"依頼者": {
-"hits": 15,
-"exams": 6,
-"ownHits": 15,
-"ownExams": 6
-},
-"遂行": {
-"hits": 27,
-"exams": 14,
-"ownHits": 25,
-"ownExams": 12
-},
-"与える": {
-"hits": 39,
-"exams": 25,
-"ownHits": 25,
-"ownExams": 13
-},
-"破壊": {
-"hits": 121,
-"exams": 30,
-"ownHits": 16,
-"ownExams": 9
-},
-"重視": {
-"hits": 22,
-"exams": 11,
-"ownHits": 20,
-"ownExams": 9
-},
-"守秘": {
-"hits": 25,
-"exams": 10,
-"ownHits": 25,
-"ownExams": 10
-},
-"委ねる": {
-"hits": 0,
-"exams": 0,
-"ownHits": 0,
-"ownExams": 0
-},
-"独自": {
-"hits": 24,
-"exams": 15,
-"ownHits": 19,
-"ownExams": 10
-},
-"予備校生": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"カンニング": {
-"hits": 7,
-"exams": 2,
-"ownHits": 7,
-"ownExams": 2
-},
-"手口": {
-"hits": 2,
-"exams": 2,
-"ownHits": 1,
-"ownExams": 1
-},
-"投稿": {
-"hits": 21,
-"exams": 5,
-"ownHits": 21,
-"ownExams": 5
-},
-"新聞報道": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"相次いで": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"偽計": {
-"hits": 3,
-"exams": 1,
-"ownHits": 3,
-"ownExams": 1
-},
-"妨害罪": {
-"hits": 2,
-"exams": 1,
-"ownHits": 2,
-"ownExams": 1
-},
-"偽計業務妨害罪": {
-"hits": 2,
-"exams": 1,
-"ownHits": 2,
-"ownExams": 1
-},
-"捜査": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"容疑者": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"逮捕": {
-"hits": 2,
-"exams": 1,
-"ownHits": 2,
-"ownExams": 1
-},
-"図る": {
-"hits": 107,
-"exams": 32,
-"ownHits": 52,
-"ownExams": 16
-},
-"位置付ける": {
-"hits": 3,
-"exams": 3,
-"ownHits": 1,
-"ownExams": 1
-},
-"著しく": {
-"hits": 16,
-"exams": 11,
-"ownHits": 9,
-"ownExams": 5
-},
-"継続研さん": {
-"hits": 3,
-"exams": 3,
-"ownHits": 3,
-"ownExams": 3
-},
-"執筆": {
-"hits": 4,
-"exams": 3,
-"ownHits": 4,
-"ownExams": 3
-},
-"証拠": {
-"hits": 6,
-"exams": 4,
-"ownHits": 6,
-"ownExams": 4
-},
-"資質向上": {
-"hits": 21,
-"exams": 10,
-"ownHits": 21,
-"ownExams": 10
-},
-"促す": {
-"hits": 12,
-"exams": 10,
-"ownHits": 9,
-"ownExams": 8
-},
-"課す": {
-"hits": 0,
-"exams": 0,
-"ownHits": 0,
-"ownExams": 0
-},
-"ハザード同定": {
-"hits": 0,
-"exams": 0,
-"ownHits": 0,
-"ownExams": 0
-},
-"代替": {
-"hits": 16,
-"exams": 7,
-"ownHits": 3,
-"ownExams": 2
-},
-"保有": {
-"hits": 13,
-"exams": 10,
-"ownHits": 9,
-"ownExams": 7
-},
-"見合う": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"保護方策": {
-"hits": 6,
-"exams": 2,
-"ownHits": 6,
-"ownExams": 2
-},
-"倫理": {
-"hits": 197,
-"exams": 20,
-"ownHits": 191,
-"ownExams": 16
-},
-"顧客": {
-"hits": 77,
-"exams": 15,
-"ownHits": 76,
-"ownExams": 14
-},
-"雇用主": {
-"hits": 6,
-"exams": 4,
-"ownHits": 6,
-"ownExams": 4
-},
-"利害": {
-"hits": 38,
-"exams": 15,
-"ownHits": 34,
-"ownExams": 12
-},
-"持続可能": {
-"hits": 68,
-"exams": 20,
-"ownHits": 49,
-"ownExams": 12
-},
-"捉える": {
-"hits": 6,
-"exams": 2,
-"ownHits": 6,
-"ownExams": 2
-},
-"普遍性": {
-"hits": 2,
-"exams": 1,
-"ownHits": 2,
-"ownExams": 1
-},
-"統合性": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"包摂性": {
-"hits": 4,
-"exams": 3,
-"ownHits": 4,
-"ownExams": 3
-},
-"功利": {
-"hits": 15,
-"exams": 4,
-"ownHits": 15,
-"ownExams": 4
-},
-"エシックス・テスト": {
-"hits": 3,
-"exams": 1,
-"ownHits": 3,
-"ownExams": 1
-},
-"自問": {
-"hits": 0,
-"exams": 0,
-"ownHits": 0,
-"ownExams": 0
-},
-"代表的": {
-"hits": 18,
-"exams": 12,
-"ownHits": 5,
-"ownExams": 4
-},
-"普遍化可能性": {
-"hits": 6,
-"exams": 1,
-"ownHits": 6,
-"ownExams": 1
-},
-"可逆性": {
-"hits": 3,
-"exams": 1,
-"ownHits": 3,
-"ownExams": 1
-},
-"黄金律": {
-"hits": 12,
-"exams": 3,
-"ownHits": 12,
-"ownExams": 3
-},
-"美徳": {
-"hits": 4,
-"exams": 1,
-"ownHits": 4,
-"ownExams": 1
-},
-"周囲": {
-"hits": 12,
-"exams": 8,
-"ownHits": 2,
-"ownExams": 2
-},
-"世評": {
-"hits": 6,
-"exams": 1,
-"ownHits": 6,
-"ownExams": 1
-},
-"報道": {
-"hits": 7,
-"exams": 6,
-"ownHits": 7,
-"ownExams": 6
-},
-"綱領": {
-"hits": 23,
-"exams": 10,
-"ownHits": 23,
-"ownExams": 10
-},
-"迷う": {
-"hits": 1,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"多角的": {
-"hits": 0,
-"exams": 0,
-"ownHits": 0,
-"ownExams": 0
-},
-"不適切": {
-"hits": 446,
-"exams": 41,
-"ownHits": 76,
-"ownExams": 15
-},
-"漏らし": {
-"hits": 12,
-"exams": 11,
-"ownHits": 12,
-"ownExams": 11
-},
-"当該": {
-"hits": 117,
-"exams": 27,
-"ownHits": 72,
-"ownExams": 15
-},
-"文部科学省": {
-"hits": 18,
-"exams": 9,
-"ownHits": 18,
-"ownExams": 9
-},
-"分科会": {
-"hits": 3,
-"exams": 3,
-"ownHits": 3,
-"ownExams": 3
-},
-"統合": {
-"hits": 11,
-"exams": 9,
-"ownHits": 8,
-"ownExams": 6
-},
-"伴い": {
-"hits": 25,
-"exams": 20,
-"ownHits": 11,
-"ownExams": 7
-},
-"履行": {
-"hits": 20,
-"exams": 8,
-"ownHits": 20,
-"ownExams": 8
-},
-"活躍": {
-"hits": 5,
-"exams": 4,
-"ownHits": 5,
-"ownExams": 4
-},
-"知見": {
-"hits": 20,
-"exams": 11,
-"ownHits": 18,
-"ownExams": 9
-},
-"研さん": {
-"hits": 3,
-"exams": 3,
-"ownHits": 3,
-"ownExams": 3
-},
-"造り込まれる": {
-"hits": 0,
-"exams": 0,
-"ownHits": 0,
-"ownExams": 0
-},
-"怪我": {
-"hits": 5,
-"exams": 2,
-"ownHits": 5,
-"ownExams": 2
-},
-"造成": {
-"hits": 8,
-"exams": 7,
-"ownHits": 3,
-"ownExams": 3
-},
-"宅地": {
-"hits": 15,
-"exams": 11,
-"ownHits": 3,
-"ownExams": 3
-},
-"養鶏場": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"出荷": {
-"hits": 9,
-"exams": 3,
-"ownHits": 7,
-"ownExams": 2
-},
-"暴走": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"周波数": {
-"hits": 6,
-"exams": 4,
-"ownHits": 2,
-"ownExams": 2
-},
-"需要家": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"湾内": {
-"hits": 10,
-"exams": 5,
-"ownHits": 2,
-"ownExams": 2
-},
-"養殖": {
-"hits": 4,
-"exams": 2,
-"ownHits": 4,
-"ownExams": 2
-},
-"鯛": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"進展": {
-"hits": 27,
-"exams": 15,
-"ownHits": 13,
-"ownExams": 8
-},
-"鑑みる": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"施策": {
-"hits": 21,
-"exams": 12,
-"ownHits": 13,
-"ownExams": 6
-},
-"創出": {
-"hits": 12,
-"exams": 7,
-"ownHits": 7,
-"ownExams": 5
-},
-"資する": {
-"hits": 21,
-"exams": 14,
-"ownHits": 16,
-"ownExams": 9
-},
-"指紋": {
-"hits": 4,
-"exams": 3,
-"ownHits": 3,
-"ownExams": 2
-},
-"顔認識": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"符号": {
-"hits": 42,
-"exams": 9,
-"ownHits": 9,
-"ownExams": 2
-},
-"旅券": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"割り当て": {
-"hits": 2,
-"exams": 2,
-"ownHits": 1,
-"ownExams": 1
-},
-"識別": {
-"hits": 14,
-"exams": 8,
-"ownHits": 11,
-"ownExams": 5
-},
-"塩基": {
-"hits": 42,
-"exams": 16,
-"ownHits": 2,
-"ownExams": 2
-},
-"部位": {
-"hits": 4,
-"exams": 4,
-"ownHits": 2,
-"ownExams": 2
-},
-"容貌": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"虹彩": {
-"hits": 3,
-"exams": 3,
-"ownHits": 2,
-"ownExams": 2
-},
-"起伏": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"声帯": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"振動": {
-"hits": 112,
-"exams": 27,
-"ownHits": 6,
-"ownExams": 3
-},
-"声門": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"声道": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"歩幅": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"皮下": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"分岐": {
-"hits": 6,
-"exams": 5,
-"ownHits": 1,
-"ownExams": 1
-},
-"端点": {
-"hits": 2,
-"exams": 2,
-"ownHits": 1,
-"ownExams": 1
-},
-"掌紋": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"模倣": {
-"hits": 9,
-"exams": 9,
-"ownHits": 9,
-"ownExams": 9
-},
-"特許庁": {
-"hits": 12,
-"exams": 9,
-"ownHits": 12,
-"ownExams": 9
-},
-"出願": {
-"hits": 12,
-"exams": 7,
-"ownHits": 11,
-"ownExams": 6
-},
-"節目": {
-"hits": 3,
-"exams": 3,
-"ownHits": 3,
-"ownExams": 3
-},
-"未然": {
-"hits": 10,
-"exams": 7,
-"ownHits": 9,
-"ownExams": 6
-},
-"着目": {
-"hits": 16,
-"exams": 11,
-"ownHits": 5,
-"ownExams": 3
-},
-"顕在": {
-"hits": 5,
-"exams": 3,
-"ownHits": 5,
-"ownExams": 3
-},
-"不祥事": {
-"hits": 10,
-"exams": 5,
-"ownHits": 10,
-"ownExams": 5
-},
-"発覚": {
-"hits": 7,
-"exams": 4,
-"ownHits": 7,
-"ownExams": 4
-},
-"不明瞭": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"忖度": {
-"hits": 0,
-"exams": 0,
-"ownHits": 0,
-"ownExams": 0
-},
-"天井": {
-"hits": 6,
-"exams": 4,
-"ownHits": 6,
-"ownExams": 4
-},
-"所管": {
-"hits": 8,
-"exams": 6,
-"ownHits": 6,
-"ownExams": 4
-},
-"頻度": {
-"hits": 9,
-"exams": 7,
-"ownHits": 2,
-"ownExams": 2
-},
-"一律": {
-"hits": 7,
-"exams": 6,
-"ownHits": 2,
-"ownExams": 2
-},
-"諸元": {
-"hits": 6,
-"exams": 6,
-"ownHits": 2,
-"ownExams": 2
-},
-"微": {
-"hits": 87,
-"exams": 29,
-"ownHits": 7,
-"ownExams": 5
-},
-"漏洩": {
-"hits": 20,
-"exams": 7,
-"ownHits": 20,
-"ownExams": 7
-},
-"複数人": {
-"hits": 4,
-"exams": 2,
-"ownHits": 4,
-"ownExams": 2
-},
-"避ける": {
-"hits": 13,
-"exams": 11,
-"ownHits": 6,
-"ownExams": 6
-},
-"媒体": {
-"hits": 10,
-"exams": 8,
-"ownHits": 5,
-"ownExams": 3
-},
-"背後": {
-"hits": 18,
-"exams": 11,
-"ownHits": 3,
-"ownExams": 3
-},
-"書棚": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"死角": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"閲覧": {
-"hits": 3,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 1
-},
-"予見": {
-"hits": 18,
-"exams": 10,
-"ownHits": 14,
-"ownExams": 6
-},
-"特権": {
-"hits": 3,
-"exams": 2,
-"ownHits": 3,
-"ownExams": 2
-},
-"専有": {
-"hits": 3,
-"exams": 1,
-"ownHits": 3,
-"ownExams": 1
-},
-"厳重": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"措置": {
-"hits": 65,
-"exams": 23,
-"ownHits": 45,
-"ownExams": 12
-},
-"講ずる": {
-"hits": 6,
-"exams": 5,
-"ownHits": 5,
-"ownExams": 4
-},
-"疾病": {
-"hits": 6,
-"exams": 2,
-"ownHits": 6,
-"ownExams": 2
-},
-"軽微": {
-"hits": 5,
-"exams": 4,
-"ownHits": 3,
-"ownExams": 2
-},
-"付加": {
-"hits": 31,
-"exams": 16,
-"ownHits": 12,
-"ownExams": 7
-},
-"雇用": {
-"hits": 29,
-"exams": 11,
-"ownHits": 27,
-"ownExams": 9
-},
-"均等": {
-"hits": 6,
-"exams": 3,
-"ownHits": 5,
-"ownExams": 2
-},
-"介護": {
-"hits": 7,
-"exams": 5,
-"ownHits": 7,
-"ownExams": 5
-},
-"産前": {
-"hits": 2,
-"exams": 1,
-"ownHits": 2,
-"ownExams": 1
-},
-"遭遇": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"鍛える": {
-"hits": 0,
-"exams": 0,
-"ownHits": 0,
-"ownExams": 0
-},
-"意向": {
-"hits": 5,
-"exams": 4,
-"ownHits": 5,
-"ownExams": 4
-},
-"包摂": {
-"hits": 5,
-"exams": 3,
-"ownHits": 5,
-"ownExams": 3
-},
-"参画": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"年限": {
-"hits": 3,
-"exams": 2,
-"ownHits": 3,
-"ownExams": 2
-},
-"登録": {
-"hits": 89,
-"exams": 18,
-"ownHits": 69,
-"ownExams": 15
-},
-"責務": {
-"hits": 73,
-"exams": 18,
-"ownHits": 70,
-"ownExams": 16
-},
-"相反": {
-"hits": 16,
-"exams": 8,
-"ownHits": 15,
-"ownExams": 7
-},
-"啓発": {
-"hits": 3,
-"exams": 3,
-"ownHits": 3,
-"ownExams": 3
-},
-"研鑽": {
-"hits": 7,
-"exams": 3,
-"ownHits": 7,
-"ownExams": 3
-},
-"倫理綱領": {
-"hits": 20,
-"exams": 10,
-"ownHits": 20,
-"ownExams": 10
-},
-"抵触": {
-"hits": 2,
-"exams": 1,
-"ownHits": 2,
-"ownExams": 1
-},
-"察知": {
-"hits": 4,
-"exams": 4,
-"ownHits": 4,
-"ownExams": 4
-},
-"醸成": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"幾多の苦難": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"獲得": {
-"hits": 5,
-"exams": 4,
-"ownHits": 4,
-"ownExams": 3
-},
-"擁護": {
-"hits": 3,
-"exams": 3,
-"ownHits": 3,
-"ownExams": 3
-},
-"見解": {
-"hits": 13,
-"exams": 4,
-"ownHits": 13,
-"ownExams": 4
-},
-"創作者": {
-"hits": 6,
-"exams": 6,
-"ownHits": 6,
-"ownExams": 6
-},
-"元来": {
-"hits": 5,
-"exams": 5,
-"ownHits": 5,
-"ownExams": 5
-},
-"意匠": {
-"hits": 25,
-"exams": 12,
-"ownHits": 24,
-"ownExams": 11
-},
-"半導体集積回路": {
-"hits": 4,
-"exams": 4,
-"ownHits": 4,
-"ownExams": 4
-},
-"商標": {
-"hits": 22,
-"exams": 13,
-"ownHits": 20,
-"ownExams": 11
-},
-"商号": {
-"hits": 10,
-"exams": 6,
-"ownHits": 8,
-"ownExams": 4
-},
-"甚大": {
-"hits": 6,
-"exams": 5,
-"ownHits": 5,
-"ownExams": 4
-},
-"刊行物": {
-"hits": 9,
-"exams": 5,
-"ownHits": 8,
-"ownExams": 4
-},
-"中途": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"取引先": {
-"hits": 11,
-"exams": 8,
-"ownHits": 11,
-"ownExams": 8
-},
-"脱税": {
-"hits": 4,
-"exams": 2,
-"ownHits": 4,
-"ownExams": 2
-},
-"垂れ流し": {
-"hits": 6,
-"exams": 3,
-"ownHits": 6,
-"ownExams": 3
-},
-"懲戒処分": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"解雇": {
-"hits": 9,
-"exams": 6,
-"ownHits": 9,
-"ownExams": 6
-},
-"期日内": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"誤使用": {
-"hits": 5,
-"exams": 5,
-"ownHits": 5,
-"ownExams": 5
-},
-"引渡し": {
-"hits": 5,
-"exams": 5,
-"ownHits": 3,
-"ownExams": 3
-},
-"故意": {
-"hits": 12,
-"exams": 8,
-"ownHits": 11,
-"ownExams": 7
-},
-"救済": {
-"hits": 4,
-"exams": 4,
-"ownHits": 4,
-"ownExams": 4
-},
-"不具合": {
-"hits": 20,
-"exams": 13,
-"ownHits": 14,
-"ownExams": 10
-},
-"消安法": {
-"hits": 10,
-"exams": 2,
-"ownHits": 10,
-"ownExams": 2
-},
-"後遺障害": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"重症病": {
-"hits": 0,
-"exams": 0,
-"ownHits": 0,
-"ownExams": 0
-},
-"内閣総理大臣": {
-"hits": 4,
-"exams": 4,
-"ownHits": 3,
-"ownExams": 3
-},
-"消費者庁": {
-"hits": 17,
-"exams": 9,
-"ownHits": 17,
-"ownExams": 9
-},
-"萎縮": {
-"hits": 3,
-"exams": 2,
-"ownHits": 3,
-"ownExams": 2
-},
-"利便": {
-"hits": 8,
-"exams": 7,
-"ownHits": 2,
-"ownExams": 2
-},
-"重篤度": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"芽": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"摘み取る": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"局所排気装置": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"到来": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"次世代": {
-"hits": 3,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 1
-},
-"進捗": {
-"hits": 7,
-"exams": 7,
-"ownHits": 3,
-"ownExams": 3
-},
-"負荷": {
-"hits": 41,
-"exams": 18,
-"ownHits": 8,
-"ownExams": 6
-},
-"概念": {
-"hits": 22,
-"exams": 16,
-"ownHits": 11,
-"ownExams": 8
-},
-"濃縮": {
-"hits": 6,
-"exams": 2,
-"ownHits": 6,
-"ownExams": 2
-},
-"蓄積": {
-"hits": 12,
-"exams": 10,
-"ownHits": 9,
-"ownExams": 7
-},
-"刑事裁判": {
-"hits": 3,
-"exams": 1,
-"ownHits": 3,
-"ownExams": 1
-},
-"脱線事故": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"挟まれ": {
-"hits": 3,
-"exams": 2,
-"ownHits": 3,
-"ownExams": 2
-},
-"開示": {
-"hits": 19,
-"exams": 15,
-"ownHits": 12,
-"ownExams": 11
-},
-"低脂肪乳": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"生乳": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"黄色": {
-"hits": 1,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"笹子トンネル": {
-"hits": 4,
-"exams": 4,
-"ownHits": 4,
-"ownExams": 4
-},
-"天井板": {
-"hits": 4,
-"exams": 3,
-"ownHits": 4,
-"ownExams": 3
-},
-"崩落": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"見抜けなかった": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"不起訴処分": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"繋がって": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"鼓舞": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"許認可": {
-"hits": 2,
-"exams": 2,
-"ownHits": 1,
-"ownExams": 1
-},
-"相手方": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"贈与": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"接待": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"割り勘": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"人事院": {
-"hits": 2,
-"exams": 1,
-"ownHits": 2,
-"ownExams": 1
-},
-"狭義": {
-"hits": 9,
-"exams": 4,
-"ownHits": 8,
-"ownExams": 3
-},
-"服務規律": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"広義": {
-"hits": 6,
-"exams": 1,
-"ownHits": 6,
-"ownExams": 1
-},
-"知人": {
-"hits": 2,
-"exams": 1,
-"ownHits": 2,
-"ownExams": 1
-},
-"志向": {
-"hits": 8,
-"exams": 3,
-"ownHits": 8,
-"ownExams": 3
-},
-"懸念": {
-"hits": 21,
-"exams": 10,
-"ownHits": 18,
-"ownExams": 7
-},
-"納めて": {
-"hits": 2,
-"exams": 1,
-"ownHits": 2,
-"ownExams": 1
-},
-"尊厳": {
-"hits": 8,
-"exams": 7,
-"ownHits": 8,
-"ownExams": 7
-},
-"就業環境": {
-"hits": 3,
-"exams": 2,
-"ownHits": 3,
-"ownExams": 2
-},
-"阻害": {
-"hits": 22,
-"exams": 15,
-"ownHits": 15,
-"ownExams": 8
-},
-"叱責": {
-"hits": 3,
-"exams": 3,
-"ownHits": 3,
-"ownExams": 3
-},
-"妊婦": {
-"hits": 6,
-"exams": 3,
-"ownHits": 5,
-"ownExams": 2
-},
-"性愛": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"自認": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"過労死": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"講ず": {
-"hits": 9,
-"exams": 7,
-"ownHits": 8,
-"ownExams": 6
-},
-"月間": {
-"hits": 5,
-"exams": 4,
-"ownHits": 1,
-"ownExams": 1
-},
-"違和感": {
-"hits": 4,
-"exams": 1,
-"ownHits": 4,
-"ownExams": 1
-},
-"昨今": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"虚偽": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"後を絶たない": {
-"hits": 0,
-"exams": 0,
-"ownHits": 0,
-"ownExams": 0
-},
-"則り": {
-"hits": 2,
-"exams": 1,
-"ownHits": 2,
-"ownExams": 1
-},
-"悪意": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"巧妙": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"抜き打ち": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"抑止力": {
-"hits": 3,
-"exams": 3,
-"ownHits": 3,
-"ownExams": 3
-},
-"因果関係": {
-"hits": 11,
-"exams": 7,
-"ownHits": 9,
-"ownExams": 6
-},
-"迅速": {
-"hits": 10,
-"exams": 8,
-"ownHits": 9,
-"ownExams": 7
-},
-"湯沸器": {
-"hits": 3,
-"exams": 2,
-"ownHits": 3,
-"ownExams": 2
-},
-"透明性": {
-"hits": 13,
-"exams": 7,
-"ownHits": 13,
-"ownExams": 7
-},
-"規範": {
-"hits": 68,
-"exams": 15,
-"ownHits": 64,
-"ownExams": 13
-},
-"改訂": {
-"hits": 15,
-"exams": 8,
-"ownHits": 14,
-"ownExams": 7
-},
-"潜在的": {
-"hits": 7,
-"exams": 5,
-"ownHits": 7,
-"ownExams": 5
-},
-"暗黙": {
-"hits": 5,
-"exams": 2,
-"ownHits": 5,
-"ownExams": 2
-},
-"共著": {
-"hits": 5,
-"exams": 1,
-"ownHits": 5,
-"ownExams": 1
-},
-"先進性": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"多大": {
-"hits": 3,
-"exams": 3,
-"ownHits": 3,
-"ownExams": 3
-},
-"経緯": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"文献": {
-"hits": 8,
-"exams": 2,
-"ownHits": 8,
-"ownExams": 2
-},
-"許諾": {
-"hits": 4,
-"exams": 3,
-"ownHits": 4,
-"ownExams": 3
-},
-"落とし穴": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"陥る": {
-"hits": 0,
-"exams": 0,
-"ownHits": 0,
-"ownExams": 0
-},
-"促進": {
-"hits": 51,
-"exams": 24,
-"ownHits": 15,
-"ownExams": 9
-},
-"性的指向": {
-"hits": 4,
-"exams": 3,
-"ownHits": 4,
-"ownExams": 3
-},
-"鉛直": {
-"hits": 46,
-"exams": 11,
-"ownHits": 40,
-"ownExams": 8
-},
-"間隙比": {
-"hits": 28,
-"exams": 10,
-"ownHits": 28,
-"ownExams": 10
-},
-"粒子密度": {
-"hits": 3,
-"exams": 1,
-"ownHits": 3,
-"ownExams": 1
-},
-"乾燥密度": {
-"hits": 16,
-"exams": 9,
-"ownHits": 16,
-"ownExams": 9
-},
-"粒度分布": {
-"hits": 7,
-"exams": 4,
-"ownHits": 7,
-"ownExams": 4
-},
-"透水性": {
-"hits": 10,
-"exams": 4,
-"ownHits": 10,
-"ownExams": 4
-},
-"細粒土": {
-"hits": 10,
-"exams": 6,
-"ownHits": 10,
-"ownExams": 6
-},
-"含水比": {
-"hits": 25,
-"exams": 9,
-"ownHits": 25,
-"ownExams": 9
-},
-"飽和度": {
-"hits": 10,
-"exams": 4,
-"ownHits": 10,
-"ownExams": 4
-},
-"構成物": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"単位体積当たり": {
-"hits": 4,
-"exams": 4,
-"ownHits": 4,
-"ownExams": 4
-},
-"平均質量": {
-"hits": 2,
-"exams": 2,
-"ownHits": 1,
-"ownExams": 1
-},
-"圧密": {
-"hits": 93,
-"exams": 9,
-"ownHits": 93,
-"ownExams": 9
-},
-"排出": {
-"hits": 166,
-"exams": 33,
-"ownHits": 27,
-"ownExams": 9
-},
-"粗い": {
-"hits": 3,
-"exams": 3,
-"ownHits": 1,
-"ownExams": 1
-},
-"礫": {
-"hits": 15,
-"exams": 5,
-"ownHits": 15,
-"ownExams": 5
-},
-"粘土": {
-"hits": 32,
-"exams": 7,
-"ownHits": 32,
-"ownExams": 7
-},
-"履歴": {
-"hits": 6,
-"exams": 5,
-"ownHits": 5,
-"ownExams": 4
-},
-"推移": {
-"hits": 8,
-"exams": 4,
-"ownHits": 5,
-"ownExams": 2
-},
-"供試体": {
-"hits": 17,
-"exams": 5,
-"ownHits": 17,
-"ownExams": 5
-},
-"円柱形": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"保持": {
-"hits": 46,
-"exams": 22,
-"ownHits": 15,
-"ownExams": 8
-},
-"算定": {
-"hits": 44,
-"exams": 13,
-"ownHits": 39,
-"ownExams": 10
-},
-"初期": {
-"hits": 27,
-"exams": 12,
-"ownHits": 21,
-"ownExams": 6
-},
-"山体": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"河床堆積物": {
-"hits": 4,
-"exams": 3,
-"ownHits": 4,
-"ownExams": 3
-},
-"渓岸": {
-"hits": 6,
-"exams": 4,
-"ownHits": 6,
-"ownExams": 4
-},
-"流下": {
-"hits": 18,
-"exams": 7,
-"ownHits": 18,
-"ownExams": 7
-},
-"抑制": {
-"hits": 86,
-"exams": 23,
-"ownHits": 61,
-"ownExams": 11
-},
-"抑止": {
-"hits": 11,
-"exams": 10,
-"ownHits": 6,
-"ownExams": 6
-},
-"簡便": {
-"hits": 6,
-"exams": 4,
-"ownHits": 6,
-"ownExams": 4
-},
-"除した": {
-"hits": 21,
-"exams": 13,
-"ownHits": 14,
-"ownExams": 7
-},
-"円弧": {
-"hits": 6,
-"exams": 6,
-"ownHits": 6,
-"ownExams": 6
-},
-"滑動": {
-"hits": 11,
-"exams": 6,
-"ownHits": 11,
-"ownExams": 6
-},
-"落石": {
-"hits": 5,
-"exams": 1,
-"ownHits": 5,
-"ownExams": 1
-},
-"防護工": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"等分布": {
-"hits": 13,
-"exams": 7,
-"ownHits": 11,
-"ownExams": 5
-},
-"接線": {
-"hits": 6,
-"exams": 4,
-"ownHits": 5,
-"ownExams": 3
-},
-"折れ曲がる": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"疲労": {
-"hits": 69,
-"exams": 22,
-"ownHits": 42,
-"ownExams": 11
-},
-"亀裂": {
-"hits": 13,
-"exams": 4,
-"ownHits": 13,
-"ownExams": 4
-},
-"継手": {
-"hits": 43,
-"exams": 10,
-"ownHits": 43,
-"ownExams": 10
-},
-"止端": {
-"hits": 6,
-"exams": 2,
-"ownHits": 6,
-"ownExams": 2
-},
-"滑らか": {
-"hits": 6,
-"exams": 4,
-"ownHits": 6,
-"ownExams": 4
-},
-"振幅": {
-"hits": 15,
-"exams": 5,
-"ownHits": 14,
-"ownExams": 4
-},
-"長短": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"腐食": {
-"hits": 75,
-"exams": 11,
-"ownHits": 55,
-"ownExams": 8
-},
-"耐候性": {
-"hits": 12,
-"exams": 5,
-"ownHits": 12,
-"ownExams": 5
-},
-"添加": {
-"hits": 12,
-"exams": 9,
-"ownHits": 7,
-"ownExams": 6
-},
-"低合金": {
-"hits": 3,
-"exams": 3,
-"ownHits": 3,
-"ownExams": 3
-},
-"乾湿": {
-"hits": 4,
-"exams": 2,
-"ownHits": 4,
-"ownExams": 2
-},
-"緻密": {
-"hits": 9,
-"exams": 5,
-"ownHits": 9,
-"ownExams": 5
-},
-"錆び": {
-"hits": 3,
-"exams": 2,
-"ownHits": 3,
-"ownExams": 2
-},
-"下地": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"亜鉛": {
-"hits": 18,
-"exams": 6,
-"ownHits": 14,
-"ownExams": 4
-},
-"接触": {
-"hits": 18,
-"exams": 11,
-"ownHits": 17,
-"ownExams": 10
-},
-"犠牲": {
-"hits": 12,
-"exams": 8,
-"ownHits": 3,
-"ownExams": 3
-},
-"発揮": {
-"hits": 32,
-"exams": 18,
-"ownHits": 17,
-"ownExams": 7
-},
-"担う": {
-"hits": 20,
-"exams": 12,
-"ownHits": 7,
-"ownExams": 5
-},
-"溶出": {
-"hits": 3,
-"exams": 2,
-"ownHits": 3,
-"ownExams": 2
-},
-"皮膜": {
-"hits": 19,
-"exams": 5,
-"ownHits": 12,
-"ownExams": 2
-},
-"厚膜": {
-"hits": 4,
-"exams": 2,
-"ownHits": 4,
-"ownExams": 2
-},
-"被覆": {
-"hits": 29,
-"exams": 10,
-"ownHits": 29,
-"ownExams": 10
-},
-"耐食性": {
-"hits": 4,
-"exams": 4,
-"ownHits": 2,
-"ownExams": 2
-},
-"港湾": {
-"hits": 23,
-"exams": 9,
-"ownHits": 22,
-"ownExams": 8
-},
-"溶射": {
-"hits": 13,
-"exams": 4,
-"ownHits": 13,
-"ownExams": 4
-},
-"気孔": {
-"hits": 6,
-"exams": 4,
-"ownHits": 4,
-"ownExams": 2
-},
-"封孔": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"浸漬": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"練上がり": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"細骨材": {
-"hits": 6,
-"exams": 5,
-"ownHits": 6,
-"ownExams": 5
-},
-"過度": {
-"hits": 7,
-"exams": 7,
-"ownHits": 4,
-"ownExams": 4
-},
-"所要": {
-"hits": 23,
-"exams": 11,
-"ownHits": 20,
-"ownExams": 8
-},
-"粉体": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"早強": {
-"hits": 19,
-"exams": 6,
-"ownHits": 19,
-"ownExams": 6
-},
-"凝結": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"寒中": {
-"hits": 4,
-"exams": 2,
-"ownHits": 4,
-"ownExams": 2
-},
-"中庸": {
-"hits": 8,
-"exams": 6,
-"ownHits": 8,
-"ownExams": 6
-},
-"硫酸塩": {
-"hits": 6,
-"exams": 4,
-"ownHits": 6,
-"ownExams": 4
-},
-"既往": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"劣化": {
-"hits": 59,
-"exams": 20,
-"ownHits": 43,
-"ownExams": 8
-},
-"凍害": {
-"hits": 19,
-"exams": 9,
-"ownHits": 19,
-"ownExams": 9
-},
-"凍結": {
-"hits": 11,
-"exams": 8,
-"ownHits": 11,
-"ownExams": 8
-},
-"融解": {
-"hits": 9,
-"exams": 8,
-"ownHits": 6,
-"ownExams": 5
-},
-"繰返す": {
-"hits": 3,
-"exams": 3,
-"ownHits": 3,
-"ownExams": 3
-},
-"微細": {
-"hits": 13,
-"exams": 10,
-"ownHits": 10,
-"ownExams": 8
-},
-"流水": {
-"hits": 58,
-"exams": 10,
-"ownHits": 58,
-"ownExams": 10
-},
-"摩耗": {
-"hits": 13,
-"exams": 8,
-"ownHits": 13,
-"ownExams": 8
-},
-"水和物": {
-"hits": 2,
-"exams": 1,
-"ownHits": 2,
-"ownExams": 1
-},
-"陥没": {
-"hits": 5,
-"exams": 5,
-"ownHits": 4,
-"ownExams": 4
-},
-"市町村": {
-"hits": 30,
-"exams": 13,
-"ownHits": 27,
-"ownExams": 10
-},
-"都道府県": {
-"hits": 31,
-"exams": 11,
-"ownHits": 30,
-"ownExams": 10
-},
-"審議会": {
-"hits": 11,
-"exams": 7,
-"ownHits": 5,
-"ownExams": 3
-},
-"大臣": {
-"hits": 26,
-"exams": 16,
-"ownHits": 16,
-"ownExams": 7
-},
-"聴く": {
-"hits": 5,
-"exams": 4,
-"ownHits": 5,
-"ownExams": 4
-},
-"担保": {
-"hits": 7,
-"exams": 7,
-"ownHits": 2,
-"ownExams": 2
-},
-"用地買収": {
-"hits": 3,
-"exams": 2,
-"ownHits": 3,
-"ownExams": 2
-},
-"借地権者": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"借家権者": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"絡み": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"廃道": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"需要": {
-"hits": 24,
-"exams": 11,
-"ownHits": 16,
-"ownExams": 5
-},
-"街路": {
-"hits": 4,
-"exams": 3,
-"ownHits": 4,
-"ownExams": 3
-},
-"秋期": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"一斉": {
-"hits": 4,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 1
-},
-"時系列": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"抽出": {
-"hits": 7,
-"exams": 5,
-"ownHits": 5,
-"ownExams": 3
-},
-"京阪神": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"形成": {
-"hits": 138,
-"exams": 33,
-"ownHits": 76,
-"ownExams": 10
-},
-"迫る": {
-"hits": 3,
-"exams": 3,
-"ownHits": 2,
-"ownExams": 2
-},
-"潮流": {
-"hits": 6,
-"exams": 4,
-"ownHits": 5,
-"ownExams": 3
-},
-"抜本的": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"東北": {
-"hits": 7,
-"exams": 4,
-"ownHits": 7,
-"ownExams": 4
-},
-"首都": {
-"hits": 7,
-"exams": 4,
-"ownHits": 7,
-"ownExams": 4
-},
-"北陸": {
-"hits": 4,
-"exams": 2,
-"ownHits": 4,
-"ownExams": 2
-},
-"九州": {
-"hits": 5,
-"exams": 3,
-"ownHits": 4,
-"ownExams": 2
-},
-"沖縄": {
-"hits": 6,
-"exams": 2,
-"ownHits": 6,
-"ownExams": 2
-},
-"策定": {
-"hits": 70,
-"exams": 26,
-"ownHits": 36,
-"ownExams": 9
-},
-"聴取": {
-"hits": 3,
-"exams": 3,
-"ownHits": 3,
-"ownExams": 3
-},
-"経て": {
-"hits": 9,
-"exams": 8,
-"ownHits": 2,
-"ownExams": 2
-},
-"閣議": {
-"hits": 9,
-"exams": 9,
-"ownHits": 4,
-"ownExams": 4
-},
-"非圧縮": {
-"hits": 8,
-"exams": 7,
-"ownHits": 6,
-"ownExams": 5
-},
-"流体": {
-"hits": 20,
-"exams": 13,
-"ownHits": 17,
-"ownExams": 10
-},
-"狭窄": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"管路": {
-"hits": 62,
-"exams": 11,
-"ownHits": 60,
-"ownExams": 10
-},
-"水頭": {
-"hits": 127,
-"exams": 11,
-"ownHits": 127,
-"ownExams": 11
-},
-"動水勾配": {
-"hits": 21,
-"exams": 9,
-"ownHits": 21,
-"ownExams": 9
-},
-"局所損失": {
-"hits": 10,
-"exams": 3,
-"ownHits": 10,
-"ownExams": 3
-},
-"常流": {
-"hits": 33,
-"exams": 11,
-"ownHits": 33,
-"ownExams": 11
-},
-"射流": {
-"hits": 23,
-"exams": 8,
-"ownHits": 23,
-"ownExams": 8
-},
-"限界流": {
-"hits": 6,
-"exams": 6,
-"ownHits": 6,
-"ownExams": 6
-},
-"緩い": {
-"hits": 7,
-"exams": 5,
-"ownHits": 7,
-"ownExams": 5
-},
-"等流": {
-"hits": 14,
-"exams": 5,
-"ownHits": 14,
-"ownExams": 5
-},
-"漸近": {
-"hits": 6,
-"exams": 4,
-"ownHits": 3,
-"ownExams": 2
-},
-"粗度": {
-"hits": 15,
-"exams": 8,
-"ownHits": 15,
-"ownExams": 8
-},
-"土砂": {
-"hits": 108,
-"exams": 12,
-"ownHits": 103,
-"ownExams": 11
-},
-"流砂": {
-"hits": 16,
-"exams": 7,
-"ownHits": 16,
-"ownExams": 7
-},
-"安息": {
-"hits": 4,
-"exams": 4,
-"ownHits": 4,
-"ownExams": 4
-},
-"湾曲": {
-"hits": 5,
-"exams": 2,
-"ownHits": 5,
-"ownExams": 2
-},
-"護岸": {
-"hits": 45,
-"exams": 8,
-"ownHits": 45,
-"ownExams": 8
-},
-"潮汐": {
-"hits": 4,
-"exams": 3,
-"ownHits": 2,
-"ownExams": 2
-},
-"防潮堤": {
-"hits": 3,
-"exams": 3,
-"ownHits": 3,
-"ownExams": 3
-},
-"水門": {
-"hits": 4,
-"exams": 3,
-"ownHits": 4,
-"ownExams": 3
-},
-"堤防": {
-"hits": 102,
-"exams": 12,
-"ownHits": 101,
-"ownExams": 11
-},
-"外郭": {
-"hits": 9,
-"exams": 5,
-"ownHits": 9,
-"ownExams": 5
-},
-"閉塞": {
-"hits": 3,
-"exams": 3,
-"ownHits": 3,
-"ownExams": 3
-},
-"要配慮者": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"土壌": {
-"hits": 15,
-"exams": 9,
-"ownHits": 7,
-"ownExams": 4
-},
-"積算": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"蓋然性": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"地産地消": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"喪失": {
-"hits": 3,
-"exams": 3,
-"ownHits": 2,
-"ownExams": 2
-},
-"昼夜": {
-"hits": 7,
-"exams": 4,
-"ownHits": 7,
-"ownExams": 4
-},
-"遜色": {
-"hits": 2,
-"exams": 1,
-"ownHits": 2,
-"ownExams": 1
-},
-"鍵": {
-"hits": 26,
-"exams": 8,
-"ownHits": 2,
-"ownExams": 2
-},
-"枯渇": {
-"hits": 3,
-"exams": 3,
-"ownHits": 2,
-"ownExams": 2
-},
-"掘削": {
-"hits": 62,
-"exams": 13,
-"ownHits": 59,
-"ownExams": 11
-},
-"包蔵": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"取水口": {
-"hits": 18,
-"exams": 7,
-"ownHits": 18,
-"ownExams": 7
-},
-"漂流物": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"屈曲": {
-"hits": 5,
-"exams": 4,
-"ownHits": 5,
-"ownExams": 4
-},
-"舗装": {
-"hits": 82,
-"exams": 8,
-"ownHits": 82,
-"ownExams": 8
-},
-"勘案": {
-"hits": 8,
-"exams": 7,
-"ownHits": 7,
-"ownExams": 6
-},
-"雨水": {
-"hits": 9,
-"exams": 8,
-"ownHits": 8,
-"ownExams": 7
-},
-"円滑": {
-"hits": 12,
-"exams": 11,
-"ownHits": 9,
-"ownExams": 8
-},
-"値": {
-"hits": 511,
-"exams": 42,
-"ownHits": 119,
-"ownExams": 11
-},
-"供用": {
-"hits": 6,
-"exams": 6,
-"ownHits": 5,
-"ownExams": 5
-},
-"塑性": {
-"hits": 57,
-"exams": 16,
-"ownHits": 40,
-"ownExams": 10
-},
-"修繕": {
-"hits": 14,
-"exams": 8,
-"ownHits": 5,
-"ownExams": 4
-},
-"軌道": {
-"hits": 64,
-"exams": 12,
-"ownHits": 62,
-"ownExams": 11
-},
-"逓減": {
-"hits": 6,
-"exams": 3,
-"ownHits": 6,
-"ownExams": 3
-},
-"芯材": {
-"hits": 3,
-"exams": 2,
-"ownHits": 3,
-"ownExams": 2
-},
-"区域": {
-"hits": 161,
-"exams": 10,
-"ownHits": 161,
-"ownExams": 10
-},
-"指定": {
-"hits": 51,
-"exams": 21,
-"ownHits": 39,
-"ownExams": 10
-},
-"国土交通大臣": {
-"hits": 11,
-"exams": 4,
-"ownHits": 11,
-"ownExams": 4
-},
-"協議": {
-"hits": 11,
-"exams": 4,
-"ownHits": 9,
-"ownExams": 3
-},
-"区域外": {
-"hits": 5,
-"exams": 3,
-"ownHits": 5,
-"ownExams": 3
-},
-"市街地": {
-"hits": 48,
-"exams": 11,
-"ownHits": 48,
-"ownExams": 11
-},
-"変換": {
-"hits": 42,
-"exams": 22,
-"ownHits": 14,
-"ownExams": 7
-},
-"所有権者": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"建物": {
-"hits": 18,
-"exams": 12,
-"ownHits": 8,
-"ownExams": 5
-},
-"借家": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"地権者": {
-"hits": 5,
-"exams": 4,
-"ownHits": 5,
-"ownExams": 4
-},
-"絡み合う": {
-"hits": 0,
-"exams": 0,
-"ownHits": 0,
-"ownExams": 0
-},
-"区画整理": {
-"hits": 18,
-"exams": 5,
-"ownHits": 18,
-"ownExams": 5
-},
-"手法": {
-"hits": 83,
-"exams": 34,
-"ownHits": 31,
-"ownExams": 11
-},
-"換地処分": {
-"hits": 0,
-"exams": 0,
-"ownHits": 0,
-"ownExams": 0
-},
-"密集": {
-"hits": 3,
-"exams": 3,
-"ownHits": 2,
-"ownExams": 2
-},
-"取り壊し": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"細街路": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"起終点": {
-"hits": 3,
-"exams": 3,
-"ownHits": 3,
-"ownExams": 3
-},
-"総合的": {
-"hits": 31,
-"exams": 22,
-"ownHits": 13,
-"ownExams": 7
-},
-"視点": {
-"hits": 10,
-"exams": 7,
-"ownHits": 1,
-"ownExams": 1
-},
-"特性": {
-"hits": 72,
-"exams": 33,
-"ownHits": 39,
-"ownExams": 11
-},
-"横断的": {
-"hits": 4,
-"exams": 4,
-"ownHits": 1,
-"ownExams": 1
-},
-"把握": {
-"hits": 27,
-"exams": 13,
-"ownHits": 15,
-"ownExams": 6
-},
-"規模別": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"流動": {
-"hits": 20,
-"exams": 10,
-"ownHits": 13,
-"ownExams": 7
-},
-"実態": {
-"hits": 9,
-"exams": 7,
-"ownHits": 3,
-"ownExams": 3
-},
-"踏まえ": {
-"hits": 42,
-"exams": 23,
-"ownHits": 13,
-"ownExams": 8
-},
-"北海道": {
-"hits": 11,
-"exams": 4,
-"ownHits": 11,
-"ownExams": 4
-},
-"東北圏": {
-"hits": 4,
-"exams": 2,
-"ownHits": 4,
-"ownExams": 2
-},
-"首都圏": {
-"hits": 6,
-"exams": 4,
-"ownHits": 6,
-"ownExams": 4
-},
-"北陸圏": {
-"hits": 4,
-"exams": 2,
-"ownHits": 4,
-"ownExams": 2
-},
-"中部圏": {
-"hits": 7,
-"exams": 3,
-"ownHits": 7,
-"ownExams": 3
-},
-"中国圏": {
-"hits": 4,
-"exams": 2,
-"ownHits": 4,
-"ownExams": 2
-},
-"四国圏": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"九州・沖縄圏": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"広域": {
-"hits": 19,
-"exams": 6,
-"ownHits": 18,
-"ownExams": 5
-},
-"意見聴取": {
-"hits": 3,
-"exams": 3,
-"ownHits": 3,
-"ownExams": 3
-},
-"手続": {
-"hits": 37,
-"exams": 14,
-"ownHits": 24,
-"ownExams": 8
-},
-"案": {
-"hits": 127,
-"exams": 30,
-"ownHits": 25,
-"ownExams": 9
-},
-"土砂災害": {
-"hits": 25,
-"exams": 3,
-"ownHits": 20,
-"ownExams": 2
-},
-"警戒": {
-"hits": 9,
-"exams": 1,
-"ownHits": 9,
-"ownExams": 1
-},
-"急傾斜": {
-"hits": 4,
-"exams": 4,
-"ownHits": 4,
-"ownExams": 4
-},
-"崩壊": {
-"hits": 12,
-"exams": 10,
-"ownHits": 10,
-"ownExams": 8
-},
-"土石流": {
-"hits": 23,
-"exams": 8,
-"ownHits": 23,
-"ownExams": 8
-},
-"地すべり": {
-"hits": 10,
-"exams": 4,
-"ownHits": 10,
-"ownExams": 4
-},
-"湛水": {
-"hits": 10,
-"exams": 8,
-"ownHits": 10,
-"ownExams": 8
-},
-"施設": {
-"hits": 158,
-"exams": 20,
-"ownHits": 125,
-"ownExams": 11
-},
-"運用": {
-"hits": 17,
-"exams": 13,
-"ownHits": 6,
-"ownExams": 4
-},
-"雨量指数": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"積算雨量": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"太陽光": {
-"hits": 24,
-"exams": 10,
-"ownHits": 6,
-"ownExams": 3
-},
-"自家消費": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"分散電源": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"系統電源": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"昼夜間": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"大規模": {
-"hits": 32,
-"exams": 13,
-"ownHits": 26,
-"ownExams": 9
-},
-"未活用": {
-"hits": 10,
-"exams": 6,
-"ownHits": 3,
-"ownExams": 3
-},
-"廃棄物": {
-"hits": 102,
-"exams": 25,
-"ownHits": 19,
-"ownExams": 8
-},
-"熱利用効率": {
-"hits": 3,
-"exams": 2,
-"ownHits": 3,
-"ownExams": 2
-},
-"循環型": {
-"hits": 53,
-"exams": 16,
-"ownHits": 23,
-"ownExams": 7
-},
-"構築": {
-"hits": 37,
-"exams": 22,
-"ownHits": 17,
-"ownExams": 7
-},
-"寄与": {
-"hits": 38,
-"exams": 23,
-"ownHits": 6,
-"ownExams": 4
-},
-"井戸": {
-"hits": 3,
-"exams": 3,
-"ownHits": 3,
-"ownExams": 3
-},
-"蒸気": {
-"hits": 18,
-"exams": 11,
-"ownHits": 4,
-"ownExams": 3
-},
-"熱水": {
-"hits": 3,
-"exams": 2,
-"ownHits": 3,
-"ownExams": 2
-},
-"噴出": {
-"hits": 5,
-"exams": 3,
-"ownHits": 5,
-"ownExams": 3
-},
-"流れ込み": {
-"hits": 8,
-"exams": 3,
-"ownHits": 8,
-"ownExams": 3
-},
-"地点数": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"常時": {
-"hits": 13,
-"exams": 9,
-"ownHits": 4,
-"ownExams": 3
-},
-"し得る": {
-"hits": 10,
-"exams": 7,
-"ownHits": 5,
-"ownExams": 5
-},
-"無圧": {
-"hits": 8,
-"exams": 5,
-"ownHits": 8,
-"ownExams": 5
-},
-"接続": {
-"hits": 35,
-"exams": 18,
-"ownHits": 12,
-"ownExams": 9
-},
-"極端": {
-"hits": 6,
-"exams": 6,
-"ownHits": 3,
-"ownExams": 3
-},
-"堆積": {
-"hits": 24,
-"exams": 10,
-"ownHits": 24,
-"ownExams": 10
-},
-"河川": {
-"hits": 189,
-"exams": 15,
-"ownHits": 185,
-"ownExams": 11
-},
-"上流": {
-"hits": 18,
-"exams": 11,
-"ownHits": 16,
-"ownExams": 10
-},
-"設ける": {
-"hits": 22,
-"exams": 12,
-"ownHits": 17,
-"ownExams": 7
-},
-"露出": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"屈曲部": {
-"hits": 5,
-"exams": 4,
-"ownHits": 5,
-"ownExams": 4
-},
-"落差": {
-"hits": 11,
-"exams": 6,
-"ownHits": 11,
-"ownExams": 6
-},
-"性能指標": {
-"hits": 38,
-"exams": 7,
-"ownHits": 38,
-"ownExams": 7
-},
-"存する": {
-"hits": 23,
-"exams": 16,
-"ownHits": 11,
-"ownExams": 6
-},
-"沿道": {
-"hits": 9,
-"exams": 5,
-"ownHits": 9,
-"ownExams": 5
-},
-"監理技術者": {
-"hits": 7,
-"exams": 4,
-"ownHits": 7,
-"ownExams": 4
-},
-"浸透": {
-"hits": 102,
-"exams": 15,
-"ownHits": 96,
-"ownExams": 11
-},
-"疲労破壊": {
-"hits": 14,
-"exams": 11,
-"ownHits": 9,
-"ownExams": 7
-},
-"必須": {
-"hits": 16,
-"exams": 11,
-"ownHits": 6,
-"ownExams": 6
-},
-"路肩": {
-"hits": 5,
-"exams": 4,
-"ownHits": 5,
-"ownExams": 4
-},
-"側帯": {
-"hits": 9,
-"exams": 6,
-"ownHits": 9,
-"ownExams": 6
-},
-"走行面": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"まくら木": {
-"hits": 13,
-"exams": 4,
-"ownHits": 13,
-"ownExams": 4
-},
-"軌きょう": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"道床": {
-"hits": 10,
-"exams": 7,
-"ownHits": 10,
-"ownExams": 7
-},
-"道路盤": {
-"hits": 0,
-"exams": 0,
-"ownHits": 0,
-"ownExams": 0
-},
-"緩和曲線": {
-"hits": 8,
-"exams": 3,
-"ownHits": 8,
-"ownExams": 3
-},
-"挿入": {
-"hits": 19,
-"exams": 9,
-"ownHits": 11,
-"ownExams": 6
-},
-"在来線": {
-"hits": 5,
-"exams": 3,
-"ownHits": 5,
-"ownExams": 3
-},
-"放物線": {
-"hits": 6,
-"exams": 4,
-"ownHits": 6,
-"ownExams": 4
-},
-"一環": {
-"hits": 8,
-"exams": 6,
-"ownHits": 2,
-"ownExams": 2
-},
-"原価": {
-"hits": 39,
-"exams": 11,
-"ownHits": 30,
-"ownExams": 9
-},
-"低減": {
-"hits": 105,
-"exams": 27,
-"ownHits": 15,
-"ownExams": 8
-},
-"予算書": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"騒音振動": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"労務": {
-"hits": 14,
-"exams": 7,
-"ownHits": 9,
-"ownExams": 4
-},
-"危害": {
-"hits": 29,
-"exams": 10,
-"ownHits": 1,
-"ownExams": 1
-},
-"整理整頓": {
-"hits": 2,
-"exams": 2,
-"ownHits": 1,
-"ownExams": 1
-},
-"検討": {
-"hits": 57,
-"exams": 21,
-"ownHits": 29,
-"ownExams": 10
-},
-"徹底": {
-"hits": 14,
-"exams": 13,
-"ownHits": 1,
-"ownExams": 1
-},
-"水質汚濁": {
-"hits": 15,
-"exams": 10,
-"ownHits": 13,
-"ownExams": 8
-},
-"項目": {
-"hits": 33,
-"exams": 16,
-"ownHits": 22,
-"ownExams": 7
-},
-"保全": {
-"hits": 139,
-"exams": 38,
-"ownHits": 54,
-"ownExams": 10
-},
-"微粒子": {
-"hits": 2,
-"exams": 1,
-"ownHits": 0,
-"ownExams": 0
-},
-"浮遊": {
-"hits": 23,
-"exams": 12,
-"ownHits": 16,
-"ownExams": 9
-},
-"気管支炎": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"疾患": {
-"hits": 5,
-"exams": 3,
-"ownHits": 2,
-"ownExams": 1
-},
-"上昇": {
-"hits": 49,
-"exams": 22,
-"ownHits": 23,
-"ownExams": 11
-},
-"国連": {
-"hits": 27,
-"exams": 17,
-"ownHits": 4,
-"ownExams": 3
-},
-"提唱": {
-"hits": 18,
-"exams": 14,
-"ownHits": 4,
-"ownExams": 3
-},
-"資源循環": {
-"hits": 5,
-"exams": 3,
-"ownHits": 1,
-"ownExams": 1
-},
-"くい打ち": {
-"hits": 0,
-"exams": 0,
-"ownHits": 0,
-"ownExams": 0
-},
-"著しい": {
-"hits": 7,
-"exams": 7,
-"ownHits": 4,
-"ownExams": 4
-},
-"政令": {
-"hits": 21,
-"exams": 15,
-"ownHits": 8,
-"ownExams": 5
-},
-"総理府": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"日数": {
-"hits": 49,
-"exams": 11,
-"ownHits": 31,
-"ownExams": 5
-},
-"曜日": {
-"hits": 4,
-"exams": 3,
-"ownHits": 2,
-"ownExams": 2
-},
-"後継": {
-"hits": 3,
-"exams": 3,
-"ownHits": 3,
-"ownExams": 3
-},
-"全会一致": {
-"hits": 4,
-"exams": 4,
-"ownHits": 3,
-"ownExams": 3
-},
-"採択": {
-"hits": 28,
-"exams": 18,
-"ownHits": 7,
-"ownExams": 4
-},
-"記載": {
-"hits": 79,
-"exams": 30,
-"ownHits": 10,
-"ownExams": 8
-},
-"援助": {
-"hits": 0,
-"exams": 0,
-"ownHits": 0,
-"ownExams": 0
-},
-"副産物": {
-"hits": 3,
-"exams": 3,
-"ownHits": 2,
-"ownExams": 2
-},
-"物流": {
-"hits": 4,
-"exams": 3,
-"ownHits": 4,
-"ownExams": 3
-},
-"強化": {
-"hits": 15,
-"exams": 12,
-"ownHits": 8,
-"ownExams": 6
-},
-"既存": {
-"hits": 7,
-"exams": 7,
-"ownHits": 3,
-"ownExams": 3
-},
-"各種届出": {
-"hits": 2,
-"exams": 2,
-"ownHits": 2,
-"ownExams": 2
-},
-"連携": {
-"hits": 14,
-"exams": 12,
-"ownHits": 4,
-"ownExams": 3
-},
-"緩和策": {
-"hits": 10,
-"exams": 7,
-"ownHits": 3,
-"ownExams": 3
-},
-"両輪": {
-"hits": 3,
-"exams": 3,
-"ownHits": 3,
-"ownExams": 3
-},
-"指標": {
-"hits": 54,
-"exams": 11,
-"ownHits": 50,
-"ownExams": 8
-},
-"生息": {
-"hits": 7,
-"exams": 5,
-"ownHits": 3,
-"ownExams": 3
-},
-"敏感": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"種": {
-"hits": 234,
-"exams": 40,
-"ownHits": 97,
-"ownExams": 11
-},
-"選定": {
-"hits": 28,
-"exams": 11,
-"ownHits": 27,
-"ownExams": 10
-},
-"分泌状況": {
-"hits": 0,
-"exams": 0,
-"ownHits": 0,
-"ownExams": 0
-},
-"類推": {
-"hits": 1,
-"exams": 1,
-"ownHits": 1,
-"ownExams": 1
-},
-"推奨": {
-"hits": 5,
-"exams": 4,
-"ownHits": 1,
-"ownExams": 1
-},
-"個別": {
-"hits": 21,
-"exams": 11,
-"ownHits": 16,
-"ownExams": 8
-},
-"国等": {
-"hits": 5,
-"exams": 5,
-"ownHits": 3,
-"ownExams": 3
-}
+ "tekisei": {
+  "私利私欲": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "義務": {
+   "hits": 178,
+   "exams": 29,
+   "ownHits": 151,
+   "ownExams": 16
+  },
+  "掲げる": {
+   "hits": 9,
+   "exams": 9,
+   "ownHits": 9,
+   "ownExams": 9
+  },
+  "失墜": {
+   "hits": 10,
+   "exams": 8,
+   "ownHits": 10,
+   "ownExams": 8
+  },
+  "傷つけ": {
+   "hits": 17,
+   "exams": 12,
+   "ownHits": 17,
+   "ownExams": 12
+  },
+  "不名誉": {
+   "hits": 12,
+   "exams": 8,
+   "ownHits": 12,
+   "ownExams": 8
+  },
+  "正当": {
+   "hits": 34,
+   "exams": 17,
+   "ownHits": 30,
+   "ownExams": 15
+  },
+  "盗用": {
+   "hits": 29,
+   "exams": 15,
+   "ownHits": 29,
+   "ownExams": 15
+  },
+  "努め": {
+   "hits": 62,
+   "exams": 18,
+   "ownHits": 60,
+   "ownExams": 16
+  },
+  "組織": {
+   "hits": 154,
+   "exams": 24,
+   "ownHits": 142,
+   "ownExams": 16
+  },
+  "負う": {
+   "hits": 22,
+   "exams": 17,
+   "ownHits": 19,
+   "ownExams": 14
+  },
+  "関与": {
+   "hits": 13,
+   "exams": 7,
+   "ownHits": 13,
+   "ownExams": 7
+  },
+  "怠る": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "公衆": {
+   "hits": 53,
+   "exams": 16,
+   "ownHits": 50,
+   "ownExams": 15
+  },
+  "損なう": {
+   "hits": 12,
+   "exams": 9,
+   "ownHits": 10,
+   "ownExams": 7
+  },
+  "良心": {
+   "hits": 4,
+   "exams": 4,
+   "ownHits": 4,
+   "ownExams": 4
+  },
+  "信念": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "利益相反": {
+   "hits": 12,
+   "exams": 5,
+   "ownHits": 12,
+   "ownExams": 5
+  },
+  "公正さ": {
+   "hits": 6,
+   "exams": 4,
+   "ownHits": 6,
+   "ownExams": 4
+  },
+  "雇用者": {
+   "hits": 5,
+   "exams": 5,
+   "ownHits": 5,
+   "ownExams": 5
+  },
+  "依頼者": {
+   "hits": 15,
+   "exams": 6,
+   "ownHits": 15,
+   "ownExams": 6
+  },
+  "遂行": {
+   "hits": 27,
+   "exams": 14,
+   "ownHits": 25,
+   "ownExams": 12
+  },
+  "与える": {
+   "hits": 39,
+   "exams": 25,
+   "ownHits": 25,
+   "ownExams": 13
+  },
+  "破壊": {
+   "hits": 121,
+   "exams": 30,
+   "ownHits": 16,
+   "ownExams": 9
+  },
+  "重視": {
+   "hits": 22,
+   "exams": 11,
+   "ownHits": 20,
+   "ownExams": 9
+  },
+  "守秘": {
+   "hits": 25,
+   "exams": 10,
+   "ownHits": 25,
+   "ownExams": 10
+  },
+  "委ねる": {
+   "hits": 0,
+   "exams": 0,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "独自": {
+   "hits": 24,
+   "exams": 15,
+   "ownHits": 19,
+   "ownExams": 10
+  },
+  "予備校生": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "カンニング": {
+   "hits": 7,
+   "exams": 2,
+   "ownHits": 7,
+   "ownExams": 2
+  },
+  "手口": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "投稿": {
+   "hits": 21,
+   "exams": 5,
+   "ownHits": 21,
+   "ownExams": 5
+  },
+  "新聞報道": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "相次いで": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "偽計": {
+   "hits": 3,
+   "exams": 1,
+   "ownHits": 3,
+   "ownExams": 1
+  },
+  "妨害罪": {
+   "hits": 2,
+   "exams": 1,
+   "ownHits": 2,
+   "ownExams": 1
+  },
+  "偽計業務妨害罪": {
+   "hits": 2,
+   "exams": 1,
+   "ownHits": 2,
+   "ownExams": 1
+  },
+  "捜査": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "容疑者": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "逮捕": {
+   "hits": 2,
+   "exams": 1,
+   "ownHits": 2,
+   "ownExams": 1
+  },
+  "図る": {
+   "hits": 107,
+   "exams": 32,
+   "ownHits": 52,
+   "ownExams": 16
+  },
+  "位置付ける": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "著しく": {
+   "hits": 16,
+   "exams": 11,
+   "ownHits": 9,
+   "ownExams": 5
+  },
+  "継続研さん": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "執筆": {
+   "hits": 4,
+   "exams": 3,
+   "ownHits": 4,
+   "ownExams": 3
+  },
+  "証拠": {
+   "hits": 6,
+   "exams": 4,
+   "ownHits": 6,
+   "ownExams": 4
+  },
+  "資質向上": {
+   "hits": 22,
+   "exams": 10,
+   "ownHits": 22,
+   "ownExams": 10
+  },
+  "促す": {
+   "hits": 12,
+   "exams": 10,
+   "ownHits": 9,
+   "ownExams": 8
+  },
+  "課す": {
+   "hits": 0,
+   "exams": 0,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "ハザード同定": {
+   "hits": 0,
+   "exams": 0,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "代替": {
+   "hits": 16,
+   "exams": 7,
+   "ownHits": 3,
+   "ownExams": 2
+  },
+  "保有": {
+   "hits": 13,
+   "exams": 10,
+   "ownHits": 9,
+   "ownExams": 7
+  },
+  "見合う": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "保護方策": {
+   "hits": 6,
+   "exams": 2,
+   "ownHits": 6,
+   "ownExams": 2
+  },
+  "倫理": {
+   "hits": 197,
+   "exams": 20,
+   "ownHits": 191,
+   "ownExams": 16
+  },
+  "顧客": {
+   "hits": 77,
+   "exams": 15,
+   "ownHits": 76,
+   "ownExams": 14
+  },
+  "雇用主": {
+   "hits": 6,
+   "exams": 4,
+   "ownHits": 6,
+   "ownExams": 4
+  },
+  "利害": {
+   "hits": 38,
+   "exams": 15,
+   "ownHits": 34,
+   "ownExams": 12
+  },
+  "持続可能": {
+   "hits": 68,
+   "exams": 20,
+   "ownHits": 49,
+   "ownExams": 12
+  },
+  "捉える": {
+   "hits": 6,
+   "exams": 2,
+   "ownHits": 6,
+   "ownExams": 2
+  },
+  "普遍性": {
+   "hits": 2,
+   "exams": 1,
+   "ownHits": 2,
+   "ownExams": 1
+  },
+  "統合性": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "包摂性": {
+   "hits": 4,
+   "exams": 3,
+   "ownHits": 4,
+   "ownExams": 3
+  },
+  "功利": {
+   "hits": 15,
+   "exams": 4,
+   "ownHits": 15,
+   "ownExams": 4
+  },
+  "エシックス・テスト": {
+   "hits": 3,
+   "exams": 1,
+   "ownHits": 3,
+   "ownExams": 1
+  },
+  "自問": {
+   "hits": 0,
+   "exams": 0,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "代表的": {
+   "hits": 18,
+   "exams": 12,
+   "ownHits": 5,
+   "ownExams": 4
+  },
+  "普遍化可能性": {
+   "hits": 6,
+   "exams": 1,
+   "ownHits": 6,
+   "ownExams": 1
+  },
+  "可逆性": {
+   "hits": 3,
+   "exams": 1,
+   "ownHits": 3,
+   "ownExams": 1
+  },
+  "黄金律": {
+   "hits": 12,
+   "exams": 3,
+   "ownHits": 12,
+   "ownExams": 3
+  },
+  "美徳": {
+   "hits": 4,
+   "exams": 1,
+   "ownHits": 4,
+   "ownExams": 1
+  },
+  "周囲": {
+   "hits": 12,
+   "exams": 8,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "世評": {
+   "hits": 6,
+   "exams": 1,
+   "ownHits": 6,
+   "ownExams": 1
+  },
+  "報道": {
+   "hits": 7,
+   "exams": 6,
+   "ownHits": 7,
+   "ownExams": 6
+  },
+  "綱領": {
+   "hits": 23,
+   "exams": 10,
+   "ownHits": 23,
+   "ownExams": 10
+  },
+  "迷う": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "多角的": {
+   "hits": 0,
+   "exams": 0,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "不適切": {
+   "hits": 446,
+   "exams": 41,
+   "ownHits": 76,
+   "ownExams": 15
+  },
+  "漏らし": {
+   "hits": 12,
+   "exams": 11,
+   "ownHits": 12,
+   "ownExams": 11
+  },
+  "当該": {
+   "hits": 117,
+   "exams": 27,
+   "ownHits": 72,
+   "ownExams": 15
+  },
+  "文部科学省": {
+   "hits": 18,
+   "exams": 9,
+   "ownHits": 18,
+   "ownExams": 9
+  },
+  "分科会": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "統合": {
+   "hits": 11,
+   "exams": 9,
+   "ownHits": 8,
+   "ownExams": 6
+  },
+  "伴い": {
+   "hits": 25,
+   "exams": 20,
+   "ownHits": 11,
+   "ownExams": 7
+  },
+  "履行": {
+   "hits": 20,
+   "exams": 8,
+   "ownHits": 20,
+   "ownExams": 8
+  },
+  "活躍": {
+   "hits": 5,
+   "exams": 4,
+   "ownHits": 5,
+   "ownExams": 4
+  },
+  "知見": {
+   "hits": 20,
+   "exams": 11,
+   "ownHits": 18,
+   "ownExams": 9
+  },
+  "研さん": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "造り込まれる": {
+   "hits": 0,
+   "exams": 0,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "怪我": {
+   "hits": 5,
+   "exams": 2,
+   "ownHits": 5,
+   "ownExams": 2
+  },
+  "造成": {
+   "hits": 8,
+   "exams": 7,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "宅地": {
+   "hits": 15,
+   "exams": 11,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "養鶏場": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "出荷": {
+   "hits": 9,
+   "exams": 3,
+   "ownHits": 7,
+   "ownExams": 2
+  },
+  "暴走": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "周波数": {
+   "hits": 6,
+   "exams": 4,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "需要家": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "湾内": {
+   "hits": 10,
+   "exams": 5,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "養殖": {
+   "hits": 4,
+   "exams": 2,
+   "ownHits": 4,
+   "ownExams": 2
+  },
+  "鯛": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "進展": {
+   "hits": 27,
+   "exams": 15,
+   "ownHits": 13,
+   "ownExams": 8
+  },
+  "鑑みる": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "施策": {
+   "hits": 21,
+   "exams": 12,
+   "ownHits": 13,
+   "ownExams": 6
+  },
+  "創出": {
+   "hits": 12,
+   "exams": 7,
+   "ownHits": 7,
+   "ownExams": 5
+  },
+  "資する": {
+   "hits": 21,
+   "exams": 14,
+   "ownHits": 16,
+   "ownExams": 9
+  },
+  "指紋": {
+   "hits": 4,
+   "exams": 3,
+   "ownHits": 3,
+   "ownExams": 2
+  },
+  "顔認識": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "符号": {
+   "hits": 42,
+   "exams": 9,
+   "ownHits": 9,
+   "ownExams": 2
+  },
+  "旅券": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "割り当て": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "識別": {
+   "hits": 14,
+   "exams": 8,
+   "ownHits": 11,
+   "ownExams": 5
+  },
+  "塩基": {
+   "hits": 42,
+   "exams": 16,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "部位": {
+   "hits": 4,
+   "exams": 4,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "容貌": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "虹彩": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "起伏": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "声帯": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "振動": {
+   "hits": 112,
+   "exams": 27,
+   "ownHits": 6,
+   "ownExams": 3
+  },
+  "声門": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "声道": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "歩幅": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "皮下": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "分岐": {
+   "hits": 6,
+   "exams": 5,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "端点": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "掌紋": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "模倣": {
+   "hits": 9,
+   "exams": 9,
+   "ownHits": 9,
+   "ownExams": 9
+  },
+  "特許庁": {
+   "hits": 12,
+   "exams": 9,
+   "ownHits": 12,
+   "ownExams": 9
+  },
+  "出願": {
+   "hits": 12,
+   "exams": 7,
+   "ownHits": 11,
+   "ownExams": 6
+  },
+  "節目": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "未然": {
+   "hits": 10,
+   "exams": 7,
+   "ownHits": 9,
+   "ownExams": 6
+  },
+  "着目": {
+   "hits": 16,
+   "exams": 11,
+   "ownHits": 5,
+   "ownExams": 3
+  },
+  "顕在": {
+   "hits": 5,
+   "exams": 3,
+   "ownHits": 5,
+   "ownExams": 3
+  },
+  "不祥事": {
+   "hits": 10,
+   "exams": 5,
+   "ownHits": 10,
+   "ownExams": 5
+  },
+  "発覚": {
+   "hits": 7,
+   "exams": 4,
+   "ownHits": 7,
+   "ownExams": 4
+  },
+  "不明瞭": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "忖度": {
+   "hits": 0,
+   "exams": 0,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "天井": {
+   "hits": 6,
+   "exams": 4,
+   "ownHits": 6,
+   "ownExams": 4
+  },
+  "所管": {
+   "hits": 8,
+   "exams": 6,
+   "ownHits": 6,
+   "ownExams": 4
+  },
+  "頻度": {
+   "hits": 9,
+   "exams": 7,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "一律": {
+   "hits": 7,
+   "exams": 6,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "諸元": {
+   "hits": 6,
+   "exams": 6,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "微": {
+   "hits": 87,
+   "exams": 29,
+   "ownHits": 7,
+   "ownExams": 5
+  },
+  "漏洩": {
+   "hits": 20,
+   "exams": 7,
+   "ownHits": 20,
+   "ownExams": 7
+  },
+  "複数人": {
+   "hits": 4,
+   "exams": 2,
+   "ownHits": 4,
+   "ownExams": 2
+  },
+  "避ける": {
+   "hits": 13,
+   "exams": 11,
+   "ownHits": 6,
+   "ownExams": 6
+  },
+  "媒体": {
+   "hits": 10,
+   "exams": 8,
+   "ownHits": 5,
+   "ownExams": 3
+  },
+  "背後": {
+   "hits": 18,
+   "exams": 11,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "書棚": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "死角": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "閲覧": {
+   "hits": 3,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 1
+  },
+  "予見": {
+   "hits": 18,
+   "exams": 10,
+   "ownHits": 14,
+   "ownExams": 6
+  },
+  "特権": {
+   "hits": 3,
+   "exams": 2,
+   "ownHits": 3,
+   "ownExams": 2
+  },
+  "専有": {
+   "hits": 3,
+   "exams": 1,
+   "ownHits": 3,
+   "ownExams": 1
+  },
+  "厳重": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "措置": {
+   "hits": 65,
+   "exams": 23,
+   "ownHits": 45,
+   "ownExams": 12
+  },
+  "講ずる": {
+   "hits": 6,
+   "exams": 5,
+   "ownHits": 5,
+   "ownExams": 4
+  },
+  "疾病": {
+   "hits": 6,
+   "exams": 2,
+   "ownHits": 6,
+   "ownExams": 2
+  },
+  "軽微": {
+   "hits": 5,
+   "exams": 4,
+   "ownHits": 3,
+   "ownExams": 2
+  },
+  "付加": {
+   "hits": 31,
+   "exams": 16,
+   "ownHits": 12,
+   "ownExams": 7
+  },
+  "雇用": {
+   "hits": 29,
+   "exams": 11,
+   "ownHits": 27,
+   "ownExams": 9
+  },
+  "均等": {
+   "hits": 6,
+   "exams": 3,
+   "ownHits": 5,
+   "ownExams": 2
+  },
+  "介護": {
+   "hits": 7,
+   "exams": 5,
+   "ownHits": 7,
+   "ownExams": 5
+  },
+  "産前": {
+   "hits": 2,
+   "exams": 1,
+   "ownHits": 2,
+   "ownExams": 1
+  },
+  "遭遇": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "鍛える": {
+   "hits": 0,
+   "exams": 0,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "意向": {
+   "hits": 5,
+   "exams": 4,
+   "ownHits": 5,
+   "ownExams": 4
+  },
+  "包摂": {
+   "hits": 5,
+   "exams": 3,
+   "ownHits": 5,
+   "ownExams": 3
+  },
+  "参画": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "年限": {
+   "hits": 3,
+   "exams": 2,
+   "ownHits": 3,
+   "ownExams": 2
+  },
+  "登録": {
+   "hits": 89,
+   "exams": 18,
+   "ownHits": 69,
+   "ownExams": 15
+  },
+  "責務": {
+   "hits": 83,
+   "exams": 18,
+   "ownHits": 80,
+   "ownExams": 16
+  },
+  "相反": {
+   "hits": 16,
+   "exams": 8,
+   "ownHits": 15,
+   "ownExams": 7
+  },
+  "啓発": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "研鑽": {
+   "hits": 7,
+   "exams": 3,
+   "ownHits": 7,
+   "ownExams": 3
+  },
+  "倫理綱領": {
+   "hits": 20,
+   "exams": 10,
+   "ownHits": 20,
+   "ownExams": 10
+  },
+  "抵触": {
+   "hits": 2,
+   "exams": 1,
+   "ownHits": 2,
+   "ownExams": 1
+  },
+  "察知": {
+   "hits": 4,
+   "exams": 4,
+   "ownHits": 4,
+   "ownExams": 4
+  },
+  "醸成": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "幾多の苦難": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "獲得": {
+   "hits": 5,
+   "exams": 4,
+   "ownHits": 4,
+   "ownExams": 3
+  },
+  "擁護": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "見解": {
+   "hits": 13,
+   "exams": 4,
+   "ownHits": 13,
+   "ownExams": 4
+  },
+  "創作者": {
+   "hits": 6,
+   "exams": 6,
+   "ownHits": 6,
+   "ownExams": 6
+  },
+  "元来": {
+   "hits": 5,
+   "exams": 5,
+   "ownHits": 5,
+   "ownExams": 5
+  },
+  "意匠": {
+   "hits": 25,
+   "exams": 12,
+   "ownHits": 24,
+   "ownExams": 11
+  },
+  "半導体集積回路": {
+   "hits": 4,
+   "exams": 4,
+   "ownHits": 4,
+   "ownExams": 4
+  },
+  "商標": {
+   "hits": 22,
+   "exams": 13,
+   "ownHits": 20,
+   "ownExams": 11
+  },
+  "商号": {
+   "hits": 10,
+   "exams": 6,
+   "ownHits": 8,
+   "ownExams": 4
+  },
+  "甚大": {
+   "hits": 6,
+   "exams": 5,
+   "ownHits": 5,
+   "ownExams": 4
+  },
+  "刊行物": {
+   "hits": 9,
+   "exams": 5,
+   "ownHits": 8,
+   "ownExams": 4
+  },
+  "中途": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "取引先": {
+   "hits": 11,
+   "exams": 8,
+   "ownHits": 11,
+   "ownExams": 8
+  },
+  "脱税": {
+   "hits": 4,
+   "exams": 2,
+   "ownHits": 4,
+   "ownExams": 2
+  },
+  "垂れ流し": {
+   "hits": 6,
+   "exams": 3,
+   "ownHits": 6,
+   "ownExams": 3
+  },
+  "懲戒処分": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "解雇": {
+   "hits": 9,
+   "exams": 6,
+   "ownHits": 9,
+   "ownExams": 6
+  },
+  "期日内": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "誤使用": {
+   "hits": 5,
+   "exams": 5,
+   "ownHits": 5,
+   "ownExams": 5
+  },
+  "引渡し": {
+   "hits": 5,
+   "exams": 5,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "故意": {
+   "hits": 12,
+   "exams": 8,
+   "ownHits": 11,
+   "ownExams": 7
+  },
+  "救済": {
+   "hits": 4,
+   "exams": 4,
+   "ownHits": 4,
+   "ownExams": 4
+  },
+  "不具合": {
+   "hits": 20,
+   "exams": 13,
+   "ownHits": 14,
+   "ownExams": 10
+  },
+  "消安法": {
+   "hits": 10,
+   "exams": 2,
+   "ownHits": 10,
+   "ownExams": 2
+  },
+  "後遺障害": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "重症病": {
+   "hits": 0,
+   "exams": 0,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "内閣総理大臣": {
+   "hits": 4,
+   "exams": 4,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "消費者庁": {
+   "hits": 18,
+   "exams": 9,
+   "ownHits": 18,
+   "ownExams": 9
+  },
+  "萎縮": {
+   "hits": 3,
+   "exams": 2,
+   "ownHits": 3,
+   "ownExams": 2
+  },
+  "利便": {
+   "hits": 8,
+   "exams": 7,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "重篤度": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "芽": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "摘み取る": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "局所排気装置": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "到来": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "次世代": {
+   "hits": 3,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 1
+  },
+  "進捗": {
+   "hits": 7,
+   "exams": 7,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "負荷": {
+   "hits": 41,
+   "exams": 18,
+   "ownHits": 8,
+   "ownExams": 6
+  },
+  "概念": {
+   "hits": 22,
+   "exams": 16,
+   "ownHits": 11,
+   "ownExams": 8
+  },
+  "濃縮": {
+   "hits": 6,
+   "exams": 2,
+   "ownHits": 6,
+   "ownExams": 2
+  },
+  "蓄積": {
+   "hits": 12,
+   "exams": 10,
+   "ownHits": 9,
+   "ownExams": 7
+  },
+  "刑事裁判": {
+   "hits": 3,
+   "exams": 1,
+   "ownHits": 3,
+   "ownExams": 1
+  },
+  "脱線事故": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "挟まれ": {
+   "hits": 3,
+   "exams": 2,
+   "ownHits": 3,
+   "ownExams": 2
+  },
+  "開示": {
+   "hits": 19,
+   "exams": 15,
+   "ownHits": 12,
+   "ownExams": 11
+  },
+  "低脂肪乳": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "生乳": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "黄色": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "笹子トンネル": {
+   "hits": 4,
+   "exams": 4,
+   "ownHits": 4,
+   "ownExams": 4
+  },
+  "天井板": {
+   "hits": 4,
+   "exams": 3,
+   "ownHits": 4,
+   "ownExams": 3
+  },
+  "崩落": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "見抜けなかった": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "不起訴処分": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "繋がって": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "鼓舞": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "許認可": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "相手方": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "贈与": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "接待": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "割り勘": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "人事院": {
+   "hits": 2,
+   "exams": 1,
+   "ownHits": 2,
+   "ownExams": 1
+  },
+  "狭義": {
+   "hits": 9,
+   "exams": 4,
+   "ownHits": 8,
+   "ownExams": 3
+  },
+  "服務規律": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "広義": {
+   "hits": 6,
+   "exams": 1,
+   "ownHits": 6,
+   "ownExams": 1
+  },
+  "知人": {
+   "hits": 2,
+   "exams": 1,
+   "ownHits": 2,
+   "ownExams": 1
+  },
+  "志向": {
+   "hits": 8,
+   "exams": 3,
+   "ownHits": 8,
+   "ownExams": 3
+  },
+  "懸念": {
+   "hits": 21,
+   "exams": 10,
+   "ownHits": 18,
+   "ownExams": 7
+  },
+  "納めて": {
+   "hits": 2,
+   "exams": 1,
+   "ownHits": 2,
+   "ownExams": 1
+  },
+  "尊厳": {
+   "hits": 8,
+   "exams": 7,
+   "ownHits": 8,
+   "ownExams": 7
+  },
+  "就業環境": {
+   "hits": 3,
+   "exams": 2,
+   "ownHits": 3,
+   "ownExams": 2
+  },
+  "阻害": {
+   "hits": 22,
+   "exams": 15,
+   "ownHits": 15,
+   "ownExams": 8
+  },
+  "叱責": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "妊婦": {
+   "hits": 6,
+   "exams": 3,
+   "ownHits": 5,
+   "ownExams": 2
+  },
+  "性愛": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "自認": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "過労死": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "講ず": {
+   "hits": 9,
+   "exams": 7,
+   "ownHits": 8,
+   "ownExams": 6
+  },
+  "月間": {
+   "hits": 5,
+   "exams": 4,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "違和感": {
+   "hits": 4,
+   "exams": 1,
+   "ownHits": 4,
+   "ownExams": 1
+  },
+  "昨今": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "虚偽": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "後を絶たない": {
+   "hits": 0,
+   "exams": 0,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "則り": {
+   "hits": 2,
+   "exams": 1,
+   "ownHits": 2,
+   "ownExams": 1
+  },
+  "悪意": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "巧妙": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "抜き打ち": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "抑止力": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "因果関係": {
+   "hits": 11,
+   "exams": 7,
+   "ownHits": 9,
+   "ownExams": 6
+  },
+  "迅速": {
+   "hits": 10,
+   "exams": 8,
+   "ownHits": 9,
+   "ownExams": 7
+  },
+  "湯沸器": {
+   "hits": 3,
+   "exams": 2,
+   "ownHits": 3,
+   "ownExams": 2
+  },
+  "透明性": {
+   "hits": 13,
+   "exams": 7,
+   "ownHits": 13,
+   "ownExams": 7
+  },
+  "規範": {
+   "hits": 68,
+   "exams": 15,
+   "ownHits": 64,
+   "ownExams": 13
+  },
+  "改訂": {
+   "hits": 15,
+   "exams": 8,
+   "ownHits": 14,
+   "ownExams": 7
+  },
+  "潜在的": {
+   "hits": 7,
+   "exams": 5,
+   "ownHits": 7,
+   "ownExams": 5
+  },
+  "暗黙": {
+   "hits": 5,
+   "exams": 2,
+   "ownHits": 5,
+   "ownExams": 2
+  },
+  "共著": {
+   "hits": 5,
+   "exams": 1,
+   "ownHits": 5,
+   "ownExams": 1
+  },
+  "先進性": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "多大": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "経緯": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "文献": {
+   "hits": 8,
+   "exams": 2,
+   "ownHits": 8,
+   "ownExams": 2
+  },
+  "許諾": {
+   "hits": 4,
+   "exams": 3,
+   "ownHits": 4,
+   "ownExams": 3
+  },
+  "落とし穴": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "陥る": {
+   "hits": 0,
+   "exams": 0,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "促進": {
+   "hits": 51,
+   "exams": 24,
+   "ownHits": 15,
+   "ownExams": 9
+  },
+  "性的指向": {
+   "hits": 4,
+   "exams": 3,
+   "ownHits": 4,
+   "ownExams": 3
+  }
+ },
+ "kiso": {
+  "製造物": {
+   "hits": 206,
+   "exams": 20,
+   "ownHits": 37,
+   "ownExams": 4
+  },
+  "欠陥": {
+   "hits": 127,
+   "exams": 29,
+   "ownHits": 19,
+   "ownExams": 7
+  },
+  "直列": {
+   "hits": 18,
+   "exams": 8,
+   "ownHits": 18,
+   "ownExams": 8
+  },
+  "並列": {
+   "hits": 29,
+   "exams": 11,
+   "ownHits": 29,
+   "ownExams": 11
+  },
+  "待ち行列長": {
+   "hits": 9,
+   "exams": 3,
+   "ownHits": 9,
+   "ownExams": 3
+  },
+  "代入": {
+   "hits": 40,
+   "exams": 21,
+   "ownHits": 27,
+   "ownExams": 12
+  },
+  "アローダイヤグラム": {
+   "hits": 4,
+   "exams": 3,
+   "ownHits": 4,
+   "ownExams": 3
+  },
+  "投じる": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "相関": {
+   "hits": 15,
+   "exams": 5,
+   "ownHits": 14,
+   "ownExams": 4
+  },
+  "利得表": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "最適化": {
+   "hits": 16,
+   "exams": 6,
+   "ownHits": 14,
+   "ownExams": 4
+  },
+  "玉掛け": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "摂取": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "絞れる": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "2 進数": {
+   "hits": 47,
+   "exams": 11,
+   "ownHits": 47,
+   "ownExams": 11
+  },
+  "等価な論理式": {
+   "hits": 4,
+   "exams": 4,
+   "ownHits": 4,
+   "ownExams": 4
+  },
+  "一次キャッシュ": {
+   "hits": 5,
+   "exams": 2,
+   "ownHits": 5,
+   "ownExams": 2
+  },
+  "主記憶": {
+   "hits": 20,
+   "exams": 4,
+   "ownHits": 20,
+   "ownExams": 4
+  },
+  "記述": {
+   "hits": 817,
+   "exams": 43,
+   "ownHits": 232,
+   "ownExams": 16
+  },
+  "流出": {
+   "hits": 69,
+   "exams": 17,
+   "ownHits": 5,
+   "ownExams": 4
+  },
+  "文字列": {
+   "hits": 7,
+   "exams": 5,
+   "ownHits": 7,
+   "ownExams": 5
+  },
+  "歪み": {
+   "hits": 3,
+   "exams": 1,
+   "ownHits": 3,
+   "ownExams": 1
+  },
+  "依存": {
+   "hits": 32,
+   "exams": 21,
+   "ownHits": 16,
+   "ownExams": 10
+  },
+  "内挿": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "遠方": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "楕円孔": {
+   "hits": 6,
+   "exams": 2,
+   "ownHits": 6,
+   "ownExams": 2
+  },
+  "熱伝導率": {
+   "hits": 19,
+   "exams": 3,
+   "ownHits": 19,
+   "ownExams": 3
+  },
+  "感覚": {
+   "hits": 63,
+   "exams": 14,
+   "ownHits": 63,
+   "ownExams": 14
+  },
+  "酢酸": {
+   "hits": 23,
+   "exams": 6,
+   "ownHits": 23,
+   "ownExams": 6
+  },
+  "酸性度": {
+   "hits": 21,
+   "exams": 5,
+   "ownHits": 21,
+   "ownExams": 5
+  },
+  "遮蔽": {
+   "hits": 4,
+   "exams": 2,
+   "ownHits": 3,
+   "ownExams": 1
+  },
+  "不静定次数": {
+   "hits": 4,
+   "exams": 1,
+   "ownHits": 4,
+   "ownExams": 1
+  },
+  "関わる": {
+   "hits": 36,
+   "exams": 16,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "制約": {
+   "hits": 47,
+   "exams": 20,
+   "ownHits": 14,
+   "ownExams": 4
+  },
+  "誠実": {
+   "hits": 16,
+   "exams": 9,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "如何なる": {
+   "hits": 5,
+   "exams": 5,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "公益": {
+   "hits": 122,
+   "exams": 18,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "水準": {
+   "hits": 57,
+   "exams": 24,
+   "ownHits": 10,
+   "ownExams": 6
+  },
+  "領域": {
+   "hits": 53,
+   "exams": 20,
+   "ownHits": 27,
+   "ownExams": 8
+  },
+  "能力": {
+   "hits": 99,
+   "exams": 26,
+   "ownHits": 9,
+   "ownExams": 5
+  },
+  "福利": {
+   "hits": 11,
+   "exams": 9,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "背景": {
+   "hits": 13,
+   "exams": 10,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "異にする": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "多数": {
+   "hits": 20,
+   "exams": 14,
+   "ownHits": 3,
+   "ownExams": 2
+  },
+  "散在": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "世論": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "携わる": {
+   "hits": 14,
+   "exams": 12,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "自ら": {
+   "hits": 69,
+   "exams": 20,
+   "ownHits": 8,
+   "ownExams": 6
+  },
+  "相応に": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "安全保障貿易管理": {
+   "hits": 8,
+   "exams": 3,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "先進国": {
+   "hits": 26,
+   "exams": 14,
+   "ownHits": 9,
+   "ownExams": 6
+  },
+  "貨物": {
+   "hits": 18,
+   "exams": 8,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "大量破壊兵器": {
+   "hits": 5,
+   "exams": 3,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "一層": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "深刻": {
+   "hits": 12,
+   "exams": 9,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "人的": {
+   "hits": 8,
+   "exams": 6,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "遵守": {
+   "hits": 30,
+   "exams": 13,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "巻き込まれる": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "公知": {
+   "hits": 9,
+   "exams": 4,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "渡航": {
+   "hits": 2,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "貧困": {
+   "hits": 5,
+   "exams": 4,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "終止符": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "享受": {
+   "hits": 10,
+   "exams": 6,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "途上国": {
+   "hits": 21,
+   "exams": 14,
+   "ownHits": 9,
+   "ownExams": 8
+  },
+  "拘束力": {
+   "hits": 3,
+   "exams": 2,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "処罰": {
+   "hits": 6,
+   "exams": 3,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "貧富": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "紛争": {
+   "hits": 6,
+   "exams": 5,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "難民": {
+   "hits": 2,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "避難民": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "孫": {
+   "hits": 4,
+   "exams": 3,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "危機感": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "振り返る": {
+   "hits": 0,
+   "exams": 0,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "利活用": {
+   "hits": 9,
+   "exams": 4,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "飛躍的": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "信頼": {
+   "hits": 102,
+   "exams": 25,
+   "ownHits": 77,
+   "ownExams": 12
+  },
+  "変革": {
+   "hits": 5,
+   "exams": 3,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "推進": {
+   "hits": 91,
+   "exams": 30,
+   "ownHits": 17,
+   "ownExams": 8
+  },
+  "損害賠償": {
+   "hits": 46,
+   "exams": 19,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "被る": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "事案": {
+   "hits": 11,
+   "exams": 9,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "賠償請求": {
+   "hits": 7,
+   "exams": 6,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "電磁鋼板": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "差止め": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "基幹": {
+   "hits": 5,
+   "exams": 4,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "窃取": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "拡散": {
+   "hits": 16,
+   "exams": 8,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "態様": {
+   "hits": 4,
+   "exams": 4,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "製造物責任法": {
+   "hits": 66,
+   "exams": 20,
+   "ownHits": 14,
+   "ownExams": 4
+  },
+  "引き渡された": {
+   "hits": 7,
+   "exams": 3,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "無体物": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "再生品": {
+   "hits": 16,
+   "exams": 6,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "破損": {
+   "hits": 11,
+   "exams": 7,
+   "ownHits": 7,
+   "ownExams": 4
+  },
+  "多様性": {
+   "hits": 71,
+   "exams": 23,
+   "ownHits": 25,
+   "ownExams": 8
+  },
+  "人種": {
+   "hits": 5,
+   "exams": 3,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "人材": {
+   "hits": 21,
+   "exams": 9,
+   "ownHits": 2,
+   "ownExams": 1
+  },
+  "活かし": {
+   "hits": 6,
+   "exams": 5,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "価値創造": {
+   "hits": 2,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "潜在的な": {
+   "hits": 6,
+   "exams": 5,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "性的指向": {
+   "hits": 4,
+   "exams": 3,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "信条": {
+   "hits": 3,
+   "exams": 2,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "価値観": {
+   "hits": 12,
+   "exams": 7,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "国際安全規格": {
+   "hits": 13,
+   "exams": 6,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "方策": {
+   "hits": 29,
+   "exams": 10,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "装置": {
+   "hits": 45,
+   "exams": 21,
+   "ownHits": 11,
+   "ownExams": 7
+  },
+  "警告": {
+   "hits": 20,
+   "exams": 3,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "取扱": {
+   "hits": 34,
+   "exams": 14,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "制御": {
+   "hits": 17,
+   "exams": 12,
+   "ownHits": 7,
+   "ownExams": 4
+  },
+  "重機": {
+   "hits": 2,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "明白": {
+   "hits": 4,
+   "exams": 3,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "公用語": {
+   "hits": 3,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "併記": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "労働安全衛生法": {
+   "hits": 17,
+   "exams": 11,
+   "ownHits": 2,
+   "ownExams": 1
+  },
+  "労働災害": {
+   "hits": 13,
+   "exams": 7,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "原材料": {
+   "hits": 16,
+   "exams": 9,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "情報提供者": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "周知": {
+   "hits": 5,
+   "exams": 5,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "有望": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "見据える": {
+   "hits": 0,
+   "exams": 0,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "炭素": {
+   "hits": 94,
+   "exams": 22,
+   "ownHits": 76,
+   "ownExams": 14
+  },
+  "産業革命": {
+   "hits": 8,
+   "exams": 5,
+   "ownHits": 6,
+   "ownExams": 3
+  },
+  "吸収": {
+   "hits": 31,
+   "exams": 14,
+   "ownHits": 11,
+   "ownExams": 7
+  },
+  "古代原生林": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "主原料": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "樹木": {
+   "hits": 3,
+   "exams": 2,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "温熱": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "冷熱": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "化石燃料": {
+   "hits": 8,
+   "exams": 5,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "家畜": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "糞尿": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "微生物": {
+   "hits": 4,
+   "exams": 4,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "産業財産権制度": {
+   "hits": 4,
+   "exams": 4,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "取引上": {
+   "hits": 5,
+   "exams": 5,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "熟知": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "実用新案": {
+   "hits": 24,
+   "exams": 12,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "扱う": {
+   "hits": 17,
+   "exams": 13,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "塾": {
+   "hits": 3,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "謝罪": {
+   "hits": 2,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "照会": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "加盟店": {
+   "hits": 3,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "勧誘": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "指針": {
+   "hits": 33,
+   "exams": 15,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "残留": {
+   "hits": 15,
+   "exams": 10,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "努める": {
+   "hits": 19,
+   "exams": 12,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "果たす": {
+   "hits": 22,
+   "exams": 11,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "内蔵": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "探る": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "に加えて": {
+   "hits": 22,
+   "exams": 14,
+   "ownHits": 2,
+   "ownExams": 1
+  },
+  "統一": {
+   "hits": 7,
+   "exams": 5,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "自律": {
+   "hits": 13,
+   "exams": 8,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "提訴": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "サイバー": {
+   "hits": 10,
+   "exams": 6,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "小売店": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "録音再生機器": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "図記号": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "扉": {
+   "hits": 5,
+   "exams": 3,
+   "ownHits": 4,
+   "ownExams": 2
+  },
+  "取っ手": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "取扱説明書": {
+   "hits": 6,
+   "exams": 3,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "点字": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "音声": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "映像": {
+   "hits": 6,
+   "exams": 5,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "信頼度": {
+   "hits": 58,
+   "exams": 12,
+   "ownHits": 57,
+   "ownExams": 11
+  },
+  "平均故障間隔": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "修復": {
+   "hits": 7,
+   "exams": 4,
+   "ownHits": 6,
+   "ownExams": 3
+  },
+  "定常": {
+   "hits": 19,
+   "exams": 11,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "稼働率": {
+   "hits": 4,
+   "exams": 2,
+   "ownHits": 3,
+   "ownExams": 1
+  },
+  "棒部材": {
+   "hits": 14,
+   "exams": 3,
+   "ownHits": 14,
+   "ownExams": 3
+  },
+  "幾何学的形状": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "縦弾性": {
+   "hits": 8,
+   "exams": 5,
+   "ownHits": 8,
+   "ownExams": 5
+  },
+  "座屈荷重": {
+   "hits": 10,
+   "exams": 4,
+   "ownHits": 3,
+   "ownExams": 2
+  },
+  "投影法": {
+   "hits": 7,
+   "exams": 5,
+   "ownHits": 7,
+   "ownExams": 5
+  },
+  "第一角法": {
+   "hits": 5,
+   "exams": 2,
+   "ownHits": 5,
+   "ownExams": 2
+  },
+  "描き方": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "相違": {
+   "hits": 5,
+   "exams": 4,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "暗号": {
+   "hits": 24,
+   "exams": 8,
+   "ownHits": 22,
+   "ownExams": 6
+  },
+  "復号": {
+   "hits": 8,
+   "exams": 4,
+   "ownHits": 8,
+   "ownExams": 4
+  },
+  "認証局": {
+   "hits": 3,
+   "exams": 2,
+   "ownHits": 3,
+   "ownExams": 2
+  },
+  "等価": {
+   "hits": 6,
+   "exams": 5,
+   "ownHits": 6,
+   "ownExams": 5
+  },
+  "論理和": {
+   "hits": 20,
+   "exams": 7,
+   "ownHits": 20,
+   "ownExams": 7
+  },
+  "論理積": {
+   "hits": 23,
+   "exams": 7,
+   "ownHits": 23,
+   "ownExams": 7
+  },
+  "伝送": {
+   "hits": 48,
+   "exams": 5,
+   "ownHits": 48,
+   "ownExams": 5
+  },
+  "西暦年号": {
+   "hits": 12,
+   "exams": 2,
+   "ownHits": 12,
+   "ownExams": 2
+  },
+  "真": {
+   "hits": 44,
+   "exams": 20,
+   "ownHits": 35,
+   "ownExams": 13
+  },
+  "偽": {
+   "hits": 12,
+   "exams": 6,
+   "ownHits": 6,
+   "ownExams": 4
+  },
+  "演算式": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "演算子": {
+   "hits": 5,
+   "exams": 2,
+   "ownHits": 5,
+   "ownExams": 2
+  },
+  "記法": {
+   "hits": 32,
+   "exams": 4,
+   "ownHits": 32,
+   "ownExams": 4
+  },
+  "構文木": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "優先順": {
+   "hits": 26,
+   "exams": 13,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "走査": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "漸近的": {
+   "hits": 3,
+   "exams": 2,
+   "ownHits": 3,
+   "ownExams": 2
+  },
+  "定義域": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "値域": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "関数": {
+   "hits": 80,
+   "exams": 22,
+   "ownHits": 65,
+   "ownExams": 14
+  },
+  "整数": {
+   "hits": 28,
+   "exams": 8,
+   "ownHits": 28,
+   "ownExams": 8
+  },
+  "解析": {
+   "hits": 77,
+   "exams": 29,
+   "ownHits": 50,
+   "ownExams": 16
+  },
+  "直交座標": {
+   "hits": 9,
+   "exams": 7,
+   "ownHits": 9,
+   "ownExams": 7
+  },
+  "任意": {
+   "hits": 19,
+   "exams": 13,
+   "ownHits": 13,
+   "ownExams": 7
+  },
+  "実数": {
+   "hits": 19,
+   "exams": 7,
+   "ownHits": 19,
+   "ownExams": 7
+  },
+  "積分": {
+   "hits": 23,
+   "exams": 8,
+   "ownHits": 19,
+   "ownExams": 6
+  },
+  "恒等的": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "線形弾性体": {
+   "hits": 12,
+   "exams": 7,
+   "ownHits": 12,
+   "ownExams": 7
+  },
+  "２次元": {
+   "hits": 0,
+   "exams": 0,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "有限要素解析": {
+   "hits": 10,
+   "exams": 4,
+   "ownHits": 10,
+   "ownExams": 4
+  },
+  "節点": {
+   "hits": 8,
+   "exams": 5,
+   "ownHits": 5,
+   "ownExams": 2
+  },
+  "四辺形": {
+   "hits": 2,
+   "exams": 1,
+   "ownHits": 2,
+   "ownExams": 1
+  },
+  "有限要素": {
+   "hits": 19,
+   "exams": 12,
+   "ownHits": 19,
+   "ownExams": 12
+  },
+  "断面積": {
+   "hits": 58,
+   "exams": 21,
+   "ownHits": 23,
+   "ownExams": 11
+  },
+  "固定壁": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "引張": {
+   "hits": 93,
+   "exams": 22,
+   "ownHits": 57,
+   "ownExams": 12
+  },
+  "上端": {
+   "hits": 7,
+   "exams": 4,
+   "ownHits": 7,
+   "ownExams": 4
+  },
+  "下端": {
+   "hits": 6,
+   "exams": 5,
+   "ownHits": 4,
+   "ownExams": 3
+  },
+  "平衡": {
+   "hits": 6,
+   "exams": 5,
+   "ownHits": 2,
+   "ownExams": 1
+  },
+  "質点": {
+   "hits": 31,
+   "exams": 6,
+   "ownHits": 31,
+   "ownExams": 6
+  },
+  "静止": {
+   "hits": 9,
+   "exams": 7,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "単振動": {
+   "hits": 6,
+   "exams": 3,
+   "ownHits": 6,
+   "ownExams": 3
+  },
+  "蓄える": {
+   "hits": 0,
+   "exams": 0,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "重力加速度": {
+   "hits": 13,
+   "exams": 12,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "半径": {
+   "hits": 27,
+   "exams": 15,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "面密度": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "四分円": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "同位体": {
+   "hits": 17,
+   "exams": 6,
+   "ownHits": 17,
+   "ownExams": 6
+  },
+  "陽子": {
+   "hits": 7,
+   "exams": 3,
+   "ownHits": 7,
+   "ownExams": 3
+  },
+  "原子核": {
+   "hits": 7,
+   "exams": 5,
+   "ownHits": 7,
+   "ownExams": 5
+  },
+  "年代測定": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "酸化還元反応": {
+   "hits": 2,
+   "exams": 1,
+   "ownHits": 2,
+   "ownExams": 1
+  },
+  "製錬": {
+   "hits": 2,
+   "exams": 1,
+   "ownHits": 2,
+   "ownExams": 1
+  },
+  "地殻": {
+   "hits": 5,
+   "exams": 5,
+   "ownHits": 4,
+   "ownExams": 4
+  },
+  "鉄鉱石": {
+   "hits": 8,
+   "exams": 2,
+   "ownHits": 8,
+   "ownExams": 2
+  },
+  "石灰石": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "銑鉄": {
+   "hits": 3,
+   "exams": 1,
+   "ownHits": 3,
+   "ownExams": 1
+  },
+  "不純物": {
+   "hits": 4,
+   "exams": 4,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "高炉": {
+   "hits": 17,
+   "exams": 5,
+   "ownHits": 4,
+   "ownExams": 1
+  },
+  "電炉": {
+   "hits": 3,
+   "exams": 1,
+   "ownHits": 3,
+   "ownExams": 1
+  },
+  "特殊": {
+   "hits": 9,
+   "exams": 9,
+   "ownHits": 5,
+   "ownExams": 5
+  },
+  "加水分解": {
+   "hits": 6,
+   "exams": 5,
+   "ownHits": 6,
+   "ownExams": 5
+  },
+  "側鎖": {
+   "hits": 13,
+   "exams": 6,
+   "ownHits": 13,
+   "ownExams": 6
+  },
+  "基": {
+   "hits": 768,
+   "exams": 43,
+   "ownHits": 269,
+   "ownExams": 16
+  },
+  "脂肪族炭化水素": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "芳香族": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "共有結合": {
+   "hits": 14,
+   "exams": 5,
+   "ownHits": 14,
+   "ownExams": 5
+  },
+  "親水": {
+   "hits": 7,
+   "exams": 3,
+   "ownHits": 7,
+   "ownExams": 3
+  },
+  "硫黄": {
+   "hits": 15,
+   "exams": 7,
+   "ownHits": 14,
+   "ownExams": 6
+  },
+  "窒素": {
+   "hits": 27,
+   "exams": 11,
+   "ownHits": 20,
+   "ownExams": 8
+  },
+  "突然変異": {
+   "hits": 12,
+   "exams": 1,
+   "ownHits": 12,
+   "ownExams": 1
+  },
+  "形質発現": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "置換": {
+   "hits": 8,
+   "exams": 3,
+   "ownHits": 8,
+   "ownExams": 3
+  },
+  "欠失": {
+   "hits": 3,
+   "exams": 1,
+   "ownHits": 3,
+   "ownExams": 1
+  },
+  "中立": {
+   "hits": 9,
+   "exams": 5,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "読み枠": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "鎌状": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "赤血球貧血症": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "潜性": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "劣性": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "相同染色体": {
+   "hits": 3,
+   "exams": 1,
+   "ownHits": 3,
+   "ownExams": 1
+  },
+  "片方": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "主体": {
+   "hits": 36,
+   "exams": 18,
+   "ownHits": 4,
+   "ownExams": 4
+  },
+  "賄う": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "総裁": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "財務大臣": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "金融": {
+   "hits": 4,
+   "exams": 4,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "支援": {
+   "hits": 21,
+   "exams": 14,
+   "ownHits": 5,
+   "ownExams": 4
+  },
+  "焼却": {
+   "hits": 4,
+   "exams": 4,
+   "ownHits": 4,
+   "ownExams": 4
+  },
+  "炉内": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "滞留": {
+   "hits": 5,
+   "exams": 5,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "急冷": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "屋上緑化": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "居室": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "遮水工": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "原位置浄化": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "活性汚泥法": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "換算": {
+   "hits": 16,
+   "exams": 7,
+   "ownHits": 13,
+   "ownExams": 5
+  },
+  "原子核分裂": {
+   "hits": 4,
+   "exams": 4,
+   "ownHits": 4,
+   "ownExams": 4
+  },
+  "電磁波": {
+   "hits": 6,
+   "exams": 5,
+   "ownHits": 6,
+   "ownExams": 5
+  },
+  "蒸気機関": {
+   "hits": 12,
+   "exams": 8,
+   "ownHits": 12,
+   "ownExams": 8
+  },
+  "順不同": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "双方向": {
+   "hits": 6,
+   "exams": 6,
+   "ownHits": 4,
+   "ownExams": 4
+  },
+  "先駆け": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "復興": {
+   "hits": 5,
+   "exams": 4,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "環境保全": {
+   "hits": 25,
+   "exams": 16,
+   "ownHits": 12,
+   "ownExams": 7
+  },
+  "対策技術": {
+   "hits": 3,
+   "exams": 2,
+   "ownHits": 3,
+   "ownExams": 2
+  },
+  "焼却施設": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "滞留時間確保": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "完全燃焼": {
+   "hits": 7,
+   "exams": 6,
+   "ownHits": 7,
+   "ownExams": 6
+  },
+  "再合成": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "排ガス": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "壁面": {
+   "hits": 21,
+   "exams": 7,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "建物表面温度": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "抑える": {
+   "hits": 14,
+   "exams": 12,
+   "ownHits": 4,
+   "ownExams": 3
+  },
+  "居室内": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "侵入": {
+   "hits": 11,
+   "exams": 8,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "空調": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "消費": {
+   "hits": 176,
+   "exams": 35,
+   "ownHits": 72,
+   "ownExams": 14
+  },
+  "削減": {
+   "hits": 66,
+   "exams": 21,
+   "ownHits": 25,
+   "ownExams": 9
+  },
+  "産業廃棄物": {
+   "hits": 15,
+   "exams": 10,
+   "ownHits": 10,
+   "ownExams": 7
+  },
+  "管理型処分場": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "環境保全対策": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "浸出水処理設備": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "義務付け": {
+   "hits": 29,
+   "exams": 16,
+   "ownHits": 12,
+   "ownExams": 6
+  },
+  "汚染物質": {
+   "hits": 15,
+   "exams": 9,
+   "ownHits": 8,
+   "ownExams": 6
+  },
+  "除去": {
+   "hits": 20,
+   "exams": 14,
+   "ownHits": 9,
+   "ownExams": 4
+  },
+  "原位置": {
+   "hits": 4,
+   "exams": 4,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "対策措置": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "エネルギー情勢": {
+   "hits": 5,
+   "exams": 5,
+   "ownHits": 5,
+   "ownExams": 5
+  },
+  "数値": {
+   "hits": 95,
+   "exams": 18,
+   "ownHits": 93,
+   "ownExams": 16
+  },
+  "総発電電力量": {
+   "hits": 9,
+   "exams": 4,
+   "ownHits": 9,
+   "ownExams": 4
+  },
+  "再生可能": {
+   "hits": 48,
+   "exams": 15,
+   "ownHits": 25,
+   "ownExams": 10
+  },
+  "太陽光発電": {
+   "hits": 14,
+   "exams": 7,
+   "ownHits": 9,
+   "ownExams": 4
+  },
+  "導入量": {
+   "hits": 6,
+   "exams": 4,
+   "ownHits": 6,
+   "ownExams": 4
+  },
+  "近年": {
+   "hits": 33,
+   "exams": 21,
+   "ownHits": 11,
+   "ownExams": 8
+  },
+  "着実に": {
+   "hits": 7,
+   "exams": 7,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "挙げられる": {
+   "hits": 19,
+   "exams": 16,
+   "ownHits": 4,
+   "ownExams": 4
+  },
+  "事業用": {
+   "hits": 5,
+   "exams": 4,
+   "ownHits": 5,
+   "ownExams": 4
+  },
+  "規模": {
+   "hits": 89,
+   "exams": 26,
+   "ownHits": 15,
+   "ownExams": 10
+  },
+  "平均": {
+   "hits": 193,
+   "exams": 26,
+   "ownHits": 121,
+   "ownExams": 12
+  },
+  "単純": {
+   "hits": 68,
+   "exams": 26,
+   "ownHits": 46,
+   "ownExams": 16
+  },
+  "風力": {
+   "hits": 26,
+   "exams": 10,
+   "ownHits": 9,
+   "ownExams": 4
+  },
+  "天候等": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "気象環境": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "風速": {
+   "hits": 8,
+   "exams": 5,
+   "ownHits": 4,
+   "ownExams": 2
+  },
+  "乗に比例する": {
+   "hits": 18,
+   "exams": 9,
+   "ownHits": 3,
+   "ownExams": 2
+  },
+  "国名": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "組合せ": {
+   "hits": 296,
+   "exams": 43,
+   "ownHits": 147,
+   "ownExams": 16
+  },
+  "一人当たり": {
+   "hits": 0,
+   "exams": 0,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "相当する": {
+   "hits": 9,
+   "exams": 8,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "科学技術の成果": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "工業的合成": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "確立": {
+   "hits": 11,
+   "exams": 8,
+   "ownHits": 5,
+   "ownExams": 3
+  },
+  "存在": {
+   "hits": 109,
+   "exams": 40,
+   "ownHits": 56,
+   "ownExams": 16
+  },
+  "改良": {
+   "hits": 33,
+   "exams": 18,
+   "ownHits": 10,
+   "ownExams": 9
+  },
+  "科学技術基本計画": {
+   "hits": 4,
+   "exams": 3,
+   "ownHits": 3,
+   "ownExams": 2
+  },
+  "特徴的": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "年代": {
+   "hits": 25,
+   "exams": 15,
+   "ownHits": 22,
+   "ownExams": 12
+  },
+  "遺伝子組み換え食品": {
+   "hits": 2,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "倫理的": {
+   "hits": 39,
+   "exams": 16,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "法的": {
+   "hits": 14,
+   "exams": 8,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "観点": {
+   "hits": 28,
+   "exams": 19,
+   "ownHits": 4,
+   "ownExams": 2
+  },
+  "必要性": {
+   "hits": 13,
+   "exams": 11,
+   "ownHits": 3,
+   "ownExams": 2
+  },
+  "条件整備": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "図られた": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "ポストドクター等1万人支援計画": {
+   "hits": 0,
+   "exams": 0,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "先駆けた": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "超": {
+   "hits": 73,
+   "exams": 26,
+   "ownHits": 9,
+   "ownExams": 8
+  },
+  "目指す": {
+   "hits": 25,
+   "exams": 14,
+   "ownHits": 8,
+   "ownExams": 5
+  },
+  "姿": {
+   "hits": 19,
+   "exams": 11,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "東日本大震災": {
+   "hits": 17,
+   "exams": 14,
+   "ownHits": 9,
+   "ownExams": 7
+  },
+  "倫理規定": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "踏む": {
+   "hits": 0,
+   "exams": 0,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "厳正な": {
+   "hits": 5,
+   "exams": 4,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "捏造": {
+   "hits": 6,
+   "exams": 4,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "捏ねる": {
+   "hits": 0,
+   "exams": 0,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "改ざん": {
+   "hits": 14,
+   "exams": 12,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "加担": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "担ぐ": {
+   "hits": 0,
+   "exams": 0,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "所属": {
+   "hits": 43,
+   "exams": 15,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "事態": {
+   "hits": 6,
+   "exams": 4,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "弊害": {
+   "hits": 2,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "有償": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "償う": {
+   "hits": 0,
+   "exams": 0,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "兼業": {
+   "hits": 4,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "兼ねる": {
+   "hits": 0,
+   "exams": 0,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "査読": {
+   "hits": 2,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "辞退": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "退く": {
+   "hits": 0,
+   "exams": 0,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "未公開": {
+   "hits": 2,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "未だ": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "名義": {
+   "hits": 2,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "無償": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "甚だしい": {
+   "hits": 0,
+   "exams": 0,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "精製": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "樹脂": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "脂": {
+   "hits": 54,
+   "exams": 11,
+   "ownHits": 48,
+   "ownExams": 8
+  },
+  "競合": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "競う": {
+   "hits": 0,
+   "exams": 0,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "廃棄": {
+   "hits": 120,
+   "exams": 31,
+   "ownHits": 55,
+   "ownExams": 12
+  },
+  "棄てる": {
+   "hits": 0,
+   "exams": 0,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "幹": {
+   "hits": 30,
+   "exams": 13,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "創る": {
+   "hits": 0,
+   "exams": 0,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "形状": {
+   "hits": 67,
+   "exams": 27,
+   "ownHits": 17,
+   "ownExams": 11
+  },
+  "品種": {
+   "hits": 4,
+   "exams": 4,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "係る": {
+   "hits": 78,
+   "exams": 30,
+   "ownHits": 20,
+   "ownExams": 7
+  },
+  "抗弁": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "免責事由": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "特段": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "細かい": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "同定": {
+   "hits": 5,
+   "exams": 3,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "妥当性": {
+   "hits": 12,
+   "exams": 9,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "辿る": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "近道": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "心身機能": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "突発的": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "感染症": {
+   "hits": 7,
+   "exams": 4,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "双方": {
+   "hits": 9,
+   "exams": 8,
+   "ownHits": 4,
+   "ownExams": 4
+  },
+  "廃熱": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "回生": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "永続的": {
+   "hits": 3,
+   "exams": 2,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "永い": {
+   "hits": 0,
+   "exams": 0,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "高効率": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "正味": {
+   "hits": 4,
+   "exams": 3,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "万博": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "取組": {
+   "hits": 98,
+   "exams": 23,
+   "ownHits": 10,
+   "ownExams": 4
+  },
+  "汎用性": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "過剰": {
+   "hits": 9,
+   "exams": 8,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "柔軟性": {
+   "hits": 16,
+   "exams": 6,
+   "ownHits": 14,
+   "ownExams": 4
+  },
+  "訴える": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "寛大": {
+   "hits": 7,
+   "exams": 4,
+   "ownHits": 6,
+   "ownExams": 3
+  },
+  "接近": {
+   "hits": 6,
+   "exams": 4,
+   "ownHits": 4,
+   "ownExams": 3
+  },
+  "整合": {
+   "hits": 7,
+   "exams": 6,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "整う": {
+   "hits": 0,
+   "exams": 0,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "終始する": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "弱者": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "事業場外勤務": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "臨機応変": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "離職": {
+   "hits": 0,
+   "exams": 0,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "離れる": {
+   "hits": 4,
+   "exams": 4,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "中抜け": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "明示": {
+   "hits": 29,
+   "exams": 15,
+   "ownHits": 4,
+   "ownExams": 2
+  },
+  "黙る": {
+   "hits": 0,
+   "exams": 0,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "黙示": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "指揮": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "形質": {
+   "hits": 7,
+   "exams": 3,
+   "ownHits": 3,
+   "ownExams": 1
+  },
+  "付与": {
+   "hits": 9,
+   "exams": 6,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "抱える": {
+   "hits": 4,
+   "exams": 3,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "作出": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "危惧": {
+   "hits": 0,
+   "exams": 0,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "是正": {
+   "hits": 2,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "繋がる": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "北欧": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "直観的": {
+   "hits": 6,
+   "exams": 3,
+   "ownHits": 4,
+   "ownExams": 2
+  },
+  "論理的": {
+   "hits": 11,
+   "exams": 6,
+   "ownHits": 10,
+   "ownExams": 5
+  },
+  "下回る": {
+   "hits": 8,
+   "exams": 5,
+   "ownHits": 6,
+   "ownExams": 3
+  },
+  "偏差": {
+   "hits": 29,
+   "exams": 10,
+   "ownHits": 27,
+   "ownExams": 8
+  },
+  "正規分布": {
+   "hits": 21,
+   "exams": 5,
+   "ownHits": 21,
+   "ownExams": 5
+  },
+  "降伏": {
+   "hits": 11,
+   "exams": 9,
+   "ownHits": 6,
+   "ownExams": 5
+  },
+  "破断": {
+   "hits": 8,
+   "exams": 6,
+   "ownHits": 5,
+   "ownExams": 3
+  },
+  "細長い": {
+   "hits": 4,
+   "exams": 3,
+   "ownHits": 4,
+   "ownExams": 3
+  },
+  "直交": {
+   "hits": 12,
+   "exams": 7,
+   "ownHits": 12,
+   "ownExams": 7
+  },
+  "縮んで": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "圧壊": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "外形線": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "想像図": {
+   "hits": 2,
+   "exams": 1,
+   "ownHits": 2,
+   "ownExams": 1
+  },
+  "可逆": {
+   "hits": 21,
+   "exams": 8,
+   "ownHits": 6,
+   "ownExams": 2
+  },
+  "生起確率": {
+   "hits": 4,
+   "exams": 3,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "標的": {
+   "hits": 10,
+   "exams": 3,
+   "ownHits": 9,
+   "ownExams": 2
+  },
+  "検知": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "多層": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "擬似": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "補数": {
+   "hits": 22,
+   "exams": 2,
+   "ownHits": 22,
+   "ownExams": 2
+  },
+  "進数": {
+   "hits": 100,
+   "exams": 11,
+   "ownHits": 100,
+   "ownExams": 11
+  },
+  "急勾配": {
+   "hits": 9,
+   "exams": 5,
+   "ownHits": 3,
+   "ownExams": 2
+  },
+  "近似": {
+   "hits": 35,
+   "exams": 11,
+   "ownHits": 33,
+   "ownExams": 9
+  },
+  "浮動": {
+   "hits": 12,
+   "exams": 7,
+   "ownHits": 12,
+   "ownExams": 7
+  },
+  "桁": {
+   "hits": 72,
+   "exams": 13,
+   "ownHits": 55,
+   "ownExams": 9
+  },
+  "級数": {
+   "hits": 6,
+   "exams": 3,
+   "ownHits": 6,
+   "ownExams": 3
+  },
+  "硬性": {
+   "hits": 0,
+   "exams": 0,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "内心": {
+   "hits": 2,
+   "exams": 1,
+   "ownHits": 2,
+   "ownExams": 1
+  },
+  "外心": {
+   "hits": 2,
+   "exams": 1,
+   "ownHits": 2,
+   "ownExams": 1
+  },
+  "固定端": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "摩擦": {
+   "hits": 75,
+   "exams": 12,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "脱離": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "転位": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "触媒": {
+   "hits": 5,
+   "exams": 3,
+   "ownHits": 5,
+   "ownExams": 3
+  },
+  "融点": {
+   "hits": 10,
+   "exams": 4,
+   "ownHits": 10,
+   "ownExams": 4
+  },
+  "酵母菌": {
+   "hits": 4,
+   "exams": 2,
+   "ownHits": 4,
+   "ownExams": 2
+  },
+  "基質": {
+   "hits": 4,
+   "exams": 2,
+   "ownHits": 4,
+   "ownExams": 2
+  },
+  "連鎖反応": {
+   "hits": 5,
+   "exams": 4,
+   "ownHits": 5,
+   "ownExams": 4
+  },
+  "系統": {
+   "hits": 10,
+   "exams": 7,
+   "ownHits": 3,
+   "ownExams": 2
+  },
+  "変性": {
+   "hits": 19,
+   "exams": 6,
+   "ownHits": 19,
+   "ownExams": 6
+  },
+  "伸長": {
+   "hits": 9,
+   "exams": 3,
+   "ownHits": 9,
+   "ownExams": 3
+  },
+  "廃": {
+   "hits": 149,
+   "exams": 34,
+   "ownHits": 77,
+   "ownExams": 13
+  },
+  "陸域": {
+   "hits": 7,
+   "exams": 5,
+   "ownHits": 5,
+   "ownExams": 3
+  },
+  "投棄": {
+   "hits": 5,
+   "exams": 4,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "清掃": {
+   "hits": 10,
+   "exams": 8,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "議定書": {
+   "hits": 11,
+   "exams": 7,
+   "ownHits": 9,
+   "ownExams": 5
+  },
+  "移入種": {
+   "hits": 6,
+   "exams": 2,
+   "ownHits": 6,
+   "ownExams": 2
+  },
+  "駆逐": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "動物愛護": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "駆除": {
+   "hits": 4,
+   "exams": 2,
+   "ownHits": 4,
+   "ownExams": 2
+  },
+  "発効": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "衡平": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "利便性": {
+   "hits": 4,
+   "exams": 4,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "在来": {
+   "hits": 12,
+   "exams": 7,
+   "ownHits": 7,
+   "ownExams": 4
+  },
+  "非在来": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "顕著": {
+   "hits": 8,
+   "exams": 7,
+   "ownHits": 5,
+   "ownExams": 4
+  },
+  "明治維新": {
+   "hits": 3,
+   "exams": 1,
+   "ownHits": 3,
+   "ownExams": 1
+  },
+  "手工業": {
+   "hits": 4,
+   "exams": 4,
+   "ownHits": 4,
+   "ownExams": 4
+  },
+  "一式": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "官僚": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "種痘": {
+   "hits": 4,
+   "exams": 2,
+   "ownHits": 4,
+   "ownExams": 2
+  },
+  "周期律": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "三極真空管": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  }
+ },
+ "senmon": {
+  "鉛直": {
+   "hits": 46,
+   "exams": 11,
+   "ownHits": 40,
+   "ownExams": 8
+  },
+  "間隙比": {
+   "hits": 28,
+   "exams": 10,
+   "ownHits": 28,
+   "ownExams": 10
+  },
+  "粒子密度": {
+   "hits": 3,
+   "exams": 1,
+   "ownHits": 3,
+   "ownExams": 1
+  },
+  "乾燥密度": {
+   "hits": 16,
+   "exams": 9,
+   "ownHits": 16,
+   "ownExams": 9
+  },
+  "粒度分布": {
+   "hits": 7,
+   "exams": 4,
+   "ownHits": 7,
+   "ownExams": 4
+  },
+  "透水性": {
+   "hits": 10,
+   "exams": 4,
+   "ownHits": 10,
+   "ownExams": 4
+  },
+  "細粒土": {
+   "hits": 10,
+   "exams": 6,
+   "ownHits": 10,
+   "ownExams": 6
+  },
+  "含水比": {
+   "hits": 25,
+   "exams": 9,
+   "ownHits": 25,
+   "ownExams": 9
+  },
+  "飽和度": {
+   "hits": 10,
+   "exams": 4,
+   "ownHits": 10,
+   "ownExams": 4
+  },
+  "構成物": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "単位体積当たり": {
+   "hits": 4,
+   "exams": 4,
+   "ownHits": 4,
+   "ownExams": 4
+  },
+  "平均質量": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "圧密": {
+   "hits": 93,
+   "exams": 9,
+   "ownHits": 93,
+   "ownExams": 9
+  },
+  "排出": {
+   "hits": 166,
+   "exams": 33,
+   "ownHits": 27,
+   "ownExams": 9
+  },
+  "粗い": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "礫": {
+   "hits": 15,
+   "exams": 5,
+   "ownHits": 15,
+   "ownExams": 5
+  },
+  "粘土": {
+   "hits": 32,
+   "exams": 7,
+   "ownHits": 32,
+   "ownExams": 7
+  },
+  "履歴": {
+   "hits": 6,
+   "exams": 5,
+   "ownHits": 5,
+   "ownExams": 4
+  },
+  "推移": {
+   "hits": 8,
+   "exams": 4,
+   "ownHits": 5,
+   "ownExams": 2
+  },
+  "供試体": {
+   "hits": 17,
+   "exams": 5,
+   "ownHits": 17,
+   "ownExams": 5
+  },
+  "円柱形": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "保持": {
+   "hits": 46,
+   "exams": 22,
+   "ownHits": 15,
+   "ownExams": 8
+  },
+  "算定": {
+   "hits": 44,
+   "exams": 13,
+   "ownHits": 39,
+   "ownExams": 10
+  },
+  "初期": {
+   "hits": 27,
+   "exams": 12,
+   "ownHits": 21,
+   "ownExams": 6
+  },
+  "山体": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "河床堆積物": {
+   "hits": 4,
+   "exams": 3,
+   "ownHits": 4,
+   "ownExams": 3
+  },
+  "渓岸": {
+   "hits": 6,
+   "exams": 4,
+   "ownHits": 6,
+   "ownExams": 4
+  },
+  "流下": {
+   "hits": 18,
+   "exams": 7,
+   "ownHits": 18,
+   "ownExams": 7
+  },
+  "抑制": {
+   "hits": 86,
+   "exams": 23,
+   "ownHits": 61,
+   "ownExams": 11
+  },
+  "抑止": {
+   "hits": 11,
+   "exams": 10,
+   "ownHits": 6,
+   "ownExams": 6
+  },
+  "簡便": {
+   "hits": 6,
+   "exams": 4,
+   "ownHits": 6,
+   "ownExams": 4
+  },
+  "除した": {
+   "hits": 21,
+   "exams": 13,
+   "ownHits": 14,
+   "ownExams": 7
+  },
+  "円弧": {
+   "hits": 6,
+   "exams": 6,
+   "ownHits": 6,
+   "ownExams": 6
+  },
+  "滑動": {
+   "hits": 11,
+   "exams": 6,
+   "ownHits": 11,
+   "ownExams": 6
+  },
+  "落石": {
+   "hits": 5,
+   "exams": 1,
+   "ownHits": 5,
+   "ownExams": 1
+  },
+  "防護工": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "等分布": {
+   "hits": 13,
+   "exams": 7,
+   "ownHits": 11,
+   "ownExams": 5
+  },
+  "接線": {
+   "hits": 6,
+   "exams": 4,
+   "ownHits": 5,
+   "ownExams": 3
+  },
+  "折れ曲がる": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "疲労": {
+   "hits": 69,
+   "exams": 22,
+   "ownHits": 42,
+   "ownExams": 11
+  },
+  "亀裂": {
+   "hits": 13,
+   "exams": 4,
+   "ownHits": 13,
+   "ownExams": 4
+  },
+  "継手": {
+   "hits": 43,
+   "exams": 10,
+   "ownHits": 43,
+   "ownExams": 10
+  },
+  "止端": {
+   "hits": 6,
+   "exams": 2,
+   "ownHits": 6,
+   "ownExams": 2
+  },
+  "滑らか": {
+   "hits": 6,
+   "exams": 4,
+   "ownHits": 6,
+   "ownExams": 4
+  },
+  "振幅": {
+   "hits": 15,
+   "exams": 5,
+   "ownHits": 14,
+   "ownExams": 4
+  },
+  "長短": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "腐食": {
+   "hits": 77,
+   "exams": 12,
+   "ownHits": 55,
+   "ownExams": 8
+  },
+  "耐候性": {
+   "hits": 12,
+   "exams": 5,
+   "ownHits": 12,
+   "ownExams": 5
+  },
+  "添加": {
+   "hits": 12,
+   "exams": 9,
+   "ownHits": 7,
+   "ownExams": 6
+  },
+  "低合金": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "乾湿": {
+   "hits": 4,
+   "exams": 2,
+   "ownHits": 4,
+   "ownExams": 2
+  },
+  "緻密": {
+   "hits": 9,
+   "exams": 5,
+   "ownHits": 9,
+   "ownExams": 5
+  },
+  "錆び": {
+   "hits": 3,
+   "exams": 2,
+   "ownHits": 3,
+   "ownExams": 2
+  },
+  "下地": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "亜鉛": {
+   "hits": 18,
+   "exams": 6,
+   "ownHits": 14,
+   "ownExams": 4
+  },
+  "接触": {
+   "hits": 18,
+   "exams": 11,
+   "ownHits": 17,
+   "ownExams": 10
+  },
+  "犠牲": {
+   "hits": 12,
+   "exams": 8,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "発揮": {
+   "hits": 32,
+   "exams": 18,
+   "ownHits": 17,
+   "ownExams": 7
+  },
+  "担う": {
+   "hits": 20,
+   "exams": 12,
+   "ownHits": 7,
+   "ownExams": 5
+  },
+  "溶出": {
+   "hits": 3,
+   "exams": 2,
+   "ownHits": 3,
+   "ownExams": 2
+  },
+  "皮膜": {
+   "hits": 19,
+   "exams": 5,
+   "ownHits": 12,
+   "ownExams": 2
+  },
+  "厚膜": {
+   "hits": 4,
+   "exams": 2,
+   "ownHits": 4,
+   "ownExams": 2
+  },
+  "被覆": {
+   "hits": 29,
+   "exams": 10,
+   "ownHits": 29,
+   "ownExams": 10
+  },
+  "耐食性": {
+   "hits": 4,
+   "exams": 4,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "港湾": {
+   "hits": 23,
+   "exams": 9,
+   "ownHits": 22,
+   "ownExams": 8
+  },
+  "溶射": {
+   "hits": 13,
+   "exams": 4,
+   "ownHits": 13,
+   "ownExams": 4
+  },
+  "気孔": {
+   "hits": 6,
+   "exams": 4,
+   "ownHits": 4,
+   "ownExams": 2
+  },
+  "封孔": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "浸漬": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "練上がり": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "細骨材": {
+   "hits": 6,
+   "exams": 5,
+   "ownHits": 6,
+   "ownExams": 5
+  },
+  "過度": {
+   "hits": 7,
+   "exams": 7,
+   "ownHits": 4,
+   "ownExams": 4
+  },
+  "所要": {
+   "hits": 23,
+   "exams": 11,
+   "ownHits": 20,
+   "ownExams": 8
+  },
+  "粉体": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "早強": {
+   "hits": 19,
+   "exams": 6,
+   "ownHits": 19,
+   "ownExams": 6
+  },
+  "凝結": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "寒中": {
+   "hits": 4,
+   "exams": 2,
+   "ownHits": 4,
+   "ownExams": 2
+  },
+  "中庸": {
+   "hits": 8,
+   "exams": 6,
+   "ownHits": 8,
+   "ownExams": 6
+  },
+  "硫酸塩": {
+   "hits": 6,
+   "exams": 4,
+   "ownHits": 6,
+   "ownExams": 4
+  },
+  "既往": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "劣化": {
+   "hits": 60,
+   "exams": 20,
+   "ownHits": 43,
+   "ownExams": 8
+  },
+  "凍害": {
+   "hits": 19,
+   "exams": 9,
+   "ownHits": 19,
+   "ownExams": 9
+  },
+  "凍結": {
+   "hits": 11,
+   "exams": 8,
+   "ownHits": 11,
+   "ownExams": 8
+  },
+  "融解": {
+   "hits": 9,
+   "exams": 8,
+   "ownHits": 6,
+   "ownExams": 5
+  },
+  "繰返す": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "微細": {
+   "hits": 13,
+   "exams": 10,
+   "ownHits": 10,
+   "ownExams": 8
+  },
+  "流水": {
+   "hits": 58,
+   "exams": 10,
+   "ownHits": 58,
+   "ownExams": 10
+  },
+  "摩耗": {
+   "hits": 13,
+   "exams": 8,
+   "ownHits": 13,
+   "ownExams": 8
+  },
+  "水和物": {
+   "hits": 2,
+   "exams": 1,
+   "ownHits": 2,
+   "ownExams": 1
+  },
+  "陥没": {
+   "hits": 5,
+   "exams": 5,
+   "ownHits": 4,
+   "ownExams": 4
+  },
+  "市町村": {
+   "hits": 30,
+   "exams": 13,
+   "ownHits": 27,
+   "ownExams": 10
+  },
+  "都道府県": {
+   "hits": 31,
+   "exams": 11,
+   "ownHits": 30,
+   "ownExams": 10
+  },
+  "審議会": {
+   "hits": 11,
+   "exams": 7,
+   "ownHits": 5,
+   "ownExams": 3
+  },
+  "大臣": {
+   "hits": 26,
+   "exams": 16,
+   "ownHits": 16,
+   "ownExams": 7
+  },
+  "聴く": {
+   "hits": 5,
+   "exams": 4,
+   "ownHits": 5,
+   "ownExams": 4
+  },
+  "担保": {
+   "hits": 7,
+   "exams": 7,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "用地買収": {
+   "hits": 3,
+   "exams": 2,
+   "ownHits": 3,
+   "ownExams": 2
+  },
+  "借地権者": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "借家権者": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "絡み": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "廃道": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "需要": {
+   "hits": 24,
+   "exams": 11,
+   "ownHits": 16,
+   "ownExams": 5
+  },
+  "街路": {
+   "hits": 4,
+   "exams": 3,
+   "ownHits": 4,
+   "ownExams": 3
+  },
+  "秋期": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "一斉": {
+   "hits": 4,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 1
+  },
+  "時系列": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "抽出": {
+   "hits": 7,
+   "exams": 5,
+   "ownHits": 5,
+   "ownExams": 3
+  },
+  "京阪神": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "形成": {
+   "hits": 138,
+   "exams": 33,
+   "ownHits": 76,
+   "ownExams": 10
+  },
+  "迫る": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "潮流": {
+   "hits": 6,
+   "exams": 4,
+   "ownHits": 5,
+   "ownExams": 3
+  },
+  "抜本的": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "東北": {
+   "hits": 7,
+   "exams": 4,
+   "ownHits": 7,
+   "ownExams": 4
+  },
+  "首都": {
+   "hits": 7,
+   "exams": 4,
+   "ownHits": 7,
+   "ownExams": 4
+  },
+  "北陸": {
+   "hits": 4,
+   "exams": 2,
+   "ownHits": 4,
+   "ownExams": 2
+  },
+  "九州": {
+   "hits": 5,
+   "exams": 3,
+   "ownHits": 4,
+   "ownExams": 2
+  },
+  "沖縄": {
+   "hits": 6,
+   "exams": 2,
+   "ownHits": 6,
+   "ownExams": 2
+  },
+  "策定": {
+   "hits": 70,
+   "exams": 26,
+   "ownHits": 36,
+   "ownExams": 9
+  },
+  "聴取": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "経て": {
+   "hits": 9,
+   "exams": 8,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "閣議": {
+   "hits": 9,
+   "exams": 9,
+   "ownHits": 4,
+   "ownExams": 4
+  },
+  "非圧縮": {
+   "hits": 8,
+   "exams": 7,
+   "ownHits": 6,
+   "ownExams": 5
+  },
+  "流体": {
+   "hits": 20,
+   "exams": 13,
+   "ownHits": 17,
+   "ownExams": 10
+  },
+  "狭窄": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "管路": {
+   "hits": 62,
+   "exams": 11,
+   "ownHits": 60,
+   "ownExams": 10
+  },
+  "水頭": {
+   "hits": 127,
+   "exams": 11,
+   "ownHits": 127,
+   "ownExams": 11
+  },
+  "動水勾配": {
+   "hits": 21,
+   "exams": 9,
+   "ownHits": 21,
+   "ownExams": 9
+  },
+  "局所損失": {
+   "hits": 10,
+   "exams": 3,
+   "ownHits": 10,
+   "ownExams": 3
+  },
+  "常流": {
+   "hits": 33,
+   "exams": 11,
+   "ownHits": 33,
+   "ownExams": 11
+  },
+  "射流": {
+   "hits": 23,
+   "exams": 8,
+   "ownHits": 23,
+   "ownExams": 8
+  },
+  "限界流": {
+   "hits": 6,
+   "exams": 6,
+   "ownHits": 6,
+   "ownExams": 6
+  },
+  "緩い": {
+   "hits": 7,
+   "exams": 5,
+   "ownHits": 7,
+   "ownExams": 5
+  },
+  "等流": {
+   "hits": 14,
+   "exams": 5,
+   "ownHits": 14,
+   "ownExams": 5
+  },
+  "漸近": {
+   "hits": 6,
+   "exams": 4,
+   "ownHits": 3,
+   "ownExams": 2
+  },
+  "粗度": {
+   "hits": 15,
+   "exams": 8,
+   "ownHits": 15,
+   "ownExams": 8
+  },
+  "土砂": {
+   "hits": 108,
+   "exams": 12,
+   "ownHits": 103,
+   "ownExams": 11
+  },
+  "流砂": {
+   "hits": 16,
+   "exams": 7,
+   "ownHits": 16,
+   "ownExams": 7
+  },
+  "安息": {
+   "hits": 4,
+   "exams": 4,
+   "ownHits": 4,
+   "ownExams": 4
+  },
+  "湾曲": {
+   "hits": 5,
+   "exams": 2,
+   "ownHits": 5,
+   "ownExams": 2
+  },
+  "護岸": {
+   "hits": 45,
+   "exams": 8,
+   "ownHits": 45,
+   "ownExams": 8
+  },
+  "潮汐": {
+   "hits": 4,
+   "exams": 3,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "防潮堤": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "水門": {
+   "hits": 4,
+   "exams": 3,
+   "ownHits": 4,
+   "ownExams": 3
+  },
+  "堤防": {
+   "hits": 102,
+   "exams": 12,
+   "ownHits": 101,
+   "ownExams": 11
+  },
+  "外郭": {
+   "hits": 9,
+   "exams": 5,
+   "ownHits": 9,
+   "ownExams": 5
+  },
+  "閉塞": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "要配慮者": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "土壌": {
+   "hits": 15,
+   "exams": 9,
+   "ownHits": 7,
+   "ownExams": 4
+  },
+  "積算": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "蓋然性": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "地産地消": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "喪失": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "昼夜": {
+   "hits": 7,
+   "exams": 4,
+   "ownHits": 7,
+   "ownExams": 4
+  },
+  "遜色": {
+   "hits": 2,
+   "exams": 1,
+   "ownHits": 2,
+   "ownExams": 1
+  },
+  "鍵": {
+   "hits": 26,
+   "exams": 8,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "枯渇": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "掘削": {
+   "hits": 62,
+   "exams": 13,
+   "ownHits": 59,
+   "ownExams": 11
+  },
+  "包蔵": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "取水口": {
+   "hits": 18,
+   "exams": 7,
+   "ownHits": 18,
+   "ownExams": 7
+  },
+  "漂流物": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "屈曲": {
+   "hits": 5,
+   "exams": 4,
+   "ownHits": 5,
+   "ownExams": 4
+  },
+  "舗装": {
+   "hits": 82,
+   "exams": 8,
+   "ownHits": 82,
+   "ownExams": 8
+  },
+  "勘案": {
+   "hits": 8,
+   "exams": 7,
+   "ownHits": 7,
+   "ownExams": 6
+  },
+  "雨水": {
+   "hits": 9,
+   "exams": 8,
+   "ownHits": 8,
+   "ownExams": 7
+  },
+  "円滑": {
+   "hits": 12,
+   "exams": 11,
+   "ownHits": 9,
+   "ownExams": 8
+  },
+  "値": {
+   "hits": 511,
+   "exams": 42,
+   "ownHits": 119,
+   "ownExams": 11
+  },
+  "供用": {
+   "hits": 6,
+   "exams": 6,
+   "ownHits": 5,
+   "ownExams": 5
+  },
+  "塑性": {
+   "hits": 57,
+   "exams": 16,
+   "ownHits": 40,
+   "ownExams": 10
+  },
+  "修繕": {
+   "hits": 14,
+   "exams": 8,
+   "ownHits": 5,
+   "ownExams": 4
+  },
+  "軌道": {
+   "hits": 64,
+   "exams": 12,
+   "ownHits": 62,
+   "ownExams": 11
+  },
+  "逓減": {
+   "hits": 6,
+   "exams": 3,
+   "ownHits": 6,
+   "ownExams": 3
+  },
+  "芯材": {
+   "hits": 3,
+   "exams": 2,
+   "ownHits": 3,
+   "ownExams": 2
+  },
+  "区域": {
+   "hits": 161,
+   "exams": 10,
+   "ownHits": 161,
+   "ownExams": 10
+  },
+  "指定": {
+   "hits": 51,
+   "exams": 21,
+   "ownHits": 39,
+   "ownExams": 10
+  },
+  "国土交通大臣": {
+   "hits": 11,
+   "exams": 4,
+   "ownHits": 11,
+   "ownExams": 4
+  },
+  "協議": {
+   "hits": 11,
+   "exams": 4,
+   "ownHits": 9,
+   "ownExams": 3
+  },
+  "区域外": {
+   "hits": 5,
+   "exams": 3,
+   "ownHits": 5,
+   "ownExams": 3
+  },
+  "市街地": {
+   "hits": 48,
+   "exams": 11,
+   "ownHits": 48,
+   "ownExams": 11
+  },
+  "変換": {
+   "hits": 42,
+   "exams": 22,
+   "ownHits": 14,
+   "ownExams": 7
+  },
+  "所有権者": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "建物": {
+   "hits": 18,
+   "exams": 12,
+   "ownHits": 8,
+   "ownExams": 5
+  },
+  "借家": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "地権者": {
+   "hits": 5,
+   "exams": 4,
+   "ownHits": 5,
+   "ownExams": 4
+  },
+  "絡み合う": {
+   "hits": 0,
+   "exams": 0,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "区画整理": {
+   "hits": 18,
+   "exams": 5,
+   "ownHits": 18,
+   "ownExams": 5
+  },
+  "手法": {
+   "hits": 83,
+   "exams": 34,
+   "ownHits": 31,
+   "ownExams": 11
+  },
+  "換地処分": {
+   "hits": 0,
+   "exams": 0,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "密集": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "取り壊し": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "細街路": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "起終点": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "総合的": {
+   "hits": 31,
+   "exams": 22,
+   "ownHits": 13,
+   "ownExams": 7
+  },
+  "視点": {
+   "hits": 10,
+   "exams": 7,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "特性": {
+   "hits": 72,
+   "exams": 33,
+   "ownHits": 39,
+   "ownExams": 11
+  },
+  "横断的": {
+   "hits": 4,
+   "exams": 4,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "把握": {
+   "hits": 27,
+   "exams": 13,
+   "ownHits": 15,
+   "ownExams": 6
+  },
+  "規模別": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "流動": {
+   "hits": 20,
+   "exams": 10,
+   "ownHits": 13,
+   "ownExams": 7
+  },
+  "実態": {
+   "hits": 9,
+   "exams": 7,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "踏まえ": {
+   "hits": 42,
+   "exams": 23,
+   "ownHits": 13,
+   "ownExams": 8
+  },
+  "北海道": {
+   "hits": 11,
+   "exams": 4,
+   "ownHits": 11,
+   "ownExams": 4
+  },
+  "東北圏": {
+   "hits": 4,
+   "exams": 2,
+   "ownHits": 4,
+   "ownExams": 2
+  },
+  "首都圏": {
+   "hits": 6,
+   "exams": 4,
+   "ownHits": 6,
+   "ownExams": 4
+  },
+  "北陸圏": {
+   "hits": 4,
+   "exams": 2,
+   "ownHits": 4,
+   "ownExams": 2
+  },
+  "中部圏": {
+   "hits": 7,
+   "exams": 3,
+   "ownHits": 7,
+   "ownExams": 3
+  },
+  "中国圏": {
+   "hits": 4,
+   "exams": 2,
+   "ownHits": 4,
+   "ownExams": 2
+  },
+  "四国圏": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "九州・沖縄圏": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "広域": {
+   "hits": 19,
+   "exams": 6,
+   "ownHits": 18,
+   "ownExams": 5
+  },
+  "意見聴取": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "手続": {
+   "hits": 37,
+   "exams": 14,
+   "ownHits": 24,
+   "ownExams": 8
+  },
+  "案": {
+   "hits": 127,
+   "exams": 30,
+   "ownHits": 25,
+   "ownExams": 9
+  },
+  "土砂災害": {
+   "hits": 25,
+   "exams": 3,
+   "ownHits": 20,
+   "ownExams": 2
+  },
+  "警戒": {
+   "hits": 9,
+   "exams": 1,
+   "ownHits": 9,
+   "ownExams": 1
+  },
+  "急傾斜": {
+   "hits": 4,
+   "exams": 4,
+   "ownHits": 4,
+   "ownExams": 4
+  },
+  "崩壊": {
+   "hits": 12,
+   "exams": 10,
+   "ownHits": 10,
+   "ownExams": 8
+  },
+  "土石流": {
+   "hits": 23,
+   "exams": 8,
+   "ownHits": 23,
+   "ownExams": 8
+  },
+  "地すべり": {
+   "hits": 10,
+   "exams": 4,
+   "ownHits": 10,
+   "ownExams": 4
+  },
+  "湛水": {
+   "hits": 10,
+   "exams": 8,
+   "ownHits": 10,
+   "ownExams": 8
+  },
+  "施設": {
+   "hits": 158,
+   "exams": 20,
+   "ownHits": 125,
+   "ownExams": 11
+  },
+  "運用": {
+   "hits": 17,
+   "exams": 13,
+   "ownHits": 6,
+   "ownExams": 4
+  },
+  "雨量指数": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "積算雨量": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "太陽光": {
+   "hits": 24,
+   "exams": 10,
+   "ownHits": 6,
+   "ownExams": 3
+  },
+  "自家消費": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "分散電源": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "系統電源": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "昼夜間": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "大規模": {
+   "hits": 32,
+   "exams": 13,
+   "ownHits": 26,
+   "ownExams": 9
+  },
+  "未活用": {
+   "hits": 10,
+   "exams": 6,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "廃棄物": {
+   "hits": 102,
+   "exams": 25,
+   "ownHits": 19,
+   "ownExams": 8
+  },
+  "熱利用効率": {
+   "hits": 3,
+   "exams": 2,
+   "ownHits": 3,
+   "ownExams": 2
+  },
+  "循環型": {
+   "hits": 53,
+   "exams": 16,
+   "ownHits": 23,
+   "ownExams": 7
+  },
+  "構築": {
+   "hits": 37,
+   "exams": 22,
+   "ownHits": 17,
+   "ownExams": 7
+  },
+  "寄与": {
+   "hits": 38,
+   "exams": 23,
+   "ownHits": 6,
+   "ownExams": 4
+  },
+  "井戸": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "蒸気": {
+   "hits": 18,
+   "exams": 11,
+   "ownHits": 4,
+   "ownExams": 3
+  },
+  "熱水": {
+   "hits": 3,
+   "exams": 2,
+   "ownHits": 3,
+   "ownExams": 2
+  },
+  "噴出": {
+   "hits": 5,
+   "exams": 3,
+   "ownHits": 5,
+   "ownExams": 3
+  },
+  "流れ込み": {
+   "hits": 8,
+   "exams": 3,
+   "ownHits": 8,
+   "ownExams": 3
+  },
+  "地点数": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "常時": {
+   "hits": 13,
+   "exams": 9,
+   "ownHits": 4,
+   "ownExams": 3
+  },
+  "し得る": {
+   "hits": 10,
+   "exams": 7,
+   "ownHits": 5,
+   "ownExams": 5
+  },
+  "無圧": {
+   "hits": 8,
+   "exams": 5,
+   "ownHits": 8,
+   "ownExams": 5
+  },
+  "接続": {
+   "hits": 35,
+   "exams": 18,
+   "ownHits": 12,
+   "ownExams": 9
+  },
+  "極端": {
+   "hits": 6,
+   "exams": 6,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "堆積": {
+   "hits": 24,
+   "exams": 10,
+   "ownHits": 24,
+   "ownExams": 10
+  },
+  "河川": {
+   "hits": 189,
+   "exams": 15,
+   "ownHits": 185,
+   "ownExams": 11
+  },
+  "上流": {
+   "hits": 18,
+   "exams": 11,
+   "ownHits": 16,
+   "ownExams": 10
+  },
+  "設ける": {
+   "hits": 22,
+   "exams": 12,
+   "ownHits": 17,
+   "ownExams": 7
+  },
+  "露出": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "屈曲部": {
+   "hits": 5,
+   "exams": 4,
+   "ownHits": 5,
+   "ownExams": 4
+  },
+  "落差": {
+   "hits": 11,
+   "exams": 6,
+   "ownHits": 11,
+   "ownExams": 6
+  },
+  "性能指標": {
+   "hits": 38,
+   "exams": 7,
+   "ownHits": 38,
+   "ownExams": 7
+  },
+  "存する": {
+   "hits": 23,
+   "exams": 16,
+   "ownHits": 11,
+   "ownExams": 6
+  },
+  "沿道": {
+   "hits": 9,
+   "exams": 5,
+   "ownHits": 9,
+   "ownExams": 5
+  },
+  "監理技術者": {
+   "hits": 7,
+   "exams": 4,
+   "ownHits": 7,
+   "ownExams": 4
+  },
+  "浸透": {
+   "hits": 102,
+   "exams": 15,
+   "ownHits": 96,
+   "ownExams": 11
+  },
+  "疲労破壊": {
+   "hits": 14,
+   "exams": 11,
+   "ownHits": 9,
+   "ownExams": 7
+  },
+  "必須": {
+   "hits": 16,
+   "exams": 11,
+   "ownHits": 6,
+   "ownExams": 6
+  },
+  "路肩": {
+   "hits": 5,
+   "exams": 4,
+   "ownHits": 5,
+   "ownExams": 4
+  },
+  "側帯": {
+   "hits": 9,
+   "exams": 6,
+   "ownHits": 9,
+   "ownExams": 6
+  },
+  "走行面": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "まくら木": {
+   "hits": 13,
+   "exams": 4,
+   "ownHits": 13,
+   "ownExams": 4
+  },
+  "軌きょう": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "道床": {
+   "hits": 10,
+   "exams": 7,
+   "ownHits": 10,
+   "ownExams": 7
+  },
+  "路盤": {
+   "hits": 11,
+   "exams": 6,
+   "ownHits": 11,
+   "ownExams": 6
+  },
+  "緩和曲線": {
+   "hits": 8,
+   "exams": 3,
+   "ownHits": 8,
+   "ownExams": 3
+  },
+  "挿入": {
+   "hits": 19,
+   "exams": 9,
+   "ownHits": 11,
+   "ownExams": 6
+  },
+  "在来線": {
+   "hits": 5,
+   "exams": 3,
+   "ownHits": 5,
+   "ownExams": 3
+  },
+  "放物線": {
+   "hits": 6,
+   "exams": 4,
+   "ownHits": 6,
+   "ownExams": 4
+  },
+  "一環": {
+   "hits": 8,
+   "exams": 6,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "原価": {
+   "hits": 39,
+   "exams": 11,
+   "ownHits": 30,
+   "ownExams": 9
+  },
+  "低減": {
+   "hits": 105,
+   "exams": 27,
+   "ownHits": 15,
+   "ownExams": 8
+  },
+  "予算書": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "騒音振動": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "労務": {
+   "hits": 14,
+   "exams": 7,
+   "ownHits": 9,
+   "ownExams": 4
+  },
+  "危害": {
+   "hits": 29,
+   "exams": 10,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "整理整頓": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "検討": {
+   "hits": 57,
+   "exams": 21,
+   "ownHits": 29,
+   "ownExams": 10
+  },
+  "徹底": {
+   "hits": 14,
+   "exams": 13,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "水質汚濁": {
+   "hits": 15,
+   "exams": 10,
+   "ownHits": 13,
+   "ownExams": 8
+  },
+  "項目": {
+   "hits": 33,
+   "exams": 16,
+   "ownHits": 22,
+   "ownExams": 7
+  },
+  "保全": {
+   "hits": 139,
+   "exams": 38,
+   "ownHits": 54,
+   "ownExams": 10
+  },
+  "微粒子": {
+   "hits": 2,
+   "exams": 1,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "浮遊": {
+   "hits": 23,
+   "exams": 12,
+   "ownHits": 16,
+   "ownExams": 9
+  },
+  "気管支炎": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "疾患": {
+   "hits": 5,
+   "exams": 3,
+   "ownHits": 2,
+   "ownExams": 1
+  },
+  "上昇": {
+   "hits": 49,
+   "exams": 22,
+   "ownHits": 23,
+   "ownExams": 11
+  },
+  "国連": {
+   "hits": 27,
+   "exams": 17,
+   "ownHits": 4,
+   "ownExams": 3
+  },
+  "提唱": {
+   "hits": 18,
+   "exams": 14,
+   "ownHits": 4,
+   "ownExams": 3
+  },
+  "資源循環": {
+   "hits": 5,
+   "exams": 3,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "くい打ち": {
+   "hits": 0,
+   "exams": 0,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "著しい": {
+   "hits": 7,
+   "exams": 7,
+   "ownHits": 4,
+   "ownExams": 4
+  },
+  "政令": {
+   "hits": 21,
+   "exams": 15,
+   "ownHits": 8,
+   "ownExams": 5
+  },
+  "総理府": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "日数": {
+   "hits": 49,
+   "exams": 11,
+   "ownHits": 31,
+   "ownExams": 5
+  },
+  "曜日": {
+   "hits": 4,
+   "exams": 3,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "後継": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "全会一致": {
+   "hits": 4,
+   "exams": 4,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "採択": {
+   "hits": 28,
+   "exams": 18,
+   "ownHits": 7,
+   "ownExams": 4
+  },
+  "記載": {
+   "hits": 79,
+   "exams": 30,
+   "ownHits": 10,
+   "ownExams": 8
+  },
+  "援助": {
+   "hits": 0,
+   "exams": 0,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "副産物": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "物流": {
+   "hits": 4,
+   "exams": 3,
+   "ownHits": 4,
+   "ownExams": 3
+  },
+  "強化": {
+   "hits": 15,
+   "exams": 12,
+   "ownHits": 8,
+   "ownExams": 6
+  },
+  "既存": {
+   "hits": 7,
+   "exams": 7,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "各種届出": {
+   "hits": 2,
+   "exams": 2,
+   "ownHits": 2,
+   "ownExams": 2
+  },
+  "連携": {
+   "hits": 14,
+   "exams": 12,
+   "ownHits": 4,
+   "ownExams": 3
+  },
+  "緩和策": {
+   "hits": 10,
+   "exams": 7,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "両輪": {
+   "hits": 3,
+   "exams": 3,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "指標": {
+   "hits": 54,
+   "exams": 11,
+   "ownHits": 50,
+   "ownExams": 8
+  },
+  "生息": {
+   "hits": 7,
+   "exams": 5,
+   "ownHits": 3,
+   "ownExams": 3
+  },
+  "敏感": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "種": {
+   "hits": 234,
+   "exams": 40,
+   "ownHits": 97,
+   "ownExams": 11
+  },
+  "選定": {
+   "hits": 28,
+   "exams": 11,
+   "ownHits": 27,
+   "ownExams": 10
+  },
+  "分泌状況": {
+   "hits": 0,
+   "exams": 0,
+   "ownHits": 0,
+   "ownExams": 0
+  },
+  "類推": {
+   "hits": 1,
+   "exams": 1,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "推奨": {
+   "hits": 5,
+   "exams": 4,
+   "ownHits": 1,
+   "ownExams": 1
+  },
+  "個別": {
+   "hits": 21,
+   "exams": 11,
+   "ownHits": 16,
+   "ownExams": 8
+  },
+  "国等": {
+   "hits": 5,
+   "exams": 5,
+   "ownHits": 3,
+   "ownExams": 3
+  }
+ }
 }

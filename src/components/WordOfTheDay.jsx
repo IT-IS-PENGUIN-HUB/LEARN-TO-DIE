@@ -3,6 +3,7 @@ import { useVocab } from '../context/VocabProvider.jsx';
 import { KEYS, loadJSON, loadString, saveJSON, saveString } from '../lib/storage.js';
 import { speakJapanese } from '../services/tts.js';
 import { IconCalendar, IconRefresh, IconVolume } from './icons.jsx';
+import FreqBadge from './vocab/FreqBadge.jsx';
 
 function todayKey() {
   const d = new Date();
@@ -56,7 +57,12 @@ export default function WordOfTheDay({ onOpenVocab }) {
           <IconVolume />
         </button>
       </div>
-      <p className="wotd-kana">{word.kana}</p>
+      <p className="wotd-kana">
+        {word.kana}
+        {/* Thẻ lưu từ hôm qua có thể chưa có `subject` (bản cũ) — không có môn
+            thì không biết mẫu số bao nhiêu kỳ, thôi không hiện nhãn */}
+        {word.subject && <FreqBadge jp={word.jp} subject={word.subject} full />}
+      </p>
       <p className="wotd-meaning">{word.meaning}</p>
       {(word.exJp || word.exVi) && (
         <div className="example-box wotd-example">

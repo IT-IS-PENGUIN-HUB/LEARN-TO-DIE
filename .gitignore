@@ -4,6 +4,7 @@ Thumbs.db
 node_modules/
 dist/
 .gemini/
+__pycache__/
 
 # Chỗ để tạm file thầy gửi. Nội dung sau khi xử lý đã nằm trong repo:
 #   テキスト/  -> public/textbooks/   (PDF giữ nguyên byte, chỉ đổi tên sang ASCII)

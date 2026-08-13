@@ -3,6 +3,7 @@ import { useVocab } from '../../context/VocabProvider.jsx';
 import { buildQueue } from '../../lib/srs.js';
 import { speakJapanese } from '../../services/tts.js';
 import { IconCheck, IconStar, IconVolume, IconX } from '../icons.jsx';
+import FreqBadge from './FreqBadge.jsx';
 
 /** pool (tuỳ chọn): chỉ lật thẻ trong danh sách này (ôn theo chương giáo trình). */
 export default function FlashcardMode({ subject, onRecordAnswer, pool }) {
@@ -73,6 +74,7 @@ export default function FlashcardMode({ subject, onRecordAnswer, pool }) {
             <div className="flashcard-back">
               <h2 className="jp-text fc-kana">{word.kana}</h2>
               <h3 className="fc-meaning">{word.meaning}</h3>
+              <FreqBadge jp={word.jp} subject={subject} full />
               {(word.exJp || word.exVi) && (
                 <div className="example-box">
                   {word.exJp && <p className="ex-jp jp-text">{word.exJp}</p>}

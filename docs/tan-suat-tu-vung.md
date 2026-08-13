@@ -14,21 +14,21 @@ một kỳ thì chỉ là chủ đề của năm đó; một từ ra ở 14/16 k
 2. Động từ / tính từ bị chia đuôi trong đề nên dạng nguyên thể đếm ra ít hoặc bằng 0.
    Cột `stem_hits` trong file CSV đếm theo gốc từ (見合う → 見合) để bù chỗ này.
 
-Dữ liệu đầy đủ cho cả 1095 từ: [tan-suat-tu-vung.csv](tan-suat-tu-vung.csv) (mở bằng Excel).
+Dữ liệu đầy đủ cho cả 1096 từ: [tan-suat-tu-vung.csv](tan-suat-tu-vung.csv) (mở bằng Excel).
 
 ## 適性科目 — 284 từ, 16 kỳ thi
 
 - Ra ở **mọi kỳ** (16/16): **6 từ**
-- Chưa từng thấy trong đề nào: **11 từ** (3%)
+- Chưa từng thấy trong đề nào: **11 từ** (4%)
 
 ### 50 từ hay thi nhất
 
 | # | Từ | Cách đọc | Nghĩa | Kỳ có / tổng kỳ môn | Lần trong môn | Tổng 43 đề |
 |---|---|---|---|---|---|---|
 | 1 | 倫理 | りんり | Đạo đức nghề nghiệp, luân lý | 16/16 | 191 | 197 |
-| 2 | 義務 | ぎむ | nghĩa vụ, bổn phận | 16/16 | 142 | 169 |
+| 2 | 義務 | ぎむ | nghĩa vụ, bổn phận | 16/16 | 151 | 178 |
 | 3 | 組織 | そしき | tổ chức | 16/16 | 142 | 154 |
-| 4 | 責務 | せきむ | (trách vụ) nhiệm vụ, bổn phận | 16/16 | 70 | 73 |
+| 4 | 責務 | せきむ | (trách vụ) nhiệm vụ, bổn phận | 16/16 | 80 | 83 |
 | 5 | 努め | つとめ | công việc, bổn phận, nhiệm vụ, sự cố g… | 16/16 | 60 | 62 |
 | 6 | 図る | はかる | lên kế hoạch, âm mưu, toan tính | 16/16 | 52 | 107 |
 | 7 | 不適切 | ふてきせつ | không phù hợp | 15/16 | 76 | 446 |
@@ -48,19 +48,19 @@ Dữ liệu đầy đủ cho cả 1095 từ: [tan-suat-tu-vung.csv](tan-suat-tu-
 | 21 | 傷つけ | きずつけ | làm tổn thương, gây thương tích, làm đ… | 12/16 | 17 | 17 |
 | 22 | 意匠 | いしょう | kiểu dáng công nghiệp; ý tưởng thiết k… | 11/16 | 24 | 25 |
 | 23 | 商標 | しょうひょう | nhãn hiệu, thương hiệu | 11/16 | 20 | 22 |
-| 24 | 開示 | かいじ | tiết lộ, thông báo | 11/16 | 12 | 19 |
-| 25 | 漏らし | もらし | (lậu) làm lộ, rò rỉ | 11/16 | 12 | 12 |
+| 24 | 漏らし | もらし | (lậu) làm lộ, rò rỉ | 11/16 | 12 | 12 |
+| 25 | 開示 | かいじ | tiết lộ, thông báo | 11/16 | 12 | 19 |
 | 26 | 守秘 | しゅひ | bảo mật, giữ bí mật | 10/16 | 25 | 25 |
 | 27 | 綱領 | こうりょう | cương lĩnh, nguyên tắc cơ bản, đề cươn… | 10/16 | 23 | 23 |
-| 28 | 資質向上 | ししつこうじょう | Nâng cao năng lực/phẩm chất chuyên môn | 10/16 | 21 | 21 |
+| 28 | 資質向上 | ししつこうじょう | Nâng cao năng lực/phẩm chất chuyên môn | 10/16 | 22 | 22 |
 | 29 | 倫理綱領 | りんりこうりょう | (Luân lý cương lĩnh) Bộ quy tắc đạo đứ… | 10/16 | 20 | 20 |
 | 30 | 独自 | どくじ | độc đáo, riêng biệt, tự mình | 10/16 | 19 | 24 |
 | 31 | 不具合 | ふぐあい | (bất cụ hợp) những lỗi, hỏng hóc | 10/16 | 14 | 20 |
 | 32 | 雇用 | こよう | (Cố dụng) Tuyển dụng, thuê mướn | 9/16 | 27 | 29 |
 | 33 | 重視 | じゅうし | coi trọng, xem trọng, chú trọng, đặt n… | 9/16 | 20 | 22 |
-| 34 | 知見 | ちけん | (tri kiến) Sự hiểu biết, tri thức | 9/16 | 18 | 20 |
-| 35 | 文部科学省 | もんぶかがくしょう | Bộ Giáo dục, Văn hóa, Thể thao, Khoa h… | 9/16 | 18 | 18 |
-| 36 | 消費者庁 | しょうひしゃちょう | (tiêu phí giả thính) cơ quan người tiê… | 9/16 | 17 | 17 |
+| 34 | 文部科学省 | もんぶかがくしょう | Bộ Giáo dục, Văn hóa, Thể thao, Khoa h… | 9/16 | 18 | 18 |
+| 35 | 消費者庁 | しょうひしゃちょう | (tiêu phí giả thính) cơ quan người tiê… | 9/16 | 18 | 18 |
+| 36 | 知見 | ちけん | (tri kiến) Sự hiểu biết, tri thức | 9/16 | 18 | 20 |
 | 37 | 破壊 | はかい | sự phá hoại, sự hủy diệt, sự phá hủy | 9/16 | 16 | 121 |
 | 38 | 資する | しする | (Tư) Giúp đỡ, viện trợ, đóng góp | 9/16 | 16 | 21 |
 | 39 | 促進 | そくしん | (xúc tiến) xúc tiến, thúc đẩy | 9/16 | 15 | 51 |
@@ -71,21 +71,21 @@ Dữ liệu đầy đủ cho cả 1095 từ: [tan-suat-tu-vung.csv](tan-suat-tu-
 | 44 | 阻害 | そがい | (trở hại) cản trở, gây trở ngại | 8/16 | 15 | 22 |
 | 45 | 進展 | しんてん | (tiến triển) sự tiến triển | 8/16 | 13 | 27 |
 | 46 | 不名誉 | ふめいよ | tai tiếng, ô nhục, mất danh dự | 8/16 | 12 | 12 |
-| 47 | 概念 | がいねん | (khái niệm) Khái niệm | 8/16 | 11 | 22 |
-| 48 | 取引先 | とりひきさき | Khách hàng | 8/16 | 11 | 11 |
+| 47 | 取引先 | とりひきさき | Khách hàng | 8/16 | 11 | 11 |
+| 48 | 概念 | がいねん | (khái niệm) Khái niệm | 8/16 | 11 | 22 |
 | 49 | 失墜 | しっつい | sự sụp đổ, sự mất đi (quyền uy, danh t… | 8/16 | 10 | 10 |
 | 50 | 促す | うながす | thúc đẩy, xúc tiến, khuyến khích | 8/16 | 9 | 12 |
 
 <details><summary>Từ chưa từng xuất hiện trong đề (11)</summary>
 
-ハザード同定 · 多角的 · 委ねる · 後を絶たない · 忖度 · 自問 · 課す · 造り込まれる · 重症病 · 鍛える · 陥る
+委ねる · 課す · ハザード同定 · 自問 · 多角的 · 造り込まれる · 忖度 · 鍛える · 重症病 · 後を絶たない · 陥る
 
 </details>
 
-## 基礎科目 — 490 từ, 16 kỳ thi
+## 基礎科目 — 491 từ, 16 kỳ thi
 
 - Ra ở **mọi kỳ** (16/16): **7 từ**
-- Chưa từng thấy trong đề nào: **23 từ** (4%)
+- Chưa từng thấy trong đề nào: **22 từ** (4%)
 
 ### 50 từ hay thi nhất
 
@@ -99,13 +99,13 @@ Dữ liệu đầy đủ cho cả 1095 từ: [tan-suat-tu-vung.csv](tan-suat-tu-
 | 6 | 解析 | かいせき | (giải tích) phân tích, giải tích | 16/16 | 50 | 77 |
 | 7 | 単純 | たんじゅん | (đơn thuần) đơn giản | 16/16 | 46 | 68 |
 | 8 | 炭素 | たんそ | cacbon | 14/16 | 76 | 94 |
-| 9 | 消費 | しょうひ | (tiêu phí) tiêu thụ, tiêu dùng | 14/16 | 72 | 175 |
-| 10 | 感覚 | かんかく | giác quan, cảm giác | 14/16 | 63 | 63 |
-| 11 | 廃 ⚠ | はい | (phế) phế, bỏ đi (tiền tố: phế thải, p… | 13/16 | 77 | 149 |
-| 12 | 真 ⚠ | しん | True | 13/16 | 35 | 44 |
-| 13 | 平均 | へいきん | (bình quân) trung bình | 12/16 | 121 | 193 |
-| 14 | 信頼 | しんらい | tín nhiệm | 12/16 | 77 | 102 |
-| 15 | 関数 | かんすう | (quan số) hàm số | 12/16 | 61 | 76 |
+| 9 | 消費 | しょうひ | (tiêu phí) tiêu thụ, tiêu dùng | 14/16 | 72 | 176 |
+| 10 | 関数 | かんすう | (quan số) hàm số | 14/16 | 65 | 80 |
+| 11 | 感覚 | かんかく | giác quan, cảm giác | 14/16 | 63 | 63 |
+| 12 | 廃 ⚠ | はい | (phế) phế, bỏ đi (tiền tố: phế thải, p… | 13/16 | 77 | 149 |
+| 13 | 真 ⚠ | しん | True | 13/16 | 35 | 44 |
+| 14 | 平均 | へいきん | (bình quân) trung bình | 12/16 | 121 | 193 |
+| 15 | 信頼 | しんらい | tín nhiệm | 12/16 | 77 | 102 |
 | 16 | 引張 | ひっぱり | (dẫn trương) kéo, lực kéo (ứng suất ké… | 12/16 | 57 | 93 |
 | 17 | 廃棄 | はいき | Tiêu hủy, loại bỏ | 12/16 | 55 | 120 |
 | 18 | 代入 | だいにゅう | sự thay thế, sự gán (giá trị) | 12/16 | 27 | 40 |
@@ -113,45 +113,45 @@ Dữ liệu đầy đủ cho cả 1095 từ: [tan-suat-tu-vung.csv](tan-suat-tu-
 | 20 | 有限要素 | ゆうげんようそ | (hữu hạn yếu tố) phần tử hữu hạn | 12/16 | 19 | 19 |
 | 21 | 進数 | しんすう | (tiến số) hệ đếm, cơ số (2進数: hệ nhị p… | 11/16 | 100 | 100 |
 | 22 | 信頼度 | しんらいど | độ tin cậy | 11/16 | 57 | 58 |
-| 23 | 並列 | へいれつ | song song, song hành | 11/16 | 29 | 29 |
-| 24 | 断面積 | だんめんせき | (đoạn diện tích) diện tích mặt cắt nga… | 11/16 | 23 | 58 |
-| 25 | 形状 | けいじょう | Hình thù | 11/16 | 17 | 67 |
-| 26 | 再生可能 | さいせいかのう | (tái sinh khả năng) có thể tái tạo | 10/16 | 25 | 48 |
-| 27 | 依存 | いぞん | sự phụ thuộc, sự lệ thuộc | 10/16 | 16 | 32 |
-| 28 | 規模 | きぼ | (quy mô) quy mô | 10/16 | 15 | 89 |
-| 29 | 桁 ⚠ | けた | chữ số, hàng (số); dầm (cầu) | 9/16 | 55 | 72 |
-| 30 | 近似 | きんじ | (cận tự) xấp xỉ, gần đúng | 9/16 | 33 | 35 |
-| 31 | 削減 | さくげん | (tước giảm) cắt giảm | 9/16 | 25 | 66 |
-| 32 | 改良 | かいりょう | (cải lương) cải tạo, cải tiến | 9/16 | 10 | 33 |
-| 33 | 脂 ⚠ | あぶら | Nhựa cây, mỡ | 8/16 | 48 | 54 |
-| 34 | 整数 | せいすう | (chỉnh số) số nguyên | 8/16 | 28 | 28 |
-| 35 | 領域 | りょういき | lĩnh vực khu vực | 8/16 | 27 | 53 |
+| 23 | 2 進数 | にしんすう | số nhị phân | 11/16 | 47 | 47 |
+| 24 | 並列 | へいれつ | song song, song hành | 11/16 | 29 | 29 |
+| 25 | 断面積 | だんめんせき | (đoạn diện tích) diện tích mặt cắt nga… | 11/16 | 23 | 58 |
+| 26 | 形状 | けいじょう | Hình thù | 11/16 | 17 | 67 |
+| 27 | 再生可能 | さいせいかのう | (tái sinh khả năng) có thể tái tạo | 10/16 | 25 | 48 |
+| 28 | 依存 | いぞん | sự phụ thuộc, sự lệ thuộc | 10/16 | 16 | 32 |
+| 29 | 規模 | きぼ | (quy mô) quy mô | 10/16 | 15 | 89 |
+| 30 | 桁 ⚠ | けた | chữ số, hàng (số); dầm (cầu) | 9/16 | 55 | 72 |
+| 31 | 近似 | きんじ | (cận tự) xấp xỉ, gần đúng | 9/16 | 33 | 35 |
+| 32 | 削減 | さくげん | (tước giảm) cắt giảm | 9/16 | 25 | 66 |
+| 33 | 改良 | かいりょう | (cải lương) cải tạo, cải tiến | 9/16 | 10 | 33 |
+| 34 | 脂 ⚠ | あぶら | Nhựa cây, mỡ | 8/16 | 48 | 54 |
+| 35 | 整数 | せいすう | (chỉnh số) số nguyên | 8/16 | 28 | 28 |
 | 36 | 偏差 | へんさ | Độ lệch, Sai số | 8/16 | 27 | 29 |
-| 37 | 多様性 | たようせい | tính đa dạng | 8/16 | 25 | 71 |
-| 38 | 窒素 | ちっそ | (trất tố) nitơ | 8/16 | 20 | 27 |
-| 39 | 直列 | ちょくれつ | nối tiếp, mắc nối tiếp (điện) | 8/16 | 18 | 18 |
-| 40 | 推進 | すいしん | đẩy mạnh, xúc tiến | 8/16 | 17 | 91 |
-| 41 | 蒸気機関 | じょうききかん | (chưng khí cơ quan) động cơ hơi nước | 8/16 | 12 | 12 |
-| 42 | 近年 | きんねん | (cận niên) những năm gần đây | 8/16 | 11 | 33 |
-| 43 | 超 ⚠ | ちょう | (siêu) siêu, vượt quá | 8/16 | 9 | 73 |
-| 44 | 途上国 | とじょうこく | nước đang phát triển | 8/16 | 9 | 21 |
-| 45 | 論理積 | ろんりせき | Phép toán logic and | 7/16 | 23 | 23 |
-| 46 | 係る | かかる | Liên quan, liên hệ | 7/16 | 20 | 78 |
-| 47 | 論理和 | ろんりわ | phép toán logic OR | 7/16 | 20 | 20 |
-| 48 | 欠陥 | けっかん | Khuyết tật / Lỗi | 7/16 | 19 | 127 |
-| 49 | 任意 | にんい | (nhậm ý) tùy ý, bất kỳ | 7/16 | 13 | 19 |
-| 50 | 環境保全 | かんきょうほぜん | (hoàn cảnh bảo toàn) bảo vệ môi trường | 7/16 | 12 | 25 |
+| 37 | 領域 | りょういき | lĩnh vực khu vực | 8/16 | 27 | 53 |
+| 38 | 多様性 | たようせい | tính đa dạng | 8/16 | 25 | 71 |
+| 39 | 窒素 | ちっそ | (trất tố) nitơ | 8/16 | 20 | 27 |
+| 40 | 直列 | ちょくれつ | nối tiếp, mắc nối tiếp (điện) | 8/16 | 18 | 18 |
+| 41 | 推進 | すいしん | đẩy mạnh, xúc tiến | 8/16 | 17 | 91 |
+| 42 | 蒸気機関 | じょうききかん | (chưng khí cơ quan) động cơ hơi nước | 8/16 | 12 | 12 |
+| 43 | 近年 | きんねん | (cận niên) những năm gần đây | 8/16 | 11 | 33 |
+| 44 | 超 ⚠ | ちょう | (siêu) siêu, vượt quá | 8/16 | 9 | 73 |
+| 45 | 途上国 | とじょうこく | nước đang phát triển | 8/16 | 9 | 21 |
+| 46 | 論理積 | ろんりせき | Phép toán logic and | 7/16 | 23 | 23 |
+| 47 | 係る | かかる | Liên quan, liên hệ | 7/16 | 20 | 78 |
+| 48 | 論理和 | ろんりわ | phép toán logic OR | 7/16 | 20 | 20 |
+| 49 | 実数 | じっすう | (thực số) số thực | 7/16 | 19 | 19 |
+| 50 | 欠陥 | けっかん | Khuyết tật / Lỗi | 7/16 | 19 | 127 |
 
-<details><summary>Từ chưa từng xuất hiện trong đề (23)</summary>
+<details><summary>Từ chưa từng xuất hiện trong đề (22)</summary>
 
-アロ ーダイアグラム · 一人当たり · 償う · 兼ねる · 創る · 危惧 · 担ぐ · 振り返る · 捏ねる · 整う · 棄てる · 永い · 甚だしい · 疑似 · 硬性 · 競う · 蓄える · 見据える · 踏む · 退く · 離職 · 黙る · ２次元
+振り返る · 見据える · ２次元 · 蓄える · 一人当たり · ポストドクター等1万人支援計画 · 踏む · 捏ねる · 担ぐ · 償う · 兼ねる · 退く · 甚だしい · 競う · 棄てる · 創る · 永い · 整う · 離職 · 黙る · 危惧 · 硬性
 
 </details>
 
 ## 専門科目 — 321 từ, 11 kỳ thi
 
 - Ra ở **mọi kỳ** (11/11): **17 từ**
-- Chưa từng thấy trong đề nào: **6 từ** (1%)
+- Chưa từng thấy trong đề nào: **5 từ** (2%)
 
 ### 50 từ hay thi nhất
 
@@ -190,26 +190,26 @@ Dữ liệu đầy đủ cho cả 1095 từ: [tan-suat-tu-vung.csv](tan-suat-tu-
 | 31 | 市町村 | しちょうそん | Thành phố - thị trấn - làng (đơn vị hà… | 10/11 | 27 | 30 |
 | 32 | 選定 | せんてい | (tuyển định) lựa chọn, tuyển chọn | 10/11 | 27 | 28 |
 | 33 | 堆積 | たいせき | (đôi tích) sự bồi tích, lắng đọng, trầ… | 10/11 | 24 | 24 |
-| 34 | 流体 | りゅうたい | (lưu thể) chất lưu (chất lỏng và chất … | 10/11 | 17 | 20 |
-| 35 | 接触 | せっしょく | Tiếp xúc | 10/11 | 17 | 18 |
+| 34 | 接触 | せっしょく | Tiếp xúc | 10/11 | 17 | 18 |
+| 35 | 流体 | りゅうたい | (lưu thể) chất lưu (chất lỏng và chất … | 10/11 | 17 | 20 |
 | 36 | 上流 | じょうりゅう | (thượng lưu) thượng lưu, thượng nguồn | 10/11 | 16 | 18 |
 | 37 | 圧密 | あつみつ | Nước thoát ra ngoài, thể tích giảm. Cố… | 9/11 | 93 | 93 |
 | 38 | 策定 | さくてい | (sách định) xác lập, vẽ ra kế hoạch | 9/11 | 36 | 70 |
 | 39 | 原価 | げんか | (nguyên giá) giá vốn, giá thành | 9/11 | 30 | 39 |
 | 40 | 排出 | はいしゅつ | Thải ra, thoát ra | 9/11 | 27 | 166 |
 | 41 | 大規模 | だいきぼ | (đại quy mô) quy mô lớn | 9/11 | 26 | 32 |
-| 42 | 案 ⚠ | あん | (án) phương án, dự thảo | 9/11 | 25 | 127 |
-| 43 | 含水比 | がんすいひ | (hàm thuỷ bỉ)hàm lượng nước | 9/11 | 25 | 25 |
+| 42 | 含水比 | がんすいひ | (hàm thuỷ bỉ)hàm lượng nước | 9/11 | 25 | 25 |
+| 43 | 案 ⚠ | あん | (án) phương án, dự thảo | 9/11 | 25 | 127 |
 | 44 | 動水勾配 | どうすいこうばい | (động thủy câu phối) độ dốc thủy lực, … | 9/11 | 21 | 21 |
 | 45 | 凍害 | とうがい | (đống hại) Thiệt hại do sương giá | 9/11 | 19 | 19 |
-| 46 | 浮遊 | ふゆう | (phù du) sự lơ lửng, trôi nổi | 9/11 | 16 | 23 |
-| 47 | 乾燥密度 | かんそうみつど | (kền táo mật độ) mật độ khô | 9/11 | 16 | 16 |
+| 46 | 乾燥密度 | かんそうみつど | (kền táo mật độ) mật độ khô | 9/11 | 16 | 16 |
+| 47 | 浮遊 | ふゆう | (phù du) sự lơ lửng, trôi nổi | 9/11 | 16 | 23 |
 | 48 | 接続 | せつぞく | (tiếp tục) sự kết nối, đấu nối | 9/11 | 12 | 35 |
 | 49 | 舗装 | ほそう | (phô trang) mặt đường, lát mặt đường | 8/11 | 82 | 82 |
-| 50 | 腐食 | ふしょく | (Hủ thực)ăn mòn | 8/11 | 55 | 75 |
+| 50 | 腐食 | ふしょく | (Hủ thực)ăn mòn | 8/11 | 55 | 77 |
 
-<details><summary>Từ chưa từng xuất hiện trong đề (6)</summary>
+<details><summary>Từ chưa từng xuất hiện trong đề (5)</summary>
 
-くい打ち · 分泌状況 · 換地処分 · 援助 · 絡み合う · 道路盤
+絡み合う · 換地処分 · くい打ち · 援助 · 分泌状況
 
 </details>

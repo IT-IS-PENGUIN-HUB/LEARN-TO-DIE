@@ -1,7 +1,9 @@
 import { useMemo, useState } from 'react';
 import { useVocab } from '../../context/VocabProvider.jsx';
 import { autofillWord } from '../../services/ai.js';
+import { byFrequency, isFrequent, wordFreq } from '../../lib/freq.js';
 import { IconCheck, IconWand, IconX } from '../icons.jsx';
+import FreqBadge from './FreqBadge.jsx';
 
 /** Từ hỏng: thiếu nghĩa (quiz sẽ hiện ô trống) hoặc thiếu cách đọc */
 const isBroken = (w) => !w.meaning.trim() || !w.kana.trim();
@@ -17,6 +19,8 @@ export default function VocabManager({ subject, initialQuery = '' }) {
   const { vocab, updateWord, deleteWord } = useVocab();
   const [q, setQ] = useState(initialQuery);
   const [onlyBroken, setOnlyBroken] = useState(false);
+  const [onlyFrequent, setOnlyFrequent] = useState(false);
+  const [sortByFreq, setSortByFreq] = useState(false);
   const [editId, setEditId] = useState(null);
   const [draft, setDraft] = useState(emptyDraft);
   const [confirmId, setConfirmId] = useState(null); // đang hỏi "xoá thật?"
@@ -25,6 +29,10 @@ export default function VocabManager({ subject, initialQuery = '' }) {
 
   const list = vocab[subject];
   const brokenCount = useMemo(() => list.filter(isBroken).length, [list]);
+  const frequentCount = useMemo(
+    () => list.filter((w) => isFrequent(wordFreq(w.jp, subject))).length,
+    [list, subject],
+  );
 
   // Sửa nốt từ hỏng cuối cùng thì bộ lọc tự tắt — không thì nút bị khoá
   // (không còn từ hỏng) mà danh sách vẫn kẹt ở trạng thái rỗng.
@@ -32,12 +40,14 @@ export default function VocabManager({ subject, initialQuery = '' }) {
 
   const shown = useMemo(() => {
     const needle = q.trim().toLowerCase();
-    return list.filter((w) => {
+    const out = list.filter((w) => {
       if (brokenFilterOn && !isBroken(w)) return false;
+      if (onlyFrequent && !isFrequent(wordFreq(w.jp, subject))) return false;
       if (!needle) return true;
       return `${w.jp} ${w.kana} ${w.meaning}`.toLowerCase().includes(needle);
     });
-  }, [list, q, brokenFilterOn]);
+    return sortByFreq ? out.sort(byFrequency(subject)) : out;
+  }, [list, q, brokenFilterOn, onlyFrequent, sortByFreq, subject]);
 
   const startEdit = (w) => {
     setEditId(w.id);
@@ -110,6 +120,23 @@ export default function VocabManager({ subject, initialQuery = '' }) {
           title="Chỉ hiện từ thiếu nghĩa hoặc thiếu cách đọc"
         >
           ⚠ Thiếu nội dung ({brokenCount})
+        </button>
+        <button
+          type="button"
+          className={`btn btn-xs ${onlyFrequent ? 'btn-primary' : 'btn-outline'}`}
+          onClick={() => setOnlyFrequent((v) => !v)}
+          disabled={!frequentCount}
+          title="Chỉ hiện từ đã ra ở từ 35% số kỳ thi của môn này trở lên"
+        >
+          🔥 Hay thi ({frequentCount})
+        </button>
+        <button
+          type="button"
+          className={`btn btn-xs ${sortByFreq ? 'btn-primary' : 'btn-outline'}`}
+          onClick={() => setSortByFreq((v) => !v)}
+          title="Xếp từ ra nhiều kỳ nhất lên đầu"
+        >
+          ↓ Xếp theo tần suất
         </button>
       </div>
 
@@ -185,7 +212,10 @@ export default function VocabManager({ subject, initialQuery = '' }) {
             ) : (
               <>
                 <div className="manager-word">
-                  <span className="jp-text manager-jp">{w.jp}</span>
+                  <span className="jp-text manager-jp">
+                    {w.jp}
+                    <FreqBadge jp={w.jp} subject={subject} full />
+                  </span>
                   <span className="manager-kana">{w.kana || <em className="manager-missing">thiếu cách đọc</em>}</span>
                   <span className="manager-meaning">{w.meaning || <em className="manager-missing">thiếu nghĩa</em>}</span>
                 </div>

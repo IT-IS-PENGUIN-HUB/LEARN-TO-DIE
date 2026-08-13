@@ -28,6 +28,11 @@
   --shadow-header: 0 1px 3px rgba(0, 0, 0, 0.5);
   --hero-bg: #0f172a;
   --hero-pattern: radial-gradient(circle at 50% 0%, rgba(58, 134, 255, 0.15) 0%, transparent 70%);
+  /* Nhãn "hay thi" — cam sáng để nổi trên nền tối */
+  --freq-hot: #fb923c;
+  /* Sáng hơn --primary một bậc: chữ 11px màu #3a86ff trên nền thẻ tối chỉ được
+     4,2:1, chưa đạt ngưỡng đọc được 4,5:1 */
+  --freq-often: #60a5fa;
 }
 
 :root[data-theme='light'] {
@@ -43,6 +48,9 @@
   --shadow-header: 0 1px 3px rgba(0, 0, 0, 0.05);
   --hero-bg: #f8fafc;
   --hero-pattern: radial-gradient(circle at 50% 50%, rgba(58, 134, 255, 0.05) 0%, transparent 50%);
+  /* Nền sáng cần màu đậm hơn mới đủ tương phản cho chữ nhỏ 11px */
+  --freq-hot: #c2410c;
+  --freq-often: #1d4ed8;
 }
 
 /* ============ Base ============ */
@@ -1429,6 +1437,43 @@ textarea.text-input {
   font-size: 1.05rem;
   font-weight: 600;
   word-break: break-word;
+}
+
+/* ============ Nhãn tần suất ra đề ============
+   Màu chỉ để phân cấp nhanh, chữ vẫn nói rõ nghĩa — nhìn không phân biệt được
+   màu thì đọc chữ "hay thi / hay gặp" là đủ. Dùng token theme để bản sáng và
+   bản tối đều đọc được. */
+.freq-badge {
+  display: inline-block;
+  margin-left: 0.45rem;
+  padding: 0.1rem 0.42rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  font-family: inherit;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: help;
+}
+
+.freq-badge.is-hot {
+  border-color: color-mix(in srgb, var(--freq-hot) 45%, transparent);
+  background: color-mix(in srgb, var(--freq-hot) 16%, transparent);
+  color: var(--freq-hot);
+}
+
+.freq-badge.is-often {
+  border-color: color-mix(in srgb, var(--freq-often) 40%, transparent);
+  background: color-mix(in srgb, var(--freq-often) 14%, transparent);
+  color: var(--freq-often);
+}
+
+.freq-badge.is-seen,
+.freq-badge.is-unseen {
+  border-color: var(--border-color);
+  color: var(--text-muted);
+  font-weight: 500;
 }
 
 .manager-kana {

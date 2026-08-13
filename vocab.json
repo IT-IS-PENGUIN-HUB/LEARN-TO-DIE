@@ -74,15 +74,15 @@
     },
     {
       "id": "1777721495585",
-      "jp": "アロ ーダイアグラム",
-      "kana": "あろーだいあぐらむ",
-      "meaning": "sơ đồ mũi tên, biểu đồ dòng chảy",
-      "exJp": "アローダイアグラムを作成する。\nTạo sơ đồ mũi tên.",
-      "exVi": "",
+      "jp": "アローダイヤグラム",
+      "kana": "あろーだいやぐらむ",
+      "meaning": "sơ đồ mũi tên, sơ đồ mạng PERT (đề cũng viết アローダイアグラム)",
+      "exJp": "アローダイヤグラムを作成して工程を管理する。",
+      "exVi": "Lập sơ đồ mũi tên để quản lý tiến độ thi công.",
       "score": 3,
       "nextReview": 1786230454051,
       "mastered": false,
-      "updatedAt": 1785884854051
+      "updatedAt": 1786591376965
     },
     {
       "id": "1777721509635",
@@ -5355,15 +5355,15 @@
     },
     {
       "id": "1786573248380_ehxwq3",
-      "jp": "疑似",
+      "jp": "擬似",
       "kana": "ぎじ",
       "meaning": "(nghi tự) giả, mô phỏng (pseudo)",
-      "exJp": "疑似乱数を用いてシミュレーションを行う。",
+      "exJp": "擬似乱数を用いてシミュレーションを行う。",
       "exVi": "Thực hiện mô phỏng bằng số ngẫu nhiên giả.",
       "score": 0,
       "nextReview": 0,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786591376965
     },
     {
       "id": "1786573248380_7rgdn7",
@@ -12551,15 +12551,15 @@
     },
     {
       "id": "1786573248380_ai6t9o",
-      "jp": "道路盤",
-      "kana": "どうろばん",
-      "meaning": "(đạo lộ bàn) nền móng đường, lớp móng đường",
-      "exJp": "舗装の前に道路盤をよく締め固める必要がある。",
+      "jp": "路盤",
+      "kana": "ろばん",
+      "meaning": "(lộ bàn) lớp móng đường (nằm dưới lớp mặt đường, trên 路床)",
+      "exJp": "舗装の前に路盤をよく締め固める必要がある。",
       "exVi": "Trước khi rải mặt đường cần đầm chặt kỹ lớp móng đường.",
       "score": 0,
       "nextReview": 0,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786591376965
     },
     {
       "id": "1786573248380_vkzyea",

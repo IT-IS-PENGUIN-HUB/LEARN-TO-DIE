@@ -3,6 +3,7 @@ import { useVocab } from '../../context/VocabProvider.jsx';
 import { buildQueue } from '../../lib/srs.js';
 import { speakJapanese } from '../../services/tts.js';
 import { IconArrowRight, IconCheck, IconStar, IconVolume, IconX } from '../icons.jsx';
+import FreqBadge from './FreqBadge.jsx';
 
 const SESSION_SIZE = 10;
 const OPTION_KEYS = ['1', '2', '3', '4'];
@@ -167,7 +168,16 @@ export default function QuizMode({ subject, onRecordAnswer, pool }) {
           <IconVolume />
         </button>
       </div>
-      <p className="quiz-hint">{answered ? word.kana || ' ' : 'Chọn nghĩa đúng (phím 1-4)'}</p>
+      <p className="quiz-hint">
+        {answered ? (
+          <>
+            {word.kana || ' '}
+            <FreqBadge jp={word.jp} subject={subject} full />
+          </>
+        ) : (
+          'Chọn nghĩa đúng (phím 1-4)'
+        )}
+      </p>
       <div className="quiz-options">
         {options.map((opt, i) => {
           const isCorrectOpt = opt.id === word.id;
