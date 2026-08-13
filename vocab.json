@@ -7742,10 +7742,10 @@
       "meaning": "(Duyệt lãm) Đọc, duyệt web, xem",
       "exJp": "設計図書の閲覧は許可された者に限る。",
       "exVi": "Chỉ người được phép mới được xem hồ sơ thiết kế.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1786749659124,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786663259124
     },
     {
       "id": "1786573248380_89lmre",
