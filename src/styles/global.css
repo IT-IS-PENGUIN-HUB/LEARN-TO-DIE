@@ -2572,6 +2572,21 @@ textarea.text-input {
   border-bottom: 1px solid var(--border-color);
   box-shadow: inset 0 -2px 0 rgba(var(--primary-rgb), 0.28);
 }
+/* Nút quay lại trong thanh làm bài chỉ có icon (không chữ) — đệm lệch của dạng
+   viên thuốc làm mũi tên lệch tâm. ロン chốt 14/8: ô VUÔNG bo góc, mũi tên
+   chính giữa; nút "← Quay lại" có chữ ở các màn khác giữ dạng viên thuốc. */
+.qb-topbar .back-btn {
+  width: 44px;
+  height: 44px;
+  min-height: 44px;
+  flex: 0 0 44px;
+  padding: 0;
+  gap: 0;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+}
+
 .qb-crumb { display: flex; flex-direction: column; min-width: 0; }
 .qb-crumb strong { font-size: 0.85rem; }
 .qb-chips { display: flex; gap: 0.35rem; flex-wrap: wrap; margin-top: 0.15rem; }
