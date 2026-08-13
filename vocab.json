@@ -391,10 +391,10 @@
       "meaning": "liên quan",
       "exJp": "技術者は公共の安全に関わる仕事を担う。",
       "exVi": "Kỹ thuật viên đảm nhận công việc liên quan đến an toàn công cộng.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1786688734856,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786602334856
     },
     {
       "id": "1786573248380_297eg8",
@@ -403,10 +403,10 @@
       "meaning": "ràng buộc, hạn chế",
       "exJp": "設計条件には多くの制約がある。",
       "exVi": "Điều kiện thiết kế có nhiều ràng buộc.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1786688742239,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786602342239
     },
     {
       "id": "1786573248380_jqfj87",
