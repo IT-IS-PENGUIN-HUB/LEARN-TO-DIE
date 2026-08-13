@@ -1,8 +1,41 @@
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { EXAM_YEARS, SUBJECT_META, BANK_TOTAL } from '../../data/examBank.js';
+import { EXAM_RULES } from '../../data/examRules.js';
 import { IconArrowLeft } from '../icons.jsx';
 
 const SUBJECT_ORDER = ['KENSETSU', 'KISO', 'TEKISEI'];
+
+/** Thẻ một môn thi thử: quy chế đọc từ EXAM_RULES, năm đọc từ manifest. */
+function MockCard({ subject, total, onStart }) {
+  const [year, setYear] = useState('random');
+  const rule = EXAM_RULES[subject];
+  const years = EXAM_YEARS.filter((y) => (y.subjects[subject] ?? 0) > 0);
+  return (
+    <div className="qb-ecard">
+      <div className="qb-ehead">
+        <h3 className="jp-text">{SUBJECT_META[subject].ja}</h3>
+        <span>{SUBJECT_META[subject].vi}</span>
+      </div>
+      <div className="qb-ebody">
+        <div className="qb-kv"><span>Thời gian</span><b>{rule.minutes} phút</b></div>
+        <div className="qb-kv">
+          <span>Số câu trả lời</span>
+          <b>{rule.pick ?? 'tất cả'}{rule.perGroupPick ? ` (${rule.perGroupPick}/nhóm)` : ''}</b>
+        </div>
+        <div className="qb-kv"><span>Điểm đạt</span><b>{rule.passPoints} điểm</b></div>
+        <div className="qb-kv"><span>Ngân hàng</span><b>{total} câu</b></div>
+        <select className="qb-select qb-mock-year" value={year} onChange={(e) => setYear(e.target.value)}
+          aria-label="Chọn năm đề thi">
+          <option value="random">Năm: ngẫu nhiên</option>
+          {years.map((y) => <option key={y.year} value={y.year}>{y.year} · {y.wa}</option>)}
+        </select>
+        <button type="button" className="btn btn-primary qb-mock-start" onClick={() => onStart(subject, year)}>
+          Bắt đầu thi thử
+        </button>
+      </div>
+    </div>
+  );
+}
 
 /**
  * Màn chọn đề: lọc theo môn + lưới thẻ năm.
@@ -14,6 +47,7 @@ export default function PracticeHome({
   subjectFilter, onChangeFilter, onOpenYear, onBack, statsOf,
   resume, onResume, onDropResume,
   wrongCount, bookmarkCount, onStartWrong, onStartBookmarks, onOpenCustom,
+  rank, attempts, onStartMock,
 }) {
   const subjects = subjectFilter === 'all' ? SUBJECT_ORDER : [subjectFilter];
 
@@ -39,17 +73,27 @@ export default function PracticeHome({
           <strong>{BANK_TOTAL} câu · {EXAM_YEARS.length} năm</strong>
           <span>Song ngữ Nhật–Việt, có lời giải chi tiết</span>
         </div>
+        {rank && (
+          <div className="qb-hero-rank" title={rank.missing ? `Để lên tiếp: ${rank.missing.join(' · ')}` : undefined}>
+            <b>{rank.label}</b>
+            <span>{rank.missing ? `còn: ${rank.missing[0]}` : 'hạng cao nhất 🏆'}</span>
+          </div>
+        )}
       </div>
 
       {resume && (
         <div className="qb-resume">
           <div>
-            <strong>Đang làm dở</strong>
+            <strong>{resume.mode === 'mock' ? 'Đang THI dở — đồng hồ vẫn chạy!' : 'Đang làm dở'}</strong>
             <span>
-              {resume.qids?.length
-                ? resume.label ?? 'Bộ câu tuỳ chỉnh'
-                : `${resume.year} · ${resume.subjectFilter === 'all' ? 'cả 3 môn' : SUBJECT_META[resume.subjectFilter]?.ja ?? ''}`}
-              {' '}· câu {resume.index + 1}/{resume.total}
+              {resume.mode === 'mock'
+                ? <>Thi thử <span className="jp-text">{SUBJECT_META[resume.subject]?.ja}</span> đề {resume.year} · đã trả lời {Object.keys(resume.answers ?? {}).length} câu</>
+                : <>
+                    {resume.qids?.length
+                      ? resume.label ?? 'Bộ câu tuỳ chỉnh'
+                      : `${resume.year} · ${resume.subjectFilter === 'all' ? 'cả 3 môn' : SUBJECT_META[resume.subjectFilter]?.ja ?? ''}`}
+                    {' '}· câu {(resume.index ?? 0) + 1}/{resume.total}
+                  </>}
             </span>
           </div>
           <button type="button" className="btn btn-primary btn-sm" onClick={onResume}>
@@ -122,6 +166,34 @@ export default function PracticeHome({
         ))}
       </div>
 
+      {/* ---- Thi thử đúng quy chế ---- */}
+      <h3 className="qb-sec-title"><span className="jp-text">模擬試験</span> · Thi thử — bấm giờ, không tạm dừng, chấm theo điểm đạt thật</h3>
+      <div className="qb-ecards">
+        {SUBJECT_ORDER.map((s) => (
+          <MockCard key={s} subject={s} total={totals[s]} onStart={onStartMock} />
+        ))}
+      </div>
+
+      {attempts?.length > 0 && (
+        <div className="qb-history">
+          <h3 className="qb-sec-title">Lịch sử thi thử</h3>
+          {attempts.slice(0, 6).map((a) => (
+            <div key={a.id} className="qb-att">
+              <span className={`qb-att-badge ${a.passed ? 'is-pass' : 'is-fail'}`}>
+                {a.passed ? 'ĐỖ' : 'TRƯỢT'}
+              </span>
+              <span className="jp-text">{SUBJECT_META[a.subject]?.short}</span>
+              <span>đề {a.year}</span>
+              <b>{a.score} điểm</b>
+              <span className="qb-att-sub">
+                {a.correct}/{a.answered} đúng · {new Date(a.startedAt).toLocaleDateString('vi-VN')}
+              </span>
+            </div>
+          ))}
+        </div>
+      )}
+
+      <h3 className="qb-sec-title">Làm đề theo năm</h3>
       <div className="qb-years">
         {EXAM_YEARS.map((y) => {
           const count = subjects.reduce((n, s) => n + (y.subjects[s] ?? 0), 0);

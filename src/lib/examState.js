@@ -14,15 +14,29 @@ export const EXAM_EVENT = 'ltd-exam-changed';
 
 export function loadExamState() {
   const s = loadJSON(KEYS.examState, null);
-  if (!s || typeof s !== 'object') return { srs: {}, bookmarks: {}, attempts: {}, session: null };
+  if (!s || typeof s !== 'object') {
+    return { srs: {}, bookmarks: {}, attempts: {}, daily: {}, session: null };
+  }
   return {
     srs: s.srs ?? {},
     bookmarks: s.bookmarks ?? {},
-    // attempts: lịch sử thi thử (GĐ5 mới ghi), khai sẵn để file sync đủ 3 nhánh
+    // attempts: lịch sử thi thử — mỗi lần thi một bản ghi bất biến, hợp theo id
     attempts: s.attempts ?? {},
+    // daily: nhật ký đúng/sai theo ngày {'2026-08-14': {r, w}} — nuôi điều kiện
+    // "độ chính xác 30 ngày" của thang xếp hạng
+    daily: s.daily ?? {},
     session: s.session ?? null,
   };
 }
+
+/** Khoá ngày theo giờ ĐỊA PHƯƠNG (học đêm ở Nhật mà tính theo UTC là lệch ngày). */
+export function dayKey(now = Date.now()) {
+  const d = new Date(now);
+  const p = (n) => String(n).padStart(2, '0');
+  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
+}
+
+const KEEP_DAILY_DAYS = 62; // đủ nuôi cửa sổ 30 ngày, file không phình vô hạn
 
 /**
  * `notify: false` dành RIÊNG cho luồng sync: sync ghi xong mà cũng phát sự kiện
@@ -48,8 +62,19 @@ function blank(now) {
 export function recordExamAnswer(state, qid, correct, now = Date.now()) {
   const prev = state.srs[qid] ?? blank(now);
   const next = applyAnswer(prev, correct, now);
+
+  // Nhật ký ngày: cộng dồn + cắt ngày quá cũ (chỉ dọn khi sang ngày mới, rẻ)
+  const key = dayKey(now);
+  const today = state.daily?.[key] ?? { r: 0, w: 0 };
+  const daily = { ...state.daily, [key]: { r: today.r + (correct ? 1 : 0), w: today.w + (correct ? 0 : 1) } };
+  if (!state.daily?.[key]) {
+    const cutoff = dayKey(now - KEEP_DAILY_DAYS * 24 * 60 * 60 * 1000);
+    for (const k of Object.keys(daily)) if (k < cutoff) delete daily[k];
+  }
+
   return {
     ...state,
+    daily,
     srs: {
       ...state.srs,
       [qid]: {
@@ -59,6 +84,25 @@ export function recordExamAnswer(state, qid, correct, now = Date.now()) {
       },
     },
   };
+}
+
+/** Độ chính xác trong N ngày gần nhất (0..1); chưa có dữ liệu → null. */
+export function accuracyOverDays(state, days = 30, now = Date.now()) {
+  const cutoff = dayKey(now - days * 24 * 60 * 60 * 1000);
+  let r = 0;
+  let w = 0;
+  for (const [k, v] of Object.entries(state.daily ?? {})) {
+    if (k >= cutoff) {
+      r += v.r ?? 0;
+      w += v.w ?? 0;
+    }
+  }
+  return r + w === 0 ? null : r / (r + w);
+}
+
+/** Ghi một lần thi thử vào lịch sử (bản ghi bất biến, hợp theo id khi sync). */
+export function addAttempt(state, attempt) {
+  return { ...state, attempts: { ...state.attempts, [attempt.id]: attempt } };
 }
 
 export function toggleBookmark(state, qid, now = Date.now()) {

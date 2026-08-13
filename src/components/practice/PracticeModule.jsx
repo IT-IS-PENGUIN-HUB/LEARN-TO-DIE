@@ -2,14 +2,17 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import PracticeHome from './PracticeHome.jsx';
 import QuestionRunner from './QuestionRunner.jsx';
 import CustomPractice from './CustomPractice.jsx';
-import { EXAM_YEARS, SUBJECT_META } from '../../data/examBank.js';
+import MockExam from './MockExam.jsx';
+import { EXAM_YEARS, SUBJECT_META, BANK_TOTAL } from '../../data/examBank.js';
+import { gradeExam } from '../../data/examRules.js';
 import {
   loadYear, loadShard, loadQuestionsByQids, shuffleQuestions, isCorrect,
 } from '../../lib/examData.js';
 import {
-  loadExamState, saveExamState, recordExamAnswer, toggleBookmark,
+  loadExamState, saveExamState, recordExamAnswer, toggleBookmark, addAttempt,
   statsFor, saveSession, clearSession, activeSession, EXAM_EVENT,
 } from '../../lib/examState.js';
+import { computeRank } from '../../lib/rank.js';
 import { buildQueue } from '../../lib/srs.js';
 import { KEYS, loadJSON, saveJSON } from '../../lib/storage.js';
 import { IconArrowLeft } from '../icons.jsx';
@@ -34,8 +37,12 @@ export default function PracticeModule({ onBack }) {
   // meta của phiên đang chạy:
   //   {mode:'year', year, subjectFilter}                — làm đề theo năm
   //   {mode:'wrong'|'bookmark'|'custom', qids, label}   — pool câu theo danh sách
+  //   {mode:'mock', subject, year, startedAt}           — thi thử bấm giờ
   const [meta, setMeta] = useState(null);
   const [customOpen, setCustomOpen] = useState(false);
+  const [mockFlags, setMockFlags] = useState({});
+  const [mockResult, setMockResult] = useState(null); // {attempt, questions, answers}
+  const [reviewMode, setReviewMode] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -186,24 +193,102 @@ export default function PracticeModule({ onBack }) {
 
   // Lưu chỗ đang làm sau mỗi thay đổi — app không có router nên F5, bản cập nhật
   // PWA, hay đóng tab đều đưa về trang chủ; đề 専門 35 câu mà mất phiên thì rất ức.
+  // Khi ôn (run) lưu cả index; khi thi (mock) lưu đáp án + cờ xem lại + giờ bắt
+  // đầu — đồng hồ TIẾP TỤC chạy lúc app đóng, đúng luật "không tạm dừng".
   useEffect(() => {
-    if (screen !== 'run' || !meta) return;
-    commit((s) => saveSession(s, {
-      ...meta, index, answers, total: questions.length, at: Date.now(),
-    }));
-  }, [screen, meta, index, answers, questions.length, commit]);
+    if (reviewMode || !meta) return;
+    if (screen === 'run') {
+      commit((s) => saveSession(s, {
+        ...meta, index, answers, total: questions.length, at: Date.now(),
+      }));
+    } else if (screen === 'mock') {
+      commit((s) => saveSession(s, {
+        ...meta, answers, flags: mockFlags, total: questions.length, at: Date.now(),
+      }));
+    }
+  }, [screen, meta, index, answers, mockFlags, questions.length, commit, reviewMode]);
+
+  // ---- THI THỬ (mock exam) ----------------------------------------------
+
+  const startMock = useCallback((subject, yearSel, restore = null) => guarded(async () => {
+    const candidates = EXAM_YEARS.filter((y) => (y.subjects[subject] ?? 0) > 0).map((y) => y.year);
+    const year = yearSel === 'random'
+      ? candidates[Math.floor(Math.random() * candidates.length)]
+      : Number(yearSel);
+    const shard = await loadShard(year, subject);
+    const list = [...shard.questions]
+      .sort((a, b) => (a.ord ?? 0) - (b.ord ?? 0))
+      .map((q) => ({ ...q, year: shard.year, subject: shard.subject }));
+    setQuestions(list);
+    setMeta({ mode: 'mock', subject, year, startedAt: restore?.startedAt ?? Date.now() });
+    setAnswers(restore?.answers ?? {});
+    setMockFlags(restore?.flags ?? {});
+    setMockResult(null);
+    setScreen('mock');
+    window.scrollTo(0, 0);
+  }), [guarded]);
+
+  /** Chấm bài: MỘT commit gộp attempt + toàn bộ SRS + xoá phiên — không chấm đôi. */
+  const submitMock = useCallback((reason) => {
+    if (!meta || meta.mode !== 'mock' || mockResult) return;
+    const now = Date.now();
+    const graded = questions
+      .filter((q) => answers[q.qid])
+      .map((q) => ({ q, correct: isCorrect(q, answers[q.qid]) }));
+    const correct = graded.filter((g) => g.correct).length;
+    const { score, passed } = gradeExam(meta.subject, correct);
+    const attempt = {
+      id: `ex_${meta.startedAt}_${Math.random().toString(36).slice(2, 6)}`,
+      mode: 'exam',
+      subject: meta.subject,
+      year: meta.year,
+      startedAt: meta.startedAt,
+      durationSec: Math.round((now - meta.startedAt) / 1000),
+      answered: graded.length,
+      correct,
+      score,
+      passed,
+      reason,
+    };
+    commit((s0) => {
+      let s = addAttempt(s0, attempt);
+      for (const g of graded) s = recordExamAnswer(s, g.q.qid, g.correct, now);
+      return clearSession(s, now);
+    });
+    setMockResult({ attempt });
+    setScreen('mock-result');
+    window.scrollTo(0, 0);
+  }, [meta, questions, answers, commit, mockResult]);
+
+  const abandonMock = useCallback(() => {
+    commit(clearSession);
+    setMeta(null);
+    setScreen('home');
+    window.scrollTo(0, 0);
+  }, [commit]);
 
   const resume = activeSession(examState);
 
   /** Mở lại phiên dở — phiên cũ (trước GĐ4) không có mode thì coi là theo năm. */
   const resumeSession = useCallback(() => {
     if (!resume) return;
-    if (resume.qids?.length) {
+    if (resume.mode === 'mock') {
+      startMock(resume.subject, resume.year, resume);
+    } else if (resume.qids?.length) {
       startQids(resume.qids, resume.mode ?? 'custom', resume.label ?? 'Làm tiếp', resume);
     } else {
       startYear(resume.year, resume.subjectFilter ?? 'all', resume);
     }
-  }, [resume, startQids, startYear]);
+  }, [resume, startQids, startYear, startMock]);
+
+  // Thang xếp hạng: derive thuần từ examState đã sync → hai máy tự khớp
+  const rank = useMemo(() => computeRank(examState, BANK_TOTAL), [examState]);
+  const attemptList = useMemo(
+    () => Object.values(examState.attempts ?? {})
+      .filter((a) => a?.mode === 'exam')
+      .sort((x, y) => (y.startedAt ?? 0) - (x.startedAt ?? 0)),
+    [examState]
+  );
 
   const select = useCallback((q, letter) => {
     if (answers[q.qid]) return;
@@ -256,6 +341,63 @@ export default function PracticeModule({ onBack }) {
     );
   }
 
+  if (screen === 'mock') {
+    return (
+      <MockExam
+        questions={questions}
+        subject={meta.subject}
+        startedAt={meta.startedAt}
+        answers={answers}
+        flags={mockFlags}
+        prefs={prefs}
+        onAnswer={(qid, letter) => setAnswers((a) => {
+          const next = { ...a };
+          if (letter === null) delete next[qid];
+          else next[qid] = letter;
+          return next;
+        })}
+        onFlag={(qid) => setMockFlags((f) => ({ ...f, [qid]: !f[qid] }))}
+        onSubmit={submitMock}
+        onAbandon={abandonMock}
+      />
+    );
+  }
+
+  if (screen === 'mock-result' && mockResult) {
+    const a = mockResult.attempt;
+    const rule = SUBJECT_META[a.subject];
+    return (
+      <section className="qb-wrap container">
+        <div className="section-header">
+          <button type="button" className="back-btn" onClick={() => { setMockResult(null); setScreen('home'); }}>
+            <IconArrowLeft /> Quay lại
+          </button>
+          <h2>Kết quả thi thử</h2>
+        </div>
+        <div className={`qb-result qb-mock-verdict ${a.passed ? 'is-pass' : 'is-fail'}`}>
+          <span className="qb-verdict-badge">{a.passed ? 'ĐỖ 合格' : 'TRƯỢT 不合格'}</span>
+          <strong>{a.score} điểm</strong>
+          <span>
+            {a.correct}/{a.answered} câu đúng · <span className="jp-text">{rule?.ja}</span> đề {a.year} ·{' '}
+            {Math.floor(a.durationSec / 60)} phút {a.durationSec % 60} giây · {a.reason}
+          </span>
+          <div className="qb-result-btns">
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={() => { setReviewMode(true); setIndex(0); setScreen('run'); }}
+            >
+              Xem lại từng câu + lời giải
+            </button>
+            <button type="button" className="btn btn-outline" onClick={() => { setMockResult(null); setScreen('home'); }}>
+              Về màn chọn đề
+            </button>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   if (screen === 'run') {
     return (
       <QuestionRunner
@@ -264,11 +406,12 @@ export default function PracticeModule({ onBack }) {
         answers={answers}
         examState={examState}
         prefs={{ ...prefs, set: setPref }}
-        onSelect={select}
+        review={reviewMode}
+        onSelect={reviewMode ? () => {} : select}
         onGo={go}
         onToggleBookmark={(qid) => commit((s) => toggleBookmark(s, qid))}
-        onExit={exitRun}
-        onFinish={finish}
+        onExit={reviewMode ? () => { setReviewMode(false); setScreen('mock-result'); } : exitRun}
+        onFinish={reviewMode ? () => { setReviewMode(false); setScreen('mock-result'); } : finish}
       />
     );
   }
@@ -324,6 +467,9 @@ export default function PracticeModule({ onBack }) {
         onStartWrong={startWrong}
         onStartBookmarks={startBookmarks}
         onOpenCustom={() => setCustomOpen(true)}
+        rank={rank}
+        attempts={attemptList}
+        onStartMock={startMock}
       />
       {customOpen && (
         <CustomPractice

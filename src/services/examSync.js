@@ -57,11 +57,24 @@ export function mergeExamState(local, remote) {
   // Hợp theo id — mỗi lần thi thử là một bản ghi bất biến, có ở đâu giữ ở đó
   const attempts = { ...(b.attempts ?? {}), ...(a.attempts ?? {}) };
 
+  // Nhật ký ngày: MAX từng phía cho mỗi ngày — cùng lý do với right/wrong của
+  // srs: lũy đẳng, không bao giờ mất "đã học hôm đó"; hai máy cùng học một
+  // ngày thì hơi đếm thiếu, chấp nhận được cho mục đích xếp hạng.
+  const daily = {};
+  for (const k of new Set([...Object.keys(a.daily ?? {}), ...Object.keys(b.daily ?? {})])) {
+    const x = a.daily?.[k];
+    const y = b.daily?.[k];
+    daily[k] = {
+      r: Math.max(x?.r ?? 0, y?.r ?? 0),
+      w: Math.max(x?.w ?? 0, y?.w ?? 0),
+    };
+  }
+
   const sa = a.session;
   const sb = b.session;
   const session = !sa ? sb ?? null : !sb ? sa : (sb.at ?? 0) > (sa.at ?? 0) ? sb : sa;
 
-  return { srs, bookmarks, attempts, session };
+  return { srs, bookmarks, attempts, daily, session };
 }
 
 /**

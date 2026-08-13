@@ -58,10 +58,11 @@ function Figures({ names, label }) {
 export default function QuestionRunner({
   questions, index, answers, prefs, examState,
   onSelect, onGo, onToggleBookmark, onExit, onFinish,
+  review = false, // xem lại sau thi thử: mọi câu lộ đáp án + lời giải, không chọn được nữa
 }) {
   const q = questions[index];
   const picked = answers[q?.qid] ?? null;
-  const answered = picked !== null;
+  const answered = review || picked !== null;
   const [addOpen, setAddOpen] = useState(false);
   const explRef = useRef(null);
   const { lang, furi, size } = prefs;
@@ -69,10 +70,11 @@ export default function QuestionRunner({
   // Trả lời xong thì đưa phần lời giải vào tầm mắt — nội dung dài, không cuộn
   // thì người học không biết là đã có giải thích ở dưới.
   useEffect(() => {
-    if (answered && explRef.current) {
+    // Chế độ xem lại thì đừng tự cuộn tới lời giải — người xem đang đọc từ đề xuống
+    if (answered && !review && explRef.current) {
       explRef.current.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
-  }, [answered, q?.qid]);
+  }, [answered, q?.qid, review]);
 
   useEffect(() => setAddOpen(false), [q?.qid]);
 
@@ -83,7 +85,7 @@ export default function QuestionRunner({
       if (e.target?.matches?.('input, textarea, select')) return;
       if (e.metaKey || e.ctrlKey || e.altKey) return;
       const k = e.key.toUpperCase();
-      if (LETTERS.includes(k) && q && !answered) {
+      if (LETTERS.includes(k) && q && !answered && !review) {
         const i = LETTERS.indexOf(k);
         if (i < q.oJa.length) { e.preventDefault(); onSelect(q, k); }
       } else if (e.key === 'ArrowRight' || (e.key === 'Enter' && answered)) {

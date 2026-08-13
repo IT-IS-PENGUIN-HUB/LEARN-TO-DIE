@@ -2915,3 +2915,130 @@ textarea.text-input {
   padding-top: 1rem;
   border-top: 1px solid var(--border-color);
 }
+
+/* ---- GĐ5: thi thử + xếp hạng ---- */
+.qb-hero-rank {
+  margin-left: auto;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.4;
+  padding-left: 1rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+}
+.qb-hero-rank b { font-size: 1.02rem; letter-spacing: -0.01em; white-space: nowrap; }
+.qb-hero-rank span { font-size: 0.72rem; color: rgba(255, 255, 255, 0.85); }
+
+.qb-sec-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 1.4rem 0 0.7rem;
+}
+
+.qb-ecards { display: grid; gap: 0.8rem; grid-template-columns: repeat(auto-fit, minmax(235px, 1fr)); }
+.qb-ecard { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 13px; overflow: hidden; }
+.qb-ehead {
+  padding: 0.85rem 1rem;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary), color-mix(in srgb, var(--primary) 45%, #08122c));
+}
+.qb-ehead h3 { font-size: 1rem; }
+.qb-ehead span { font-size: 0.76rem; color: rgba(255, 255, 255, 0.82); }
+.qb-ebody { padding: 0.75rem 1rem 1rem; }
+.qb-kv {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.3rem 0;
+  font-size: 0.83rem;
+  border-bottom: 1px dashed var(--border-color);
+}
+.qb-kv:last-of-type { border-bottom: 0; }
+.qb-mock-year { width: 100%; margin: 0.6rem 0 0.55rem; }
+.qb-mock-start { width: 100%; }
+
+.qb-history { margin-top: 0.9rem; }
+.qb-att {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.85rem;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background: var(--card-bg);
+  margin-bottom: 0.4rem;
+}
+.qb-att-badge { font-size: 0.68rem; font-weight: 700; padding: 0.1rem 0.5rem; border-radius: 6px; }
+.qb-att-badge.is-pass { color: #fff; background: var(--success); }
+.qb-att-badge.is-fail { color: #fff; background: var(--danger); }
+.qb-att-sub { margin-left: auto; color: var(--text-muted); font-size: 0.76rem; }
+
+.qb-timer {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.95rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9px;
+  color: var(--accent-text);
+  background: rgba(var(--primary-rgb), 0.12);
+  border: 1px solid rgba(var(--primary-rgb), 0.3);
+}
+.qb-timer.is-low {
+  color: var(--danger);
+  background: rgba(var(--danger-rgb), 0.12);
+  border-color: rgba(var(--danger-rgb), 0.35);
+  animation: qb-blink 1s steps(2) infinite;
+}
+@keyframes qb-blink { 50% { opacity: 0.55; } }
+
+.qb-mock-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
+  gap: 5px;
+  max-width: 900px;
+  margin: 0.6rem auto 0;
+  padding: 0 1rem;
+}
+.qb-mock-cell {
+  font: inherit;
+  font-size: 0.8rem;
+  min-height: 36px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--text-main);
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  position: relative;
+}
+.qb-mock-cell.is-done { background: rgba(var(--primary-rgb), 0.18); border-color: var(--primary); font-weight: 700; }
+.qb-mock-cell.is-cur { outline: 2px solid var(--primary); }
+.qb-mock-cell.is-flag::after { content: '⚑'; position: absolute; top: -2px; right: 2px; font-size: 0.6rem; color: var(--warn, #f59e0b); }
+
+.qb-mock-notice { max-width: 900px; margin: 0.6rem auto 0; }
+.qb-opt.is-pick { border-color: var(--primary); background: rgba(var(--primary-rgb), 0.1); }
+.qb-opt.is-pick .qb-key { background: var(--primary); border-color: var(--primary); color: #fff; }
+.qb-opt.is-pick .qb-tag { color: var(--accent-text); }
+
+.qb-mock-verdict .qb-verdict-badge {
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  padding: 0.3rem 1.1rem;
+  border-radius: 999px;
+  color: #fff;
+}
+.qb-mock-verdict.is-pass .qb-verdict-badge { background: var(--success); }
+.qb-mock-verdict.is-fail .qb-verdict-badge { background: var(--danger); }
+.qb-mock-verdict.is-pass { border-color: rgba(var(--success-rgb), 0.5); }
+.qb-mock-verdict.is-fail { border-color: rgba(var(--danger-rgb), 0.5); }
+
+@media (max-width: 768px) {
+  .qb-hero-rank { border-left: 0; padding-left: 0; text-align: left; width: 100%; margin-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.25); padding-top: 0.5rem; }
+  .qb-hero { flex-wrap: wrap; }
+  .qb-mock-nav { grid-template-columns: repeat(auto-fill, minmax(38px, 1fr)); }
+}
