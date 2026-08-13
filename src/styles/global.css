@@ -288,26 +288,27 @@ textarea {
 }
 
 /* ============ Hero ============ */
+/* Hero nén ~15% chiều cao để "Từ vựng hôm nay" lộ ra ngay khi mở trang */
 .hero {
   text-align: center;
-  padding: 5rem 1.5rem;
+  padding: 4rem 1.5rem;
   background-color: var(--hero-bg);
   background-image: var(--hero-pattern);
   border-bottom: 1px solid var(--border-color);
 }
 
 .headline {
-  font-size: clamp(2.5rem, 8vw, 3.75rem);
+  font-size: clamp(2.4rem, 7vw, 3.4rem);
   font-weight: 800;
   letter-spacing: -2px;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   line-height: 1.1;
 }
 
 .subtext {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   color: var(--text-muted);
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
   font-weight: 500;
 }
 
@@ -328,7 +329,7 @@ textarea {
   border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 1.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -356,8 +357,9 @@ textarea {
   margin-bottom: 0.5rem;
 }
 
+/* Từ chính to hơn ~25%; kana/nghĩa/ví dụ giữ nguyên cỡ */
 .wotd-jp {
-  font-size: 2.5rem;
+  font-size: 3.1rem;
   color: var(--primary);
 }
 
@@ -421,7 +423,7 @@ textarea {
   background-color: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: 12px;
-  padding: 2.5rem 2rem;
+  padding: 1.6rem 2rem;
   text-align: center;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
@@ -430,7 +432,7 @@ textarea {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 200px;
+  min-height: 160px;
   width: 100%;
 }
 
@@ -441,9 +443,9 @@ textarea {
 }
 
 .card-icon {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: var(--primary);
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.9rem;
   display: inline-flex;
 }
 
@@ -467,8 +469,8 @@ textarea {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1rem;
-  /* Nằm ngay dưới 3 thẻ môn thi ở đầu trang */
-  margin: 1.25rem 0 2.5rem;
+  /* Ngay dưới "Từ vựng hôm nay", phía trên 3 thẻ môn */
+  margin: 0 0 2rem;
 }
 
 .module-card {

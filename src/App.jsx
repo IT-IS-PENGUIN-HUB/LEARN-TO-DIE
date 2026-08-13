@@ -88,14 +88,15 @@ function AppInner() {
             onStudyVocab={openVocab}
           />
           <section className="dashboard container" id="dashboard">
-            {/* Môn thi + 3 module lên đầu trang: đây là chỗ bấm nhiều nhất */}
-            <SubjectDashboard onSelectSubject={openSubject} />
+            {/* Từ hôm nay liếc mỗi ngày → trên cùng; kế đến lối tắt hay bấm;
+               3 thẻ môn xuống dưới. Điện thoại có thứ tự riêng bằng CSS order. */}
+            <WordOfTheDay onOpenVocab={openVocab} />
             <ModuleShortcuts
               onOpenTextbooks={openTextbooks}
               onOpenSchedule={openSchedule}
               onResume={openChapter}
             />
-            <WordOfTheDay onOpenVocab={openVocab} />
+            <SubjectDashboard onSelectSubject={openSubject} />
             <div className="stats-slot">
               <StatsPanel refreshToken={statsToken} />
             </div>
