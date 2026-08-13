@@ -64,3 +64,36 @@ export function answerLabel(q) {
 }
 
 export const LETTERS = ['A', 'B', 'C', 'D', 'E'];
+
+/**
+ * Nạp câu theo DANH SÁCH qid (giữ nguyên thứ tự truyền vào) — nền của các chế độ
+ * ôn câu sai / câu đánh dấu / làm tiếp phiên tuỳ chỉnh. qid mở đầu bằng
+ * `<năm>-<MÔN>-` nên tự suy ra được cần tải những mảnh nào, không tải thừa.
+ */
+export async function loadQuestionsByQids(qids) {
+  const need = new Map();
+  for (const qid of qids) {
+    const [y, s] = qid.split('-');
+    need.set(`${y}-${s}`, { year: Number(y), subject: s });
+  }
+  const shards = await Promise.all(
+    [...need.values()].map((g) => loadShard(g.year, g.subject))
+  );
+  const byQid = new Map();
+  for (const shard of shards) {
+    for (const q of shard.questions) {
+      byQid.set(q.qid, { ...q, year: shard.year, subject: shard.subject });
+    }
+  }
+  return qids.map((qid) => byQid.get(qid)).filter(Boolean);
+}
+
+/** Xáo trộn Fisher–Yates, trả mảng mới. */
+export function shuffleQuestions(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}

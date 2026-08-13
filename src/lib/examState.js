@@ -118,8 +118,14 @@ export function clearSession(state, now = Date.now()) {
   return { ...state, session: { cleared: true, at: now } };
 }
 
-/** Phiên có thật sự đang dở không (không phải bia mộ, đủ dữ liệu để mở lại). */
+/**
+ * Phiên có thật sự đang dở không (không phải bia mộ, đủ dữ liệu để mở lại).
+ * Hai dạng hợp lệ: theo năm ({year}) hoặc theo danh sách câu ({qids}) — dạng
+ * sau là của các chế độ GĐ4 (câu sai/đánh dấu/tuỳ chỉnh), KHÔNG có field year.
+ */
 export function activeSession(state) {
   const s = state.session;
-  return s && !s.cleared && typeof s.year === 'number' ? s : null;
+  if (!s || s.cleared) return null;
+  if (Array.isArray(s.qids) && s.qids.length > 0) return s;
+  return typeof s.year === 'number' ? s : null;
 }

@@ -1768,15 +1768,20 @@ textarea.text-input {
   bottom: calc(0.75rem + env(safe-area-inset-bottom));
   z-index: 4000;
   max-width: calc(100vw - 2rem);
-  padding: 0.4rem 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.4rem 0.5rem 0.4rem 0.95rem;
   border-radius: 999px;
   border: 1px solid var(--border-color);
   background: var(--card-bg);
   color: var(--text-muted);
   font-size: 0.78rem;
   box-shadow: var(--shadow-md);
-  pointer-events: none;
+  /* Từng là pointer-events:none khi toast chỉ để đọc — giờ có nút "Cập nhật
+     ngay" bên trong nên phải bấm được */
 }
+.update-toast .btn { white-space: nowrap; }
 
 /* ============ Quiz: lời giải thay chỗ đề bài sau khi trả lời ============
    Nằm ngay đầu màn hình, đúng chỗ đề bài vừa biến mất — nên chữ Hán giữ nguyên
@@ -2793,4 +2798,120 @@ textarea.text-input {
   .qb-year { padding: 0.75rem 0.8rem; }
   .qb-actions .btn { flex: 1; }
   .qb-count { flex: 0 0 auto; margin: 0; }
+}
+
+/* ---- GĐ4: chế độ luyện (câu sai · đánh dấu · tuỳ chỉnh) ---- */
+.qb-modes {
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+  margin-bottom: 1.1rem;
+}
+.qb-mode {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  text-align: left;
+  font: inherit;
+  color: var(--text-main);
+  padding: 0.8rem 0.95rem;
+  cursor: pointer;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  transition: transform 0.14s, box-shadow 0.14s, border-color 0.14s;
+}
+.qb-mode:hover:not(:disabled) {
+  transform: translateY(-2px);
+  border-color: var(--primary);
+  box-shadow: var(--shadow-md);
+}
+.qb-mode:disabled { opacity: 0.55; cursor: default; }
+.qb-mode-icon {
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  display: grid;
+  place-items: center;
+  font-size: 1.05rem;
+  border-radius: 10px;
+  color: #fff;
+}
+.qb-mode-icon.is-wrong { background: var(--danger); }
+.qb-mode-icon.is-mark { background: var(--warn, #f59e0b); }
+.qb-mode-icon.is-custom { background: var(--primary); }
+.qb-mode-body { display: flex; flex-direction: column; min-width: 0; }
+.qb-mode-body strong { font-size: 0.95rem; }
+.qb-mode-body span { font-size: 0.78rem; color: var(--text-muted); }
+
+/* ---- hộp thoại tuỳ chỉnh ---- */
+.qb-custom { max-width: 560px; }
+.qb-custom-close {
+  position: absolute;
+  top: 0.9rem;
+  right: 0.9rem;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  font: inherit;
+  cursor: pointer;
+  color: var(--text-muted);
+  background: var(--bg-alt);
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+}
+.qb-custom-close:hover { color: var(--danger); border-color: var(--danger); }
+.qb-custom-label {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 1rem 0 0.45rem;
+}
+.qb-custom-hint { font-weight: 400; text-transform: none; letter-spacing: 0; }
+.qb-custom-clear {
+  margin-left: auto;
+  font: inherit;
+  font-size: 0.75rem;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--accent-text);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.qb-custom-chips { display: flex; gap: 0.45rem; flex-wrap: wrap; }
+.qb-custom-cats { max-height: 170px; overflow-y: auto; padding-right: 2px; }
+.qb-pill-sm { font-size: 0.78rem; padding: 0.3rem 0.7rem; }
+.qb-custom-years { display: flex; gap: 0.6rem; align-items: center; }
+.qb-select {
+  font: inherit;
+  font-size: 0.9rem;
+  padding: 0.45rem 0.7rem;
+  border-radius: 9px;
+  color: var(--text-main);
+  background: var(--bg-alt);
+  border: 1px solid var(--border-color);
+}
+.qb-custom-src { display: flex; flex-direction: column; gap: 0.35rem; }
+.qb-custom-radio {
+  display: flex;
+  gap: 0.55rem;
+  align-items: center;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.qb-custom-radio input { accent-color: var(--primary); width: 16px; height: 16px; }
+.qb-custom-actions {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: flex-end;
+  margin-top: 1.3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
 }

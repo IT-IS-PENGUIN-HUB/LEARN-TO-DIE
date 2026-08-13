@@ -1,12 +1,16 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import PracticeHome from './PracticeHome.jsx';
 import QuestionRunner from './QuestionRunner.jsx';
+import CustomPractice from './CustomPractice.jsx';
 import { EXAM_YEARS, SUBJECT_META } from '../../data/examBank.js';
-import { loadYear, isCorrect } from '../../lib/examData.js';
+import {
+  loadYear, loadShard, loadQuestionsByQids, shuffleQuestions, isCorrect,
+} from '../../lib/examData.js';
 import {
   loadExamState, saveExamState, recordExamAnswer, toggleBookmark,
   statsFor, saveSession, clearSession, activeSession, EXAM_EVENT,
 } from '../../lib/examState.js';
+import { buildQueue } from '../../lib/srs.js';
 import { KEYS, loadJSON, saveJSON } from '../../lib/storage.js';
 import { IconArrowLeft } from '../icons.jsx';
 
@@ -27,7 +31,11 @@ export default function PracticeModule({ onBack }) {
   const [questions, setQuestions] = useState([]);
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState({});
-  const [meta, setMeta] = useState(null); // {year, subjectFilter}
+  // meta của phiên đang chạy:
+  //   {mode:'year', year, subjectFilter}                — làm đề theo năm
+  //   {mode:'wrong'|'bookmark'|'custom', qids, label}   — pool câu theo danh sách
+  const [meta, setMeta] = useState(null);
+  const [customOpen, setCustomOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -85,26 +93,96 @@ export default function PracticeModule({ onBack }) {
     return { ...s, total, pct: total ? Math.round((s.done / total) * 100) : 0 };
   }, [examState]);
 
-  const startYear = useCallback(async (year, subjectFilter, restore = null) => {
-    const subjects = subjectFilter === 'all' ? SUBJECT_ORDER : [subjectFilter];
+  /** Vào màn làm bài với bộ câu đã nạp xong — mọi chế độ đều đi qua đây. */
+  const begin = useCallback((list, nextMeta, restore = null) => {
+    setQuestions(list);
+    setMeta(nextMeta);
+    setAnswers(restore?.answers ?? {});
+    setIndex(Math.min(restore?.index ?? 0, Math.max(0, list.length - 1)));
+    setScreen('run');
+  }, []);
+
+  const guarded = useCallback(async (fn) => {
     setLoading(true);
     setError(null);
     try {
-      const list = await loadYear(year, subjects.filter((s) => {
-        const y = EXAM_YEARS.find((e) => e.year === year);
-        return (y?.subjects[s] ?? 0) > 0;
-      }));
-      setQuestions(list);
-      setMeta({ year, subjectFilter });
-      setAnswers(restore?.answers ?? {});
-      setIndex(Math.min(restore?.index ?? 0, Math.max(0, list.length - 1)));
-      setScreen('run');
+      await fn();
     } catch (e) {
       setError(e.message);
     } finally {
       setLoading(false);
     }
   }, []);
+
+  const startYear = useCallback((year, subjectFilter, restore = null) => guarded(async () => {
+    const subjects = (subjectFilter === 'all' ? SUBJECT_ORDER : [subjectFilter]).filter((s) => {
+      const y = EXAM_YEARS.find((e) => e.year === year);
+      return (y?.subjects[s] ?? 0) > 0;
+    });
+    const list = await loadYear(year, subjects);
+    begin(list, { mode: 'year', year, subjectFilter }, restore);
+  }), [begin, guarded]);
+
+  /** Ôn theo danh sách qid (câu sai / đánh dấu / làm tiếp phiên tuỳ chỉnh). */
+  const startQids = useCallback((qids, mode, label, restore = null) => guarded(async () => {
+    const list = await loadQuestionsByQids(qids);
+    if (!list.length) throw new Error('Không còn câu nào trong nhóm này.');
+    begin(list, { mode, qids: list.map((q) => q.qid), label }, restore);
+  }), [begin, guarded]);
+
+  // Pool câu sai: từng sai ít nhất một lần, chưa mastered. Lọc pool TRƯỚC rồi
+  // mới đưa vào buildQueue — đưa cả kho vào là nó độn nghìn câu chưa sai vào đuôi.
+  const wrongPool = useMemo(
+    () => Object.entries(examState.srs)
+      .filter(([, e]) => (e.wrong ?? 0) > 0 && !e.mastered)
+      .map(([qid, e]) => ({ qid, ...e })),
+    [examState]
+  );
+  const bookmarkQids = useMemo(
+    () => Object.keys(examState.bookmarks)
+      .filter((qid) => examState.bookmarks[qid]?.on)
+      .sort()
+      .reverse(), // năm mới trước (qid mở đầu bằng năm)
+    [examState]
+  );
+
+  const startWrong = useCallback(() => {
+    // buildQueue của srs.js: câu đến hạn cũ nhất trước, phần chưa đến hạn xáo trộn
+    const queue = buildQueue(wrongPool);
+    startQids(queue.map((e) => e.qid), 'wrong', 'Ôn câu sai');
+  }, [wrongPool, startQids]);
+
+  const startBookmarks = useCallback(() => {
+    startQids(bookmarkQids, 'bookmark', 'Câu đánh dấu');
+  }, [bookmarkQids, startQids]);
+
+  /** Luyện tuỳ chỉnh: nạp các mảnh trong khoảng năm/môn rồi lọc — chip chuyên mục
+      và nguồn (sai/chưa làm/đánh dấu) cần nội dung câu nên phải nạp trước. */
+  const startCustom = useCallback((f) => guarded(async () => {
+    setCustomOpen(false);
+    const pairs = EXAM_YEARS
+      .filter((y) => y.year >= f.yearFrom && y.year <= f.yearTo)
+      .flatMap((y) => f.subjects.filter((s) => y.subjects[s]).map((s) => ({ year: y.year, subject: s })));
+    const shards = await Promise.all(pairs.map((p) => loadShard(p.year, p.subject)));
+    let qs = shards.flatMap((sh) =>
+      sh.questions.map((q) => ({ ...q, year: sh.year, subject: sh.subject }))
+    );
+    if (f.cats) qs = qs.filter((q) => f.cats.has(q.cat));
+    if (f.source === 'wrong') {
+      qs = qs.filter((q) => (examState.srs[q.qid]?.wrong ?? 0) > 0);
+    } else if (f.source === 'unseen') {
+      qs = qs.filter((q) => {
+        const e = examState.srs[q.qid];
+        return !e || (e.right ?? 0) + (e.wrong ?? 0) === 0;
+      });
+    } else if (f.source === 'bookmark') {
+      qs = qs.filter((q) => examState.bookmarks[q.qid]?.on);
+    }
+    if (!qs.length) throw new Error('Không có câu nào khớp bộ lọc — nới điều kiện rồi thử lại.');
+    qs = shuffleQuestions(qs);
+    if (f.count) qs = qs.slice(0, f.count);
+    begin(qs, { mode: 'custom', qids: qs.map((q) => q.qid), label: 'Luyện tuỳ chỉnh' });
+  }), [begin, guarded, examState]);
 
   // Lưu chỗ đang làm sau mỗi thay đổi — app không có router nên F5, bản cập nhật
   // PWA, hay đóng tab đều đưa về trang chủ; đề 専門 35 câu mà mất phiên thì rất ức.
@@ -116,6 +194,16 @@ export default function PracticeModule({ onBack }) {
   }, [screen, meta, index, answers, questions.length, commit]);
 
   const resume = activeSession(examState);
+
+  /** Mở lại phiên dở — phiên cũ (trước GĐ4) không có mode thì coi là theo năm. */
+  const resumeSession = useCallback(() => {
+    if (!resume) return;
+    if (resume.qids?.length) {
+      startQids(resume.qids, resume.mode ?? 'custom', resume.label ?? 'Làm tiếp', resume);
+    } else {
+      startYear(resume.year, resume.subjectFilter ?? 'all', resume);
+    }
+  }, [resume, startQids, startYear]);
 
   const select = useCallback((q, letter) => {
     if (answers[q.qid]) return;
@@ -199,7 +287,9 @@ export default function PracticeModule({ onBack }) {
           <strong>{result.right}/{result.done}</strong>
           <span>
             đúng {pct}% · đã làm {result.done}/{result.total} câu ·{' '}
-            {meta?.year} {meta?.subjectFilter !== 'all' && SUBJECT_META[meta?.subjectFilter]?.ja}
+            {meta?.mode === 'year'
+              ? <>{meta.year} {meta.subjectFilter !== 'all' && SUBJECT_META[meta.subjectFilter]?.ja}</>
+              : meta?.label}
           </span>
           <div className="qb-result-btns">
             <button type="button" className="btn btn-primary" onClick={() => setScreen('home')}>
@@ -219,15 +309,29 @@ export default function PracticeModule({ onBack }) {
   }
 
   return (
-    <PracticeHome
-      subjectFilter={filter}
-      onChangeFilter={setFilter}
-      onOpenYear={(year) => startYear(year, filter)}
-      onBack={onBack}
-      statsOf={statsOf}
-      resume={resume}
-      onResume={() => startYear(resume.year, resume.subjectFilter, resume)}
-      onDropResume={() => commit(clearSession)}
-    />
+    <>
+      <PracticeHome
+        subjectFilter={filter}
+        onChangeFilter={setFilter}
+        onOpenYear={(year) => startYear(year, filter)}
+        onBack={onBack}
+        statsOf={statsOf}
+        resume={resume}
+        onResume={resumeSession}
+        onDropResume={() => commit(clearSession)}
+        wrongCount={wrongPool.length}
+        bookmarkCount={bookmarkQids.length}
+        onStartWrong={startWrong}
+        onStartBookmarks={startBookmarks}
+        onOpenCustom={() => setCustomOpen(true)}
+      />
+      {customOpen && (
+        <CustomPractice
+          onClose={() => setCustomOpen(false)}
+          onStart={startCustom}
+          counts={{ wrong: wrongPool.length, bookmark: bookmarkQids.length }}
+        />
+      )}
+    </>
   );
 }

@@ -178,11 +178,17 @@ function AppInner() {
 
       {settingsOpen && <SettingsModal onClose={() => setSettingsOpen(false)} sync={sync} />}
 
-      {/* Nói trước để lát nữa app tải lại không thành cú giật mình */}
+      {/* Nói trước để lát nữa app tải lại không thành cú giật mình. Kèm nút áp
+          ngay — ロン phản hồi 14/8: đợi tự cập nhật thì không biết bao giờ mới
+          thấy bản mới. Phiên làm đề/chỗ đọc giáo trình đều tự lưu nên bấm giữa
+          chừng không mất gì; chỉ phiên quiz TỪ VỰNG đang dở là mất. */}
       {updateReady && busy && (
-        <p className="update-toast" role="status">
-          Có bản mới — app sẽ tự cập nhật khi bạn xong phần đang làm
-        </p>
+        <div className="update-toast" role="status">
+          <span>Có bản mới của app</span>
+          <button type="button" className="btn btn-sm btn-primary" onClick={applyAppUpdate}>
+            Cập nhật ngay
+          </button>
+        </div>
       )}
 
       <Footer />

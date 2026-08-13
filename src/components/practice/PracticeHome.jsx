@@ -10,7 +10,11 @@ const SUBJECT_ORDER = ['KENSETSU', 'KISO', 'TEKISEI'];
  * không viết cứng — 2011–2012 vốn chỉ có 25 câu 基礎, và năm sau thêm đề mới
  * thì chỉ cần chạy lại script là thẻ năm tự xuất hiện.
  */
-export default function PracticeHome({ subjectFilter, onChangeFilter, onOpenYear, onBack, statsOf, resume, onResume, onDropResume }) {
+export default function PracticeHome({
+  subjectFilter, onChangeFilter, onOpenYear, onBack, statsOf,
+  resume, onResume, onDropResume,
+  wrongCount, bookmarkCount, onStartWrong, onStartBookmarks, onOpenCustom,
+}) {
   const subjects = subjectFilter === 'all' ? SUBJECT_ORDER : [subjectFilter];
 
   const totals = useMemo(() => {
@@ -42,8 +46,10 @@ export default function PracticeHome({ subjectFilter, onChangeFilter, onOpenYear
           <div>
             <strong>Đang làm dở</strong>
             <span>
-              {resume.year} · {resume.subjectFilter === 'all' ? 'cả 3 môn' : SUBJECT_META[resume.subjectFilter]?.ja} ·
-              {' '}câu {resume.index + 1}/{resume.total}
+              {resume.qids?.length
+                ? resume.label ?? 'Bộ câu tuỳ chỉnh'
+                : `${resume.year} · ${resume.subjectFilter === 'all' ? 'cả 3 môn' : SUBJECT_META[resume.subjectFilter]?.ja ?? ''}`}
+              {' '}· câu {resume.index + 1}/{resume.total}
             </span>
           </div>
           <button type="button" className="btn btn-primary btn-sm" onClick={onResume}>
@@ -54,6 +60,43 @@ export default function PracticeHome({ subjectFilter, onChangeFilter, onOpenYear
           </button>
         </div>
       )}
+
+      {/* Chế độ luyện — học từ app trung tâm: câu hay sai, câu đánh dấu, tuỳ chỉnh */}
+      <div className="qb-modes">
+        <button
+          type="button"
+          className="qb-mode"
+          onClick={onStartWrong}
+          disabled={!wrongCount}
+          title={wrongCount ? undefined : 'Chưa có câu nào từng sai'}
+        >
+          <span className="qb-mode-icon is-wrong">↺</span>
+          <span className="qb-mode-body">
+            <strong>Ôn câu sai</strong>
+            <span>{wrongCount ? `${wrongCount} câu từng sai, ôn theo lịch SRS` : 'chưa có câu sai nào'}</span>
+          </span>
+        </button>
+        <button
+          type="button"
+          className="qb-mode"
+          onClick={onStartBookmarks}
+          disabled={!bookmarkCount}
+          title={bookmarkCount ? undefined : 'Chưa đánh dấu câu nào'}
+        >
+          <span className="qb-mode-icon is-mark">⚑</span>
+          <span className="qb-mode-body">
+            <strong>Câu đánh dấu</strong>
+            <span>{bookmarkCount ? `${bookmarkCount} câu đã ghim` : 'chưa ghim câu nào'}</span>
+          </span>
+        </button>
+        <button type="button" className="qb-mode" onClick={onOpenCustom}>
+          <span className="qb-mode-icon is-custom">⚙</span>
+          <span className="qb-mode-body">
+            <strong>Tuỳ chỉnh</strong>
+            <span>chọn môn · chuyên mục · năm · số câu</span>
+          </span>
+        </button>
+      </div>
 
       <div className="qb-filters" role="tablist" aria-label="Lọc theo môn">
         <button
