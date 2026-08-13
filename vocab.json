@@ -7466,10 +7466,10 @@
       "meaning": "(Đặc hứa sảnh) Nơi cấp bằng sáng chế",
       "exJp": "特許庁に新技術の特許を出願した。",
       "exVi": "Đã nộp đơn xin cấp bằng sáng chế cho công nghệ mới tại Cục Sáng chế.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1786748368955,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786661968955
     },
     {
       "id": "1786573248380_zi1n41",
@@ -7478,10 +7478,10 @@
       "meaning": "(xuất nguyện) nộp đơn xin",
       "exJp": "特許の出願は発明の公開前に行うべきだ。",
       "exVi": "Nên nộp đơn xin cấp bằng sáng chế trước khi công bố phát minh.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1786748376554,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786661976554
     },
     {
       "id": "1786573248380_8hmo3j",
