@@ -1,5 +1,7 @@
 import { lazy, Suspense, useEffect, useState } from 'react';
 import Header from './components/Header.jsx';
+import Sidebar from './components/Sidebar.jsx';
+import { useExamSnapshot } from './hooks/useExamSnapshot.js';
 import StatsPanel from './components/StatsPanel.jsx';
 import Hero from './components/Hero.jsx';
 import SubjectDashboard from './components/SubjectDashboard.jsx';
@@ -31,8 +33,12 @@ function AppInner() {
   const sync = useSync();
   useVocabReminder(allWords);
   // view: {name:'home'} | {name:'subject', subjectId} | {name:'exam', subjectId, examId}
-  //     | {name:'textbook', subjectId?, chapterId?} | {name:'schedule'} | {name:'practice'}
+  //     | {name:'textbook', subjectId?, chapterId?} | {name:'schedule'}
+  //     | {name:'practice', sub?: {screen, tab?, focus?, token}}
   const [view, setView] = useState({ name: 'home' });
+  // Ngăn kéo điều hướng trên mobile (desktop sidebar luôn hiện)
+  const [menuOpen, setMenuOpen] = useState(false);
+  const examSnapshot = useExamSnapshot();
   const [vocabOpen, setVocabOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
   // Ôn từ vựng giới hạn trong một chương giáo trình: {subject, words, label}
@@ -104,7 +110,15 @@ function AppInner() {
   const openTextbookSubject = (subjectId) => setView({ name: 'textbook', subjectId });
   const openChapter = (subjectId, chapterId) => setView({ name: 'textbook', subjectId, chapterId });
   const openSchedule = () => setView({ name: 'schedule' });
-  const openPractice = () => setView({ name: 'practice' });
+  // sub: điều thẳng vào màn con của module Đề thi (sidebar dùng); token đổi
+  // từng lần bấm để bấm lại cùng đích vẫn có tác dụng. Chỉ nhận object có
+  // trường screen — nút bấm gọi thẳng onClick={openPractice} sẽ truyền event
+  // của chuột vào đây, không lọc là nó thành sub rác.
+  const openPractice = (sub = null) =>
+    setView({
+      name: 'practice',
+      sub: sub && typeof sub.screen === 'string' ? { ...sub, token: Date.now() } : undefined,
+    });
   // Mọi lối vào thường: ôn trộn toàn bộ kho từ. Chỉ nút trong chương giáo trình mới lọc.
   const openVocab = () => {
     setVocabFilter(null);
@@ -114,7 +128,29 @@ function AppInner() {
   const currentSubject = view.subjectId ?? 'kiso';
 
   return (
-    <>
+    <div className="app-shell">
+      {/* GĐ6b: cột điều hướng trái — desktop luôn hiện, mobile là ngăn kéo ☰ */}
+      <Sidebar
+        view={view}
+        examState={examSnapshot}
+        dueTotal={dueTotal}
+        open={menuOpen}
+        onGoHome={goHome}
+        onOpenPractice={openPractice}
+        onOpenTextbooks={openTextbooks}
+        onOpenVocab={openVocab}
+        onOpenSchedule={openSchedule}
+        onClose={() => setMenuOpen(false)}
+      />
+      {menuOpen && (
+        <button
+          type="button"
+          className="sb-scrim"
+          aria-label="Đóng menu"
+          onClick={() => setMenuOpen(false)}
+        />
+      )}
+      <div className="app-main">
       <Header
         theme={theme}
         onToggleTheme={toggleTheme}
@@ -124,6 +160,7 @@ function AppInner() {
         onOpenTextbooks={openTextbooks}
         onOpenSchedule={openSchedule}
         onGoHome={goHome}
+        onOpenMenu={() => setMenuOpen(true)}
         dueCount={dueTotal}
       />
 
@@ -180,7 +217,7 @@ function AppInner() {
 
       {view.name === 'practice' && (
         <Suspense fallback={<p className="qb-loading container">Đang mở kho đề…</p>}>
-          <PracticeModule onBack={goHome} />
+          <PracticeModule onBack={goHome} sub={view.sub} />
         </Suspense>
       )}
 
@@ -225,7 +262,8 @@ function AppInner() {
       )}
 
       <Footer />
-    </>
+      </div>
+    </div>
   );
 }
 

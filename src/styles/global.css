@@ -3131,3 +3131,235 @@ textarea.text-input {
 .qb-row-ans em.is-key { color: var(--accent-text); }
 .qb-row-go { align-self: center; color: var(--text-muted); font-size: 1.1rem; }
 .qb-browse-more { width: 100%; margin-top: 0.7rem; }
+
+/* ==========================================================================
+   GĐ6b — SIDEBAR toàn app + màn Thống kê với bản đồ nhiệt
+   ========================================================================== */
+.app-shell { display: flex; min-height: 100vh; }
+.app-main { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+/* .app-main là flex dọc → màn con là flex item và được phép PHÌNH theo bảng
+   rộng (heatmap 600px+) thay vì để bảng cuộn trong khung — đo thật trên khung
+   375px: section nở tới 686px. min-width:0 chưa đủ (trình duyệt vẫn tính cỡ
+   theo nội dung), phải kèm max-width:100%% mới ghim từng màn đúng bề ngang. */
+.app-main > * { min-width: 0; max-width: 100%; }
+.app-main > footer { margin-top: auto; }
+
+.sidebar {
+  width: 232px;
+  flex: 0 0 232px;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100dvh;
+  overflow-y: auto;
+  border-right: 1px solid var(--border-color);
+  background: linear-gradient(180deg,
+    color-mix(in srgb, var(--primary) 12%, var(--card-bg)) 0%, var(--card-bg) 55%);
+  z-index: 120;
+}
+.sb-brand {
+  display: flex;
+  gap: 0.65rem;
+  align-items: center;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  border: 0;
+  padding: 0.9rem 0.9rem;
+  padding-top: calc(0.9rem + env(safe-area-inset-top));
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary),
+    color-mix(in srgb, var(--primary) 45%, #08122c));
+}
+.sb-logo { width: 44px; height: 44px; flex: 0 0 44px; border-radius: 50%;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.28); }
+.sb-brand b { display: block; font-size: 0.92rem; letter-spacing: -0.01em; line-height: 1.2; }
+.sb-brand em { display: block; font-style: normal; font-size: 0.68rem; color: rgba(255, 255, 255, 0.8); }
+.sb-group {
+  padding: 0.85rem 0.8rem 0.2rem;
+  font-size: 0.63rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.sb-item {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  width: calc(100% - 1rem);
+  margin: 1px 0.5rem;
+  padding: 0.5rem 0.65rem;
+  font: inherit;
+  font-size: 0.85rem;
+  text-align: left;
+  color: var(--text-main);
+  background: none;
+  border: 0;
+  border-radius: 9px;
+  cursor: pointer;
+}
+.sb-item:hover { background: color-mix(in srgb, var(--primary) 10%, transparent); }
+.sb-item.is-on {
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 4px 12px -4px rgba(var(--primary-rgb), 0.65);
+}
+.sb-ic { width: 18px; text-align: center; opacity: 0.9; }
+.sb-label { flex: 1; min-width: 0; }
+.sb-cnt {
+  font-size: 0.66rem;
+  font-weight: 600;
+  padding: 0.05rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(var(--primary-rgb), 0.18);
+  color: var(--accent-text);
+}
+.sb-item.is-on .sb-cnt { background: rgba(255, 255, 255, 0.25); color: #fff; }
+.sb-cnt.is-hot { background: var(--danger); color: #fff; }
+.sb-rank {
+  margin-top: auto;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  padding: 0.75rem 0.9rem;
+  padding-bottom: calc(0.75rem + env(safe-area-inset-bottom));
+  background: none;
+  border: 0;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-main);
+}
+.sb-rank b { color: var(--warn, #f59e0b); font-size: 0.88rem; display: block; }
+.sb-rank span { font-size: 0.68rem; color: var(--text-muted); }
+.sb-rank:hover { background: color-mix(in srgb, var(--primary) 8%, transparent); }
+
+.sb-scrim {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 110;
+  border: 0;
+  background: rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+}
+.menu-btn { display: none; }
+
+/* Desktop có sidebar → menu 3 môn trên header thừa (trang chủ vẫn còn 3 thẻ môn) */
+.main-menu { display: none; }
+
+@media (max-width: 899px) {
+  /* mobile: sidebar thành ngăn kéo */
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    transform: translateX(-100%);
+    transition: transform 0.2s ease;
+    box-shadow: var(--shadow-md);
+  }
+  .sidebar.is-open { transform: translateX(0); }
+  .sb-scrim { display: block; }
+  .menu-btn {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    font: inherit;
+    font-size: 1.15rem;
+    color: var(--text-main);
+    background: var(--bg-alt);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    cursor: pointer;
+    flex: 0 0 40px;
+  }
+}
+
+/* ---- màn Thống kê ---- */
+.qb-rankcard {
+  display: flex;
+  gap: 0.85rem;
+  align-items: center;
+  padding: 0.9rem 1.1rem;
+  border-radius: 13px;
+  margin-bottom: 0.9rem;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  background: rgba(245, 158, 11, 0.07);
+}
+.qb-rank-medal { font-size: 1.7rem; }
+.qb-rankcard b { color: var(--warn, #f59e0b); font-size: 1.05rem; display: block; }
+.qb-rankcard span { font-size: 0.8rem; color: var(--text-muted); }
+
+.qb-tiles { display: grid; gap: 0.7rem; grid-template-columns: repeat(auto-fit, minmax(145px, 1fr)); margin-bottom: 0.9rem; }
+.qb-tile {
+  padding: 0.75rem 0.9rem;
+  border-radius: 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+}
+.qb-tile span {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.qb-tile b { font-size: 1.45rem; letter-spacing: -0.02em; color: var(--accent-text); }
+.qb-tile em { font-style: normal; font-size: 0.7rem; color: var(--text-muted); }
+
+.qb-hm-card {
+  padding: 0.95rem 1.05rem;
+  border-radius: 13px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+.qb-hm-card h3 { font-size: 0.92rem; }
+.qb-hm-card > p { font-size: 0.75rem; color: var(--text-muted); margin: 0.2rem 0 0.7rem; }
+.qb-hm-scroll { overflow-x: auto; }
+.qb-hm { border-collapse: separate; border-spacing: 3px; }
+.qb-hm th { font-size: 0.62rem; font-weight: 600; color: var(--text-muted); padding: 0 1px; }
+.qb-hm-subject { font-size: 0.68rem; font-weight: 700; color: var(--accent-text); padding: 0.55rem 0 0.1rem; white-space: nowrap; }
+.qb-hm-row { padding-right: 0.4rem; text-align: right; white-space: nowrap; }
+.qb-hm-cat {
+  font: inherit;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.qb-hm-cat:hover { color: var(--accent-text); text-decoration: underline; }
+.qb-hm td > i {
+  display: block;
+  width: 24px;
+  height: 17px;
+  border-radius: 4px;
+  background: var(--bg-alt);
+  border: 1px solid var(--border-color);
+}
+.qb-hm .is-b { background: rgba(var(--success-rgb), 0.22); border-color: transparent; }
+.qb-hm .is-c { background: rgba(var(--success-rgb), 0.45); border-color: transparent; }
+.qb-hm .is-d { background: rgba(var(--success-rgb), 0.7); border-color: transparent; }
+.qb-hm .is-e { background: var(--success); border-color: transparent; }
+.qb-hm .is-f { background: rgba(var(--danger-rgb), 0.6); border-color: transparent; }
+.qb-hm-legend { display: flex; gap: 0.9rem; flex-wrap: wrap; font-size: 0.68rem; color: var(--text-muted); margin-top: 0.7rem; }
+.qb-hm-legend i {
+  display: inline-block;
+  width: 15px;
+  height: 11px;
+  border-radius: 3px;
+  vertical-align: -1px;
+  background: var(--bg-alt);
+  border: 1px solid var(--border-color);
+}
+.qb-hm-legend .is-b { background: rgba(var(--success-rgb), 0.22); border-color: transparent; }
+.qb-hm-legend .is-c { background: rgba(var(--success-rgb), 0.45); border-color: transparent; }
+.qb-hm-legend .is-d { background: rgba(var(--success-rgb), 0.7); border-color: transparent; }
+.qb-hm-legend .is-e { background: var(--success); border-color: transparent; }
+.qb-hm-legend .is-f { background: rgba(var(--danger-rgb), 0.6); border-color: transparent; }

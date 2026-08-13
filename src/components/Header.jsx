@@ -12,10 +12,13 @@ export default function Header({
   onOpenTextbooks,
   onOpenSchedule,
   onGoHome,
+  onOpenMenu,
   dueCount = 0,
 }) {
   return (
     <header className="header">
+      {/* ☰ chỉ hiện trên mobile (<900px) — mở ngăn kéo điều hướng */}
+      <button type="button" className="menu-btn" onClick={onOpenMenu} aria-label="Mở menu">☰</button>
       {/* Logo + chữ chung MỘT nút — bấm đâu trong vùng này cũng về trang chủ
           (khác app trung tâm, ロン yêu cầu 14/8) */}
       <button type="button" className="logo" onClick={onGoHome} title="Về trang chủ" aria-label="Về trang chủ">

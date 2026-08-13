@@ -1,25 +1,19 @@
 import { useEffect, useMemo, useState } from 'react';
 import { SUBJECT_META, CATEGORIES } from '../../data/examBank.js';
-import { loadQuestionsByQids, answerLabel } from '../../lib/examData.js';
+import { loadQuestionsByQids, answerLabel, catOfQid } from '../../lib/examData.js';
 import { IconArrowLeft } from '../icons.jsx';
 
 const PAGE = 30;
-
-// qid 2025-KISO-DESIGN-01 → mã chuyên mục đầy đủ (KISO_DESIGN / TEKISEI_LAW / GEO…)
-function catOf(qid) {
-  const [, subject, part] = qid.split('-');
-  if (subject === 'KISO') return `KISO_${part}`;
-  if (subject === 'TEKISEI') return `TEKISEI_${part}`;
-  return part;
-}
 
 /**
  * Trình XEM LẠI câu đã làm — học từ màn 復習 của app trung tâm: tab lọc
  * (tất cả / câu sai / đã đánh dấu / gần đây), sắp theo lần làm mới nhất,
  * mỗi dòng hiện đề + "bạn chọn X / đáp án đúng Y", bấm mở lại cả lời giải.
  */
-export default function ReviewBrowser({ examState, onOpen, onBack }) {
-  const [tab, setTab] = useState('recent');
+export default function ReviewBrowser({ examState, onOpen, onBack, initialTab = 'recent' }) {
+  const [tab, setTab] = useState(initialTab);
+  // Sidebar có lối vào thẳng "Câu sai"/"Đánh dấu" — đổi tab khi được điều đến
+  useEffect(() => setTab(initialTab), [initialTab]);
   const [limit, setLimit] = useState(PAGE);
   const [rows, setRows] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -88,7 +82,7 @@ export default function ReviewBrowser({ examState, onOpen, onBack }) {
           const tried = (e.right ?? 0) + (e.wrong ?? 0) > 0;
           const lastOk = e.last ? (answerLabel(q)?.includes(e.last) ?? false) || q.sp?.voided : null;
           const correct = answerLabel(q);
-          const cat = CATEGORIES[catOf(q.qid)];
+          const cat = CATEGORIES[catOfQid(q.qid)];
           return (
             <button key={q.qid} type="button" className="qb-row" onClick={() => onOpen(q)}>
               <span className={`qb-row-dot ${!tried ? 'is-new' : lastOk === false ? 'is-no' : 'is-ok'}`}>

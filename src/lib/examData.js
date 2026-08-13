@@ -88,6 +88,14 @@ export async function loadQuestionsByQids(qids) {
   return qids.map((qid) => byQid.get(qid)).filter(Boolean);
 }
 
+/** qid `2025-KISO-DESIGN-01` → mã chuyên mục đầy đủ (KISO_DESIGN / TEKISEI_LAW / GEO…). */
+export function catOfQid(qid) {
+  const [, subject, part] = qid.split('-');
+  if (subject === 'KISO') return `KISO_${part}`;
+  if (subject === 'TEKISEI') return `TEKISEI_${part}`;
+  return part;
+}
+
 /** Xáo trộn Fisher–Yates, trả mảng mới. */
 export function shuffleQuestions(arr) {
   const a = [...arr];

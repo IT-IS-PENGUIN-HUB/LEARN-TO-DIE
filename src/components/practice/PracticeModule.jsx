@@ -1,9 +1,10 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useMemo, useState } from 'react';
 import PracticeHome from './PracticeHome.jsx';
 import QuestionRunner from './QuestionRunner.jsx';
 import CustomPractice from './CustomPractice.jsx';
 import MockExam from './MockExam.jsx';
 import ReviewBrowser from './ReviewBrowser.jsx';
+import StatsView from './StatsView.jsx';
 import { EXAM_YEARS, SUBJECT_META, BANK_TOTAL } from '../../data/examBank.js';
 import { gradeExam } from '../../data/examRules.js';
 import {
@@ -27,7 +28,7 @@ const DEFAULT_PREFS = { lang: 'both', furi: true, size: 'm', goal: 20 };
  * BẮT BUỘC nằm trong biểu thức `busy` của App.jsx, nếu không service worker sẽ
  * tải lại trang giữa lúc đang làm đề và mất sạch phiên (đúng lỗi cũ của quiz).
  */
-export default function PracticeModule({ onBack }) {
+export default function PracticeModule({ onBack, sub }) {
   const [examState, setExamState] = useState(loadExamState);
   const [prefs, setPrefs] = useState(() => ({ ...DEFAULT_PREFS, ...loadJSON(KEYS.examPrefs, {}) }));
   const [filter, setFilter] = useState('all');
@@ -41,6 +42,7 @@ export default function PracticeModule({ onBack }) {
   //   {mode:'mock', subject, year, startedAt}           — thi thử bấm giờ
   const [meta, setMeta] = useState(null);
   const [customOpen, setCustomOpen] = useState(false);
+  const [browseTab, setBrowseTab] = useState('recent');
   const [mockFlags, setMockFlags] = useState({});
   const [mockResult, setMockResult] = useState(null); // {attempt, questions, answers}
   const [reviewMode, setReviewMode] = useState(false);
@@ -342,6 +344,31 @@ export default function PracticeModule({ onBack }) {
     return (t?.r ?? 0) + (t?.w ?? 0);
   }, [examState]);
 
+  // Sidebar điều thẳng vào màn con (Thống kê, Câu sai, Đánh dấu, khu Thi thử).
+  // token đổi mỗi lần bấm để cùng một đích bấm lại vẫn ăn.
+  const [pendingFocus, setPendingFocus] = useState(null);
+  useEffect(() => {
+    if (!sub?.token) return;
+    if (sub.screen === 'stats') setScreen('stats');
+    else if (sub.screen === 'browse') {
+      setBrowseTab(sub.tab ?? 'recent');
+      setScreen('browse');
+    } else {
+      setScreen('home');
+      setPendingFocus(sub.focus ?? null);
+    }
+    window.scrollTo(0, 0);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sub?.token]);
+
+  // Cuộn tới khu thi thử NGAY SAU khi DOM dựng xong — không setTimeout (tab ẩn
+  // bóp còn ≥1s), không behavior:smooth (chạy bằng rAF, đóng băng khi tab ẩn)
+  useLayoutEffect(() => {
+    if (screen !== 'home' || pendingFocus !== 'mock') return;
+    document.querySelector('.qb-ecards')?.scrollIntoView();
+    setPendingFocus(null);
+  }, [screen, pendingFocus]);
+
   // Số câu đến hạn ôn SRS hôm nay — nuôi thẻ "Gợi ý"
   const dueCount = useMemo(() => {
     const now = Date.now();
@@ -413,6 +440,17 @@ export default function PracticeModule({ onBack }) {
         examState={examState}
         onOpen={openSingle}
         onBack={() => setScreen('home')}
+        initialTab={browseTab}
+      />
+    );
+  }
+
+  if (screen === 'stats') {
+    return (
+      <StatsView
+        examState={examState}
+        onBack={() => setScreen('home')}
+        onStartCategory={startCategory}
       />
     );
   }
