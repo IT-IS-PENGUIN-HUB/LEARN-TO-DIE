@@ -23,7 +23,11 @@ export default defineConfig({
   plugins: [
     react(),
     VitePWA({
-      registerType: 'autoUpdate',
+      // 'prompt' chứ không phải 'autoUpdate': autoUpdate cho service worker chiếm
+      // quyền rồi TẢI LẠI TRANG ngay khi có bản mới — đang giữa phiên quiz thì
+      // màn hình nháy một cái và mất sạch phiên đang làm. Giờ bản mới nằm chờ,
+      // src/services/appUpdate.js + App.jsx chọn lúc an toàn mới áp dụng.
+      registerType: 'prompt',
       includeAssets: ['icons/apple-touch-icon.png'],
       manifest: {
         name: 'LEARN TO DIE',

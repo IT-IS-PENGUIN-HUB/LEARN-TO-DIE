@@ -18,6 +18,7 @@ import { VocabProvider, useVocab } from './context/VocabProvider.jsx';
 import { useTheme } from './hooks/useTheme.js';
 import { useSync } from './hooks/useSync.js';
 import { useVocabReminder } from './hooks/useVocabReminder.js';
+import { applyAppUpdate, onUpdateReady } from './services/appUpdate.js';
 import { recordAnswer } from './lib/stats.js';
 
 function AppInner() {
@@ -34,6 +35,20 @@ function AppInner() {
   const [vocabFilter, setVocabFilter] = useState(null);
   // Tăng mỗi lần đóng modal luyện tập để StatsPanel đọc lại nhật ký
   const [statsToken, setStatsToken] = useState(0);
+
+  // Có bản mới đang chờ (service worker đã tải xong)
+  const [updateReady, setUpdateReady] = useState(false);
+  useEffect(() => onUpdateReady(() => setUpdateReady(true)), []);
+
+  /**
+   * Áp dụng bản mới = tải lại trang, nên chỉ làm khi đang không dở việc gì:
+   * đang quiz thì mất phiên, đang đọc PDF thì mất chỗ đang xem. Ở trang chủ /
+   * danh sách đề thì tải lại chẳng mất gì.
+   */
+  const busy = vocabOpen || settingsOpen || view.name === 'exam' || view.name === 'textbook';
+  useEffect(() => {
+    if (updateReady && !busy) applyAppUpdate();
+  }, [updateReady, busy]);
 
   // Nhắc ôn trên desktop khi mở app (chỉ khi user đã cấp quyền thông báo)
   useEffect(() => {
@@ -152,6 +167,13 @@ function AppInner() {
       )}
 
       {settingsOpen && <SettingsModal onClose={() => setSettingsOpen(false)} sync={sync} />}
+
+      {/* Nói trước để lát nữa app tải lại không thành cú giật mình */}
+      {updateReady && busy && (
+        <p className="update-toast" role="status">
+          Có bản mới — app sẽ tự cập nhật khi bạn xong phần đang làm
+        </p>
+      )}
 
       <Footer />
     </>

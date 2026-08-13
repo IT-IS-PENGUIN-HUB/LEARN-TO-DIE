@@ -1742,6 +1742,25 @@ textarea.text-input {
   font-weight: 600;
 }
 
+/* Báo "có bản mới đang chờ" — nổi trên cả modal (z 1000) lẫn khung PDF toàn
+   màn hình (z 3000), nhưng nhỏ và mờ để không cướp sự chú ý lúc đang học. */
+.update-toast {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc(0.75rem + env(safe-area-inset-bottom));
+  z-index: 4000;
+  max-width: calc(100vw - 2rem);
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  box-shadow: var(--shadow-md);
+  pointer-events: none;
+}
+
 /* ============ Quiz: lời giải thay chỗ đề bài sau khi trả lời ============
    Nằm ngay đầu màn hình, đúng chỗ đề bài vừa biến mất — nên chữ Hán giữ nguyên
    cỡ và màu của đề bài để mắt không bị hụt khi chuyển trạng thái. */
