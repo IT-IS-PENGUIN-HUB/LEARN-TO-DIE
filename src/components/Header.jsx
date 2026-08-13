@@ -55,10 +55,17 @@ export default function Header({
         <button type="button" className="icon-btn" onClick={onOpenSettings} aria-label="Cài đặt" title="Cài đặt">
           <IconGear />
         </button>
-        <button type="button" className="icon-btn action-btn" onClick={onOpenVocab} title="Từ vựng">
+        <button
+          type="button"
+          className="icon-btn action-btn"
+          onClick={onOpenVocab}
+          title={dueCount > 0
+            ? `Từ vựng — ${dueCount} từ ĐẾN HẠN ÔN hôm nay theo lịch SRS (không phải tổng kho)`
+            : 'Từ vựng'}
+        >
           <IconBook /> <span className="btn-label">Từ vựng</span>
           {dueCount > 0 && (
-            <span className="due-badge" aria-label={`${dueCount} từ cần ôn`}>
+            <span className="due-badge" aria-label={`${dueCount} từ đến hạn ôn hôm nay`}>
               {dueCount}
             </span>
           )}

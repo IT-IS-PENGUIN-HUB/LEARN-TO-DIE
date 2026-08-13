@@ -36,6 +36,11 @@ OUT_BANK = ROOT / "src" / "data" / "examBank.js"
 
 LETTERS = "ABCDE"
 
+# Thứ tự 5 nhóm của 基礎科目 trong đề thật: Ⅰ-1 … Ⅰ-5 (đã đối chiếu với công bố
+# chính thức). Cần vì có năm đánh số câu LẶP LẠI 1–6 trong từng nhóm thay vì
+# 1–30 liên tục, lúc đó chỉ nhìn questionNumber thì không biết câu nào trước.
+KISO_GROUP_ORDER = ["KISO_DESIGN", "KISO_INFO", "KISO_ANALYSIS", "KISO_MATERIAL", "KISO_ENV"]
+
 # Xác minh bằng công bố chính thức của 日本技術士会 (check_official.py):
 # 1185/1189 khớp, 0 lệch. Còn lại là 5 ca do BAN TỔ CHỨC, không phải lỗi dữ liệu.
 SPECIAL = {
@@ -167,7 +172,17 @@ def main():
         old.unlink()
     bytes_json = 0
     for (year, subject), rows in sorted(shards.items()):
-        rows.sort(key=lambda x: x["qid"])
+        # THỨ TỰ ĐỀ THẬT, không phải thứ tự bảng chữ cái của qid: qid mở đầu bằng
+        # mã chuyên mục nên sắp theo qid sẽ ra CON trước GEO, người học mở đề thấy
+        # ngay câu 10. Năm nào đánh số lặp trong từng nhóm thì xếp theo nhóm trước.
+        grouped = len({r["qn"] for r in rows}) < len(rows)
+        def order_key(r):
+            if grouped and r["cat"] in KISO_GROUP_ORDER:
+                return (KISO_GROUP_ORDER.index(r["cat"]), r["qn"] or 0)
+            return (0, r["qn"] or 0)
+        rows.sort(key=order_key)
+        for i, r in enumerate(rows, 1):
+            r["ord"] = i          # vị trí trong đề, app chỉ việc theo thứ tự này
         payload = {
             "year": year,
             "subject": subject,

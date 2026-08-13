@@ -15,6 +15,11 @@ export const KEYS = {
   reminderMin: 'learn_to_die_reminder_min',
   reminderLast: 'learn_to_die_reminder_last',
   textbookProgress: 'learn_to_die_textbook_progress',
+  // Làm đề: SRS theo qid + đánh dấu + phiên đang làm dở. Để RIÊNG, không nhét
+  // vào learn_to_die_vocab (migrateVocab cắt sạch field lạ).
+  examState: 'learn_to_die_exam_state',
+  // Tuỳ chọn hiển thị khi làm đề: ngôn ngữ, furigana, cỡ chữ
+  examPrefs: 'learn_to_die_exam_prefs',
 };
 
 export function loadJSON(key, fallback = null) {

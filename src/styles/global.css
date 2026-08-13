@@ -873,16 +873,33 @@ textarea {
   font-family: var(--font-jp);
 }
 
+/* Nút quay lại: ロン chê mũi tên trần nhỏ và khó bấm (14/8). Giữ icon dạng nét
+   cho đồng bộ cả app, nhưng bọc viên thuốc + vùng bấm ≥44px chuẩn ngón tay. */
 .back-btn {
-  color: var(--text-muted);
-  font-weight: 500;
+  color: var(--text-main);
+  font-weight: 600;
+  font-size: 0.92rem;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  min-height: 44px;
+  padding: 0.45rem 1rem 0.45rem 0.75rem;
+  border-radius: 999px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  transition: border-color 0.13s, background 0.13s, color 0.13s;
+}
+
+.back-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2.4;
 }
 
 .back-btn:hover {
   color: var(--primary);
+  border-color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 8%, var(--card-bg));
 }
 
 .dropdown {
@@ -2299,12 +2316,15 @@ textarea.text-input {
     display: contents;
   }
 
+  /* Thẻ nào không có rule order sẽ mặc định order:0 và NHẢY LÊN TRÊN CÙNG,
+     trước cả "Từ hôm nay" — thêm thẻ module mới thì phải khai ở đây. */
   .dashboard > .wotd-card { order: 1; }
   .stats-slot { order: 2; margin-top: 0.5rem; }
-  .module-textbook { order: 3; }
-  .module-resume { order: 4; }
-  .card-grid { order: 5; }
-  .module-schedule { order: 6; }
+  .module-practice { order: 3; }
+  .module-textbook { order: 4; }
+  .module-resume { order: 5; }
+  .card-grid { order: 6; }
+  .module-schedule { order: 7; }
 
   .card-grid {
     grid-template-columns: 1fr;
@@ -2422,4 +2442,340 @@ textarea.text-input {
   .fc-word {
     font-size: clamp(1.4rem, 7vw, 2.2rem);
   }
+}
+
+/* ==========================================================================
+   MODULE ĐỀ THI (prefix .qb- = question bank)
+   Tiền tố riêng vì global.css là namespace chung: .side-panel/.left-panel/
+   .right-panel đã bị ExamView chiếm, .answer-option/.opt-letter đang được quiz
+   từ vựng dùng — đụng vào là vỡ màn khác.
+   ========================================================================== */
+
+/* Chữ xanh lá nhỏ trên nền sáng: --success #10b981 chỉ đạt ~2.5:1, phải có
+   token đậm hơn riêng cho chữ, theo đúng tiền lệ --accent-text / --freq-hot. */
+:root { --success-text: #34d399; }
+:root[data-theme='light'] { --success-text: #047857; }
+
+.qb-wrap { padding-bottom: 3rem; }
+
+/* .section-header h2 toàn app dùng --font-jp vì xưa nay tiêu đề ở đó là chữ Nhật.
+   Tiêu đề của module đề là TIẾNG VIỆT ("Đề thi", "Kết quả") — font Nhật không có
+   glyph ề/ế nên Chrome ghép dấu rời, chữ vỡ. Trong module này ép về font hệ. */
+.qb-wrap .section-header h2 { font-family: var(--font-sans); letter-spacing: -0.01em; }
+.qb-loading { padding: 2.5rem 1rem; text-align: center; color: var(--text-muted); }
+
+.qb-hero {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem 1.3rem;
+  border-radius: 14px;
+  color: #fff;
+  margin-bottom: 1rem;
+  background: linear-gradient(120deg, var(--primary), color-mix(in srgb, var(--primary) 42%, #08122c));
+  box-shadow: 0 10px 24px -14px rgba(var(--primary-rgb), 0.9);
+}
+.qb-hero-body { display: flex; flex-direction: column; }
+.qb-hero-body strong { font-size: 1.15rem; letter-spacing: -0.02em; }
+.qb-hero-body span { font-size: 0.85rem; color: rgba(255, 255, 255, 0.85); }
+
+.qb-resume {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  background: rgba(var(--primary-rgb), 0.1);
+  border: 1px dashed var(--primary);
+}
+.qb-resume > div { display: flex; flex-direction: column; margin-right: auto; }
+.qb-resume strong { font-size: 0.95rem; }
+.qb-resume span { font-size: 0.82rem; color: var(--text-muted); }
+
+.qb-filters { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.qb-pill {
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  cursor: pointer;
+  color: var(--text-main);
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+.qb-pill:hover { border-color: var(--primary); }
+.qb-pill.is-on { background: var(--primary); border-color: var(--primary); color: #fff; font-weight: 600; }
+.qb-pill em { font-style: normal; opacity: 0.7; font-size: 0.78rem; margin-left: 0.3rem; }
+
+.qb-years { display: grid; gap: 0.75rem; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+.qb-year {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  text-align: left;
+  font: inherit;
+  color: var(--text-main);
+  padding: 0.9rem 1rem;
+  cursor: pointer;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-top: 3px solid var(--primary);
+  border-radius: 12px;
+  transition: transform 0.14s, box-shadow 0.14s, background 0.14s;
+}
+.qb-year:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  background: color-mix(in srgb, var(--primary) 6%, var(--card-bg));
+}
+.qb-year-num { font-size: 1.25rem; font-weight: 700; color: var(--accent-text); letter-spacing: -0.02em; }
+.qb-year-wa { font-size: 0.75rem; color: var(--text-muted); }
+.qb-year-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+.qb-year-sub { font-size: 0.72rem; color: var(--text-muted); }
+.qb-bar { height: 5px; border-radius: 999px; background: var(--bg-alt); overflow: hidden; margin: 0.35rem 0 0.2rem; }
+.qb-bar i { display: block; height: 100%; border-radius: 999px; background: var(--primary); }
+.qb-bar i.is-full { background: var(--success); }
+.qb-flag {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 0.1rem 0.45rem;
+  border-radius: 6px;
+  color: #f59e0b;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+}
+
+/* ---- màn làm bài ---- */
+.qb-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.6rem 1rem;
+  background: color-mix(in srgb, var(--primary) 7%, var(--card-bg));
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: inset 0 -2px 0 rgba(var(--primary-rgb), 0.28);
+}
+.qb-crumb { display: flex; flex-direction: column; min-width: 0; }
+.qb-crumb strong { font-size: 0.85rem; }
+.qb-chips { display: flex; gap: 0.35rem; flex-wrap: wrap; margin-top: 0.15rem; }
+.qb-chip {
+  font-size: 0.68rem;
+  padding: 0.05rem 0.45rem;
+  border-radius: 6px;
+  color: var(--text-muted);
+  background: var(--bg-alt);
+  border: 1px solid var(--border-color);
+}
+.qb-chip.is-year { background: var(--primary); border-color: var(--primary); color: #fff; font-weight: 600; }
+.qb-qid { font-family: ui-monospace, monospace; font-size: 0.62rem; }
+
+.qb-tools { margin-left: auto; display: flex; gap: 0.4rem; align-items: center; }
+.qb-seg { display: flex; padding: 2px; border-radius: 999px; background: var(--bg-alt); border: 1px solid var(--border-color); }
+.qb-seg button {
+  font: inherit;
+  font-size: 0.72rem;
+  padding: 0.15rem 0.6rem;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  background: transparent;
+  color: var(--text-muted);
+}
+.qb-seg button.is-on { background: var(--primary); color: #fff; font-weight: 600; }
+.qb-icon {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  font: inherit;
+  font-size: 0.8rem;
+  border-radius: 999px;
+  cursor: pointer;
+  color: var(--text-muted);
+  background: var(--bg-alt);
+  border: 1px solid var(--border-color);
+}
+.qb-icon.is-on { background: var(--primary); border-color: var(--primary); color: #fff; }
+
+.qb-body { max-width: 900px; margin: 0 auto; padding: 1rem 1rem 6rem; }
+.qb-dots { display: flex; gap: 3px; flex-wrap: wrap; margin-bottom: 0.9rem; }
+.qb-dots i { width: 18px; height: 5px; border-radius: 999px; background: var(--border-color); }
+.qb-dots i.is-ok { background: var(--success); }
+.qb-dots i.is-no { background: var(--danger); }
+.qb-dots i.is-cur { background: var(--primary); box-shadow: 0 0 0 2px rgba(var(--primary-rgb), 0.3); }
+
+.qb-note {
+  padding: 0.7rem 0.9rem;
+  border-radius: 10px;
+  margin-bottom: 0.9rem;
+  font-size: 0.85rem;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.32);
+}
+
+.qb-card {
+  padding: 1.1rem 1.2rem;
+  border-radius: 12px;
+  margin-bottom: 0.9rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+.qb-ja { font-family: var(--font-jp); line-height: 2; }
+/* Có ruby thì dòng cao hơn hẳn — không nới là chữ chú âm dính vào dòng trên */
+.qb-ja ruby { line-height: 2.4; }
+.qb-ja rt { font-size: 0.5em; font-weight: 400; color: var(--text-muted); }
+.qb-vi {
+  margin-top: 0.6rem;
+  padding-left: 0.8rem;
+  border-left: 3px solid var(--primary);
+  color: var(--text-muted);
+  font-size: 0.92em;
+}
+
+.qb-figs { display: flex; flex-direction: column; gap: 0.7rem; margin-top: 0.9rem; }
+.qb-fig { border: 1px solid var(--border-color); border-radius: 10px; overflow: hidden; }
+.qb-fig figcaption {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.75rem;
+  color: var(--text-main);
+  background: color-mix(in srgb, var(--primary) 9%, var(--bg-alt));
+  border-bottom: 1px solid var(--border-color);
+}
+/* Nền trắng bắt buộc: ảnh phần lớn là PNG trong suốt nét đen, nền tối là mất hình */
+.qb-fig-img { display: block; padding: 0.8rem; text-align: center; background: #fff; }
+.qb-fig-img img { max-width: 100%; height: auto; }
+
+.qb-opts { display: flex; flex-direction: column; gap: 0.55rem; }
+.qb-opt {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+  text-align: left;
+  font: inherit;
+  color: var(--text-main);
+  padding: 0.8rem 0.9rem;
+  cursor: pointer;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 11px;
+  transition: border-color 0.13s, background 0.13s;
+}
+.qb-opt:hover:not(:disabled) {
+  border-color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 6%, var(--card-bg));
+}
+.qb-opt:disabled { cursor: default; }
+.qb-key {
+  flex: 0 0 28px;
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  border-radius: 999px;
+  color: var(--accent-text);
+  background: color-mix(in srgb, var(--primary) 14%, var(--bg-alt));
+  border: 1px solid var(--border-color);
+}
+.qb-opt-text { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.qb-opt-text .qb-ja { line-height: 1.9; }
+.qb-opt-text .qb-vi { font-size: 0.85rem; margin-top: 0.3rem; }
+.qb-opt.is-right { border-color: var(--success); background: rgba(var(--success-rgb), 0.09); }
+.qb-opt.is-right .qb-key { background: var(--success); border-color: var(--success); color: #fff; }
+.qb-opt.is-wrong { border-color: var(--danger); background: rgba(var(--danger-rgb), 0.09); }
+.qb-opt.is-wrong .qb-key { background: var(--danger); border-color: var(--danger); color: #fff; }
+/* Câu bị ban tổ chức HUỶ: chọn gì cũng được điểm, nên tô trung tính (xanh dương)
+   chứ không đỏ — tô đỏ là tự mâu thuẫn với điểm vừa ghi cho người học. */
+.qb-opt.is-void { border-color: var(--primary); background: rgba(var(--primary-rgb), 0.1); }
+.qb-opt.is-void .qb-key { background: var(--primary); border-color: var(--primary); color: #fff; }
+
+.qb-tag { align-self: center; font-size: 0.72rem; font-weight: 600; white-space: nowrap; }
+.qb-opt.is-right .qb-tag { color: var(--success-text); }
+.qb-opt.is-wrong .qb-tag { color: var(--danger); }
+.qb-opt.is-void .qb-tag { color: var(--accent-text); }
+
+.qb-expl {
+  margin-top: 0.9rem;
+  padding: 1rem 1.1rem;
+  border-radius: 12px;
+  background: rgba(var(--success-rgb), 0.07);
+  border: 1px solid rgba(var(--success-rgb), 0.4);
+}
+.qb-expl h4 {
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--success-text);
+  margin-bottom: 0.5rem;
+}
+.qb-expl .qb-vi { border-left-color: var(--success); color: var(--text-main); }
+.qb-add { margin-top: 0.9rem; }
+.qb-add-form {
+  margin-top: 0.7rem;
+  padding-top: 0.7rem;
+  border-top: 1px dashed var(--border-color);
+}
+
+/* Ghim đáy: sau khi trả lời, nội dung dài hơn màn hình iPhone rất nhiều —
+   không ghim thì mỗi câu phải cuộn xuống mới bấm được "Câu tiếp". */
+.qb-actions {
+  position: sticky;
+  bottom: 0;
+  z-index: 80;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.7rem 1rem calc(0.7rem + env(safe-area-inset-bottom));
+  background: var(--card-bg);
+  border-top: 1px solid var(--border-color);
+}
+.qb-count { margin: 0 auto; font-size: 0.8rem; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+
+.qb-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 2rem 1rem;
+  text-align: center;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+}
+.qb-result strong { font-size: 2.6rem; font-weight: 700; color: var(--accent-text); letter-spacing: -0.03em; }
+.qb-result > span { color: var(--text-muted); font-size: 0.9rem; }
+.qb-result-btns { display: flex; gap: 0.6rem; flex-wrap: wrap; justify-content: center; margin-top: 0.8rem; }
+
+/* Cỡ chữ S / M / L — chỉ đổi phần đề và đáp án, không đụng khung */
+.qb-size-s .qb-card .qb-ja, .qb-size-s .qb-opt-text .qb-ja { font-size: 0.95rem; }
+.qb-size-m .qb-card .qb-ja, .qb-size-m .qb-opt-text .qb-ja { font-size: 1.05rem; }
+.qb-size-l .qb-card .qb-ja, .qb-size-l .qb-opt-text .qb-ja { font-size: 1.22rem; }
+
+@media (max-width: 768px) {
+  .qb-topbar { flex-wrap: wrap; row-gap: 0.5rem; padding: 0.5rem 0.7rem; }
+  .qb-tools { width: 100%; margin-left: 0; overflow-x: auto; padding-bottom: 2px; }
+  .qb-body { padding: 0.8rem 0.8rem 5rem; }
+  .qb-card { padding: 0.9rem; }
+  .qb-years { grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+  .qb-year { padding: 0.75rem 0.8rem; }
+  .qb-actions .btn { flex: 1; }
+  .qb-count { flex: 0 0 auto; margin: 0; }
 }

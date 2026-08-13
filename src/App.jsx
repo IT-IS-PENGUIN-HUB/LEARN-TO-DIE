@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import Header from './components/Header.jsx';
 import StatsPanel from './components/StatsPanel.jsx';
 import Hero from './components/Hero.jsx';
@@ -21,13 +21,16 @@ import { useVocabReminder } from './hooks/useVocabReminder.js';
 import { applyAppUpdate, onUpdateReady } from './services/appUpdate.js';
 import { recordAnswer } from './lib/stats.js';
 
+// Module Đề thi kéo theo 1189 câu dữ liệu → tách chunk như PdfViewer, trang chủ giữ nhẹ
+const PracticeModule = lazy(() => import('./components/practice/PracticeModule.jsx'));
+
 function AppInner() {
   const { theme, toggleTheme } = useTheme();
   const { dueTotal, allWords } = useVocab();
   const sync = useSync();
   useVocabReminder(allWords);
   // view: {name:'home'} | {name:'subject', subjectId} | {name:'exam', subjectId, examId}
-  //     | {name:'textbook', subjectId?, chapterId?} | {name:'schedule'}
+  //     | {name:'textbook', subjectId?, chapterId?} | {name:'schedule'} | {name:'practice'}
   const [view, setView] = useState({ name: 'home' });
   const [vocabOpen, setVocabOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
@@ -45,7 +48,11 @@ function AppInner() {
    * đang quiz thì mất phiên, đang đọc PDF thì mất chỗ đang xem. Ở trang chủ /
    * danh sách đề thì tải lại chẳng mất gì.
    */
-  const busy = vocabOpen || settingsOpen || view.name === 'exam' || view.name === 'textbook';
+  // 'practice' PHẢI có mặt ở đây: đang làm dở đề mà service worker tải lại trang
+  // là mất phiên, đúng cái lỗi từng gặp với quiz từ vựng.
+  const busy =
+    vocabOpen || settingsOpen ||
+    view.name === 'exam' || view.name === 'textbook' || view.name === 'practice';
   useEffect(() => {
     if (updateReady && !busy) applyAppUpdate();
   }, [updateReady, busy]);
@@ -72,6 +79,7 @@ function AppInner() {
   const openTextbookSubject = (subjectId) => setView({ name: 'textbook', subjectId });
   const openChapter = (subjectId, chapterId) => setView({ name: 'textbook', subjectId, chapterId });
   const openSchedule = () => setView({ name: 'schedule' });
+  const openPractice = () => setView({ name: 'practice' });
   // Mọi lối vào thường: ôn trộn toàn bộ kho từ. Chỉ nút trong chương giáo trình mới lọc.
   const openVocab = () => {
     setVocabFilter(null);
@@ -96,12 +104,7 @@ function AppInner() {
 
       {view.name === 'home' && (
         <>
-          <Hero
-            onStartPractice={() => {
-              document.getElementById('dashboard')?.scrollIntoView({ behavior: 'smooth' });
-            }}
-            onStudyVocab={openVocab}
-          />
+          <Hero onStartPractice={openPractice} onStudyVocab={openVocab} />
           <section className="dashboard container" id="dashboard">
             {/* Từ hôm nay liếc mỗi ngày → trên cùng; kế đến lối tắt hay bấm;
                3 thẻ môn xuống dưới. Điện thoại có thứ tự riêng bằng CSS order. */}
@@ -110,6 +113,7 @@ function AppInner() {
               onOpenTextbooks={openTextbooks}
               onOpenSchedule={openSchedule}
               onResume={openChapter}
+              onOpenPractice={openPractice}
             />
             <SubjectDashboard onSelectSubject={openSubject} />
             <div className="stats-slot">
@@ -147,6 +151,12 @@ function AppInner() {
             setVocabOpen(true);
           }}
         />
+      )}
+
+      {view.name === 'practice' && (
+        <Suspense fallback={<p className="qb-loading container">Đang mở kho đề…</p>}>
+          <PracticeModule onBack={goHome} />
+        </Suspense>
       )}
 
       {view.name === 'schedule' && <ScheduleView onBack={goHome} />}
