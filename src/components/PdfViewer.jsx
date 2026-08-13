@@ -146,9 +146,19 @@ export default function PdfViewer({
             container: textDiv,
             viewport: vp,
           });
-          textPromise = textLayerTask.render().catch((e) => {
-            console.warn('Không tạo được text layer (PDF dạng scan?):', e);
-          });
+          textPromise = textLayerTask
+            .render()
+            .catch((e) => {
+              console.warn('Không tạo được text layer (PDF dạng scan?):', e);
+            })
+            .finally(() => {
+              // PDF.js tự đặt lại kích thước khung chữ theo trang CHƯA xoay, nên
+              // khi xoay 90° khung bị nằm ngang trong khi canvas đứng: chữ cuối
+              // trang bị cắt, và khung thò ra ngoài làm trình xem tưởng đang
+              // phóng to → nuốt luôn thao tác vuốt lật trang. Ép về đúng canvas.
+              textDiv.style.width = canvas.style.width;
+              textDiv.style.height = canvas.style.height;
+            });
         }
 
         await Promise.allSettled([renderTask.promise, textPromise]);
@@ -215,8 +225,11 @@ export default function PdfViewer({
   const goNext = useCallback(() => setPageNum((p) => Math.min(maxPage, p + 1)), [maxPage]);
 
   /**
-   * Vuốt ngang để lật trang. Khi đã phóng to (trang rộng hơn khung) thì kéo ngang
-   * là để xem phần bị khuất, không phải lật trang — nên bỏ qua.
+   * Vuốt để lật trang. Bình thường là vuốt ngang; nhưng khi trang xoay 90° mà
+   * màn hình vẫn dọc (iOS không cho khoá landscape — người đọc cầm máy nằm
+   * ngang) thì vuốt "ngang" theo mắt người đọc chính là trục DỌC của màn hình,
+   * nên phải đổi trục xét. Khi đã phóng to (trang tràn khung theo trục lật)
+   * thì kéo là để xem phần bị khuất, không phải lật trang — nên bỏ qua.
    */
   const touchRef = useRef(null);
   const onTouchStart = (e) => {
@@ -228,18 +241,25 @@ export default function PdfViewer({
     touchRef.current = {
       x: e.touches[0].clientX,
       y: e.touches[0].clientY,
-      panzoom: wrap ? wrap.scrollWidth > wrap.clientWidth + 2 : false,
+      panX: wrap ? wrap.scrollWidth > wrap.clientWidth + 2 : false,
+      panY: wrap ? wrap.scrollHeight > wrap.clientHeight + 2 : false,
     };
   };
   const onTouchEnd = (e) => {
     const start = touchRef.current;
     touchRef.current = null;
-    if (!start || start.panzoom || e.changedTouches.length !== 1) return;
+    if (!start || e.changedTouches.length !== 1) return;
+    const rotated = rotate === 90;
+    if (rotated ? start.panY : start.panX) return;
     const dx = e.changedTouches[0].clientX - start.x;
     const dy = e.changedTouches[0].clientY - start.y;
-    // Phải rõ là ngang (không phải cuộn dọc) và đủ dài để không nhầm với chạm
-    if (Math.abs(dx) < 55 || Math.abs(dx) < Math.abs(dy) * 1.4) return;
-    if (dx < 0) goNext();
+    // Trang xoay 90° theo chiều kim đồng hồ + máy cầm ngang: "trái" của người
+    // đọc là phía TRÊN màn hình → dy âm nghĩa là lật tới, như dx âm khi đứng.
+    const along = rotated ? dy : dx;
+    const across = rotated ? dx : dy;
+    // Phải rõ là vuốt theo trục lật (không phải cuộn trục kia) và đủ dài
+    if (Math.abs(along) < 55 || Math.abs(along) < Math.abs(across) * 1.4) return;
+    if (along < 0) goNext();
     else goPrev();
   };
 

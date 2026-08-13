@@ -3,9 +3,11 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
-    # Commit "Sync vocab" từ app không cần deploy lại site
+    # Commit "Sync vocab" / "Sync tiến độ đọc" từ app không cần deploy lại site:
+    # cả hai file đều được app đọc/ghi qua GitHub API, không đọc từ bản deploy.
     paths-ignore:
       - 'vocab.json'
+      - 'progress.json'
   workflow_dispatch:
 
 permissions:
