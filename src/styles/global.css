@@ -1742,31 +1742,20 @@ textarea.text-input {
   font-weight: 600;
 }
 
-/* ============ Quiz: hiện đủ 3 mặt của từ sau khi trả lời ============ */
+/* ============ Quiz: lời giải thay chỗ đề bài sau khi trả lời ============
+   Nằm ngay đầu màn hình, đúng chỗ đề bài vừa biến mất — nên chữ Hán giữ nguyên
+   cỡ và màu của đề bài để mắt không bị hụt khi chuyển trạng thái. */
 .quiz-reveal {
   background: var(--bg-alt);
   border: 1px solid var(--border-color);
   border-radius: 10px;
-  padding: 0.75rem 0.9rem;
-  margin-bottom: 1.25rem;
+  padding: 0.6rem 0.9rem 0.75rem;
+  margin-bottom: 1rem;
   text-align: center;
-  /* Cuộn tự động phải dừng TRÊN thanh nút ghim đáy, không thì bảng chui xuống
-     dưới nó. Thanh nút cao ~78px kể cả lề, để 6.5rem cho dư một khe hở. */
-  scroll-margin-bottom: 6.5rem;
 }
 
-.quiz-reveal-head {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-
-.quiz-reveal-jp {
-  font-size: 1.6rem;
-  font-weight: 600;
-  overflow-wrap: anywhere;
+.quiz-reveal .quiz-word-row {
+  margin-bottom: 0.15rem;
 }
 
 .quiz-reveal-kana {
@@ -1776,6 +1765,15 @@ textarea.text-input {
 
 .quiz-reveal-meaning {
   margin-top: 0.2rem;
+}
+
+.quiz-reveal-freq {
+  margin-top: 0.35rem;
+}
+
+/* Nhãn tần suất đứng riêng một dòng nên bỏ lề trái vốn để tách nó khỏi từ */
+.quiz-reveal-freq .freq-badge {
+  margin-left: 0;
 }
 
 /* Ví dụ là phần "có thì tốt" — chữ nhỏ để không đẩy nút "Câu tiếp theo" xuống
@@ -1808,8 +1806,8 @@ textarea.text-input {
 .answer-option {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 1rem;
+  gap: 0.6rem;
+  padding: 0.55rem 0.8rem;
   border: 1px solid var(--border-color);
   border-radius: 8px;
   transition: border-color 0.2s, background-color 0.2s;
@@ -1817,9 +1815,9 @@ textarea.text-input {
   width: 100%;
   /* To hơn 15% so với cỡ chuẩn: từ khi hai nút được ghim đáy thì không phải nén
      chữ để giành chỗ nữa, mà đáp án giờ có cả chữ Hán — chữ Nhật cỡ nhỏ rất khó
-     nhìn ra nét. */
+     nhìn ra nét. Bù lại thì bóp lề trong cho bốn ô đỡ chiếm chiều cao. */
   font-size: 1.15rem;
-  min-height: 3.4rem;
+  min-height: 2.9rem;
 }
 
 .answer-option:hover:not(:disabled) {

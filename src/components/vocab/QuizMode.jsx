@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { useVocab } from '../../context/VocabProvider.jsx';
 import { buildQueue } from '../../lib/srs.js';
 import { speakJapanese } from '../../services/tts.js';
@@ -120,16 +120,40 @@ export default function QuizMode({ subject, onRecordAnswer, pool }) {
   // Trả lời xong thì kéo bảng nghĩa vào tầm mắt. Không có bước này thì trên
   // iPhone bảng nằm ngay dưới mép màn hình (bị thanh nút che), phải tự cuộn mới
   // đọc được — mà đọc lại từ vừa sai mới là phần đáng giá nhất của quiz.
-  // Nhảy thẳng, không cuộn mượt: mỗi câu trả lời là một lần nhảy, chờ animation
-  // 300ms mười lần một phiên là chậm thấy rõ.
-  const revealRef = useRef(null);
-  useEffect(() => {
-    if (answered) revealRef.current?.scrollIntoView({ block: 'end' });
+  /**
+   * Trả lời xong, cụm lời giải THAY CHỖ đề bài ở đầu màn hình (đỡ hiện từ hai
+   * lần). Nhưng nó cao hơn dòng đề bài nên bốn ô đáp án bị đẩy xuống ~140px:
+   * ô vừa chạm trôi khỏi ngón tay, dấu đúng/sai hiện ở chỗ khác chỗ đang nhìn.
+   * Nên ngay sau khi chèn, cuộn bù đúng phần cao thêm để bốn ô đứng yên tại chỗ.
+   */
+  const optionsRef = useRef(null);
+  const anchorTop = useRef(null);
+  const topRef = useRef(null);
+
+  useLayoutEffect(() => {
+    const list = optionsRef.current;
+    if (!answered || anchorTop.current === null || !list) return;
+    let scroller = list.parentElement;
+    while (scroller && !/(auto|scroll)/.test(getComputedStyle(scroller).overflowY)) {
+      scroller = scroller.parentElement;
+    }
+    const delta = list.getBoundingClientRect().top - anchorTop.current;
+    if (scroller && delta) scroller.scrollTop += delta;
+    anchorTop.current = null;
   }, [answered]);
+
+  // Sang câu mới thì kéo về đầu câu hỏi — không thì vẫn đứng ở chỗ đã cuộn của
+  // câu trước, đề bài mới nằm khuất phía trên.
+  useEffect(() => {
+    if (!answered) topRef.current?.scrollIntoView({ block: 'start' });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [idx, session]);
 
   const choose = (i) => {
     if (!word || answered || !options[i]) return;
     const correct = options[i].id === word.id;
+    // Ghi lại chỗ đang đứng của cụm đáp án để giữ nó yên khi lời giải chèn vào
+    anchorTop.current = optionsRef.current?.getBoundingClientRect().top ?? null;
     setChosen(i);
     setResult((r) => ({ correct: r.correct + (correct ? 1 : 0), total: r.total + 1 }));
     answerWord(subject, word.id, correct);
@@ -199,25 +223,59 @@ export default function QuizMode({ subject, onRecordAnswer, pool }) {
 
   return (
     <div>
-      <p className="quiz-progress">
+      <p className="quiz-progress" ref={topRef}>
         Câu {idx + 1}/{queue.length} · Đúng {result.correct}/{result.total}
       </p>
-      <div className="quiz-word-row">
-        <h3 className={`quiz-word${askIsJapanese ? ' jp-text' : ' quiz-word-vi'}`}>{val(word, form.ask)}</h3>
-        {form.speak && (
-          <button
-            type="button"
-            className="btn btn-outline tts-btn"
-            onClick={() => speakJapanese(word.jp)}
-            aria-label="Đọc phát âm"
-          >
-            <IconVolume />
-          </button>
-        )}
-      </div>
-      {/* Dạng câu hỏi đổi liên tục nên phải nói rõ đang hỏi gì */}
-      {!answered && <p className="quiz-hint quiz-ask">{form.hint} (phím 1-4)</p>}
-      <div className="quiz-options">
+
+      {/* Trả lời xong: cụm lời giải thay luôn chỗ đề bài, hiện đủ ba mặt của từ
+          cùng câu ví dụ. Không để ở cuối màn hình nữa vì như thế từ hiện hai lần
+          và phải cuộn mới đọc được. */}
+      {answered ? (
+        <div className="quiz-reveal">
+          <div className="quiz-word-row">
+            <h3 className="quiz-word jp-text">{word.jp}</h3>
+            <button
+              type="button"
+              className="btn btn-outline tts-btn"
+              onClick={() => speakJapanese(word.jp)}
+              aria-label="Đọc phát âm"
+            >
+              <IconVolume />
+            </button>
+          </div>
+          {word.kana && <p className="quiz-reveal-kana jp-text">{word.kana}</p>}
+          {word.meaning && <p className="quiz-reveal-meaning">{word.meaning}</p>}
+          <p className="quiz-reveal-freq">
+            <FreqBadge jp={word.jp} subject={subject} full />
+          </p>
+          {(word.exJp || word.exVi) && (
+            <div className="quiz-reveal-ex">
+              {word.exJp && <p className="jp-text">{word.exJp}</p>}
+              {word.exVi && <p className="quiz-reveal-ex-vi">{word.exVi}</p>}
+            </div>
+          )}
+        </div>
+      ) : (
+        <>
+          <div className="quiz-word-row">
+            <h3 className={`quiz-word${askIsJapanese ? ' jp-text' : ' quiz-word-vi'}`}>{val(word, form.ask)}</h3>
+            {form.speak && (
+              <button
+                type="button"
+                className="btn btn-outline tts-btn"
+                onClick={() => speakJapanese(word.jp)}
+                aria-label="Đọc phát âm"
+              >
+                <IconVolume />
+              </button>
+            )}
+          </div>
+          {/* Dạng câu hỏi đổi liên tục nên phải nói rõ đang hỏi gì */}
+          <p className="quiz-hint quiz-ask">{form.hint} (phím 1-4)</p>
+        </>
+      )}
+
+      <div className="quiz-options" ref={optionsRef}>
         {options.map((opt, i) => {
           const isCorrectOpt = opt.id === word.id;
           let cls = 'answer-option';
@@ -242,36 +300,10 @@ export default function QuizMode({ subject, onRecordAnswer, pool }) {
         })}
       </div>
 
-      {/* Trả lời xong thì hiện đủ cả ba mặt của từ, dù vừa hỏi dạng nào */}
-      {answered && (
-        <div className="quiz-reveal" ref={revealRef}>
-          <div className="quiz-reveal-head">
-            <span className="jp-text quiz-reveal-jp">{word.jp}</span>
-            <button
-              type="button"
-              className="btn btn-outline tts-btn"
-              onClick={() => speakJapanese(word.jp)}
-              aria-label="Đọc phát âm"
-            >
-              <IconVolume />
-            </button>
-            <FreqBadge jp={word.jp} subject={subject} full />
-          </div>
-          {word.kana && <p className="quiz-reveal-kana jp-text">{word.kana}</p>}
-          {word.meaning && <p className="quiz-reveal-meaning">{word.meaning}</p>}
-          {(word.exJp || word.exVi) && (
-            <div className="quiz-reveal-ex">
-              {word.exJp && <p className="jp-text">{word.exJp}</p>}
-              {word.exVi && <p className="quiz-reveal-ex-vi">{word.exVi}</p>}
-            </div>
-          )}
-        </div>
-      )}
-
-      {/* Ghim xuống đáy sau khi trả lời: cả cụm câu hỏi + 4 đáp án + bảng nghĩa
-          vốn đã cao hơn màn hình iPhone, để nút chạy theo cuối trang thì mỗi câu
-          phải cuộn một lần mới bấm được. Chỉ ghim lúc đã trả lời — lúc đang cân
-          nhắc thì không có gì che đáp án. */}
+      {/* Ghim xuống đáy sau khi trả lời: cụm lời giải + 4 đáp án vẫn cao hơn màn
+          hình iPhone, để nút chạy theo cuối trang thì mỗi câu phải cuộn một lần
+          mới bấm được. Chỉ ghim lúc đã trả lời — lúc đang cân nhắc thì không có
+          gì che đáp án. */}
       <div className={`quiz-actions${answered ? ' is-pinned' : ''}`}>
         {answered && (
           <>
