@@ -111,12 +111,15 @@ def main():
 
             cat = r.get("category") or {}
             code = cat.get("code")
-            if code and code not in cats:
-                cats[code] = {
-                    "ja": cat.get("nameJa") or code,
-                    "vi": cat.get("nameVi") or cat.get("nameJa") or code,
-                    "subject": subject,
-                }
+            if code:
+                if code not in cats:
+                    cats[code] = {
+                        "ja": cat.get("nameJa") or code,
+                        "vi": cat.get("nameVi") or cat.get("nameJa") or code,
+                        "subject": subject,
+                        "count": 0,
+                    }
+                cats[code]["count"] += 1  # để màn duyệt theo chuyên mục hiện số câu
 
             o_ja, o_vi = [], []
             for L in LETTERS:

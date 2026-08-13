@@ -3042,3 +3042,76 @@ textarea.text-input {
   .qb-hero { flex-wrap: wrap; }
   .qb-mock-nav { grid-template-columns: repeat(auto-fill, minmax(38px, 1fr)); }
 }
+
+/* ---- GĐ6a: mục tiêu ngày · gợi ý/ngẫu nhiên · chuyên mục · trình xem lại ---- */
+.qb-goal {
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+.qb-goal-head { display: flex; justify-content: space-between; align-items: baseline; gap: 0.6rem; flex-wrap: wrap; }
+.qb-goal-head strong { font-size: 0.92rem; }
+.qb-goal-num { font-size: 0.85rem; color: var(--text-muted); }
+.qb-goal-num b { font-size: 1.25rem; color: var(--accent-text); }
+.qb-goal-bar { height: 8px; border-radius: 999px; background: var(--bg-alt); overflow: hidden; margin: 0.5rem 0; }
+.qb-goal-bar i { display: block; height: 100%; border-radius: 999px; background: var(--primary); transition: width 0.3s; }
+.qb-goal-bar i.is-done { background: var(--success); }
+.qb-goal-foot { display: flex; gap: 0.7rem; align-items: center; font-size: 0.78rem; color: var(--text-muted); flex-wrap: wrap; }
+.qb-goal-foot label { display: flex; gap: 0.4rem; align-items: center; margin-left: auto; }
+.qb-goal-sel { padding: 0.2rem 0.45rem; font-size: 0.8rem; }
+.qb-remind {
+  font: inherit; font-size: 0.75rem; padding: 0.25rem 0.7rem; border-radius: 999px; cursor: pointer;
+  color: var(--text-muted); background: var(--bg-alt); border: 1px solid var(--border-color);
+}
+.qb-remind.is-on { color: #fff; background: var(--primary); border-color: var(--primary); }
+
+.qb-mode-icon.is-suggest { background: var(--warn, #f59e0b); }
+.qb-mode-icon.is-random { background: #8b5cf6; }
+.qb-mode-icon.is-browse { background: #64748b; }
+
+.qb-cats { display: grid; gap: 0.45rem; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); margin-bottom: 1.1rem; }
+.qb-cat {
+  display: flex; justify-content: space-between; align-items: center; gap: 0.5rem;
+  font: inherit; font-size: 0.83rem; text-align: left; padding: 0.55rem 0.8rem;
+  color: var(--text-main); background: var(--card-bg);
+  border: 1px solid var(--border-color); border-radius: 10px; cursor: pointer;
+}
+.qb-cat:hover { border-color: var(--primary); background: color-mix(in srgb, var(--primary) 6%, var(--card-bg)); }
+.qb-cat em { font-style: normal; font-size: 0.72rem; color: var(--accent-text); white-space: nowrap; }
+
+.qb-browse-count { margin-left: auto; align-self: center; font-size: 0.78rem; color: var(--text-muted); }
+.qb-browse { display: flex; flex-direction: column; gap: 0.5rem; }
+.qb-row {
+  display: flex; gap: 0.7rem; align-items: flex-start; text-align: left; font: inherit;
+  padding: 0.7rem 0.85rem; color: var(--text-main); cursor: pointer;
+  background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 11px;
+}
+.qb-row:hover { border-color: var(--primary); }
+.qb-row-dot {
+  flex: 0 0 24px; width: 24px; height: 24px; display: grid; place-items: center;
+  border-radius: 999px; font-size: 0.75rem; font-weight: 700; color: #fff; margin-top: 2px;
+}
+.qb-row-dot.is-ok { background: var(--success); }
+.qb-row-dot.is-no { background: var(--danger); }
+.qb-row-dot.is-new { background: var(--text-muted); }
+.qb-row-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 0.15rem; }
+.qb-row-meta { display: flex; gap: 0.6rem; flex-wrap: wrap; font-size: 0.7rem; color: var(--text-muted); }
+.qb-row-cat { color: var(--accent-text); }
+.qb-row-wr { color: var(--danger); }
+.qb-row-ja {
+  font-size: 0.88rem; line-height: 1.7; overflow: hidden; display: -webkit-box;
+  -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+}
+.qb-row-vi {
+  font-size: 0.78rem; color: var(--text-muted); overflow: hidden; display: -webkit-box;
+  -webkit-line-clamp: 1; -webkit-box-orient: vertical;
+}
+.qb-row-ans { display: flex; gap: 0.9rem; font-size: 0.75rem; margin-top: 0.1rem; flex-wrap: wrap; }
+.qb-row-ans em { font-style: normal; font-weight: 600; }
+.qb-row-ans em.is-ok { color: var(--success-text); }
+.qb-row-ans em.is-no { color: var(--danger); }
+.qb-row-ans em.is-key { color: var(--accent-text); }
+.qb-row-go { align-self: center; color: var(--text-muted); font-size: 1.1rem; }
+.qb-browse-more { width: 100%; margin-top: 0.7rem; }

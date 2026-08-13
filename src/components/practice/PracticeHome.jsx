@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { EXAM_YEARS, SUBJECT_META, BANK_TOTAL } from '../../data/examBank.js';
+import { EXAM_YEARS, SUBJECT_META, BANK_TOTAL, CATEGORIES } from '../../data/examBank.js';
 import { EXAM_RULES } from '../../data/examRules.js';
 import { IconArrowLeft } from '../icons.jsx';
 
@@ -48,6 +48,8 @@ export default function PracticeHome({
   resume, onResume, onDropResume,
   wrongCount, bookmarkCount, onStartWrong, onStartBookmarks, onOpenCustom,
   rank, attempts, onStartMock,
+  goal, todayCount, onSetGoal, dueCount, remind, onToggleRemind,
+  onStartSuggest, onStartRandom, onStartCategory, onOpenBrowse,
 }) {
   const subjects = subjectFilter === 'all' ? SUBJECT_ORDER : [subjectFilter];
 
@@ -105,8 +107,56 @@ export default function PracticeHome({
         </div>
       )}
 
-      {/* Chế độ luyện — học từ app trung tâm: câu hay sai, câu đánh dấu, tuỳ chỉnh */}
+      {/* 今日の目標 — mục tiêu ngày, ロン thích tính năng này của app trung tâm */}
+      <div className="qb-goal">
+        <div className="qb-goal-head">
+          <strong><span className="jp-text">今日の目標</span> · Mục tiêu hôm nay</strong>
+          <span className="qb-goal-num">
+            <b>{Math.min(todayCount, goal)}</b>/{goal} câu
+            {todayCount >= goal && ' 🎉'}
+          </span>
+        </div>
+        <div className="qb-goal-bar">
+          <i style={{ width: `${Math.min(100, Math.round((todayCount / goal) * 100))}%` }}
+             className={todayCount >= goal ? 'is-done' : undefined} />
+        </div>
+        <div className="qb-goal-foot">
+          <span>{todayCount >= goal ? `Đạt rồi — hôm nay đã làm ${todayCount} câu` : `Còn ${goal - todayCount} câu nữa`}</span>
+          <button
+            type="button"
+            className={`qb-remind${remind ? ' is-on' : ''}`}
+            onClick={onToggleRemind}
+            title={remind ? 'Đang nhắc mỗi khi mở app mà chưa đạt đích — bấm để tắt'
+              : 'Bật nhắc học: mở app mà chưa đạt đích hôm nay là app nhắc'}
+          >
+            {remind ? '🔔 Đang nhắc' : '🔕 Bật nhắc học'}
+          </button>
+          <label>
+            Đích/ngày:
+            <select className="qb-select qb-goal-sel" value={goal}
+              onChange={(e) => onSetGoal(Number(e.target.value))}>
+              {[10, 20, 30, 50, 80].map((n) => <option key={n} value={n}>{n}</option>)}
+            </select>
+          </label>
+        </div>
+      </div>
+
+      {/* Chế độ luyện — học từ app trung tâm: gợi ý, ngẫu nhiên, câu sai, đánh dấu, tuỳ chỉnh */}
       <div className="qb-modes">
+        <button type="button" className="qb-mode" onClick={onStartSuggest} disabled={!dueCount && !wrongCount}>
+          <span className="qb-mode-icon is-suggest">💡</span>
+          <span className="qb-mode-body">
+            <strong>Gợi ý hôm nay</strong>
+            <span>{dueCount ? `${dueCount} câu đến hạn ôn theo SRS` : 'ôn lại các câu đã làm'}</span>
+          </span>
+        </button>
+        <button type="button" className="qb-mode" onClick={onStartRandom}>
+          <span className="qb-mode-icon is-random">🎲</span>
+          <span className="qb-mode-body">
+            <strong>Ngẫu nhiên</strong>
+            <span>20 câu bất kỳ từ cả kho</span>
+          </span>
+        </button>
         <button
           type="button"
           className="qb-mode"
@@ -140,7 +190,30 @@ export default function PracticeHome({
             <span>chọn môn · chuyên mục · năm · số câu</span>
           </span>
         </button>
+        <button type="button" className="qb-mode" onClick={onOpenBrowse}>
+          <span className="qb-mode-icon is-browse">🗂</span>
+          <span className="qb-mode-body">
+            <strong>Xem lại</strong>
+            <span>duyệt câu đã làm · bạn chọn gì, đúng sai ra sao</span>
+          </span>
+        </button>
       </div>
+
+      {/* Duyệt theo CHUYÊN MỤC — bấm pill một môn là hiện (như sidebar app trung tâm) */}
+      {subjectFilter !== 'all' && (
+        <div className="qb-cats">
+          {Object.entries(CATEGORIES)
+            .filter(([, m]) => m.subject === subjectFilter)
+            .sort(([, x], [, y]) => (y.count ?? 0) - (x.count ?? 0))
+            .map(([code, m]) => (
+              <button key={code} type="button" className="qb-cat"
+                onClick={() => onStartCategory(subjectFilter, code, m.ja)}>
+                <span className="jp-text">{m.ja}</span>
+                <em>{m.count} câu</em>
+              </button>
+            ))}
+        </div>
+      )}
 
       <div className="qb-filters" role="tablist" aria-label="Lọc theo môn">
         <button

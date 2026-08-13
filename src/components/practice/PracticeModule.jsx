@@ -3,6 +3,7 @@ import PracticeHome from './PracticeHome.jsx';
 import QuestionRunner from './QuestionRunner.jsx';
 import CustomPractice from './CustomPractice.jsx';
 import MockExam from './MockExam.jsx';
+import ReviewBrowser from './ReviewBrowser.jsx';
 import { EXAM_YEARS, SUBJECT_META, BANK_TOTAL } from '../../data/examBank.js';
 import { gradeExam } from '../../data/examRules.js';
 import {
@@ -18,7 +19,7 @@ import { KEYS, loadJSON, saveJSON } from '../../lib/storage.js';
 import { IconArrowLeft } from '../icons.jsx';
 
 const SUBJECT_ORDER = ['KENSETSU', 'KISO', 'TEKISEI'];
-const DEFAULT_PREFS = { lang: 'both', furi: true, size: 'm' };
+const DEFAULT_PREFS = { lang: 'both', furi: true, size: 'm', goal: 20 };
 
 /**
  * Module Đề thi — tự quản 3 màn con (chọn đề → làm bài → kết quả) bằng state
@@ -43,6 +44,7 @@ export default function PracticeModule({ onBack }) {
   const [mockFlags, setMockFlags] = useState({});
   const [mockResult, setMockResult] = useState(null); // {attempt, questions, answers}
   const [reviewMode, setReviewMode] = useState(false);
+  const [reviewReturn, setReviewReturn] = useState('home'); // thoát review thì về đâu
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -163,6 +165,52 @@ export default function PracticeModule({ onBack }) {
     startQids(bookmarkQids, 'bookmark', 'Câu đánh dấu');
   }, [bookmarkQids, startQids]);
 
+  /** Gợi ý hôm nay (おすすめ): câu đến hạn ôn SRS trước, độn thêm câu từng làm — tối đa 20. */
+  const startSuggest = useCallback(() => {
+    const pool = Object.entries(examState.srs)
+      .filter(([, e]) => (e.right ?? 0) + (e.wrong ?? 0) > 0 && !e.mastered)
+      .map(([qid, e]) => ({ qid, ...e }));
+    const queue = buildQueue(pool, { limit: 20 });
+    startQids(queue.map((e) => e.qid), 'suggest', 'Gợi ý hôm nay');
+  }, [examState, startQids]);
+
+  /** Ngẫu nhiên (ランダム): 20 câu bất kỳ — bốc 3 mảnh ngẫu nhiên rồi trộn. */
+  const startRandom = useCallback(() => guarded(async () => {
+    const pairs = shuffleQuestions(
+      EXAM_YEARS.flatMap((y) => SUBJECT_ORDER.filter((s) => y.subjects[s]).map((s) => ({ year: y.year, subject: s })))
+    ).slice(0, 3);
+    const shards = await Promise.all(pairs.map((p) => loadShard(p.year, p.subject)));
+    const qs = shuffleQuestions(
+      shards.flatMap((sh) => sh.questions.map((q) => ({ ...q, year: sh.year, subject: sh.subject })))
+    ).slice(0, 20);
+    begin(qs, { mode: 'random', qids: qs.map((q) => q.qid), label: 'Ngẫu nhiên 20 câu' });
+  }), [begin, guarded]);
+
+  /** Luyện trọn một CHUYÊN MỤC (bấm từ danh sách mục của môn) — năm mới trước. */
+  const startCategory = useCallback((subject, code, label) => guarded(async () => {
+    const pairs = EXAM_YEARS.filter((y) => y.subjects[subject]).map((y) => ({ year: y.year, subject }));
+    const shards = await Promise.all(pairs.map((p) => loadShard(p.year, p.subject)));
+    const qs = shards
+      .flatMap((sh) => sh.questions.map((q) => ({ ...q, year: sh.year, subject: sh.subject })))
+      .filter((q) => q.cat === code)
+      .sort((a, b) => b.year - a.year || (a.ord ?? 0) - (b.ord ?? 0));
+    if (!qs.length) throw new Error('Chuyên mục này chưa có câu nào.');
+    begin(qs, { mode: 'category', qids: qs.map((q) => q.qid), label });
+  }), [begin, guarded]);
+
+  /** Mở MỘT câu từ trình Xem lại — chế độ review, có sẵn lựa chọn cũ nếu còn lưu. */
+  const openSingle = useCallback((q) => {
+    const last = examState.srs?.[q.qid]?.last;
+    setQuestions([q]);
+    setMeta({ mode: 'single', qids: [q.qid], label: 'Xem lại' });
+    setAnswers(last ? { [q.qid]: last } : {});
+    setIndex(0);
+    setReviewMode(true);
+    setReviewReturn('browse');
+    setScreen('run');
+    window.scrollTo(0, 0);
+  }, [examState]);
+
   /** Luyện tuỳ chỉnh: nạp các mảnh trong khoảng năm/môn rồi lọc — chip chuyên mục
       và nguồn (sai/chưa làm/đánh dấu) cần nội dung câu nên phải nạp trước. */
   const startCustom = useCallback((f) => guarded(async () => {
@@ -252,7 +300,7 @@ export default function PracticeModule({ onBack }) {
     };
     commit((s0) => {
       let s = addAttempt(s0, attempt);
-      for (const g of graded) s = recordExamAnswer(s, g.q.qid, g.correct, now);
+      for (const g of graded) s = recordExamAnswer(s, g.q.qid, g.correct, now, answers[g.q.qid]);
       return clearSession(s, now);
     });
     setMockResult({ attempt });
@@ -283,6 +331,24 @@ export default function PracticeModule({ onBack }) {
 
   // Thang xếp hạng: derive thuần từ examState đã sync → hai máy tự khớp
   const rank = useMemo(() => computeRank(examState, BANK_TOTAL), [examState]);
+
+  // Mục tiêu ngày (ロン thích tính năng 今日の目標 của app trung tâm):
+  // đích lưu trong prefs, tiến độ đếm từ nhật ký daily của hôm nay
+  const goal = prefs.goal ?? 20;
+  const todayCount = useMemo(() => {
+    const p = (n) => String(n).padStart(2, '0');
+    const d = new Date();
+    const t = examState.daily?.[`${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`];
+    return (t?.r ?? 0) + (t?.w ?? 0);
+  }, [examState]);
+
+  // Số câu đến hạn ôn SRS hôm nay — nuôi thẻ "Gợi ý"
+  const dueCount = useMemo(() => {
+    const now = Date.now();
+    return Object.values(examState.srs).filter(
+      (e) => (e.right ?? 0) + (e.wrong ?? 0) > 0 && !e.mastered && (e.nextReview ?? 0) <= now
+    ).length;
+  }, [examState]);
   const attemptList = useMemo(
     () => Object.values(examState.attempts ?? {})
       .filter((a) => a?.mode === 'exam')
@@ -293,7 +359,7 @@ export default function PracticeModule({ onBack }) {
   const select = useCallback((q, letter) => {
     if (answers[q.qid]) return;
     setAnswers((a) => ({ ...a, [q.qid]: letter }));
-    commit((s) => recordExamAnswer(s, q.qid, isCorrect(q, letter)));
+    commit((s) => recordExamAnswer(s, q.qid, isCorrect(q, letter), Date.now(), letter));
   }, [answers, commit]);
 
   const go = useCallback((i) => {
@@ -341,6 +407,16 @@ export default function PracticeModule({ onBack }) {
     );
   }
 
+  if (screen === 'browse') {
+    return (
+      <ReviewBrowser
+        examState={examState}
+        onOpen={openSingle}
+        onBack={() => setScreen('home')}
+      />
+    );
+  }
+
   if (screen === 'mock') {
     return (
       <MockExam
@@ -385,7 +461,7 @@ export default function PracticeModule({ onBack }) {
             <button
               type="button"
               className="btn btn-primary"
-              onClick={() => { setReviewMode(true); setIndex(0); setScreen('run'); }}
+              onClick={() => { setReviewMode(true); setReviewReturn('mock-result'); setIndex(0); setScreen('run'); }}
             >
               Xem lại từng câu + lời giải
             </button>
@@ -410,8 +486,8 @@ export default function PracticeModule({ onBack }) {
         onSelect={reviewMode ? () => {} : select}
         onGo={go}
         onToggleBookmark={(qid) => commit((s) => toggleBookmark(s, qid))}
-        onExit={reviewMode ? () => { setReviewMode(false); setScreen('mock-result'); } : exitRun}
-        onFinish={reviewMode ? () => { setReviewMode(false); setScreen('mock-result'); } : finish}
+        onExit={reviewMode ? () => { setReviewMode(false); setScreen(reviewReturn); } : exitRun}
+        onFinish={reviewMode ? () => { setReviewMode(false); setScreen(reviewReturn); } : finish}
       />
     );
   }
@@ -470,6 +546,24 @@ export default function PracticeModule({ onBack }) {
         rank={rank}
         attempts={attemptList}
         onStartMock={startMock}
+        goal={goal}
+        todayCount={todayCount}
+        onSetGoal={(n) => setPref({ goal: n })}
+        remind={Boolean(prefs.remind)}
+        onToggleRemind={async () => {
+          if (prefs.remind) { setPref({ remind: false }); return; }
+          // xin quyền thông báo NGAY LÚC BẤM — đúng nhịp trình duyệt cho phép hỏi
+          if (typeof Notification !== 'undefined' && Notification.permission !== 'granted') {
+            const perm = await Notification.requestPermission();
+            if (perm !== 'granted') return; // không có quyền thì đừng giả vờ bật
+          }
+          setPref({ remind: true });
+        }}
+        dueCount={dueCount}
+        onStartSuggest={startSuggest}
+        onStartRandom={startRandom}
+        onStartCategory={startCategory}
+        onOpenBrowse={() => setScreen('browse')}
       />
       {customOpen && (
         <CustomPractice

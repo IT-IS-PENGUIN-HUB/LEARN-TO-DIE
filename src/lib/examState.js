@@ -59,7 +59,7 @@ function blank(now) {
  * Ghi một lần trả lời. Dùng NGUYÊN applyAnswer của srs.js (Leitner 8 hộp) —
  * không viết engine riêng, để câu hỏi và từ vựng cùng một luật ôn tập.
  */
-export function recordExamAnswer(state, qid, correct, now = Date.now()) {
+export function recordExamAnswer(state, qid, correct, now = Date.now(), letter = null) {
   const prev = state.srs[qid] ?? blank(now);
   const next = applyAnswer(prev, correct, now);
 
@@ -81,6 +81,8 @@ export function recordExamAnswer(state, qid, correct, now = Date.now()) {
         ...next,
         right: prev.right + (correct ? 1 : 0),
         wrong: prev.wrong + (correct ? 0 : 1),
+        // chữ cái vừa chọn — trình Xem lại hiện "bạn chọn A / đúng C"
+        ...(letter ? { last: letter } : {}),
       },
     },
   };

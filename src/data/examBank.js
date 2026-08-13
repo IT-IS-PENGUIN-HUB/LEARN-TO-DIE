@@ -25,122 +25,146 @@ export const CATEGORIES = {
   "CON": {
     "ja": "コンクリート",
     "vi": "Bê tông",
-    "subject": "KENSETSU"
+    "subject": "KENSETSU",
+    "count": 43
   },
   "CPL": {
     "ja": "施工計画",
     "vi": "Kế hoạch thi công",
-    "subject": "KENSETSU"
+    "subject": "KENSETSU",
+    "count": 30
   },
   "CST": {
     "ja": "海岸",
     "vi": "Công trình ven biển",
-    "subject": "KENSETSU"
+    "subject": "KENSETSU",
+    "count": 28
   },
   "ENV": {
     "ja": "建設環境",
     "vi": "Môi trường xây dựng",
-    "subject": "KENSETSU"
+    "subject": "KENSETSU",
+    "count": 32
   },
   "ERO": {
     "ja": "砂防",
     "vi": "Phòng chống sạt lở",
-    "subject": "KENSETSU"
+    "subject": "KENSETSU",
+    "count": 15
   },
   "GEO": {
     "ja": "土質及び基礎",
     "vi": "Địa kỹ thuật & Nền móng",
-    "subject": "KENSETSU"
+    "subject": "KENSETSU",
+    "count": 65
   },
   "HWY": {
     "ja": "道路",
     "vi": "Đường bộ",
-    "subject": "KENSETSU"
+    "subject": "KENSETSU",
+    "count": 20
   },
   "KISO_ANALYSIS": {
     "ja": "解析に関するもの",
     "vi": "Phân tích",
-    "subject": "KISO"
+    "subject": "KISO",
+    "count": 88
   },
   "KISO_DESIGN": {
     "ja": "設計・計画に関するもの",
     "vi": "Thiết kế và kế hoạch",
-    "subject": "KISO"
+    "subject": "KISO",
+    "count": 88
   },
   "KISO_ENV": {
     "ja": "環境・エネルギー・技術に関するもの",
     "vi": "Môi trường, năng lượng, kỹ thuật",
-    "subject": "KISO"
+    "subject": "KISO",
+    "count": 88
   },
   "KISO_INFO": {
     "ja": "情報・論理に関するもの",
     "vi": "Thông tin và logic",
-    "subject": "KISO"
+    "subject": "KISO",
+    "count": 88
   },
   "KISO_MATERIAL": {
     "ja": "材料・化学・バイオに関するもの",
     "vi": "Vật liệu, hóa học, sinh học",
-    "subject": "KISO"
+    "subject": "KISO",
+    "count": 88
   },
   "PRT": {
     "ja": "港湾及び空港",
     "vi": "Cảng & Sân bay",
-    "subject": "KENSETSU"
+    "subject": "KENSETSU",
+    "count": 16
   },
   "PWR": {
     "ja": "電力土木",
     "vi": "Công trình điện",
-    "subject": "KENSETSU"
+    "subject": "KENSETSU",
+    "count": 30
   },
   "RIV": {
     "ja": "河川",
     "vi": "Công trình sông",
-    "subject": "KENSETSU"
+    "subject": "KENSETSU",
+    "count": 85
   },
   "RWY": {
     "ja": "鉄道",
     "vi": "Đường sắt",
-    "subject": "KENSETSU"
+    "subject": "KENSETSU",
+    "count": 15
   },
   "STL": {
     "ja": "鋼構造",
     "vi": "Kết cấu thép",
-    "subject": "KENSETSU"
+    "subject": "KENSETSU",
+    "count": 75
   },
   "TEKISEI_ENV": {
     "ja": "環境配慮",
     "vi": "Bảo vệ môi trường",
-    "subject": "TEKISEI"
+    "subject": "TEKISEI",
+    "count": 21
   },
   "TEKISEI_ETHICS": {
     "ja": "技術者倫理",
     "vi": "Đạo đức kỹ sư",
-    "subject": "TEKISEI"
+    "subject": "TEKISEI",
+    "count": 47
   },
   "TEKISEI_LAW": {
     "ja": "技術士法",
     "vi": "Luật kỹ sư",
-    "subject": "TEKISEI"
+    "subject": "TEKISEI",
+    "count": 72
   },
   "TEKISEI_SAFETY": {
     "ja": "安全・リスク管理",
     "vi": "An toàn và quản lý rủi ro",
-    "subject": "TEKISEI"
+    "subject": "TEKISEI",
+    "count": 63
   },
   "TEKISEI_SOCIAL": {
     "ja": "社会的責任",
     "vi": "Trách nhiệm xã hội",
-    "subject": "TEKISEI"
+    "subject": "TEKISEI",
+    "count": 21
   },
   "TNL": {
     "ja": "トンネル",
     "vi": "Đường hầm",
-    "subject": "KENSETSU"
+    "subject": "KENSETSU",
+    "count": 16
   },
   "URB": {
     "ja": "都市計画",
     "vi": "Quy hoạch đô thị",
-    "subject": "KENSETSU"
+    "subject": "KENSETSU",
+    "count": 55
   }
 };
 

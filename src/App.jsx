@@ -20,6 +20,7 @@ import { useSync } from './hooks/useSync.js';
 import { useVocabReminder } from './hooks/useVocabReminder.js';
 import { applyAppUpdate, onUpdateReady } from './services/appUpdate.js';
 import { recordAnswer } from './lib/stats.js';
+import { KEYS, loadJSON } from './lib/storage.js';
 
 // Module Đề thi kéo theo 1189 câu dữ liệu → tách chunk như PdfViewer, trang chủ giữ nhẹ
 const PracticeModule = lazy(() => import('./components/practice/PracticeModule.jsx'));
@@ -70,6 +71,29 @@ function AppInner() {
       return () => clearTimeout(timer);
     }
     return undefined;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Nhắc mục tiêu ngày của module Đề thi (ロン thích 今日の目標 của app trung tâm):
+  // mở app mà hôm nay chưa đạt đích thì nhắc một tiếng — chỉ khi đã bật 🔔 và cấp quyền.
+  useEffect(() => {
+    const prefs = loadJSON(KEYS.examPrefs, {});
+    if (!prefs.remind) return undefined;
+    if (typeof Notification === 'undefined' || Notification.permission !== 'granted') return undefined;
+    const st = loadJSON(KEYS.examState, {});
+    const p = (n) => String(n).padStart(2, '0');
+    const d = new Date();
+    const today = st?.daily?.[`${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`];
+    const done = (today?.r ?? 0) + (today?.w ?? 0);
+    const goal = prefs.goal ?? 20;
+    if (done >= goal) return undefined;
+    const timer = setTimeout(() => {
+      new Notification('LEARN TO DIE', {
+        body: `Mục tiêu hôm nay còn ${goal - done}/${goal} câu đề. Vào luyện thôi! ✏️`,
+        tag: 'ltd-goal-reminder',
+      });
+    }, 3000);
+    return () => clearTimeout(timer);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
