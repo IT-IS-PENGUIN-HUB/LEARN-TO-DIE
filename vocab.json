@@ -439,10 +439,10 @@
       "meaning": "công ích",
       "exJp": "技術士は公益の確保を最も重視する。",
       "exVi": "Kỹ sư chuyên nghiệp coi trọng nhất việc bảo đảm lợi ích công cộng.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1786689263653,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786602863653
     },
     {
       "id": "1786573248380_6jdbow",
@@ -451,10 +451,10 @@
       "meaning": "mức, trình độ, tiêu chuẩn",
       "exJp": "技術水準の向上に努める必要がある。",
       "exVi": "Cần nỗ lực nâng cao trình độ kỹ thuật.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1786689268236,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786602868236
     },
     {
       "id": "1786573248380_pkqax5",
@@ -463,10 +463,10 @@
       "meaning": "lĩnh vực khu vực",
       "exJp": "専門領域以外の業務は引き受けない。",
       "exVi": "Không nhận công việc ngoài lĩnh vực chuyên môn.",
-      "score": 0,
-      "nextReview": 0,
-      "mastered": false,
-      "updatedAt": 1786573248380
+      "score": 1,
+      "nextReview": 1786689273121,
+      "mastered": true,
+      "updatedAt": 1786602875573
     },
     {
       "id": "1786573248380_k6vykh",
@@ -475,10 +475,10 @@
       "meaning": "(năng lực) năng lực, khả năng",
       "exJp": "技術者は自らの専門能力を継続的に高める必要がある。",
       "exVi": "Kỹ sư cần liên tục nâng cao năng lực chuyên môn của bản thân.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1786689279771,
       "mastered": false,
-      "updatedAt": 1786579593976
+      "updatedAt": 1786602879771
     },
     {
       "id": "1786573248380_qqv7di",
@@ -487,10 +487,10 @@
       "meaning": "phúc lợi",
       "exJp": "公衆の安全と福利を最優先に考慮する。",
       "exVi": "Ưu tiên hàng đầu sự an toàn và phúc lợi của công chúng.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1786689283254,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786602883254
     },
     {
       "id": "1786573248380_f43bf4",
@@ -499,10 +499,10 @@
       "meaning": "bối cảnh phông nền",
       "exJp": "事故の背景には管理体制の問題があった。",
       "exVi": "Đằng sau vụ tai nạn có vấn đề về thể chế quản lý.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1786689290222,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786602890222
     },
     {
       "id": "1786573248380_mhdu9e",
