@@ -60,7 +60,7 @@ export default function Sidebar({
       </button>
       {/* Chỉ LOGO — phần chữ nằm bên header để hai bên không lặp nhau (ロン chốt 14/8) */}
       <button type="button" className="sb-brand" onClick={go(onGoHome)} title="GIVE UP IS LOSE — Về trang chủ">
-        <img src={logoUrl} alt="GIVE UP IS LOSE" className="sb-logo" width="51" height="51" />
+        <img src={logoUrl} alt="GIVE UP IS LOSE" className="sb-logo" width="59" height="59" />
       </button>
 
       <div className="sb-group">Học</div>
