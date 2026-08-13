@@ -7982,10 +7982,10 @@
       "meaning": "(Đăng lục) sự đăng ký",
       "exJp": "技術士として登録するには申請が必要である。",
       "exVi": "Để đăng ký làm kỹ sư chuyên nghiệp cần phải nộp đơn.",
-      "score": 0,
-      "nextReview": 0,
-      "mastered": false,
-      "updatedAt": 1786573248380
+      "score": 1,
+      "nextReview": 1786749998163,
+      "mastered": true,
+      "updatedAt": 1786663599031
     },
     {
       "id": "1786573248380_mrhvgc",
@@ -7994,10 +7994,10 @@
       "meaning": "(trách vụ) nhiệm vụ, bổn phận",
       "exJp": "技術者は公衆の安全を守る責務を負う。",
       "exVi": "Kỹ sư mang bổn phận bảo vệ an toàn của công chúng.",
-      "score": 0,
-      "nextReview": 0,
-      "mastered": false,
-      "updatedAt": 1786573248380
+      "score": 1,
+      "nextReview": 1786750006146,
+      "mastered": true,
+      "updatedAt": 1786663608480
     },
     {
       "id": "1786573248380_n7pylu",
@@ -8006,10 +8006,10 @@
       "meaning": "(tương phản) Sự bất đồng, mâu thuẫn",
       "exJp": "利益相反が生じた場合は依頼者に説明する。",
       "exVi": "Khi phát sinh xung đột lợi ích thì phải giải thích cho khách hàng.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1786750014298,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786663614298
     },
     {
       "id": "1786573248380_j452ge",
