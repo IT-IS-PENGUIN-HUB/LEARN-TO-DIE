@@ -138,6 +138,15 @@ textarea {
   letter-spacing: -0.5px;
   color: var(--primary);
   white-space: nowrap;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+}
+
+.logo:hover {
+  opacity: 0.75;
 }
 
 .main-menu {
@@ -207,7 +216,11 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 0.25rem;
+  /* Hiện số thật (có thể 4 chữ số) → không bó cứng chiều rộng, chữ số đều nhau */
+  padding: 0 0.35rem;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 /* ============ Buttons ============ */
@@ -435,6 +448,387 @@ textarea {
   font-size: 0.9rem;
 }
 
+/* ============ Lối tắt module (giáo trình / lịch học) ============ */
+.module-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  /* Nằm ngay dưới 3 thẻ môn thi ở đầu trang */
+  margin: 1.25rem 0 2.5rem;
+}
+
+.module-card {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  text-align: left;
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.module-card:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.module-resume {
+  border-color: var(--primary);
+}
+
+.module-icon {
+  font-size: 1.5rem;
+  color: var(--primary);
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.module-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.module-body strong {
+  font-family: var(--font-jp);
+  font-size: 1rem;
+}
+
+.module-sub {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ============ Giáo trình: thư mục cha (môn) ============ */
+.section-note {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.empty-note {
+  color: var(--text-muted);
+  padding: 2rem 0;
+}
+
+.folder-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.folder-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-align: left;
+  width: 100%;
+  padding: 1.5rem;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.folder-card:hover:not(.is-empty) {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.folder-card.is-empty {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.folder-icon {
+  font-size: 2rem;
+  color: var(--primary);
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.folder-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.folder-body strong {
+  font-family: var(--font-jp);
+  font-size: 1.25rem;
+}
+
+.folder-sub {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* ============ Giáo trình: danh sách chương ============ */
+.chapter-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.chapter-toolbar .is-on {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.chapter-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.chapter-row {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  width: 100%;
+  text-align: left;
+  padding: 0.9rem 1.1rem;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.chapter-row:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Bảng tỷ lệ ra đề & phụ lục: nhìn khác chương để không lẫn */
+.chapter-row.kind-trend,
+.chapter-row.kind-appendix {
+  background-color: var(--bg-alt);
+  border-style: dashed;
+}
+
+.chapter-icon {
+  font-size: 1.25rem;
+  color: var(--primary);
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.chapter-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+  flex: 1;
+}
+
+.chapter-title {
+  font-family: var(--font-jp);
+  font-weight: 600;
+  font-size: 1.02rem;
+}
+
+.chapter-no {
+  color: var(--primary);
+  margin-right: 0.4rem;
+}
+
+.chapter-vi {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.chapter-meta {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+}
+
+.chapter-resume {
+  color: var(--primary);
+  font-style: normal;
+}
+
+.chapter-subtitle {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: -0.75rem 0 1.25rem;
+}
+
+.chapter-vocab-btn {
+  width: 100%;
+  margin-top: 0.75rem;
+}
+
+.vocab-filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding: 0.6rem 0.85rem;
+  margin-bottom: 0.75rem;
+  border: 1px dashed var(--primary);
+  border-radius: 8px;
+  background: rgba(var(--primary-rgb), 0.1);
+  font-size: 0.88rem;
+}
+
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  min-width: 0;
+}
+
+/* Tên chương tiếng Nhật rất dài. Không khoá min-width thì nút nở ra kéo giãn cả
+   grid cha → canvas PDF bị render rộng hơn màn hình điện thoại. */
+.chapter-nav .btn {
+  font-family: var(--font-jp);
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.rate-badge {
+  flex-shrink: 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.rate-badge.rate-high {
+  color: var(--danger);
+  border-color: var(--danger);
+}
+
+.rate-badge.rate-mid {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.rate-inline {
+  font-family: var(--font-jp);
+}
+
+/* ============ Lịch học ============ */
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.schedule-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.schedule-cap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  font-family: var(--font-jp);
+}
+
+.schedule-cap-vi {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-right: auto;
+}
+
+.schedule-thumb {
+  display: block;
+  width: 100%;
+  cursor: zoom-in;
+  background: none;
+  padding: 0;
+}
+
+.schedule-thumb img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.schedule-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.schedule-lightbox-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  font-family: var(--font-jp);
+}
+
+.schedule-lightbox-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.schedule-lightbox-scroll {
+  flex: 1;
+  overflow: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0.5rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.schedule-lightbox-scroll img {
+  max-width: 100%;
+  height: auto;
+  cursor: zoom-in;
+}
+
+/* Phóng to: ảnh rộng gấp đôi khung → cuộn/vuốt để xem chi tiết bảng lịch */
+.schedule-lightbox-scroll.is-zoomed {
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.schedule-lightbox-scroll.is-zoomed img {
+  max-width: none;
+  width: 250%;
+  /* Là flex item nên mặc định bị co lại vừa khung → phải khoá mới cuộn ngang được */
+  flex-shrink: 0;
+  cursor: zoom-out;
+}
+
 /* ============ Exam list ============ */
 .exam-list-container {
   padding: 3rem 1.5rem;
@@ -532,6 +926,12 @@ textarea {
   align-items: start;
 }
 
+/* Ô grid mặc định không co nhỏ hơn nội dung (min-width:auto) — nội dung dài sẽ
+   đẩy rộng cả trang. Khoá lại để PDF luôn vừa bề ngang màn hình. */
+.layout-70-30 > * {
+  min-width: 0;
+}
+
 .left-panel {
   background-color: var(--card-bg);
   border: 1px solid var(--border-color);
@@ -570,9 +970,12 @@ textarea {
   background: #fff;
 }
 
+/* Cao theo đúng trang PDF, chỉ cuộn khi trang cao hơn 80vh — chiều cao cố định
+   để lại một mảng xám trống to phía dưới với trang giáo trình nằm ngang. */
 .pdf-canvas-wrap {
   width: 100%;
-  height: 80vh;
+  height: auto;
+  max-height: 80vh;
   overflow: auto;
   border-radius: 8px;
   background: #525659;
@@ -1547,6 +1950,18 @@ textarea.text-input {
   padding: max(0.5rem, env(safe-area-inset-top)) 0.5rem calc(0.5rem + env(safe-area-inset-bottom));
 }
 
+/* Máy nằm ngang: bớt viền để trang chiếm nhiều màn hình hơn.
+   Nút vẫn giữ 44px — đây là lúc bấm bằng ngón cái nhiều nhất. */
+@media (max-height: 500px) and (orientation: landscape) {
+  .pdf-shell-fullscreen {
+    padding: 0.25rem 0.4rem calc(0.25rem + env(safe-area-inset-bottom));
+  }
+
+  .pdf-shell-fullscreen .pdf-toolbar {
+    margin-bottom: 0.25rem;
+  }
+}
+
 .pdf-shell-fullscreen .pdf-toolbar {
   padding: 0 0.25rem;
 }
@@ -1554,7 +1969,69 @@ textarea.text-input {
 .pdf-shell-fullscreen .pdf-canvas-wrap {
   flex: 1;
   height: auto;
+  max-height: none;
   min-height: 0;
+}
+
+/* Toàn màn hình hay dùng trên điện thoại → nút phải đủ to để bấm bằng ngón tay
+   (44px là ngưỡng tối thiểu của Apple), không dùng cỡ btn-xs như trên PC. */
+.pdf-shell-fullscreen .pdf-toolbar .btn-xs {
+  font-size: 0.95rem;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0.5rem 0.9rem;
+}
+
+.pdf-shell-fullscreen .pdf-page-info {
+  font-size: 1rem;
+  min-width: 6rem;
+}
+
+.pdf-shell-fullscreen .pdf-toolbar {
+  gap: 0.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.pdf-shell-fullscreen .btn-xs.is-on {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* Toàn màn hình: canh trang vào giữa khung (trang nằm ngang thấp hơn màn hình) */
+.pdf-shell-fullscreen .pdf-canvas-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pdf-shell-fullscreen .pdf-page {
+  margin: 0;
+  flex-shrink: 0;
+}
+
+/* Gợi ý vuốt — mờ dần đi, không che nội dung */
+.pdf-swipe-hint {
+  position: absolute;
+  left: 50%;
+  bottom: 0.75rem;
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #e2e8f0;
+  font-size: 0.75rem;
+  pointer-events: none;
+  animation: swipe-hint-fade 4s ease forwards;
+}
+
+@keyframes swipe-hint-fade {
+  0%, 55% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pdf-swipe-hint { animation: none; opacity: 0.85; }
 }
 
 .btn-danger {
@@ -1610,8 +2087,34 @@ textarea.text-input {
     padding-right: calc(1rem + env(safe-area-inset-right));
   }
 
+  /* 5 nút trên header phải vừa màn hình điện thoại → thu logo và siết khoảng cách */
+  .logo {
+    font-size: 1.05rem;
+  }
+
+  .header-actions {
+    gap: 0.4rem;
+  }
+
+  .icon-btn {
+    padding: 0.3rem;
+  }
+
+  .action-btn {
+    padding: 0.5rem 0.7rem;
+  }
+
   .main-menu {
     display: none;
+  }
+
+  .schedule-grid,
+  .folder-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chapter-nav {
+    gap: 0.5rem;
   }
 
   .card-grid {
@@ -1643,9 +2146,12 @@ textarea.text-input {
     padding: 1.5rem 1.25rem calc(1.5rem + env(safe-area-inset-bottom));
   }
 
-  .pdf-frame,
-  .pdf-canvas-wrap {
+  .pdf-frame {
     height: 70vh;
+  }
+
+  .pdf-canvas-wrap {
+    max-height: 70vh;
   }
 }
 
@@ -1656,6 +2162,15 @@ textarea.text-input {
 
   .vocab-stats {
     justify-content: center;
+  }
+
+  /* Màn hẹp: nút Từ vựng chỉ còn icon + badge, nhường chỗ cho 2 nút module mới */
+  .action-btn .btn-label {
+    display: none;
+  }
+
+  .action-btn {
+    padding: 0.5rem 0.55rem;
   }
 }
 

@@ -4,3 +4,12 @@ Thumbs.db
 node_modules/
 dist/
 .gemini/
+
+# Chỗ để tạm file thầy gửi. Nội dung sau khi xử lý đã nằm trong repo:
+#   テキスト/  -> public/textbooks/   (PDF giữ nguyên byte, chỉ đổi tên sang ASCII)
+#   SCHEDULE/  -> src/assets/schedule/
+# Commit cả hai chỗ là nhân đôi 14MB vĩnh viễn trong lịch sử git mà không thêm bản backup nào.
+# Phải có dấu / đầu dòng: git trên Windows không phân biệt hoa thường, thiếu nó thì
+# "SCHEDULE/" nuốt luôn src/assets/schedule/ và app mất sạch ảnh lịch khi deploy.
+/テキスト/
+/SCHEDULE/

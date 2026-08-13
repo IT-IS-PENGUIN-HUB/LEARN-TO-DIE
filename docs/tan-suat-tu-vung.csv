@@ -1,0 +1,1096 @@
+﻿subject,jp,kana,meaning,hits,exams,own_hits,own_exams,stem,stem_hits,stem_exams
+kiso,製造物,せいぞうぶつ,Sản phẩm / Đồ được chế tạo,206,20,37,4,,0,0
+kiso,欠陥,けっかん,Khuyết tật / Lỗi,127,29,19,7,,0,0
+kiso,直列,ちょくれつ,"nối tiếp, mắc nối tiếp (điện)",18,8,18,8,,0,0
+kiso,並列,へいれつ,"song song, song hành",29,11,29,11,,0,0
+kiso,待ち行列長,まちぎょうれつちょう,"độ dài hàng đợi, chiều dài hàng đợi",9,3,9,3,,0,0
+kiso,代入,だいにゅう,"sự thay thế, sự gán (giá trị)",40,21,27,12,,0,0
+kiso,アロ ーダイアグラム,あろーだいあぐらむ,"sơ đồ mũi tên, biểu đồ dòng chảy",0,0,0,0,,0,0
+kiso,投じる,とうじる,"ném, quăng, bỏ vào, đầu tư, gửi gắm",2,2,2,2,,0,0
+kiso,相関,そうかん,tương quan,15,5,14,4,,0,0
+kiso,利得表,りとくひょう,"bảng lợi ích, bảng lợi nhuận, bảng chi phí lợi ích",1,1,1,1,,0,0
+kiso,最適化,さいてきか,tối ưu hóa,16,6,14,4,,0,0
+kiso,玉掛け,たまかけ,"công việc treo móc cẩu vật nặng, công việc móc cẩu hàng hóa",3,3,2,2,玉掛,3,3
+kiso,摂取,せっしゅ,"hấp thụ, nạp vào, dung nạp, tiếp thu (chất dinh dưỡng, năng lượng, kiến thức, v.v.)",3,3,2,2,,0,0
+kiso,絞れる,しぼれる,"có thể vắt được, có thể ép được, có thể bóp được",1,1,1,1,,0,0
+kiso,2 進数,にしんすう,số nhị phân,11,7,11,7,,0,0
+kiso,等価な論理式,とうかなろんりしき,biểu thức logic tương đương,4,4,4,4,,0,0
+kiso,一次キャッシュ,いちじキャッシュ,bộ nhớ đệm cấp 1; cache cấp 1,5,2,5,2,,0,0
+kiso,主記憶,しゅきおく,"bộ nhớ chính (của máy tính), bộ nhớ sơ cấp",20,4,20,4,,0,0
+kiso,記述,きじゅつ,"miêu tả, mô tả, sự ghi chép",817,43,232,16,,0,0
+kiso,流出,りゅうしゅつ,"rò rỉ, chảy ra, tiết lộ, lọt ra ngoài",69,17,5,4,,0,0
+kiso,文字列,もじれつ,"chuỗi ký tự, chuỗi",7,5,7,5,,0,0
+kiso,歪み,ひずみ,"sự méo mó, sự biến dạng, sự lệch lạc",3,1,3,1,,0,0
+kiso,依存,いぞん,"sự phụ thuộc, sự lệ thuộc",32,21,16,10,,0,0
+kiso,内挿,ないそう,nội suy,1,1,1,1,,0,0
+kiso,遠方,えんぽう,"xa xôi, nơi xa, từ xa",3,3,2,2,,0,0
+kiso,楕円孔,だえんこう,"lỗ hình bầu dục, lỗ elip",6,2,6,2,,0,0
+kiso,熱伝導率,ねつでんどうりつ,"Hệ số dẫn nhiệt, độ dẫn nhiệt",19,3,19,3,,0,0
+kiso,感覚,かんかく,"giác quan, cảm giác",63,14,63,14,,0,0
+kiso,酢酸,さくさん,axit axetic,23,6,23,6,,0,0
+kiso,酸性度,さんせいど,"độ axit, tính axit",21,5,21,5,,0,0
+kiso,遮蔽,しゃへい,"che chắn, che đậy, chắn, làm khuất, sự che chắn",4,2,3,1,,0,0
+kiso,不静定次数,ふせいていじすう,Bậc siêu tĩnh / Bậc bất định tĩnh,4,1,4,1,,0,0
+kiso,関わる,かかわる,liên quan,36,16,2,2,,0,0
+kiso,制約,せいやく,"ràng buộc, hạn chế",44,19,14,4,,0,0
+kiso,誠実,せいじつ,thành thật,16,9,0,0,,0,0
+kiso,如何なる,いかなる,"bất kỳ, bất cứ ... nào",5,5,0,0,如何,8,6
+kiso,公益,こうえき,công ích,116,17,1,1,,0,0
+kiso,水準,すいじゅん,"mức, trình độ, tiêu chuẩn",57,24,10,6,,0,0
+kiso,領域,りょういき,lĩnh vực khu vực,53,20,27,8,,0,0
+kiso,能力,のうりょく,"(năng lực) năng lực, khả năng",97,26,9,5,,0,0
+kiso,福利,ふくり,phúc lợi,11,9,0,0,,0,0
+kiso,背景,はいけい,bối cảnh phông nền,13,10,0,0,,0,0
+kiso,異にする,ことにする,khác nhau,1,1,0,0,,0,0
+kiso,多数,たすう,đa số phần đông,20,14,3,2,,0,0
+kiso,散在,さんざい,"rải rác, phân tán",1,1,0,0,,0,0
+kiso,世論,よろん,"dư luận, công luận",2,2,0,0,,0,0
+kiso,携わる,たずさわる,"Tham gia vào, liên quan đến",14,12,2,2,,0,0
+kiso,自ら,みずから,đích thân mình,69,20,8,6,,0,0
+kiso,相応に,そうおうに,tương ứng,1,1,0,0,相応,1,1
+kiso,安全保障貿易管理,あんぜんほしょうぼうえきかんり,quản lý an ninh thương mại,8,3,0,0,,0,0
+kiso,先進国,せんしんこく,nước phát triển,26,14,9,6,,0,0
+kiso,貨物,かもつ,hàng hóa,18,8,0,0,,0,0
+kiso,大量破壊兵器,たいりょうはかいへいき,vũ khí hủy diệt hàng loạt,5,3,0,0,,0,0
+kiso,一層,いっそう,"hơn nữa, càng thêm",2,2,1,1,,0,0
+kiso,深刻,しんこく,nghiêm trọng,12,9,0,0,,0,0
+kiso,人的,じんてき,thuộc về con người,8,6,0,0,,0,0
+kiso,遵守,じゅんしゅ,tuân thủ,30,13,0,0,,0,0
+kiso,巻き込まれる,まきこまれる,bị cuốn vào,1,1,0,0,巻き込,1,1
+kiso,公知,こうち,"công khai, đã được biết đến rộng rãi",9,4,0,0,,0,0
+kiso,渡航,とこう,xuất ngoại,2,1,0,0,,0,0
+kiso,貧困,ひんこん,bần cùng,5,4,0,0,,0,0
+kiso,終止符,しゅうしふ,dấu chấm hết,1,1,0,0,,0,0
+kiso,享受,きょうじゅ,hưởng thụ,10,6,0,0,,0,0
+kiso,途上国,とじょうこく,nước đang phát triển,21,14,9,8,,0,0
+kiso,拘束力,こうそくりょく,tính ràng buộc,3,2,1,1,,0,0
+kiso,処罰,しょばつ,xử phạt,6,3,0,0,,0,0
+kiso,貧富,ひんぷ,sự giàu nghèo,1,1,0,0,,0,0
+kiso,紛争,ふんそう,sự phân tranh,6,5,0,0,,0,0
+kiso,難民,なんみん,dân tị nạn,2,1,0,0,,0,0
+kiso,避難民,ひなんみん,người dân sơ tán,1,1,0,0,,0,0
+kiso,孫,まご,cháu,4,3,1,1,,0,0
+kiso,危機感,ききかん,"ý thức về nguy cơ, cảm giác khủng hoảng",1,1,0,0,,0,0
+kiso,振り返る,ふりかえる,quay đầu nhìn lại,0,0,0,0,振り返,1,1
+kiso,利活用,りかつよう,dùng và ứng dụng,9,4,0,0,,0,0
+kiso,飛躍的,ひやくてき,bước đột phá,2,2,0,0,,0,0
+kiso,信頼,しんらい,tín nhiệm,102,25,77,12,,0,0
+kiso,変革,へんかく,đổi mới cải cách,5,3,0,0,,0,0
+kiso,推進,すいしん,"đẩy mạnh, xúc tiến",91,30,17,8,,0,0
+kiso,損害賠償,そんがいばいしょう,bồi thường tổn thất,46,19,3,3,,0,0
+kiso,被る,こうむる,"chịu, gánh chịu (thiệt hại)",3,3,0,0,,0,0
+kiso,事案,じあん,"vụ việc, sự vụ",11,9,1,1,,0,0
+kiso,賠償請求,ばいしょうせいきゅう,yêu cầu bồi thường,7,6,0,0,,0,0
+kiso,電磁鋼板,でんじこうばん,tấm thép điện từ,1,1,0,0,,0,0
+kiso,差止め,さしとめ,đình chỉ,1,1,0,0,差止,1,1
+kiso,基幹,きかん,điều cốt yếu,5,4,0,0,,0,0
+kiso,窃取,せっしゅ,sự trộm cắp,2,2,0,0,,0,0
+kiso,拡散,かくさん,khuếch tán,16,8,1,1,,0,0
+kiso,態様,たいよう,"hình thái, phương thức",4,4,0,0,,0,0
+kiso,製造物責任法,せいぞうぶつせきにんほう,luật trách nhiệm sản phẩm,66,20,14,4,,0,0
+kiso,引き渡された,ひきわたされた,được bàn giao,7,3,0,0,引き渡,23,14
+kiso,無体物,むたいぶつ,vật vô hình,3,3,0,0,,0,0
+kiso,再生品,さいせいひん,tái chế phẩm,16,6,0,0,,0,0
+kiso,破損,はそん,hư hại,11,7,7,4,,0,0
+kiso,多様性,たようせい,tính đa dạng,71,23,25,8,,0,0
+kiso,人種,じんしゅ,nhân chủng,5,3,0,0,,0,0
+kiso,人材,じんざい,nhân lực,21,9,2,1,,0,0
+kiso,活かし,いかし,phát huy vận dụng,6,5,0,0,,0,0
+kiso,価値創造,かちそうぞう,"sáng tạo giá trị, tạo ra giá trị",2,1,0,0,,0,0
+kiso,潜在的な,せんざいてきな,tiềm năng tiềm tàng,6,5,0,0,潜在的,7,5
+kiso,信条,しんじょう,tín ngưỡng,3,2,0,0,,0,0
+kiso,価値観,かちかん,"quan niệm giá trị, hệ giá trị",12,7,0,0,,0,0
+kiso,国際安全規格,こくさいあんぜんきかく,tiêu chuẩn an toàn quốc tế,13,6,0,0,,0,0
+kiso,方策,ほうさく,phương cách,29,10,0,0,,0,0
+kiso,装置,そうち,trang bị,45,21,11,7,,0,0
+kiso,警告,けいこく,cảnh cáo,20,3,0,0,,0,0
+kiso,取扱,とりあつかい,"thao tác, xử lý, sử dụng",34,14,1,1,,0,0
+kiso,制御,せいぎょ,"điều khiển, kiểm soát",17,12,7,4,,0,0
+kiso,重機,じゅうき,máy công nghiệp nặng,2,1,0,0,,0,0
+kiso,明白,めいはく,rõ ràng hiển nhiên,4,3,0,0,,0,0
+kiso,公用語,こうようご,ngôn ngữ chính thức,3,1,0,0,,0,0
+kiso,併記,へいき,"(tính ký) ghi kèm, ghi song song",2,2,0,0,,0,0
+kiso,労働安全衛生法,ろうどうあんぜんえいせいほう,luật an toàn vệ sinh lao động,17,11,2,1,,0,0
+kiso,労働災害,ろうどうさいがい,tai nạn lao động,13,7,0,0,,0,0
+kiso,原材料,げんざいりょう,nguyên vật liệu,16,9,2,2,,0,0
+kiso,情報提供者,じょうほうていきょうしゃ,nhà cung cấp thông tin,2,2,0,0,,0,0
+kiso,周知,しゅうち,phổ biến (cho mọi người đều biết),5,5,2,2,,0,0
+kiso,有望,ゆうぼう,có triển vọng,1,1,0,0,,0,0
+kiso,見据える,みすえる,"nhìn kỹ, nhìn thẳng vào; hướng tầm nhìn tới",0,0,0,0,見据,2,2
+kiso,炭素,たんそ,cacbon,94,22,76,14,,0,0
+kiso,産業革命,さんぎょうかくめい,cách mạng công nghiệp,8,5,6,3,,0,0
+kiso,吸収,きゅうしゅう,hấp thụ sáp nhập,31,14,11,7,,0,0
+kiso,古代原生林,こだいげんせいりん,rừng nguyên sinh cổ đại,1,1,0,0,,0,0
+kiso,主原料,しゅげんりょう,nguyên liệu chính,2,2,1,1,,0,0
+kiso,樹木,じゅもく,"cây cối, cây thân gỗ",3,2,0,0,,0,0
+kiso,温熱,おんねつ,nhiệt nóng,1,1,0,0,,0,0
+kiso,冷熱,れいねつ,nhiệt lạnh,1,1,0,0,,0,0
+kiso,化石燃料,かせきねんりょう,(hoá thạch nhiên liệu) nhiên liệu hoá thạch,8,5,0,0,,0,0
+kiso,家畜,かちく,gia súc,1,1,0,0,,0,0
+kiso,糞尿,ふんにょう,chất bài tiết,3,3,1,1,,0,0
+kiso,微生物,びせいぶつ,vi sinh vật,4,4,3,3,,0,0
+kiso,産業財産権制度,さんぎょうざいさんけんせいど,hệ thống quyền sở hữu công nghiệp,4,4,0,0,,0,0
+kiso,取引上,とりひきじょう,giao dịch,5,5,0,0,,0,0
+kiso,熟知,じゅくち,"hiểu biết hiểu rõ, làm quen",3,3,0,0,,0,0
+kiso,実用新案,じつようしんあん,(thực dụng tân án) mẫu hữu ích (quyền sở hữu trí tuệ),24,12,0,0,,0,0
+kiso,扱う,あつかう,"điều khiển, đối xử",17,13,2,2,,0,0
+kiso,塾,じゅく,lớp học thêm,3,1,0,0,,0,0
+kiso,謝罪,しゃざい,tạ lỗi xin lỗi,2,1,0,0,,0,0
+kiso,照会,しょうかい,"hỏi để xác nhận, tra cứu, tham chiếu",1,1,0,0,,0,0
+kiso,加盟店,かめいてん,chi nhánh được nhượng quyền,3,1,0,0,,0,0
+kiso,勧誘,かんゆう,thu hút chào mời,1,1,0,0,,0,0
+kiso,指針,ししん,phương châm con trỏ,33,15,1,1,,0,0
+kiso,残留,ざんりゅう,đọng lại,15,10,0,0,,0,0
+kiso,努める,つとめる,"nỗ lực, cố gắng",19,12,0,0,,0,0
+kiso,果たす,はたす,"hoàn thành, làm tròn bổn phận",22,11,1,1,,0,0
+kiso,内蔵,ないぞう,"(nội tàng) tích hợp sẵn bên trong, lắp sẵn",1,1,0,0,,0,0
+kiso,探る,さぐる,"khám phá, tìm ra bằng cảm giác",1,1,0,0,,0,0
+kiso,に加えて,にくわえて,"thêm vào, ngoài ra",22,14,2,1,に加,49,24
+kiso,統一,とういつ,đồng nhất,7,5,0,0,,0,0
+kiso,自律,じりつ,"tự giác, kỷ luật bản thân",13,8,0,0,,0,0
+kiso,提訴,ていそ,kiện cáo,1,1,0,0,,0,0
+kiso,サイバー,サイバー,không gian mạng,10,6,1,1,,0,0
+kiso,小売店,こうりてん,cửa hàng bán lẻ,2,2,1,1,,0,0
+kiso,録音再生機器,ろくおんさいせいきき,Thiết bị thu âm phát lại,1,1,1,1,,0,0
+kiso,図記号,ずきごう,"(đồ ký hiệu) ký hiệu đồ họa, biểu tượng hình vẽ",1,1,1,1,,0,0
+kiso,扉,とびら,cửa,5,3,4,2,,0,0
+kiso,取っ手,とって,tay cầm,1,1,1,1,,0,0
+kiso,取扱説明書,とりあつかいせつめいしょ,hướng dẫn sử dụng,6,3,1,1,,0,0
+kiso,点字,てんじ,chữ nổi,1,1,1,1,,0,0
+kiso,音声,おんせい,"âm thanh, giọng đọc",3,3,2,2,,0,0
+kiso,映像,えいぞう,hình ảnh động,6,5,2,2,,0,0
+kiso,信頼度,しんらいど,độ tin cậy,58,12,57,11,,0,0
+kiso,平均故障間隔,へいきんこしょうかんかく,khoảng cách giữa hai lần hỏng trung bình,1,1,1,1,,0,0
+kiso,修復,しゅうふく,"Tu phục, tu sửa",7,4,6,3,,0,0
+kiso,定常,ていじょう,"(định thường) trạng thái ổn định, dừng",19,11,2,2,,0,0
+kiso,稼働率,かどうりつ,tỉ lệ hoạt động,4,2,3,1,,0,0
+kiso,棒部材,ぼうぶざい,cấu kiện thanh,13,3,13,3,,0,0
+kiso,幾何学的形状,きかがくてきけいじょう,hình dáng mang tính chất hình học,1,1,1,1,,0,0
+kiso,縦弾性,たてだんせい,đàn hồi dọc,8,5,8,5,,0,0
+kiso,座屈荷重,ざくつかじゅう,tải trọng tới hạn,10,4,3,2,,0,0
+kiso,投影法,とうえいほう,phương pháp hình chiếu,7,5,7,5,,0,0
+kiso,第一角法,だいいっかくほう,phương pháp chiếu thứ nhất,5,2,5,2,,0,0
+kiso,描き方,えがきかた,cách vẽ,1,1,1,1,,0,0
+kiso,相違,そうい,sự khác nhau,5,4,1,1,,0,0
+kiso,暗号,あんごう,"mật mã, ám hiệu",24,8,22,6,,0,0
+kiso,復号,ふくごう,giải mã,8,4,8,4,,0,0
+kiso,認証局,にんしょうきょく,cơ quan chứng thực (CA),3,2,3,2,,0,0
+kiso,等価,とうか,"cùng giá trị, tương đương",6,5,6,5,,0,0
+kiso,論理和,ろんりわ,phép toán logic OR,20,7,20,7,,0,0
+kiso,論理積,ろんりせき,Phép toán logic and,23,7,23,7,,0,0
+kiso,伝送,でんそう,truyền đi,48,5,48,5,,0,0
+kiso,西暦年号,せいれきねんごう,năm dương lịch,12,2,12,2,,0,0
+kiso,真,しん,True,44,20,35,13,,0,0
+kiso,偽,ぎ,False,12,6,6,4,,0,0
+kiso,演算式,えんざんしき,"công thức diễn toán, calculation",1,1,1,1,,0,0
+kiso,演算子,えんざんし,toán tử,5,2,5,2,,0,0
+kiso,記法,きほう,"ký pháp, cách ghi (notation)",32,4,32,4,,0,0
+kiso,構文木,こうぶんぎ,(cấu văn mộc) cây cú pháp,1,1,1,1,,0,0
+kiso,優先順,ゆうせんじゅん,(ưu tiên thuận) thứ tự ưu tiên,26,13,2,2,,0,0
+kiso,走査,そうさ,"(tẩu tra) quét, duyệt",1,1,1,1,,0,0
+kiso,漸近的,ぜんきんてき,(tiệm cận đích) có tính tiệm cận,3,2,3,2,,0,0
+kiso,定義域,ていぎいき,(định nghĩa vực) miền xác định,1,1,1,1,,0,0
+kiso,値域,ちいき,(trị vực) miền giá trị,1,1,1,1,,0,0
+kiso,関数,かんすう,(quan số) hàm số,76,20,61,12,,0,0
+kiso,整数,せいすう,(chỉnh số) số nguyên,28,8,28,8,,0,0
+kiso,解析,かいせき,"(giải tích) phân tích, giải tích",77,29,50,16,,0,0
+kiso,直交座標,ちょっこうざひょう,(trực giao tọa tiêu) tọa độ vuông góc (Descartes),9,7,9,7,,0,0
+kiso,任意,にんい,"(nhậm ý) tùy ý, bất kỳ",19,13,13,7,,0,0
+kiso,実数,じっすう,(thực số) số thực,18,6,18,6,,0,0
+kiso,積分,せきぶん,(tích phân) tích phân,23,8,19,6,,0,0
+kiso,恒等的,こうとうてき,"(hằng đẳng) mang tính đồng nhất, luôn luôn đúng",1,1,1,1,,0,0
+kiso,線形弾性体,せんけいだんせいたい,(tuyến hình đàn tính thể) vật thể đàn hồi tuyến tính,12,7,12,7,,0,0
+kiso,２次元,にじげん,"(nhị thứ nguyên) hai chiều, 2D",0,0,0,0,,0,0
+kiso,有限要素解析,ゆうげんようそかいせき,(hữu hạn yếu tố giải tích) phân tích phần tử hữu hạn (FEA),10,4,10,4,,0,0
+kiso,節点,せってん,"(tiết điểm) nút, điểm nút (trong FEM, kết cấu)",8,5,5,2,,0,0
+kiso,四辺形,しへんけい,"(tứ biên hình) tứ giác, hình bốn cạnh",2,1,2,1,,0,0
+kiso,有限要素,ゆうげんようそ,(hữu hạn yếu tố) phần tử hữu hạn,19,12,19,12,,0,0
+kiso,断面積,だんめんせき,(đoạn diện tích) diện tích mặt cắt ngang,58,21,23,11,,0,0
+kiso,固定壁,こていへき,"(cố định bích) tường cố định, vách ngàm",1,1,1,1,,0,0
+kiso,引張,ひっぱり,"(dẫn trương) kéo, lực kéo (ứng suất kéo)",93,22,57,12,,0,0
+kiso,上端,じょうたん,"(thượng đoan) đầu trên, mép trên",7,4,7,4,,0,0
+kiso,下端,かたん,"(hạ đoan) đầu dưới, mép dưới",6,5,4,3,,0,0
+kiso,平衡,へいこう,(bình hành) cân bằng,6,5,2,1,,0,0
+kiso,質点,しつてん,(chất điểm) chất điểm,31,6,31,6,,0,0
+kiso,静止,せいし,"(tĩnh chỉ) đứng yên, tĩnh",9,7,3,3,,0,0
+kiso,単振動,たんしんどう,(đơn chấn động) dao động điều hòa đơn,6,3,6,3,,0,0
+kiso,蓄える,たくわえる,"tích trữ, dự trữ (năng lượng...)",0,0,0,0,,0,0
+kiso,重力加速度,じゅうりょくかそくど,(trọng lực gia tốc độ) gia tốc trọng trường,13,12,3,3,,0,0
+kiso,半径,はんけい,(bán kính) bán kính,27,15,3,3,,0,0
+kiso,面密度,めんみつど,"(diện mật độ) mật độ mặt, khối lượng trên đơn vị diện tích",1,1,1,1,,0,0
+kiso,四分円,しぶんえん,"(tứ phân viên) một phần tư hình tròn, cung phần tư",1,1,1,1,,0,0
+kiso,同位体,どういたい,(đồng vị thể) đồng vị,16,6,16,6,,0,0
+kiso,陽子,ようし,(dương tử) proton,7,3,7,3,,0,0
+kiso,原子核,げんしかく,(nguyên tử hạch) hạt nhân nguyên tử,7,5,7,5,,0,0
+kiso,年代測定,ねんだいそくてい,"(niên đại trắc định) định tuổi, xác định niên đại",2,2,2,2,,0,0
+kiso,酸化還元反応,さんかかんげんはんのう,(toan hóa hoàn nguyên phản ứng) phản ứng oxi hóa - khử,2,1,2,1,,0,0
+kiso,製錬,せいれん,"(chế luyện) luyện kim, tinh luyện quặng",2,1,2,1,,0,0
+kiso,地殻,ちかく,(địa xác) vỏ Trái Đất,5,5,4,4,,0,0
+kiso,鉄鉱石,てっこうせき,(thiết khoáng thạch) quặng sắt,8,2,8,2,,0,0
+kiso,石灰石,せっかいせき,(thạch hôi thạch) đá vôi,1,1,1,1,,0,0
+kiso,銑鉄,せんてつ,(tiển thiết) gang (sắt thô từ lò cao),3,1,3,1,,0,0
+kiso,不純物,ふじゅんぶつ,(bất thuần vật) tạp chất,4,4,3,3,,0,0
+kiso,高炉,こうろ,(cao lô) lò cao (luyện gang),16,5,3,1,,0,0
+kiso,電炉,でんろ,(điện lô) lò điện (luyện thép),2,1,2,1,,0,0
+kiso,特殊,とくしゅ,"(đặc thù) đặc biệt, đặc thù",9,9,5,5,,0,0
+kiso,加水分解,かすいぶんかい,(gia thủy phân giải) sự thủy phân,6,5,6,5,,0,0
+kiso,側鎖,そくさ,(trắc tỏa) mạch nhánh (hóa học),13,6,13,6,,0,0
+kiso,基,き,"(cơ) gốc, nhóm (hóa học); nền tảng",768,43,269,16,,0,0
+kiso,脂肪族炭化水素,しぼうぞくたんかすいそ,(chi phương tộc thán hóa thủy tố) hydrocacbon béo (mạch hở),3,3,3,3,,0,0
+kiso,芳香族,ほうこうぞく,"(phương hương tộc) (hợp chất) thơm, aromatic",3,3,3,3,,0,0
+kiso,共有結合,きょうゆうけつごう,(cộng hữu kết hợp) liên kết cộng hóa trị,14,5,14,5,,0,0
+kiso,親水,しんすい,"(thân thủy) ưa nước, háo nước",7,3,7,3,,0,0
+kiso,硫黄,いおう,(lưu hoàng) lưu huỳnh,15,7,14,6,,0,0
+kiso,窒素,ちっそ,(trất tố) nitơ,27,11,20,8,,0,0
+kiso,突然変異,とつぜんへんい,(đột nhiên biến dị) đột biến,12,1,12,1,,0,0
+kiso,形質発現,けいしつはつげん,(hình chất phát hiện) sự biểu hiện tính trạng,1,1,1,1,,0,0
+kiso,置換,ちかん,"(trí hoán) sự thay thế, thế chỗ",8,3,8,3,,0,0
+kiso,欠失,けっしつ,(khuyết thất) sự mất đoạn (gen),3,1,3,1,,0,0
+kiso,中立,ちゅうりつ,"(trung lập) trung lập, trung tính",9,5,2,2,,0,0
+kiso,読み枠,よみわく,khung đọc (mã di truyền),1,1,1,1,,0,0
+kiso,鎌状,かまじょう,(liêm trạng) hình lưỡi liềm,1,1,1,1,,0,0
+kiso,赤血球貧血症,せっけっきゅうひんけつしょう,(xích huyết cầu bần huyết chứng) bệnh thiếu máu hồng cầu,1,1,1,1,,0,0
+kiso,潜性,せんせい,(tiềm tính) tính lặn (di truyền),1,1,1,1,,0,0
+kiso,劣性,れっせい,(liệt tính) tính lặn (cách gọi cũ của 潜性),1,1,1,1,,0,0
+kiso,相同染色体,そうどうせんしょくたい,(tương đồng nhiễm sắc thể) nhiễm sắc thể tương đồng,3,1,3,1,,0,0
+kiso,片方,かたほう,"(phiến phương) một bên, một phía (trong cặp)",3,3,2,2,,0,0
+kiso,主体,しゅたい,(chủ thể) chủ thể; thành phần chủ yếu,36,18,4,4,,0,0
+kiso,賄う,まかなう,"trang trải, đáp ứng (chi phí, nhu cầu)",2,2,1,1,,0,0
+kiso,総裁,そうさい,"(tổng tài) thống đốc, tổng giám đốc (ngân hàng trung ương...)",1,1,1,1,,0,0
+kiso,財務大臣,ざいむだいじん,(tài vụ đại thần) Bộ trưởng Tài chính,1,1,1,1,,0,0
+kiso,金融,きんゆう,"(kim dung) tài chính, tiền tệ",4,4,1,1,,0,0
+kiso,支援,しえん,"(chi viện) hỗ trợ, trợ giúp",21,14,5,4,,0,0
+kiso,焼却,しょうきゃく,"(thiêu khước) sự thiêu đốt, đốt rác",4,4,4,4,,0,0
+kiso,炉内,ろない,(lô nội) bên trong lò,2,2,2,2,,0,0
+kiso,滞留,たいりゅう,"(trệ lưu) ứ đọng, lưu lại",5,5,2,2,,0,0
+kiso,急冷,きゅうれい,(cấp lãnh) làm nguội nhanh,2,2,2,2,,0,0
+kiso,屋上緑化,おくじょうりょくか,(ốc thượng lục hóa) phủ xanh mái nhà,1,1,1,1,,0,0
+kiso,居室,きょしつ,"(cư thất) phòng ở, phòng sinh hoạt",2,2,2,2,,0,0
+kiso,遮水工,しゃすいこう,"(già thủy công) công trình chống thấm, lớp chắn nước",3,3,2,2,,0,0
+kiso,原位置浄化,げんいちじょうか,(nguyên vị trí tịnh hóa) xử lý làm sạch tại chỗ (đất ô nhiễm),1,1,1,1,,0,0
+kiso,活性汚泥法,かっせいおでいほう,(hoạt tính ô nê pháp) phương pháp bùn hoạt tính,2,2,2,2,,0,0
+kiso,換算,かんさん,"(hoán toán) quy đổi, đổi đơn vị",16,7,13,5,,0,0
+kiso,原子核分裂,げんしかくぶんれつ,(nguyên tử hạch phân liệt) phân hạch hạt nhân,4,4,4,4,,0,0
+kiso,電磁波,でんじは,(điện từ ba) sóng điện từ,6,5,6,5,,0,0
+kiso,蒸気機関,じょうききかん,(chưng khí cơ quan) động cơ hơi nước,12,8,12,8,,0,0
+kiso,順不同,じゅんふどう,(thuận bất đồng) không theo thứ tự,2,2,2,2,,0,0
+kiso,双方向,そうほうこう,"(song phương hướng) hai chiều, tương tác hai chiều",6,6,4,4,,0,0
+kiso,先駆け,さきがけ,"(tiên khu) đi đầu, tiên phong, mở đầu",2,2,2,2,先駆,2,2
+kiso,復興,ふっこう,"(phục hưng) phục hồi, tái thiết (sau thiên tai)",5,4,2,2,,0,0
+kiso,環境保全,かんきょうほぜん,(hoàn cảnh bảo toàn) bảo vệ môi trường,25,16,12,7,,0,0
+kiso,対策技術,たいさくぎじゅつ,"(đối sách kỹ thuật) công nghệ đối phó, kỹ thuật xử lý",3,2,3,2,,0,0
+kiso,焼却施設,しょうきゃくしせつ,(thiêu khước thi thiết) cơ sở đốt rác,2,2,2,2,,0,0
+kiso,滞留時間確保,たいりゅうじかんかくほ,(trệ lưu thời gian xác bảo) đảm bảo thời gian lưu,2,2,2,2,,0,0
+kiso,完全燃焼,かんぜんねんしょう,(hoàn toàn nhiên thiêu) cháy hoàn toàn,7,6,7,6,,0,0
+kiso,再合成,さいごうせい,(tái hợp thành) tái tổng hợp,2,2,2,2,,0,0
+kiso,排ガス,はいガス,(bài) khí thải,2,2,2,2,,0,0
+kiso,壁面,へきめん,(bích diện) bề mặt tường,21,7,2,2,,0,0
+kiso,建物表面温度,たてものひょうめんおんど,(kiến vật biểu diện ôn độ) nhiệt độ bề mặt công trình,2,2,2,2,,0,0
+kiso,抑える,おさえる,"Kìm nén, hạn chế",14,12,4,3,,0,0
+kiso,居室内,きょしつない,(cư thất nội) trong phòng ở,2,2,2,2,,0,0
+kiso,侵入,しんにゅう,"(xâm nhập) xâm nhập, lọt vào",11,8,2,2,,0,0
+kiso,空調,くうちょう,(không điều) điều hòa không khí,2,2,2,2,,0,0
+kiso,消費,しょうひ,"(tiêu phí) tiêu thụ, tiêu dùng",175,35,72,14,,0,0
+kiso,削減,さくげん,(tước giảm) cắt giảm,66,21,25,9,,0,0
+kiso,産業廃棄物,さんぎょうはいきぶつ,(sản nghiệp phế khí vật) chất thải công nghiệp,15,10,10,7,,0,0
+kiso,管理型処分場,かんりがたしょぶんじょう,(quản lý hình xử phân trường) bãi chôn lấp kiểu quản lý (có lớp chắn nước),2,2,2,2,,0,0
+kiso,環境保全対策,かんきょうほぜんたいさく,(hoàn cảnh bảo toàn đối sách) biện pháp bảo vệ môi trường,3,3,2,2,,0,0
+kiso,浸出水処理設備,しんしゅつすいしょりせつび,(tẩm xuất thủy xử lý thiết bị) thiết bị xử lý nước rỉ rác,2,2,2,2,,0,0
+kiso,義務付け,ぎむづけ,"(nghĩa vụ phó) bắt buộc, quy định thành nghĩa vụ",29,16,12,6,義務付,30,16
+kiso,汚染物質,おせんぶっしつ,(ô nhiễm vật chất) chất ô nhiễm,15,9,8,6,,0,0
+kiso,除去,じょきょ,"(trừ khứ) loại bỏ, khử",20,14,9,4,,0,0
+kiso,原位置,げんいち,"(nguyên vị trí) tại chỗ, nguyên vị (in-situ)",4,4,1,1,,0,0
+kiso,対策措置,たいさくそち,(đối sách thố trí) biện pháp đối phó,1,1,1,1,,0,0
+kiso,エネルギー情勢,エネルギーじょうせい,(tình thế) tình hình năng lượng,5,5,5,5,,0,0
+kiso,数値,すうち,"(số trị) giá trị số, trị số",95,18,93,16,,0,0
+kiso,総発電電力量,そうはつでんでんりょくりょう,(tổng phát điện điện lực lượng) tổng sản lượng điện phát ra,9,4,9,4,,0,0
+kiso,再生可能,さいせいかのう,(tái sinh khả năng) có thể tái tạo,48,15,25,10,,0,0
+kiso,太陽光発電,たいようこうはつでん,(thái dương quang phát điện) phát điện mặt trời,14,7,9,4,,0,0
+kiso,導入量,どうにゅうりょう,"(đạo nhập lượng) lượng đưa vào sử dụng, lượng lắp đặt",6,4,6,4,,0,0
+kiso,近年,きんねん,(cận niên) những năm gần đây,33,21,11,8,,0,0
+kiso,着実に,ちゃくじつに,"(trước thực) một cách vững chắc, đều đặn",7,7,2,2,着実,8,7
+kiso,挙げられる,あげられる,"(cử) được nêu ra, được liệt kê",19,16,4,4,,0,0
+kiso,事業用,じぎょうよう,"(sự nghiệp dụng) dùng cho kinh doanh, quy mô thương mại",5,4,5,4,,0,0
+kiso,規模,きぼ,(quy mô) quy mô,89,26,15,10,,0,0
+kiso,平均,へいきん,(bình quân) trung bình,193,26,121,12,,0,0
+kiso,単純,たんじゅん,(đơn thuần) đơn giản,68,26,46,16,,0,0
+kiso,風力,ふうりょく,"(phong lực) sức gió, năng lượng gió",26,10,9,4,,0,0
+kiso,天候等,てんこうとう,(thiên hậu đẳng) thời tiết v.v.,2,2,2,2,,0,0
+kiso,気象環境,きしょうかんきょう,(khí tượng hoàn cảnh) môi trường khí tượng,2,2,2,2,,0,0
+kiso,風速,ふうそく,(phong tốc) tốc độ gió,8,5,4,2,,0,0
+kiso,乗に比例する,じょうにひれいする,(thừa – tỷ lệ) tỷ lệ với lũy thừa bậc ~,18,9,3,2,乗に比例,22,10
+kiso,国名,こくめい,(quốc danh) tên nước,3,3,2,2,,0,0
+kiso,組合せ,くみあわせ,"(tổ hợp) tổ hợp, sự kết hợp",296,43,147,16,組合,311,43
+kiso,一人当たり,ひとりあたり,(nhất nhân đương) bình quân đầu người,0,0,0,0,一人当,0,0
+kiso,相当する,そうとうする,(tương đương) tương đương với,9,8,2,2,相当,31,21
+kiso,科学技術の成果,かがくぎじゅつのせいか,(khoa học kỹ thuật – thành quả) thành quả của khoa học kỹ thuật,3,3,3,3,,0,0
+kiso,工業的合成,こうぎょうてきごうせい,(công nghiệp đích hợp thành) tổng hợp công nghiệp,2,2,2,2,,0,0
+kiso,確立,かくりつ,"(xác lập) xác lập, thiết lập",11,8,5,3,,0,0
+kiso,存在,そんざい,(tồn tại) tồn tại,109,40,56,16,,0,0
+kiso,改良,かいりょう,"(cải lương) cải tạo, cải tiến",33,18,10,9,,0,0
+kiso,科学技術基本計画,かがくぎじゅつきほんけいかく,(khoa học kỹ thuật cơ bản kế hoạch) Kế hoạch cơ bản về khoa học công nghệ,4,3,3,2,,0,0
+kiso,特徴的,とくちょうてき,"(đặc trưng đích) mang tính đặc trưng, tiêu biểu",2,2,2,2,,0,0
+kiso,年代,ねんだい,"(niên đại) niên đại, thời kỳ, thập niên",25,15,22,12,,0,0
+kiso,遺伝子組み換え食品,いでんしくみかえしょくひん,thực phẩm biến đổi gen,2,1,0,0,,0,0
+kiso,倫理的,りんりてき,(luân lý đích) mang tính đạo đức,39,16,2,2,,0,0
+kiso,法的,ほうてき,(pháp đích) mang tính pháp lý,14,8,2,2,,0,0
+kiso,観点,かんてん,"(quan điểm) quan điểm, góc nhìn",28,19,4,2,,0,0
+kiso,必要性,ひつようせい,(tất yếu tính) tính cần thiết,13,11,3,2,,0,0
+kiso,条件整備,じょうけんせいび,"(điều kiện chỉnh bị) chuẩn bị, hoàn thiện điều kiện",2,2,2,2,,0,0
+kiso,図られた,はかられた,"đã được tiến hành, được xúc tiến (dạng bị động của 図る)",3,3,1,1,,0,0
+kiso,ポストドクター等1万人支援計画,ポストドクターとういちまんにんしえんけいかく,Chương trình hỗ trợ 1 vạn nghiên cứu viên sau tiến sĩ (chính sách khoa học công nghệ Nhật),1,1,1,1,,0,0
+kiso,先駆けた,さきがけた,"đi trước, tiên phong (dạng quá khứ của 先駆ける)",2,2,2,2,先駆,2,2
+kiso,超,ちょう,"(siêu) siêu, vượt quá",73,26,9,8,,0,0
+kiso,目指す,めざす,"nhắm tới, hướng tới",25,14,8,5,目指,51,25
+kiso,姿,すがた,"(tư) hình dáng, bộ dạng, hình ảnh",19,11,2,2,,0,0
+kiso,東日本大震災,ひがしにほんだいしんさい,(Đông Nhật Bản đại chấn tai) trận đại động đất Đông Nhật Bản (2011),17,14,9,7,,0,0
+kiso,倫理規定,りんりきてい,"(luân lý quy định) quy định đạo đức, quy tắc đạo đức (của tổ chức, hiệp hội, doanh nghiệp...)",3,3,0,0,,0,0
+kiso,踏む,ふむ,"dẫm lên, trải qua",0,0,0,0,,0,0
+kiso,厳正な,げんせいな,"nghiêm minh, nghiêm túc",5,4,0,0,厳正,5,4
+kiso,捏造,ねつぞう,"Ngụy tạo, bịa đặt",6,4,0,0,,0,0
+kiso,捏ねる,こねる,"Đòi hỏi, vòi vĩnh, phân bua",0,0,0,0,,0,0
+kiso,改ざん,かいざん,"Sự giả mạo, làm giả",14,12,1,1,,0,0
+kiso,加担,かたん,"Sự hỗ trợ, đồng lõa",3,3,0,0,,0,0
+kiso,担ぐ,かつぐ,"Khiêng vác, lừa bịp mê tín",0,0,0,0,,0,0
+kiso,所属,しょぞく,"Nằm trong, thuộc về",43,15,0,0,,0,0
+kiso,事態,じたい,Tình hình,6,4,0,0,,0,0
+kiso,弊害,へいがい,"Tệ nạn, thói hư, tác hại",2,1,0,0,,0,0
+kiso,有償,ゆうしょう,"(hữu thường) có tính phí, có trả tiền (trái nghĩa với 無償)",2,2,0,0,,0,0
+kiso,償う,つぐなう,Bồi thường,0,0,0,0,,0,0
+kiso,兼業,けんぎょう,Nghề tay trái,4,1,0,0,,0,0
+kiso,兼ねる,かねる,"Gồm có, kiêm nhiệm",0,0,0,0,,0,0
+kiso,査読,さどく,"(tra độc) bình duyệt, phản biện (bài báo khoa học)",2,1,0,0,,0,0
+kiso,辞退,じたい,"Rút lui, từ chối,",1,1,0,0,,0,0
+kiso,退く,しりぞく,"Giật lùi, rút về, từ bỏ",0,0,0,0,,0,0
+kiso,未公開,みこうかい,"chưa công bố, chưa công khai",2,1,0,0,,0,0
+kiso,未だ,いまだ,"Chưa, vẫn",2,2,0,0,,0,0
+kiso,名義,めいぎ,"Danh nghĩa, đứng tên chủ tài khoản",2,1,0,0,,0,0
+kiso,無償,むしょう,"Miễn phí, không yêu cầu bồi thường",3,3,0,0,,0,0
+kiso,甚だしい,はなはだしい,"Mãnh liệt, quá, cực kỳ",0,0,0,0,,0,0
+kiso,精製,せいせい,"Tinh chế, làm sạch",1,1,0,0,,0,0
+kiso,樹脂,じゅし,"Nhựa dẻo,",1,1,0,0,,0,0
+kiso,脂,あぶら,"Nhựa cây, mỡ",54,11,48,8,,0,0
+kiso,競合,きょうごう,"Cạnh tranh, xung đột",1,1,0,0,,0,0
+kiso,競う,きそう,"Cạnh tranh, ganh đua",0,0,0,0,,0,0
+kiso,廃棄,はいき,"Tiêu hủy, loại bỏ",120,31,55,12,,0,0
+kiso,棄てる,すてる,"Bỏ, Vứt(捨てる)",0,0,0,0,,0,0
+kiso,幹,みき,"Thân cây, phần cốt lõi",30,13,0,0,,0,0
+kiso,創る,つくる,"Sáng tạo, thành lập (công ty)",0,0,0,0,,0,0
+kiso,形状,けいじょう,Hình thù,67,27,17,11,,0,0
+kiso,品種,ひんしゅ,Chủng loại,4,4,1,1,,0,0
+kiso,係る,かかる,"Liên quan, liên hệ",78,30,20,7,,0,0
+kiso,抗弁,こうべん,"Phản đối, biện hộ",1,1,0,0,,0,0
+kiso,免責事由,めんせきじゆう,Nguyên nhân miễn trách,1,1,0,0,,0,0
+kiso,特段,とくだん,"Đặc biệt, đáng chú ý",3,3,0,0,,0,0
+kiso,細かい,こまかい,Lẻ,2,2,1,1,,0,0
+kiso,同定,どうてい,"Sự nhận ra, nhận dạng",5,3,0,0,,0,0
+kiso,妥当性,だとうせい,"Tính thỏa đáng, thích hợp",12,9,0,0,,0,0
+kiso,辿る,たどる,"Lần theo dấu, trải qua, rơi vào",1,1,0,0,,0,0
+kiso,近道,ちかみち,"Đường tắt, lối tắt",1,1,0,0,,0,0
+kiso,心身機能,しんしんきのう,Chức năng về tinh thần và thể chất,1,1,0,0,,0,0
+kiso,突発的,とっぱつてき,"Đột ngột, bất ngờ, đột xuất",3,3,0,0,,0,0
+kiso,感染症,かんせんしょう,Bệnh truyền nhiễm,7,4,0,0,,0,0
+kiso,双方,そうほう,"Đôi bên, hai phía",9,8,4,4,,0,0
+kiso,廃熱,はいねつ,"Loại bỏ nhiệt, thải nhiệt",3,3,2,2,,0,0
+kiso,回生,かいせい,"Hồi sinh, khôi phục",1,1,0,0,,0,0
+kiso,永続的,えいぞくてき,"Bền bỉ, dài hạn",3,2,0,0,,0,0
+kiso,永い,ながい,Dài lâu,0,0,0,0,,0,0
+kiso,高効率,こうこうりつ,Hiệu quả cao,2,2,1,1,,0,0
+kiso,正味,しょうみ,"Khối lượng tịnh, công có ích",4,3,2,2,,0,0
+kiso,万博,ばんぱく,Hội chợ quốc tế,2,2,1,1,,0,0
+kiso,取組,とりくみ,"Nỗ lực, chuyên tâm",98,23,10,4,,0,0
+kiso,汎用性,はんようせい,"Tính đa dụng, đa năng (dùng được cho nhiều mục đích)",1,1,0,0,,0,0
+kiso,過剰,かじょう,"Vượt quá, dư thừa",9,8,0,0,,0,0
+kiso,柔軟性,じゅうなんせい,"Tính mềm dẻo, linh hoạt, kỹ năng mềm",16,6,14,4,,0,0
+kiso,訴える,うったえる,"Kêu gọi,yêu cầu, kiện cáo, tác động",1,1,0,0,,0,0
+kiso,寛大,かんだい,"Rộng rãi, thoáng, phóng khoáng",7,4,6,3,,0,0
+kiso,接近,せっきん,Tiếp cận,6,4,4,3,,0,0
+kiso,整合,せいごう,Sự điều chỉnh cho phù hợp,7,6,1,1,,0,0
+kiso,整う,ととのう,"Sắp xếp vào trật tự, chuẩn bị",0,0,0,0,,0,0
+kiso,終始する,しゅうしする,"Suốt cả buổi, từ đầu đến cuối",1,1,0,0,終始,2,2
+kiso,弱者,じゃくしゃ,"Nạn nhân, kẻ yếu",2,2,0,0,,0,0
+kiso,事業場外勤務,じぎょうじょうがいきんむ,Làm việc bên ngoài công ty,1,1,0,0,,0,0
+kiso,臨機応変,りんきおうへん,"Tích cực, linh hoạt tùy cơ ứng biến",1,1,0,0,,0,0
+kiso,離職,りしょく,"Nghỉ việc, thôi việc",0,0,0,0,,0,0
+kiso,離れる,はなれる,"Cách ly, chia rời",4,4,1,1,,0,0
+kiso,中抜け,なかぬけ,Tạm rời công việc giữa giờ (rồi quay lại làm tiếp),1,1,0,0,中抜,1,1
+kiso,明示,めいじ,Trình bày rõ ràng,29,15,4,2,,0,0
+kiso,黙る,だまる,"Câm nín, yên lặng",0,0,0,0,,0,0
+kiso,黙示,もくし,"Ngụ ý, ẩn ý",1,1,0,0,,0,0
+kiso,指揮,しき,Chỉ huy,2,2,0,0,,0,0
+kiso,形質,けいしつ,"Đặc trưng, đặc tính",7,3,3,1,,0,0
+kiso,付与,ふよ,"Cấp quyền, gán quyền, cấp point mua hàng",9,6,0,0,,0,0
+kiso,抱える,かかえる,"Vướng phải, đối mặt với, ôm nợ, mang hành lý",4,3,0,0,,0,0
+kiso,作出,さくしゅつ,"Sự tạo mới, phát minh",1,1,0,0,,0,0
+kiso,危惧,きぐ,"Sự sợ sệt, sợ hãi, lo lắng tương lai",0,0,0,0,,0,0
+kiso,是正,ぜせい,"Chỉnh đốn, duyệt lại",2,1,0,0,,0,0
+kiso,繋がる,つながる,"Nối vào, buộc vào, kết nối cảm xúc",2,2,0,0,,0,0
+kiso,北欧,ほくおう,Bắc Âu,1,1,1,1,,0,0
+kiso,直観的,ちょっかんてき,tính trực quan,6,3,4,2,,0,0
+kiso,論理的,ろんりてき,Logic,11,6,10,5,,0,0
+kiso,下回る,したまわる,"Giảm xuống, thấp hơn",7,5,5,3,下回,10,6
+kiso,偏差,へんさ,"Độ lệch, Sai số",29,10,27,8,,0,0
+kiso,正規分布,せいきぶんぷ,"Sự phân phối chuẩn, biểu đồ gauss",21,5,21,5,,0,0
+kiso,降伏,こうふく,Chảy dẻo của thép,11,9,6,5,,0,0
+kiso,破断,はだん,"Vỡ, gãy, đứt",8,6,5,3,,0,0
+kiso,細長い,ほそながい,Thon dài,4,3,4,3,細長,4,3
+kiso,直交,ちょっこう,Trực giao toán học,12,7,12,7,,0,0
+kiso,縮んで,ちぢんで,"co lại, co ngót (dạng te của 縮む)",1,1,1,1,,0,0
+kiso,圧壊,あっかい,"(áp hoại) phá hoại do nén, nén vỡ",1,1,1,1,,0,0
+kiso,外形線,がいけいせん,(ngoại hình tuyến) đường bao ngoài (trong bản vẽ),1,1,1,1,,0,0
+kiso,想像図,そうぞうず,"(tưởng tượng đồ) hình vẽ phỏng đoán, hình minh họa tưởng tượng",2,1,2,1,,0,0
+kiso,可逆,かぎゃく,"(khả nghịch) thuận nghịch, có thể đảo ngược",21,8,6,2,,0,0
+kiso,生起確率,せいきかくりつ,(sinh khởi xác suất) xác suất xảy ra,4,3,2,2,,0,0
+kiso,標的,ひょうてき,"(tiêu đích) mục tiêu, đích",10,3,9,2,,0,0
+kiso,検知,けんち,"(kiểm tri) phát hiện, dò tìm (bằng cảm biến)",3,3,2,2,,0,0
+kiso,多層,たそう,"(đa tầng) nhiều lớp, nhiều tầng",2,2,2,2,,0,0
+kiso,疑似,ぎじ,"(nghi tự) giả, mô phỏng (pseudo)",0,0,0,0,,0,0
+kiso,補数,ほすう,(bổ số) số bù (trong hệ nhị phân),22,2,22,2,,0,0
+kiso,進数,しんすう,"(tiến số) hệ đếm, cơ số (2進数: hệ nhị phân)",100,11,100,11,,0,0
+kiso,急勾配,きゅうこうばい,"(cấp câu phối) độ dốc lớn, dốc đứng",9,5,3,2,,0,0
+kiso,近似,きんじ,"(cận tự) xấp xỉ, gần đúng",35,11,33,9,,0,0
+kiso,浮動,ふどう,(phù động) nổi trôi; 浮動小数点: dấu phẩy động,12,7,12,7,,0,0
+kiso,桁,けた,"chữ số, hàng (số); dầm (cầu)",72,13,55,9,,0,0
+kiso,級数,きゅうすう,(cấp số) chuỗi (toán học),6,3,6,3,,0,0
+kiso,硬性,こうせい,(ngạnh tính) tính cứng,0,0,0,0,,0,0
+kiso,内心,ないしん,(nội tâm) tâm đường tròn nội tiếp,2,1,2,1,,0,0
+kiso,外心,がいしん,(ngoại tâm) tâm đường tròn ngoại tiếp,2,1,2,1,,0,0
+kiso,固定端,こていたん,"(cố định đoan) đầu ngàm, đầu cố định",3,3,1,1,,0,0
+kiso,摩擦,まさつ,(ma sát) ma sát,75,12,2,2,,0,0
+kiso,脱離,だつり,"(thoát ly) tách ra, bong tách; phản ứng tách (hóa học)",1,1,1,1,,0,0
+kiso,転位,てんい,(chuyển vị) lệch mạng (khuyết tật tinh thể trong kim loại),1,1,1,1,,0,0
+kiso,触媒,しょくばい,(xúc môi) chất xúc tác,5,3,5,3,,0,0
+kiso,融点,ゆうてん,(dung điểm) điểm nóng chảy,10,4,10,4,,0,0
+kiso,酵母菌,こうぼきん,(diếu mẫu khuẩn) nấm men,4,2,4,2,,0,0
+kiso,基質,きしつ,(cơ chất) cơ chất (chất nền của enzyme),4,2,4,2,,0,0
+kiso,連鎖反応,れんさはんのう,(liên tỏa phản ứng) phản ứng dây chuyền,5,4,5,4,,0,0
+kiso,系統,けいとう,"(hệ thống) hệ thống; dòng, hệ",10,7,3,2,,0,0
+kiso,変性,へんせい,(biến tính) biến tính,19,6,19,6,,0,0
+kiso,伸長,しんちょう,"(thân trường) sự kéo dài, giãn dài",9,3,9,3,,0,0
+kiso,廃,はい,"(phế) phế, bỏ đi (tiền tố: phế thải, phế bỏ)",149,34,77,13,,0,0
+kiso,陸域,りくいき,(lục vực) vùng đất liền,7,5,5,3,,0,0
+kiso,投棄,とうき,"(đầu khí) sự vứt bỏ, đổ thải (rác, chất thải)",5,4,2,2,,0,0
+kiso,清掃,せいそう,"(thanh tảo) quét dọn, vệ sinh",10,8,2,2,,0,0
+kiso,議定書,ぎていしょ,(nghị định thư) nghị định thư,11,7,9,5,,0,0
+kiso,移入種,いにゅうしゅ,"(di nhập chủng) loài du nhập, loài ngoại lai",6,2,6,2,,0,0
+kiso,駆逐,くちく,"(khu trục) xua đuổi, đánh bật",2,2,1,1,,0,0
+kiso,動物愛護,どうぶつあいご,(động vật ái hộ) bảo vệ động vật,2,2,2,2,,0,0
+kiso,駆除,くじょ,"(khu trừ) tiêu diệt, diệt trừ (sinh vật gây hại)",4,2,4,2,,0,0
+kiso,発効,はっこう,"(phát hiệu) có hiệu lực (điều ước, luật)",2,2,2,2,,0,0
+kiso,衡平,こうへい,"(hành bình) công bằng, cân bằng lợi ích",3,3,3,3,,0,0
+kiso,利便性,りべんせい,(lợi tiện tính) tính tiện lợi,4,4,1,1,,0,0
+kiso,在来,ざいらい,"(tại lai) vốn có, bản địa, truyền thống",12,7,7,4,,0,0
+kiso,非在来,ひざいらい,(phi tại lai) phi truyền thống (vd: tài nguyên phi truyền thống),2,2,2,2,,0,0
+kiso,顕著,けんちょ,"(hiển trứ) rõ rệt, nổi bật",8,7,5,4,,0,0
+kiso,明治維新,めいじいしん,(Minh Trị duy tân) cuộc Duy tân Minh Trị,3,1,3,1,,0,0
+kiso,手工業,しゅこうぎょう,(thủ công nghiệp) nghề thủ công,4,4,4,4,,0,0
+kiso,一式,いっしき,"(nhất thức) một bộ, trọn bộ",1,1,1,1,,0,0
+kiso,官僚,かんりょう,"(quan liêu) quan chức, công chức cấp cao",1,1,1,1,,0,0
+kiso,種痘,しゅとう,"(chủng đậu) chủng đậu, tiêm vắc-xin đậu mùa",4,2,4,2,,0,0
+kiso,周期律,しゅうきりつ,(chu kỳ luật) định luật tuần hoàn (các nguyên tố),2,2,2,2,,0,0
+kiso,三極真空管,さんきょくしんくうかん,(tam cực chân không quản) đèn chân không ba cực (triode),2,2,2,2,,0,0
+tekisei,私利私欲,しりしよく,"lợi ích cá nhân, tư lợi, ích kỷ, tư lợi cá nhân",1,1,1,1,,0,0
+tekisei,義務,ぎむ,"nghĩa vụ, bổn phận",169,29,142,16,,0,0
+tekisei,掲げる,かかげる,"giương lên, treo lên, nêu cao (biểu ngữ, khẩu hiệu), đặt lên",9,9,9,9,,0,0
+tekisei,失墜,しっつい,"sự sụp đổ, sự mất đi (quyền uy, danh tiếng, v.v.)",10,8,10,8,,0,0
+tekisei,傷つけ,きずつけ,"làm tổn thương, gây thương tích, làm đau lòng",17,12,17,12,,0,0
+tekisei,不名誉,ふめいよ,"tai tiếng, ô nhục, mất danh dự",12,8,12,8,,0,0
+tekisei,正当,せいとう,"chính đáng, hợp pháp",34,17,30,15,,0,0
+tekisei,盗用,とうよう,"đạo văn, sao chép, ăn cắp (ý tưởng)",29,15,29,15,,0,0
+tekisei,努め,つとめ,"công việc, bổn phận, nhiệm vụ, sự cố gắng, nỗ lực",62,18,60,16,,0,0
+tekisei,組織,そしき,tổ chức,154,24,142,16,,0,0
+tekisei,負う,おう,"mang, gánh vác, chịu đựng",22,17,19,14,,0,0
+tekisei,関与,かんよ,"liên quan, tham gia, dính líu",13,7,13,7,,0,0
+tekisei,怠る,おこたる,"sao nhãng, bỏ bê, lơ là",1,1,1,1,,0,0
+tekisei,公衆,こうしゅう,"công chúng, quần chúng, cộng đồng",53,16,50,15,,0,0
+tekisei,損なう,そこなう,"làm hỏng, làm tổn hại, làm thiệt hại, gây hại, phá hoại",12,9,10,7,,0,0
+tekisei,良心,りょうしん,lương tâm,4,4,4,4,,0,0
+tekisei,信念,しんねん,"niềm tin, tín ngưỡng, lòng tin vững chắc",3,3,3,3,,0,0
+tekisei,利益相反,りえきそうはん,xung đột lợi ích,12,5,12,5,,0,0
+tekisei,公正さ,こうせいさ,sự công bằng; tính công bằng; sự chính trực,6,4,6,4,公正,46,17
+tekisei,雇用者,こようしゃ,"người lao động, người làm công, người được tuyển dụng",5,5,5,5,,0,0
+tekisei,依頼者,いらいしゃ,"người yêu cầu, người ủy thác, khách hàng",15,6,15,6,,0,0
+tekisei,遂行,すいこう,"thực hiện, thi hành, tiến hành, hoàn thành",27,14,25,12,,0,0
+tekisei,与える,あたえる,"cho, ban, cung cấp, gây ra",39,25,25,13,,0,0
+tekisei,破壊,はかい,"sự phá hoại, sự hủy diệt, sự phá hủy",121,30,16,9,,0,0
+tekisei,重視,じゅうし,"coi trọng, xem trọng, chú trọng, đặt nặng",22,11,20,9,,0,0
+tekisei,守秘,しゅひ,"bảo mật, giữ bí mật",25,10,25,10,,0,0
+tekisei,委ねる,ゆだねる,"giao phó, phó thác, ủy thác, trao cho (quyết định, số phận, trách nhiệm)",0,0,0,0,,0,0
+tekisei,独自,どくじ,"độc đáo, riêng biệt, tự mình",24,15,19,10,,0,0
+tekisei,予備校生,よびこうせい,học sinh trường luyện thi; học sinh ôn thi đại học,1,1,1,1,,0,0
+tekisei,カンニング,かんにんぐ,"Quay cóp, gian lận (thi cử)",7,2,7,2,,0,0
+tekisei,手口,てぐち,"thủ đoạn, mánh khóe, phương thức (gây án)",2,2,1,1,,0,0
+tekisei,投稿,とうこう,"đăng bài, đăng tải, gửi bài (báo, tạp chí)",21,5,21,5,,0,0
+tekisei,新聞報道,しんぶんほうどう,"tin tức báo chí, tường thuật của báo chí",1,1,1,1,,0,0
+tekisei,相次いで,あいついで,"liên tiếp, nối tiếp nhau",2,2,2,2,相次,3,3
+tekisei,偽計,ぎけい,"âm mưu, thủ đoạn gian lận, kế sách gian xảo",3,1,3,1,,0,0
+tekisei,妨害罪,ぼうがいざい,"Tội gây cản trở, tội cản trở",2,1,2,1,,0,0
+tekisei,偽計業務妨害罪,ぎけいぎょうむぼうがいざい,Tội cản trở hoạt động kinh doanh bằng thủ đoạn gian lận/lừa dối,2,1,2,1,,0,0
+tekisei,捜査,そうさ,"điều tra, tìm kiếm, khám xét",1,1,1,1,,0,0
+tekisei,容疑者,ようぎしゃ,"nghi phạm, đối tượng tình nghi",1,1,1,1,,0,0
+tekisei,逮捕,たいほ,"bắt giữ, sự bắt giữ, sự bắt bớ",2,1,2,1,,0,0
+tekisei,図る,はかる,"lên kế hoạch, âm mưu, toan tính",107,32,52,16,,0,0
+tekisei,位置付ける,いちづける,"định vị, xếp đặt, đặt vào vị trí, coi là",3,3,1,1,位置付,12,9
+tekisei,著しく,いちじるしく,"Đáng kể, rõ rệt, đặc biệt, cực kỳ",16,11,9,5,,0,0
+tekisei,継続研さん,けいぞくけんさん,Không ngừng trau dồi/nâng cao kỹ năng,3,3,3,3,継続研,7,5
+tekisei,執筆,しっぴつ,"Viết lách, biên soạn (tài liệu, báo cáo kỹ thuật)",4,3,4,3,,0,0
+tekisei,証拠,しょうこ,"bằng chứng, chứng cứ",6,4,6,4,,0,0
+tekisei,資質向上,ししつこうじょう,Nâng cao năng lực/phẩm chất chuyên môn,21,10,21,10,,0,0
+tekisei,促す,うながす,"thúc đẩy, xúc tiến, khuyến khích",12,10,9,8,,0,0
+tekisei,課す,かす,"áp đặt, quy định, bắt buộc (tiêu chuẩn, nghĩa vụ, hình phạt)",0,0,0,0,,0,0
+tekisei,ハザード同定,ハザードどうてい,Định danh mối nguy; Xác định mối nguy,0,0,0,0,,0,0
+tekisei,代替,だいたい,"thay thế, vật thay thế, phương án thay thế",16,7,3,2,,0,0
+tekisei,保有,ほうゆう,"Sở hữu, nắm giữ, duy trì (tài sản, thiết bị, công nghệ, dữ liệu)",13,10,9,7,,0,0
+tekisei,見合う,みあう,"Tương xứng, phù hợp, cân xứng",1,1,1,1,見合,5,5
+tekisei,保護方策,ほごほうさく,Biện pháp bảo vệ; Phương sách bảo hộ,6,2,6,2,,0,0
+tekisei,倫理,りんり,"Đạo đức nghề nghiệp, luân lý",197,20,191,16,,0,0
+tekisei,顧客,こきゃく,"khách hàng, khách, chủ đầu tư, bên đặt hàng",77,15,76,14,,0,0
+tekisei,雇用主,こようぬし,"Chủ lao động, Chủ đầu tư",6,4,6,4,,0,0
+tekisei,利害,りがい,Lợi ích và thiệt hại; Quyền lợi,38,15,34,12,,0,0
+tekisei,持続可能,じぞくかのう,"bền vững, có khả năng duy trì",68,20,49,12,,0,0
+tekisei,捉える,とらえる,"nắm bắt, hiểu rõ, nhận diện",6,2,6,2,,0,0
+tekisei,普遍性,ふへんせい,"Tính phổ quát, tính phổ biến, khả năng áp dụng rộng rãi (universality, generality, widespread applicability)",2,1,2,1,,0,0
+tekisei,統合性,とうごうせい,"tính tích hợp, tính toàn vẹn",1,1,1,1,,0,0
+tekisei,包摂性,ほうせつせい,"Tính bao quát, tính toàn diện",4,3,4,3,,0,0
+tekisei,功利,こうり,tính thực dụng; lợi ích thiết thực,15,4,15,4,,0,0
+tekisei,エシックス・テスト,エシックス・テスト,Bài kiểm tra đạo đức; Đánh giá đạo đức,3,1,3,1,,0,0
+tekisei,自問,じもん,Tự vấn; Tự hỏi,0,0,0,0,,0,0
+tekisei,代表的,だいひょうてき,Mang tính đại diện; Tiêu biểu,18,12,5,4,,0,0
+tekisei,普遍化可能性,ふへんかかのうせい,Tính phổ quát; Khả năng khái quát hóa,6,1,6,1,,0,0
+tekisei,可逆性,かぎゃくせい,Tính thuận nghịch; Khả năng đảo ngược,3,1,3,1,,0,0
+tekisei,黄金律,おうごんりつ,Quy tắc vàng,12,3,12,3,,0,0
+tekisei,美徳,びとく,Đức tính; Phẩm hạnh,4,1,4,1,,0,0
+tekisei,周囲,しゅうい,Xung quanh; Môi trường xung quanh,12,8,2,2,,0,0
+tekisei,世評,せいひょう,"Uy tín/danh tiếng công chúng, dư luận",6,1,6,1,,0,0
+tekisei,報道,ほうどう,"Thông báo, tin tức, đưa tin (của truyền thông)",7,6,7,6,,0,0
+tekisei,綱領,こうりょう,"cương lĩnh, nguyên tắc cơ bản, đề cương chính",23,10,23,10,,0,0
+tekisei,迷う,まよう,"phân vân, lưỡng lự, bối rối",1,1,0,0,,0,0
+tekisei,多角的,たかくてき,"Đa chiều, đa góc độ, toàn diện (từ nhiều khía cạnh)",0,0,0,0,,0,0
+tekisei,不適切,ふてきせつ,không phù hợp,446,41,76,15,,0,0
+tekisei,漏らし,もらし,"(lậu) làm lộ, rò rỉ",12,11,12,11,,0,0
+tekisei,当該,とうがい,"(Đương cai) nói trên, liên quan, tương ứng (từ chỉ định)",117,27,72,15,,0,0
+tekisei,文部科学省,もんぶかがくしょう,"Bộ Giáo dục, Văn hóa, Thể thao, Khoa học và Công nghệ Nhật Bản",18,9,18,9,,0,0
+tekisei,分科会,ぶんかかい,"(phân khoa hội) Tiểu ban, hội đồng chuyên môn",3,3,3,3,,0,0
+tekisei,統合,とうごう,"(thống hợp) Sự kết hợp, thống nhất, sát nhập",11,9,8,6,,0,0
+tekisei,伴い,ともない,"(Bạn) Đồng hành, đệm, Do vì",25,20,11,7,,0,0
+tekisei,履行,りこう,"(Lý hành)Sự thực hiện, thi hành",20,8,20,8,,0,0
+tekisei,活躍,かつやく,"(Hoạt dược) thành công, hoạt động nỗ lực",5,4,5,4,,0,0
+tekisei,知見,ちけん,"(tri kiến) Sự hiểu biết, tri thức",20,11,18,9,,0,0
+tekisei,研さん,けんさん,(nghiên) nghiên cứu theo dạng rèn luyện bản thân,3,3,3,3,,0,0
+tekisei,造り込まれる,つくりこまれる,"Được chế tạo, sản xuất trong",0,0,0,0,造り込,1,1
+tekisei,怪我,けが,(quái ngã) Vết thương,5,2,5,2,,0,0
+tekisei,造成,ぞうせい,"(Tạo thành) San lấp, cải tạo đất tạo mặt bằng (vd: 宅地造成)",8,7,3,3,,0,0
+tekisei,宅地,たくち,"(trạch địa) Khu nhà, lô đất thổ cư",15,11,3,3,,0,0
+tekisei,養鶏場,ようけいじょう,(Dưỡng kê tràng) trang trại gà,1,1,1,1,,0,0
+tekisei,出荷,しゅっか,"(xuất hà) sự đưa hàng, giao hàng, xuất hàng",9,3,7,2,,0,0
+tekisei,暴走,ぼうそう,"(Bạo tẩu) Mất khả năng kiểm soát, chạy ẩu",2,2,2,2,,0,0
+tekisei,周波数,しゅうはすう,(Chu ba số) Tần số Hz,6,4,2,2,,0,0
+tekisei,需要家,じゅようか,"(Nhu yếu gia) khách hàng, người có nhu cầu",1,1,1,1,,0,0
+tekisei,湾内,わんない,(loan nội) bên trong vịnh,10,5,2,2,,0,0
+tekisei,養殖,ようしょく,"(dưỡng thực) Nuôi trồng thủy sản,",4,2,4,2,,0,0
+tekisei,鯛,たい,Cá tráp,1,1,1,1,,0,0
+tekisei,進展,しんてん,(tiến triển) sự tiến triển,27,15,13,8,,0,0
+tekisei,鑑みる,かんがみる,"(Giám) xem xét, chú ý để quyết định",1,1,1,1,,0,0
+tekisei,施策,しさく,"(Thi sách) Chính sách, đối sách",21,12,13,6,,0,0
+tekisei,創出,そうしゅつ,"(Sáng xuất) Sự tạo ra, sáng tạo ra",12,7,7,5,,0,0
+tekisei,資する,しする,"(Tư) Giúp đỡ, viện trợ, đóng góp",21,14,16,9,,0,0
+tekisei,指紋,しもん,"(Chỉ văn) Dấu tay, vân tay",4,3,3,2,,0,0
+tekisei,顔認識,かおにんしき,(Nhan nhận thức) Nhận diện khuôn mặt,1,1,1,1,,0,0
+tekisei,符号,ふごう,"(phù hiệu) ký hiệu, mã (trong mã hóa thông tin)",42,9,9,2,,0,0
+tekisei,旅券,りょけん,(lữ khoán) Hộ chiếu,2,2,2,2,,0,0
+tekisei,割り当て,わりあて,"(cát đương) gán tải trọng, vật liệu, phân công phân bổ",2,2,1,1,割り当,2,2
+tekisei,識別,しきべつ,(thức biệt) Sự phân biệt để nhận diện,14,8,11,5,,0,0
+tekisei,塩基,えんき,(diêm cơ) Bazo,42,16,2,2,,0,0
+tekisei,部位,ぶい,"(bộ vị) Bộ phận, vị trí (trên cơ thể hoặc vật thể, kết cấu)",4,4,2,2,,0,0
+tekisei,容貌,ようぼう,(dung mạo) hình dạng khuôn mặt,2,2,2,2,,0,0
+tekisei,虹彩,こうさい,"(hồng thái) tròng đen, mống mắt",3,3,2,2,,0,0
+tekisei,起伏,きふく,"(khởi phục) thăng trầm cuộc đời, địa hình nhấp nhô",2,2,2,2,,0,0
+tekisei,声帯,せいたい,(Thanh đới) Dây thanh quản,2,2,2,2,,0,0
+tekisei,振動,しんどう,(Chấn động) Sự rung động,112,27,6,3,,0,0
+tekisei,声門,せいもん,(Thanh môn) Khoảng trống giữa các dây thanh quản,2,2,2,2,,0,0
+tekisei,声道,せいどう,"(thanh đạo) đường dẫn âm (vocal tract): khoang từ thanh môn đến môi, mũi",2,2,2,2,,0,0
+tekisei,歩幅,ほはば,"(bộ phúc) 1 khoảng của bước chân, sải bước chân",2,2,2,2,,0,0
+tekisei,皮下,ひか,(bì hạ) nội bì dưới da,1,1,1,1,,0,0
+tekisei,分岐,ぶんき,"(phân kì) Sự chia nhánh, phân nhánh",6,5,1,1,,0,0
+tekisei,端点,たんてん,"(đoan điểm) nút cuối, điểm mút",2,2,1,1,,0,0
+tekisei,掌紋,しょうもん,(chưởng văn) đường chỉ tay,2,2,2,2,,0,0
+tekisei,模倣,もほう,"(mô phỏng) sự bắt chước, sao chép",9,9,9,9,,0,0
+tekisei,特許庁,とっきょちょう,(Đặc hứa sảnh) Nơi cấp bằng sáng chế,12,9,12,9,,0,0
+tekisei,出願,しゅつがん,(xuất nguyện) nộp đơn xin,12,7,11,6,,0,0
+tekisei,節目,ふしめ,"(tiết mục) Bước ngoặt, dấu mốc quan trọng",3,3,3,3,,0,0
+tekisei,未然,みぜん,"(vị nhiên) 未然に防ぐ phòng ngừa, ngăn chặn",10,7,9,6,,0,0
+tekisei,着目,ちゃくもく,"(trứ mục) quan tâm, chú ý đến",16,11,5,3,,0,0
+tekisei,顕在,けんざい,"(hiển tại) cụ thể hóa, biểu hiện rõ ràng",5,3,5,3,,0,0
+tekisei,不祥事,ふしょうじ,(bất tường sự) việc lỗi của ai đó gây mất danh dự cho cá nhân tập thể,10,5,10,5,,0,0
+tekisei,発覚,はっかく,"(phát giác) sự phát hiện, phát giác",7,4,7,4,,0,0
+tekisei,不明瞭,ふめいりょう,"(bất minh liệu) Sự không rõ ràng, mập mờ",1,1,1,1,,0,0
+tekisei,忖度,そんたく,"(thốn độ) đoán, dò ý của người khác",0,0,0,0,,0,0
+tekisei,天井,てんじょう,(thiên tỉnh) trần nhà,6,4,6,4,,0,0
+tekisei,所管,しょかん,(sở quản) thuộc thẩm quyền,8,6,6,4,,0,0
+tekisei,頻度,ひんど,"(Tần độ) tần suất, số lần xảy ra",9,7,2,2,,0,0
+tekisei,一律,いちりつ,"( nhất luật) đồng đều, không phân biệt",7,6,2,2,,0,0
+tekisei,諸元,しょげん,(chư nguyên) Thông số kỹ thuật,6,6,2,2,,0,0
+tekisei,微,び,"(vi) 1 chút, nhỏ",87,29,7,5,,0,0
+tekisei,漏洩,ろうえい,"(lậu duệ) sự tiết lộ, rò rỉ",20,7,20,7,,0,0
+tekisei,複数人,ふくすうにん,"(phức số nhân) số đông, nhiều người",4,2,4,2,,0,0
+tekisei,避ける,さける,"(tị) phòng, tránh, giữ khoảng cách",13,11,6,6,,0,0
+tekisei,媒体,ばいたい,(môi thể) media phương tiện,10,8,5,3,,0,0
+tekisei,背後,はいご,"(bối hậu)Phía sau lưng, background",18,11,3,3,,0,0
+tekisei,書棚,しょだな,(thư bằng) kệ sách,2,2,2,2,,0,0
+tekisei,死角,しかく,"(tử giác)Góc chết, điểm mù",2,2,2,2,,0,0
+tekisei,閲覧,えつらん,"(Duyệt lãm) Đọc, duyệt web, xem",3,2,2,1,,0,0
+tekisei,予見,よけん,"(Dự kiến) Dự đoán, dự kiến",18,10,14,6,,0,0
+tekisei,特権,とっけん,(Đặc quyền) Đặc quyền,3,2,3,2,,0,0
+tekisei,専有,せんゆう,"(Chuyên hữu) độc chiếm, sở hữu riêng",3,1,3,1,,0,0
+tekisei,厳重,げんじゅう,"(nghiêm trọng) nghiêm ngặt, cẩn mật",1,1,1,1,,0,0
+tekisei,措置,そち,(Thố trí) biện pháp,65,23,45,12,,0,0
+tekisei,講ずる,こうずる,"(Giảng) Đưa ra, xây dựng, giải quyết vấn đề",6,5,5,4,,0,0
+tekisei,疾病,しっぺい,(tật bệnh) bệnh tật,6,2,6,2,,0,0
+tekisei,軽微,けいび,"(khinh vi) Nhẹ, không quan trọng",5,4,3,2,,0,0
+tekisei,付加,ふか,"(phó gia) phụ thêm, thêm vào",31,16,12,7,,0,0
+tekisei,雇用,こよう,"(Cố dụng) Tuyển dụng, thuê mướn",29,11,27,9,,0,0
+tekisei,均等,きんとう,"(Quân đẳng) cân đối, cân bằng",6,3,5,2,,0,0
+tekisei,介護,かいご,"(Giới hộ) Chăm sóc bệnh nhân, điều dưỡng",7,5,7,5,,0,0
+tekisei,産前,さんぜん,"(sản tiền) tiền sản, trước khi sinh đẻ",2,1,2,1,,0,0
+tekisei,遭遇,そうぐう,"(Tao ngộ) Cuộc chạm trán, sự bắt gặp bất thình lình",2,2,2,2,,0,0
+tekisei,鍛える,きたえる,"(Đoán) Dạy dỗ, rèn luyện",0,0,0,0,,0,0
+tekisei,意向,いこう,"(Ý hướng) chí hướng, dự định, ý muốn",5,4,5,4,,0,0
+tekisei,包摂,ほうせつ,(Bao nhiếp) Bao trùm,5,3,5,3,,0,0
+tekisei,参画,さんかく,(Tham hoạch) Tham gia vào kế hoạch dự án,2,2,2,2,,0,0
+tekisei,年限,ねんげん,"(Niên hạn) Thời hạn quy định (tính bằng năm), niên hạn",3,2,3,2,,0,0
+tekisei,登録,とうろく,(Đăng lục) sự đăng ký,89,18,69,15,,0,0
+tekisei,責務,せきむ,"(trách vụ) nhiệm vụ, bổn phận",73,18,70,16,,0,0
+tekisei,相反,そうはん,"(tương phản) Sự bất đồng, mâu thuẫn",16,8,15,7,,0,0
+tekisei,啓発,けいはつ,"(khải phát) Sự mở mang tri thức, bồi dưỡng kiến thức",3,3,3,3,,0,0
+tekisei,研鑽,けんさん,"(nghiên toàn) nghiên cứu, trau dồi",7,3,7,3,,0,0
+tekisei,倫理綱領,りんりこうりょう,(Luân lý cương lĩnh) Bộ quy tắc đạo đức,20,10,20,10,,0,0
+tekisei,抵触,ていしょく,"(để xúc) va chạm, vi phạm luật",2,1,2,1,,0,0
+tekisei,察知,さっち,"(sát tri) cảm thấy, phát hiện ra",4,4,4,4,,0,0
+tekisei,醸成,じょうせい,"(nhưỡng thành) đào tạo, bồi dưỡng, lên men rượu",2,2,2,2,,0,0
+tekisei,幾多の苦難,いくたのくなん,(ki đa no khổ nan) nhiều hoạn nạn,1,1,1,1,,0,0
+tekisei,獲得,かくとく,"(hoạch đắc) sự thu được, nhận được, thu nhận",5,4,4,3,,0,0
+tekisei,擁護,ようご,"(ủng hộ) bênh vực, ủng hộ",3,3,3,3,,0,0
+tekisei,見解,けんかい,"(kiến giải) cách nghĩ, quan điểm",13,4,13,4,,0,0
+tekisei,創作者,そうさくしゃ,"(sáng tác giả) nhà văn, người sáng tác",6,6,6,6,,0,0
+tekisei,元来,がんらい,"(nguyên lai) từ trước tới nay, vốn dĩ",5,5,5,5,,0,0
+tekisei,意匠,いしょう,kiểu dáng công nghiệp; ý tưởng thiết kế,25,12,24,11,,0,0
+tekisei,半導体集積回路,はんどうたいしゅうせきかいろ,(bán dẫn tập tích hồi lộ) mạch tích hợp bán dẫn (IC),4,4,4,4,,0,0
+tekisei,商標,しょうひょう,"nhãn hiệu, thương hiệu",22,13,20,11,,0,0
+tekisei,商号,しょうごう,(thương hiệu) tên thương mại,10,6,8,4,,0,0
+tekisei,甚大,じんだい,"(thậm đại) sự khổng lồ, nghiêm trọng",6,5,5,4,,0,0
+tekisei,刊行物,かんこうぶつ,"Tạp chí, sách báo xuất bản",9,5,8,4,,0,0
+tekisei,中途,ちゅうと,"(trung đồ) giữa chừng, đang dang dở",1,1,1,1,,0,0
+tekisei,取引先,とりひきさき,Khách hàng,11,8,11,8,,0,0
+tekisei,脱税,だつぜい,(thoát thuế) Trốn thuế,4,2,4,2,,0,0
+tekisei,垂れ流し,たれながし,"Ỉa đùn, đái dầm, xả rác bừa bãi",6,3,6,3,垂れ流,6,3
+tekisei,懲戒処分,ちょうかいしょぶん,"(trừng giới xử phân) biện pháp trừng phạt, xử lý kỷ luật",2,2,2,2,,0,0
+tekisei,解雇,かいこ,"(giải cố) sự cho nghỉ việc, sa thải",9,6,9,6,,0,0
+tekisei,期日内,きじつない,"(kì nhật nội) trong kì hạn, trong ngày đã định",1,1,1,1,,0,0
+tekisei,誤使用,ごしよう,(ngộ sử dụng) sử dụng sai,5,5,5,5,,0,0
+tekisei,引渡し,ひきわたし,(dẫn độ) bàn giao,5,5,3,3,引渡,5,5
+tekisei,故意,こい,"cố ý, cố tình",12,8,11,7,,0,0
+tekisei,救済,きゅうさい,"(cứu tế) viện trợ, trợ giúp mặt kinh tế",4,4,4,4,,0,0
+tekisei,不具合,ふぐあい,"(bất cụ hợp) những lỗi, hỏng hóc",20,13,14,10,,0,0
+tekisei,消安法,しょうあんほう,Luật an toàn tiêu dùng,10,2,10,2,,0,0
+tekisei,後遺障害,こういしょうがい,Khuyết tật sót lại,2,2,2,2,,0,0
+tekisei,重症病,じゅうしょうびょう,Ốm nặng,0,0,0,0,,0,0
+tekisei,内閣総理大臣,ないかくそうりだいじん,(nội các tổng lý đại thần) thủ tướng,4,4,3,3,,0,0
+tekisei,消費者庁,しょうひしゃちょう,(tiêu phí giả thính) cơ quan người tiêu dùng,17,9,17,9,,0,0
+tekisei,萎縮,いしゅく,"Trở nên rụt rè, sợ hãi",3,2,3,2,,0,0
+tekisei,利便,りべん,(lợi tiện) tiện lợi,8,7,2,2,,0,0
+tekisei,重篤度,じゅうとくど,(trọng đốc độ) mức độ nghiêm trọng,2,2,2,2,,0,0
+tekisei,芽,め,"(nha) búp, mầm chồi",2,2,2,2,,0,0
+tekisei,摘み取る,つみとる,"(trích thủ) ngắt hái, tiêu diệt mầm mống, làm lụi tàn đi tài năng",1,1,1,1,摘み取,1,1
+tekisei,局所排気装置,きょくしょはいきそうち,Thiết bị hút khí thải cục bộ,1,1,1,1,,0,0
+tekisei,到来,とうらい,"(đáo lai) sự đến, sự tới",1,1,1,1,,0,0
+tekisei,次世代,じせだい,(thứ thế đại) Thế hệ tương lai,3,2,2,1,,0,0
+tekisei,進捗,しんちょく,(tiến trắc) tiến triển,7,7,3,3,,0,0
+tekisei,負荷,ふか,(phụ hà) phụ tải,41,18,8,6,,0,0
+tekisei,概念,がいねん,(khái niệm) Khái niệm,22,16,11,8,,0,0
+tekisei,濃縮,のうしゅく,"(nùng súc) cô đặc,",6,2,6,2,,0,0
+tekisei,蓄積,ちくせき,"(súc tích) tích lũy, tích tụ",12,10,9,7,,0,0
+tekisei,刑事裁判,けいじさいばん,(hình sự tài phán) phiên tòa hình sự,3,1,3,1,,0,0
+tekisei,脱線事故,だっせんじこ,(thoát tuyến sự cố) tai nạn trật bánh (tàu),1,1,1,1,,0,0
+tekisei,挟まれ,はさまれ,"bị kẹp, bị kẹt (giữa hai vật)",3,2,3,2,,0,0
+tekisei,開示,かいじ,"tiết lộ, thông báo",19,15,12,11,,0,0
+tekisei,低脂肪乳,ていしぼうにゅう,(đê chi phương nhũ) sữa ít béo,2,2,2,2,,0,0
+tekisei,生乳,せいにゅう,(sinh nhũ) sữa tươi nguyên liệu,1,1,1,1,,0,0
+tekisei,黄色,きいろ,(hoàng sắc) màu vàng,1,1,0,0,,0,0
+tekisei,笹子トンネル,ささごトンネル,hầm Sasago (nơi xảy ra sự cố sập trần năm 2012),4,4,4,4,,0,0
+tekisei,天井板,てんじょういた,(thiên tỉnh bản) tấm trần,4,3,4,3,,0,0
+tekisei,崩落,ほうらく,"(băng lạc) sụp đổ, sạt lở",2,2,2,2,,0,0
+tekisei,見抜けなかった,みぬけなかった,đã không nhìn thấu / không phát hiện ra được,1,1,1,1,見抜,2,2
+tekisei,不起訴処分,ふきそしょぶん,(bất khởi tố xử phân) quyết định không truy tố,1,1,1,1,,0,0
+tekisei,繋がって,つながって,"nối liền, dẫn đến, liên quan tới",2,2,2,2,,0,0
+tekisei,鼓舞,こぶ,"(cổ vũ) cổ vũ, khích lệ",1,1,1,1,,0,0
+tekisei,許認可,きょにんか,(hứa nhận khả) cấp phép và phê duyệt,2,2,1,1,,0,0
+tekisei,相手方,あいてがた,"phía đối phương, bên kia (trong hợp đồng, giao dịch)",2,2,2,2,,0,0
+tekisei,贈与,ぞうよ,"(tặng dữ) biếu tặng, tặng cho",1,1,1,1,,0,0
+tekisei,接待,せったい,"(tiếp đãi) chiêu đãi, tiếp khách",1,1,1,1,,0,0
+tekisei,割り勘,わりかん,chia đều tiền (mỗi người tự trả phần mình),1,1,1,1,,0,0
+tekisei,人事院,じんじいん,(nhân sự viện) Viện Nhân sự (cơ quan quản lý công chức Nhật),2,1,2,1,,0,0
+tekisei,狭義,きょうぎ,(hiệp nghĩa) nghĩa hẹp,9,4,8,3,,0,0
+tekisei,服務規律,ふくむきりつ,(phục vụ quy luật) kỷ luật công vụ,1,1,1,1,,0,0
+tekisei,広義,こうぎ,(quảng nghĩa) nghĩa rộng,6,1,6,1,,0,0
+tekisei,知人,ちじん,(tri nhân) người quen,2,1,2,1,,0,0
+tekisei,志向,しこう,"(chí hướng) định hướng, thiên hướng",8,3,8,3,,0,0
+tekisei,懸念,けねん,lo lắng,21,10,18,7,,0,0
+tekisei,納めて,おさめて,"nộp (tiền, thuế); giao nộp",2,1,2,1,,0,0
+tekisei,尊厳,そんげん,tôn nghiêm,8,7,8,7,,0,0
+tekisei,就業環境,しゅうぎょうかんきょう,(tựu nghiệp hoàn cảnh) môi trường làm việc,3,2,3,2,,0,0
+tekisei,阻害,そがい,"(trở hại) cản trở, gây trở ngại",22,15,15,8,,0,0
+tekisei,叱責,しっせき,"(sất trách) quở trách, khiển trách",3,3,3,3,,0,0
+tekisei,妊婦,にんぷ,(nhâm phụ) phụ nữ mang thai,6,3,5,2,,0,0
+tekisei,性愛,せいあい,"(tính ái) tình dục, ái tình",2,2,2,2,,0,0
+tekisei,自認,じにん,"(tự nhận) tự thừa nhận, tự công nhận",2,2,2,2,,0,0
+tekisei,過労死,かろうし,(quá lao tử) chết do làm việc quá sức,1,1,1,1,,0,0
+tekisei,講ず,こうず,"(giảng) thi hành, áp dụng (biện pháp)",9,7,8,6,,0,0
+tekisei,月間,げっかん,"(nguyệt gian) trong tháng, hàng tháng",5,4,1,1,,0,0
+tekisei,違和感,いわかん,"(vi hòa cảm) cảm giác không ổn, cảm giác lạc lõng",4,1,4,1,,0,0
+tekisei,昨今,さっこん,"(tạc kim) gần đây, dạo này",2,2,2,2,,0,0
+tekisei,虚偽,きょぎ,"(hư ngụy) giả dối, gian dối",2,2,2,2,,0,0
+tekisei,後を絶たない,あとをたたない,"không ngớt, liên tiếp xảy ra",0,0,0,0,後を絶,1,1
+tekisei,則り,のっとり,"(tắc) tuân theo, chiểu theo (則る)",2,1,2,1,,0,0
+tekisei,悪意,あくい,"(ác ý) ác ý, cố ý xấu",2,2,2,2,,0,0
+tekisei,巧妙,こうみょう,"(xảo diệu) khéo léo, tinh vi",1,1,1,1,,0,0
+tekisei,抜き打ち,ぬきうち,"đột xuất, bất ngờ (kiểm tra)",1,1,1,1,抜き打,1,1
+tekisei,抑止力,よくしりょく,khả năng ngăn chặn,3,3,3,3,,0,0
+tekisei,因果関係,いんがかんけい,quan hệ nhân quả,11,7,9,6,,0,0
+tekisei,迅速,じんそく,"(tấn tốc) nhanh chóng, mau lẹ",10,8,9,7,,0,0
+tekisei,湯沸器,ゆわかしき,(thang phí khí) máy đun nước nóng,3,2,3,2,,0,0
+tekisei,透明性,とうめいせい,(thấu minh tính) tính minh bạch,13,7,13,7,,0,0
+tekisei,規範,きはん,"(quy phạm) quy phạm, chuẩn mực",68,15,64,13,,0,0
+tekisei,改訂,かいてい,"(cải đính) sửa đổi, hiệu đính (văn bản, tiêu chuẩn)",15,8,14,7,,0,0
+tekisei,潜在的,せんざいてき,"(tiềm tại đích) tiềm ẩn, tiềm tàng",7,5,7,5,,0,0
+tekisei,暗黙,あんもく,"(ám mặc) ngầm, mặc nhiên",5,2,5,2,,0,0
+tekisei,共著,きょうちょ,(cộng trứ) đồng tác giả,5,1,5,1,,0,0
+tekisei,先進性,せんしんせい,(tiên tiến tính) tính tiên tiến,1,1,1,1,,0,0
+tekisei,多大,ただい,"(đa đại) to lớn, rất nhiều",3,3,3,3,,0,0
+tekisei,経緯,けいい,"(kinh vĩ) diễn biến, quá trình sự việc",2,2,2,2,,0,0
+tekisei,文献,ぶんけん,"(văn hiến) tài liệu, văn liệu tham khảo",8,2,8,2,,0,0
+tekisei,許諾,きょだく,"(hứa nặc) cho phép, chấp thuận",4,3,4,3,,0,0
+tekisei,落とし穴,おとしあな,"cạm bẫy, lỗ hổng tiềm ẩn",1,1,1,1,,0,0
+tekisei,陥る,おちいる,"(hãm) rơi vào, sa vào (tình trạng xấu)",0,0,0,0,,0,0
+tekisei,促進,そくしん,"(xúc tiến) xúc tiến, thúc đẩy",51,24,15,9,,0,0
+tekisei,性的指向,せいてきしこう,khuynh hướng tình dục,4,3,4,3,,0,0
+senmon,鉛直,えんちょく,"thẳng đứng, chiều thẳng đứng, phương thẳng đứng",46,11,40,8,,0,0
+senmon,間隙比,かんげきひ,(gian khích bỉ) hệ số rỗng,28,10,28,10,,0,0
+senmon,粒子密度,りゅうしみつど,(lạp tử mật độ ) Mật độ hạt đất,3,1,3,1,,0,0
+senmon,乾燥密度,かんそうみつど,(kền táo mật độ) mật độ khô,16,9,16,9,,0,0
+senmon,粒度分布,りゅうどぶんぷ,(lạp độ phân bố) phân bố kích thước hạt,7,4,7,4,,0,0
+senmon,透水性,とうすいせい,(thấu thuỷ tính) tính thấm,10,4,10,4,,0,0
+senmon,細粒土,さいりゅうど,(tế lạp thổ) Đất hạt mịn,10,6,10,6,,0,0
+senmon,含水比,がんすいひ,(hàm thuỷ bỉ)hàm lượng nước,25,9,25,9,,0,0
+senmon,飽和度,ほうわど,độ bão hoà,10,4,10,4,,0,0
+senmon,構成物,こうせいぶつ,"vật cấu thành, thành phần cấu tạo",1,1,1,1,,0,0
+senmon,単位体積当たり,たんいたいせきあたり,tính trên một đơn vị thể tích,4,4,4,4,単位体積当,4,4
+senmon,平均質量,へいきんしつりょう,khối lượng trung bình,2,2,1,1,,0,0
+senmon,圧密,あつみつ,"Nước thoát ra ngoài, thể tích giảm. Cố kết của đất",93,9,93,9,,0,0
+senmon,排出,はいしゅつ,"Thải ra, thoát ra",166,33,27,9,,0,0
+senmon,粗い,あらい,"(Thô) thô cục, gồ ghề, lổn nhổn",3,3,1,1,,0,0
+senmon,礫,れき,"Đá, sỏi",15,5,15,5,,0,0
+senmon,粘土,ねんど,đất sét,32,7,32,7,,0,0
+senmon,履歴,りれき,lịch sử,6,5,5,4,,0,0
+senmon,推移,すいい,"diễn biến, biến chuyển (theo thời gian)",8,4,5,2,,0,0
+senmon,供試体,きょうしたい,mẫu thử (thí nghiệm),17,5,17,5,,0,0
+senmon,円柱形,えんちゅうけい,hình trụ tròn,1,1,1,1,,0,0
+senmon,保持,ほじ,"(bảo trì) giữ, duy trì",46,22,15,8,,0,0
+senmon,算定,さんてい,phép tính,44,13,39,10,,0,0
+senmon,初期,しょき,sơ kỳ,27,12,21,6,,0,0
+senmon,山体,さんたい,thân núi,1,1,1,1,,0,0
+senmon,河床堆積物,かしょうたいせきぶつ,trầm tích đáy sông,4,3,4,3,,0,0
+senmon,渓岸,けいがん,bờ khe suối,6,4,6,4,,0,0
+senmon,流下,りゅうか,chảy xuống,18,7,18,7,,0,0
+senmon,抑制,よくせい,"ức chế, kìm hãm",86,23,61,11,,0,0
+senmon,抑止,よくし,ngăn cản,11,10,6,6,,0,0
+senmon,簡便,かんべん,giản tiện,6,4,6,4,,0,0
+senmon,除した,じょした,chia cho (phép chia),21,13,14,7,,0,0
+senmon,円弧,えんこ,cung tròn,6,6,6,6,,0,0
+senmon,滑動,かつどう,trượt,11,6,11,6,,0,0
+senmon,落石,らくせき,đá rơi,5,1,5,1,,0,0
+senmon,防護工,ぼうごこう,"công trình phòng hộ, kết cấu bảo vệ",1,1,1,1,,0,0
+senmon,等分布,とうぶんぷ,"(đẳng phân bố) chia đều, phân bố",13,7,11,5,,0,0
+senmon,接線,せっせん,Tiếp tuyến,6,4,5,3,,0,0
+senmon,折れ曲がる,おれまがる,"uốn cong, bẻ gập",1,1,1,1,折れ曲,1,1
+senmon,疲労,ひろう,(Bì lao)hiện tượng mỏi,69,22,42,11,,0,0
+senmon,亀裂,きれつ,(Quy liệt)Vết rạn nứt,13,4,13,4,,0,0
+senmon,継手,つぎて,"(Kế thủ)Mối nối, khớp nối",43,10,43,10,,0,0
+senmon,止端,したん,(Chỉ đoan)Điểm tiếp xúc giữa thép cơ bản và mối hàn,6,2,6,2,,0,0
+senmon,滑らか,なめらか,"(Hoạt, cốt)Sự trơn tru, trôi chảy",6,4,6,4,,0,0
+senmon,振幅,しんぷく,(Chấn phúc)Biên độ chấn động,15,5,14,4,,0,0
+senmon,長短,ちょうたん,"Dài ngắn, điểm mạnh yếu",2,2,2,2,,0,0
+senmon,腐食,ふしょく,(Hủ thực)ăn mòn,75,11,55,8,,0,0
+senmon,耐候性,たいこうせい,(Đối hậu tính)Tính bền thời tiết,12,5,12,5,,0,0
+senmon,添加,てんか,(Thiêm gia) Thêm vào,12,9,7,6,,0,0
+senmon,低合金,ていごうきん,(Đê hợp kim)Hợp kim thấp,3,3,3,3,,0,0
+senmon,乾湿,かんしつ,(Kiền thấp) độ ẩm và độ khô,4,2,4,2,,0,0
+senmon,緻密,ちみつ,"(... Mật) Chính xác, tinh tế, rất chi tiết",9,5,9,5,,0,0
+senmon,錆び,さび,Gỉ,3,2,3,2,,0,0
+senmon,下地,したじ,"(Hạ địa) nền tảng, lớp nền, bề mặt nền (trước khi sơn/hoàn thiện)",2,2,2,2,,0,0
+senmon,亜鉛,あえん,(á duyên) kẽm,18,6,14,4,,0,0
+senmon,接触,せっしょく,Tiếp xúc,18,11,17,10,,0,0
+senmon,犠牲,ぎせい,"(Hi sinh) Sự hy sinh, phẩm chất hi sinh",12,8,3,3,,0,0
+senmon,発揮,はっき,(Phát huy) Sự phát huy,32,18,17,7,,0,0
+senmon,担う,になう,"Cáng đáng, gánh vác",20,12,7,5,,0,0
+senmon,溶出,ようしゅつ,"(dong xuất) hòa tan thoát ra, tan ra (leaching)",3,2,3,2,,0,0
+senmon,皮膜,ひまく,(bì mạc) Màng mỏng,19,5,12,2,,0,0
+senmon,厚膜,こうまく,(hậu mạc) Màng dày,4,2,4,2,,0,0
+senmon,被覆,ひふく,"(bị phúc) Lớp phủ, lớp bọc bảo vệ (vd: vỏ bọc dây điện, lớp bê tông bảo vệ cốt thép)",29,10,29,10,,0,0
+senmon,耐食性,たいしょくせい,Chống ăn mòn,4,4,2,2,,0,0
+senmon,港湾,こうわん,(Cảng loan) Bến cảng,23,9,22,8,,0,0
+senmon,溶射,ようしゃ,(Dong xạ) phun phủ,13,4,13,4,,0,0
+senmon,気孔,きこう,"(Khí khổng)Lỗ thông hơi, lỗ khí",6,4,4,2,,0,0
+senmon,封孔,ふうこう,(phong khổng) Niêm phong,2,2,2,2,,0,0
+senmon,浸漬,しんし,"(tẩm tí) nhúng chìm xuống, ngâm cho ngấm chất lỏng",2,2,2,2,,0,0
+senmon,練上がり,ねりあがり,(Luyện) đã nhào,2,2,2,2,練上,2,2
+senmon,細骨材,さいこつざい,(tế cốt liệu) cốt liệu tinh,6,5,6,5,,0,0
+senmon,過度,かど,"(quá độ) quá độ, quá mức, bừa bãi",7,7,4,4,,0,0
+senmon,所要,しょよう,(sở yếu) sự cần thiết,23,11,20,8,,0,0
+senmon,粉体,ふんたい,(Phấn thể)Dạng bột,2,2,2,2,,0,0
+senmon,早強,そうきょう,(tảo cường) Sức mạnh sớm,19,6,19,6,,0,0
+senmon,凝結,ぎょうけつ,"(Ngưng kết) Sự ngưng kết, ngưng đọng",2,2,2,2,,0,0
+senmon,寒中,かんちゅう,(hàn trung) giữa mùa đông,4,2,4,2,,0,0
+senmon,中庸,ちゅうよう,"(Trung dung) Ôn hoà, điều độ",8,6,8,6,,0,0
+senmon,硫酸塩,りゅうさんえん,(lưu toan diêm) muối sunfat so4,6,4,6,4,,0,0
+senmon,既往,きおう,"(kí vãng) Quá khứ, dĩ vãng",2,2,2,2,,0,0
+senmon,劣化,れっか,(liệt hoá) Sự giảm cấp,59,20,43,8,,0,0
+senmon,凍害,とうがい,(đống hại) Thiệt hại do sương giá,19,9,19,9,,0,0
+senmon,凍結,とうけつ,"(Đống kết) Đóng băng, đông cứng",11,8,11,8,,0,0
+senmon,融解,ゆうかい,(dung giải) sự tan chảy của vật ở thể rắn,9,8,6,5,,0,0
+senmon,繰返す,くりかえす,(sào phản) lặp lại,3,3,3,3,繰返,23,8
+senmon,微細,びさい,"(vi tế) bé tí, vụn vặt",13,10,10,8,,0,0
+senmon,流水,りゅうすい,"Nước chảy, dòng nước",58,10,58,10,,0,0
+senmon,摩耗,まもう,(ma háo) sự mài mòn,13,8,13,8,,0,0
+senmon,水和物,すいわぶつ,"(thuỷ hoà vật) hydrat, sản phẩm thủy hóa (hợp chất ngậm nước)",2,1,2,1,,0,0
+senmon,陥没,かんぼつ,(hãm một)sự lún,5,5,4,4,,0,0
+senmon,市町村,しちょうそん,Thành phố - thị trấn - làng (đơn vị hành chính cấp cơ sở),30,13,27,10,,0,0
+senmon,都道府県,とどうふけん,Chính quyền cấp tỉnh,31,11,30,10,,0,0
+senmon,審議会,しんぎかい,"(Thẩm nghị hội) hội đồng thẩm định, hội đồng tư vấn",11,7,5,3,,0,0
+senmon,大臣,だいじん,(đại thần) Bộ trưởng,26,16,16,7,,0,0
+senmon,聴く,きく,"(Thính) nghe, lắng nghe",5,4,5,4,,0,0
+senmon,担保,たんぽ,"(Đảm bảo) tài sản thế chấp, khoản thế chấp; sự bảo đảm",7,7,2,2,,0,0
+senmon,用地買収,ようちばいしゅう,(Dụng địa mãi thu) giải phóng mặt bằng,3,2,3,2,,0,0
+senmon,借地権者,しゃくちけんしゃ,(tá địa quyền giả) người có quyền thuê đất (người đi thuê đất),1,1,1,1,,0,0
+senmon,借家権者,しゃくやけんしゃ,(tá gia quyền giả) người có quyền thuê nhà (người đi thuê nhà),1,1,1,1,,0,0
+senmon,絡み,からみ,"(Lạc) Sự kết nối, liên quan",1,1,1,1,,0,0
+senmon,廃道,はいどう,(Phế đạo) Con đường bỏ hoang,1,1,1,1,,0,0
+senmon,需要,じゅよう,(Nhu yếu) Nhu cầu,24,11,16,5,,0,0
+senmon,街路,がいろ,(Nhai lộ) Đường phố,4,3,4,3,,0,0
+senmon,秋期,しゅうき,(Thu kì) mùa thu,1,1,1,1,,0,0
+senmon,一斉,いっせい,"(Nhất tế) Cùng một lúc, đồng thanh, đồng loạt",4,2,2,1,,0,0
+senmon,時系列,じけいれつ,(thì hệ liệt) Thứ tự theo thời gian,1,1,1,1,,0,0
+senmon,抽出,ちゅうしゅつ,"(trừu xuất) trích ra,chiết xuất",7,5,5,3,,0,0
+senmon,京阪神,けいはんしん,(kinh phản thần) Kyoto-osaka-kobe,1,1,1,1,,0,0
+senmon,形成,けいせい,(Hình thành) Sự hình thành,138,33,76,10,,0,0
+senmon,迫る,せまる,"(bách) đến gần, tiến sát; thúc ép, giục",3,3,2,2,,0,0
+senmon,潮流,ちょうりゅう,(triều lưu) Dòng nước biển,6,4,5,3,,0,0
+senmon,抜本的,ばっぽんてき,"(Bạt bổn đích) Quyết liệt, căn bản",2,2,2,2,,0,0
+senmon,東北,とうほく,( đông bắc) Vùng sáu tỉnh phía bắc Honshu,7,4,7,4,,0,0
+senmon,首都,しゅと,"(Thủ đô) thủ đô, kinh đô",7,4,7,4,,0,0
+senmon,北陸,ほくりく,"(bắc lục) vùng Hokuriku, ven biển Nhật Bản phía tây bắc đảo Honshu (Niigata, Toyama, Ishikawa, Fukui)",4,2,4,2,,0,0
+senmon,九州,きゅうしゅう,"(cửu châu) Kyushu, đảo lớn phía tây nam Nhật Bản",5,3,4,2,,0,0
+senmon,沖縄,おきなわ,"(trùng thằng) Okinawa, tỉnh cực nam Nhật Bản",6,2,6,2,,0,0
+senmon,策定,さくてい,"(sách định) xác lập, vẽ ra kế hoạch",70,26,36,9,,0,0
+senmon,聴取,ちょうしゅ,"(thính thủ) nghe, thu thập ý kiến",3,3,3,3,,0,0
+senmon,経て,へて,"(kinh) kinh qua, trải qua",9,8,2,2,,0,0
+senmon,閣議,かくぎ,(các nghị) hội nghị nội các,9,9,4,4,,0,0
+senmon,非圧縮,ひあっしゅく,"(phi áp súc) không nén được, bất khả nén",8,7,6,5,,0,0
+senmon,流体,りゅうたい,(lưu thể) chất lưu (chất lỏng và chất khí),20,13,17,10,,0,0
+senmon,狭窄,きょうさく,"(hiệp trách) sự thu hẹp, co hẹp",2,2,2,2,,0,0
+senmon,管路,かんろ,"(quản lộ) đường ống, tuyến ống",62,11,60,10,,0,0
+senmon,水頭,すいとう,(thủy đầu) cột nước (thủy lực),127,11,127,11,,0,0
+senmon,動水勾配,どうすいこうばい,"(động thủy câu phối) độ dốc thủy lực, gradient thủy lực",21,9,21,9,,0,0
+senmon,局所損失,きょくしょそんしつ,(cục sở tổn thất) tổn thất cục bộ (thủy lực),10,3,10,3,,0,0
+senmon,常流,じょうりゅう,"(thường lưu) dòng êm, dòng chảy dưới phân giới (Fr<1)",33,11,33,11,,0,0
+senmon,射流,しゃりゅう,"(xạ lưu) dòng xiết, dòng chảy trên phân giới (Fr>1)",23,8,23,8,,0,0
+senmon,限界流,げんかいりゅう,(hạn giới lưu) dòng phân giới (Fr=1),6,6,6,6,,0,0
+senmon,緩い,ゆるい,"(hoãn) thoải, lỏng, không chặt",7,5,7,5,,0,0
+senmon,等流,とうりゅう,(đẳng lưu) dòng đều (độ sâu và vận tốc không đổi dọc dòng),14,5,14,5,,0,0
+senmon,漸近,ぜんきん,(tiệm cận) tiệm cận,6,4,3,2,,0,0
+senmon,粗度,そど,"(thô độ) độ nhám, độ gồ ghề",15,8,15,8,,0,0
+senmon,土砂,どしゃ,"(thổ sa) đất cát, bùn cát",108,12,103,11,,0,0
+senmon,流砂,りゅうさ,"(lưu sa) cát chảy, dòng bùn cát",16,7,16,7,,0,0
+senmon,安息,あんそく,(an tức) nghỉ ngơi; 安息角 = góc nghỉ của đất,4,4,4,4,,0,0
+senmon,湾曲,わんきょく,"(loan khúc) cong, uốn cong",5,2,5,2,,0,0
+senmon,護岸,ごがん,(hộ ngạn) kè bảo vệ bờ,45,8,45,8,,0,0
+senmon,潮汐,ちょうせき,thủy triều,4,3,2,2,,0,0
+senmon,防潮堤,ぼうちょうてい,(phòng triều đê) đê chắn sóng triều,3,3,3,3,,0,0
+senmon,水門,すいもん,"(thủy môn) cống, cửa van điều tiết nước",4,3,4,3,,0,0
+senmon,堤防,ていぼう,(đê phòng) đê,102,12,101,11,,0,0
+senmon,外郭,がいかく,(ngoại quách) vòng ngoài; 外郭施設 = công trình bảo vệ ngoài của cảng,9,5,9,5,,0,0
+senmon,閉塞,へいそく,"(bế tắc) tắc nghẽn, bít kín",3,3,3,3,,0,0
+senmon,要配慮者,ようはいりょしゃ,"(yếu phối lự giả) người cần được quan tâm đặc biệt khi thiên tai (người già, khuyết tật...)",1,1,1,1,,0,0
+senmon,土壌,どじょう,"(thổ nhưỡng) thổ nhưỡng, đất trồng",15,9,7,4,,0,0
+senmon,積算,せきさん,"(tích toán) dự toán, tính tổng cộng dồn",2,2,2,2,,0,0
+senmon,蓋然性,がいぜんせい,"(cái nhiên tính) tính xác suất, khả năng xảy ra",1,1,1,1,,0,0
+senmon,地産地消,ちさんちしょう,"(địa sản địa tiêu) sản xuất tại chỗ, tiêu thụ tại chỗ",2,2,2,2,,0,0
+senmon,喪失,そうしつ,"(táng thất) mất, đánh mất",3,3,2,2,,0,0
+senmon,昼夜,ちゅうや,(trú dạ) ngày đêm,7,4,7,4,,0,0
+senmon,遜色,そんしょく,(tốn sắc) sự thua kém; 遜色ない = không thua kém,2,1,2,1,,0,0
+senmon,鍵,かぎ,(kiện) chìa khóa; yếu tố then chốt,26,8,2,2,,0,0
+senmon,枯渇,こかつ,(khô kiệt) cạn kiệt,3,3,2,2,,0,0
+senmon,掘削,くっさく,"(quật tước) đào, khai đào",62,13,59,11,,0,0
+senmon,包蔵,ほうぞう,"(bao tàng) hàm chứa, tiềm tàng; 包蔵水力 = tiềm năng thủy điện",2,2,2,2,,0,0
+senmon,取水口,しゅすいこう,(thủ thủy khẩu) cửa lấy nước,18,7,18,7,,0,0
+senmon,漂流物,ひょうりゅうぶつ,(phiêu lưu vật) vật trôi dạt,2,2,2,2,,0,0
+senmon,屈曲,くっきょく,"(khuất khúc) gấp khúc, uốn khúc",5,4,5,4,,0,0
+senmon,舗装,ほそう,"(phô trang) mặt đường, lát mặt đường",82,8,82,8,,0,0
+senmon,勘案,かんあん,"(khám án) cân nhắc, xem xét tổng hợp",8,7,7,6,,0,0
+senmon,雨水,うすい,(vũ thủy) nước mưa,9,8,8,7,,0,0
+senmon,円滑,えんかつ,"(viên hoạt) trôi chảy, suôn sẻ",12,11,9,8,,0,0
+senmon,値,あたい,"(trị) giá trị, trị số",511,42,119,11,,0,0
+senmon,供用,きょうよう,"(cung dụng) đưa vào sử dụng, khai thác (công trình)",6,6,5,5,,0,0
+senmon,塑性,そせい,(tố tính) tính dẻo,57,16,40,10,,0,0
+senmon,修繕,しゅうぜん,"(tu thiện) sửa chữa, tu sửa",14,8,5,4,,0,0
+senmon,軌道,きどう,"(quỹ đạo) đường ray, quỹ đạo",64,12,62,11,,0,0
+senmon,逓減,ていげん,(đệ giảm) giảm dần,6,3,6,3,,0,0
+senmon,芯材,しんざい,"(tâm tài) vật liệu lõi, lõi (kết cấu)",3,2,3,2,,0,0
+senmon,区域,くいき,"(khu vực) khu vực, vùng",161,10,161,10,,0,0
+senmon,指定,してい,(chỉ định) chỉ định,51,21,39,10,,0,0
+senmon,国土交通大臣,こくどこうつうだいじん,"(quốc thổ giao thông đại thần) Bộ trưởng Bộ Đất đai, Hạ tầng, Giao thông (Nhật)",11,4,11,4,,0,0
+senmon,協議,きょうぎ,"(hiệp nghị) bàn bạc, hiệp thương",11,4,9,3,,0,0
+senmon,区域外,くいきがい,(khu vực ngoại) ngoài khu vực,5,3,5,3,,0,0
+senmon,市街地,しがいち,"(thị nhai địa) khu đô thị, khu phố xá",48,11,48,11,,0,0
+senmon,変換,へんかん,"(biến hoán) chuyển đổi, biến đổi",42,22,14,7,,0,0
+senmon,所有権者,しょゆうけんしゃ,"(sở hữu quyền giả) người có quyền sở hữu, chủ sở hữu",1,1,1,1,,0,0
+senmon,建物,たてもの,"tòa nhà, công trình kiến trúc",18,12,8,5,,0,0
+senmon,借家,しゃくや,(tá gia) nhà thuê,1,1,1,1,,0,0
+senmon,地権者,ちけんしゃ,"(địa quyền giả) người có quyền về đất (chủ đất, người thuê đất)",5,4,5,4,,0,0
+senmon,絡み合う,からみあう,"đan xen, quấn quyện vào nhau (nhiều yếu tố liên quan chằng chịt)",0,0,0,0,絡み合,1,1
+senmon,区画整理,くかくせいり,"(khu hoạch chỉnh lý) chỉnh trang, điều chỉnh lại các lô đất",18,5,18,5,,0,0
+senmon,手法,しゅほう,"(thủ pháp) phương pháp, thủ pháp",83,34,31,11,,0,0
+senmon,換地処分,かんちしょぶん,(hoán địa xử phân) xử lý hoán đổi đất (trong chỉnh trang lô đất),0,0,0,0,,0,0
+senmon,密集,みっしゅう,"(mật tập) dày đặc, tập trung đông đúc",3,3,2,2,,0,0
+senmon,取り壊し,とりこわし,phá dỡ (công trình),2,2,2,2,取り壊,2,2
+senmon,細街路,さいがいろ,"(tế nhai lộ) đường phố hẹp, ngõ nhỏ",1,1,1,1,,0,0
+senmon,起終点,きしゅうてん,(khởi chung điểm) điểm đầu và điểm cuối (tuyến đường),3,3,3,3,,0,0
+senmon,総合的,そうごうてき,"(tổng hợp đích) mang tính tổng hợp, toàn diện",31,22,13,7,,0,0
+senmon,視点,してん,"(thị điểm) góc nhìn, quan điểm",10,7,1,1,,0,0
+senmon,特性,とくせい,"đặc trưng, đặc tính",72,33,39,11,,0,0
+senmon,横断的,おうだんてき,"(hoành đoạn đích) mang tính liên ngành, xuyên suốt các lĩnh vực",4,4,1,1,,0,0
+senmon,把握,はあく,"(bả ác) nắm bắt, nắm rõ",27,13,15,6,,0,0
+senmon,規模別,きぼべつ,(quy mô biệt) phân theo quy mô,1,1,1,1,,0,0
+senmon,流動,りゅうどう,"(lưu động) sự lưu động, dịch chuyển",20,10,13,7,,0,0
+senmon,実態,じったい,"(thực thái) thực trạng, tình hình thực tế",9,7,3,3,,0,0
+senmon,踏まえ,ふまえ,"dựa trên, căn cứ vào (踏まえる)",42,23,13,8,,0,0
+senmon,北海道,ほっかいどう,(Bắc Hải Đạo) Hokkaido,11,4,11,4,,0,0
+senmon,東北圏,とうほくけん,(Đông Bắc quyển) vùng Tohoku,4,2,4,2,,0,0
+senmon,首都圏,しゅとけん,(thủ đô quyển) vùng thủ đô (quanh Tokyo),6,4,6,4,,0,0
+senmon,北陸圏,ほくりくけん,(Bắc Lục quyển) vùng Hokuriku,4,2,4,2,,0,0
+senmon,中部圏,ちゅうぶけん,(Trung Bộ quyển) vùng Chubu,7,3,7,3,,0,0
+senmon,中国圏,ちゅうごくけん,(Trung Quốc quyển) vùng Chugoku (Nhật Bản),4,2,4,2,,0,0
+senmon,四国圏,しこくけん,(Tứ Quốc quyển) vùng Shikoku,2,2,2,2,,0,0
+senmon,九州・沖縄圏,きゅうしゅう・おきなわけん,vùng Kyushu - Okinawa,1,1,1,1,,0,0
+senmon,広域,こういき,"(quảng vực) diện rộng, vùng rộng lớn",19,6,18,5,,0,0
+senmon,意見聴取,いけんちょうしゅ,"(ý kiến thính thủ) lấy ý kiến, tham vấn ý kiến",3,3,3,3,,0,0
+senmon,手続,てつづき,(thủ tục) thủ tục,37,14,24,8,,0,0
+senmon,案,あん,"(án) phương án, dự thảo",127,30,25,9,,0,0
+senmon,土砂災害,どしゃさいがい,(thổ sa tai hại) thiên tai sạt lở đất đá,25,3,20,2,,0,0
+senmon,警戒,けいかい,"(cảnh giới) cảnh giác, cảnh báo",9,1,9,1,,0,0
+senmon,急傾斜,きゅうけいしゃ,"(cấp khuynh tà) độ dốc lớn, sườn dốc đứng",4,4,4,4,,0,0
+senmon,崩壊,ほうかい,"(băng hoại) sụp đổ, sạt lở",12,10,10,8,,0,0
+senmon,土石流,どせきりゅう,(thổ thạch lưu) lũ bùn đá,23,8,23,8,,0,0
+senmon,地すべり,じすべり,"trượt đất, trượt lở đất",10,4,10,4,,0,0
+senmon,湛水,たんすい,"(trạm thủy) tích nước, ngập nước (hồ chứa, ruộng)",10,8,10,8,,0,0
+senmon,施設,しせつ,"(thi thiết) cơ sở, công trình, thiết bị",158,20,125,11,,0,0
+senmon,運用,うんよう,(vận dụng) Sự vận hành và sử dụng,17,13,6,4,,0,0
+senmon,雨量指数,うりょうしすう,(vũ lượng chỉ số) chỉ số lượng mưa,1,1,1,1,,0,0
+senmon,積算雨量,せきさんうりょう,(tích toán vũ lượng) lượng mưa tích lũy,1,1,1,1,,0,0
+senmon,太陽光,たいようこう,(thái dương quang) ánh sáng mặt trời; điện mặt trời,24,10,6,3,,0,0
+senmon,自家消費,じかしょうひ,(tự gia tiêu phí) tự tiêu thụ (điện tự sản xuất),1,1,1,1,,0,0
+senmon,分散電源,ぶんさんでんげん,(phân tán điện nguyên) nguồn điện phân tán,2,2,2,2,,0,0
+senmon,系統電源,けいとうでんげん,(hệ thống điện nguyên) nguồn điện lưới,2,2,2,2,,0,0
+senmon,昼夜間,ちゅうやかん,"(trú dạ gian) ngày và đêm, cả ngày lẫn đêm",2,2,2,2,,0,0
+senmon,大規模,だいきぼ,(đại quy mô) quy mô lớn,32,13,26,9,,0,0
+senmon,未活用,みかつよう,(vị hoạt dụng) chưa được tận dụng,10,6,3,3,,0,0
+senmon,廃棄物,はいきぶつ,"(phế khí vật) chất thải, phế thải",102,25,19,8,,0,0
+senmon,熱利用効率,ねつりようこうりつ,(nhiệt lợi dụng hiệu suất) hiệu suất sử dụng nhiệt,3,2,3,2,,0,0
+senmon,循環型,じゅんかんがた,"(tuần hoàn hình) kiểu tuần hoàn, dạng tuần hoàn (xã hội tuần hoàn tài nguyên)",53,16,23,7,,0,0
+senmon,構築,こうちく,(cấu trúc) sự xây dựng,37,22,17,7,,0,0
+senmon,寄与,きよ,"(kí dữ) Sự đóng góp, giúp đỡ, góp phần",38,23,6,4,,0,0
+senmon,井戸,いど,"(tỉnh hộ) giếng, giếng nước",3,3,3,3,,0,0
+senmon,蒸気,じょうき,(chưng khí) hơi nước,18,11,4,3,,0,0
+senmon,熱水,ねっすい,(nhiệt thủy) nước nóng (địa nhiệt),3,2,3,2,,0,0
+senmon,噴出,ふんしゅつ,"(phún xuất) sự phun ra, phụt ra",5,3,5,3,,0,0
+senmon,流れ込み,ながれこみ,"sự chảy vào, dòng chảy đổ vào",8,3,8,3,流れ込,8,3
+senmon,地点数,ちてんすう,"(địa điểm số) số địa điểm, số điểm đo",2,2,2,2,,0,0
+senmon,常時,じょうじ,"(thường thời) thường xuyên, liên tục",13,9,4,3,,0,0
+senmon,し得る,しうる,"có thể làm được, có khả năng xảy ra",10,7,5,5,し得,10,7
+senmon,無圧,むあつ,(vô áp) không áp (dòng chảy không áp),8,5,8,5,,0,0
+senmon,接続,せつぞく,"(tiếp tục) sự kết nối, đấu nối",35,18,12,9,,0,0
+senmon,極端,きょくたん,"(cực đoan) cực đoan, thái quá",6,6,3,3,,0,0
+senmon,堆積,たいせき,"(đôi tích) sự bồi tích, lắng đọng, trầm tích",24,10,24,10,,0,0
+senmon,河川,かせん,(hà xuyên) sông ngòi,189,15,185,11,,0,0
+senmon,上流,じょうりゅう,"(thượng lưu) thượng lưu, thượng nguồn",18,11,16,10,,0,0
+senmon,設ける,もうける,"thiết lập, bố trí, xây dựng (công trình, quy định)",22,12,17,7,,0,0
+senmon,露出,ろしゅつ,"(lộ xuất) sự lộ ra, phơi lộ",2,2,2,2,,0,0
+senmon,屈曲部,くっきょくぶ,"(khuất khúc bộ) đoạn uốn cong, đoạn gấp khúc",5,4,5,4,,0,0
+senmon,落差,らくさ,"(lạc sai) độ chênh cao, cột nước (thủy điện)",11,6,11,6,,0,0
+senmon,性能指標,せいのうしひょう,"(tính năng chỉ tiêu) chỉ tiêu tính năng, chỉ số hiệu năng",38,7,38,7,,0,0
+senmon,存する,そんする,"(tồn) tồn tại, có ở",23,16,11,6,,0,0
+senmon,沿道,えんどう,"(duyên đạo) ven đường, dọc tuyến đường",9,5,9,5,,0,0
+senmon,監理技術者,かんりぎじゅつしゃ,(giám lý kỹ thuật giả) kỹ sư giám sát quản lý (chức danh theo Luật xây dựng Nhật),7,4,7,4,,0,0
+senmon,浸透,しんとう,"(tẩm thấu) sự thấm, thẩm thấu",102,15,96,11,,0,0
+senmon,疲労破壊,ひろうはかい,(bì lao phá hoại) phá hoại mỏi,14,11,9,7,,0,0
+senmon,必須,ひっす,"(tất tu) bắt buộc, thiết yếu",16,11,6,6,,0,0
+senmon,路肩,ろかた,(lộ kiên) lề đường,5,4,5,4,,0,0
+senmon,側帯,そくたい,(trắc đới) dải mép (dải an toàn bên cạnh làn xe),9,6,9,6,,0,0
+senmon,走行面,そうこうめん,"(tẩu hành diện) mặt xe chạy, mặt đường xe chạy",2,2,2,2,,0,0
+senmon,まくら木,まくらぎ,tà vẹt (đường sắt),13,4,13,4,,0,0
+senmon,軌きょう,ききょう,"(quỹ khuông) khung ray (kết cấu ray + tà vẹt liên kết thành khung, 軌框)",2,2,2,2,,0,0
+senmon,道床,どうしょう,"(đạo sàng) lớp balát đường ray, nền đá dăm đường sắt",10,7,10,7,,0,0
+senmon,道路盤,どうろばん,"(đạo lộ bàn) nền móng đường, lớp móng đường",0,0,0,0,,0,0
+senmon,緩和曲線,かんわきょくせん,(hoãn hòa khúc tuyến) đường cong chuyển tiếp,8,3,8,3,,0,0
+senmon,挿入,そうにゅう,"(sáp nhập) sự chèn vào, cắm vào",19,9,11,6,,0,0
+senmon,在来線,ざいらいせん,(tại lai tuyến) tuyến đường sắt thường (không phải shinkansen),5,3,5,3,,0,0
+senmon,放物線,ほうぶつせん,(phóng vật tuyến) đường parabol,6,4,6,4,,0,0
+senmon,一環,いっかん,"(nhất hoàn) một khâu, một phần (của tổng thể)",8,6,2,2,,0,0
+senmon,原価,げんか,"(nguyên giá) giá vốn, giá thành",39,11,30,9,,0,0
+senmon,低減,ていげん,"(đê giảm) sự giảm bớt, cắt giảm",105,27,15,8,,0,0
+senmon,予算書,よさんしょ,(dự toán thư) bản dự toán ngân sách,1,1,1,1,,0,0
+senmon,騒音振動,そうおんしんどう,(tao âm chấn động) tiếng ồn và rung động,2,2,2,2,,0,0
+senmon,労務,ろうむ,"(lao vụ) công việc, hệ thống nhân sự",14,7,9,4,,0,0
+senmon,危害,きがい,"(nguy hại) sự nguy hại, tổn hại",29,10,1,1,,0,0
+senmon,整理整頓,せいりせいとん,(chỉnh lý chỉnh đốn) sắp xếp gọn gàng ngăn nắp,2,2,1,1,,0,0
+senmon,検討,けんとう,"(kiểm thảo) sự xem xét, nghiên cứu cân nhắc",57,21,29,10,,0,0
+senmon,徹底,てってい,"(triệt để) sự triệt để, thực hiện đến cùng",14,13,1,1,,0,0
+senmon,水質汚濁,すいしつおだく,(thủy chất ô trọc) ô nhiễm chất lượng nước,15,10,13,8,,0,0
+senmon,項目,こうもく,"(hạng mục) hạng mục, mục",33,16,22,7,,0,0
+senmon,保全,ほぜん,"(bảo toàn) sự bảo toàn, bảo vệ duy trì",139,38,54,10,,0,0
+senmon,微粒子,びりゅうし,"(vi lạp tử) hạt siêu nhỏ, hạt mịn",2,1,0,0,,0,0
+senmon,浮遊,ふゆう,"(phù du) sự lơ lửng, trôi nổi",23,12,16,9,,0,0
+senmon,気管支炎,きかんしえん,(khí quản chi viêm) viêm phế quản,1,1,1,1,,0,0
+senmon,疾患,しっかん,"(tật hoạn) bệnh tật, bệnh lý",5,3,2,1,,0,0
+senmon,上昇,じょうしょう,"(thượng thăng) sự tăng lên, dâng lên",49,22,23,11,,0,0
+senmon,国連,こくれん,(quốc liên) Liên Hợp Quốc,27,17,4,3,,0,0
+senmon,提唱,ていしょう,"Sự đề xướng, đề xuất",18,14,4,3,,0,0
+senmon,資源循環,しげんじゅんかん,(tư nguyên tuần hoàn) tuần hoàn tài nguyên,5,3,1,1,,0,0
+senmon,くい打ち,くいうち,đóng cọc,0,0,0,0,くい打,1,1
+senmon,著しい,いちじるしい,"đáng kể, rõ rệt, nghiêm trọng",7,7,4,4,,0,0
+senmon,政令,せいれい,(chính lệnh) nghị định của chính phủ,21,15,8,5,,0,0
+senmon,総理府,そうりふ,(tổng lý phủ) Phủ Thủ tướng (cơ quan cũ của Nhật),1,1,1,1,,0,0
+senmon,日数,にっすう,(nhật số) số ngày,49,11,31,5,,0,0
+senmon,曜日,ようび,(diệu nhật) thứ trong tuần,4,3,2,2,,0,0
+senmon,後継,こうけい,"(hậu kế) kế tục, người kế nhiệm",3,3,3,3,,0,0
+senmon,全会一致,ぜんかいいっち,(toàn hội nhất trí) nhất trí toàn thể,4,4,3,3,,0,0
+senmon,採択,さいたく,"(Thái trạch) Lựa chọn, thông qua",28,18,7,4,,0,0
+senmon,記載,きさい,"(kí tái) sự ghi chép, viết",79,30,10,8,,0,0
+senmon,援助,えんじょ,"(viện trợ) viện trợ, giúp đỡ",0,0,0,0,,0,0
+senmon,副産物,ふくさんぶつ,(phó sản vật) sản phẩm phụ,3,3,2,2,,0,0
+senmon,物流,ぶつりゅう,"(vật lưu) lưu thông hàng hóa, logistics",4,3,4,3,,0,0
+senmon,強化,きょうか,"(cường hóa) tăng cường, gia cố",15,12,8,6,,0,0
+senmon,既存,きそん,"(kí tồn) hiện có, sẵn có",7,7,3,3,,0,0
+senmon,各種届出,かくしゅとどけで,(các chủng giới xuất) các loại thủ tục khai báo,2,2,2,2,,0,0
+senmon,連携,れんけい,"Sự hợp tác, cộng tác",14,12,4,3,,0,0
+senmon,緩和策,かんわさく,(hoãn hòa sách) biện pháp giảm nhẹ,10,7,3,3,,0,0
+senmon,両輪,りょうりん,(lưỡng luân) hai bánh xe; hai yếu tố song hành,3,3,3,3,,0,0
+senmon,指標,しひょう,"(chỉ tiêu) Chỉ tiêu, chỉ số",54,11,50,8,,0,0
+senmon,生息,せいそく,"(sinh tức) sinh sống, cư trú (của sinh vật)",7,5,3,3,,0,0
+senmon,敏感,びんかん,(mẫn cảm) nhạy cảm,1,1,1,1,,0,0
+senmon,種,しゅ,"(chủng) loài, chủng loại",234,40,97,11,,0,0
+senmon,選定,せんてい,"(tuyển định) lựa chọn, tuyển chọn",28,11,27,10,,0,0
+senmon,分泌状況,ぶんぴつじょうきょう,"(phân tiết trạng huống) tình trạng tiết dịch, sự phân tiết",0,0,0,0,,0,0
+senmon,類推,るいすい,"(loại suy) suy luận tương tự, loại suy",1,1,1,1,,0,0
+senmon,推奨,すいしょう,"(suy tưởng) khuyến nghị, khuyến khích (sử dụng); tiến cử",5,4,1,1,,0,0
+senmon,個別,こべつ,"(cá biệt) riêng lẻ, từng cái một",21,11,16,8,,0,0
+senmon,国等,くにとう,(quốc đẳng) nhà nước và các cơ quan tương đương,5,5,3,3,,0,0

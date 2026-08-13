@@ -1,8 +1,11 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useVocab } from '../context/VocabProvider.jsx';
 import { hasSyncToken, pullVocab, pushVocab } from '../services/github.js';
+import { pullProgress, pushProgress } from '../services/progressSync.js';
+import { PROGRESS_EVENT } from '../lib/textbookProgress.js';
 
 const AUTO_PUSH_DELAY_MS = 8000;
+const PROGRESS_PUSH_DELAY_MS = 10000;
 
 /**
  * Quản lý đồng bộ GitHub: pull/push thủ công + tự động
@@ -28,6 +31,8 @@ export function useSync() {
         const merged = await pullVocab(vocabRef.current);
         skipNextAutoPush.current = true;
         replaceAll(merged);
+        // Tiến độ đọc giáo trình đi cùng chuyến: kéo về để đọc tiếp đúng chỗ máy kia dừng
+        await pullProgress().catch((e) => console.warn('Pull tiến độ lỗi:', e.message));
         setStatus({ kind: 'ok', text: 'Đã tải về và gộp dữ liệu từ GitHub ✓' });
       } catch (e) {
         if (!silent) setStatus({ kind: 'err', text: e.message });
@@ -48,6 +53,7 @@ export function useSync() {
         const { merged, skipped } = await pushVocab(vocabRef.current);
         skipNextAutoPush.current = true;
         replaceAll(merged);
+        await pushProgress().catch((e) => console.warn('Push tiến độ lỗi:', e.message));
         setStatus(
           skipped
             ? { kind: 'ok', text: 'Dữ liệu đã khớp với GitHub, không cần lưu lại.' }
@@ -67,6 +73,24 @@ export function useSync() {
   useEffect(() => {
     if (hasSyncToken() && navigator.onLine) doPull(true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Tự đẩy tiến độ đọc lên GitHub sau khi lật trang (debounce, im lặng).
+  // Không gộp vào push vocab vì lật trang không đụng gì tới vocab.
+  useEffect(() => {
+    let timer = null;
+    const onChange = () => {
+      if (!hasSyncToken() || !navigator.onLine) return;
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        pushProgress().catch((e) => console.warn('Auto-push tiến độ lỗi:', e.message));
+      }, PROGRESS_PUSH_DELAY_MS);
+    };
+    window.addEventListener(PROGRESS_EVENT, onChange);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener(PROGRESS_EVENT, onChange);
+    };
   }, []);
 
   // Tự push (debounce) sau khi vocab thay đổi do thao tác của user

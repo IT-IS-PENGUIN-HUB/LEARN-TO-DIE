@@ -20,23 +20,29 @@ function shuffle(arr) {
   return a;
 }
 
-export default function QuizMode({ subject, onRecordAnswer }) {
+/**
+ * pool (tuỳ chọn): chỉ ra đề trong danh sách từ này (ôn theo chương giáo trình).
+ * Đáp án nhiễu vẫn lấy từ toàn kho để câu hỏi không dễ đoán.
+ */
+export default function QuizMode({ subject, onRecordAnswer, pool }) {
   const { vocab, allWords, answerWord, setMastered } = useVocab();
+  const source = pool ?? vocab[subject];
   const [session, setSession] = useState(0); // tăng để bắt đầu phiên mới
-  const [queue, setQueue] = useState(() => buildQueue(quizable(vocab[subject]), { limit: SESSION_SIZE }));
+  const [queue, setQueue] = useState(() => buildQueue(quizable(source), { limit: SESSION_SIZE }));
   const [idx, setIdx] = useState(0);
   const [chosen, setChosen] = useState(null); // index option đã chọn
   const [result, setResult] = useState({ correct: 0, total: 0 });
   const nextBtnRef = useRef(null);
 
-  // Phiên mới khi đổi subject hoặc bấm "Phiên mới"
+  // Phiên mới khi đổi subject, đổi bộ lọc chương, hoặc bấm "Phiên mới"
+  const poolKey = pool ? pool.map((w) => w.id).join(',') : '';
   useEffect(() => {
-    setQueue(buildQueue(quizable(vocab[subject]), { limit: SESSION_SIZE }));
+    setQueue(buildQueue(quizable(pool ?? vocab[subject]), { limit: SESSION_SIZE }));
     setIdx(0);
     setChosen(null);
     setResult({ correct: 0, total: 0 });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [subject, session]);
+  }, [subject, session, poolKey]);
 
   const word = queue[idx] ?? null;
   const finished = queue.length > 0 && idx >= queue.length;
@@ -114,6 +120,9 @@ export default function QuizMode({ subject, onRecordAnswer }) {
   });
 
   if (!queue.length) {
+    if (pool) {
+      return <p className="quiz-hint">Chương này chưa có từ nào điền đủ nghĩa để ra đề.</p>;
+    }
     return (
       <p className="quiz-hint">
         {vocab[subject].length

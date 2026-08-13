@@ -110,6 +110,18 @@ export const IconClock = (p) => (
 export const IconShare = (p) => (
   <Icon {...p}><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" /><path d="m16 6-4-4-4 4" /><path d="M12 2v13" /></Icon>
 );
+export const IconRotate = (p) => (
+  <Icon {...p}><path d="M21 12a9 9 0 1 1-2.6-6.4" /><path d="M21 3v5h-5" /><rect x="9" y="9" width="6" height="6" rx="1" /></Icon>
+);
+export const IconFolder = (p) => (
+  <Icon {...p}><path d="M4 20a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h4.5l2 3H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2z" /></Icon>
+);
+export const IconBookOpen = (p) => (
+  <Icon {...p}><path d="M12 7v14" /><path d="M3 18a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z" /></Icon>
+);
+export const IconTable = (p) => (
+  <Icon {...p}><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M3 9h18M3 15h18M9 3v18" /></Icon>
+);
 export const IconLayers = (p) => (
   <Icon {...p}><path d="m12 2 8.5 4.7a1 1 0 0 1 0 1.7L12 13 3.5 8.4a1 1 0 0 1 0-1.7z" /><path d="m3 12 9 5 9-5" /><path d="m3 17 9 5 9-5" /></Icon>
 );

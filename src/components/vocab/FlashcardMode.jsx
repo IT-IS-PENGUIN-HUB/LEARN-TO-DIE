@@ -4,18 +4,21 @@ import { buildQueue } from '../../lib/srs.js';
 import { speakJapanese } from '../../services/tts.js';
 import { IconCheck, IconStar, IconVolume, IconX } from '../icons.jsx';
 
-export default function FlashcardMode({ subject, onRecordAnswer }) {
+/** pool (tuỳ chọn): chỉ lật thẻ trong danh sách này (ôn theo chương giáo trình). */
+export default function FlashcardMode({ subject, onRecordAnswer, pool }) {
   const { vocab, answerWord, setMastered } = useVocab();
-  const [queue, setQueue] = useState(() => buildQueue(vocab[subject]));
+  const source = pool ?? vocab[subject];
+  const [queue, setQueue] = useState(() => buildQueue(source));
   const [idx, setIdx] = useState(0);
   const [flipped, setFlipped] = useState(false);
 
+  const poolKey = pool ? pool.map((w) => w.id).join(',') : '';
   useEffect(() => {
-    setQueue(buildQueue(vocab[subject]));
+    setQueue(buildQueue(pool ?? vocab[subject]));
     setIdx(0);
     setFlipped(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [subject]);
+  }, [subject, poolKey]);
 
   const word = queue[idx] ?? null;
 
@@ -23,7 +26,7 @@ export default function FlashcardMode({ subject, onRecordAnswer }) {
     setFlipped(false);
     if (idx + 1 >= queue.length) {
       // Hết lượt: xây lại hàng đợi từ dữ liệu mới nhất
-      setQueue(buildQueue(vocab[subject]));
+      setQueue(buildQueue(pool ?? vocab[subject]));
       setIdx(0);
     } else {
       setIdx(idx + 1);

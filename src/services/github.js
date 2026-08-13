@@ -75,8 +75,8 @@ export function mergeVocab(base, incoming) {
 
 /* ---------- GitHub API ---------- */
 
-function apiUrl(cfg, cacheBust = false) {
-  const base = `https://api.github.com/repos/${cfg.user}/${cfg.repo}/contents/${FILE_PATH}`;
+function apiUrl(cfg, path, cacheBust = false) {
+  const base = `https://api.github.com/repos/${cfg.user}/${cfg.repo}/contents/${path}`;
   return cacheBust ? `${base}?t=${Date.now()}` : base;
 }
 
@@ -87,20 +87,43 @@ function authHeaders(cfg) {
   };
 }
 
-async function fetchRemote(cfg) {
-  const res = await fetch(apiUrl(cfg, true), { headers: authHeaders(cfg) });
-  if (res.status === 404) return { vocab: null, sha: null };
+/** Đọc một file JSON trong repo. Chưa có file thì trả {data:null, sha:null}. */
+export async function readJsonFile(cfg, path) {
+  const res = await fetch(apiUrl(cfg, path, true), { headers: authHeaders(cfg) });
+  if (res.status === 404) return { data: null, sha: null };
   if (res.status === 401 || res.status === 403) {
     throw new Error('GitHub từ chối token (401/403). Kiểm tra lại token trong Cài đặt.');
   }
   if (!res.ok) throw new Error(`GitHub trả lỗi HTTP ${res.status}.`);
-  const data = await res.json();
+  const body = await res.json();
   try {
-    const vocab = JSON.parse(b64DecodeUtf8((data.content ?? '').replace(/\n/g, '')));
-    return { vocab, sha: data.sha };
+    return { data: JSON.parse(b64DecodeUtf8((body.content ?? '').replace(/\n/g, ''))), sha: body.sha };
   } catch {
-    throw new Error('vocab.json trên GitHub không đọc được (JSON hỏng?).');
+    throw new Error(`${path} trên GitHub không đọc được (JSON hỏng?).`);
   }
+}
+
+/** Ghi một file JSON. Ném lỗi có `isConflict` khi sha cũ (bên khác vừa ghi). */
+export async function writeJsonFile(cfg, path, content, sha, message) {
+  const res = await fetch(apiUrl(cfg, path), {
+    method: 'PUT',
+    headers: { ...authHeaders(cfg), 'Content-Type': 'application/json' },
+    body: JSON.stringify({ message, content: b64EncodeUtf8(content), ...(sha ? { sha } : {}) }),
+  });
+  if (res.status === 409) {
+    const err = new Error('conflict');
+    err.isConflict = true;
+    throw err;
+  }
+  if (res.status === 401 || res.status === 403) {
+    throw new Error('GitHub từ chối token khi ghi (401/403). Token cần quyền Contents Read/Write.');
+  }
+  if (!res.ok) throw new Error(`GitHub PUT lỗi HTTP ${res.status}.`);
+}
+
+async function fetchRemote(cfg) {
+  const { data, sha } = await readJsonFile(cfg, FILE_PATH);
+  return { vocab: data, sha };
 }
 
 /**
@@ -128,24 +151,7 @@ export async function pushVocab(localVocab) {
     if (remote && sha && JSON.stringify(migrateVocab(remote), null, 2) === content) {
       return { merged, skipped: true };
     }
-    const res = await fetch(apiUrl(cfg), {
-      method: 'PUT',
-      headers: { ...authHeaders(cfg), 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        message: `Sync vocab: ${new Date().toLocaleString('vi-VN')}`,
-        content: b64EncodeUtf8(content),
-        ...(sha ? { sha } : {}),
-      }),
-    });
-    if (res.status === 409) {
-      const err = new Error('conflict');
-      err.isConflict = true;
-      throw err;
-    }
-    if (res.status === 401 || res.status === 403) {
-      throw new Error('GitHub từ chối token khi ghi (401/403). Token cần quyền Contents Read/Write.');
-    }
-    if (!res.ok) throw new Error(`GitHub PUT lỗi HTTP ${res.status}.`);
+    await writeJsonFile(cfg, FILE_PATH, content, sha, `Sync vocab: ${new Date().toLocaleString('vi-VN')}`);
     return { merged, skipped: false };
   };
 

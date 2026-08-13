@@ -14,6 +14,7 @@ export const KEYS = {
   stats: 'learn_to_die_stats',
   reminderMin: 'learn_to_die_reminder_min',
   reminderLast: 'learn_to_die_reminder_last',
+  textbookProgress: 'learn_to_die_textbook_progress',
 };
 
 export function loadJSON(key, fallback = null) {
