@@ -38,6 +38,39 @@ const FORMS = [
 
 const val = (w, field) => (w?.[field] ?? '').trim();
 
+/* hiragana + katakana + chữ Hán */
+const CJK = /[぀-ヿ㐀-鿿]/;
+
+/**
+ * 71 từ trong kho nhét luôn câu dịch vào chung ô ví dụ tiếng Nhật — khi thì
+ * xuống dòng, khi thì "(…)", khi thì ": ", có khi dán thẳng vào sau dấu chấm.
+ * Hồi ví dụ còn cỡ 0.8rem thì lẫn cũng chẳng ai để ý; giờ ví dụ to bằng dòng
+ * nghĩa nên câu tiếng Việt nằm trong font Nhật lộ hẳn ra. Tách lúc hiển thị chứ
+ * không đi sửa 71 dòng dữ liệu, vì kho từ đang đồng bộ qua GitHub giữa hai máy.
+ *
+ * Chỉ tách khi phần đuôi KHÔNG còn chữ Nhật nào — nhờ vậy câu tiếng Nhật có dấu
+ * chấm ở giữa vẫn được giữ nguyên vẹn (đã thử trên cả 1096 câu ví dụ: tách đúng
+ * 71 câu, không câu nào bị cắt nhầm).
+ */
+function splitExample(ex) {
+  const text = (ex ?? '').trim();
+  if (!text) return { jp: '', vi: '' };
+  const nl = text.indexOf('\n');
+  let cut = nl;
+  if (cut === -1) {
+    for (const mark of ['。', '？', '！']) cut = Math.max(cut, text.lastIndexOf(mark));
+  }
+  if (cut === -1) return { jp: text, vi: '' };
+  const jp = text.slice(0, nl !== -1 ? cut : cut + 1).trim();
+  let vi = text.slice(cut + 1).trim();
+  if (!jp || !vi || CJK.test(vi)) return { jp: text, vi: '' };
+  vi = vi
+    .replace(/^[:：]\s*/, '')
+    .replace(/^[(（]([\s\S]*)[)）]$/, '$1')
+    .trim();
+  return vi ? { jp, vi } : { jp: text, vi: '' };
+}
+
 /** Ra đề được ít nhất một dạng: luôn cần chữ Hán, cộng thêm nghĩa hoặc cách đọc. */
 const quizable = (list) => list.filter((w) => val(w, 'jp') && (val(w, 'meaning') || val(w, 'kana')));
 
@@ -230,6 +263,10 @@ export default function QuizMode({ subject, onRecordAnswer, pool }) {
 
   const askIsJapanese = form.ask === 'jp';
   const isLongWord = word.jp.length >= LONG_WORD;
+  const example = splitExample(word.exJp);
+  // Từ nào đã có sẵn ô nghĩa ví dụ riêng thì dùng ô đó, không dùng bản tách ra —
+  // không thì có từ hiện hai dòng tiếng Việt chồng nhau.
+  const exampleVi = word.exVi || example.vi;
 
   return (
     <div>
@@ -262,10 +299,10 @@ export default function QuizMode({ subject, onRecordAnswer, pool }) {
             {word.kana && <p className="quiz-reveal-kana jp-text">{word.kana}</p>}
           </div>
           {word.meaning && <p className="quiz-reveal-meaning">{word.meaning}</p>}
-          {(word.exJp || word.exVi) && (
+          {(example.jp || exampleVi) && (
             <div className="quiz-reveal-ex">
-              {word.exJp && <p className="jp-text">{word.exJp}</p>}
-              {word.exVi && <p className="quiz-reveal-ex-vi">{word.exVi}</p>}
+              {example.jp && <p className="jp-text">{example.jp}</p>}
+              {exampleVi && <p className="quiz-reveal-ex-vi">{exampleVi}</p>}
             </div>
           )}
         </div>
