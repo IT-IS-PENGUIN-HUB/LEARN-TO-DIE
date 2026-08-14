@@ -2,13 +2,19 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import * as pdfjsLib from 'pdfjs-dist';
 import { TextLayer } from 'pdfjs-dist';
 import workerUrl from 'pdfjs-dist/build/pdf.worker.min.mjs?url';
-import { IconArrowLeft, IconArrowRight, IconExpand, IconRotate, IconX } from './icons.jsx';
+import AddWordForm from './vocab/AddWordForm.jsx';
+import { IconArrowLeft, IconArrowRight, IconExpand, IconPlus, IconRotate, IconX } from './icons.jsx';
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = workerUrl;
 
 const ZOOM_STEP = 0.25;
 const ZOOM_MIN = 0.5;
 const ZOOM_MAX = 4;
+
+// Xoay nội dung chỉ có nghĩa trên máy cầm tay (trang ngang, màn dọc). Trên PC màn
+// hình vốn đã nằm ngang nên nút chỉ tổ chiếm chỗ — ẩn theo loại con trỏ chứ không
+// theo bề rộng, vì cửa sổ PC hẹp vẫn là PC.
+const isTouch = () => window.matchMedia?.('(pointer: coarse)').matches ?? false;
 
 /**
  * Xem PDF bằng PDF.js (render canvas) — hoạt động tốt với đề scan trên iOS,
@@ -24,6 +30,8 @@ const ZOOM_MAX = 4;
  * wholeFile (tuỳ chọn): tải trọn file thay vì tải từng đoạn. Dùng cho giáo trình —
  * file to, nhảy chương liên tục, và quan trọng hơn: response 200 mới được service
  * worker cache lại nên mới đọc được offline trên tàu.
+ * addWordSubject (tuỳ chọn): bật nút thêm từ vào môn này ngay trong toàn màn hình —
+ * gặp từ mới lúc đọc thì khỏi phải thoát ra rồi vào lại.
  */
 export default function PdfViewer({
   url,
@@ -33,6 +41,7 @@ export default function PdfViewer({
   initialPage,
   wholeFile = false,
   onReportPage,
+  addWordSubject,
 }) {
   const wrapRef = useRef(null);
   const canvasRef = useRef(null);
@@ -48,6 +57,8 @@ export default function PdfViewer({
   const [status, setStatus] = useState('loading'); // loading | ready | error
   const [fullscreen, setFullscreen] = useState(false);
   const [rotate, setRotate] = useState(0); // 0 = đứng, 90 = nằm ngang
+  const [addOpen, setAddOpen] = useState(false);
+  const [touch] = useState(isTouch);
 
   // Tải document
   useEffect(() => {
@@ -177,16 +188,20 @@ export default function PdfViewer({
   useEffect(() => {
     if (!fullscreen) return undefined;
     const onKey = (e) => {
-      if (e.key === 'Escape') setFullscreen(false);
+      if (e.key !== 'Escape') return;
+      // Đang mở ô thêm từ thì Esc chỉ đóng ô đó, giữ nguyên toàn màn hình
+      if (addOpen) setAddOpen(false);
+      else setFullscreen(false);
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [fullscreen]);
+  }, [fullscreen, addOpen]);
 
   // Thoát toàn màn hình thì trả trang về đứng và bỏ khoá xoay màn hình
   useEffect(() => {
     if (fullscreen) return undefined;
     setRotate(0);
+    setAddOpen(false);
     return undefined;
   }, [fullscreen]);
 
@@ -354,7 +369,17 @@ export default function PdfViewer({
           >
             +
           </button>
-          {fullscreen && (
+          {fullscreen && addWordSubject && (
+            <button
+              type="button"
+              className={`btn btn-outline btn-xs${addOpen ? ' is-on' : ''}`}
+              onClick={() => setAddOpen(true)}
+              aria-label="Thêm từ vựng mới"
+            >
+              <IconPlus /> <span className="pdf-btn-label">Thêm từ</span>
+            </button>
+          )}
+          {fullscreen && touch && (
             <button
               type="button"
               className={`btn btn-outline btn-xs${rotate === 90 ? ' is-on' : ''}`}
@@ -362,7 +387,7 @@ export default function PdfViewer({
               aria-pressed={rotate === 90}
               aria-label={rotate === 90 ? 'Trả trang về đứng' : 'Xoay trang nằm ngang'}
             >
-              <IconRotate /> {rotate === 90 ? 'Về dọc' : 'Xoay ngang'}
+              <IconRotate /> <span className="pdf-btn-label">{rotate === 90 ? 'Về dọc' : 'Xoay ngang'}</span>
             </button>
           )}
           <button
@@ -371,7 +396,8 @@ export default function PdfViewer({
             onClick={() => setFullscreen((f) => !f)}
             aria-label={fullscreen ? 'Thoát toàn màn hình' : 'Toàn màn hình'}
           >
-            {fullscreen ? <IconX /> : <IconExpand />} {fullscreen ? 'Đóng' : 'Toàn màn hình'}
+            {fullscreen ? <IconX /> : <IconExpand />}{' '}
+            <span className="pdf-btn-label">{fullscreen ? 'Đóng' : 'Toàn màn hình'}</span>
           </button>
         </div>
       </div>
@@ -387,6 +413,17 @@ export default function PdfViewer({
         <p className="pdf-swipe-hint" key={`${url}-${minPage}`}>
           Vuốt ngang để lật trang
         </p>
+      )}
+      {/* Nằm trong khung toàn màn hình nên đóng ô này là vẫn đang đọc dở, không văng ra ngoài */}
+      {fullscreen && addOpen && addWordSubject && (
+        <div className="modal" onClick={(e) => e.target === e.currentTarget && setAddOpen(false)}>
+          <div className="modal-content">
+            <button type="button" className="close-btn" onClick={() => setAddOpen(false)} aria-label="Đóng">
+              <IconX />
+            </button>
+            <AddWordForm subject={addWordSubject} />
+          </div>
+        </div>
       )}
     </div>
   );

@@ -79,6 +79,7 @@ export default function TextbookReader({ subjectId, chapterId, onBack, onOpenCha
               initialPage={resumePage}
               wholeFile
               onReportPage={onReportPage}
+              addWordSubject={subjectId}
             />
           </Suspense>
 

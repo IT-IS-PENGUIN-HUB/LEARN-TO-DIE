@@ -2251,6 +2251,19 @@ textarea.text-input {
   margin-bottom: 0.4rem;
 }
 
+/* Màn điện thoại không đủ chỗ cho 8 nút có chữ — thanh công cụ tràn ngang.
+   Bỏ chữ của hai nút có icon rõ nghĩa, aria-label vẫn giữ nguyên. */
+@media (max-width: 640px) {
+  .pdf-shell-fullscreen .pdf-btn-label {
+    display: none;
+  }
+
+  /* Máy hẹp hơn nữa (SE) thì thà xuống dòng còn hơn để nút bị khuất mép */
+  .pdf-shell-fullscreen .pdf-toolbar-group {
+    flex-wrap: wrap;
+  }
+}
+
 .pdf-shell-fullscreen .btn-xs.is-on {
   border-color: var(--primary);
   color: var(--primary);
