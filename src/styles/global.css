@@ -1502,6 +1502,22 @@ textarea.text-input {
   color: var(--accent-text);
 }
 
+/* Dạng xếp dọc (lời giải quiz): nhãn trên, số kỳ dưới. Cùng nội dung với dạng
+   một dòng nhưng chỉ rộng ~71px thay vì ~125px — nhờ vậy mới đứng được cạnh chữ
+   Hán. Cao 31px, vẫn thấp hơn dòng chữ Hán nên không làm hàng cao thêm. */
+.freq-badge.is-stacked {
+  margin-left: 0;
+  padding: 0.12rem 0.4rem;
+  line-height: 1.12;
+  white-space: normal;
+  text-align: center;
+  flex: 0 0 auto;
+}
+
+.freq-badge.is-stacked > span {
+  display: block;
+}
+
 .freq-badge.is-seen,
 .freq-badge.is-unseen {
   border-color: var(--border-color);
@@ -1604,7 +1620,9 @@ textarea.text-input {
 .vocab-stats {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 1.5rem;
+  /* Dòng đếm này chỉ liếc một cái là xong, không đáng chiếm 24px trước nội dung
+     — chỗ tiết kiệm được dồn cho câu ví dụ ở lời giải quiz. */
+  margin-bottom: 0.6rem;
   font-size: 0.9rem;
   color: var(--text-muted);
   gap: 0.5rem;
@@ -1806,45 +1824,77 @@ textarea.text-input {
   background: var(--bg-alt);
   border: 1px solid var(--border-color);
   border-radius: 10px;
-  padding: 0.6rem 0.9rem 0.75rem;
-  margin-bottom: 1rem;
+  padding: 0.5rem 0.75rem 0.6rem;
+  margin-bottom: 0.6rem;
   text-align: center;
 }
 
-.quiz-reveal .quiz-word-row {
-  margin-bottom: 0.15rem;
+/* Nhãn tần suất bên trái chữ Hán, cách đọc bên phải, tất cả trên một hàng.
+   Trước đây mỗi thứ một dòng, riêng nhãn tần suất ngốn 29px cho một dòng gần như
+   trống. Đo trên iPhone 390px (khung trong rộng 320px, chữ Hán 36px/ký tự): từ
+   2-3 ký tự vừa trọn một hàng; từ 4 ký tự thì cách đọc tự rớt xuống dòng dưới
+   nhờ flex-wrap — vẫn gọn hơn cũ vì đã bỏ được dòng tần suất. */
+.quiz-reveal-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  column-gap: 0.5rem;
+  row-gap: 0.15rem;
+}
+
+/* Nhãn + chữ Hán + nút loa dính nhau thành một khối: khi phải ngắt dòng thì ngắt
+   ở cách đọc, không để nhãn tần suất bị đẩy trơ trọi lên một dòng riêng. */
+.quiz-reveal-main {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+.quiz-reveal-head .quiz-word {
+  margin: 0;
 }
 
 .quiz-reveal-kana {
   color: var(--accent-text);
-  font-size: 0.95rem;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Từ dài (>= 5 ký tự, ~6,6% kho) chỉ thu nhỏ chữ Hán, bố cục giữ nguyên: ở cỡ
+   36px/ký tự thì chính chữ Hán tự bẻ đôi và khối lời giải phình cao hơn cả bố
+   cục cũ. Đo trên toàn kho: thu nhỏ từ ngưỡng này giữ số từ bị bẻ dòng ở mức 4,
+   để tới ngưỡng 7 thì vọt lên 25. */
+.quiz-reveal-head.is-long .quiz-word {
+  font-size: clamp(1.5rem, 6.6vw, 2.1rem);
 }
 
 .quiz-reveal-meaning {
-  margin-top: 0.2rem;
+  margin-top: 0.15rem;
+  line-height: 1.35;
 }
 
-.quiz-reveal-freq {
-  margin-top: 0.35rem;
-}
-
-/* Nhãn tần suất đứng riêng một dòng nên bỏ lề trái vốn để tách nó khỏi từ */
-.quiz-reveal-freq .freq-badge {
-  margin-left: 0;
-}
-
-/* Ví dụ là phần "có thì tốt" — chữ nhỏ để không đẩy nút "Câu tiếp theo" xuống
-   dưới màn hình iPhone (phải cuộn mới bấm được thì học chậm hẳn, không đáng). */
+/* Câu ví dụ giờ là phần đáng đọc nhất của lời giải chứ không còn là phần "có thì
+   tốt": cùng cỡ chữ với dòng nghĩa thay vì nhỏ hơn 20%, và canh trái vì câu dịch
+   dài trung bình 53 ký tự nên gần như luôn tràn hai dòng — canh giữa thì mỗi lần
+   xuống hàng mắt lại phải dò tìm đầu dòng. */
 .quiz-reveal-ex {
-  margin-top: 0.5rem;
-  padding-top: 0.5rem;
+  margin-top: 0.4rem;
+  padding-top: 0.4rem;
   border-top: 1px dashed var(--border-color);
-  font-size: 0.8rem;
-  line-height: 1.45;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: left;
+  /* 26 từ trong kho nhét cả câu Nhật lẫn câu dịch vào chung ô ví dụ, ngăn nhau
+     bằng ký tự xuống dòng. Mặc định trình duyệt nuốt ký tự đó, hai câu dính liền
+     thành một dòng đọc không ra — giữ lại chỗ ngắt thay vì phải đi sửa dữ liệu. */
+  white-space: pre-line;
 }
 
 .quiz-reveal-ex-vi {
   color: var(--text-muted);
+  font-size: 0.95rem;
 }
 
 .quiz-hint {
@@ -1853,11 +1903,13 @@ textarea.text-input {
   margin-bottom: 1.5rem;
 }
 
+/* Bốn ô đáp án đã cao 46px và có viền riêng nên tự tách bạch; khoảng hở rộng chỉ
+   tổ đẩy nút "Câu tiếp theo" ra khỏi màn hình. Nén gap + lề dưới thu lại ~31px. */
 .quiz-options {
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
-  margin-bottom: 1.5rem;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
 }
 
 .answer-option {
@@ -1936,7 +1988,7 @@ textarea.text-input {
   text-align: center;
   font-size: 0.85rem;
   color: var(--text-muted);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.4rem;
 }
 
 .session-summary {
@@ -2452,7 +2504,7 @@ textarea.text-input {
   }
 
   .vocab-stats {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.4rem;
     font-size: 0.8rem;
   }
 

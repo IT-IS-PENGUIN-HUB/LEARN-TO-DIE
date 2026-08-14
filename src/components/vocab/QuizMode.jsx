@@ -9,6 +9,15 @@ const SESSION_SIZE = 10;
 const OPTION_KEYS = ['1', '2', '3', '4'];
 
 /**
+ * Ngưỡng thu nhỏ chữ Hán ở khối lời giải. Đo trên iPhone 390px: khung lời giải
+ * rộng 320px, mỗi chữ Hán 36px — từ 5 ký tự trở lên thì riêng chữ Hán cộng nhãn
+ * tần suất và nút loa đã quá một hàng, chữ tự bẻ đôi và khối lời giải phình cao
+ * hơn cả bố cục cũ. Thu nhỏ chữ cho nhóm này rẻ hơn hẳn so với để nó bẻ dòng, mà
+ * cũng chỉ đụng 6,6% kho — 93,4% từ còn lại giữ nguyên cỡ chữ to.
+ */
+const LONG_WORD = 5;
+
+/**
  * Ba dạng câu hỏi TRỘN NGẪU NHIÊN trong cùng một phiên quiz — mỗi câu bốc một
  * dạng. Cứ nhìn chữ Hán đoán nghĩa mãi thì thành học vẹt theo mặt chữ; đảo dạng
  * liên tục buộc phải nhớ cả ba mặt của từ (chữ, cách đọc, nghĩa).
@@ -220,6 +229,7 @@ export default function QuizMode({ subject, onRecordAnswer, pool }) {
   }
 
   const askIsJapanese = form.ask === 'jp';
+  const isLongWord = word.jp.length >= LONG_WORD;
 
   return (
     <div>
@@ -232,22 +242,26 @@ export default function QuizMode({ subject, onRecordAnswer, pool }) {
           và phải cuộn mới đọc được. */}
       {answered ? (
         <div className="quiz-reveal">
-          <div className="quiz-word-row">
-            <h3 className="quiz-word jp-text">{word.jp}</h3>
-            <button
-              type="button"
-              className="btn btn-outline tts-btn"
-              onClick={() => speakJapanese(word.jp)}
-              aria-label="Đọc phát âm"
-            >
-              <IconVolume />
-            </button>
+          {/* Nhãn tần suất bên TRÁI chữ Hán, cách đọc bên PHẢI — gộp ba thứ vốn
+              chiếm ba dòng vào một hàng, trả chỗ đó cho câu ví dụ. Nghĩa tiếng
+              Việt không lên hàng này: trung vị 29 ký tự, đứng cạnh sẽ vỡ thành
+              ba dòng hẹp, đọc mệt hơn là để nguyên một dòng riêng. */}
+          <div className={`quiz-reveal-head${isLongWord ? ' is-long' : ''}`}>
+            <div className="quiz-reveal-main">
+              <FreqBadge jp={word.jp} subject={subject} full stacked />
+              <h3 className="quiz-word jp-text">{word.jp}</h3>
+              <button
+                type="button"
+                className="btn btn-outline tts-btn"
+                onClick={() => speakJapanese(word.jp)}
+                aria-label="Đọc phát âm"
+              >
+                <IconVolume />
+              </button>
+            </div>
+            {word.kana && <p className="quiz-reveal-kana jp-text">{word.kana}</p>}
           </div>
-          {word.kana && <p className="quiz-reveal-kana jp-text">{word.kana}</p>}
           {word.meaning && <p className="quiz-reveal-meaning">{word.meaning}</p>}
-          <p className="quiz-reveal-freq">
-            <FreqBadge jp={word.jp} subject={subject} full />
-          </p>
           {(word.exJp || word.exVi) && (
             <div className="quiz-reveal-ex">
               {word.exJp && <p className="jp-text">{word.exJp}</p>}
