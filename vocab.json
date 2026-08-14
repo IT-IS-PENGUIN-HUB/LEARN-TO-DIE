@@ -9354,6 +9354,18 @@
       "nextReview": 0,
       "mastered": false,
       "updatedAt": 1786583590768
+    },
+    {
+      "id": "1786716004576_wfvhg7",
+      "jp": "甚だしく",
+      "kana": "はなはだしく",
+      "meaning": "rất nhiều, cực kỳ, nghiêm trọng (thường dùng cho tình huống tiêu cực hoặc vượt mức)",
+      "exJp": "この地盤の軟弱性は甚だしく、基礎設計に特別な配慮が必要です。",
+      "exVi": "Độ yếu của nền đất này rất nghiêm trọng, cần có cân nhắc đặc biệt trong thiết kế móng.",
+      "score": 0,
+      "nextReview": 1786716004576,
+      "mastered": false,
+      "updatedAt": 1786716004576
     }
   ],
   "senmon": [
