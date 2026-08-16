@@ -5892,6 +5892,18 @@
       "nextReview": 0,
       "mastered": false,
       "updatedAt": 1786573248380
+    },
+    {
+      "id": "1786892847518_f51n5v",
+      "jp": "差し迫る",
+      "kana": "さしせまる",
+      "meaning": "cận kề, sắp đến, khẩn cấp",
+      "exJp": "工期の完了が差し迫っているため、追加の人員が必要だ。",
+      "exVi": "Vì việc hoàn thành thời hạn thi công đang cận kề, cần thêm nhân sự.",
+      "score": 0,
+      "nextReview": 1786892847518,
+      "mastered": false,
+      "updatedAt": 1786892847518
     }
   ],
   "tekisei": [
