@@ -5916,6 +5916,18 @@
       "nextReview": 1786893002742,
       "mastered": false,
       "updatedAt": 1786893002742
+    },
+    {
+      "id": "1786893079565_753np1",
+      "jp": "過失",
+      "kana": "かしつ",
+      "meaning": "Sơ suất, thiếu sót, lỗi (do bất cẩn, tắc trách)",
+      "exJp": "工事中の過失により事故が発生した。",
+      "exVi": "Một tai nạn đã xảy ra do sơ suất trong quá trình thi công.",
+      "score": 0,
+      "nextReview": 1786893079565,
+      "mastered": false,
+      "updatedAt": 1786893079565
     }
   ],
   "tekisei": [
