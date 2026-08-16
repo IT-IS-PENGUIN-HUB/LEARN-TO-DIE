@@ -5952,6 +5952,18 @@
       "nextReview": 1786899152789,
       "mastered": false,
       "updatedAt": 1786899152789
+    },
+    {
+      "id": "1786899199845_xht9p7",
+      "jp": "公差",
+      "kana": "こうさ",
+      "meaning": "dung sai, công sai (giới hạn sai số cho phép)",
+      "exJp": "基礎のレベルに公差を設ける。",
+      "exVi": "Đặt ra dung sai cho cao độ của móng.",
+      "score": 0,
+      "nextReview": 1786899199845,
+      "mastered": false,
+      "updatedAt": 1786899199845
     }
   ],
   "tekisei": [
