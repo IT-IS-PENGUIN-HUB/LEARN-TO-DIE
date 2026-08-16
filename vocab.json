@@ -5940,6 +5940,18 @@
       "nextReview": 1786893896363,
       "mastered": false,
       "updatedAt": 1786893896363
+    },
+    {
+      "id": "1786899152789_yqdf8t",
+      "jp": "互換性",
+      "kana": "ごかんせい",
+      "meaning": "tính tương thích, khả năng hoán đổi",
+      "exJp": "BIMデータは異なるソフトウェア間での互換性が求められる。",
+      "exVi": "Dữ liệu BIM yêu cầu khả năng tương thích giữa các phần mềm khác nhau.",
+      "score": 0,
+      "nextReview": 1786899152789,
+      "mastered": false,
+      "updatedAt": 1786899152789
     }
   ],
   "tekisei": [
