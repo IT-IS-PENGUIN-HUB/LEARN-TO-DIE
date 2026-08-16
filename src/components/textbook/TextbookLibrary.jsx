@@ -1,8 +1,9 @@
-import { useMemo, useState } from 'react';
+import { Fragment, useMemo, useState } from 'react';
 import {
   TEXTBOOK_SUBJECTS,
   getChapters,
   getDoc,
+  getDocs,
   pageCount,
 } from '../../data/textbooks.js';
 import { getSubjectProgress } from '../../lib/textbookProgress.js';
@@ -64,6 +65,12 @@ function ChapterList({ subjectId, onOpenChapter }) {
     return [...chapters].sort((a, b) => (b.rate ?? -1) - (a.rate ?? -1));
   }, [chapters, sortByRate]);
 
+  // Giáo trình 基礎 gộp 5 章 vào 5 file → chèn dải phân nhóm theo 章 để 63 chủ đề
+  // không thành một danh sách phẳng khó định vị. Chỉ khi xem "thứ tự trong sách"
+  // (xếp theo tỷ lệ thì trộn giữa các 章 nên tiêu đề nhóm mất nghĩa) và môn nhiều file.
+  const multiDoc = getDocs(subjectId).length > 1;
+  const showGroups = !sortByRate && multiDoc;
+
   return (
     <>
       <div className="chapter-toolbar">
@@ -77,15 +84,23 @@ function ChapterList({ subjectId, onOpenChapter }) {
         </button>
       </div>
       <ul className="chapter-list">
-        {rows.map((c) => {
+        {rows.map((c, i) => {
           const Ico = KIND_ICON[c.kind] ?? IconBookOpen;
           const doc = getDoc(subjectId, c.doc);
           const read = progress[c.id]?.page;
           const total = pageCount(c);
           const nWords = chapterWordCount(subjectId, c.id);
           const readIdx = read != null ? Math.min(total, Math.max(1, read - c.start + 1)) : null;
+          const newGroup = showGroups && (i === 0 || rows[i - 1].doc !== c.doc);
           return (
-            <li key={c.id}>
+            <Fragment key={c.id}>
+              {newGroup && doc && (
+                <li className="chapter-group-head">
+                  <span className="cgh-jp">{doc.label}</span>
+                  <span className="cgh-vi">{doc.labelVi}</span>
+                </li>
+              )}
+              <li>
               <button
                 type="button"
                 className={`chapter-row kind-${c.kind}`}
@@ -118,7 +133,8 @@ function ChapterList({ subjectId, onOpenChapter }) {
                   </span>
                 )}
               </button>
-            </li>
+              </li>
+            </Fragment>
           );
         })}
       </ul>

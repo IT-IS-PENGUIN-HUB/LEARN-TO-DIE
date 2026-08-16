@@ -631,6 +631,29 @@ textarea {
   gap: 0.6rem;
 }
 
+/* Dải phân nhóm theo 章 (giáo trình 基礎 gộp 5 章 vào 5 file, 63 chủ đề) */
+.chapter-group-head {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  padding: 0.5rem 0.2rem 0.15rem;
+  margin-top: 0.5rem;
+  border-bottom: 2px solid var(--border-color);
+}
+.chapter-list > .chapter-group-head:first-child {
+  margin-top: 0;
+}
+.chapter-group-head .cgh-jp {
+  font-family: var(--font-jp);
+  font-weight: 700;
+  font-size: 1.02rem;
+  color: var(--text-main);
+}
+.chapter-group-head .cgh-vi {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
 .chapter-row {
   display: flex;
   align-items: center;
