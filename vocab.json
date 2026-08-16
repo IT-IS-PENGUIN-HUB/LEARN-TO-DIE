@@ -5964,6 +5964,18 @@
       "nextReview": 1786899199845,
       "mastered": false,
       "updatedAt": 1786899199845
+    },
+    {
+      "id": "1786904011297_13duo3",
+      "jp": "著者",
+      "kana": "ちょしゃ",
+      "meaning": "Tác giả, người viết",
+      "exJp": "この技術基準書の著者は、国土交通省の専門家チームです。",
+      "exVi": "Tác giả của tài liệu tiêu chuẩn kỹ thuật này là một nhóm chuyên gia từ Bộ Đất đai, Cơ sở hạ tầng, Giao thông và Du lịch.",
+      "score": 0,
+      "nextReview": 1786904011297,
+      "mastered": false,
+      "updatedAt": 1786904011297
     }
   ],
   "tekisei": [
