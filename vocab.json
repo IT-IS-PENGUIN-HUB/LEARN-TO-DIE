@@ -5928,6 +5928,18 @@
       "nextReview": 1786893079565,
       "mastered": false,
       "updatedAt": 1786893079565
+    },
+    {
+      "id": "1786893896363_6wo4z0",
+      "jp": "一様分布",
+      "kana": "いちようぶんぷ",
+      "meaning": "Phân bố đều; Phân bố đồng nhất",
+      "exJp": "この橋梁の設計では、活荷重は床版に一様分布するものと仮定する。",
+      "exVi": "Trong thiết kế cầu này, chúng tôi giả định rằng tải trọng hoạt động phân bố đều trên bản mặt cầu.",
+      "score": 0,
+      "nextReview": 1786893896363,
+      "mastered": false,
+      "updatedAt": 1786893896363
     }
   ],
   "tekisei": [
