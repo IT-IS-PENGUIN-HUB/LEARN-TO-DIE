@@ -9450,6 +9450,18 @@
       "nextReview": 1786716004576,
       "mastered": false,
       "updatedAt": 1786716004576
+    },
+    {
+      "id": "1786905628452_x05ixw",
+      "jp": "取極め",
+      "kana": "とりきめ",
+      "meaning": "Thỏa thuận, quy định, cam kết",
+      "exJp": "工事の安全管理について、別途取極めを設ける必要がある。",
+      "exVi": "Về quản lý an toàn công trình, cần thiết lập các quy định/thỏa thuận riêng.",
+      "score": 0,
+      "nextReview": 1786905628452,
+      "mastered": false,
+      "updatedAt": 1786905628452
     }
   ],
   "senmon": [
