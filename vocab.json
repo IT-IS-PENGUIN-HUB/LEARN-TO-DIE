@@ -6497,6 +6497,18 @@
       "updatedAt": 1785926763820
     },
     {
+      "id": "1785367529618",
+      "jp": "著しく",
+      "kana": "いちじるしく",
+      "meaning": "Đáng kể, rõ rệt, đặc biệt, cực kỳ",
+      "exJp": "地震により、橋の構造が著しく損傷した。",
+      "exVi": "Cấu trúc cầu đã bị hư hại đáng kể do động đất.",
+      "score": 2,
+      "nextReview": 1786719157249,
+      "mastered": false,
+      "updatedAt": 1786546357249
+    },
+    {
       "id": "1785683546607",
       "jp": "継続研さん",
       "kana": "けいぞくけんさん",
@@ -6582,6 +6594,18 @@
       "updatedAt": 1786546403528
     },
     {
+      "id": "1785712765570",
+      "jp": "ハザード同定",
+      "kana": "ハザードどうてい",
+      "meaning": "Định danh mối nguy; Xác định mối nguy",
+      "exJp": "建設プロジェクトにおけるハザード同定は、事故防止のための重要な初期段階です。",
+      "exVi": "Việc định danh mối nguy trong dự án xây dựng là một giai đoạn khởi đầu quan trọng để phòng ngừa tai nạn.",
+      "score": 3,
+      "nextReview": 1786941589880,
+      "mastered": false,
+      "updatedAt": 1786595989880
+    },
+    {
       "id": "1785794426255",
       "jp": "代替",
       "kana": "だいたい",
@@ -6653,30 +6677,6 @@
       "nextReview": 1786941953065,
       "mastered": false,
       "updatedAt": 1786596353065
-    },
-    {
-      "id": "1785367529618",
-      "jp": "著しく",
-      "kana": "いちじるしく",
-      "meaning": "Đáng kể, rõ rệt, đặc biệt, cực kỳ",
-      "exJp": "地震により、橋の構造が著しく損傷した。",
-      "exVi": "Cấu trúc cầu đã bị hư hại đáng kể do động đất.",
-      "score": 2,
-      "nextReview": 1786719157249,
-      "mastered": false,
-      "updatedAt": 1786546357249
-    },
-    {
-      "id": "1785712765570",
-      "jp": "ハザード同定",
-      "kana": "ハザードどうてい",
-      "meaning": "Định danh mối nguy; Xác định mối nguy",
-      "exJp": "建設プロジェクトにおけるハザード同定は、事故防止のための重要な初期段階です。",
-      "exVi": "Việc định danh mối nguy trong dự án xây dựng là một giai đoạn khởi đầu quan trọng để phòng ngừa tai nạn.",
-      "score": 3,
-      "nextReview": 1786941589880,
-      "mastered": false,
-      "updatedAt": 1786595989880
     },
     {
       "id": "1785798374423",
@@ -8042,10 +8042,10 @@
       "meaning": "(Tham hoạch) Tham gia vào kế hoạch dự án",
       "exJp": "女性の社会参画を促進する取り組みが必要だ。",
       "exVi": "Cần các nỗ lực thúc đẩy sự tham gia của phụ nữ vào xã hội.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1787060367024,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1786973967024
     },
     {
       "id": "1786573248380_1x86fx",
