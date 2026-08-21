@@ -64,9 +64,24 @@ export function mergeExamState(local, remote) {
   for (const k of new Set([...Object.keys(a.daily ?? {}), ...Object.keys(b.daily ?? {})])) {
     const x = a.daily?.[k];
     const y = b.daily?.[k];
+    const s = Math.max(x?.s ?? 0, y?.s ?? 0); // giây làm bài — cùng luật MAX
     daily[k] = {
       r: Math.max(x?.r ?? 0, y?.r ?? 0),
       w: Math.max(x?.w ?? 0, y?.w ?? 0),
+      ...(s > 0 ? { s } : {}),
+    };
+  }
+
+  // Giờ trả lời theo chuyên mục: MAX từng phía — lũy đẳng như daily. Bản app cũ
+  // merge sẽ đánh rơi nhánh này, nhưng máy chạy bản mới còn giữ bản local nên
+  // MAX lần sau tự khôi phục; hai máy cùng lên bản mới là hết lệch.
+  const times = {};
+  for (const k of new Set([...Object.keys(a.times ?? {}), ...Object.keys(b.times ?? {})])) {
+    const x = a.times?.[k];
+    const y = b.times?.[k];
+    times[k] = {
+      n: Math.max(x?.n ?? 0, y?.n ?? 0),
+      s: Math.max(x?.s ?? 0, y?.s ?? 0),
     };
   }
 
@@ -74,7 +89,7 @@ export function mergeExamState(local, remote) {
   const sb = b.session;
   const session = !sa ? sb ?? null : !sb ? sa : (sb.at ?? 0) > (sa.at ?? 0) ? sb : sa;
 
-  return { srs, bookmarks, attempts, daily, session };
+  return { srs, bookmarks, attempts, daily, times, session };
 }
 
 /**

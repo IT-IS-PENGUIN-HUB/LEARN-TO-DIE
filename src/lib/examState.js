@@ -15,16 +15,19 @@ export const EXAM_EVENT = 'ltd-exam-changed';
 export function loadExamState() {
   const s = loadJSON(KEYS.examState, null);
   if (!s || typeof s !== 'object') {
-    return { srs: {}, bookmarks: {}, attempts: {}, daily: {}, session: null };
+    return { srs: {}, bookmarks: {}, attempts: {}, daily: {}, times: {}, session: null };
   }
   return {
     srs: s.srs ?? {},
     bookmarks: s.bookmarks ?? {},
     // attempts: lịch sử thi thử — mỗi lần thi một bản ghi bất biến, hợp theo id
     attempts: s.attempts ?? {},
-    // daily: nhật ký đúng/sai theo ngày {'2026-08-14': {r, w}} — nuôi điều kiện
-    // "độ chính xác 30 ngày" của thang xếp hạng
+    // daily: nhật ký theo ngày {'2026-08-14': {r, w, s}} — r/w nuôi "độ chính xác
+    // 30 ngày" của thang xếp hạng; s = giây trả lời, nuôi ô "thời gian học"
     daily: s.daily ?? {},
+    // times: giây trả lời cộng dồn theo chuyên mục {CAT: {n, s}} — chỉ đếm lượt
+    // CÓ đo giờ (luyện tập, từ khi thêm 15/8/2026), nuôi "phân tích thời gian"
+    times: s.times ?? {},
     session: s.session ?? null,
   };
 }
@@ -55,26 +58,57 @@ function blank(now) {
   return { score: 0, nextReview: now, mastered: false, right: 0, wrong: 0, updatedAt: now };
 }
 
+/** Chuyên mục từ qid — bản chép gọn của catOfQid (examData.js), để lib trạng thái
+ *  thuần này khỏi kéo theo cả tầng tải dữ liệu đề. Định dạng qid không đổi. */
+function catOf(qid) {
+  const [, subject, part] = qid.split('-');
+  return subject === 'KISO' || subject === 'TEKISEI' ? `${subject}_${part}` : part;
+}
+
+// Trần thời gian một câu: quá mức này coi như bỏ máy đi làm việc khác,
+// cộng vào chỉ phá số trung bình (merge lấy MAX nên số bẩn còn mãi).
+const MAX_ANSWER_SEC = 600;
+
 /**
  * Ghi một lần trả lời. Dùng NGUYÊN applyAnswer của srs.js (Leitner 8 hộp) —
  * không viết engine riêng, để câu hỏi và từ vựng cùng một luật ôn tập.
+ * `sec` (tuỳ chọn): số giây từ lúc hiện câu tới lúc chọn — chỉ luồng luyện tập
+ * đo được; thi thử chấm gộp cuối giờ nên không truyền.
  */
-export function recordExamAnswer(state, qid, correct, now = Date.now(), letter = null) {
+export function recordExamAnswer(state, qid, correct, now = Date.now(), letter = null, sec = null) {
   const prev = state.srs[qid] ?? blank(now);
   const next = applyAnswer(prev, correct, now);
+  const secOk = Number.isFinite(sec) && sec > 0 ? Math.min(MAX_ANSWER_SEC, Math.round(sec)) : 0;
 
   // Nhật ký ngày: cộng dồn + cắt ngày quá cũ (chỉ dọn khi sang ngày mới, rẻ)
   const key = dayKey(now);
   const today = state.daily?.[key] ?? { r: 0, w: 0 };
-  const daily = { ...state.daily, [key]: { r: today.r + (correct ? 1 : 0), w: today.w + (correct ? 0 : 1) } };
+  const daily = {
+    ...state.daily,
+    [key]: {
+      r: today.r + (correct ? 1 : 0),
+      w: today.w + (correct ? 0 : 1),
+      ...(today.s || secOk ? { s: (today.s ?? 0) + secOk } : {}),
+    },
+  };
   if (!state.daily?.[key]) {
     const cutoff = dayKey(now - KEEP_DAILY_DAYS * 24 * 60 * 60 * 1000);
     for (const k of Object.keys(daily)) if (k < cutoff) delete daily[k];
   }
 
+  // Giờ theo chuyên mục: n chỉ đếm lượt CÓ đo giờ — trộn lượt không đo vào là
+  // trung bình tụt về 0 giả tạo
+  let times = state.times ?? {};
+  if (secOk > 0) {
+    const cat = catOf(qid);
+    const t = times[cat] ?? { n: 0, s: 0 };
+    times = { ...times, [cat]: { n: t.n + 1, s: t.s + secOk } };
+  }
+
   return {
     ...state,
     daily,
+    times,
     srs: {
       ...state.srs,
       [qid]: {

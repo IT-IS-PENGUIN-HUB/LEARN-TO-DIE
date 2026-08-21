@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useLayoutEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import PracticeHome from './PracticeHome.jsx';
 import QuestionRunner from './QuestionRunner.jsx';
 import CustomPractice from './CustomPractice.jsx';
@@ -383,10 +383,18 @@ export default function PracticeModule({ onBack, sub }) {
     [examState]
   );
 
+  // Mốc "câu này hiện ra lúc nào" — nuôi phân tích thời gian trả lời của màn
+  // Thống kê. Chỉ luồng luyện tập dùng (thi thử chấm gộp cuối giờ, không đo).
+  const shownAtRef = useRef(Date.now());
+  useEffect(() => {
+    shownAtRef.current = Date.now();
+  }, [index, questions]);
+
   const select = useCallback((q, letter) => {
     if (answers[q.qid]) return;
     setAnswers((a) => ({ ...a, [q.qid]: letter }));
-    commit((s) => recordExamAnswer(s, q.qid, isCorrect(q, letter), Date.now(), letter));
+    const sec = (Date.now() - shownAtRef.current) / 1000;
+    commit((s) => recordExamAnswer(s, q.qid, isCorrect(q, letter), Date.now(), letter, sec));
   }, [answers, commit]);
 
   const go = useCallback((i) => {
