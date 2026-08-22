@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
 
-// Từ Tinh Anh trở lên mới bắn pháo giấy (ロン yêu cầu 15/8/2026) — các bậc
-// thấp thăng khá dày, bắn mãi thành nhàm.
-const CONFETTI_TIERS = new Set(['tinhanh', 'caothu', 'thachdau']);
+// Từ Bạch Kim trở lên là bắn pháo giấy (ロン chỉnh 15/8/2026: "Tinh Anh thì
+// lâu quá") — Đồng/Bạc/Vàng thăng khá dày, bắn mãi thành nhàm.
+const CONFETTI_TIERS = new Set(['bachkim', 'kimcuong', 'tinhanh', 'caothu', 'thachdau']);
 const CONFETTI_COLORS = ['#f59e0b', '#ef4444', '#3a86ff', '#10b981', '#a78bfa', '#f472b6'];
 
 /** Chữ tắt trên huy hiệu — cùng cách với bảng thang (Bạch Kim → BK). */
