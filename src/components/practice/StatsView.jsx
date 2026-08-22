@@ -321,6 +321,9 @@ export default function StatsView({ examState, onBack, onStartCategory }) {
                     : <>Để lên {rank.nextTier ?? 'bậc kế'}: {rank.missing.join(' · ')}</>
                   : 'Hạng cao nhất — sẵn sàng đi thi 🏆'}
               </span>
+              <span className="qb-rank-total">
+                Tổng đúng từ trước tới nay: <b>{rank.everCorrect ?? 0}</b> câu khác nhau
+              </span>
             </div>
             <span className="qb-rank-toggle">
               {ladderOpen ? 'Thu gọn ▲' : 'Xem cả thang ▼'}

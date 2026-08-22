@@ -1,3 +1,5 @@
+import { TIERS } from '../../lib/rank.js';
+
 /**
  * Tên hạng + huy hiệu hạng, dùng chung cho Sidebar / màn Đề thi / Thống kê /
  * bảng thang / modal thăng bậc.
@@ -67,5 +69,32 @@ export default function RankName({ rank }) {
         ))}
       </span>
     </b>
+  );
+}
+
+/**
+ * CỤM HẠNG CHUẨN — ロン chốt 22/8: mọi nơi hiện thứ bậc phải đủ bộ
+ * huy hiệu + tên bậc kèm sao + còn bao nhiêu câu để thêm ★ + TỔNG câu đúng
+ * từ trước tới nay. Dùng ở sidebar, hero màn Đề thi (thẻ Thống kê có bố cục
+ * riêng vì kèm nút bung bảng thang, nhưng cùng đủ bốn phần này).
+ */
+export function RankChip({ rank, size = 38 }) {
+  if (!rank) return null;
+  const tier = TIERS.find((t) => t.id === rank.tierId);
+  const divs = tier?.divisions ?? 0;
+  return (
+    <span className="rk-chip">
+      <RankBadge
+        tierId={rank.tierId}
+        divisions={divs}
+        done={rank.division != null ? divs - rank.division : 0}
+        size={size}
+      />
+      <span className="rk-chip-body">
+        <RankName rank={rank} />
+        <em className="rk-chip-miss">{rank.missing ? rank.missing[0] : 'hạng cao nhất 🏆'}</em>
+        <em className="rk-chip-total">tổng đúng: <b>{rank.everCorrect ?? 0}</b> câu</em>
+      </span>
+    </span>
   );
 }

@@ -3481,6 +3481,34 @@ textarea.text-input {
 .rk-stars i { font-style: normal; color: var(--text-muted); opacity: 0.55; }
 .rk-stars i.is-on { color: var(--warn, #f59e0b); opacity: 1; }
 
+/* Cụm hạng chuẩn: huy hiệu + tên + còn-bao-nhiêu + tổng đúng (ロン chốt 22/8) */
+.rk-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-align: left;
+}
+.rk-chip > .rk-badge { margin-top: 9px; } /* chừa chỗ cung sao nhô lên */
+.rk-chip-body { display: flex; flex-direction: column; gap: 0.06rem; min-width: 0; }
+.rk-chip-body .rk-name { color: var(--warn, #f59e0b); font-size: 0.88rem; }
+.rk-chip-miss,
+.rk-chip-total {
+  font-style: normal;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+.rk-chip-total b { color: var(--accent-text); }
+.qb-rank-total { display: block; font-size: 0.75rem; color: var(--text-muted); margin-top: 0.1rem; }
+.qb-rank-total b { color: var(--accent-text); }
+
+/* Sidebar thu gọn thành dải icon: chỉ giữ huy hiệu, giấu phần chữ */
+.sidebar.is-collapsed .sb-rank .rk-chip { justify-content: center; }
+.sidebar.is-collapsed .sb-rank .rk-chip-body { display: none; }
+@media (max-width: 899px) {
+  .sidebar.is-collapsed .sb-rank .rk-chip-body { display: flex; }
+  .sidebar.is-collapsed .sb-rank .rk-chip { justify-content: flex-start; }
+}
+
 /* Màu thanh/vòng theo MỨC tỷ lệ đúng (như app trung tâm ロン khen 22/8):
    >=80 xanh lá · 50–79 cam · <50 đỏ; chưa có dữ liệu giữ màu chủ đạo */
 .qb-progress > i.is-hi { background: var(--success); }

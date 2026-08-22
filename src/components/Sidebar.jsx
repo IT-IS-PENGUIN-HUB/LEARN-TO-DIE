@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { BANK_TOTAL } from '../data/examBank.js';
 import { computeRank } from '../lib/rank.js';
-import RankName from './practice/RankName.jsx';
+import { RankChip } from './practice/RankName.jsx';
 import logoUrl from '../assets/logo.png';
 
 /**
@@ -97,8 +97,7 @@ export default function Sidebar({
 
       {rank && (
         <button type="button" className="sb-rank" onClick={go(() => onOpenPractice({ screen: 'stats' }))}>
-          <RankName rank={rank} />
-          <span>{rank.missing ? `còn: ${rank.missing[0]}` : 'hạng cao nhất 🏆'}</span>
+          <RankChip rank={rank} size={34} />
         </button>
       )}
     </aside>

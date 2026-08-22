@@ -140,13 +140,14 @@ export function computeRank(state, bankTotal, now = Date.now()) {
         division: null,
         stars: passed.length,
         totalStars: null,
+        everCorrect,
         label: `${tier.name} ★${passed.length}`,
         missing: missNext.length ? missNext : null,
         nextTier: next.name,
       };
     }
     if (tier.id === 'thachdau') {
-      return { tier: tier.name, tierId: tier.id, division: null, stars: null, totalStars: null, label: tier.name, missing: null, nextTier: null };
+      return { tier: tier.name, tierId: tier.id, division: null, stars: null, totalStars: null, everCorrect, label: tier.name, missing: null, nextTier: null };
     }
 
     const cost = starCost(tier, bankTotal);
@@ -178,6 +179,7 @@ export function computeRank(state, bankTotal, now = Date.now()) {
       division,
       stars: starInDiv,
       totalStars: stars,
+      everCorrect, // tổng câu đúng từ trước tới nay — ロン muốn hiện cạnh hạng (22/8)
       label: `${tier.name} ${division} ${starBar}`,
       missing,
       missingKind: capped2 ? 'gates' : 'stars',
