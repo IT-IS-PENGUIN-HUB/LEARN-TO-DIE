@@ -10,7 +10,7 @@ const PAGE = 30;
  * (tất cả / câu sai / đã đánh dấu / gần đây), sắp theo lần làm mới nhất,
  * mỗi dòng hiện đề + "bạn chọn X / đáp án đúng Y", bấm mở lại cả lời giải.
  */
-export default function ReviewBrowser({ examState, onOpen, onBack, initialTab = 'recent' }) {
+export default function ReviewBrowser({ examState, onOpen, onBack, onPractice, initialTab = 'recent' }) {
   const [tab, setTab] = useState(initialTab);
   // Sidebar có lối vào thẳng "Câu sai"/"Đánh dấu" — đổi tab khi được điều đến
   useEffect(() => setTab(initialTab), [initialTab]);
@@ -72,8 +72,38 @@ export default function ReviewBrowser({ examState, onOpen, onBack, initialTab = 
       </div>
 
       {loading && rows.length === 0 && <p className="qb-loading">Đang tải…</p>}
+      {/* Trống thì HƯỚNG DẪN cách để có (học màn 復習 của trung tâm: icon + chỉ
+          việc cần làm + nút bắt đầu luyện ngay), không chỉ báo "chưa có". */}
       {!loading && qids.length === 0 && (
-        <p className="qb-note">Chưa có câu nào trong nhóm này — làm vài câu rồi quay lại nhé.</p>
+        <div className="qb-empty">
+          <span className="qb-empty-icon" aria-hidden="true">
+            {tab === 'marked' ? '☆' : tab === 'wrong' ? '🎯' : '🗂'}
+          </span>
+          {tab === 'marked' ? (
+            <>
+              <strong>Chưa đánh dấu câu nào</strong>
+              <p>Trong lúc làm bài, bấm nút ngôi sao ☆ ở góc trên bên phải để ghim
+                 câu hỏi hay/khó — chúng sẽ nằm ở đây chờ bạn ôn lại.</p>
+            </>
+          ) : tab === 'wrong' ? (
+            <>
+              <strong>Chưa có câu sai nào — tuyệt!</strong>
+              <p>Câu trả lời sai sẽ tự gom về đây để ôn theo lịch SRS. Làm thêm đề
+                 để thử thách bản thân nhé.</p>
+            </>
+          ) : (
+            <>
+              <strong>Chưa làm câu nào</strong>
+              <p>Bắt đầu luyện đề — mọi câu đã làm sẽ hiện ở đây kèm lựa chọn của
+                 bạn và đáp án đúng.</p>
+            </>
+          )}
+          {onPractice && (
+            <button type="button" className="btn btn-primary" onClick={onPractice}>
+              Bắt đầu luyện tập
+            </button>
+          )}
+        </div>
       )}
 
       <div className="qb-browse">

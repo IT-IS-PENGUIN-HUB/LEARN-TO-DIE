@@ -27,7 +27,18 @@ function MockCard({ subject, total, onStart }) {
         <select className="qb-select qb-mock-year" value={year} onChange={(e) => setYear(e.target.value)}
           aria-label="Chọn năm đề thi">
           <option value="random">Năm: ngẫu nhiên</option>
-          {years.map((y) => <option key={y.year} value={y.year}>{y.year} · {y.wa}</option>)}
+          {years.map((y) => {
+            // Đánh dấu năm hụt câu so với đề chuẩn (học nhãn 問題不足 của trung
+            // tâm). "Chuẩn" suy từ chính dữ liệu (max các năm), không viết cứng.
+            // Bỏ qua 基礎: 2011–2012 vốn 25 câu là ĐÚNG đề gốc thời đó.
+            const norm = subject === 'KISO' ? 0 : Math.max(...years.map((v) => v.subjects[subject] ?? 0));
+            const n = y.subjects[subject] ?? 0;
+            return (
+              <option key={y.year} value={y.year}>
+                {y.year} · {y.wa}{n < norm ? ` (thiếu ${norm - n} câu)` : ''}
+              </option>
+            );
+          })}
         </select>
         <button type="button" className="btn btn-primary qb-mock-start" onClick={() => onStart(subject, year)}>
           Bắt đầu thi thử
@@ -49,7 +60,7 @@ export default function PracticeHome({
   wrongCount, bookmarkCount, onStartWrong, onStartBookmarks, onOpenCustom,
   rank, attempts, onStartMock,
   goal, todayCount, onSetGoal, dueCount, remind, onToggleRemind,
-  onStartSuggest, onStartRandom, onStartCategory, onOpenBrowse,
+  onStartSuggest, onStartRandom, onStartNew, onStartCategory, onOpenBrowse,
 }) {
   const subjects = subjectFilter === 'all' ? SUBJECT_ORDER : [subjectFilter];
 
@@ -155,6 +166,13 @@ export default function PracticeHome({
           <span className="qb-mode-body">
             <strong>Ngẫu nhiên</strong>
             <span>20 câu bất kỳ từ cả kho</span>
+          </span>
+        </button>
+        <button type="button" className="qb-mode" onClick={onStartNew}>
+          <span className="qb-mode-icon is-new">✨</span>
+          <span className="qb-mode-body">
+            <strong>Câu mới</strong>
+            <span>20 câu chưa từng làm, ưu tiên đề năm gần nhất</span>
           </span>
         </button>
         <button

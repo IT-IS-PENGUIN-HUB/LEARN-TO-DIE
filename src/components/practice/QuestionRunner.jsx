@@ -153,6 +153,18 @@ export default function QuestionRunner({
             const cls = i === index ? 'is-cur' : a ? (isCorrect(item, a) ? 'is-ok' : 'is-no') : '';
             return <i key={item.qid} className={cls} />;
           })}
+          {/* Điểm phiên trực tiếp (học ô 0/0 của trung tâm) — dải chấm cho biết
+              từng câu, con số cho biết tổng khi phiên dài chấm nhỏ khó đếm */}
+          {!review && (() => {
+            const ok = questions.filter((item) => answers[item.qid] && isCorrect(item, answers[item.qid])).length;
+            const no = questions.filter((item) => answers[item.qid] && !isCorrect(item, answers[item.qid])).length;
+            return (ok + no) > 0 && (
+              <span className="qb-run-score" aria-label={`Đúng ${ok}, sai ${no}`}>
+                <b className="is-ok">✓{ok}</b>
+                <b className="is-no">✕{no}</b>
+              </span>
+            );
+          })()}
         </div>
 
         {q.sp?.voided && (

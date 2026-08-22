@@ -176,6 +176,30 @@ export default function PracticeModule({ onBack, sub }) {
     startQids(queue.map((e) => e.qid), 'suggest', 'Gợi ý hôm nay');
   }, [examState, startQids]);
 
+  /** Câu mới (học 新しい問題 của trung tâm): 20 câu CHƯA TỪNG làm, ưu tiên đề
+      năm gần nhất. Tải dần từng năm từ mới về cũ, đủ 20 thì dừng — người mới
+      dùng khỏi phải tải cả 45 mảnh chỉ để chọn 20 câu. */
+  const startNew = useCallback(() => guarded(async () => {
+    const subjects = filter === 'all' ? SUBJECT_ORDER : [filter];
+    const fresh = [];
+    const years = [...EXAM_YEARS].sort((a, b) => b.year - a.year);
+    for (const y of years) {
+      const pairs = subjects.filter((s) => y.subjects[s]).map((s) => ({ year: y.year, subject: s }));
+      if (!pairs.length) continue;
+      const shards = await Promise.all(pairs.map((p) => loadShard(p.year, p.subject)));
+      fresh.push(...shards
+        .flatMap((sh) => sh.questions.map((q) => ({ ...q, year: sh.year, subject: sh.subject })))
+        .filter((q) => {
+          const e = examState.srs[q.qid];
+          return !e || (e.right ?? 0) + (e.wrong ?? 0) === 0;
+        }));
+      if (fresh.length >= 20) break;
+    }
+    if (!fresh.length) throw new Error('Hết câu mới — bạn đã đụng tới toàn bộ kho rồi 🎉');
+    const qs = shuffleQuestions(fresh).slice(0, 20);
+    begin(qs, { mode: 'new', qids: qs.map((q) => q.qid), label: 'Câu chưa từng làm' });
+  }), [begin, guarded, filter, examState]);
+
   /** Ngẫu nhiên (ランダム): 20 câu bất kỳ — bốc 3 mảnh ngẫu nhiên rồi trộn. */
   const startRandom = useCallback(() => guarded(async () => {
     const pairs = shuffleQuestions(
@@ -448,6 +472,7 @@ export default function PracticeModule({ onBack, sub }) {
         examState={examState}
         onOpen={openSingle}
         onBack={() => setScreen('home')}
+        onPractice={() => { setScreen('home'); window.scrollTo(0, 0); }}
         initialTab={browseTab}
       />
     );
@@ -608,6 +633,7 @@ export default function PracticeModule({ onBack, sub }) {
         dueCount={dueCount}
         onStartSuggest={startSuggest}
         onStartRandom={startRandom}
+        onStartNew={startNew}
         onStartCategory={startCategory}
         onOpenBrowse={() => setScreen('browse')}
       />

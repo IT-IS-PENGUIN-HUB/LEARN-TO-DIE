@@ -22,6 +22,9 @@ export const KEYS = {
   examPrefs: 'learn_to_die_exam_prefs',
   // Sidebar đang thu gọn thành dải icon hay mở rộng (chỉ desktop)
   sidebarCollapsed: 'learn_to_die_sidebar_collapsed',
+  // Ngày thi (YYYY-MM-DD) người dùng tự nhập trong Cài đặt — KHÔNG hardcode vào
+  // code (có thể thi tiếp các năm sau). Chỉ nuôi đếm ngược, lưu theo từng máy.
+  examDay: 'learn_to_die_exam_day',
 };
 
 export function loadJSON(key, fallback = null) {

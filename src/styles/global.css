@@ -3635,6 +3635,62 @@ textarea.text-input {
   .qb-time-row { grid-template-columns: minmax(90px, 130px) 1fr auto; gap: 0.5rem; }
 }
 
+/* ---- Học thêm từ app trung tâm (15/8/2026 đợt 2) ---- */
+
+/* Đếm ngược ngày thi trên hero (ngày nhập trong Cài đặt) */
+.hero-countdown {
+  margin: 0.35rem 0 0;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+.hero-countdown b { color: var(--warn, #f59e0b); font-size: 1.1em; }
+
+/* Điểm phiên trực tiếp cạnh dải chấm trong màn làm bài */
+.qb-run-score {
+  display: inline-flex;
+  gap: 0.45rem;
+  margin-left: auto;
+  padding-left: 0.6rem;
+  font-size: 0.78rem;
+  align-self: center;
+}
+.qb-run-score b { font-weight: 700; }
+.qb-run-score .is-ok { color: var(--success); }
+.qb-run-score .is-no { color: var(--danger); }
+
+/* Trạng thái trống có hướng dẫn + nút hành động (màn Xem lại) */
+.qb-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  text-align: center;
+  padding: 2.2rem 1.2rem 2.5rem;
+  border: 1px dashed var(--border-color);
+  border-radius: 13px;
+  background: var(--card-bg);
+}
+.qb-empty-icon {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 14px;
+  background: var(--bg-alt);
+  font-size: 1.7rem;
+  margin-bottom: 0.2rem;
+}
+.qb-empty strong { font-size: 1rem; }
+.qb-empty p {
+  max-width: 420px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: 0 0 0.6rem;
+}
+
+/* Thẻ chế độ "Câu mới" */
+.qb-mode-icon.is-new { background: rgba(var(--success-rgb), 0.14); }
+
 /* ---- Thu gọn sidebar thành dải icon (nút ‹/› như app trung tâm) ---- */
 .sb-collapse {
   position: absolute;

@@ -8,9 +8,11 @@ export default function SettingsModal({ onClose, sync }) {
   const [ghRepo, setGhRepo] = useState(() => loadString(KEYS.ghRepo));
   const [ghToken, setGhToken] = useState(() => loadString(KEYS.ghToken));
   const [reminderMin, setReminderMin] = useState(() => loadString(KEYS.reminderMin) || '0');
+  const [examDay, setExamDay] = useState(() => loadString(KEYS.examDay));
   const [savedMsg, setSavedMsg] = useState('');
 
   const saveAll = () => {
+    saveString(KEYS.examDay, examDay);
     saveString(KEYS.geminiKey, geminiKey.trim());
     // Ô DeepSeek đã bỏ (ロン chỉ dùng Gemini, 14/8) — xoá luôn key cũ còn sót
     // trong máy để ai.js khỏi gọi DeepSeek bằng key rác rồi chờ lỗi mới fallback.
@@ -105,6 +107,21 @@ export default function SettingsModal({ onClose, sync }) {
               {status.text}
             </p>
           )}
+        </div>
+
+        <div className="settings-section">
+          <h3>Ngày thi</h3>
+          <p className="settings-note">
+            Nhập ngày thi để trang chủ hiện đếm ngược (học app trung tâm). Lưu theo từng máy.
+          </p>
+          <label htmlFor="set-exam-day">Ngày thi dự kiến:</label>
+          <input
+            id="set-exam-day"
+            type="date"
+            className="text-input"
+            value={examDay}
+            onChange={(e) => setExamDay(e.target.value)}
+          />
         </div>
 
         <div className="settings-section">
