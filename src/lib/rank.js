@@ -55,11 +55,11 @@ function hasDoubleSweep(attempts) {
 }
 
 /**
- * Tính hạng từ examState. Trả về:
- * { tier, division (5..1|null), stars (trong bậc con, 0..3), label,
- *   totalStars, missing: [chuỗi mô tả điều kiện còn thiếu để lên tiếp] }
+ * Các chỉ số nuôi thang hạng, gom một chỗ để computeRank và rankLadder dùng
+ * chung (trước đây tính lọt trong computeRank; tách ra để bảng thang không
+ * phải tính lại theo cách khác rồi lệch số với thẻ hạng).
  */
-export function computeRank(state, bankTotal, now = Date.now()) {
+export function rankStats(state, bankTotal, now = Date.now()) {
   const srs = state.srs ?? {};
   let everCorrect = 0;
   let done = 0;
@@ -85,9 +85,26 @@ export function computeRank(state, bankTotal, now = Date.now()) {
   }
   const acc = r + w === 0 ? null : r / (r + w);
 
-  const mocks = passedMocks(state.attempts);
-  const passed = mocks.filter((a) => a.passed);
-  const passedSubjects = new Set(passed.map((a) => a.subject));
+  const passed = passedMocks(state.attempts).filter((a) => a.passed);
+  return {
+    everCorrect,
+    done,
+    coverage,
+    acc,
+    passed,
+    passedSubjects: new Set(passed.map((a) => a.subject)),
+    doubleSweep: hasDoubleSweep(state.attempts),
+    subjectCount: SUBJECTS.length,
+  };
+}
+
+/**
+ * Tính hạng từ examState. Trả về:
+ * { tier, tierId, division (5..1|null), stars (trong bậc con, 0..3), label,
+ *   totalStars, missing: [chuỗi mô tả điều kiện còn thiếu để lên tiếp] }
+ */
+export function computeRank(state, bankTotal, now = Date.now()) {
+  const { everCorrect, coverage, acc, passed, passedSubjects } = rankStats(state, bankTotal, now);
 
   const gateMissing = (g) => {
     const miss = [];
@@ -119,6 +136,7 @@ export function computeRank(state, bankTotal, now = Date.now()) {
       if (missNext.length === 0) continue; // đủ điều kiện Thách Đấu thì thăng luôn
       return {
         tier: tier.name,
+        tierId: tier.id,
         division: null,
         stars: passed.length,
         totalStars: null,
@@ -128,7 +146,7 @@ export function computeRank(state, bankTotal, now = Date.now()) {
       };
     }
     if (tier.id === 'thachdau') {
-      return { tier: tier.name, division: null, stars: null, totalStars: null, label: tier.name, missing: null, nextTier: null };
+      return { tier: tier.name, tierId: tier.id, division: null, stars: null, totalStars: null, label: tier.name, missing: null, nextTier: null };
     }
 
     const cost = starCost(tier, bankTotal);
@@ -153,6 +171,7 @@ export function computeRank(state, bankTotal, now = Date.now()) {
       : [`${cost - ((everCorrect - spent) % cost)} câu đúng mới để lên ★`];
     return {
       tier: tier.name,
+      tierId: tier.id,
       division,
       stars: starInDiv,
       totalStars: stars,
@@ -162,4 +181,72 @@ export function computeRank(state, bankTotal, now = Date.now()) {
     };
   }
   return null; // không tới được — phòng hờ
+}
+
+/**
+ * BẢNG THANG ĐẦY ĐỦ để người học xem trước đường leo (ロン hỏi 15/8: "các cấp
+ * bậc khác, điều kiện lên cấp cần bao nhiêu câu đúng phải có chỗ xem").
+ * Trả về mọi bậc kèm mốc câu đúng cộng dồn, giá sao, cổng điều kiện và trạng
+ * thái so với hiện tại — mọi con số derive từ TIERS + kho hiện tại, không
+ * viết cứng, kho phình lên là bảng tự giãn.
+ */
+export function rankLadder(state, bankTotal, now = Date.now()) {
+  const st = rankStats(state, bankTotal, now);
+  const cur = computeRank(state, bankTotal, now);
+  const curIdx = TIERS.findIndex((t) => t.id === cur?.tierId);
+  const pct = (x) => `${Math.round(x * 100)}%`;
+
+  let from = 0; // câu đúng cộng dồn để BẮT ĐẦU bậc này
+  return TIERS.map((tier, i) => {
+    const cost = starCost(tier, bankTotal);
+    const starsTotal = tier.divisions * 3;
+    const span = starsTotal * cost;
+    const row = {
+      id: tier.id,
+      name: tier.name,
+      divisions: tier.divisions,
+      cost,
+      starsTotal,
+      from,
+      to: starsTotal ? from + span : null,
+      state: curIdx < 0 ? 'locked' : i < curIdx ? 'done' : i === curIdx ? 'current' : 'locked',
+      // Cổng điều kiện: mô tả + đã đạt chưa + số hiện tại (hiện cả khi đã qua
+      // bậc, để biết vì sao mình từng bị chặn ở đó)
+      gates: [
+        tier.gates.coverage != null && {
+          label: `Phủ ${pct(tier.gates.coverage)} kho đề`,
+          now: pct(st.coverage),
+          ok: st.coverage >= tier.gates.coverage,
+        },
+        tier.gates.acc != null && {
+          label: `Chính xác 30 ngày ≥ ${pct(tier.gates.acc)}`,
+          now: st.acc === null ? '—' : pct(st.acc),
+          ok: (st.acc ?? 0) >= tier.gates.acc,
+        },
+        tier.gates.mockAny != null && {
+          label: `Đỗ ≥ ${tier.gates.mockAny} bài thi thử`,
+          now: `${st.passed.length} bài`,
+          ok: st.passed.length >= tier.gates.mockAny,
+        },
+        tier.gates.mockAll3 && {
+          label: 'Đỗ thi thử đủ 3 môn',
+          now: `${st.passedSubjects.size}/${st.subjectCount} môn`,
+          ok: st.passedSubjects.size >= st.subjectCount,
+        },
+        tier.gates.doubleSweep && {
+          label: 'Đỗ liên tiếp 2 bộ đủ 3 môn',
+          now: st.doubleSweep ? 'đạt' : 'chưa',
+          ok: st.doubleSweep,
+        },
+      ].filter(Boolean),
+    };
+    if (starsTotal) from += span;
+    return row;
+  }).map((row) => ({
+    ...row,
+    // Sao đã kiếm được trong bậc này (bậc đã qua = đầy, bậc chưa tới = 0)
+    starsGot: row.state === 'done' ? row.starsTotal
+      : row.state === 'current' ? (cur?.totalStars ?? cur?.stars ?? 0)
+        : 0,
+  }));
 }

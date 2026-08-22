@@ -3381,6 +3381,183 @@ textarea.text-input {
 .qb-rankcard b { color: var(--warn, #f59e0b); font-size: 1.05rem; display: block; }
 .qb-rankcard span { font-size: 0.8rem; color: var(--text-muted); }
 
+/* Thẻ hạng bấm được để bung bảng thang */
+.qb-rankcard.is-btn {
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+.qb-rankcard.is-btn:hover { border-color: var(--warn, #f59e0b); }
+.qb-rankcard.is-open { margin-bottom: 0; border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+.qb-rank-toggle {
+  margin-left: auto;
+  flex-shrink: 0;
+  font-size: 0.75rem !important;
+  color: var(--warn, #f59e0b) !important;
+  white-space: nowrap;
+}
+
+/* ---- Bảng thang xếp hạng đầy đủ ---- */
+.qb-ladder {
+  padding: 0.95rem 1.05rem 1.1rem;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  border-top: 0;
+  border-radius: 0 0 13px 13px;
+  background: var(--card-bg);
+  margin-bottom: 0.9rem;
+}
+.qb-ladder-intro,
+.qb-ladder-note {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin: 0 0 0.85rem;
+}
+.qb-ladder-note { margin: 0.9rem 0 0; }
+.qb-ladder-intro b { color: var(--text-main); }
+.qb-ladder-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+
+.qb-tier {
+  display: flex;
+  gap: 0.8rem;
+  padding: 0.7rem 0.85rem;
+  border-radius: 11px;
+  background: var(--bg-alt);
+  border: 1px solid var(--border-color);
+}
+.qb-tier.is-current { border-color: var(--warn, #f59e0b); background: rgba(245, 158, 11, 0.09); }
+.qb-tier.is-locked { opacity: 0.62; }
+
+/* Huy hiệu từng bậc — màu riêng, đủ tương phản ở cả hai theme */
+.qb-tier-badge {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  border-radius: 11px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #1c1917;
+  background: #9ca3af;
+}
+/* Selector không buộc vào .qb-tier — màn chúc mừng thăng bậc dùng chung màu */
+.is-dong .qb-tier-badge { background: #b4795a; color: #fff; }
+.is-bac .qb-tier-badge { background: #cbd5e1; }
+.is-vang .qb-tier-badge { background: #fbbf24; }
+.is-bachkim .qb-tier-badge { background: #67e8f9; }
+.is-kimcuong .qb-tier-badge { background: #38bdf8; }
+.is-tinhanh .qb-tier-badge { background: #a78bfa; }
+.is-caothu .qb-tier-badge { background: #fb7185; }
+.is-thachdau .qb-tier-badge {
+  background: linear-gradient(135deg, #f59e0b, #ef4444 55%, #a78bfa);
+  color: #fff;
+}
+
+.qb-tier-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 0.22rem; }
+.qb-tier-head { display: flex; align-items: baseline; gap: 0.5rem; flex-wrap: wrap; }
+.qb-tier-head > b { font-size: 0.92rem; }
+.qb-tier-div { font-size: 0.7rem; color: var(--text-muted); }
+.qb-tier-now,
+.qb-tier-done {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.1rem 0.4rem;
+  border-radius: 999px;
+}
+.qb-tier-now { background: var(--warn, #f59e0b); color: #1c1917; }
+.qb-tier-done { background: rgba(var(--success-rgb), 0.2); color: var(--success); }
+.qb-tier-cost { font-size: 0.75rem; color: var(--text-muted); }
+.qb-tier-cost b { color: var(--accent-text); }
+
+.qb-tier-stars { display: flex; flex-wrap: wrap; gap: 1px; margin-top: 0.1rem; }
+.qb-tier-stars i {
+  font-style: normal;
+  font-size: 0.72rem;
+  color: var(--border-color);
+  line-height: 1;
+}
+.qb-tier-stars i.is-on { color: var(--warn, #f59e0b); }
+
+.qb-tier-gates { list-style: none; display: flex; flex-direction: column; gap: 0.12rem; margin-top: 0.25rem; }
+.qb-tier-gates li { font-size: 0.72rem; color: var(--text-muted); display: flex; gap: 0.35rem; }
+.qb-tier-gates li.is-ok { color: var(--success); }
+.qb-tier-gates li.is-ok em { color: var(--success); }
+.qb-tier-gates em { font-style: normal; opacity: 0.8; }
+
+/* ---- Màn chúc mừng thăng bậc ---- */
+.rankup-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.62);
+  overflow: hidden;
+}
+.rankup-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 2rem 2.4rem 1.7rem;
+  border-radius: 18px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+  text-align: center;
+  max-width: min(88vw, 360px);
+  animation: rankup-pop 0.45s cubic-bezier(0.2, 1.4, 0.4, 1);
+}
+@keyframes rankup-pop {
+  from { transform: scale(0.6); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.rankup-badge {
+  width: 76px !important;
+  height: 76px !important;
+  flex-basis: auto !important;
+  border-radius: 20px !important;
+  font-size: 1.6rem !important;
+  animation: rankup-badge 0.8s cubic-bezier(0.2, 1.6, 0.4, 1);
+}
+@keyframes rankup-badge {
+  0% { transform: scale(0) rotate(-25deg); }
+  60% { transform: scale(1.15) rotate(6deg); }
+  100% { transform: scale(1) rotate(0); }
+}
+.rankup-title {
+  margin-top: 0.6rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  color: var(--text-muted);
+}
+.rankup-tier { font-size: 1.5rem; font-weight: 800; color: var(--warn, #f59e0b); }
+.rankup-sub { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.9rem; }
+
+/* Pháo giấy: mảnh rơi từ mép trên, xoay dần, một lượt rồi thôi */
+.rankup-confetti {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.rankup-confetti span {
+  position: absolute;
+  top: -20px;
+  border-radius: 2px;
+  opacity: 0.95;
+  animation: confetti-fall linear forwards;
+}
+@keyframes confetti-fall {
+  to { transform: translateY(108vh) rotate(660deg); opacity: 0.75; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rankup-confetti { display: none; }
+  .rankup-card, .rankup-badge { animation: none; }
+}
+
 .qb-tiles { display: grid; gap: 0.7rem; grid-template-columns: repeat(auto-fit, minmax(145px, 1fr)); margin-bottom: 0.9rem; }
 .qb-tile {
   padding: 0.75rem 0.9rem;

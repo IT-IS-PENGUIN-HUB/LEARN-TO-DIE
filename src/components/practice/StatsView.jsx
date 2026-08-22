@@ -1,4 +1,5 @@
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
+import RankLadder from './RankLadder.jsx';
 import { EXAM_YEARS, SUBJECT_META, CATEGORIES, BANK_TOTAL } from '../../data/examBank.js';
 import { catOfQid } from '../../lib/examData.js';
 import { accuracyOverDays, dayKey } from '../../lib/examState.js';
@@ -156,6 +157,7 @@ function Ring({ pct }) {
  */
 export default function StatsView({ examState, onBack, onStartCategory }) {
   const years = useMemo(() => [...EXAM_YEARS].sort((a, b) => a.year - b.year), []);
+  const [ladderOpen, setLadderOpen] = useState(false);
 
   const { tiles, grid, cats } = useMemo(() => {
     let done = 0;
@@ -275,17 +277,30 @@ export default function StatsView({ examState, onBack, onStartCategory }) {
       </div>
 
       {rank && (
-        <div className="qb-rankcard">
-          <span className="qb-rank-medal">🏅</span>
-          <div>
-            <b>{rank.label}</b>
-            <span>
-              {rank.missing
-                ? <>Để lên {rank.nextTier ?? 'bậc kế'}: {rank.missing.join(' · ')}</>
-                : 'Hạng cao nhất — sẵn sàng đi thi 🏆'}
+        <>
+          {/* Bấm thẻ hạng để bung TOÀN BỘ thang — trước đây chỉ thấy hạng hiện
+              tại, không biết phía trên còn những bậc nào, cần gì để lên */}
+          <button
+            type="button"
+            className={`qb-rankcard is-btn${ladderOpen ? ' is-open' : ''}`}
+            onClick={() => setLadderOpen((v) => !v)}
+            aria-expanded={ladderOpen}
+          >
+            <span className="qb-rank-medal">🏅</span>
+            <div>
+              <b>{rank.label}</b>
+              <span>
+                {rank.missing
+                  ? <>Để lên {rank.nextTier ?? 'bậc kế'}: {rank.missing.join(' · ')}</>
+                  : 'Hạng cao nhất — sẵn sàng đi thi 🏆'}
+              </span>
+            </div>
+            <span className="qb-rank-toggle">
+              {ladderOpen ? 'Thu gọn ▲' : 'Xem cả thang ▼'}
             </span>
-          </div>
-        </div>
+          </button>
+          {ladderOpen && <RankLadder examState={examState} />}
+        </>
       )}
 
       <div className="qb-tiles">

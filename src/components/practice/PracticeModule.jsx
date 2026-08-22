@@ -14,9 +14,10 @@ import {
   loadExamState, saveExamState, recordExamAnswer, toggleBookmark, addAttempt,
   statsFor, saveSession, clearSession, activeSession, EXAM_EVENT,
 } from '../../lib/examState.js';
-import { computeRank } from '../../lib/rank.js';
+import { computeRank, TIERS } from '../../lib/rank.js';
+import RankUpModal from './RankUpModal.jsx';
 import { buildQueue } from '../../lib/srs.js';
-import { KEYS, loadJSON, saveJSON } from '../../lib/storage.js';
+import { KEYS, loadJSON, saveJSON, loadString, saveString } from '../../lib/storage.js';
 import { IconArrowLeft } from '../icons.jsx';
 
 const SUBJECT_ORDER = ['KENSETSU', 'KISO', 'TEKISEI'];
@@ -358,6 +359,29 @@ export default function PracticeModule({ onBack, sub }) {
   // Thang xếp hạng: derive thuần từ examState đã sync → hai máy tự khớp
   const rank = useMemo(() => computeRank(examState, BANK_TOTAL), [examState]);
 
+  // Thăng BẬC LỚN (Đồng→Bạc→…): hiện màn chúc mừng một lần cho mỗi bậc.
+  // Mốc "đã chúc mừng" lưu localStorage theo máy — acc 30 ngày sụt làm hạng
+  // tạm rơi rồi leo lại thì không chúc mừng lại; lần đầu chạy bản mới thì ghi
+  // nhận bậc hiện tại chứ không chúc (đã ở đó từ lâu rồi).
+  const [rankUp, setRankUp] = useState(null);
+  const tierIdx = (id) => TIERS.findIndex((t) => t.id === id);
+  useEffect(() => {
+    if (!rank?.tierId) return;
+    const saved = loadString(KEYS.lastRankTier);
+    if (!saved) {
+      saveString(KEYS.lastRankTier, rank.tierId);
+      return;
+    }
+    if (tierIdx(rank.tierId) > tierIdx(saved)) {
+      setRankUp({ tierId: rank.tierId, tierName: rank.tier, label: rank.label });
+      saveString(KEYS.lastRankTier, rank.tierId);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [rank?.tierId]);
+  const rankUpModal = rankUp
+    ? <RankUpModal {...rankUp} onClose={() => setRankUp(null)} />
+    : null;
+
   // Mục tiêu ngày (ロン thích tính năng 今日の目標 của app trung tâm):
   // đích lưu trong prefs, tiến độ đếm từ nhật ký daily của hôm nay
   const goal = prefs.goal ?? 20;
@@ -541,25 +565,29 @@ export default function PracticeModule({ onBack, sub }) {
             </button>
           </div>
         </div>
+        {rankUpModal}
       </section>
     );
   }
 
   if (screen === 'run') {
     return (
-      <QuestionRunner
-        questions={questions}
-        index={index}
-        answers={answers}
-        examState={examState}
-        prefs={{ ...prefs, set: setPref }}
-        review={reviewMode}
-        onSelect={reviewMode ? () => {} : select}
-        onGo={go}
-        onToggleBookmark={(qid) => commit((s) => toggleBookmark(s, qid))}
-        onExit={reviewMode ? () => { setReviewMode(false); setScreen(reviewReturn); } : exitRun}
-        onFinish={reviewMode ? () => { setReviewMode(false); setScreen(reviewReturn); } : finish}
-      />
+      <>
+        <QuestionRunner
+          questions={questions}
+          index={index}
+          answers={answers}
+          examState={examState}
+          prefs={{ ...prefs, set: setPref }}
+          review={reviewMode}
+          onSelect={reviewMode ? () => {} : select}
+          onGo={go}
+          onToggleBookmark={(qid) => commit((s) => toggleBookmark(s, qid))}
+          onExit={reviewMode ? () => { setReviewMode(false); setScreen(reviewReturn); } : exitRun}
+          onFinish={reviewMode ? () => { setReviewMode(false); setScreen(reviewReturn); } : finish}
+        />
+        {rankUpModal}
+      </>
     );
   }
 
@@ -644,6 +672,7 @@ export default function PracticeModule({ onBack, sub }) {
           counts={{ wrong: wrongPool.length, bookmark: bookmarkQids.length }}
         />
       )}
+      {rankUpModal}
     </>
   );
 }

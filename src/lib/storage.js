@@ -25,6 +25,9 @@ export const KEYS = {
   // Ngày thi (YYYY-MM-DD) người dùng tự nhập trong Cài đặt — KHÔNG hardcode vào
   // code (có thể thi tiếp các năm sau). Chỉ nuôi đếm ngược, lưu theo từng máy.
   examDay: 'learn_to_die_exam_day',
+  // Bậc hạng cao nhất ĐÃ chúc mừng (id trong TIERS) — để màn thăng bậc chỉ hiện
+  // một lần cho mỗi bậc, kể cả khi acc 30 ngày sụt làm hạng tạm rơi rồi leo lại.
+  lastRankTier: 'learn_to_die_last_rank_tier',
 };
 
 export function loadJSON(key, fallback = null) {
