@@ -195,7 +195,7 @@ export default function PracticeHome({
           disabled={!bookmarkCount}
           title={bookmarkCount ? undefined : 'Chưa đánh dấu câu nào'}
         >
-          <span className="qb-mode-icon is-mark">⚑</span>
+          <span className="qb-mode-icon is-mark">!</span>
           <span className="qb-mode-body">
             <strong>Câu đánh dấu</strong>
             <span>{bookmarkCount ? `${bookmarkCount} câu đã ghim` : 'chưa ghim câu nào'}</span>

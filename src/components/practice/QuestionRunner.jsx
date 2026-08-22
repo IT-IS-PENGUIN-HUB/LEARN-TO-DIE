@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { diagramUrl, CATEGORIES, SUBJECT_META } from '../../data/examBank.js';
 import { isCorrect, answerLabel, LETTERS } from '../../lib/examData.js';
 import AddWordForm from '../vocab/AddWordForm.jsx';
-import { IconArrowLeft, IconArrowRight, IconStar, IconPlus } from '../icons.jsx';
+import { IconArrowLeft, IconArrowRight, IconPlus } from '../icons.jsx';
 
 // Môn trong kho đề  ->  môn trong kho từ vựng (khác tên, đừng nhầm)
 const VOCAB_SUBJECT = { KISO: 'kiso', TEKISEI: 'tekisei', KENSETSU: 'senmon' };
@@ -139,9 +139,12 @@ export default function QuestionRunner({
                 onClick={() => prefs.set({ size: v })} aria-pressed={size === v}>{v.toUpperCase()}</button>
             ))}
           </span>
-          <button type="button" className={`qb-icon${bookmarked ? ' is-on' : ''}`}
-            onClick={() => onToggleBookmark(q.qid)} aria-pressed={bookmarked} title="Đánh dấu">
-            <IconStar />
+          {/* Nút đánh dấu: ô vuông dấu "!" nền vàng (ロン yêu cầu 15/8 —
+              ngôi sao dễ nhầm với "đã thuộc" của phần từ vựng) */}
+          <button type="button" className={`qb-icon qb-bm${bookmarked ? ' is-on' : ''}`}
+            onClick={() => onToggleBookmark(q.qid)} aria-pressed={bookmarked}
+            title={bookmarked ? 'Bỏ đánh dấu' : 'Đánh dấu để ôn lại'}>
+            !
           </button>
         </div>
       </div>

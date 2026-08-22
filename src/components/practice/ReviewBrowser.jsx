@@ -76,14 +76,14 @@ export default function ReviewBrowser({ examState, onOpen, onBack, onPractice, i
           việc cần làm + nút bắt đầu luyện ngay), không chỉ báo "chưa có". */}
       {!loading && qids.length === 0 && (
         <div className="qb-empty">
-          <span className="qb-empty-icon" aria-hidden="true">
-            {tab === 'marked' ? '☆' : tab === 'wrong' ? '🎯' : '🗂'}
+          <span className={`qb-empty-icon${tab === 'marked' ? ' is-bm' : ''}`} aria-hidden="true">
+            {tab === 'marked' ? '!' : tab === 'wrong' ? '🎯' : '🗂'}
           </span>
           {tab === 'marked' ? (
             <>
               <strong>Chưa đánh dấu câu nào</strong>
-              <p>Trong lúc làm bài, bấm nút ngôi sao ☆ ở góc trên bên phải để ghim
-                 câu hỏi hay/khó — chúng sẽ nằm ở đây chờ bạn ôn lại.</p>
+              <p>Trong lúc làm bài, bấm nút vàng dấu <b className="qb-bm-inline">!</b> ở
+                 góc trên bên phải để ghim câu hỏi hay/khó — chúng sẽ nằm ở đây chờ bạn ôn lại.</p>
             </>
           ) : tab === 'wrong' ? (
             <>
