@@ -12,7 +12,7 @@ import {
 } from '../../lib/examData.js';
 import {
   loadExamState, saveExamState, recordExamAnswer, toggleBookmark, addAttempt,
-  statsFor, saveSession, clearSession, activeSession, EXAM_EVENT,
+  statsFor, saveSession, clearSession, activeSession, EXAM_EVENT, EXAM_SYNCED_EVENT,
 } from '../../lib/examState.js';
 import { computeRank, TIERS } from '../../lib/rank.js';
 import RankUpModal from './RankUpModal.jsx';
@@ -79,10 +79,12 @@ export default function PracticeModule({ onBack, sub }) {
     document.addEventListener('visibilitychange', refresh);
     window.addEventListener('focus', refresh);
     window.addEventListener(EXAM_EVENT, refresh);
+    window.addEventListener(EXAM_SYNCED_EVENT, refresh);
     return () => {
       document.removeEventListener('visibilitychange', refresh);
       window.removeEventListener('focus', refresh);
       window.removeEventListener(EXAM_EVENT, refresh);
+      window.removeEventListener(EXAM_SYNCED_EVENT, refresh);
     };
   }, []);
 

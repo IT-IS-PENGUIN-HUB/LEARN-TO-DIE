@@ -1,14 +1,11 @@
 import { useMemo } from 'react';
+import { RankBadge } from './RankName.jsx';
+import { TIERS } from '../../lib/rank.js';
 
 // Từ Bạch Kim trở lên là bắn pháo giấy (ロン chỉnh 15/8/2026: "Tinh Anh thì
 // lâu quá") — Đồng/Bạc/Vàng thăng khá dày, bắn mãi thành nhàm.
 const CONFETTI_TIERS = new Set(['bachkim', 'kimcuong', 'tinhanh', 'caothu', 'thachdau']);
 const CONFETTI_COLORS = ['#f59e0b', '#ef4444', '#3a86ff', '#10b981', '#a78bfa', '#f472b6'];
-
-/** Chữ tắt trên huy hiệu — cùng cách với bảng thang (Bạch Kim → BK). */
-function initials(name) {
-  return name.split(' ').map((w) => w[0]).join('');
-}
 
 /**
  * Màn CHÚC MỪNG THĂNG BẬC (ロン yêu cầu 15/8/2026): thăng bậc lớn là hiện ngay,
@@ -49,7 +46,10 @@ export default function RankUpModal({ tierId, tierName, label, onClose }) {
         </div>
       )}
       <div className={`rankup-card is-${tierId}`}>
-        <span className="qb-tier-badge rankup-badge" aria-hidden="true">{initials(tierName)}</span>
+        <span className="rankup-badge-slot">
+          {/* Vừa thăng bậc = đứng ở bậc con cao nhất, chưa xong bậc con nào */}
+          <RankBadge tierId={tierId} divisions={TIERS.find((t) => t.id === tierId)?.divisions ?? 0} done={0} size={76} />
+        </span>
         <p className="rankup-title">THĂNG BẬC!</p>
         <p className="rankup-tier">{label ?? tierName}</p>
         <p className="rankup-sub">

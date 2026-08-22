@@ -17,7 +17,7 @@
 //                {cleared:true} nên "xoá" cũng lan sang máy kia đúng cách.
 
 import { getSyncConfig, readJsonFile, writeJsonFile } from './github.js';
-import { loadExamState, saveExamState } from '../lib/examState.js';
+import { loadExamState, saveExamState, EXAM_SYNCED_EVENT } from '../lib/examState.js';
 
 const FILE_PATH = 'exam-progress.json';
 
@@ -100,6 +100,11 @@ function saveIfChanged(merged) {
   const local = loadExamState();
   if (JSON.stringify(merged) !== JSON.stringify(local)) {
     saveExamState(merged, { notify: false });
+    // Báo UI làm tươi bằng sự kiện RIÊNG (không phải EXAM_EVENT — useSync nghe
+    // cái đó để hẹn push, phát nhầm là thành vòng lặp ghi↔đẩy)
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new CustomEvent(EXAM_SYNCED_EVENT));
+    }
   }
   return merged;
 }

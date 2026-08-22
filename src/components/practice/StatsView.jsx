@@ -1,10 +1,20 @@
 import { useMemo, useState } from 'react';
 import RankLadder from './RankLadder.jsx';
+import RankName, { RankBadge } from './RankName.jsx';
 import { EXAM_YEARS, SUBJECT_META, CATEGORIES, BANK_TOTAL } from '../../data/examBank.js';
 import { catOfQid } from '../../lib/examData.js';
 import { accuracyOverDays, dayKey } from '../../lib/examState.js';
-import { computeRank } from '../../lib/rank.js';
+import { computeRank, TIERS } from '../../lib/rank.js';
 import { IconArrowLeft } from '../icons.jsx';
+
+/** Mức màu theo tỷ lệ đúng (%) — cùng tông với app trung tâm mà ロン khen:
+ *  ≥80 xanh lá, 50–79 cam, dưới 50 đỏ; chưa có dữ liệu giữ màu chủ đạo. */
+function accLevel(acc) {
+  if (acc == null) return '';
+  if (acc >= 80) return 'is-hi';
+  if (acc >= 50) return 'is-mid';
+  return 'is-lo';
+}
 
 // Thứ tự nhóm 基礎 theo đề thật (Ⅰ-1…Ⅰ-5) — cùng thứ tự với build_examdata.py
 const KISO_ORDER = ['KISO_DESIGN', 'KISO_INFO', 'KISO_ANALYSIS', 'KISO_MATERIAL', 'KISO_ENV'];
@@ -129,7 +139,8 @@ function DailyBarChart({ days }) {
   );
 }
 
-/** Vòng % — thẻ tiến độ môn (học bố cục 科目別進捗 của app trung tâm). */
+/** Vòng % — thẻ tiến độ môn (học bố cục 科目別進捗 của app trung tâm).
+ *  Màu đổi theo mức: xanh lá / cam / đỏ như thanh bên dưới. */
 function Ring({ pct }) {
   const R = 25;
   const C = 2 * Math.PI * R;
@@ -138,7 +149,7 @@ function Ring({ pct }) {
       <circle className="qb-ring-track" cx="32" cy="32" r={R} />
       {pct != null && (
         <circle
-          className="qb-ring-arc"
+          className={`qb-ring-arc ${accLevel(pct)}`}
           cx="32" cy="32" r={R}
           strokeDasharray={`${(pct / 100) * C} ${C}`}
           transform="rotate(-90 32 32)"
@@ -286,12 +297,28 @@ export default function StatsView({ examState, onBack, onStartCategory }) {
             onClick={() => setLadderOpen((v) => !v)}
             aria-expanded={ladderOpen}
           >
-            <span className="qb-rank-medal">🏅</span>
+            {/* Huy hiệu bậc + cung sao bậc con (sáng = đã xong bậc con đó) */}
+            {(() => {
+              const tier = TIERS.find((t) => t.id === rank.tierId);
+              const divs = tier?.divisions ?? 0;
+              return (
+                <RankBadge
+                  tierId={rank.tierId}
+                  divisions={divs}
+                  done={rank.division != null ? divs - rank.division : 0}
+                  size={50}
+                />
+              );
+            })()}
             <div>
-              <b>{rank.label}</b>
+              <RankName rank={rank} />
               <span>
                 {rank.missing
-                  ? <>Để lên {rank.nextTier ?? 'bậc kế'}: {rank.missing.join(' · ')}</>
+                  ? rank.missingKind === 'stars'
+                    // Thiếu sao thì nói chuyện sao — "Để lên Vàng: 12 câu để lên ★"
+                    // kiểu cũ đọc rất tối nghĩa (ロン 22/8)
+                    ? <>{rank.missing[0]} · gom đủ sao {rank.tier} là lên {rank.nextTier}</>
+                    : <>Để lên {rank.nextTier ?? 'bậc kế'}: {rank.missing.join(' · ')}</>
                   : 'Hạng cao nhất — sẵn sàng đi thi 🏆'}
               </span>
             </div>
@@ -323,7 +350,8 @@ export default function StatsView({ examState, onBack, onStartCategory }) {
                 <span>Đã làm <b>{s.done}</b>/{s.total} câu</span>
                 <span>{s.pct}%</span>
               </div>
-              <div className="qb-progress"><i style={{ width: `${s.pct}%` }} /></div>
+              {/* Thanh = phần kho đã chạm, MÀU = mức tỷ lệ đúng (như app trung tâm) */}
+              <div className="qb-progress"><i className={accLevel(s.acc)} style={{ width: `${s.pct}%` }} /></div>
             </div>
           </div>
         ))}
@@ -478,7 +506,7 @@ export default function StatsView({ examState, onBack, onStartCategory }) {
                   <span className="qb-catmeta">
                     {c ? <>{c.done}/{meta.count} câu{acc != null && <b className={isWeak ? 'is-weak' : ''}> · {acc}%</b>}</> : 'Chưa làm'}
                   </span>
-                  <span className="qb-progress"><i style={{ width: `${c ? Math.round((c.done / meta.count) * 100) : 0}%` }} /></span>
+                  <span className="qb-progress"><i className={accLevel(acc)} style={{ width: `${c ? Math.round((c.done / meta.count) * 100) : 0}%` }} /></span>
                 </button>
               );
             })}

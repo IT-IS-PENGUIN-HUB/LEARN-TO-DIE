@@ -1,11 +1,7 @@
 import { useMemo } from 'react';
 import { rankLadder } from '../../lib/rank.js';
+import { RankBadge } from './RankName.jsx';
 import { BANK_TOTAL } from '../../data/examBank.js';
-
-/** Chữ tắt trên huy hiệu — lấy chữ cái đầu mỗi từ (Bạch Kim → BK). */
-function initials(name) {
-  return name.split(' ').map((w) => w[0]).join('');
-}
 
 /**
  * BẢNG THANG XẾP HẠNG đầy đủ (ロン yêu cầu 15/8/2026): xem trước cả đường leo —
@@ -29,7 +25,10 @@ export default function RankLadder({ examState }) {
       <ol className="qb-ladder-list">
         {rows.map((r) => (
           <li key={r.id} className={`qb-tier is-${r.id} is-${r.state}`}>
-            <span className="qb-tier-badge" aria-hidden="true">{initials(r.name)}</span>
+            {/* Huy hiệu tròn + cung sao BẬC CON phía trên (sáng = đã xong bậc con đó) */}
+            <span className="qb-tier-badge-slot">
+              <RankBadge tierId={r.id} divisions={r.divisions} done={r.doneDivs} size={44} />
+            </span>
             <div className="qb-tier-body">
               <div className="qb-tier-head">
                 <b>{r.name}</b>

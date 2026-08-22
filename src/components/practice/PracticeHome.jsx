@@ -1,6 +1,8 @@
 import { useMemo, useState } from 'react';
+import RankName, { RankBadge } from './RankName.jsx';
 import { EXAM_YEARS, SUBJECT_META, BANK_TOTAL, CATEGORIES } from '../../data/examBank.js';
 import { EXAM_RULES } from '../../data/examRules.js';
+import { TIERS } from '../../lib/rank.js';
 import { IconArrowLeft } from '../icons.jsx';
 
 const SUBJECT_ORDER = ['KENSETSU', 'KISO', 'TEKISEI'];
@@ -88,9 +90,17 @@ export default function PracticeHome({
         </div>
         {rank && (
           <div className="qb-hero-rank" title={rank.missing ? `Để lên tiếp: ${rank.missing.join(' · ')}` : undefined}>
-            <b>{rank.label}</b>
+            <RankName rank={rank} />
             <span>{rank.missing ? `còn: ${rank.missing[0]}` : 'hạng cao nhất 🏆'}</span>
           </div>
+        )}
+        {rank && (
+          <RankBadge
+            tierId={rank.tierId}
+            divisions={TIERS.find((t) => t.id === rank.tierId)?.divisions ?? 0}
+            done={rank.division != null ? (TIERS.find((t) => t.id === rank.tierId)?.divisions ?? 0) - rank.division : 0}
+            size={44}
+          />
         )}
       </div>
 

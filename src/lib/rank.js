@@ -166,9 +166,12 @@ export function computeRank(state, bankTotal, now = Date.now()) {
     const division = capped ? 1 : tier.divisions - Math.floor(stars / 3); // 5→1 hoặc 3→1
     const starInDiv = capped ? 3 : stars % 3;
     const starBar = '★'.repeat(starInDiv) + '☆'.repeat(3 - starInDiv);
-    const missing = stars >= tierStars
+    // missingKind cho UI biết đang thiếu SAO hay kẹt CỔNG — trước đây UI ghép
+    // "Để lên Vàng: 12 câu đúng mới để lên ★" đọc rất tối nghĩa (ロン 22/8)
+    const capped2 = stars >= tierStars;
+    const missing = capped2
       ? missNext // đủ sao nhưng kẹt cổng điều kiện
-      : [`${cost - ((everCorrect - spent) % cost)} câu đúng mới để lên ★`];
+      : [`${cost - ((everCorrect - spent) % cost)} câu đúng nữa là thêm ★`];
     return {
       tier: tier.name,
       tierId: tier.id,
@@ -177,6 +180,7 @@ export function computeRank(state, bankTotal, now = Date.now()) {
       totalStars: stars,
       label: `${tier.name} ${division} ${starBar}`,
       missing,
+      missingKind: capped2 ? 'gates' : 'stars',
       nextTier: next.name,
     };
   }
@@ -247,6 +251,10 @@ export function rankLadder(state, bankTotal, now = Date.now()) {
     // Sao đã kiếm được trong bậc này (bậc đã qua = đầy, bậc chưa tới = 0)
     starsGot: row.state === 'done' ? row.starsTotal
       : row.state === 'current' ? (cur?.totalStars ?? cur?.stars ?? 0)
+        : 0,
+    // Bậc CON đã hoàn thành — nuôi cung sao trên huy hiệu (3 sao nhỏ = 1 bậc con)
+    doneDivs: row.state === 'done' ? row.divisions
+      : row.state === 'current' ? Math.floor((cur?.totalStars ?? 0) / 3)
         : 0,
   }));
 }

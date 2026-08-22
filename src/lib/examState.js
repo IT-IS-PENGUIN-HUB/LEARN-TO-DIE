@@ -12,6 +12,13 @@ import { applyAnswer } from './srs.js';
 // (giống PROGRESS_EVENT của tiến độ đọc giáo trình).
 export const EXAM_EVENT = 'ltd-exam-changed';
 
+// Sự kiện "sync vừa GHI dữ liệu máy khác về" — TÁCH RIÊNG khỏi EXAM_EVENT vì
+// luồng sync phải ghi im lặng (notify:false, kẻo useSync nghe thấy lại hẹn
+// push → vòng lặp). Hệ quả từng thấy 22/8: sidebar giữ hạng cũ trong khi màn
+// Thống kê mở sau đã đọc số mới — hai góc màn hình lệch nhau tới lần focus
+// kế tiếp. UI nghe thêm sự kiện này thì mọi góc tươi cùng lúc.
+export const EXAM_SYNCED_EVENT = 'ltd-exam-synced';
+
 export function loadExamState() {
   const s = loadJSON(KEYS.examState, null);
   if (!s || typeof s !== 'object') {

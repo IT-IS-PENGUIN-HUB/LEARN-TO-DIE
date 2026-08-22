@@ -3,7 +3,7 @@
 // cùng pattern refresh của PracticeModule.
 
 import { useEffect, useState } from 'react';
-import { loadExamState, EXAM_EVENT } from '../lib/examState.js';
+import { loadExamState, EXAM_EVENT, EXAM_SYNCED_EVENT } from '../lib/examState.js';
 
 export function useExamSnapshot() {
   const [snap, setSnap] = useState(loadExamState);
@@ -13,10 +13,12 @@ export function useExamSnapshot() {
       setSnap((cur) => (JSON.stringify(disk) !== JSON.stringify(cur) ? disk : cur));
     };
     window.addEventListener(EXAM_EVENT, refresh);
+    window.addEventListener(EXAM_SYNCED_EVENT, refresh);
     window.addEventListener('focus', refresh);
     document.addEventListener('visibilitychange', refresh);
     return () => {
       window.removeEventListener(EXAM_EVENT, refresh);
+      window.removeEventListener(EXAM_SYNCED_EVENT, refresh);
       window.removeEventListener('focus', refresh);
       document.removeEventListener('visibilitychange', refresh);
     };

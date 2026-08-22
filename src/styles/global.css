@@ -3429,31 +3429,66 @@ textarea.text-input {
 .qb-tier.is-current { border-color: var(--warn, #f59e0b); background: rgba(245, 158, 11, 0.09); }
 .qb-tier.is-locked { opacity: 0.62; }
 
-/* Huy hiệu từng bậc — màu riêng, đủ tương phản ở cả hai theme */
-.qb-tier-badge {
+/* ---- Huy hiệu bậc (RankBadge): vòng tròn màu riêng + icon chiến đấu + CUNG
+   SAO BẬC CON phía trên — sáng = đã xong bậc con đó (ロン yêu cầu 22/8).
+   Emoji icon tự có màu; nền tròn lấy màu đặc trưng của bậc. ---- */
+.rk-badge {
+  position: relative;
   display: grid;
   place-items: center;
-  width: 40px;
-  height: 40px;
-  flex: 0 0 40px;
-  border-radius: 11px;
-  font-size: 0.85rem;
-  font-weight: 800;
-  color: #1c1917;
+  flex-shrink: 0;
+  border-radius: 999px;
   background: #9ca3af;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.28);
 }
-/* Selector không buộc vào .qb-tier — màn chúc mừng thăng bậc dùng chung màu */
-.is-dong .qb-tier-badge { background: #b4795a; color: #fff; }
-.is-bac .qb-tier-badge { background: #cbd5e1; }
-.is-vang .qb-tier-badge { background: #fbbf24; }
-.is-bachkim .qb-tier-badge { background: #67e8f9; }
-.is-kimcuong .qb-tier-badge { background: #38bdf8; }
-.is-tinhanh .qb-tier-badge { background: #a78bfa; }
-.is-caothu .qb-tier-badge { background: #fb7185; }
-.is-thachdau .qb-tier-badge {
-  background: linear-gradient(135deg, #f59e0b, #ef4444 55%, #a78bfa);
-  color: #fff;
+.rk-badge-ic { font-style: normal; line-height: 1; transform: translateY(1px); }
+.rk-badge.is-dong { background: #b4795a; }
+.rk-badge.is-bac { background: #cbd5e1; }
+.rk-badge.is-vang { background: #fbbf24; }
+.rk-badge.is-bachkim { background: #67e8f9; }
+.rk-badge.is-kimcuong { background: #38bdf8; }
+.rk-badge.is-tinhanh { background: #a78bfa; }
+.rk-badge.is-caothu { background: #fb7185; }
+.rk-badge.is-thachdau { background: linear-gradient(135deg, #f59e0b, #ef4444 55%, #a78bfa); }
+
+/* Sao trên cung: neo tại tâm badge rồi xoay-đẩy lên vành (transform trong JSX) */
+.rk-bstar {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1em;
+  height: 1em;
+  margin: -0.5em;
+  display: grid;
+  place-items: center;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--border-color); /* sao TỐI — bậc con chưa đạt */
 }
+.rk-bstar.is-on {
+  color: var(--warn, #f59e0b); /* sao SÁNG — bậc con đã xong */
+  text-shadow: 0 0 4px rgba(245, 158, 11, 0.55);
+}
+
+/* Chỗ đứng của badge — chừa khoảng cho cung sao nhô lên trên */
+.qb-tier-badge-slot { flex: 0 0 44px; padding-top: 13px; }
+.rankup-badge-slot { display: block; padding-top: 20px; }
+.qb-hero > .rk-badge { margin-top: 10px; }
+
+/* Sao dạng chữ trong tên hạng (Sidebar / hero / thẻ Thống kê):
+   đầy = vàng, rỗng = xám mờ — hết nhìn nhầm từ xa */
+.rk-stars { letter-spacing: 0.05em; }
+.rk-stars i { font-style: normal; color: var(--text-muted); opacity: 0.55; }
+.rk-stars i.is-on { color: var(--warn, #f59e0b); opacity: 1; }
+
+/* Màu thanh/vòng theo MỨC tỷ lệ đúng (như app trung tâm ロン khen 22/8):
+   >=80 xanh lá · 50–79 cam · <50 đỏ; chưa có dữ liệu giữ màu chủ đạo */
+.qb-progress > i.is-hi { background: var(--success); }
+.qb-progress > i.is-mid { background: var(--warn, #f59e0b); }
+.qb-progress > i.is-lo { background: var(--danger); }
+.qb-ring-arc.is-hi { stroke: var(--success); }
+.qb-ring-arc.is-mid { stroke: var(--warn, #f59e0b); }
+.qb-ring-arc.is-lo { stroke: var(--danger); }
 
 .qb-tier-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 0.22rem; }
 .qb-tier-head { display: flex; align-items: baseline; gap: 0.5rem; flex-wrap: wrap; }
