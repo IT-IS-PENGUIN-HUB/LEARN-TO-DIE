@@ -166,7 +166,7 @@ function Ring({ pct }) {
  * gian trả lời, top chuyên mục yếu và bảng chi tiết từng chuyên mục. Bản đồ
  * nhiệt nâng cấp hiện % ngay trong ô. Mọi thứ vẫn derive từ examState đã sync.
  */
-export default function StatsView({ examState, onBack, onStartCategory }) {
+export default function StatsView({ examState, onBack, onOpenCategory }) {
   const years = useMemo(() => [...EXAM_YEARS].sort((a, b) => a.year - b.year), []);
   const [ladderOpen, setLadderOpen] = useState(false);
 
@@ -398,8 +398,8 @@ export default function StatsView({ examState, onBack, onStartCategory }) {
                         <button
                           type="button"
                           className="qb-hm-cat jp-text"
-                          title={`Luyện trọn mục ${CATEGORIES[code].ja} (${CATEGORIES[code].count} câu)`}
-                          onClick={() => onStartCategory(subject, code, CATEGORIES[code].ja)}
+                          title={`Xem danh sách ${CATEGORIES[code].count} câu của mục ${CATEGORIES[code].ja}`}
+                          onClick={() => onOpenCategory(subject, code)}
                         >
                           {CATEGORIES[code].ja}
                         </button>
@@ -471,9 +471,9 @@ export default function StatsView({ examState, onBack, onStartCategory }) {
                 <button
                   type="button"
                   className="btn btn-outline btn-sm"
-                  onClick={() => onStartCategory(CATEGORIES[r.code].subject, r.code, CATEGORIES[r.code].ja)}
+                  onClick={() => onOpenCategory(CATEGORIES[r.code].subject, r.code)}
                 >
-                  Luyện ngay mục này
+                  Xem mục này
                 </button>
               </div>
             ))}
@@ -498,8 +498,8 @@ export default function StatsView({ examState, onBack, onStartCategory }) {
                   key={code}
                   type="button"
                   className="qb-catrow"
-                  title={`Luyện trọn mục ${meta.ja} (${meta.count} câu)`}
-                  onClick={() => onStartCategory(subject, code, meta.ja)}
+                  title={`Xem danh sách ${meta.count} câu của mục ${meta.ja}`}
+                  onClick={() => onOpenCategory(subject, code)}
                 >
                   <span className="qb-catname">
                     {isWeak && <i className="qb-weak-dot" title="Đang yếu — dưới 70%" />}

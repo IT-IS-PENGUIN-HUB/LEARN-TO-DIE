@@ -2,7 +2,7 @@
 // Mảnh nặng nhất 304KB nên nạp lười từng đề, không bao giờ nạp cả 1189 câu.
 // Service worker (vite.config.js: exam-json-cache) lo phần offline.
 
-import { examDataUrl } from '../data/examBank.js';
+import { examDataUrl, EXAM_YEARS } from '../data/examBank.js';
 
 const cache = new Map(); // 'năm-MÔN' -> Promise<mảnh>
 
@@ -86,6 +86,22 @@ export async function loadQuestionsByQids(qids) {
     }
   }
   return qids.map((qid) => byQid.get(qid)).filter(Boolean);
+}
+
+/**
+ * Nạp trọn MỘT CHUYÊN MỤC (vd KISO_INFO = 情報・論理に関するもの) — mọi năm của môn
+ * đó rồi lọc theo mã mục. Xếp NĂM MỚI TRƯỚC, trong cùng năm theo thứ tự đề gốc
+ * (`ord`, không phải qid — qid sắp theo bảng chữ cái của mã mục).
+ * Số mảnh phải tải = số năm có môn đó (13–15 mảnh), nhưng loadShard có cache nên
+ * lần thứ hai mở mục khác cùng môn là tức thì.
+ */
+export async function loadCategory(subject, code) {
+  const years = EXAM_YEARS.filter((y) => (y.subjects[subject] ?? 0) > 0);
+  const shards = await Promise.all(years.map((y) => loadShard(y.year, subject)));
+  return shards
+    .flatMap((sh) => sh.questions.map((q) => ({ ...q, year: sh.year, subject: sh.subject })))
+    .filter((q) => q.cat === code)
+    .sort((a, b) => b.year - a.year || (a.ord ?? 0) - (b.ord ?? 0));
 }
 
 /** qid `2025-KISO-DESIGN-01` → mã chuyên mục đầy đủ (KISO_DESIGN / TEKISEI_LAW / GEO…). */

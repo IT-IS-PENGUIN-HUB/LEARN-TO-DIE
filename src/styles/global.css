@@ -3221,6 +3221,101 @@ textarea.text-input {
 .qb-browse-more { width: 100%; margin-top: 0.7rem; }
 
 /* ==========================================================================
+   DANH SÁCH CÂU THEO CHUYÊN MỤC (màn riêng) + hộp kiểm 問題一覧 trong lúc làm
+   Học panel 問題一覧 của app trung tâm, bỏ đúng nhược điểm ロン chỉ ra 24/8/2026:
+   bên đó danh sách là CỘT CỐ ĐỊNH không thu nhỏ được, ăn hết bề ngang màn hình.
+   ========================================================================== */
+.qb-cats-tip { font-size: 0.8rem; color: var(--text-muted); margin: 0.2rem 0 1rem; }
+
+.qb-clist-head {
+  display: grid; gap: 0.7rem; align-items: center;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) auto;
+  padding: 0.9rem 1rem; margin-bottom: 0.5rem;
+  background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 13px;
+}
+.qb-clist-title { display: flex; flex-direction: column; gap: 0.15rem; min-width: 0; }
+.qb-clist-title strong { font-size: 1.02rem; line-height: 1.4; }
+.qb-clist-title span { font-size: 0.78rem; color: var(--text-muted); }
+.qb-clist-stat { display: flex; flex-direction: column; gap: 0.1rem; min-width: 0; }
+.qb-clist-stat b { font-size: 0.85rem; color: var(--accent-text); }
+.qb-clist-stat span { font-size: 0.75rem; color: var(--text-muted); }
+.qb-clist-btns { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.qb-clist-hint { font-size: 0.78rem; color: var(--text-muted); margin: 0 0 0.9rem; }
+
+.qb-clist-year { margin-bottom: 1rem; }
+.qb-clist-yhead {
+  display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap;
+  padding: 0.35rem 0.15rem 0.45rem;
+  border-bottom: 1px solid var(--border-color); margin-bottom: 0.5rem;
+}
+.qb-clist-yhead strong { font-size: 1.05rem; color: var(--accent-text); letter-spacing: -0.02em; }
+.qb-clist-yhead > span { font-size: 0.75rem; color: var(--text-muted); }
+.qb-clist-yhead em { font-style: normal; font-size: 0.72rem; color: var(--text-muted); margin-left: auto; }
+.qb-clist-rows { display: flex; flex-direction: column; gap: 0.4rem; }
+
+.qb-qrow {
+  display: flex; align-items: center; gap: 0.65rem; width: 100%;
+  text-align: left; font: inherit; cursor: pointer;
+  padding: 0.5rem 0.75rem; color: var(--text-main);
+  background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 10px;
+}
+.qb-qrow:hover { border-color: var(--primary); background: color-mix(in srgb, var(--primary) 6%, var(--card-bg)); }
+.qb-qrow .qb-row-dot { flex: 0 0 20px; width: 20px; height: 20px; font-size: 0.68rem; margin-top: 0; }
+.qb-qrow-no { flex: 0 0 auto; font-size: 0.8rem; font-weight: 700; color: var(--accent-text); }
+.qb-qrow-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 0.05rem; }
+.qb-qrow-ja, .qb-qrow-vi {
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.qb-qrow-ja { font-size: 0.83rem; }
+.qb-qrow-vi { font-size: 0.73rem; color: var(--text-muted); }
+.qb-qrow-wr { flex: 0 0 auto; font-size: 0.68rem; color: var(--danger); }
+.qb-qrow-bm {
+  flex: 0 0 auto; display: grid; place-items: center;
+  width: 18px; height: 18px; border-radius: 5px;
+  font-size: 0.72rem; font-weight: 800;
+  background: var(--warn, #f59e0b); color: #1c1917;
+}
+
+/* ---- Hộp kiểm + danh sách nhảy câu trong màn làm bài ---- */
+.qb-qlist-bar { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.55rem; }
+.qb-check {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-size: 0.78rem; color: var(--text-muted); cursor: pointer; user-select: none;
+}
+.qb-check input { width: 15px; height: 15px; accent-color: var(--primary); cursor: pointer; }
+.qb-check:hover { color: var(--text-main); }
+.qb-qlist-count { margin-left: auto; font-size: 0.75rem; color: var(--text-muted); }
+.qb-qlist {
+  max-height: 210px; overflow-y: auto; margin-bottom: 0.7rem;
+  display: grid; gap: 0.3rem; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  padding: 0.5rem; background: var(--bg-alt);
+  border: 1px solid var(--border-color); border-radius: 11px;
+}
+.qb-qlrow {
+  display: flex; align-items: center; gap: 0.4rem; text-align: left; font: inherit;
+  font-size: 0.76rem; padding: 0.32rem 0.5rem; cursor: pointer; color: var(--text-main);
+  background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px;
+}
+.qb-qlrow:hover { border-color: var(--primary); }
+.qb-qlrow b { font-weight: 700; color: var(--text-muted); min-width: 1.6em; }
+.qb-qlrow-y { color: var(--accent-text); }
+.qb-qlrow em { font-style: normal; margin-left: auto; font-weight: 700; color: var(--text-muted); }
+.qb-qlrow.is-ok em { color: var(--success); }
+.qb-qlrow.is-no em { color: var(--danger); }
+.qb-qlrow.is-cur {
+  border-color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 12%, var(--card-bg));
+}
+.qb-qlrow.is-cur b { color: var(--primary); }
+
+@media (max-width: 640px) {
+  .qb-clist-head { grid-template-columns: 1fr; }
+  .qb-clist-btns .btn { flex: 1; }
+  .qb-qrow-vi { display: none; } /* màn hẹp: giữ một dòng tiếng Nhật cho gọn */
+  .qb-qlist { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); max-height: 170px; }
+}
+
+/* ==========================================================================
    GĐ6b — SIDEBAR toàn app + màn Thống kê với bản đồ nhiệt
    ========================================================================== */
 .app-shell { display: flex; min-height: 100vh; }

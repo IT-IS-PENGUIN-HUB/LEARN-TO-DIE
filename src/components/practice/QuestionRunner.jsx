@@ -65,7 +65,19 @@ export default function QuestionRunner({
   const answered = review || picked !== null;
   const [addOpen, setAddOpen] = useState(false);
   const explRef = useRef(null);
+  const listRef = useRef(null);
+  const curRef = useRef(null);
   const { lang, furi, size } = prefs;
+  const listOpen = Boolean(prefs.qlist);
+
+  // Mở danh sách thì kéo câu đang làm vào giữa hộp. Tự tính scrollTop chứ KHÔNG
+  // dùng scrollIntoView: hàm đó kéo luôn cả trang, đang đọc đề bị nhảy mất chỗ.
+  useEffect(() => {
+    const box = listRef.current;
+    const el = curRef.current;
+    if (!listOpen || !box || !el) return;
+    box.scrollTop = Math.max(0, el.offsetTop - box.clientHeight / 2 + el.clientHeight / 2);
+  }, [listOpen, index]);
 
   // Trả lời xong thì đưa phần lời giải vào tầm mắt — nội dung dài, không cuộn
   // thì người học không biết là đã có giải thích ở dưới.
@@ -150,6 +162,46 @@ export default function QuestionRunner({
       </div>
 
       <div className="qb-body">
+        {/* 問題一覧 — hộp kiểm, mặc định TẮT. Bên app trung tâm danh sách này là
+            một cột cố định không thu nhỏ được, ăn hết bề ngang màn hình (ロン chê
+            đúng chỗ đó 24/8); ở đây tích mới hiện, và lựa chọn nhớ theo máy. */}
+        <div className="qb-qlist-bar">
+          <label className="qb-check">
+            <input
+              type="checkbox"
+              checked={listOpen}
+              onChange={(e) => prefs.set({ qlist: e.target.checked })}
+            />
+            <span><span className="jp-text">問題一覧</span> · Danh sách câu</span>
+          </label>
+          <span className="qb-qlist-count">{index + 1}/{questions.length}</span>
+        </div>
+
+        {listOpen && (
+          <div className="qb-qlist" ref={listRef}>
+            {questions.map((item, i) => {
+              const a = answers[item.qid];
+              const ok = a ? isCorrect(item, a) : null;
+              const cls = i === index ? 'is-cur' : ok === null ? '' : ok ? 'is-ok' : 'is-no';
+              return (
+                <button
+                  key={item.qid}
+                  type="button"
+                  ref={i === index ? curRef : null}
+                  className={`qb-qlrow ${cls}`}
+                  onClick={() => onGo(i)}
+                  aria-current={i === index ? 'true' : undefined}
+                >
+                  <b>{i + 1}</b>
+                  <span className="qb-qlrow-y">{item.year}</span>
+                  <span className="jp-text">第{item.qn}問</span>
+                  <em>{ok === null ? '−' : ok ? '✓' : '✕'}</em>
+                </button>
+              );
+            })}
+          </div>
+        )}
+
         <div className="qb-dots" aria-label={`Câu ${index + 1} trên ${questions.length}`}>
           {questions.map((item, i) => {
             const a = answers[item.qid];

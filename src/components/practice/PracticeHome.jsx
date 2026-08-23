@@ -61,7 +61,7 @@ export default function PracticeHome({
   wrongCount, bookmarkCount, onStartWrong, onStartBookmarks, onOpenCustom,
   rank, attempts, onStartMock,
   goal, todayCount, onSetGoal, dueCount, remind, onToggleRemind,
-  onStartSuggest, onStartRandom, onStartNew, onStartCategory, onOpenBrowse,
+  onStartSuggest, onStartRandom, onStartNew, onOpenCategory, onOpenBrowse,
 }) {
   const subjects = subjectFilter === 'all' ? SUBJECT_ORDER : [subjectFilter];
 
@@ -217,22 +217,6 @@ export default function PracticeHome({
         </button>
       </div>
 
-      {/* Duyệt theo CHUYÊN MỤC — bấm pill một môn là hiện (như sidebar app trung tâm) */}
-      {subjectFilter !== 'all' && (
-        <div className="qb-cats">
-          {Object.entries(CATEGORIES)
-            .filter(([, m]) => m.subject === subjectFilter)
-            .sort(([, x], [, y]) => (y.count ?? 0) - (x.count ?? 0))
-            .map(([code, m]) => (
-              <button key={code} type="button" className="qb-cat"
-                onClick={() => onStartCategory(subjectFilter, code, m.ja)}>
-                <span className="jp-text">{m.ja}</span>
-                <em>{m.count} câu</em>
-              </button>
-            ))}
-        </div>
-      )}
-
       <div className="qb-filters" role="tablist" aria-label="Lọc theo môn">
         <button
           type="button"
@@ -256,6 +240,33 @@ export default function PracticeHome({
           </button>
         ))}
       </div>
+
+      {/* Luyện theo CHUYÊN MỤC — hàng pill ở trên chọn môn nào thì hiện mục của
+          môn đó (như 学習カテゴリ ở sidebar app trung tâm). Bấm một mục KHÔNG lao
+          thẳng vào làm cả mục nữa mà mở DANH SÁCH câu theo năm (ロン 24/8/2026). */}
+      {subjectFilter === 'all' ? (
+        <p className="qb-cats-tip">
+          Chọn một môn ở trên để hiện <span className="jp-text">分野</span> · các chuyên mục của môn đó.
+        </p>
+      ) : (
+        <>
+          <h3 className="qb-sec-title">
+            <span className="jp-text">分野別</span> · Theo chuyên mục — bấm mục để xem danh sách câu theo năm
+          </h3>
+          <div className="qb-cats">
+            {Object.entries(CATEGORIES)
+              .filter(([, m]) => m.subject === subjectFilter)
+              .sort(([, x], [, y]) => (y.count ?? 0) - (x.count ?? 0))
+              .map(([code, m]) => (
+                <button key={code} type="button" className="qb-cat"
+                  onClick={() => onOpenCategory(subjectFilter, code)}>
+                  <span className="jp-text">{m.ja}</span>
+                  <em>{m.count} câu</em>
+                </button>
+              ))}
+          </div>
+        </>
+      )}
 
       {/* ---- Thi thử đúng quy chế ---- */}
       <h3 className="qb-sec-title"><span className="jp-text">模擬試験</span> · Thi thử — bấm giờ, không tạm dừng, chấm theo điểm đạt thật</h3>

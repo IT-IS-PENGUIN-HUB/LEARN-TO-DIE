@@ -4,11 +4,12 @@ import QuestionRunner from './QuestionRunner.jsx';
 import CustomPractice from './CustomPractice.jsx';
 import MockExam from './MockExam.jsx';
 import ReviewBrowser from './ReviewBrowser.jsx';
+import CategoryList from './CategoryList.jsx';
 import StatsView from './StatsView.jsx';
-import { EXAM_YEARS, SUBJECT_META, BANK_TOTAL } from '../../data/examBank.js';
+import { EXAM_YEARS, SUBJECT_META, BANK_TOTAL, CATEGORIES } from '../../data/examBank.js';
 import { gradeExam } from '../../data/examRules.js';
 import {
-  loadYear, loadShard, loadQuestionsByQids, shuffleQuestions, isCorrect,
+  loadYear, loadShard, loadQuestionsByQids, loadCategory, shuffleQuestions, isCorrect,
 } from '../../lib/examData.js';
 import {
   loadExamState, saveExamState, recordExamAnswer, toggleBookmark, addAttempt,
@@ -21,7 +22,7 @@ import { KEYS, loadJSON, saveJSON, loadString, saveString } from '../../lib/stor
 import { IconArrowLeft } from '../icons.jsx';
 
 const SUBJECT_ORDER = ['KENSETSU', 'KISO', 'TEKISEI'];
-const DEFAULT_PREFS = { lang: 'both', furi: true, size: 'm', goal: 20 };
+const DEFAULT_PREFS = { lang: 'both', furi: true, size: 'm', goal: 20, qlist: false };
 
 /**
  * Module Đề thi — tự quản 3 màn con (chọn đề → làm bài → kết quả) bằng state
@@ -33,7 +34,12 @@ export default function PracticeModule({ onBack, sub }) {
   const [examState, setExamState] = useState(loadExamState);
   const [prefs, setPrefs] = useState(() => ({ ...DEFAULT_PREFS, ...loadJSON(KEYS.examPrefs, {}) }));
   const [filter, setFilter] = useState('all');
-  const [screen, setScreen] = useState('home'); // home | run | result
+  const [screen, setScreen] = useState('home'); // home | catlist | run | result
+  // Chuyên mục đang mở danh sách: {code, subject, questions} — giữ lại sau khi
+  // làm xong để bấm Quay lại là thấy đúng danh sách cũ, không phải tải lại.
+  const [catView, setCatView] = useState(null);
+  // Thoát màn làm bài thì về đâu: 'home' hay 'catlist' (vào từ danh sách mục)
+  const [runBack, setRunBack] = useState('home');
   const [questions, setQuestions] = useState([]);
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState({});
@@ -107,12 +113,15 @@ export default function PracticeModule({ onBack, sub }) {
     return { ...s, total, pct: total ? Math.round((s.done / total) * 100) : 0 };
   }, [examState]);
 
-  /** Vào màn làm bài với bộ câu đã nạp xong — mọi chế độ đều đi qua đây. */
-  const begin = useCallback((list, nextMeta, restore = null) => {
+  /** Vào màn làm bài với bộ câu đã nạp xong — mọi chế độ đều đi qua đây.
+      `back` = màn để quay về khi thoát: mặc định 'home', vào từ danh sách chuyên
+      mục thì 'catlist' (bỏ qua bước này là thoát ra bị văng về trang chọn đề). */
+  const begin = useCallback((list, nextMeta, restore = null, back = 'home') => {
     setQuestions(list);
     setMeta(nextMeta);
     setAnswers(restore?.answers ?? {});
     setIndex(Math.min(restore?.index ?? 0, Math.max(0, list.length - 1)));
+    setRunBack(back);
     setScreen('run');
   }, []);
 
@@ -215,17 +224,25 @@ export default function PracticeModule({ onBack, sub }) {
     begin(qs, { mode: 'random', qids: qs.map((q) => q.qid), label: 'Ngẫu nhiên 20 câu' });
   }), [begin, guarded]);
 
-  /** Luyện trọn một CHUYÊN MỤC (bấm từ danh sách mục của môn) — năm mới trước. */
-  const startCategory = useCallback((subject, code, label) => guarded(async () => {
-    const pairs = EXAM_YEARS.filter((y) => y.subjects[subject]).map((y) => ({ year: y.year, subject }));
-    const shards = await Promise.all(pairs.map((p) => loadShard(p.year, p.subject)));
-    const qs = shards
-      .flatMap((sh) => sh.questions.map((q) => ({ ...q, year: sh.year, subject: sh.subject })))
-      .filter((q) => q.cat === code)
-      .sort((a, b) => b.year - a.year || (a.ord ?? 0) - (b.ord ?? 0));
+  /** Bấm một CHUYÊN MỤC → mở DANH SÁCH câu của mục theo năm (không lao thẳng
+      vào làm cả 88 câu như trước — ロン yêu cầu 24/8/2026, học panel 問題一覧). */
+  const openCategory = useCallback((subject, code) => guarded(async () => {
+    const qs = await loadCategory(subject, code);
     if (!qs.length) throw new Error('Chuyên mục này chưa có câu nào.');
-    begin(qs, { mode: 'category', qids: qs.map((q) => q.qid), label });
-  }), [begin, guarded]);
+    // `from`: mở mục từ màn Thống kê thì Quay lại phải về Thống kê, không văng
+    // về trang chọn đề (bảng nhiệt cuộn xa, bị đá về đầu là mất chỗ đang xem).
+    setCatView({ code, subject, questions: qs, from: screen === 'stats' ? 'stats' : 'home' });
+    setScreen('catlist');
+    window.scrollTo(0, 0);
+  }), [guarded, screen]);
+
+  /** Bắt đầu làm từ danh sách chuyên mục: cả mục / cả một năm / thẳng một câu.
+      Hàng đợi vẫn là NGUYÊN danh sách được truyền vào để bấm "Câu tiếp" đi tiếp
+      trong mục, chỉ khác chỗ bắt đầu. */
+  const startFromCategory = useCallback((list, startIndex, label) => {
+    begin(list, { mode: 'category', qids: list.map((q) => q.qid), label }, { index: startIndex }, 'catlist');
+    window.scrollTo(0, 0);
+  }, [begin]);
 
   /** Mở MỘT câu từ trình Xem lại — chế độ review, có sẵn lựa chọn cũ nếu còn lưu. */
   const openSingle = useCallback((q) => {
@@ -460,9 +477,9 @@ export default function PracticeModule({ onBack, sub }) {
   }, [commit]);
 
   const exitRun = useCallback(() => {
-    setScreen('home');
+    setScreen(runBack);
     window.scrollTo({ top: 0 });
-  }, []);
+  }, [runBack]);
 
   const result = useMemo(() => {
     const done = questions.filter((q) => answers[q.qid]);
@@ -504,12 +521,29 @@ export default function PracticeModule({ onBack, sub }) {
     );
   }
 
+  if (screen === 'catlist' && catView) {
+    return (
+      <>
+        <CategoryList
+          code={catView.code}
+          subject={catView.subject}
+          questions={catView.questions}
+          examState={examState}
+          onOpen={(i) => startFromCategory(catView.questions, i, CATEGORIES[catView.code]?.ja ?? catView.code)}
+          onStart={startFromCategory}
+          onBack={() => { setScreen(catView.from ?? 'home'); window.scrollTo(0, 0); }}
+        />
+        {rankUpModal}
+      </>
+    );
+  }
+
   if (screen === 'stats') {
     return (
       <StatsView
         examState={examState}
         onBack={() => setScreen('home')}
-        onStartCategory={startCategory}
+        onOpenCategory={openCategory}
       />
     );
   }
@@ -598,7 +632,7 @@ export default function PracticeModule({ onBack, sub }) {
     return (
       <section className="qb-wrap container">
         <div className="section-header">
-          <button type="button" className="back-btn" onClick={() => setScreen('home')}>
+          <button type="button" className="back-btn" onClick={() => setScreen(runBack)}>
             <IconArrowLeft /> Quay lại
           </button>
           <h2>Kết quả</h2>
@@ -664,7 +698,7 @@ export default function PracticeModule({ onBack, sub }) {
         onStartSuggest={startSuggest}
         onStartRandom={startRandom}
         onStartNew={startNew}
-        onStartCategory={startCategory}
+        onOpenCategory={openCategory}
         onOpenBrowse={() => setScreen('browse')}
       />
       {customOpen && (
