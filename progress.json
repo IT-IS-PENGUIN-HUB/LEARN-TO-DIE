@@ -21,8 +21,14 @@
       "at": 1787315775722
     }
   },
+  "kiso": {
+    "ch2_02": {
+      "page": 14,
+      "at": 1787526561316
+    }
+  },
   "last": {
-    "subjectId": "tekisei",
-    "chapterId": "ch07"
+    "subjectId": "kiso",
+    "chapterId": "ch2_02"
   }
 }
