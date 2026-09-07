@@ -60,8 +60,11 @@ export default defineConfig({
             urlPattern: ({ url }) => url.pathname.includes('/textbooks/'),
             handler: 'CacheFirst',
             options: {
+              // maxEntries phải LỚN HƠN tổng số file trong public/textbooks/ — chạm
+              // trần là LRU lặng lẽ đuổi file cũ, offline hỏng kiểu không hiểu nổi.
+              // Bộ 2025 (3 môn) nằm cạnh bộ cũ nên số file tăng gấp đôi, để rộng tay.
               cacheName: 'textbook-cache',
-              expiration: { maxEntries: 12, maxAgeSeconds: 180 * 24 * 60 * 60 },
+              expiration: { maxEntries: 40, maxAgeSeconds: 180 * 24 * 60 * 60 },
               cacheableResponse: { statuses: [0, 200] },
             },
           },
@@ -70,8 +73,11 @@ export default defineConfig({
             urlPattern: ({ url }) => url.pathname.includes('/pdfs/'),
             handler: 'CacheFirst',
             options: {
+              // 43 file đề gốc. Trần 20 cũ nhỏ hơn số file → nút "Tải về máy" tải
+              // đủ 43 nhưng cache chỉ giữ lại 20 file cuối, 23 file kia bay ngay
+              // lúc tải; phải để cao hơn tổng số file.
               cacheName: 'pdf-cache',
-              expiration: { maxEntries: 20, maxAgeSeconds: 90 * 24 * 60 * 60 },
+              expiration: { maxEntries: 60, maxAgeSeconds: 90 * 24 * 60 * 60 },
               cacheableResponse: { statuses: [0, 200] },
             },
           },

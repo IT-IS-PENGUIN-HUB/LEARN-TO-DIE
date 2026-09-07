@@ -1,9 +1,11 @@
 import { Fragment, useMemo, useState } from 'react';
 import {
+  EDITION_LABEL,
   TEXTBOOK_SUBJECTS,
-  getChapters,
+  getChaptersOf,
   getDoc,
   getDocs,
+  getEditions,
   pageCount,
 } from '../../data/textbooks.js';
 import { getSubjectProgress } from '../../lib/textbookProgress.js';
@@ -42,7 +44,9 @@ function SubjectFolders({ onOpenSubject }) {
             <span className="folder-body">
               <strong>{s.nameJp}</strong>
               <span className="folder-sub">
-                {empty ? 'Chưa có giáo trình' : `${s.chapterCount} chương · ${s.docCount} file`}
+                {empty
+                  ? 'Chưa có giáo trình'
+                  : `${s.chapterCount} chương · ${s.docCount} file${s.hasOldEdition ? ' · có cả bộ cũ' : ''}`}
               </span>
             </span>
           </button>
@@ -54,10 +58,14 @@ function SubjectFolders({ onOpenSubject }) {
 
 /** Cấp 2 — thư mục con: các chương trong giáo trình của một môn. */
 function ChapterList({ subjectId, onOpenChapter }) {
-  const chapters = getChapters(subjectId);
   const version = useProgressVersion();
   const progress = useMemo(() => getSubjectProgress(subjectId), [subjectId, version]);
   const [sortByRate, setSortByRate] = useState(false);
+  // Từ 9/2026 mỗi môn có hai bộ sách. Trộn cả hai vào một danh sách là hơn 130
+  // dòng, tìm chương nào cũng mệt → mặc định mở bộ ĐANG HỌC (2025).
+  const editions = getEditions(subjectId);
+  const [edition, setEdition] = useState(() => (editions.includes('2025') ? '2025' : editions[0]));
+  const chapters = getChaptersOf(subjectId, editions.length > 1 ? edition : undefined);
 
   const rows = useMemo(() => {
     if (!sortByRate) return chapters;
@@ -74,14 +82,32 @@ function ChapterList({ subjectId, onOpenChapter }) {
   return (
     <>
       <div className="chapter-toolbar">
-        <button
-          type="button"
-          className={`btn btn-outline btn-sm${sortByRate ? ' is-on' : ''}`}
-          onClick={() => setSortByRate((v) => !v)}
-          aria-pressed={sortByRate}
-        >
-          {sortByRate ? '↩ Thứ tự trong sách' : '▲ Xếp theo tỷ lệ ra đề'}
-        </button>
+        {editions.length > 1 && (
+          <span className="edition-switch" role="group" aria-label="Chọn bộ giáo trình">
+            {editions.map((e) => (
+              <button
+                key={e}
+                type="button"
+                className={`btn btn-outline btn-sm${edition === e ? ' is-on' : ''}`}
+                onClick={() => setEdition(e)}
+                aria-pressed={edition === e}
+              >
+                {EDITION_LABEL[e] ?? e}
+              </button>
+            ))}
+          </span>
+        )}
+        {/* Bộ 2025 không có 出題率 nên nút xếp theo tỷ lệ vô nghĩa ở đó */}
+        {chapters.some((c) => c.rate != null) && (
+          <button
+            type="button"
+            className={`btn btn-outline btn-sm${sortByRate ? ' is-on' : ''}`}
+            onClick={() => setSortByRate((v) => !v)}
+            aria-pressed={sortByRate}
+          >
+            {sortByRate ? '↩ Thứ tự trong sách' : '▲ Xếp theo tỷ lệ ra đề'}
+          </button>
+        )}
       </div>
       <ul className="chapter-list">
         {rows.map((c, i) => {
@@ -111,11 +137,13 @@ function ChapterList({ subjectId, onOpenChapter }) {
                 </span>
                 <span className="chapter-body">
                   <span className="chapter-title">
-                    {c.kind === 'chapter' && <span className="chapter-no">{c.no}</span>}
+                    {c.kind === 'chapter' && c.no && <span className="chapter-no">{c.no}</span>}
                     {c.titleJp}
                   </span>
                   <span className="chapter-vi">{c.titleVi}</span>
                   <span className="chapter-meta">
+                    {/* Bộ 2025 chia hai tầng: nhóm lớn A./B./C. rồi mới tới mục */}
+                    {c.grp && <><strong className="chapter-grp">{c.grp}</strong> · </>}
                     {total} trang
                     {doc && <> · {doc.label}</>}
                     {nWords > 0 && <> · {nWords} từ vựng</>}

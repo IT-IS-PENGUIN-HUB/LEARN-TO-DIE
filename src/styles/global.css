@@ -2172,6 +2172,139 @@ textarea.text-input {
   margin-bottom: 0.5rem;
 }
 
+/* ---- Tải về máy để dùng offline (Cài đặt) ---- */
+.off-warn {
+  font-size: 0.75rem;
+  color: var(--danger);
+  background: rgba(var(--danger-rgb), 0.08);
+  border: 1px solid rgba(var(--danger-rgb), 0.35);
+  border-radius: 8px;
+  padding: 0.45rem 0.6rem;
+  margin-bottom: 0.6rem;
+}
+
+.off-list {
+  list-style: none;
+  margin: 0 0 0.75rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.off-list > li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.5rem 0.6rem;
+}
+
+.off-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin: 0;
+  cursor: pointer;
+  flex: 1;
+  min-width: 0;
+}
+
+.off-row input {
+  margin-top: 0.15rem;
+  flex: none;
+}
+
+.off-name {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.82rem;
+  line-height: 1.3;
+  min-width: 0;
+}
+
+.off-name em {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-style: normal;
+}
+
+.off-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.15rem;
+  flex: none;
+}
+
+.off-have {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.off-have.is-full {
+  color: var(--success);
+}
+
+.off-prog {
+  margin-bottom: 0.6rem;
+}
+
+.off-bar {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--border-color);
+  overflow: hidden;
+}
+
+.off-bar span {
+  display: block;
+  height: 100%;
+  background: var(--success);
+  transition: width 0.2s ease;
+}
+
+.off-prog-txt {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 0.3rem;
+  text-align: center;
+}
+
+.off-store {
+  text-align: center;
+  margin-bottom: 0.4rem;
+}
+
+/* Chọn bộ giáo trình 2025 / cũ trong danh sách chương */
+.edition-switch {
+  display: inline-flex;
+  gap: 0.35rem;
+  margin-right: auto;
+}
+
+.chapter-grp {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.link-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: var(--primary);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 /* ============ Stats panel ============ */
 .stats-grid {
   display: grid;

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { KEYS, loadString, saveString } from '../lib/storage.js';
+import OfflinePanel from './OfflinePanel.jsx';
 import { IconCloudDown, IconCloudUp, IconGear, IconX } from './icons.jsx';
 
 export default function SettingsModal({ onClose, sync }) {
@@ -38,6 +39,9 @@ export default function SettingsModal({ onClose, sync }) {
         <h2 style={{ color: 'var(--primary)', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
           <IconGear /> Cài đặt
         </h2>
+
+        {/* Trên cùng: trước chuyến đi không sóng thì đây là thứ phải làm đầu tiên */}
+        <OfflinePanel />
 
         <div className="settings-section">
           <h3>AI tự điền từ vựng</h3>

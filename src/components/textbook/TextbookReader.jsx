@@ -1,5 +1,11 @@
 import { Suspense, lazy, useCallback, useMemo } from 'react';
-import { getChapter, getChapters, getDoc, pageCount } from '../../data/textbooks.js';
+import {
+  editionOfChapter,
+  getChapter,
+  getChaptersOf,
+  getDoc,
+  pageCount,
+} from '../../data/textbooks.js';
 import { pdfUrl } from '../../data/exams.js';
 import { getProgress, saveProgress } from '../../lib/textbookProgress.js';
 import { getChapterWords } from '../../lib/chapterVocab.js';
@@ -14,7 +20,9 @@ const PdfViewer = lazy(() => import('../PdfViewer.jsx'));
 export default function TextbookReader({ subjectId, chapterId, onBack, onOpenChapter, onReviewChapterVocab }) {
   const { vocab } = useVocab();
   const chapter = getChapter(subjectId, chapterId);
-  const chapters = getChapters(subjectId);
+  // Nút ‹ › chỉ đi trong CÙNG bộ sách — đọc hết chương cuối bộ 2025 mà nhảy
+  // sang bộ cũ thì ロン tưởng vẫn đang đọc sách của thầy.
+  const chapters = getChaptersOf(subjectId, editionOfChapter(subjectId, chapter));
   const idx = chapters.findIndex((c) => c.id === chapterId);
   const prev = idx > 0 ? chapters[idx - 1] : null;
   const next = idx >= 0 && idx < chapters.length - 1 ? chapters[idx + 1] : null;
@@ -43,7 +51,8 @@ export default function TextbookReader({ subjectId, chapterId, onBack, onOpenCha
   if (!chapter) return null;
   const doc = getDoc(subjectId, chapter.doc);
   if (!doc) return null;
-  const chapterLabel = chapter.kind === 'chapter' ? `${chapter.no} ${chapter.titleJp}` : chapter.titleJp;
+  const chapterLabel =
+    chapter.kind === 'chapter' && chapter.no ? `${chapter.no} ${chapter.titleJp}` : chapter.titleJp;
 
   return (
     <section className="question-view container">
@@ -52,7 +61,7 @@ export default function TextbookReader({ subjectId, chapterId, onBack, onOpenCha
           <IconArrowLeft /> Danh sách chương
         </button>
         <h3>
-          {chapter.kind === 'chapter' && <span className="chapter-no">{chapter.no}</span>}
+          {chapter.kind === 'chapter' && chapter.no && <span className="chapter-no">{chapter.no}</span>}
           {chapter.titleJp}
         </h3>
         {chapter.rate != null && (
@@ -62,6 +71,7 @@ export default function TextbookReader({ subjectId, chapterId, onBack, onOpenCha
         )}
       </div>
       <p className="chapter-subtitle">
+        {chapter.grp && <>{chapter.grp} · </>}
         {chapter.titleVi} — {pageCount(chapter)} trang · {doc.label}
         {resumePage != null && <> · đọc tiếp từ trang {resumePage - chapter.start + 1}</>}
       </p>

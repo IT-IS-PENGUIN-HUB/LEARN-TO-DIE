@@ -9,40 +9,76 @@
 //
 // Thêm giáo trình mới: copy PDF vào public/textbooks/<môn>/ rồi thêm một mục
 // vào DOCS + các chương vào CHAPTERS của môn đó.
+//
+// HAI BỘ SÁCH SONG SONG (từ 9/2026): thầy đổi sang bộ 2025 nên mỗi môn có
+// `edition: '2025'` (đang học) và `edition: 'old'` (bộ cũ, giữ lại vì ロン có
+// tiến độ đọc dở và bộ cũ có 出題率 từng chương). Màn danh sách chương lọc theo
+// edition, không trộn hai bộ vào một danh sách dài.
+//
+// Bộ 2025 là SLIDE bài giảng, không phải sách: không có trang bìa ghi 出題率 nên
+// các mục 2025 không có `rate`; bù lại có `grp` = tên nhóm lớn (A./B./C.) vì
+// nhiều file chia hai tầng. Khoảng trang do script dò từ header mỗi slide
+// (xem scratchpad/gen_textbooks_2025.py), đã tự kiểm liền mạch phủ kín file.
+// Một số mục không đánh số (`no` vắng) — đúng như bản gốc của thầy.
 
 import { SUBJECTS } from './exams.js';
 
 /** Các file PDF gốc, theo môn. `pages` = tổng số trang, dùng để hiện tiến độ. */
 const DOCS = {
   tekisei: [
+    { id: 't25', label: '適性科目（2025）', labelVi: 'Môn phẩm chất — trọn bộ (2025)',
+      path: 'textbooks/tekisei/tekisei2025_all.pdf', pages: 90, mb: 7, edition: '2025' },
     {
       id: 'part1',
       label: '前半（第1〜7章）',
       labelVi: 'Phần đầu — chương 1–7',
-      path: 'textbooks/tekisei/tekisei_part1_ch01-07.pdf',
+      path: 'textbooks/tekisei/tekisei_part1_ch01-07.pdf', mb: 7, edition: 'old',
       pages: 106,
     },
     {
       id: 'part2',
       label: '後半（第8〜16章＋付録）',
       labelVi: 'Phần sau — chương 8–16 + phụ lục',
-      path: 'textbooks/tekisei/tekisei_part2_ch08-16.pdf',
+      path: 'textbooks/tekisei/tekisei_part2_ch08-16.pdf', mb: 7, edition: 'old',
       pages: 118,
     },
   ],
   kiso: [
+    { id: 'k25ch1', label: '第1章 設計・計画（2025）', labelVi: 'Chương 1 — Thiết kế & Kế hoạch (2025)',
+      path: 'textbooks/kiso/kiso2025_ch1_sekkei-keikaku.pdf', pages: 54, mb: 9, edition: '2025' },
+    { id: 'k25ch2', label: '第2章 情報・論理（2025）', labelVi: 'Chương 2 — Thông tin & Logic (2025)',
+      path: 'textbooks/kiso/kiso2025_ch2_joho-ronri.pdf', pages: 56, mb: 13, edition: '2025' },
+    { id: 'k25ch3', label: '第3章 解析（2025）', labelVi: 'Chương 3 — Giải tích (2025)',
+      path: 'textbooks/kiso/kiso2025_ch3_kaiseki.pdf', pages: 43, mb: 5, edition: '2025' },
+    { id: 'k25ch4', label: '第4章 材料・科学・バイオ（2025）', labelVi: 'Chương 4 — Vật liệu · Hóa học · Sinh học (2025)',
+      path: 'textbooks/kiso/kiso2025_ch4_zairyo-kagaku-bio.pdf', pages: 59, mb: 9, edition: '2025' },
+    { id: 'k25ch5', label: '第5章 環境・エネルギー・技術（2025）', labelVi: 'Chương 5 — Môi trường · Năng lượng · Công nghệ (2025)',
+      path: 'textbooks/kiso/kiso2025_ch5_kankyo-energy-gijutsu.pdf', pages: 82, mb: 12, edition: '2025' },
     { id: 'ch1', label: '第1章 設計・計画', labelVi: 'Chương 1 — Thiết kế & Kế hoạch',
-      path: 'textbooks/kiso/kiso_ch1_sekkei-keikaku.pdf', pages: 172 },
+      path: 'textbooks/kiso/kiso_ch1_sekkei-keikaku.pdf', mb: 10, edition: 'old', pages: 172 },
     { id: 'ch2', label: '第2章 情報・論理', labelVi: 'Chương 2 — Thông tin & Logic',
-      path: 'textbooks/kiso/kiso_ch2_joho-ronri.pdf', pages: 104 },
+      path: 'textbooks/kiso/kiso_ch2_joho-ronri.pdf', mb: 4, edition: 'old', pages: 104 },
     { id: 'ch3', label: '第3章 解析', labelVi: 'Chương 3 — Giải tích',
-      path: 'textbooks/kiso/kiso_ch3_kaiseki.pdf', pages: 91 },
+      path: 'textbooks/kiso/kiso_ch3_kaiseki.pdf', mb: 3, edition: 'old', pages: 91 },
     { id: 'ch4', label: '第4章 材料・化学・バイオ', labelVi: 'Chương 4 — Vật liệu · Hóa học · Sinh học',
-      path: 'textbooks/kiso/kiso_ch4_zairyo-kagaku-bio.pdf', pages: 111 },
+      path: 'textbooks/kiso/kiso_ch4_zairyo-kagaku-bio.pdf', mb: 8, edition: 'old', pages: 111 },
     { id: 'ch5', label: '第5章 環境・エネルギー・技術', labelVi: 'Chương 5 — Môi trường · Năng lượng · Công nghệ',
-      path: 'textbooks/kiso/kiso_ch5_kankyo-energy-gijutsu.pdf', pages: 98 },
+      path: 'textbooks/kiso/kiso_ch5_kankyo-energy-gijutsu.pdf', mb: 11, edition: 'old', pages: 98 },
   ],
-  senmon: [],
+  senmon: [
+    { id: 's25ch1', label: '第1章 土質・基礎', labelVi: 'Chương 1 — Địa kỹ thuật & Nền móng',
+      path: 'textbooks/senmon/senmon2025_ch1_doshitsu-kiso.pdf', pages: 51, mb: 13, edition: '2025' },
+    { id: 's25ch2', label: '第2章 鋼構造及びコンクリート', labelVi: 'Chương 2 — Kết cấu thép & Bê tông',
+      path: 'textbooks/senmon/senmon2025_ch2_kokozo-concrete.pdf', pages: 82, mb: 18, edition: '2025' },
+    { id: 's25ch3', label: '第3章 都市計画・建設環境', labelVi: 'Chương 3 — Quy hoạch đô thị & Môi trường xây dựng',
+      path: 'textbooks/senmon/senmon2025_ch3_toshi-kensetsu-kankyo.pdf', pages: 68, mb: 18, edition: '2025' },
+    { id: 's25ch4', label: '第4章 河川・砂防・海岸・港湾・空港', labelVi: 'Chương 4 — Sông ngòi · Bờ biển · Cảng · Sân bay',
+      path: 'textbooks/senmon/senmon2025_ch4_kasen-kaigan-kowan-kuko.pdf', pages: 74, mb: 7, edition: '2025' },
+    { id: 's25ch5', label: '第5章 道路・鉄道・電力土木', labelVi: 'Chương 5 — Đường bộ · Đường sắt · Công trình điện',
+      path: 'textbooks/senmon/senmon2025_ch5_doro-tetsudo-denryoku.pdf', pages: 66, mb: 4, edition: '2025' },
+    { id: 's25ch6', label: '第6章 トンネル・施工計画', labelVi: 'Chương 6 — Hầm & Kế hoạch thi công',
+      path: 'textbooks/senmon/senmon2025_ch6_tunnel-seko.pdf', pages: 61, mb: 7, edition: '2025' },
+  ],
 };
 
 /**
@@ -52,6 +88,31 @@ const DOCS = {
  */
 const CHAPTERS = {
   tekisei: [
+    // ===== 適性科目（2025） (90 trang) =====
+    { id: 't25_01', kind: 'trend', doc: 't25', start: 1, end: 3,
+      titleJp: '表紙・出題傾向', titleVi: 'Bìa · Tỷ lệ ra đề' },
+    { id: 't25_02', kind: 'chapter', no: 'A', doc: 't25', start: 4, end: 11,
+      titleJp: '技術士法第4章・資質向上', titleVi: 'Luật 技術士法 chương 4 · nâng cao năng lực' },
+    { id: 't25_03', kind: 'chapter', no: 'B', doc: 't25', start: 12, end: 24,
+      titleJp: '技術士倫理綱領・ISO26000社会的責任', titleVi: 'Quy tắc đạo đức 技術士 · ISO 26000 trách nhiệm xã hội' },
+    { id: 't25_04', kind: 'chapter', no: 'C', doc: 't25', start: 25, end: 31,
+      titleJp: '研究活動の不正行為・公益通報者保護法・ハラスメント', titleVi: 'Gian lận nghiên cứu · bảo vệ người tố giác · quấy rối' },
+    { id: 't25_05', kind: 'chapter', no: '第4章', doc: 't25', start: 32, end: 39,
+      titleJp: '製造物責任法(PL法)', titleVi: 'Luật trách nhiệm sản phẩm (PL法)' },
+    { id: 't25_06', kind: 'chapter', no: '第5章', doc: 't25', start: 40, end: 46,
+      titleJp: '公益通報者保護法', titleVi: 'Luật bảo vệ người tố giác vì lợi ích công' },
+    { id: 't25_07', kind: 'chapter', no: '第6章', doc: 't25', start: 47, end: 52,
+      titleJp: '個人情報保護法', titleVi: 'Luật bảo vệ thông tin cá nhân' },
+    { id: 't25_08', kind: 'chapter', no: '第7章', doc: 't25', start: 53, end: 61,
+      titleJp: '知的財産権制度', titleVi: 'Chế độ quyền sở hữu trí tuệ' },
+    { id: 't25_09', kind: 'chapter', no: '第8章', doc: 't25', start: 62, end: 65,
+      titleJp: 'セクハラ・パワハラ', titleVi: 'Quấy rối tình dục · quấy rối quyền lực' },
+    { id: 't25_10', kind: 'chapter', no: '第9章', doc: 't25', start: 66, end: 72,
+      titleJp: '安全保障貿易管理', titleVi: 'Quản lý thương mại an ninh (kiểm soát xuất khẩu)' },
+    { id: 't25_11', kind: 'chapter', no: '第11章', doc: 't25', start: 73, end: 83,
+      titleJp: 'リスクマネジメント', titleVi: 'Quản lý rủi ro' },
+    { id: 't25_12', kind: 'chapter', no: '第11章', doc: 't25', start: 84, end: 90,
+      titleJp: 'SDGs', titleVi: 'SDGs — mục tiêu phát triển bền vững' },
     { id: 'trend1', kind: 'trend', doc: 'part1', start: 2, end: 4,
       titleJp: '目次・出題傾向（前半）', titleVi: 'Mục lục & bảng tỷ lệ ra đề — phần đầu' },
     { id: 'ch01', kind: 'chapter', no: '①', doc: 'part1', start: 5, end: 20, rate: 100,
@@ -93,6 +154,145 @@ const CHAPTERS = {
       titleJp: '付録：ユニバーサルデザイン・バリアフリー', titleVi: 'Phụ lục: Universal Design · Barrier-free' },
   ],
   kiso: [
+    // ===== 第1章 設計・計画（2025） (54 trang) =====
+    { id: 'k25ch1_01', kind: 'trend', doc: 'k25ch1', start: 1, end: 4,
+      titleJp: '表紙・出題傾向・目次', titleVi: 'Bìa · Tỷ lệ ra đề · Mục lục' },
+    { id: 'k25ch1_02', kind: 'chapter', no: '①', doc: 'k25ch1', start: 5, end: 10,
+      titleJp: '数理計画法', titleVi: 'Quy hoạch toán học (tối ưu · LP)' },
+    { id: 'k25ch1_03', kind: 'chapter', no: '②', doc: 'k25ch1', start: 11, end: 17,
+      titleJp: 'ユニバーサルデザイン', titleVi: 'Universal Design — thiết kế cho mọi người' },
+    { id: 'k25ch1_04', kind: 'chapter', no: '③', doc: 'k25ch1', start: 18, end: 21,
+      titleJp: '製造者責任法', titleVi: 'Luật trách nhiệm sản phẩm (PL法)' },
+    { id: 'k25ch1_05', kind: 'chapter', no: '④', doc: 'k25ch1', start: 22, end: 23,
+      titleJp: 'ATM利用問題', titleVi: 'Bài toán hàng đợi (ATM)' },
+    { id: 'k25ch1_06', kind: 'chapter', no: '⑤', doc: 'k25ch1', start: 24, end: 33,
+      titleJp: '品質管理', titleVi: 'Quản lý chất lượng' },
+    { id: 'k25ch1_07', kind: 'chapter', no: '⑥', doc: 'k25ch1', start: 34, end: 35,
+      titleJp: '製図の投影法', titleVi: 'Vẽ kỹ thuật — phép chiếu' },
+    { id: 'k25ch1_08', kind: 'chapter', no: '⑦', doc: 'k25ch1', start: 36, end: 41,
+      titleJp: '信頼性', titleVi: 'Độ tin cậy (nối tiếp · song song)' },
+    { id: 'k25ch1_09', kind: 'chapter', no: '⑧', doc: 'k25ch1', start: 42, end: 44,
+      titleJp: 'OR回路・AND回路', titleVi: 'Mạch OR · mạch AND' },
+    { id: 'k25ch1_10', kind: 'chapter', no: '⑨', doc: 'k25ch1', start: 45, end: 52,
+      titleJp: '設計に関する諸問題', titleVi: 'Các bài toán thiết kế khác' },
+    { id: 'k25ch1_11', kind: 'chapter', no: '⑩', doc: 'k25ch1', start: 53, end: 54,
+      titleJp: 'ネットワーク工程表', titleVi: 'Sơ đồ mạng tiến độ (PERT)' },
+    // ===== 第2章 情報・論理（2025） (56 trang) =====
+    { id: 'k25ch2_01', kind: 'trend', doc: 'k25ch2', start: 1, end: 4,
+      titleJp: '表紙・出題傾向・目次', titleVi: 'Bìa · Tỷ lệ ra đề · Mục lục' },
+    { id: 'k25ch2_02', kind: 'chapter', no: '①', doc: 'k25ch2', start: 5, end: 15,
+      titleJp: '基数変換', titleVi: 'Chuyển đổi cơ số' },
+    { id: 'k25ch2_03', kind: 'chapter', no: '②', doc: 'k25ch2', start: 16, end: 19,
+      titleJp: '補数表現', titleVi: 'Biểu diễn số bù' },
+    { id: 'k25ch2_04', kind: 'chapter', no: '③', doc: 'k25ch2', start: 20, end: 21,
+      titleJp: '浮動小数点', titleVi: 'Dấu phẩy động' },
+    { id: 'k25ch2_05', kind: 'chapter', no: '④', doc: 'k25ch2', start: 22, end: 28,
+      titleJp: '情報量の計算', titleVi: 'Tính lượng tin' },
+    { id: 'k25ch2_06', kind: 'chapter', no: '⑤', doc: 'k25ch2', start: 29, end: 36,
+      titleJp: '論理演算', titleVi: 'Phép toán logic' },
+    { id: 'k25ch2_07', kind: 'chapter', no: '⑥', doc: 'k25ch2', start: 37, end: 45,
+      titleJp: '情報ネットワーク', titleVi: 'Mạng thông tin' },
+    { id: 'k25ch2_08', kind: 'chapter', no: '⑦', doc: 'k25ch2', start: 46, end: 49,
+      titleJp: 'アルゴリズム', titleVi: 'Thuật toán' },
+    { id: 'k25ch2_09', kind: 'chapter', no: '⑧', doc: 'k25ch2', start: 50, end: 51,
+      titleJp: '逆ポーランド記法', titleVi: 'Ký pháp Ba Lan ngược (RPN)' },
+    { id: 'k25ch2_10', kind: 'chapter', no: '⑨', doc: 'k25ch2', start: 52, end: 53,
+      titleJp: '数値計算誤差', titleVi: 'Sai số tính toán số' },
+    { id: 'k25ch2_11', kind: 'chapter', no: '⑩', doc: 'k25ch2', start: 54, end: 55,
+      titleJp: 'スタック＆キュー', titleVi: 'Stack & Queue' },
+    { id: 'k25ch2_12', kind: 'chapter', no: '⑪', doc: 'k25ch2', start: 56, end: 56,
+      titleJp: 'IPv4/IPv6', titleVi: 'IPv4 / IPv6' },
+    // ===== 第3章 解析（2025） (43 trang) =====
+    { id: 'k25ch3_01', kind: 'trend', doc: 'k25ch3', start: 1, end: 4,
+      titleJp: '表紙・目次・出題傾向', titleVi: 'Bìa · Mục lục · Tỷ lệ ra đề' },
+    { id: 'k25ch3_02', kind: 'chapter', no: '①', doc: 'k25ch3', start: 5, end: 5,
+      titleJp: '導関数', titleVi: 'Đạo hàm' },
+    { id: 'k25ch3_03', kind: 'chapter', no: '②', doc: 'k25ch3', start: 6, end: 6,
+      titleJp: '偏微分', titleVi: 'Đạo hàm riêng' },
+    { id: 'k25ch3_04', kind: 'chapter', no: '③', doc: 'k25ch3', start: 7, end: 14,
+      titleJp: '積分', titleVi: 'Tích phân' },
+    { id: 'k25ch3_05', kind: 'chapter', no: '④', doc: 'k25ch3', start: 15, end: 19,
+      titleJp: '行列', titleVi: 'Ma trận' },
+    { id: 'k25ch3_06', kind: 'chapter', no: '⑤', doc: 'k25ch3', start: 20, end: 22,
+      titleJp: '応力・ひずみ', titleVi: 'Ứng suất · biến dạng' },
+    { id: 'k25ch3_07', kind: 'chapter', no: '⑥', doc: 'k25ch3', start: 23, end: 23,
+      titleJp: 'ばね定数', titleVi: 'Độ cứng lò xo' },
+    { id: 'k25ch3_08', kind: 'chapter', no: '⑦', doc: 'k25ch3', start: 24, end: 26,
+      titleJp: '断面二次モーメント・変位量', titleVi: 'Mô men quán tính mặt cắt · chuyển vị' },
+    { id: 'k25ch3_09', kind: 'chapter', no: '⑧', doc: 'k25ch3', start: 27, end: 36,
+      titleJp: '固有振動数・エネルギー', titleVi: 'Tần số dao động riêng · năng lượng' },
+    { id: 'k25ch3_10', kind: 'chapter', no: '⑨', doc: 'k25ch3', start: 37, end: 43,
+      titleJp: '有限要素法(FEM)', titleVi: 'Phương pháp phần tử hữu hạn (FEM)' },
+    // ===== 第4章 材料・科学・バイオ（2025） (59 trang) =====
+    { id: 'k25ch4_01', kind: 'trend', doc: 'k25ch4', start: 1, end: 4,
+      titleJp: '表紙・目次・出題傾向', titleVi: 'Bìa · Mục lục · Tỷ lệ ra đề' },
+    { id: 'k25ch4_02', kind: 'chapter', no: '①', doc: 'k25ch4', start: 5, end: 6, grp: 'A. Hóa học',
+      titleJp: '原子', titleVi: 'Nguyên tử' },
+    { id: 'k25ch4_03', kind: 'chapter', no: '②', doc: 'k25ch4', start: 7, end: 8, grp: 'A. Hóa học',
+      titleJp: '原子番号・質量数', titleVi: 'Số hiệu nguyên tử · số khối' },
+    { id: 'k25ch4_04', kind: 'chapter', no: '③/④', doc: 'k25ch4', start: 9, end: 9, grp: 'A. Hóa học',
+      titleJp: '中性子／同位体', titleVi: 'Neutron / Đồng vị' },
+    { id: 'k25ch4_05', kind: 'chapter', no: '⑤', doc: 'k25ch4', start: 10, end: 10, grp: 'A. Hóa học',
+      titleJp: '同素体', titleVi: 'Dạng thù hình' },
+    { id: 'k25ch4_06', kind: 'chapter', no: '⑥', doc: 'k25ch4', start: 11, end: 15, grp: 'A. Hóa học',
+      titleJp: '異性体', titleVi: 'Đồng phân' },
+    { id: 'k25ch4_07', kind: 'chapter', no: '⑦', doc: 'k25ch4', start: 16, end: 19, grp: 'A. Hóa học',
+      titleJp: '酸化数', titleVi: 'Số oxi hóa' },
+    { id: 'k25ch4_08', kind: 'chapter', no: '⑧', doc: 'k25ch4', start: 20, end: 23, grp: 'A. Hóa học',
+      titleJp: 'モル', titleVi: 'Mol — số mol' },
+    { id: 'k25ch4_09', kind: 'chapter', no: '⑨', doc: 'k25ch4', start: 24, end: 25, grp: 'A. Hóa học',
+      titleJp: '化学反応式', titleVi: 'Phương trình phản ứng hóa học' },
+    { id: 'k25ch4_10', kind: 'chapter', no: '⑩', doc: 'k25ch4', start: 26, end: 29, grp: 'A. Hóa học',
+      titleJp: '熱化学方程式', titleVi: 'Phương trình nhiệt hóa học' },
+    { id: 'k25ch4_11', kind: 'chapter', no: '⑪', doc: 'k25ch4', start: 30, end: 31, grp: 'A. Hóa học',
+      titleJp: '化学特性', titleVi: 'Tính chất hóa học' },
+    { id: 'k25ch4_12', kind: 'chapter', no: '⑫', doc: 'k25ch4', start: 32, end: 32, grp: 'A. Hóa học',
+      titleJp: '金属材料の特性', titleVi: 'Đặc tính vật liệu kim loại' },
+    { id: 'k25ch4_13', kind: 'chapter', no: '⑬', doc: 'k25ch4', start: 33, end: 38, grp: 'A. Hóa học',
+      titleJp: '結晶構造', titleVi: 'Cấu trúc tinh thể' },
+    { id: 'k25ch4_14', kind: 'chapter', no: '⑭', doc: 'k25ch4', start: 39, end: 42, grp: 'B. Vật liệu',
+      titleJp: '金属製造', titleVi: 'Chế tạo kim loại' },
+    { id: 'k25ch4_15', kind: 'chapter', no: '⑮', doc: 'k25ch4', start: 43, end: 48, grp: 'B. Vật liệu',
+      titleJp: '金属用途', titleVi: 'Ứng dụng của kim loại' },
+    { id: 'k25ch4_16', kind: 'chapter', no: '⑯', doc: 'k25ch4', start: 49, end: 53, grp: 'B. Vật liệu',
+      titleJp: '力学特性', titleVi: 'Đặc tính cơ học' },
+    { id: 'k25ch4_17', kind: 'chapter', no: '⑰', doc: 'k25ch4', start: 54, end: 54, grp: 'B. Vật liệu',
+      titleJp: '熱伝導率', titleVi: 'Độ dẫn nhiệt' },
+    { id: 'k25ch4_18', kind: 'chapter', no: '⑱', doc: 'k25ch4', start: 55, end: 55, grp: 'B. Vật liệu',
+      titleJp: '格子欠陥', titleVi: 'Khuyết tật mạng tinh thể' },
+    { id: 'k25ch4_19', kind: 'chapter', no: '⑲', doc: 'k25ch4', start: 56, end: 56, grp: 'B. Vật liệu',
+      titleJp: 'クリープ', titleVi: 'Từ biến (creep)' },
+    { id: 'k25ch4_20', kind: 'chapter', no: '⑳', doc: 'k25ch4', start: 57, end: 57, grp: 'B. Vật liệu',
+      titleJp: '疲労破壊', titleVi: 'Phá hủy do mỏi' },
+    { id: 'k25ch4_21', kind: 'chapter', no: '㉑', doc: 'k25ch4', start: 58, end: 59, grp: 'B. Vật liệu',
+      titleJp: '腐食', titleVi: 'Ăn mòn' },
+    // ===== 第5章 環境・エネルギー・技術（2025） (82 trang) =====
+    { id: 'k25ch5_01', kind: 'trend', doc: 'k25ch5', start: 1, end: 3,
+      titleJp: '表紙・目次', titleVi: 'Bìa · Mục lục' },
+    { id: 'k25ch5_02', kind: 'chapter', no: '①', doc: 'k25ch5', start: 4, end: 6, grp: 'A. Bảo vệ môi trường toàn cầu',
+      titleJp: 'パリ協定', titleVi: 'Thỏa thuận Paris' },
+    { id: 'k25ch5_03', kind: 'chapter', no: '②', doc: 'k25ch5', start: 7, end: 7, grp: 'A. Bảo vệ môi trường toàn cầu',
+      titleJp: '気候変動に関する政府間パネル（IPCC）', titleVi: 'IPCC — Ủy ban liên chính phủ về biến đổi khí hậu' },
+    { id: 'k25ch5_04', kind: 'chapter', no: '③', doc: 'k25ch5', start: 8, end: 8, grp: 'A. Bảo vệ môi trường toàn cầu',
+      titleJp: 'IPCC第6次評価報告書', titleVi: 'Báo cáo đánh giá lần thứ 6 của IPCC' },
+    { id: 'k25ch5_05', kind: 'chapter', no: '④', doc: 'k25ch5', start: 9, end: 12, grp: 'A. Bảo vệ môi trường toàn cầu',
+      titleJp: '地球温暖化対策', titleVi: 'Ứng phó nóng lên toàn cầu' },
+    { id: 'k25ch5_06', kind: 'chapter', doc: 'k25ch5', start: 13, end: 21, grp: 'B. SDGs',
+      titleJp: 'SDGs', titleVi: 'SDGs — mục tiêu phát triển bền vững' },
+    { id: 'k25ch5_07', kind: 'chapter', no: '①', doc: 'k25ch5', start: 22, end: 22, grp: 'C. Bảo tồn đa dạng sinh học',
+      titleJp: '生物多様性条約', titleVi: 'Công ước đa dạng sinh học' },
+    { id: 'k25ch5_08', kind: 'chapter', no: '②', doc: 'k25ch5', start: 23, end: 23, grp: 'C. Bảo tồn đa dạng sinh học',
+      titleJp: 'カルタヘナ議定書', titleVi: 'Nghị định thư Cartagena' },
+    { id: 'k25ch5_09', kind: 'chapter', no: '③', doc: 'k25ch5', start: 24, end: 25, grp: 'C. Bảo tồn đa dạng sinh học',
+      titleJp: '外来種（移入種）・外来生物法', titleVi: 'Loài ngoại lai · Luật sinh vật ngoại lai' },
+    { id: 'k25ch5_10', kind: 'chapter', no: '④', doc: 'k25ch5', start: 26, end: 29, grp: 'C. Bảo tồn đa dạng sinh học',
+      titleJp: 'ワシントン条約', titleVi: 'Công ước Washington (CITES)' },
+    { id: 'k25ch5_11', kind: 'chapter', doc: 'k25ch5', start: 30, end: 58, grp: 'D. Năng lượng',
+      titleJp: 'エネルギー', titleVi: 'Năng lượng — cung cầu & các nguồn' },
+    { id: 'k25ch5_12', kind: 'chapter', no: '①-⑬', doc: 'k25ch5', start: 59, end: 77, grp: 'E. Luật & điều ước môi trường',
+      titleJp: '環境関連法規・条約', titleVi: 'Luật & điều ước về môi trường' },
+    { id: 'k25ch5_13', kind: 'chapter', doc: 'k25ch5', start: 78, end: 82, grp: 'F. Sở hữu trí tuệ',
+      titleJp: '知的財産及び関連する法律', titleVi: 'Sở hữu trí tuệ & luật liên quan' },
     // ===== 第1章 設計・計画 (172 trang) =====
     { id: 'ch1_trend', kind: 'trend', doc: 'ch1', start: 1, end: 3,
       titleJp: '目次・出題傾向', titleVi: 'Mục lục & tỷ lệ ra đề' },
@@ -237,15 +437,220 @@ const CHAPTERS = {
     { id: 'ch5_11', kind: 'chapter', no: '⑪', doc: 'ch5', start: 89, end: 98, rate: 33,
       titleJp: '科学技術政策・知的財産', titleVi: 'Chính sách KH–CN · sở hữu trí tuệ' },
   ],
-  senmon: [],
+  senmon: [
+    // ===== 第1章 土質・基礎 (51 trang) =====
+    { id: 's25ch1_01', kind: 'trend', doc: 's25ch1', start: 1, end: 4,
+      titleJp: '表紙・出題傾向・目次', titleVi: 'Bìa · Tỷ lệ ra đề · Mục lục' },
+    { id: 's25ch1_02', kind: 'chapter', no: '①', doc: 's25ch1', start: 5, end: 13,
+      titleJp: '土の三層構造', titleVi: 'Cấu trúc ba pha của đất' },
+    { id: 's25ch1_03', kind: 'chapter', no: '②', doc: 's25ch1', start: 14, end: 15,
+      titleJp: '土の基本性質', titleVi: 'Tính chất cơ bản của đất' },
+    { id: 's25ch1_04', kind: 'chapter', no: '③', doc: 's25ch1', start: 16, end: 22,
+      titleJp: '土のコンシステンシー', titleVi: 'Giới hạn Atterberg — độ sệt của đất' },
+    { id: 's25ch1_05', kind: 'chapter', no: '④', doc: 's25ch1', start: 23, end: 26,
+      titleJp: '杭基礎・直接基礎', titleVi: 'Móng cọc · móng nông' },
+    { id: 's25ch1_06', kind: 'chapter', no: '⑤', doc: 's25ch1', start: 27, end: 28,
+      titleJp: '斜面安定', titleVi: 'Ổn định mái dốc' },
+    { id: 's25ch1_07', kind: 'chapter', no: '⑥', doc: 's25ch1', start: 29, end: 30,
+      titleJp: '鉛直有効応力', titleVi: 'Ứng suất hữu hiệu thẳng đứng' },
+    { id: 's25ch1_08', kind: 'chapter', no: '⑦', doc: 's25ch1', start: 31, end: 38,
+      titleJp: '土圧、支持力、基礎及びその他', titleVi: 'Áp lực đất · sức chịu tải · móng và khác' },
+    { id: 's25ch1_09', kind: 'chapter', no: '⑧', doc: 's25ch1', start: 39, end: 39,
+      titleJp: '鋭敏比', titleVi: 'Độ nhạy của đất (sensitivity)' },
+    { id: 's25ch1_10', kind: 'chapter', no: '⑨', doc: 's25ch1', start: 40, end: 42,
+      titleJp: '土のせん断強さ', titleVi: 'Sức kháng cắt của đất' },
+    { id: 's25ch1_11', kind: 'chapter', no: '⑩', doc: 's25ch1', start: 43, end: 46,
+      titleJp: '土の密度', titleVi: 'Khối lượng riêng của đất' },
+    { id: 's25ch1_12', kind: 'chapter', no: '⑪', doc: 's25ch1', start: 47, end: 48,
+      titleJp: '土の透水性', titleVi: 'Tính thấm của đất' },
+    { id: 's25ch1_13', kind: 'chapter', no: '⑫', doc: 's25ch1', start: 49, end: 51,
+      titleJp: 'ダイレタンシー', titleVi: 'Hiện tượng dilatancy (nở khi cắt)' },
+    // ===== 第2章 鋼構造及びコンクリート (82 trang) =====
+    { id: 's25ch2_01', kind: 'trend', doc: 's25ch2', start: 1, end: 4,
+      titleJp: '表紙・出題傾向・目次', titleVi: 'Bìa · Tỷ lệ ra đề · Mục lục' },
+    { id: 's25ch2_02', kind: 'chapter', no: '①', doc: 's25ch2', start: 5, end: 7, grp: 'A. Kết cấu thép',
+      titleJp: '図心と断面二次モーメント', titleVi: 'Trọng tâm & mô men quán tính mặt cắt' },
+    { id: 's25ch2_03', kind: 'chapter', no: '②', doc: 's25ch2', start: 8, end: 11, grp: 'A. Kết cấu thép',
+      titleJp: '断面力、たわみの計算', titleVi: 'Nội lực & tính độ võng' },
+    { id: 's25ch2_04', kind: 'chapter', no: '③', doc: 's25ch2', start: 12, end: 14, grp: 'A. Kết cấu thép',
+      titleJp: '座屈', titleVi: 'Mất ổn định (buckling)' },
+    { id: 's25ch2_05', kind: 'chapter', no: '④', doc: 's25ch2', start: 15, end: 24, grp: 'A. Kết cấu thép',
+      titleJp: '鋼橋の継手・溶接・ボルト', titleVi: 'Cầu thép: mối nối · hàn · bulông' },
+    { id: 's25ch2_06', kind: 'chapter', no: '⑤', doc: 's25ch2', start: 25, end: 29, grp: 'A. Kết cấu thép',
+      titleJp: '鋼材部材の性質', titleVi: 'Tính chất cấu kiện thép' },
+    { id: 's25ch2_07', kind: 'chapter', no: '⑥', doc: 's25ch2', start: 30, end: 37, grp: 'A. Kết cấu thép',
+      titleJp: '道路橋の設計', titleVi: 'Thiết kế cầu đường bộ' },
+    { id: 's25ch2_08', kind: 'chapter', no: '⑦', doc: 's25ch2', start: 38, end: 40, grp: 'A. Kết cấu thép',
+      titleJp: '床板', titleVi: 'Bản mặt cầu' },
+    { id: 's25ch2_09', kind: 'chapter', no: '⑧', doc: 's25ch2', start: 41, end: 44, grp: 'A. Kết cấu thép',
+      titleJp: '鋼橋設計諸問題', titleVi: 'Các bài toán thiết kế cầu thép' },
+    { id: 's25ch2_10', kind: 'chapter', no: '⑧', doc: 's25ch2', start: 45, end: 45, grp: 'A. Kết cấu thép',
+      titleJp: '鋼橋の維持管理', titleVi: 'Duy tu bảo trì cầu thép' },
+    { id: 's25ch2_11', kind: 'chapter', no: '⑨', doc: 's25ch2', start: 46, end: 49, grp: 'A. Kết cấu thép',
+      titleJp: '防食', titleVi: 'Chống ăn mòn' },
+    { id: 's25ch2_12', kind: 'chapter', no: '①', doc: 's25ch2', start: 50, end: 56, grp: 'B. Bê tông',
+      titleJp: 'コンクリートの破壊機構', titleVi: 'Cơ chế phá hoại bê tông' },
+    { id: 's25ch2_13', kind: 'chapter', no: '②', doc: 's25ch2', start: 57, end: 57, grp: 'B. Bê tông',
+      titleJp: 'すりへり', titleVi: 'Mài mòn' },
+    { id: 's25ch2_14', kind: 'chapter', no: '③', doc: 's25ch2', start: 58, end: 61, grp: 'B. Bê tông',
+      titleJp: 'PCコンクリート', titleVi: 'Bê tông dự ứng lực (PC)' },
+    { id: 's25ch2_15', kind: 'chapter', no: '④', doc: 's25ch2', start: 62, end: 64, grp: 'B. Bê tông',
+      titleJp: '鉄筋コンクリート', titleVi: 'Bê tông cốt thép' },
+    { id: 's25ch2_16', kind: 'chapter', no: '⑤', doc: 's25ch2', start: 65, end: 66, grp: 'B. Bê tông',
+      titleJp: 'セメント材料', titleVi: 'Vật liệu xi măng' },
+    { id: 's25ch2_17', kind: 'chapter', no: '⑥', doc: 's25ch2', start: 67, end: 68, grp: 'B. Bê tông',
+      titleJp: '硬化したコンクリートの性質', titleVi: 'Tính chất bê tông đã đóng rắn' },
+    { id: 's25ch2_18', kind: 'chapter', no: '⑦', doc: 's25ch2', start: 69, end: 70, grp: 'B. Bê tông',
+      titleJp: '圧縮強', titleVi: 'Cường độ chịu nén' },
+    { id: 's25ch2_19', kind: 'chapter', no: '⑧', doc: 's25ch2', start: 71, end: 71, grp: 'B. Bê tông',
+      titleJp: '引張強度', titleVi: 'Cường độ chịu kéo' },
+    { id: 's25ch2_20', kind: 'chapter', no: '⑩', doc: 's25ch2', start: 72, end: 78, grp: 'B. Bê tông',
+      titleJp: 'コンクリート性質', titleVi: 'Tính chất của bê tông' },
+    { id: 's25ch2_21', kind: 'chapter', no: '⑪', doc: 's25ch2', start: 79, end: 82, grp: 'B. Bê tông',
+      titleJp: '混和材料', titleVi: 'Phụ gia bê tông' },
+    // ===== 第3章 都市計画・建設環境 (68 trang) =====
+    { id: 's25ch3_01', kind: 'trend', doc: 's25ch3', start: 1, end: 3,
+      titleJp: '表紙・出題傾向', titleVi: 'Bìa · Tỷ lệ ra đề' },
+    { id: 's25ch3_02', kind: 'chapter', no: '①', doc: 's25ch3', start: 4, end: 6, grp: 'A. Quy hoạch đô thị',
+      titleJp: 'マスタープラン', titleVi: 'Quy hoạch tổng thể (master plan)' },
+    { id: 's25ch3_03', kind: 'chapter', no: '②', doc: 's25ch3', start: 7, end: 12, grp: 'A. Quy hoạch đô thị',
+      titleJp: '都市計画区域', titleVi: 'Khu vực quy hoạch đô thị' },
+    { id: 's25ch3_04', kind: 'chapter', no: '③', doc: 's25ch3', start: 13, end: 19, grp: 'A. Quy hoạch đô thị',
+      titleJp: '地域地区', titleVi: 'Phân khu chức năng' },
+    { id: 's25ch3_05', kind: 'chapter', no: '④', doc: 's25ch3', start: 20, end: 24, grp: 'A. Quy hoạch đô thị',
+      titleJp: '市街地再開発事業', titleVi: 'Dự án tái phát triển khu đô thị' },
+    { id: 's25ch3_06', kind: 'chapter', no: '⑤', doc: 's25ch3', start: 25, end: 27, grp: 'A. Quy hoạch đô thị',
+      titleJp: '土地区画整理事業', titleVi: 'Dự án chỉnh trang phân lô đất' },
+    { id: 's25ch3_07', kind: 'chapter', no: '⑥', doc: 's25ch3', start: 28, end: 29, grp: 'A. Quy hoạch đô thị',
+      titleJp: '理想の都市', titleVi: 'Các mô hình đô thị lý tưởng' },
+    { id: 's25ch3_08', kind: 'chapter', no: '①', doc: 's25ch3', start: 30, end: 33, grp: 'B. Quy hoạch giao thông',
+      titleJp: 'パーソントリップ調査（PT調査）', titleVi: 'Khảo sát chuyến đi cá nhân (PT)' },
+    { id: 's25ch3_09', kind: 'chapter', no: '②', doc: 's25ch3', start: 34, end: 34, grp: 'B. Quy hoạch giao thông',
+      titleJp: '大都市交通センサス', titleVi: 'Tổng điều tra giao thông đô thị lớn' },
+    { id: 's25ch3_10', kind: 'chapter', no: '③', doc: 's25ch3', start: 35, end: 35, grp: 'B. Quy hoạch giao thông',
+      titleJp: 'その他調査', titleVi: 'Các khảo sát khác' },
+    { id: 's25ch3_11', kind: 'chapter', no: '③', doc: 's25ch3', start: 36, end: 37, grp: 'B. Quy hoạch giao thông',
+      titleJp: '公共交通', titleVi: 'Giao thông công cộng' },
+    { id: 's25ch3_12', kind: 'chapter', no: '④', doc: 's25ch3', start: 38, end: 38, grp: 'B. Quy hoạch giao thông',
+      titleJp: '時間平均速度', titleVi: 'Tốc độ trung bình theo thời gian' },
+    { id: 's25ch3_13', kind: 'chapter', no: '①', doc: 's25ch3', start: 39, end: 40, grp: 'C. Quy hoạch quốc thổ',
+      titleJp: '国土計画', titleVi: 'Quy hoạch quốc thổ' },
+    { id: 's25ch3_14', kind: 'chapter', no: '②', doc: 's25ch3', start: 41, end: 42, grp: 'C. Quy hoạch quốc thổ',
+      titleJp: '第五次全国総合開発計画(21世紀の国土のグランドデザイン)', titleVi: 'Quy hoạch phát triển toàn quốc lần 5 (Grand Design thế kỷ 21)' },
+    { id: 's25ch3_15', kind: 'chapter', no: '③', doc: 's25ch3', start: 43, end: 43, grp: 'C. Quy hoạch quốc thổ',
+      titleJp: '国土形成計画法', titleVi: 'Luật quy hoạch hình thành quốc thổ' },
+    { id: 's25ch3_16', kind: 'chapter', no: '④', doc: 's25ch3', start: 44, end: 44, grp: 'C. Quy hoạch quốc thổ',
+      titleJp: '国土のグランドデザイン2050～対流促進型国土の形成～', titleVi: 'Grand Design quốc thổ 2050' },
+    { id: 's25ch3_17', kind: 'chapter', doc: 's25ch3', start: 45, end: 49, grp: 'C. Quy hoạch quốc thổ',
+      titleJp: 'まとめ', titleVi: 'Tổng kết' },
+    { id: 's25ch3_18', kind: 'chapter', no: '①', doc: 's25ch3', start: 50, end: 52, grp: 'D. Đánh giá tác động môi trường & pháp lệnh',
+      titleJp: '環境アセスメントの対象となる事業', titleVi: 'Dự án thuộc diện đánh giá tác động môi trường' },
+    { id: 's25ch3_19', kind: 'chapter', no: '②', doc: 's25ch3', start: 53, end: 53, grp: 'D. Đánh giá tác động môi trường & pháp lệnh',
+      titleJp: '環境アセスメントの実施者', titleVi: 'Chủ thể thực hiện đánh giá' },
+    { id: 's25ch3_20', kind: 'chapter', no: '③', doc: 's25ch3', start: 54, end: 56, grp: 'D. Đánh giá tác động môi trường & pháp lệnh',
+      titleJp: '環境アセスメントの手続き', titleVi: 'Trình tự thủ tục đánh giá' },
+    { id: 's25ch3_21', kind: 'chapter', no: '④', doc: 's25ch3', start: 57, end: 59, grp: 'D. Đánh giá tác động môi trường & pháp lệnh',
+      titleJp: '地方公共団体の制度', titleVi: 'Chế độ của chính quyền địa phương' },
+    { id: 's25ch3_22', kind: 'chapter', no: '⑤', doc: 's25ch3', start: 60, end: 68, grp: 'D. Đánh giá tác động môi trường & pháp lệnh',
+      titleJp: '建設環境法令', titleVi: 'Pháp lệnh môi trường xây dựng' },
+    // ===== 第4章 河川・砂防・海岸・港湾・空港 (74 trang) =====
+    { id: 's25ch4_01', kind: 'trend', doc: 's25ch4', start: 1, end: 3,
+      titleJp: '表紙・出題傾向', titleVi: 'Bìa · Tỷ lệ ra đề' },
+    { id: 's25ch4_02', kind: 'chapter', no: '①', doc: 's25ch4', start: 4, end: 10, grp: 'A. Thủy lực học',
+      titleJp: '管路の流れ', titleVi: 'Dòng chảy trong ống' },
+    { id: 's25ch4_03', kind: 'chapter', no: '②', doc: 's25ch4', start: 11, end: 16, grp: 'A. Thủy lực học',
+      titleJp: '水理解析', titleVi: 'Phân tích thủy lực' },
+    { id: 's25ch4_04', kind: 'chapter', no: '③', doc: 's25ch4', start: 17, end: 38, grp: 'B. Đê sông',
+      titleJp: '河川堤防', titleVi: 'Đê sông' },
+    { id: 's25ch4_05', kind: 'chapter', no: '④', doc: 's25ch4', start: 39, end: 43, grp: 'B. Đê sông',
+      titleJp: '河川法', titleVi: 'Luật sông ngòi' },
+    { id: 's25ch4_06', kind: 'chapter', no: '⑤', doc: 's25ch4', start: 44, end: 49, grp: 'B. Đê sông',
+      titleJp: '河川の土砂移動', titleVi: 'Vận chuyển bùn cát trong sông' },
+    { id: 's25ch4_07', kind: 'chapter', no: '⑥', doc: 's25ch4', start: 50, end: 54, grp: 'B. Đê sông',
+      titleJp: 'ダム・砂防', titleVi: 'Đập · phòng chống sạt lở (sabo)' },
+    { id: 's25ch4_08', kind: 'chapter', no: '⑦', doc: 's25ch4', start: 55, end: 66, grp: 'C. Kỹ thuật bờ biển',
+      titleJp: '海岸', titleVi: 'Bờ biển' },
+    { id: 's25ch4_09', kind: 'chapter', no: '⑧', doc: 's25ch4', start: 67, end: 70, grp: 'C. Kỹ thuật bờ biển',
+      titleJp: '湾港施設', titleVi: 'Công trình cảng biển' },
+    { id: 's25ch4_10', kind: 'chapter', no: '⑧', doc: 's25ch4', start: 71, end: 74, grp: 'D. Công trình sân bay',
+      titleJp: '空港施設', titleVi: 'Công trình sân bay' },
+    // ===== 第5章 道路・鉄道・電力土木 (66 trang) =====
+    { id: 's25ch5_01', kind: 'trend', doc: 's25ch5', start: 1, end: 3,
+      titleJp: '表紙・出題傾向', titleVi: 'Bìa · Tỷ lệ ra đề' },
+    { id: 's25ch5_02', kind: 'chapter', no: '①', doc: 's25ch5', start: 4, end: 9, grp: 'A. Đường bộ',
+      titleJp: '道路一般', titleVi: 'Đường bộ — tổng quan' },
+    { id: 's25ch5_03', kind: 'chapter', no: '②', doc: 's25ch5', start: 10, end: 11, grp: 'A. Đường bộ',
+      titleJp: '道路構造令', titleVi: 'Pháp lệnh cấu tạo đường bộ' },
+    { id: 's25ch5_04', kind: 'chapter', no: '③', doc: 's25ch5', start: 12, end: 26, grp: 'A. Đường bộ',
+      titleJp: '道路の設計', titleVi: 'Thiết kế đường bộ' },
+    { id: 's25ch5_05', kind: 'chapter', no: '①', doc: 's25ch5', start: 27, end: 28, grp: 'B. Xây dựng công trình điện',
+      titleJp: '環境アセスメント', titleVi: 'Đánh giá tác động môi trường' },
+    { id: 's25ch5_06', kind: 'chapter', no: '②', doc: 's25ch5', start: 29, end: 38, grp: 'B. Xây dựng công trình điện',
+      titleJp: '火力発電', titleVi: 'Nhiệt điện' },
+    { id: 's25ch5_07', kind: 'chapter', no: '③', doc: 's25ch5', start: 39, end: 40, grp: 'B. Xây dựng công trình điện',
+      titleJp: '原子力発電', titleVi: 'Điện hạt nhân' },
+    { id: 's25ch5_08', kind: 'chapter', no: '④', doc: 's25ch5', start: 41, end: 50, grp: 'B. Xây dựng công trình điện',
+      titleJp: '水力発電', titleVi: 'Thủy điện' },
+    { id: 's25ch5_09', kind: 'chapter', no: '①', doc: 's25ch5', start: 51, end: 66, grp: 'C. Đường sắt',
+      titleJp: '軌道構造・軌道材料', titleVi: 'Kết cấu & vật liệu đường ray' },
+    // ===== 第6章 トンネル・施工計画 (61 trang) =====
+    { id: 's25ch6_01', kind: 'trend', doc: 's25ch6', start: 1, end: 3,
+      titleJp: '表紙・出題傾向', titleVi: 'Bìa · Tỷ lệ ra đề' },
+    { id: 's25ch6_02', kind: 'chapter', doc: 's25ch6', start: 4, end: 11, grp: 'A. Hầm xuyên núi',
+      titleJp: '山岳トンネル', titleVi: 'Hầm xuyên núi (NATM)' },
+    { id: 's25ch6_03', kind: 'chapter', doc: 's25ch6', start: 12, end: 22, grp: 'B. Hầm khiên đào',
+      titleJp: 'シールド工法とは？', titleVi: 'Phương pháp khiên đào (shield) là gì?' },
+    { id: 's25ch6_04', kind: 'chapter', no: '①', doc: 's25ch6', start: 23, end: 24, grp: 'C. Biện pháp thi công',
+      titleJp: 'EPS工法', titleVi: 'Phương pháp EPS — đắp bằng xốp nhẹ' },
+    { id: 's25ch6_05', kind: 'chapter', no: '②', doc: 's25ch6', start: 25, end: 25, grp: 'C. Biện pháp thi công',
+      titleJp: 'RCD工法', titleVi: 'Phương pháp RCD — bê tông đầm lăn' },
+    { id: 's25ch6_06', kind: 'chapter', no: '③', doc: 's25ch6', start: 26, end: 26, grp: 'C. Biện pháp thi công',
+      titleJp: 'ワイヤーソー工法', titleVi: 'Phương pháp cưa dây' },
+    { id: 's25ch6_07', kind: 'chapter', no: '④', doc: 's25ch6', start: 27, end: 27, grp: 'C. Biện pháp thi công',
+      titleJp: '盛土式仮締切り工法', titleVi: 'Đê quai tạm bằng đắp đất' },
+    { id: 's25ch6_08', kind: 'chapter', no: '⑤', doc: 's25ch6', start: 28, end: 28, grp: 'C. Biện pháp thi công',
+      titleJp: 'バーチカルドレーン工法', titleVi: 'Thoát nước thẳng đứng (vertical drain)' },
+    { id: 's25ch6_09', kind: 'chapter', no: '⑥', doc: 's25ch6', start: 29, end: 29, grp: 'C. Biện pháp thi công',
+      titleJp: 'ダウンヒルカット・ベンチカット', titleVi: 'Đào dốc xuống · đào bậc thang' },
+    { id: 's25ch6_10', kind: 'chapter', no: '⑦', doc: 's25ch6', start: 30, end: 30, grp: 'C. Biện pháp thi công',
+      titleJp: 'サンドコンパクションパイル工法', titleVi: 'Cọc cát đầm chặt (SCP)' },
+    { id: 's25ch6_11', kind: 'chapter', no: '⑧', doc: 's25ch6', start: 31, end: 31, grp: 'C. Biện pháp thi công',
+      titleJp: '静的破砕工法', titleVi: 'Phá vỡ tĩnh — không dùng nổ mìn' },
+    { id: 's25ch6_12', kind: 'chapter', doc: 's25ch6', start: 32, end: 43, grp: 'D. Kết cấu tạm',
+      titleJp: '山留壁', titleVi: 'Tường chắn đất hố đào' },
+    { id: 's25ch6_13', kind: 'chapter', doc: 's25ch6', start: 44, end: 44, grp: 'D. Kết cấu tạm',
+      titleJp: '作業構台', titleVi: 'Sàn công tác' },
+    { id: 's25ch6_14', kind: 'chapter', doc: 's25ch6', start: 45, end: 45, grp: 'D. Kết cấu tạm',
+      titleJp: '河川締切工', titleVi: 'Công tác ngăn dòng sông' },
+    { id: 's25ch6_15', kind: 'chapter', doc: 's25ch6', start: 46, end: 46, grp: 'D. Kết cấu tạm',
+      titleJp: '機械使用計画立案', titleVi: 'Lập kế hoạch sử dụng máy thi công' },
+    { id: 's25ch6_16', kind: 'chapter', doc: 's25ch6', start: 47, end: 51, grp: 'E. Quản lý thi công',
+      titleJp: '工程管理', titleVi: 'Quản lý tiến độ' },
+    { id: 's25ch6_17', kind: 'chapter', doc: 's25ch6', start: 52, end: 56, grp: 'E. Quản lý thi công',
+      titleJp: '工程・原価・品質の関係', titleVi: 'Quan hệ tiến độ · giá thành · chất lượng' },
+    { id: 's25ch6_18', kind: 'chapter', doc: 's25ch6', start: 57, end: 61, grp: 'E. Quản lý thi công',
+      titleJp: '安全管理', titleVi: 'Quản lý an toàn' },
+  ],
 };
 
-/** Thư mục cha: 3 môn, kèm số chương hiện có (0 = chưa có giáo trình). */
-export const TEXTBOOK_SUBJECTS = Object.values(SUBJECTS).map((s) => ({
-  ...s,
-  docCount: (DOCS[s.id] ?? []).length,
-  chapterCount: (CHAPTERS[s.id] ?? []).filter((c) => c.kind === 'chapter').length,
-}));
+/**
+ * Thư mục cha: 3 môn, kèm số chương hiện có (0 = chưa có giáo trình).
+ * Đếm theo BỘ ĐANG HỌC thôi — cộng gộp cả bộ cũ thì thẻ ghi "125 chương" mà mở
+ * ra chỉ thấy 67, sai lệch vô cớ.
+ */
+export const TEXTBOOK_SUBJECTS = Object.values(SUBJECTS).map((s) => {
+  const docs = DOCS[s.id] ?? [];
+  const editions = [...new Set(docs.map((d) => d.edition ?? 'old'))];
+  const main = editions.includes('2025') ? '2025' : editions[0];
+  const mainDocs = docs.filter((d) => (d.edition ?? 'old') === main);
+  const ids = new Set(mainDocs.map((d) => d.id));
+  return {
+    ...s,
+    docCount: mainDocs.length,
+    chapterCount: (CHAPTERS[s.id] ?? []).filter((c) => c.kind === 'chapter' && ids.has(c.doc)).length,
+    hasOldEdition: editions.length > 1,
+  };
+});
 
 export function getDocs(subjectId) {
   return DOCS[subjectId] ?? [];
@@ -269,6 +674,34 @@ export function pageCount(chapter) {
 
 /** Nhãn hiển thị ngắn: "① 技術士制度…" / "出題傾向" / "付録". */
 export function chapterLabel(chapter) {
-  if (chapter.kind === 'chapter') return `${chapter.no} ${chapter.titleJp}`;
+  // Bộ 2025 có mục không đánh số → không ghép `no` vào, kẻo ra "undefined ..."
+  if (chapter.kind === 'chapter' && chapter.no) return `${chapter.no} ${chapter.titleJp}`;
   return chapter.titleJp;
 }
+
+/** Bản in của một môn: ['2025', 'old'] — môn chỉ có một bộ thì trả về một phần tử. */
+export function getEditions(subjectId) {
+  const seen = [];
+  for (const d of getDocs(subjectId)) {
+    const e = d.edition ?? 'old';
+    if (!seen.includes(e)) seen.push(e);
+  }
+  return seen;
+}
+
+/** Các chương thuộc một bản in (2025 / cũ). Không truyền edition thì lấy tất cả. */
+export function getChaptersOf(subjectId, edition) {
+  const chapters = getChapters(subjectId);
+  if (!edition) return chapters;
+  const ids = new Set(
+    getDocs(subjectId).filter((d) => (d.edition ?? 'old') === edition).map((d) => d.id)
+  );
+  return chapters.filter((c) => ids.has(c.doc));
+}
+
+/** Bản in chứa một chương — để màn đọc biết "chương kế tiếp" nằm trong bộ nào. */
+export function editionOfChapter(subjectId, chapter) {
+  return getDoc(subjectId, chapter?.doc)?.edition ?? 'old';
+}
+
+export const EDITION_LABEL = { 2025: 'Bộ 2025 (đang học)', old: 'Bộ cũ' };
