@@ -2313,6 +2313,12 @@ textarea.text-input {
   font-weight: 600;
 }
 
+.build-id {
+  font-size: 0.65rem;
+  opacity: 0.55;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
 .link-btn {
   background: none;
   border: none;

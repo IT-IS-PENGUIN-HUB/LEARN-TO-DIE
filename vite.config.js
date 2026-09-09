@@ -1,13 +1,29 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
+import { execSync } from 'node:child_process';
 
 // Tên file có ký tự ngoài ASCII in được (ảnh lịch học đặt tên tiếng Nhật)
 const NON_ASCII = /[^ -~]/;
 
 // GitHub Pages serves the site at /LEARN-TO-DIE/
+// Mã bản dựng hiện ở chân trang. Có nó thì hỏi "máy bạn đang chạy bản nào" là
+// trả lời được ngay, khỏi đoán mò khi ロン báo "sửa rồi mà vẫn thế" — PWA trên
+// iOS có thể giữ bản cũ rất dai.
+const BUILD_ID = (() => {
+  try {
+    const sha = execSync('git rev-parse --short HEAD').toString().trim();
+    const d = new Date();
+    const p2 = (n) => String(n).padStart(2, '0');
+    return `${sha} · ${p2(d.getDate())}/${p2(d.getMonth() + 1)} ${p2(d.getHours())}:${p2(d.getMinutes())}`;
+  } catch {
+    return 'dev';
+  }
+})();
+
 export default defineConfig({
   base: '/LEARN-TO-DIE/',
+  define: { __BUILD_ID__: JSON.stringify(BUILD_ID) },
   build: {
     rollupOptions: {
       output: {

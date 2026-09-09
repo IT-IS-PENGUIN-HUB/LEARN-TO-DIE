@@ -406,7 +406,12 @@ export default function PdfViewer({
     };
     const hideGhost = () => {
       const g = ghostPageRef.current;
-      if (g) g.style.visibility = 'hidden';
+      if (!g) return;
+      g.style.visibility = 'hidden';
+      // PHẢI xoá cả độ lệch: trang chờ nằm tuyệt đối, để nguyên transform là nó
+      // vẫn chiếm chỗ bên phải khung → khung xem thành "cuộn ngang được" → lần
+      // vuốt sau bị coi là đang phóng to và không lật nữa. (Lỗi tự tìm ra 9/9.)
+      g.style.transform = '';
     };
     const resetNow = () => {
       setT(0, false);
@@ -426,12 +431,14 @@ export default function PdfViewer({
         sawTouchRef.current = true;
         if (pageNum + 1 <= maxPage && ghostHasRef.current == null) renderGhost(pageNum + 1).catch(() => {});
       }
-      // Đang phóng to (khung cuộn được theo trục kéo) thì kéo là để xem chỗ
-      // khuất, không phải lật trang — giữ nguyên luật cũ.
+      // Đang phóng to thì kéo là để xem chỗ khuất, không phải lật trang.
+      // Đo bằng chính TRANG so với khung, không đo scrollWidth của khung: trang
+      // chờ nằm tuyệt đối cũng tính vào scrollWidth nên đo kiểu đó sai.
+      const c = canvasRef.current;
       const canPan =
         rotate === 90
-          ? wrap.scrollHeight > wrap.clientHeight + 2
-          : wrap.scrollWidth > wrap.clientWidth + 2;
+          ? (c?.offsetHeight ?? 0) > wrap.clientHeight + 2
+          : (c?.offsetWidth ?? 0) > wrap.clientWidth + 2;
       if (canPan) {
         st = null;
         return;
@@ -714,7 +721,13 @@ export default function PdfViewer({
       </div>
       {/* Thao tác vuốt gắn bằng listener thường (passive:false) trong effect ở trên,
           không dùng onTouch* của React — cần preventDefault để trang khỏi cuộn theo. */}
-      <div className="pdf-canvas-wrap" ref={wrapRef}>
+      <div
+        className="pdf-canvas-wrap"
+        ref={wrapRef}
+        // Chặn trình duyệt tự chiếm thao tác kéo THEO TRỤC LẬT TRANG (Safari trên
+        // iPhone hay giành mất cú vuốt ngang), nhưng vẫn cho cuộn/phóng trục kia.
+        style={{ touchAction: rotate === 90 ? 'pan-x pinch-zoom' : 'pan-y pinch-zoom' }}
+      >
         {status === 'loading' && <p className="pdf-status">Đang tải PDF…</p>}
         <div className="pdf-page-stack" ref={stackRef}>
           <div className="pdf-page" ref={pageRef}>

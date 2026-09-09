@@ -9,6 +9,7 @@ import {
   storageInfo,
   swControlled,
 } from '../services/offlinePack.js';
+import { checkForUpdate } from '../services/appUpdate.js';
 import { IconDownload, IconCheck, IconRefresh } from './icons.jsx';
 
 const settle = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -136,6 +137,21 @@ export default function OfflinePanel() {
   };
 
   const stop = () => abortRef.current?.abort();
+
+  /** Ép máy lấy bản mới. App cài trên iPhone hay giữ bản cũ rất dai. */
+  const doUpdate = async () => {
+    setMsg('Đang hỏi máy chủ…');
+    const kq = await checkForUpdate();
+    setMsg(
+      {
+        'dang-cap-nhat': 'Có bản mới — đang cập nhật, app sẽ tự tải lại trong giây lát…',
+        'da-moi-nhat': 'App đang chạy bản mới nhất rồi ✓',
+        'mat-mang': 'Không hỏi được máy chủ (đang offline?) — thử lại khi có mạng.',
+        'chua-cai': 'Chưa cài chế độ offline. Hãy đóng hẳn app rồi mở lại.',
+        'khong-ho-tro': 'Trình duyệt này không hỗ trợ cập nhật nền.',
+      }[kq] ?? kq
+    );
+  };
 
   const doPersist = async () => {
     const ok = await askPersist();
@@ -300,6 +316,13 @@ export default function OfflinePanel() {
           </button>
         </p>
       )}
+
+      <p className="settings-note off-store">
+        Bản đang chạy: <strong className="build-id">{__BUILD_ID__}</strong>{' '}
+        <button type="button" className="link-btn" onClick={doUpdate}>
+          Kiểm tra bản mới
+        </button>
+      </p>
 
       {msg && (
         <p className="sync-status" role="status" style={{ color: 'var(--text-muted)' }}>
