@@ -12,6 +12,7 @@ import ScheduleView from './components/ScheduleView.jsx';
 import TextbookLibrary from './components/textbook/TextbookLibrary.jsx';
 import TextbookReader from './components/textbook/TextbookReader.jsx';
 import Footer from './components/Footer.jsx';
+import ChunkBoundary from './components/ChunkBoundary.jsx';
 import WordOfTheDay from './components/WordOfTheDay.jsx';
 import SettingsModal from './components/SettingsModal.jsx';
 import VocabModal from './components/vocab/VocabModal.jsx';
@@ -174,6 +175,9 @@ function AppInner() {
         dueCount={dueTotal}
       />
 
+      {/* Lưới đỡ: mảnh code tải hụt (deploy trong lúc tab đang mở) thì tự tải lại
+          một lần thay vì trắng cả app. key theo view để đổi màn là lưới được đặt lại. */}
+      <ChunkBoundary key={view.name}>
       {view.name === 'home' && (
         <>
           <Hero onStartPractice={openPractice} onStudyVocab={openVocab} />
@@ -232,6 +236,7 @@ function AppInner() {
       )}
 
       {view.name === 'schedule' && <ScheduleView onBack={goHome} />}
+      </ChunkBoundary>
 
       {vocabOpen && (
         <VocabModal
