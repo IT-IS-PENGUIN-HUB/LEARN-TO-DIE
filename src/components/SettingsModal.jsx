@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { KEYS, loadString, saveString } from '../lib/storage.js';
 import OfflinePanel from './OfflinePanel.jsx';
-import { clearSwipeLog, readSwipeLog } from '../lib/swipeLog.js';
 import { IconCloudDown, IconCloudUp, IconGear, IconX } from './icons.jsx';
 
 export default function SettingsModal({ onClose, sync }) {
@@ -12,8 +11,6 @@ export default function SettingsModal({ onClose, sync }) {
   const [reminderMin, setReminderMin] = useState(() => loadString(KEYS.reminderMin) || '0');
   const [examDay, setExamDay] = useState(() => loadString(KEYS.examDay));
   const [savedMsg, setSavedMsg] = useState('');
-  // Nhật ký vuốt lật trang — chỉ để gỡ lỗi trên máy thật (xem lib/swipeLog.js)
-  const [swipeLog, setSwipeLog] = useState(() => readSwipeLog());
 
   const saveAll = () => {
     saveString(KEYS.examDay, examDay);
@@ -168,42 +165,6 @@ export default function SettingsModal({ onClose, sync }) {
           >
             🔔 Cấp quyền thông báo
           </button>
-        </div>
-
-        <div className="settings-section">
-          <h3>Nhật ký vuốt lật trang (gỡ lỗi)</h3>
-          <p className="settings-note">
-            Vào giáo trình, vuốt vài lần rồi quay lại đây bấm <strong>Xem lại</strong> — mấy dòng
-            dưới cho biết app có nhận được thao tác vuốt hay không.
-          </p>
-          {swipeLog.length === 0 ? (
-            <p className="settings-note">Chưa ghi được lần vuốt nào.</p>
-          ) : (
-            <ul className="swipe-log">
-              {swipeLog.map((d) => (
-                <li key={d}>{d}</li>
-              ))}
-            </ul>
-          )}
-          <div className="sync-row">
-            <button
-              type="button"
-              className="btn btn-sm btn-outline"
-              onClick={() => setSwipeLog(readSwipeLog())}
-            >
-              Xem lại
-            </button>
-            <button
-              type="button"
-              className="btn btn-sm btn-outline"
-              onClick={() => {
-                clearSwipeLog();
-                setSwipeLog([]);
-              }}
-            >
-              Xoá
-            </button>
-          </div>
         </div>
 
         <button type="button" className="btn btn-primary" style={{ width: '100%' }} onClick={saveAll}>

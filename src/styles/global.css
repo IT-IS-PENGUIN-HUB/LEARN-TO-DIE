@@ -2313,37 +2313,6 @@ textarea.text-input {
   font-weight: 600;
 }
 
-/* Dòng chẩn đoán vuốt — TẠM THỜI, gỡ khi xong việc */
-.pdf-dbg {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: calc(0.2rem + env(safe-area-inset-bottom));
-  margin: 0;
-  text-align: center;
-  font-size: 0.62rem;
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  color: #cbd5e1;
-  background: rgba(0, 0, 0, 0.55);
-  padding: 0.15rem 0.4rem;
-  pointer-events: none;
-  z-index: 5;
-}
-
-.swipe-log {
-  list-style: none;
-  margin: 0 0 0.6rem;
-  padding: 0.4rem 0.6rem;
-  background: var(--bg-alt);
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  font-size: 0.68rem;
-  line-height: 1.5;
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  color: var(--text-muted);
-  word-break: break-word;
-}
-
 .build-id {
   font-size: 0.65rem;
   opacity: 0.55;

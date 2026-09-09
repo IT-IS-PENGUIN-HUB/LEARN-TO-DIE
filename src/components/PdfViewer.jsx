@@ -3,7 +3,6 @@ import * as pdfjsLib from 'pdfjs-dist';
 import { TextLayer } from 'pdfjs-dist';
 import workerUrl from 'pdfjs-dist/build/pdf.worker.min.mjs?url';
 import AddWordForm from './vocab/AddWordForm.jsx';
-import { logSwipe } from '../lib/swipeLog.js';
 import {
   IconArrowLeft,
   IconArrowRight,
@@ -97,11 +96,6 @@ export default function PdfViewer({
   const [rotate, setRotate] = useState(0); // 0 = đứng, 90 = nằm ngang
   const [addOpen, setAddOpen] = useState(false);
   const [touch] = useState(isTouch);
-  // Dòng chữ nhỏ hiện NGAY trên màn hình toàn màn hình, nói app vừa nhận được
-  // thao tác vuốt như thế nào. Tạm thời thôi: ロン vuốt trên iPhone báo "chẳng
-  // khác gì", mà bắt vào Cài đặt xem nhật ký thì lích kích quá — cứ để đập vào
-  // mắt ngay lúc đang vuốt. Gỡ đi khi xong việc.
-  const [swipeDbg, setSwipeDbg] = useState('');
 
   /**
    * Khổ hiển thị của một trang — DÙNG CHUNG cho trang đang xem và trang vẽ sẵn
@@ -429,20 +423,10 @@ export default function PdfViewer({
     resetSwipeRef.current = resetNow;
 
     const onStart = (e) => {
-      if (e.touches.length !== 1) {
-        const t = `bỏ qua: ${e.touches.length} ngón`;
-        logSwipe(t);
-        setSwipeDbg(t);
+      if (e.touches.length !== 1 || pendingRef.current) {
         st = null;
         return;
       }
-      if (pendingRef.current) {
-        logSwipe('bỏ qua: đang chốt trang trước');
-        setSwipeDbg('bỏ qua: đang chốt trang trước');
-        st = null;
-        return;
-      }
-      setSwipeDbg('chạm…');
       // Lần đầu thấy ngón tay: bật vẽ trước và vẽ ngay trang kế, để cú vuốt thứ
       // hai trở đi đã có sẵn trang mà lộ ra.
       if (!sawTouchRef.current) {
@@ -458,11 +442,6 @@ export default function PdfViewer({
           ? (c?.offsetHeight ?? 0) > wrap.clientHeight + 2
           : (c?.offsetWidth ?? 0) > wrap.clientWidth + 2;
       if (canPan) {
-        const t = `bỏ qua: tưởng đang phóng to (trang ${
-          rotate === 90 ? c?.offsetHeight : c?.offsetWidth
-        } > khung ${rotate === 90 ? wrap.clientHeight : wrap.clientWidth})`;
-        logSwipe(t);
-        setSwipeDbg(t);
         st = null;
         return;
       }
@@ -492,10 +471,7 @@ export default function PdfViewer({
         st.decided = true;
         // Nghiêng hẳn về trục lật mới coi là lật trang, kẻo cuộn dọc cũng bị bắt
         st.drag = Math.abs(along) > Math.abs(across) * 1.2;
-        if (!st.drag) {
-          setSwipeDbg(`kéo KHÔNG (ngang ${Math.round(along)} · dọc ${Math.round(across)})`);
-          return;
-        }
+        if (!st.drag) return;
         st.dir = along < 0 ? 1 : -1; // 1 = sang trang sau
         draggingRef.current = true; // đang kéo thì đừng vẽ trước, kẻo đè lên ảnh đang lộ
         st.span = spanOf();
@@ -548,11 +524,6 @@ export default function PdfViewer({
       if (!s.drag) return;
 
       const moved = Math.abs(s.along);
-      const ghi =
-        `kéo ${s.drag ? 'CÓ' : 'KHÔNG'} · đi ${Math.round(s.along)}px/${Math.round(s.span)} · ` +
-        `trang chờ ${s.ready ? 'sẵn' : 'chưa'}${s.edge ? ' · hết trang' : ''}`;
-      logSwipe(ghi);
-      setSwipeDbg(ghi);
       // Qua 1/3 trang là đổi; hoặc vẩy nhanh một cái ngắn cũng tính (như lướt ảnh)
       const pass = moved > s.span * 0.33 || (moved > 55 && Date.now() - s.t < 320);
       const target = pageNum + s.dir;
@@ -782,12 +753,6 @@ export default function PdfViewer({
           VÀ mỗi lần nhảy mục (key đổi theo trang đầu mục) — nhảy mục mà không biết
           mình đang ở mục nào thì lại phải thoát ra xem, đúng cái phiền cần bỏ.
           Lời nhắc vuốt chỉ dành cho máy cảm ứng; PC vuốt không được. */}
-      {/* TẠM THỜI: dòng chẩn đoán cho ロン xem ngay khi đang vuốt (gỡ khi xong) */}
-      {fullscreen && (
-        <p className="pdf-dbg">
-          {__BUILD_ID__} · {swipeDbg || 'chưa nhận được cú vuốt nào'}
-        </p>
-      )}
       {fullscreen && status === 'ready' && (chapterName || maxPage > minPage) && (
         <p className="pdf-swipe-hint" key={`${url}-${minPage}`}>
           {chapterName && <strong>{chapterName}</strong>}
