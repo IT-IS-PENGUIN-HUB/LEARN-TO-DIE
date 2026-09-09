@@ -1076,6 +1076,24 @@ textarea {
   margin: 0.5rem auto;
 }
 
+/* Khối bọc hai trang để vuốt: kéo là dịch cả khối bằng transform (chạy trên GPU),
+   canvas không phải vẽ lại. Nền xám của khung xem lộ ra ở khe giữa hai trang —
+   đó chính là "ranh giới" nhìn thấy khi lật. */
+.pdf-page-stack {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+}
+
+.pdf-page-ghost {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 .textLayer {
   position: absolute;
   inset: 0;
@@ -2432,7 +2450,8 @@ textarea.text-input {
   justify-content: center;
 }
 
-.pdf-shell-fullscreen .pdf-page {
+.pdf-shell-fullscreen .pdf-page,
+.pdf-shell-fullscreen .pdf-page-stack {
   margin: 0;
   flex-shrink: 0;
 }
