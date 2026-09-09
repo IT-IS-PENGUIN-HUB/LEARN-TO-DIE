@@ -81,6 +81,9 @@ export default function TextbookReader({ subjectId, chapterId, onBack, onOpenCha
           <Suspense
             fallback={<p className="pdf-status" style={{ color: 'var(--text-muted)' }}>Đang tải trình xem PDF…</p>}
           >
+            {/* onPrevChapter/onNextChapter: nhảy mục ngay trong toàn màn hình — mục
+                của bộ 2025 thường chỉ 1–2 trang, cứ hết mục lại thoát ra bấm mục
+                kế thì quá vướng (ロン 9/9/2026) */}
             <PdfViewer
               url={pdfUrl(doc.path)}
               title={`${chapter.titleJp} — ${doc.label}`}
@@ -90,6 +93,9 @@ export default function TextbookReader({ subjectId, chapterId, onBack, onOpenCha
               wholeFile
               onReportPage={onReportPage}
               addWordSubject={subjectId}
+              onPrevChapter={prev ? () => onOpenChapter(prev.id) : null}
+              onNextChapter={next ? () => onOpenChapter(next.id) : null}
+              chapterName={chapterLabel}
             />
           </Suspense>
 

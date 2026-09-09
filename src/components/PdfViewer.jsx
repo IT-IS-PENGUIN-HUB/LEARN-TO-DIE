@@ -3,7 +3,16 @@ import * as pdfjsLib from 'pdfjs-dist';
 import { TextLayer } from 'pdfjs-dist';
 import workerUrl from 'pdfjs-dist/build/pdf.worker.min.mjs?url';
 import AddWordForm from './vocab/AddWordForm.jsx';
-import { IconArrowLeft, IconArrowRight, IconExpand, IconPlus, IconRotate, IconX } from './icons.jsx';
+import {
+  IconArrowLeft,
+  IconArrowRight,
+  IconExpand,
+  IconPlus,
+  IconRotate,
+  IconSkipBack,
+  IconSkipForward,
+  IconX,
+} from './icons.jsx';
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = workerUrl;
 
@@ -32,6 +41,12 @@ const isTouch = () => window.matchMedia?.('(pointer: coarse)').matches ?? false;
  * worker cache lại nên mới đọc được offline trên tàu.
  * addWordSubject (tuỳ chọn): bật nút thêm từ vào môn này ngay trong toàn màn hình —
  * gặp từ mới lúc đọc thì khỏi phải thoát ra rồi vào lại.
+ * onPrevChapter/onNextChapter (tuỳ chọn): nhảy sang MỤC trước/sau ngay trong toàn
+ * màn hình. Giáo trình 2025 chia mục rất nhỏ (nhiều mục chỉ 1–2 trang) nên cứ hết
+ * mục lại phải thoát toàn màn hình ra bấm mục kế thì quá vướng. Để null khi mục đó
+ * không tồn tại (đầu/cuối sách) — nút vẫn hiện nhưng mờ đi, khỏi nhảy layout.
+ * chapterName (tuỳ chọn): tên mục, hiện thoáng qua mỗi lần đổi mục để biết mình
+ * vừa nhảy tới đâu mà không phải thoát ra xem.
  */
 export default function PdfViewer({
   url,
@@ -42,6 +57,9 @@ export default function PdfViewer({
   wholeFile = false,
   onReportPage,
   addWordSubject,
+  onPrevChapter,
+  onNextChapter,
+  chapterName,
 }) {
   const wrapRef = useRef(null);
   const canvasRef = useRef(null);
@@ -239,6 +257,16 @@ export default function PdfViewer({
   const goPrev = useCallback(() => setPageNum((p) => Math.max(minPage, p - 1)), [minPage]);
   const goNext = useCallback(() => setPageNum((p) => Math.min(maxPage, p + 1)), [maxPage]);
 
+  const hasChapterNav = Boolean(onPrevChapter || onNextChapter);
+  /**
+   * ĐIỆN THOẠI trong toàn màn hình: vuốt đã lo việc lật trang rồi, hai nút mũi tên
+   * chỉ ngồi không — nhường chỗ cho nút nhảy MỤC (ロン đề nghị 9/9/2026).
+   * MÁY TÍNH thì không vuốt được nên phải giữ cả hai loại nút.
+   * Màn xem ĐỀ THI không truyền nút mục nên không bao giờ rơi vào nhánh này —
+   * bỏ nút trang ở đó là mất hẳn đường lật trang.
+   */
+  const showPageArrows = !(fullscreen && touch && hasChapterNav);
+
   /**
    * Vuốt để lật trang. Bình thường là vuốt ngang; nhưng khi trang xoay 90° mà
    * màn hình vẫn dọc (iOS không cho khoá landscape — người đọc cầm máy nằm
@@ -323,15 +351,29 @@ export default function PdfViewer({
     <div className={fullscreen ? 'pdf-shell-fullscreen' : ''}>
       <div className="pdf-toolbar">
         <div className="pdf-toolbar-group">
-          <button
-            type="button"
-            className="btn btn-outline btn-xs"
-            onClick={goPrev}
-            disabled={pageNum <= minPage}
-            aria-label="Trang trước"
-          >
-            <IconArrowLeft />
-          </button>
+          {fullscreen && hasChapterNav && (
+            <button
+              type="button"
+              className="btn btn-outline btn-xs"
+              onClick={() => onPrevChapter?.()}
+              disabled={!onPrevChapter}
+              aria-label="Mục trước"
+              title="Mục trước"
+            >
+              <IconSkipBack /> <span className="pdf-btn-label">Mục trước</span>
+            </button>
+          )}
+          {showPageArrows && (
+            <button
+              type="button"
+              className="btn btn-outline btn-xs"
+              onClick={goPrev}
+              disabled={pageNum <= minPage}
+              aria-label="Trang trước"
+            >
+              <IconArrowLeft />
+            </button>
+          )}
           <span className="pdf-page-info" aria-live="polite">
             {status !== 'ready'
               ? 'Đang tải…'
@@ -339,15 +381,29 @@ export default function PdfViewer({
                 ? `${pageNum - minPage + 1}/${maxPage - minPage + 1} (tr. ${pageNum})`
                 : `${pageNum}/${pageCount}`}
           </span>
-          <button
-            type="button"
-            className="btn btn-outline btn-xs"
-            onClick={goNext}
-            disabled={pageNum >= maxPage}
-            aria-label="Trang sau"
-          >
-            <IconArrowRight />
-          </button>
+          {showPageArrows && (
+            <button
+              type="button"
+              className="btn btn-outline btn-xs"
+              onClick={goNext}
+              disabled={pageNum >= maxPage}
+              aria-label="Trang sau"
+            >
+              <IconArrowRight />
+            </button>
+          )}
+          {fullscreen && hasChapterNav && (
+            <button
+              type="button"
+              className="btn btn-outline btn-xs"
+              onClick={() => onNextChapter?.()}
+              disabled={!onNextChapter}
+              aria-label="Mục sau"
+              title="Mục sau"
+            >
+              <IconSkipForward /> <span className="pdf-btn-label">Mục sau</span>
+            </button>
+          )}
         </div>
         <div className="pdf-toolbar-group">
           <button
@@ -408,10 +464,15 @@ export default function PdfViewer({
           <div className="textLayer" ref={textLayerRef} />
         </div>
       </div>
-      {/* Nằm ngoài khung cuộn để không bị cắt; chỉ hiện lúc mới vào toàn màn hình */}
-      {fullscreen && status === 'ready' && maxPage > minPage && (
+      {/* Nằm ngoài khung cuộn để không bị cắt; hiện thoáng qua lúc vào toàn màn hình
+          VÀ mỗi lần nhảy mục (key đổi theo trang đầu mục) — nhảy mục mà không biết
+          mình đang ở mục nào thì lại phải thoát ra xem, đúng cái phiền cần bỏ.
+          Lời nhắc vuốt chỉ dành cho máy cảm ứng; PC vuốt không được. */}
+      {fullscreen && status === 'ready' && (chapterName || maxPage > minPage) && (
         <p className="pdf-swipe-hint" key={`${url}-${minPage}`}>
-          Vuốt ngang để lật trang
+          {chapterName && <strong>{chapterName}</strong>}
+          {chapterName && touch && maxPage > minPage && ' · '}
+          {touch && maxPage > minPage && 'Vuốt ngang để lật trang'}
         </p>
       )}
       {/* Nằm trong khung toàn màn hình nên đóng ô này là vẫn đang đọc dở, không văng ra ngoài */}

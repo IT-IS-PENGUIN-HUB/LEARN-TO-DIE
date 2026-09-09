@@ -110,6 +110,15 @@ export const IconClock = (p) => (
 export const IconShare = (p) => (
   <Icon {...p}><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" /><path d="m16 6-4-4-4 4" /><path d="M12 2v13" /></Icon>
 );
+// Nhảy nguyên MỤC (như nút chuyển bài của máy nghe nhạc) — cố ý KHÁC mũi tên
+// đơn của lật trang, vì trong toàn màn hình trên điện thoại hai nút đứng cạnh
+// nhau mà mất chữ (màn hẹp) thì chỉ còn hình để phân biệt.
+export const IconSkipBack = (p) => (
+  <Icon {...p}><path d="M18 19 9 12l9-7z" fill="currentColor" stroke="none" /><path d="M6 5v14" /></Icon>
+);
+export const IconSkipForward = (p) => (
+  <Icon {...p}><path d="m6 5 9 7-9 7z" fill="currentColor" stroke="none" /><path d="M18 5v14" /></Icon>
+);
 export const IconRotate = (p) => (
   <Icon {...p}><path d="M21 12a9 9 0 1 1-2.6-6.4" /><path d="M21 3v5h-5" /><rect x="9" y="9" width="6" height="6" rx="1" /></Icon>
 );
