@@ -23,6 +23,10 @@
     "t25_02": {
       "page": 11,
       "at": 1788924189780
+    },
+    "t25_03": {
+      "page": 15,
+      "at": 1788929291562
     }
   },
   "kiso": {
@@ -104,7 +108,7 @@
     }
   },
   "last": {
-    "subjectId": "kiso",
-    "chapterId": "k25ch1_03"
+    "subjectId": "tekisei",
+    "chapterId": "t25_03"
   }
 }
