@@ -3,6 +3,7 @@ import * as pdfjsLib from 'pdfjs-dist';
 import { TextLayer } from 'pdfjs-dist';
 import workerUrl from 'pdfjs-dist/build/pdf.worker.min.mjs?url';
 import AddWordForm from './vocab/AddWordForm.jsx';
+import { logSwipe } from '../lib/swipeLog.js';
 import {
   IconArrowLeft,
   IconArrowRight,
@@ -421,7 +422,13 @@ export default function PdfViewer({
     resetSwipeRef.current = resetNow;
 
     const onStart = (e) => {
-      if (e.touches.length !== 1 || pendingRef.current) {
+      if (e.touches.length !== 1) {
+        logSwipe(`bỏ qua: ${e.touches.length} ngón`);
+        st = null;
+        return;
+      }
+      if (pendingRef.current) {
+        logSwipe('bỏ qua: đang chốt trang trước');
         st = null;
         return;
       }
@@ -440,6 +447,7 @@ export default function PdfViewer({
           ? (c?.offsetHeight ?? 0) > wrap.clientHeight + 2
           : (c?.offsetWidth ?? 0) > wrap.clientWidth + 2;
       if (canPan) {
+        logSwipe(`bỏ qua: coi như đang phóng to (trang ${rotate === 90 ? c?.offsetHeight : c?.offsetWidth} > khung ${rotate === 90 ? wrap.clientHeight : wrap.clientWidth})`);
         st = null;
         return;
       }
@@ -522,32 +530,43 @@ export default function PdfViewer({
       if (!s.drag) return;
 
       const moved = Math.abs(s.along);
+      logSwipe(
+        `kéo ${s.drag ? 'có' : 'KHÔNG'} · đi ${Math.round(s.along)}px/${Math.round(s.span)} · ` +
+          `trang chờ ${s.ready ? 'sẵn' : 'chưa'}${s.edge ? ' · hết trang' : ''}`
+      );
       // Qua 1/3 trang là đổi; hoặc vẩy nhanh một cái ngắn cũng tính (như lướt ảnh)
       const pass = moved > s.span * 0.33 || (moved > 55 && Date.now() - s.t < 320);
       const target = pageNum + s.dir;
 
-      if (!s.edge && pass && s.ready) {
-        // Trượt nốt cho trang mới vào giữa, xong mới đổi số trang
+      if (!s.edge && pass) {
+        // Trượt nốt cho hết trang cũ rồi mới đổi số trang. LÀM CẢ KHI trang kế
+        // chưa vẽ xong: đổi tức thì thì lại đúng cái "không thấy hiệu ứng gì"
+        // mà ロン phàn nàn — thà trượt ra rồi trang mới hiện vào giữa.
+        const daCoTrangCho = s.ready;
         setT(-s.dir * s.span, true);
+        let xong = false;
         const commit = () => {
-          if (pendingRef.current) return;
-          // Giữ nguyên khung lệch + trang vẽ sẵn cho tới khi canvas chính vẽ xong
-          // trang này (effect render sẽ gọi resetSwipeRef) → không chớp trắng.
-          pendingRef.current = {
-            timer: setTimeout(() => {
-              pendingRef.current = null;
-              resetNow();
-            }, 1500), // phòng khi render hỏng, đừng để kẹt luôn màn hình
-          };
-          setPageNum(target);
+          if (xong) return;
+          xong = true;
+          if (daCoTrangCho) {
+            // Giữ nguyên khung lệch + trang vẽ sẵn cho tới khi canvas chính vẽ
+            // xong trang này (effect render gọi resetSwipeRef) → không chớp.
+            pendingRef.current = {
+              timer: setTimeout(() => {
+                pendingRef.current = null;
+                resetNow();
+              }, 1500), // phòng khi render hỏng, đừng để kẹt luôn màn hình
+            };
+            setPageNum(target);
+          } else {
+            // Không có gì để lộ ra → trả khung về giữa ngay, trang mới vẽ vào đó
+            resetNow();
+            setPageNum(Math.max(minPage, Math.min(maxPage, target)));
+          }
         };
         stack.addEventListener('transitionend', commit, { once: true });
         // Có máy không bắn transitionend (đúng vị trí sẵn) — chốt bằng tay
         setTimeout(commit, 320);
-      } else if (!s.edge && pass) {
-        // Trang kế chưa vẽ kịp: đổi thẳng như bản cũ còn hơn đứng chờ
-        resetNow();
-        setPageNum(Math.max(minPage, Math.min(maxPage, target)));
       } else {
         setT(0, true); // chưa đủ ngưỡng / hết trang → bật về chỗ cũ
         setTimeout(() => {
