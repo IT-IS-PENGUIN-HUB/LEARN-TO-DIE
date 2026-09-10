@@ -113,10 +113,14 @@
     "k25ch3_07": {
       "page": 23,
       "at": 1788921373250
+    },
+    "k25ch3_09": {
+      "page": 27,
+      "at": 1789018494066
     }
   },
   "last": {
     "subjectId": "kiso",
-    "chapterId": "k25ch1_02"
+    "chapterId": "k25ch3_09"
   }
 }
