@@ -9,9 +9,10 @@ import {
   pageCount,
 } from '../../data/textbooks.js';
 import { getSubjectProgress } from '../../lib/textbookProgress.js';
+import { useVocab } from '../../context/VocabProvider.jsx';
 import { useProgressVersion } from '../../hooks/useProgressVersion.js';
-import { chapterWordCount } from '../../lib/chapterVocab.js';
-import { IconArrowLeft, IconBookOpen, IconFolder, IconTable } from '../icons.jsx';
+import { chapterWordCount, getChapterWords } from '../../lib/chapterVocab.js';
+import { IconArrowLeft, IconBookOpen, IconFolder, IconLayers, IconTable } from '../icons.jsx';
 
 const KIND_ICON = { trend: IconTable, appendix: IconBookOpen, chapter: IconBookOpen };
 
@@ -57,7 +58,8 @@ function SubjectFolders({ onOpenSubject }) {
 }
 
 /** Cấp 2 — thư mục con: các chương trong giáo trình của một môn. */
-function ChapterList({ subjectId, onOpenChapter }) {
+function ChapterList({ subjectId, onOpenChapter, onReviewChapterVocab }) {
+  const { vocab } = useVocab();
   const version = useProgressVersion();
   const progress = useMemo(() => getSubjectProgress(subjectId), [subjectId, version]);
   const [sortByRate, setSortByRate] = useState(false);
@@ -73,11 +75,25 @@ function ChapterList({ subjectId, onOpenChapter }) {
     return [...chapters].sort((a, b) => (b.rate ?? -1) - (a.rate ?? -1));
   }, [chapters, sortByRate]);
 
-  // Giáo trình 基礎 gộp 5 章 vào 5 file → chèn dải phân nhóm theo 章 để 63 chủ đề
-  // không thành một danh sách phẳng khó định vị. Chỉ khi xem "thứ tự trong sách"
-  // (xếp theo tỷ lệ thì trộn giữa các 章 nên tiêu đề nhóm mất nghĩa) và môn nhiều file.
-  const multiDoc = getDocs(subjectId).length > 1;
-  const showGroups = !sortByRate && multiDoc;
+  // Dải phân nhóm theo 章 để danh sách dài không thành một mảng phẳng khó định vị,
+  // và hiện cả khi môn chỉ có MỘT file: nó còn mang nút ôn từ vựng
+  // của trọn cả 章 (ロン 15/9: chương 4 bản 2025 chia 21 mục, ôn lắt nhắt từng
+  // mục thì mệt). Chỉ ẩn khi đang xếp theo tỷ lệ ra đề — lúc đó các 章 trộn nhau
+  // nên tiêu đề nhóm mất nghĩa.
+  const showGroups = !sortByRate;
+
+  /** Từ vựng của TRỌN một file giáo trình (một 章) — gộp mọi mục, bỏ trùng.
+   *  Chỉ tính từ mà kho từ HIỆN CÓ, giống hệt nút trong màn đọc: nút không được
+   *  hứa số từ rồi mở ra ít hơn. */
+  const docVocab = useMemo(() => {
+    const kho = new Set((vocab[subjectId] ?? []).map((w) => w.jp));
+    const out = {};
+    for (const c of chapters) {
+      const cur = out[c.doc] ?? (out[c.doc] = new Set());
+      for (const w of getChapterWords(subjectId, c.id)) if (kho.has(w)) cur.add(w);
+    }
+    return out;
+  }, [chapters, subjectId, vocab]);
 
   return (
     <>
@@ -122,8 +138,21 @@ function ChapterList({ subjectId, onOpenChapter }) {
             <Fragment key={c.id}>
               {newGroup && doc && (
                 <li className="chapter-group-head">
-                  <span className="cgh-jp">{doc.label}</span>
-                  <span className="cgh-vi">{doc.labelVi}</span>
+                  <span className="cgh-text">
+                    <span className="cgh-jp">{doc.label}</span>
+                    <span className="cgh-vi">{doc.labelVi}</span>
+                  </span>
+                  {onReviewChapterVocab && docVocab[doc.id]?.size > 0 && (
+                    <button
+                      type="button"
+                      className="btn btn-outline btn-xs cgh-vocab"
+                      onClick={() =>
+                        onReviewChapterVocab(subjectId, [...docVocab[doc.id]], doc.label)
+                      }
+                    >
+                      <IconLayers /> Ôn {docVocab[doc.id].size} từ cả chương
+                    </button>
+                  )}
                 </li>
               )}
               <li>
@@ -170,7 +199,13 @@ function ChapterList({ subjectId, onOpenChapter }) {
   );
 }
 
-export default function TextbookLibrary({ subjectId, onBack, onOpenSubject, onOpenChapter }) {
+export default function TextbookLibrary({
+  subjectId,
+  onBack,
+  onOpenSubject,
+  onOpenChapter,
+  onReviewChapterVocab,
+}) {
   const subject = subjectId ? TEXTBOOK_SUBJECTS.find((s) => s.id === subjectId) : null;
 
   return (
@@ -186,7 +221,11 @@ export default function TextbookLibrary({ subjectId, onBack, onOpenSubject, onOp
       </div>
 
       {subject ? (
-        <ChapterList subjectId={subject.id} onOpenChapter={onOpenChapter} />
+        <ChapterList
+          subjectId={subject.id}
+          onOpenChapter={onOpenChapter}
+          onReviewChapterVocab={onReviewChapterVocab}
+        />
       ) : (
         <SubjectFolders onOpenSubject={onOpenSubject} />
       )}

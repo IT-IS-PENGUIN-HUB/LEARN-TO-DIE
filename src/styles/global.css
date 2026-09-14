@@ -634,8 +634,11 @@ textarea {
 /* Dải phân nhóm theo 章 (giáo trình 基礎 gộp 5 章 vào 5 file, 63 chủ đề) */
 .chapter-group-head {
   display: flex;
-  flex-direction: column;
-  gap: 0.1rem;
+  /* Hàng ngang: chữ bên trái, nút "ôn cả chương" bên phải; màn hẹp thì xuống dòng */
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
   padding: 0.5rem 0.2rem 0.15rem;
   margin-top: 0.5rem;
   border-bottom: 2px solid var(--border-color);
@@ -643,6 +646,13 @@ textarea {
 .chapter-list > .chapter-group-head:first-child {
   margin-top: 0;
 }
+.chapter-group-head .cgh-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+}
+
 .chapter-group-head .cgh-jp {
   font-family: var(--font-jp);
   font-weight: 700;
@@ -2306,6 +2316,13 @@ textarea.text-input {
   display: inline-flex;
   gap: 0.35rem;
   margin-right: auto;
+}
+
+/* Nút ôn từ vựng của TRỌN một 章, nằm trên dải phân nhóm */
+.cgh-vocab {
+  margin-left: auto;
+  flex: none;
+  white-space: nowrap;
 }
 
 .chapter-grp {

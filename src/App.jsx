@@ -213,6 +213,10 @@ function AppInner() {
           onBack={view.subjectId ? openTextbooks : goHome}
           onOpenSubject={openTextbookSubject}
           onOpenChapter={(chapterId) => openChapter(view.subjectId, chapterId)}
+          onReviewChapterVocab={(subject, words, label) => {
+            setVocabFilter({ subject, words, label });
+            setVocabOpen(true);
+          }}
         />
       )}
 
