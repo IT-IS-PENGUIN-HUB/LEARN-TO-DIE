@@ -3512,10 +3512,10 @@
       "meaning": "(tiêu phí) tiêu thụ, tiêu dùng",
       "exJp": "建物の断熱化で電力の消費を減らせる。",
       "exVi": "Cách nhiệt cho công trình giúp giảm tiêu thụ điện năng.",
-      "score": 0,
-      "nextReview": 0,
-      "mastered": false,
-      "updatedAt": 1786573248380
+      "score": 1,
+      "nextReview": 1789522134252,
+      "mastered": true,
+      "updatedAt": 1789435735436
     },
     {
       "id": "1786573248380_2910qm",
@@ -3656,10 +3656,10 @@
       "meaning": "(số trị) giá trị số, trị số",
       "exJp": "測定した数値を表に記入する。",
       "exVi": "Ghi trị số đo được vào bảng.",
-      "score": 0,
-      "nextReview": 0,
-      "mastered": false,
-      "updatedAt": 1786573248380
+      "score": 1,
+      "nextReview": 1789522139717,
+      "mastered": true,
+      "updatedAt": 1789435746637
     },
     {
       "id": "1786573248380_39h3g0",
@@ -3872,10 +3872,10 @@
       "meaning": "(tổ hợp) tổ hợp, sự kết hợp",
       "exJp": "正しい語句の組合せを選択肢から選ぶ。",
       "exVi": "Chọn tổ hợp từ ngữ đúng trong các phương án.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1789522149251,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1789435749251
     },
     {
       "id": "1786573248380_3di2l6",
@@ -3944,10 +3944,10 @@
       "meaning": "(tồn tại) tồn tại",
       "exJp": "地盤中に軟弱層が存在する場合は対策が必要である。",
       "exVi": "Nếu tồn tại lớp đất yếu trong nền thì cần biện pháp xử lý.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1789522154064,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1789435754064
     },
     {
       "id": "1786573248380_fad068",
@@ -3992,10 +3992,10 @@
       "meaning": "(niên đại) niên đại, thời kỳ, thập niên",
       "exJp": "1990年代に多くの高速道路が建設された。",
       "exVi": "Nhiều đường cao tốc được xây dựng vào thập niên 1990.",
-      "score": 0,
-      "nextReview": 0,
-      "mastered": false,
-      "updatedAt": 1786573248380
+      "score": 1,
+      "nextReview": 1789522160072,
+      "mastered": true,
+      "updatedAt": 1789435761171
     },
     {
       "id": "1786573248380_5rjeb0",
@@ -4040,10 +4040,10 @@
       "meaning": "(quan điểm) quan điểm, góc nhìn",
       "exJp": "安全性の観点から設計を見直す。",
       "exVi": "Xem xét lại thiết kế từ góc nhìn an toàn.",
-      "score": 0,
-      "nextReview": 0,
-      "mastered": false,
-      "updatedAt": 1786573248380
+      "score": 1,
+      "nextReview": 1789522163302,
+      "mastered": true,
+      "updatedAt": 1789435764022
     },
     {
       "id": "1786573248380_3ndc27",
