@@ -5216,10 +5216,10 @@
       "meaning": "Vỡ, gãy, đứt",
       "exJp": "引張試験で試験片が破断するまで荷重をかける。",
       "exVi": "Trong thí nghiệm kéo, gia tải cho đến khi mẫu bị đứt.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1789522194539,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1789435794539
     },
     {
       "id": "1786573248380_iw4l64",
@@ -5528,10 +5528,10 @@
       "meaning": "(chuyển vị) lệch mạng (khuyết tật tinh thể trong kim loại)",
       "exJp": "金属の塑性変形は転位の移動によって生じる。",
       "exVi": "Biến dạng dẻo của kim loại phát sinh do sự di chuyển của lệch mạng.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1789522198821,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1789435798821
     },
     {
       "id": "1786573248380_65jfxr",
