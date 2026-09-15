@@ -3,6 +3,7 @@ import { useVocab } from '../../context/VocabProvider.jsx';
 import { SUBJECTS } from '../../data/exams.js';
 import { countDue } from '../../lib/srs.js';
 import { isIOS, isStandalone } from '../../lib/platform.js';
+import { vocabChapterGroups } from '../../lib/chapterVocab.js';
 import AddWordForm from './AddWordForm.jsx';
 import FlashcardMode from './FlashcardMode.jsx';
 import MasteredList from './MasteredList.jsx';
@@ -25,7 +26,7 @@ const MODES = [
  * chương giáo trình. Lúc đó chỉ hiện Quiz + Flashcard; các tab còn lại (thêm từ,
  * quét ảnh, kho từ) không hợp với việc lọc nên ẩn đi.
  */
-export default function VocabModal({ onClose, initialSubject = 'kiso', backupSlot, onRecordAnswer, filter, onClearFilter }) {
+export default function VocabModal({ onClose, initialSubject = 'kiso', backupSlot, onRecordAnswer, filter, onSetFilter, onClearFilter }) {
   const { statsFor, vocab } = useVocab();
   const [subject, setSubject] = useState(filter?.subject ?? initialSubject);
   // Quiz là tính năng dùng nhiều nhất → mặc định
@@ -39,6 +40,32 @@ export default function VocabModal({ onClose, initialSubject = 'kiso', backupSlo
     const want = new Set(filter.words);
     return (vocab[filter.subject] ?? []).filter((w) => want.has(w.jp));
   }, [filter, vocab]);
+
+  // Chương của môn nào thì môn đó phải đang được chọn, kẻo thống kê/quiz lệch môn
+  useEffect(() => {
+    if (filter?.subject) setSubject(filter.subject);
+  }, [filter?.subject]);
+
+  // ロン 15/9: vào màn Từ vựng chỉ thấy chọn theo MÔN, tưởng không ôn theo chương
+  // được — nút ôn theo chương trước đây chỉ nằm bên Giáo trình. Đặt luôn ô chọn
+  // ở đây, gộp theo file giáo trình y như danh sách chương.
+  const chapterGroups = useMemo(
+    () => vocabChapterGroups(subject, vocab[subject] ?? []),
+    [subject, vocab]
+  );
+
+  const pickChapter = (key) => {
+    if (!key) {
+      onClearFilter?.();
+      return;
+    }
+    for (const g of chapterGroups) {
+      if (key === `doc:${g.docId}`) return onSetFilter?.({ subject, words: g.words, label: g.label, key });
+      for (const it of g.items) {
+        if (key === `ch:${it.id}`) return onSetFilter?.({ subject, words: it.words, label: it.label, key });
+      }
+    }
+  };
 
   const activeModes = filter ? MODES.filter((m) => m.id === 'quiz' || m.id === 'flashcard') : MODES;
   useEffect(() => {
@@ -89,20 +116,46 @@ export default function VocabModal({ onClose, initialSubject = 'kiso', backupSlo
           </div>
         )}
 
-        {!filter && (
-          <div className="tab-row" role="tablist" aria-label="Chọn môn">
-            {Object.values(SUBJECTS).map((s) => (
-              <button
-                key={s.id}
-                type="button"
-                role="tab"
-                aria-selected={subject === s.id}
-                className={`btn btn-sm ${subject === s.id ? 'btn-primary' : 'btn-outline'} jp-text`}
-                onClick={() => setSubject(s.id)}
-              >
-                {s.nameJp}
-              </button>
-            ))}
+        {/* Hàng môn hiện cả khi đang lọc: ô chọn chương nằm ngay dưới nên phải
+            đổi môn được, không thì muốn xem chương môn khác lại phải thoát ra. */}
+        <div className="tab-row" role="tablist" aria-label="Chọn môn">
+          {Object.values(SUBJECTS).map((s) => (
+            <button
+              key={s.id}
+              type="button"
+              role="tab"
+              aria-selected={subject === s.id}
+              className={`btn btn-sm ${subject === s.id ? 'btn-primary' : 'btn-outline'} jp-text`}
+              onClick={() => {
+                setSubject(s.id);
+                if (filter) onClearFilter?.(); // bộ lọc của môn cũ không còn nghĩa
+              }}
+            >
+              {s.nameJp}
+            </button>
+          ))}
+        </div>
+
+        {onSetFilter && chapterGroups.length > 0 && (
+          <div className="vocab-chapter-pick">
+            <label htmlFor="vocab-chapter">Ôn theo chương giáo trình</label>
+            <select
+              id="vocab-chapter"
+              value={filter?.key ?? ''}
+              onChange={(e) => pickChapter(e.target.value)}
+            >
+              <option value="">Cả kho từ — {stats.total} từ</option>
+              {chapterGroups.map((g) => (
+                <optgroup key={g.docId} label={g.label}>
+                  <option value={`doc:${g.docId}`}>Cả {g.label} — {g.words.length} từ</option>
+                  {g.items.map((it) => (
+                    <option key={it.id} value={`ch:${it.id}`}>
+                      　{it.label} — {it.words.length} từ
+                    </option>
+                  ))}
+                </optgroup>
+              ))}
+            </select>
           </div>
         )}
 

@@ -103,7 +103,9 @@ export default function TextbookReader({ subjectId, chapterId, onBack, onOpenCha
             <button
               type="button"
               className="btn btn-primary chapter-vocab-btn"
-              onClick={() => onReviewChapterVocab(subjectId, chapterVocab, chapterLabel)}
+              onClick={() =>
+                onReviewChapterVocab(subjectId, chapterVocab, chapterLabel, `ch:${chapterId}`)
+              }
             >
               <IconLayers /> Ôn {chapterVocab.length} từ vựng của chương này
             </button>

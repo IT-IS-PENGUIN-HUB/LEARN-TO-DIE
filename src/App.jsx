@@ -213,8 +213,8 @@ function AppInner() {
           onBack={view.subjectId ? openTextbooks : goHome}
           onOpenSubject={openTextbookSubject}
           onOpenChapter={(chapterId) => openChapter(view.subjectId, chapterId)}
-          onReviewChapterVocab={(subject, words, label) => {
-            setVocabFilter({ subject, words, label });
+          onReviewChapterVocab={(subject, words, label, key) => {
+            setVocabFilter({ subject, words, label, key });
             setVocabOpen(true);
           }}
         />
@@ -226,8 +226,8 @@ function AppInner() {
           chapterId={view.chapterId}
           onBack={() => openTextbookSubject(view.subjectId)}
           onOpenChapter={(chapterId) => openChapter(view.subjectId, chapterId)}
-          onReviewChapterVocab={(subject, words, label) => {
-            setVocabFilter({ subject, words, label });
+          onReviewChapterVocab={(subject, words, label, key) => {
+            setVocabFilter({ subject, words, label, key });
             setVocabOpen(true);
           }}
         />
@@ -253,6 +253,7 @@ function AppInner() {
           backupSlot={<BackupPanel sync={sync} />}
           onRecordAnswer={recordAnswer}
           filter={vocabFilter}
+          onSetFilter={setVocabFilter}
           onClearFilter={() => setVocabFilter(null)}
         />
       )}

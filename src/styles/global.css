@@ -742,6 +742,35 @@ textarea {
   margin-top: 0.75rem;
 }
 
+/* Ô chọn chương ngay trong màn Từ vựng — trước đây chỉ chọn được theo môn,
+   muốn ôn theo chương phải đi vòng qua Giáo trình (ロン 15/9). */
+.vocab-chapter-pick {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin: 0 0 0.75rem;
+}
+
+.vocab-chapter-pick label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.vocab-chapter-pick select {
+  flex: 1 1 14rem;
+  min-width: 0;
+  max-width: 100%;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--bg-alt);
+  color: var(--text-main);
+  font-family: var(--font-jp);
+  font-size: 0.9rem;
+}
+
 .vocab-filter-bar {
   display: flex;
   align-items: center;

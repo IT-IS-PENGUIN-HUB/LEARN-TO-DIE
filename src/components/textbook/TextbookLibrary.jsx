@@ -147,7 +147,12 @@ function ChapterList({ subjectId, onOpenChapter, onReviewChapterVocab }) {
                       type="button"
                       className="btn btn-outline btn-xs cgh-vocab"
                       onClick={() =>
-                        onReviewChapterVocab(subjectId, [...docVocab[doc.id]], doc.label)
+                        onReviewChapterVocab(
+                          subjectId,
+                          [...docVocab[doc.id]],
+                          doc.label,
+                          `doc:${doc.id}`
+                        )
                       }
                     >
                       <IconLayers /> Ôn {docVocab[doc.id].size} từ cả chương
