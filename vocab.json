@@ -19,10 +19,10 @@
       "meaning": "Khuyết tật / Lỗi",
       "exJp": "システムに欠陥がある",
       "exVi": "Hệ thống có khuyết tật",
-      "score": 1,
-      "nextReview": 1785971218746,
+      "score": 2,
+      "nextReview": 1789608634009,
       "mastered": false,
-      "updatedAt": 1785884818746
+      "updatedAt": 1789435834009
     },
     {
       "id": "1777720257134",
@@ -319,10 +319,10 @@
       "meaning": "Hệ số dẫn nhiệt, độ dẫn nhiệt",
       "exJp": "この材料は熱伝導率が高い。Vật liệu này có hệ số dẫn nhiệt cao.",
       "exVi": "",
-      "score": 1,
-      "nextReview": 1785971182677,
+      "score": 2,
+      "nextReview": 1789608617740,
       "mastered": false,
-      "updatedAt": 1785884782677
+      "updatedAt": 1789435817740
     },
     {
       "id": "1777825688981",
@@ -343,10 +343,10 @@
       "meaning": "axit axetic",
       "exJp": "酢酸は食品の保存料として使われます。 (Axit axetic được sử dụng làm chất bảo quản thực phẩm.)",
       "exVi": "",
-      "score": 1,
-      "nextReview": 1785971190595,
+      "score": 2,
+      "nextReview": 1789608624073,
       "mastered": false,
-      "updatedAt": 1785884790595
+      "updatedAt": 1789435824073
     },
     {
       "id": "1777826634538",
@@ -355,10 +355,10 @@
       "meaning": "độ axit, tính axit",
       "exJp": "この土壌は酸性度が高い。\nĐộ axit của loại đất này cao.",
       "exVi": "",
-      "score": 1,
-      "nextReview": 1785971195293,
+      "score": 2,
+      "nextReview": 1789608629592,
       "mastered": false,
-      "updatedAt": 1785884795293
+      "updatedAt": 1789435829592
     },
     {
       "id": "1777830220518",
@@ -3405,9 +3405,9 @@
       "exJp": "高温で完全燃焼させると有害物質が減る。",
       "exVi": "Đốt cháy hoàn toàn ở nhiệt độ cao sẽ giảm chất độc hại.",
       "score": 0,
-      "nextReview": 0,
+      "nextReview": 1789435838058,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1789435838058
     },
     {
       "id": "1786573248380_oiqaat",
@@ -5552,10 +5552,10 @@
       "meaning": "(dung điểm) điểm nóng chảy",
       "exJp": "金属の融点は材料選定の重要な指標である。",
       "exVi": "Điểm nóng chảy của kim loại là chỉ số quan trọng khi chọn vật liệu.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1789522214823,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1789435814823
     },
     {
       "id": "1786573248380_7f1gq8",
