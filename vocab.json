@@ -6572,10 +6572,10 @@
       "meaning": "neutron (hạt không mang điện trong hạt nhân)",
       "exJp": "同位体は陽子数が同じで中性子数が異なる。",
       "exVi": "Đồng vị có cùng số proton nhưng khác số neutron.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1789656912225,
       "mastered": false,
-      "updatedAt": 1789428357246
+      "updatedAt": 1789570512225
     },
     {
       "id": "1789428357247",
@@ -6608,10 +6608,10 @@
       "meaning": "số khối (= proton + neutron)",
       "exJp": "質量数は陽子数と中性子数の和である。",
       "exVi": "Số khối là tổng số proton và số neutron.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1789656914690,
       "mastered": false,
-      "updatedAt": 1789428357249
+      "updatedAt": 1789570514690
     },
     {
       "id": "1789428357250",
