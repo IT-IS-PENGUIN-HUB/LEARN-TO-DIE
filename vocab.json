@@ -6896,10 +6896,10 @@
       "meaning": "phương trình nhiệt hóa học",
       "exJp": "熱化学方程式には反応熱を併記する。",
       "exVi": "Phương trình nhiệt hóa học có ghi kèm nhiệt phản ứng.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1789658391158,
       "mastered": false,
-      "updatedAt": 1789428357273
+      "updatedAt": 1789571991158
     },
     {
       "id": "1789428357274",
@@ -6908,10 +6908,10 @@
       "meaning": "nhiệt phản ứng",
       "exJp": "反応熱は経路によらず始点と終点で決まる。",
       "exVi": "Nhiệt phản ứng chỉ phụ thuộc đầu và cuối, không phụ thuộc đường đi.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1789658396924,
       "mastered": false,
-      "updatedAt": 1789428357274
+      "updatedAt": 1789571996924
     },
     {
       "id": "1789428357275",
@@ -6920,10 +6920,10 @@
       "meaning": "phản ứng tỏa nhiệt",
       "exJp": "発熱反応の反応熱は正の値で表す。",
       "exVi": "Nhiệt của phản ứng tỏa nhiệt mang dấu dương.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1789658403424,
       "mastered": false,
-      "updatedAt": 1789428357275
+      "updatedAt": 1789572003424
     },
     {
       "id": "1789428357276",
@@ -6932,10 +6932,10 @@
       "meaning": "phản ứng thu nhiệt",
       "exJp": "吸熱反応の反応熱は負の値で表す。",
       "exVi": "Nhiệt của phản ứng thu nhiệt mang dấu âm.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1789658410040,
       "mastered": false,
-      "updatedAt": 1789428357276
+      "updatedAt": 1789572010040
     },
     {
       "id": "1789428357277",
@@ -6944,10 +6944,10 @@
       "meaning": "định luật Hess",
       "exJp": "ヘスの法則より反応熱は足し引きできる。",
       "exVi": "Theo định luật Hess, có thể cộng trừ nhiệt phản ứng.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1789658417323,
       "mastered": false,
-      "updatedAt": 1789428357277
+      "updatedAt": 1789572017323
     },
     {
       "id": "1789428357278",
