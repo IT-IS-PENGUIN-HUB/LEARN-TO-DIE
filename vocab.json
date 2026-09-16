@@ -6308,10 +6308,10 @@
       "meaning": "giới hạn tỉ lệ (ứng suất còn tỉ lệ với biến dạng)",
       "exJp": "比例限度までは応力とひずみが比例する。",
       "exVi": "Đến giới hạn tỉ lệ thì ứng suất tỉ lệ với biến dạng.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1789655714615,
       "mastered": false,
-      "updatedAt": 1789428357224
+      "updatedAt": 1789569314615
     },
     {
       "id": "1789428357225",
