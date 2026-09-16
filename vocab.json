@@ -8540,10 +8540,10 @@
       "meaning": "khí carbon dioxide (CO2)",
       "exJp": "温室効果ガスの代表は二酸化炭素である。",
       "exVi": "Khí nhà kính tiêu biểu là carbon dioxide.",
-      "score": 0,
-      "nextReview": 1789434723042,
+      "score": 1,
+      "nextReview": 1789687520381,
       "mastered": false,
-      "updatedAt": 1789434723108
+      "updatedAt": 1789601120381
     },
     {
       "id": "1789434723109",
@@ -9920,10 +9920,10 @@
       "meaning": "pin thứ cấp (pin sạc)",
       "exJp": "二次電池は充電して繰り返し使える。",
       "exVi": "Pin thứ cấp có thể sạc lại và dùng nhiều lần.",
-      "score": 0,
-      "nextReview": 1789434723042,
+      "score": 1,
+      "nextReview": 1789687527815,
       "mastered": false,
-      "updatedAt": 1789434723223
+      "updatedAt": 1789601127815
     },
     {
       "id": "1789434723224",
