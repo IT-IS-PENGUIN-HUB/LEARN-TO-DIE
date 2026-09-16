@@ -7472,10 +7472,10 @@
       "meaning": "enzyme (xúc tác sinh học)",
       "exJp": "酵素はタンパク質を主成分とする有機触媒である。",
       "exVi": "Enzyme là xúc tác hữu cơ có thành phần chính là protein.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1789687466893,
       "mastered": false,
-      "updatedAt": 1789428357321
+      "updatedAt": 1789601066893
     },
     {
       "id": "1789428357322",
@@ -7700,10 +7700,10 @@
       "meaning": "tế bào",
       "exJp": "細胞は重量の約70%が水である。",
       "exVi": "Khoảng 70% khối lượng tế bào là nước.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1789687471577,
       "mastered": false,
-      "updatedAt": 1789428357340
+      "updatedAt": 1789601071577
     },
     {
       "id": "1789428357341",
