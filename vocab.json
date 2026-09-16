@@ -6104,10 +6104,10 @@
       "meaning": "khối lượng riêng",
       "exJp": "鉄の密度は7.9 g/cm³、アルミは2.7 g/cm³である。",
       "exVi": "Khối lượng riêng của sắt là 7,9 g/cm³, nhôm là 2,7 g/cm³.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1789655263910,
       "mastered": false,
-      "updatedAt": 1789428357207
+      "updatedAt": 1789568863910
     },
     {
       "id": "1789428357208",
@@ -6116,10 +6116,10 @@
       "meaning": "điện trở suất",
       "exJp": "電気抵抗率は純銅＜純金＜純鉄の順である。",
       "exVi": "Điện trở suất theo thứ tự đồng < vàng < sắt nguyên chất.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1789655271378,
       "mastered": false,
-      "updatedAt": 1789428357208
+      "updatedAt": 1789568871378
     },
     {
       "id": "1789428357209",
