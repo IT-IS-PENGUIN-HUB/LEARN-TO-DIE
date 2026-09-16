@@ -1075,10 +1075,10 @@
       "meaning": "được bàn giao",
       "exJp": "完成した建物が発注者に引き渡された。",
       "exVi": "Tòa nhà hoàn thành đã được bàn giao cho chủ đầu tư.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1789688791153,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1789602391153
     },
     {
       "id": "1786573248380_1uh3k1",
@@ -1376,10 +1376,10 @@
       "meaning": "nguyên vật liệu",
       "exJp": "原材料の価格が高騰している。",
       "exVi": "Giá nguyên vật liệu đang tăng vọt.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1789688795020,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1789602395020
     },
     {
       "id": "1786573248380_5lj1d1",
@@ -1700,10 +1700,10 @@
       "meaning": "phương châm con trỏ",
       "exJp": "国は耐震設計の指針を公表した。",
       "exVi": "Nhà nước đã công bố chỉ dẫn thiết kế kháng chấn.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1789688797970,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1789602397970
     },
     {
       "id": "1786573248380_0rlygx",
@@ -2264,10 +2264,10 @@
       "meaning": "(ưu tiên thuận) thứ tự ưu tiên",
       "exJp": "演算子の優先順に従って計算する。",
       "exVi": "Tính toán theo thứ tự ưu tiên của toán tử.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1789688784903,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1789602384903
     },
     {
       "id": "1786573248380_c3tpyu",
