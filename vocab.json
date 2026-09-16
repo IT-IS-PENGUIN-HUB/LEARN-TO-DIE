@@ -6368,10 +6368,10 @@
       "meaning": "số mol (lượng chất)",
       "exJp": "物質量＝質量÷モル質量を必ず経由する。",
       "exVi": "Luôn phải đi qua công thức số mol = khối lượng ÷ khối lượng mol.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1789655746648,
       "mastered": false,
-      "updatedAt": 1789428357229
+      "updatedAt": 1789569346648
     },
     {
       "id": "1789428357230",
