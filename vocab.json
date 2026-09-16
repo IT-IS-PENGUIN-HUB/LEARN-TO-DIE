@@ -6836,10 +6836,10 @@
       "meaning": "điện tích",
       "exJp": "イオンの酸化数の和はその電荷に等しい。",
       "exVi": "Tổng số oxi hóa trong ion bằng điện tích của ion đó.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1789658329383,
       "mastered": false,
-      "updatedAt": 1789428357268
+      "updatedAt": 1789571929383
     },
     {
       "id": "1789428357269",
@@ -6848,10 +6848,10 @@
       "meaning": "khối lượng mol (g/mol)",
       "exJp": "物質量は質量をモル質量で割って求める。",
       "exVi": "Số mol tính bằng khối lượng chia khối lượng mol.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1789658333427,
       "mastered": false,
-      "updatedAt": 1789428357269
+      "updatedAt": 1789571933427
     },
     {
       "id": "1789428357270",
