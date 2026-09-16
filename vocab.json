@@ -6224,10 +6224,10 @@
       "meaning": "sự kết tinh lại (nung để phục hồi tổ chức)",
       "exJp": "加熱して再結晶させると延性が回復する。",
       "exVi": "Nung cho kết tinh lại thì độ dẻo được phục hồi.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1789655861819,
       "mastered": false,
-      "updatedAt": 1789428357217
+      "updatedAt": 1789569461819
     },
     {
       "id": "1789428357218",
@@ -6320,10 +6320,10 @@
       "meaning": "hợp kim",
       "exJp": "ステンレス鋼はクロムを含む鉄系の合金である。",
       "exVi": "Thép không gỉ là hợp kim nền sắt có chứa crom.",
-      "score": 0,
-      "nextReview": 1789428357197,
-      "mastered": false,
-      "updatedAt": 1789428357225
+      "score": 1,
+      "nextReview": 1789655867617,
+      "mastered": true,
+      "updatedAt": 1789569468520
     },
     {
       "id": "1789428357226",
@@ -6356,10 +6356,10 @@
       "meaning": "nguyên tử lượng",
       "exJp": "物質量は質量を原子量で割って求める。",
       "exVi": "Số mol tính bằng khối lượng chia nguyên tử lượng.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1789655875286,
       "mastered": false,
-      "updatedAt": 1789428357228
+      "updatedAt": 1789569475286
     },
     {
       "id": "1789428357229",
@@ -6404,10 +6404,10 @@
       "meaning": "chống ăn mòn",
       "exJp": "めっきや塗装は代表的な防食の方法である。",
       "exVi": "Mạ và sơn là các biện pháp chống ăn mòn tiêu biểu.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1789655882002,
       "mastered": false,
-      "updatedAt": 1789428357232
+      "updatedAt": 1789569482002
     },
     {
       "id": "1789428357233",
@@ -6416,10 +6416,10 @@
       "meaning": "ăn mòn lỗ (ăn mòn cục bộ dạng hố)",
       "exJp": "腐食は全面だけでなく孔食のように局所的にも起こる。",
       "exVi": "Ăn mòn không chỉ toàn bề mặt mà còn cục bộ như ăn mòn lỗ.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1789655889251,
       "mastered": false,
-      "updatedAt": 1789428357233
+      "updatedAt": 1789569489251
     },
     {
       "id": "1789428357234",
@@ -6428,10 +6428,10 @@
       "meaning": "thép không gỉ (chứa crom ≥10,5%)",
       "exJp": "ステンレス鋼はクロムを10.5%以上含む。",
       "exVi": "Thép không gỉ chứa từ 10,5% crom trở lên.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1789655896954,
       "mastered": false,
-      "updatedAt": 1789428357234
+      "updatedAt": 1789569496954
     },
     {
       "id": "1789428357235",
@@ -6440,10 +6440,10 @@
       "meaning": "crom (Cr)",
       "exJp": "ステンレスの耐食性はクロムによる。",
       "exVi": "Tính chống ăn mòn của thép không gỉ là nhờ crom.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1789655899487,
       "mastered": false,
-      "updatedAt": 1789428357235
+      "updatedAt": 1789569499487
     },
     {
       "id": "1789428357236",
