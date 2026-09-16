@@ -3944,10 +3944,10 @@
       "meaning": "(tồn tại) tồn tại",
       "exJp": "地盤中に軟弱層が存在する場合は対策が必要である。",
       "exVi": "Nếu tồn tại lớp đất yếu trong nền thì cần biện pháp xử lý.",
-      "score": 1,
-      "nextReview": 1789522154064,
+      "score": 2,
+      "nextReview": 1789774972585,
       "mastered": false,
-      "updatedAt": 1789435754064
+      "updatedAt": 1789602172585
     },
     {
       "id": "1786573248380_fad068",
@@ -5216,10 +5216,10 @@
       "meaning": "Vỡ, gãy, đứt",
       "exJp": "引張試験で試験片が破断するまで荷重をかける。",
       "exVi": "Trong thí nghiệm kéo, gia tải cho đến khi mẫu bị đứt.",
-      "score": 1,
-      "nextReview": 1789522194539,
+      "score": 2,
+      "nextReview": 1789774979002,
       "mastered": false,
-      "updatedAt": 1789435794539
+      "updatedAt": 1789602179002
     },
     {
       "id": "1786573248380_iw4l64",
@@ -6020,10 +6020,10 @@
       "meaning": "mạng lục giác xếp chặt (HCP)",
       "exJp": "マグネシウムと亜鉛は六方最密格子である。",
       "exVi": "Magie và kẽm có mạng lục giác xếp chặt.",
-      "score": 1,
-      "nextReview": 1789535563404,
+      "score": 2,
+      "nextReview": 1789774983685,
       "mastered": false,
-      "updatedAt": 1789449163404
+      "updatedAt": 1789602183685
     },
     {
       "id": "1789428357201",
@@ -6836,10 +6836,10 @@
       "meaning": "điện tích",
       "exJp": "イオンの酸化数の和はその電荷に等しい。",
       "exVi": "Tổng số oxi hóa trong ion bằng điện tích của ion đó.",
-      "score": 1,
-      "nextReview": 1789658329383,
+      "score": 2,
+      "nextReview": 1789774990186,
       "mastered": false,
-      "updatedAt": 1789571929383
+      "updatedAt": 1789602190186
     },
     {
       "id": "1789428357269",
