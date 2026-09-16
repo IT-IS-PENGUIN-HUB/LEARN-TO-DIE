@@ -2672,10 +2672,10 @@
       "meaning": "(dương tử) proton",
       "exJp": "原子核は陽子と中性子から成る。",
       "exVi": "Hạt nhân nguyên tử gồm proton và neutron.",
-      "score": 2,
-      "nextReview": 1789774026142,
+      "score": 3,
+      "nextReview": 1789947886095,
       "mastered": false,
-      "updatedAt": 1789601226142
+      "updatedAt": 1789602286095
     },
     {
       "id": "1786573248380_x1656y",
@@ -6524,10 +6524,10 @@
       "meaning": "giòn hydro (kim loại giòn do hydro xâm nhập)",
       "exJp": "高強度鋼は水素脆化に注意が必要である。",
       "exVi": "Thép cường độ cao cần chú ý hiện tượng giòn hydro.",
-      "score": 1,
-      "nextReview": 1789656609134,
+      "score": 2,
+      "nextReview": 1789775095680,
       "mastered": false,
-      "updatedAt": 1789570209134
+      "updatedAt": 1789602295680
     },
     {
       "id": "1789428357243",
@@ -8552,10 +8552,10 @@
       "meaning": "khí metan (CH4)",
       "exJp": "メタンも主要な温室効果ガスの一つである。",
       "exVi": "Metan cũng là một trong các khí nhà kính chính.",
-      "score": 1,
-      "nextReview": 1789687428355,
-      "mastered": false,
-      "updatedAt": 1789601028355
+      "score": 2,
+      "nextReview": 1789775088846,
+      "mastered": true,
+      "updatedAt": 1789602290294
     },
     {
       "id": "1789434723110",
