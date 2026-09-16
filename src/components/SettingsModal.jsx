@@ -1,5 +1,8 @@
-import { useState } from 'react';
-import { KEYS, loadString, saveString } from '../lib/storage.js';
+import { useMemo, useState } from 'react';
+import { useVocab } from '../context/VocabProvider.jsx';
+import { SUBJECTS } from '../data/exams.js';
+import { vocabChapterGroups } from '../lib/chapterVocab.js';
+import { KEYS, loadJSON, loadString, saveJSON, saveString } from '../lib/storage.js';
 import OfflinePanel from './OfflinePanel.jsx';
 import { IconCloudDown, IconCloudUp, IconGear, IconX } from './icons.jsx';
 
@@ -9,6 +12,29 @@ export default function SettingsModal({ onClose, sync }) {
   const [ghRepo, setGhRepo] = useState(() => loadString(KEYS.ghRepo));
   const [ghToken, setGhToken] = useState(() => loadString(KEYS.ghToken));
   const [reminderMin, setReminderMin] = useState(() => loadString(KEYS.reminderMin) || '0');
+  // Phạm vi từ nhắc: null = cả kho; {subject, key, label} = một chương/mục giáo trình
+  const [reminderScope, setReminderScope] = useState(() => loadJSON(KEYS.reminderScope));
+  const { vocab } = useVocab();
+  // Chỉ môn nào có ánh xạ chương ↔ từ mới hiện (専門 chưa có)
+  const scopeGroups = useMemo(
+    () =>
+      Object.values(SUBJECTS)
+        .map((s) => ({ subject: s, groups: vocabChapterGroups(s.id, vocab[s.id] ?? []) }))
+        .filter((x) => x.groups.length > 0),
+    [vocab]
+  );
+  const scopeValue = reminderScope ? `${reminderScope.subject}|${reminderScope.key}` : '';
+  const pickScope = (value) => {
+    if (!value) return setReminderScope(null);
+    const [subject, key] = value.split('|');
+    for (const { groups } of scopeGroups) {
+      for (const g of groups) {
+        if (key === `doc:${g.docId}`) return setReminderScope({ subject, key, label: g.label });
+        const it = g.items.find((i) => key === `ch:${i.id}`);
+        if (it) return setReminderScope({ subject, key, label: it.label });
+      }
+    }
+  };
   const [examDay, setExamDay] = useState(() => loadString(KEYS.examDay));
   const [savedMsg, setSavedMsg] = useState('');
 
@@ -22,7 +48,8 @@ export default function SettingsModal({ onClose, sync }) {
     saveString(KEYS.ghRepo, ghRepo.trim());
     saveString(KEYS.ghToken, ghToken.trim());
     saveString(KEYS.reminderMin, reminderMin);
-    // Đổi chu kỳ thì cho phép nhắc ngay ở tick kế tiếp
+    saveJSON(KEYS.reminderScope, reminderScope);
+    // Đổi chu kỳ/phạm vi thì cho phép nhắc ngay ở tick kế tiếp
     saveString(KEYS.reminderLast, '0');
     setSavedMsg('Đã lưu cài đặt ✓');
     setTimeout(() => setSavedMsg(''), 2500);
@@ -133,7 +160,9 @@ export default function SettingsModal({ onClose, sync }) {
           <p className="settings-note">
             Trong lúc trình duyệt/app còn mở (kể cả thu nhỏ), cứ mỗi chu kỳ sẽ hiện một từ cần ôn ở góc màn
             hình. Cần bấm nút cấp quyền thông báo một lần. (iPhone không hỗ trợ thông báo nền cho web app —
-            hãy nhìn badge đỏ trên nút Từ vựng, hoặc dùng Phím tắt iOS.)
+            hãy nhìn badge đỏ trên nút Từ vựng, hoặc dùng Phím tắt iOS.) Mặc định lấy ngẫu nhiên cả kho;
+            muốn bám chương đang học thì chọn ở ô dưới, hoặc bấm 🔔 ngay trong màn Từ vựng khi đang lọc
+            theo chương.
           </p>
           <label htmlFor="set-reminder">Chu kỳ nhắc:</label>
           <select
@@ -149,6 +178,28 @@ export default function SettingsModal({ onClose, sync }) {
             <option value="20">Mỗi 20 phút</option>
             <option value="30">Mỗi 30 phút</option>
             <option value="60">Mỗi 1 giờ</option>
+          </select>
+          <label htmlFor="set-reminder-scope">Lấy từ để nhắc từ:</label>
+          <select
+            id="set-reminder-scope"
+            className="dropdown jp-text"
+            style={{ width: '100%', marginBottom: '0.75rem' }}
+            value={scopeValue}
+            onChange={(e) => pickScope(e.target.value)}
+          >
+            <option value="">Cả kho từ (mọi môn)</option>
+            {scopeGroups.map(({ subject: s, groups }) =>
+              groups.map((g) => (
+                <optgroup key={`${s.id}:${g.docId}`} label={`${s.nameJp} · ${g.label}`}>
+                  <option value={`${s.id}|doc:${g.docId}`}>Cả {g.label} — {g.words.length} từ</option>
+                  {g.items.map((it) => (
+                    <option key={it.id} value={`${s.id}|ch:${it.id}`}>
+                      　{it.label} — {it.words.length} từ
+                    </option>
+                  ))}
+                </optgroup>
+              ))
+            )}
           </select>
           <button
             type="button"

@@ -771,6 +771,12 @@ textarea {
   font-size: 0.9rem;
 }
 
+.vocab-filter-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
 .vocab-filter-bar {
   display: flex;
   align-items: center;

@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
-import { KEYS, loadString, saveString } from '../lib/storage.js';
+import { KEYS, loadJSON, loadString, saveString } from '../lib/storage.js';
 import { isDue } from '../lib/srs.js';
+import { resolveChapterKey } from '../lib/chapterVocab.js';
 
 const CHECK_EVERY_MS = 15 * 1000;
 // Thông báo đứng yên trên màn hình chừng này rồi tự biến mất hẳn
@@ -65,9 +66,12 @@ function buildWordImage(w) {
   });
 }
 
-async function showWordNotification(w, dueCount) {
+async function showWordNotification(w, dueCount, scopeLabel) {
   const title = `${w.jp}${w.kana ? `（${w.kana}）` : ''}`;
-  const body = `${w.meaning}${dueCount ? `\nCòn ${dueCount} từ cần ôn hôm nay` : ''}`;
+  const body =
+    w.meaning +
+    (scopeLabel ? `\n📖 ${scopeLabel}` : '') +
+    (dueCount ? `\nCòn ${dueCount} từ cần ôn${scopeLabel ? ' trong chương' : ' hôm nay'}` : '');
   const icon = `${import.meta.env.BASE_URL}icons/icon-192.png`;
 
   // Ưu tiên thông báo qua service worker: cho phép đính ảnh hero cỡ lớn.
@@ -108,6 +112,8 @@ async function showWordNotification(w, dueCount) {
  * Giới hạn nền tảng: chỉ bắn được khi trình duyệt/app còn mở (kể cả thu nhỏ).
  *
  * Ưu tiên từ đến hạn ôn; hết từ đến hạn thì lấy ngẫu nhiên từ chưa thuộc.
+ * Có thể giới hạn trong một chương giáo trình (KEYS.reminderScope) — ロン 17/9:
+ * từ nhắc phải bám chương đang học chứ không nhảy ngẫu nhiên cả kho.
  * Mốc lần nhắc cuối lưu localStorage → nhiều tab không bắn trùng, reload không spam.
  */
 export function useVocabReminder(allWords) {
@@ -125,7 +131,21 @@ export function useVocabReminder(allWords) {
       // Ưu tiên từ đến hạn → chưa thuộc → cuối cùng là bất kỳ từ nào.
       // Ôn hết từ đến hạn (hoặc đánh dấu "Đã nhớ" cả kho) vẫn phải có từ hiện
       // ra, vì mục đích của thông báo là nhìn thấy từ đều đặn trong ngày.
-      const words = wordsRef.current;
+      // Phạm vi đọc lại mỗi tick: đổi ở Cài đặt hay bấm 🔔 trong màn Từ vựng là áp
+      // ngay, không cần tải lại app.
+      let words = wordsRef.current;
+      let scopeLabel = '';
+      const scope = loadJSON(KEYS.reminderScope);
+      if (scope?.subject && scope?.key) {
+        const inSubject = words.filter((w) => w.subject === scope.subject);
+        const hit = resolveChapterKey(scope.subject, scope.key, inSubject);
+        // Chương không còn từ nào (kho đã đổi) → lặng lẽ quay về cả kho, đừng tắt nhắc
+        if (hit?.words.length) {
+          const inScope = new Set(hit.words);
+          words = inSubject.filter((w) => inScope.has(w.jp));
+          scopeLabel = hit.label;
+        }
+      }
       const due = words.filter((w) => isDue(w));
       const notMastered = words.filter((w) => !w.mastered);
       const pool = due.length ? due : notMastered.length ? notMastered : words;
@@ -133,7 +153,7 @@ export function useVocabReminder(allWords) {
 
       const w = pool[Math.floor(Math.random() * pool.length)];
       saveString(KEYS.reminderLast, String(Date.now()));
-      showWordNotification(w, due.length).catch((e) => console.warn('Không bắn được thông báo nhắc từ:', e));
+      showWordNotification(w, due.length, scopeLabel).catch((e) => console.warn('Không bắn được thông báo nhắc từ:', e));
     }, CHECK_EVERY_MS);
     return () => clearInterval(timer);
   }, []);

@@ -44,3 +44,20 @@ export function vocabChapterGroups(subjectId, words) {
   }
   return groups.map((g) => ({ ...g, words: [...g.words] }));
 }
+
+/**
+ * Giải một khoá chọn chương (`doc:<id>` = trọn file giáo trình, `ch:<id>` = một mục)
+ * thành {words, label} trên kho từ `words` của môn đó; không có thì null.
+ * Dùng chung cho ô chọn ở màn Từ vựng và cho từ nhắc góc màn hình, để hai nơi
+ * không bao giờ hiểu một khoá theo hai cách.
+ */
+export function resolveChapterKey(subjectId, key, words) {
+  if (!key) return null;
+  for (const g of vocabChapterGroups(subjectId, words)) {
+    if (key === `doc:${g.docId}`) return { words: g.words, label: g.label };
+    for (const it of g.items) {
+      if (key === `ch:${it.id}`) return { words: it.words, label: it.label };
+    }
+  }
+  return null;
+}

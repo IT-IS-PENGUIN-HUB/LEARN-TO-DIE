@@ -3,7 +3,8 @@ import { useVocab } from '../../context/VocabProvider.jsx';
 import { SUBJECTS } from '../../data/exams.js';
 import { countDue } from '../../lib/srs.js';
 import { isIOS, isStandalone } from '../../lib/platform.js';
-import { vocabChapterGroups } from '../../lib/chapterVocab.js';
+import { resolveChapterKey, vocabChapterGroups } from '../../lib/chapterVocab.js';
+import { KEYS, loadJSON, saveJSON, saveString } from '../../lib/storage.js';
 import AddWordForm from './AddWordForm.jsx';
 import FlashcardMode from './FlashcardMode.jsx';
 import MasteredList from './MasteredList.jsx';
@@ -59,12 +60,22 @@ export default function VocabModal({ onClose, initialSubject = 'kiso', backupSlo
       onClearFilter?.();
       return;
     }
-    for (const g of chapterGroups) {
-      if (key === `doc:${g.docId}`) return onSetFilter?.({ subject, words: g.words, label: g.label, key });
-      for (const it of g.items) {
-        if (key === `ch:${it.id}`) return onSetFilter?.({ subject, words: it.words, label: it.label, key });
-      }
-    }
+    const hit = resolveChapterKey(subject, key, vocab[subject] ?? []);
+    if (hit) onSetFilter?.({ subject, words: hit.words, label: hit.label, key });
+  };
+
+  // Từ nhắc góc màn hình (Cài đặt → Nhắc từ vựng định kỳ) lấy trong chương đang
+  // lọc. Đặt nút ngay đây vì lúc chọn chương để ôn cũng là lúc muốn từ nhắc bám
+  // theo (ロン 17/9); Cài đặt vẫn có ô chọn đầy đủ.
+  const [reminderScope, setReminderScope] = useState(() => loadJSON(KEYS.reminderScope));
+  const scopeIsThis =
+    !!filter?.key && reminderScope?.subject === filter.subject && reminderScope?.key === filter.key;
+  const toggleReminderScope = () => {
+    const next = scopeIsThis ? null : { subject: filter.subject, key: filter.key, label: filter.label };
+    saveJSON(KEYS.reminderScope, next);
+    // Cho tick kế tiếp nhắc ngay một từ của chương mới, để thấy ngay là đã đổi
+    saveString(KEYS.reminderLast, '0');
+    setReminderScope(next);
   };
 
   const activeModes = filter ? MODES.filter((m) => m.id === 'quiz' || m.id === 'flashcard') : MODES;
@@ -110,9 +121,22 @@ export default function VocabModal({ onClose, initialSubject = 'kiso', backupSlo
               Chỉ ôn <strong>{pool.length} từ</strong> của chương{' '}
               <strong className="jp-text">{filter.label}</strong>
             </span>
-            <button type="button" className="btn btn-outline btn-xs" onClick={onClearFilter}>
-              Ôn toàn bộ kho từ
-            </button>
+            <span className="vocab-filter-actions">
+              {filter.key && (
+                <button
+                  type="button"
+                  className={`btn btn-xs ${scopeIsThis ? 'btn-primary' : 'btn-outline'}`}
+                  onClick={toggleReminderScope}
+                  aria-pressed={scopeIsThis}
+                  title="Từ vựng hiện ở góc màn hình theo chu kỳ (Cài đặt) chỉ lấy trong chương này"
+                >
+                  🔔 {scopeIsThis ? 'Đang nhắc theo chương này' : 'Nhắc từ theo chương này'}
+                </button>
+              )}
+              <button type="button" className="btn btn-outline btn-xs" onClick={onClearFilter}>
+                Ôn toàn bộ kho từ
+              </button>
+            </span>
           </div>
         )}
 
