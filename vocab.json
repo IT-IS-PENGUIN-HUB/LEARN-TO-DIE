@@ -6584,10 +6584,10 @@
       "meaning": "electron",
       "exJp": "中性の原子では電子数と陽子数が等しい。",
       "exVi": "Ở nguyên tử trung hòa, số electron bằng số proton.",
-      "score": 0,
-      "nextReview": 1789428357197,
-      "mastered": false,
-      "updatedAt": 1789428357247
+      "score": 1,
+      "nextReview": 1789656795455,
+      "mastered": true,
+      "updatedAt": 1789570396038
     },
     {
       "id": "1789428357248",
