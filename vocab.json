@@ -6956,10 +6956,10 @@
       "meaning": "độ điện ly",
       "exJp": "強酸ほど電離度が大きい。",
       "exVi": "Axit càng mạnh thì độ điện ly càng lớn.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1789687250493,
       "mastered": false,
-      "updatedAt": 1789428357278
+      "updatedAt": 1789600850493
     },
     {
       "id": "1789428357279",
@@ -7076,10 +7076,10 @@
       "meaning": "hiệu ứng Tyndall (thấy đường đi của tia sáng)",
       "exJp": "コロイド溶液に光を当てるとチンダル現象が見える。",
       "exVi": "Chiếu sáng vào dung dịch keo sẽ thấy hiệu ứng Tyndall.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1789687258171,
       "mastered": false,
-      "updatedAt": 1789428357288
+      "updatedAt": 1789600858171
     },
     {
       "id": "1789428357289",
@@ -7100,10 +7100,10 @@
       "meaning": "sol (keo lỏng còn chảy được)",
       "exJp": "ゾルは流動性のあるコロイド溶液である。",
       "exVi": "Sol là dung dịch keo còn có tính chảy.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1789687261703,
       "mastered": false,
-      "updatedAt": 1789428357290
+      "updatedAt": 1789600861703
     },
     {
       "id": "1789428357291",
@@ -7148,10 +7148,10 @@
       "meaning": "etanol (C2H5OH)",
       "exJp": "エタノールは酢酸より酸性が弱い。",
       "exVi": "Etanol có tính axit yếu hơn axit axetic.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1789687264488,
       "mastered": false,
-      "updatedAt": 1789428357294
+      "updatedAt": 1789600864488
     },
     {
       "id": "1789428357295",
@@ -7160,10 +7160,10 @@
       "meaning": "phenol",
       "exJp": "フェノールはエタノールより酸性が強い。",
       "exVi": "Phenol có tính axit mạnh hơn etanol.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1789687267688,
       "mastered": false,
-      "updatedAt": 1789428357295
+      "updatedAt": 1789600867688
     },
     {
       "id": "1789428357296",
