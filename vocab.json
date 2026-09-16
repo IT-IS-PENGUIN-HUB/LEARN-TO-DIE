@@ -6140,10 +6140,10 @@
       "meaning": "độ bền kéo",
       "exJp": "比強度はヤング率ではなく引張強度を使う。",
       "exVi": "Cường độ riêng dùng độ bền kéo chứ không phải mô-đun Young.",
-      "score": 0,
-      "nextReview": 1789428357197,
-      "mastered": false,
-      "updatedAt": 1789428357210
+      "score": 1,
+      "nextReview": 1789655372506,
+      "mastered": true,
+      "updatedAt": 1789568973224
     },
     {
       "id": "1789428357211",
@@ -6152,10 +6152,10 @@
       "meaning": "hạt tinh thể",
       "exJp": "結晶粒が小さいほど金属は強くなる。",
       "exVi": "Hạt tinh thể càng nhỏ thì kim loại càng bền.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1789655377040,
       "mastered": false,
-      "updatedAt": 1789428357211
+      "updatedAt": 1789568977040
     },
     {
       "id": "1789428357212",
