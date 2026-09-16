@@ -6128,10 +6128,10 @@
       "meaning": "cường độ riêng (độ bền kéo chia khối lượng riêng)",
       "exJp": "比強度は引張強度を密度で割った値である。",
       "exVi": "Cường độ riêng bằng độ bền kéo chia khối lượng riêng.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1789655554891,
       "mastered": false,
-      "updatedAt": 1789428357209
+      "updatedAt": 1789569154891
     },
     {
       "id": "1789428357210",
@@ -6200,10 +6200,10 @@
       "meaning": "hóa bền biến dạng (gia công làm cứng)",
       "exJp": "加工硬化した金属は再結晶で延性が回復する。",
       "exVi": "Kim loại bị hóa bền biến dạng sẽ phục hồi độ dẻo nhờ kết tinh lại.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1789655557910,
       "mastered": false,
-      "updatedAt": 1789428357215
+      "updatedAt": 1789569157910
     },
     {
       "id": "1789428357216",
@@ -6248,10 +6248,10 @@
       "meaning": "thử va đập",
       "exJp": "シャルピー衝撃試験でじん性を評価する。",
       "exVi": "Dùng thử va đập Charpy để đánh giá độ dai.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1789655533725,
       "mastered": false,
-      "updatedAt": 1789428357219
+      "updatedAt": 1789569133725
     },
     {
       "id": "1789428357220",
@@ -6260,10 +6260,10 @@
       "meaning": "thử kéo",
       "exJp": "引張試験の応力-ひずみ曲線から強度と伸びを求める。",
       "exVi": "Từ đường ứng suất–biến dạng của thử kéo, tìm độ bền và độ giãn.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1789655540008,
       "mastered": false,
-      "updatedAt": 1789428357220
+      "updatedAt": 1789569140008
     },
     {
       "id": "1789428357221",
@@ -6272,10 +6272,10 @@
       "meaning": "điểm chảy (giới hạn chảy)",
       "exJp": "上降伏点を過ぎると材料は塑性変形する。",
       "exVi": "Qua điểm chảy trên thì vật liệu biến dạng dẻo.",
-      "score": 0,
-      "nextReview": 1789428357197,
-      "mastered": false,
-      "updatedAt": 1789428357221
+      "score": 1,
+      "nextReview": 1789655543542,
+      "mastered": true,
+      "updatedAt": 1789569144311
     },
     {
       "id": "1789428357222",
@@ -6284,10 +6284,10 @@
       "meaning": "điểm đứt",
       "exJp": "引張試験では最後に破断点で試験片が切れる。",
       "exVi": "Trong thử kéo, mẫu đứt tại điểm đứt ở cuối cùng.",
-      "score": 0,
-      "nextReview": 1789428357197,
-      "mastered": false,
-      "updatedAt": 1789428357222
+      "score": 1,
+      "nextReview": 1789655547909,
+      "mastered": true,
+      "updatedAt": 1789569149444
     },
     {
       "id": "1789428357223",
