@@ -8552,10 +8552,10 @@
       "meaning": "khí metan (CH4)",
       "exJp": "メタンも主要な温室効果ガスの一つである。",
       "exVi": "Metan cũng là một trong các khí nhà kính chính.",
-      "score": 0,
-      "nextReview": 1789434723042,
+      "score": 1,
+      "nextReview": 1789687428355,
       "mastered": false,
-      "updatedAt": 1789434723109
+      "updatedAt": 1789601028355
     },
     {
       "id": "1789434723110",
@@ -9056,10 +9056,10 @@
       "meaning": "đường kính hạt",
       "exJp": "PM2.5は粒径2.5μm以下、SPMは10μm以下である。",
       "exVi": "PM2.5 có đường kính hạt ≤2,5μm, SPM ≤10μm.",
-      "score": 0,
-      "nextReview": 1789434723042,
+      "score": 1,
+      "nextReview": 1789687432139,
       "mastered": false,
-      "updatedAt": 1789434723151
+      "updatedAt": 1789601032139
     },
     {
       "id": "1789434723152",
@@ -9800,10 +9800,10 @@
       "meaning": "hydro",
       "exJp": "水素は利用時にCO2を排出しないクリーンな二次エネルギーである。",
       "exVi": "Hydro là năng lượng thứ cấp sạch, không phát thải CO2 khi sử dụng.",
-      "score": 0,
-      "nextReview": 1789434723042,
+      "score": 1,
+      "nextReview": 1789687434808,
       "mastered": false,
-      "updatedAt": 1789434723213
+      "updatedAt": 1789601034808
     },
     {
       "id": "1789434723214",
