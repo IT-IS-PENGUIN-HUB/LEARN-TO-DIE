@@ -3872,10 +3872,10 @@
       "meaning": "(tổ hợp) tổ hợp, sự kết hợp",
       "exJp": "正しい語句の組合せを選択肢から選ぶ。",
       "exVi": "Chọn tổ hợp từ ngữ đúng trong các phương án.",
-      "score": 1,
-      "nextReview": 1789522149251,
-      "mastered": false,
-      "updatedAt": 1789435749251
+      "score": 2,
+      "nextReview": 1789775043407,
+      "mastered": true,
+      "updatedAt": 1789602243941
     },
     {
       "id": "1786573248380_3di2l6",
@@ -5528,10 +5528,10 @@
       "meaning": "(chuyển vị) lệch mạng (khuyết tật tinh thể trong kim loại)",
       "exJp": "金属の塑性変形は転位の移動によって生じる。",
       "exVi": "Biến dạng dẻo của kim loại phát sinh do sự di chuyển của lệch mạng.",
-      "score": 2,
-      "nextReview": 1789774820867,
+      "score": 3,
+      "nextReview": 1789947839638,
       "mastered": false,
-      "updatedAt": 1789602020867
+      "updatedAt": 1789602239638
     },
     {
       "id": "1786573248380_65jfxr",
@@ -6176,10 +6176,10 @@
       "meaning": "sự thô hóa, làm to hạt",
       "exJp": "結晶粒を粗大化させると強度は下がる。",
       "exVi": "Thô hóa hạt tinh thể thì độ bền giảm.",
-      "score": 1,
-      "nextReview": 1789655428545,
+      "score": 2,
+      "nextReview": 1789775053075,
       "mastered": false,
-      "updatedAt": 1789569028545
+      "updatedAt": 1789602253075
     },
     {
       "id": "1789428357214",
@@ -6788,10 +6788,10 @@
       "meaning": "chất oxi hóa (tự nó bị khử)",
       "exJp": "酸化剤は相手を酸化し自身は還元される。",
       "exVi": "Chất oxi hóa làm chất khác bị oxi hóa còn mình bị khử.",
-      "score": 1,
-      "nextReview": 1789658357846,
+      "score": 2,
+      "nextReview": 1789775049824,
       "mastered": false,
-      "updatedAt": 1789571957846
+      "updatedAt": 1789602249824
     },
     {
       "id": "1789428357265",
