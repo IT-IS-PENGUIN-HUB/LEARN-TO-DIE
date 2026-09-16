@@ -9860,10 +9860,10 @@
       "meaning": "số năm khai thác còn lại (trữ lượng ÷ sản lượng năm)",
       "exJp": "可採年数は確認埋蔵量を年間生産量で割って求める。",
       "exVi": "Số năm khai thác còn lại = trữ lượng xác minh ÷ sản lượng hàng năm.",
-      "score": 0,
-      "nextReview": 1789434723042,
+      "score": 1,
+      "nextReview": 1789687450591,
       "mastered": false,
-      "updatedAt": 1789434723218
+      "updatedAt": 1789601050591
     },
     {
       "id": "1789434723219",
