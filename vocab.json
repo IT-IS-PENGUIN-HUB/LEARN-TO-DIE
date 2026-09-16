@@ -7256,10 +7256,10 @@
       "meaning": "liên kết hydro",
       "exJp": "熱変性は水素結合を切って2本鎖を1本鎖にする。",
       "exVi": "Biến tính nhiệt cắt liên kết hydro, tách mạch kép thành mạch đơn.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1789687369333,
       "mastered": false,
-      "updatedAt": 1789428357303
+      "updatedAt": 1789600969333
     },
     {
       "id": "1789428357304",
@@ -7328,10 +7328,10 @@
       "meaning": "sự sao chép (nhân đôi DNA)",
       "exJp": "複製は5′→3′の方向に進む。",
       "exVi": "Quá trình sao chép diễn ra theo chiều 5′→3′.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1789687351066,
       "mastered": false,
-      "updatedAt": 1789428357309
+      "updatedAt": 1789600951066
     },
     {
       "id": "1789428357310",
@@ -7412,10 +7412,10 @@
       "meaning": "protein",
       "exJp": "細胞の巨大分子ではタンパク質の重量比が最大である。",
       "exVi": "Trong đại phân tử của tế bào, protein chiếm khối lượng lớn nhất.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1789687358483,
       "mastered": false,
-      "updatedAt": 1789428357316
+      "updatedAt": 1789600958483
     },
     {
       "id": "1789428357317",
@@ -7424,10 +7424,10 @@
       "meaning": "amino acid",
       "exJp": "タンパク質は20種類のアミノ酸からできている。",
       "exVi": "Protein được tạo từ 20 loại amino acid.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1789687363000,
       "mastered": false,
-      "updatedAt": 1789428357317
+      "updatedAt": 1789600963000
     },
     {
       "id": "1789428357318",
