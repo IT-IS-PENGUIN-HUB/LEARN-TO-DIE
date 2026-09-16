@@ -5996,10 +5996,10 @@
       "meaning": "mạng lập phương tâm khối (BCC) — ô đơn vị có 2 nguyên tử",
       "exJp": "α鉄は体心立方格子で、単位胞の原子数は2個である。",
       "exVi": "Sắt α có mạng lập phương tâm khối, ô đơn vị chứa 2 nguyên tử.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1789655332801,
       "mastered": false,
-      "updatedAt": 1789428357198
+      "updatedAt": 1789568932801
     },
     {
       "id": "1789428357199",
@@ -6044,10 +6044,10 @@
       "meaning": "ô mạng đơn vị",
       "exJp": "単位格子の切り取り方で原子数の数え方が変わる。",
       "exVi": "Cách cắt ô mạng đơn vị quyết định cách đếm nguyên tử.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1789655338238,
       "mastered": false,
-      "updatedAt": 1789428357202
+      "updatedAt": 1789568938238
     },
     {
       "id": "1789428357203",
@@ -6068,10 +6068,10 @@
       "meaning": "số phối trí (số nguyên tử lân cận gần nhất)",
       "exJp": "体心立方の配位数は8、面心立方は12である。",
       "exVi": "Số phối trí của tâm khối là 8, tâm mặt là 12.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1789655344219,
       "mastered": false,
-      "updatedAt": 1789428357204
+      "updatedAt": 1789568944219
     },
     {
       "id": "1789428357205",
@@ -6092,10 +6092,10 @@
       "meaning": "độ dai (khả năng chịu va đập không giòn gãy)",
       "exJp": "結晶粒を微細化すると強度と靭性が向上する。",
       "exVi": "Làm mịn hạt tinh thể thì độ bền và độ dai đều tăng.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1789655347069,
       "mastered": false,
-      "updatedAt": 1789428357206
+      "updatedAt": 1789568947069
     },
     {
       "id": "1789428357207",
