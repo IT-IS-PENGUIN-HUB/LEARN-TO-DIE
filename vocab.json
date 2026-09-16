@@ -6656,10 +6656,10 @@
       "meaning": "hợp chất",
       "exJp": "化合物中の酸化数の総和は0である。",
       "exVi": "Tổng số oxi hóa trong một hợp chất bằng 0.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1789656878108,
       "mastered": false,
-      "updatedAt": 1789428357253
+      "updatedAt": 1789570478108
     },
     {
       "id": "1789428357254",
@@ -6668,10 +6668,10 @@
       "meaning": "cấu hình electron",
       "exJp": "ハロゲンは最外殻電子7個の電子配置をもつ。",
       "exVi": "Halogen có cấu hình electron với 7 electron lớp ngoài.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1789656885626,
       "mastered": false,
-      "updatedAt": 1789428357254
+      "updatedAt": 1789570485626
     },
     {
       "id": "1789428357255",
