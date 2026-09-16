@@ -3404,10 +3404,10 @@
       "meaning": "(hoàn toàn nhiên thiêu) cháy hoàn toàn",
       "exJp": "高温で完全燃焼させると有害物質が減る。",
       "exVi": "Đốt cháy hoàn toàn ở nhiệt độ cao sẽ giảm chất độc hại.",
-      "score": 0,
-      "nextReview": 1789435838058,
+      "score": 1,
+      "nextReview": 1789687575086,
       "mastered": false,
-      "updatedAt": 1789435838058
+      "updatedAt": 1789601175086
     },
     {
       "id": "1786573248380_oiqaat",
@@ -11060,10 +11060,10 @@
       "meaning": "cường độ, độ bền",
       "exJp": "強度Rも応力Sも一定値ではなくばらつく。",
       "exVi": "Cả cường độ R lẫn ứng suất S đều không phải hằng số mà phân tán.",
-      "score": 0,
-      "nextReview": 1789435971174,
-      "mastered": false,
-      "updatedAt": 1789435971187
+      "score": 1,
+      "nextReview": 1789687555467,
+      "mastered": true,
+      "updatedAt": 1789601156316
     },
     {
       "id": "1789435971188",
@@ -11072,10 +11072,10 @@
       "meaning": "ứng suất",
       "exJp": "応力σ = P/A、単位面積あたりの内力である。",
       "exVi": "Ứng suất σ = P/A, là nội lực trên một đơn vị diện tích.",
-      "score": 0,
-      "nextReview": 1789435971174,
-      "mastered": false,
-      "updatedAt": 1789435971188
+      "score": 1,
+      "nextReview": 1789687558651,
+      "mastered": true,
+      "updatedAt": 1789601159252
     },
     {
       "id": "1789435971189",
@@ -11228,10 +11228,10 @@
       "meaning": "mỏi (vật liệu)",
       "exJp": "疲労は繰返し荷重により静的強度より低い応力で破壊する現象である。",
       "exVi": "Mỏi là phá hủy do tải lặp ở ứng suất thấp hơn độ bền tĩnh.",
-      "score": 0,
-      "nextReview": 1789435971174,
-      "mastered": false,
-      "updatedAt": 1789435971201
+      "score": 1,
+      "nextReview": 1789687561984,
+      "mastered": true,
+      "updatedAt": 1789601163636
     },
     {
       "id": "1789435971202",
@@ -11252,10 +11252,10 @@
       "meaning": "creep (biến dạng từ biến)",
       "exJp": "クリープは高温で一定荷重でも時間とともに変形が進む現象である。",
       "exVi": "Creep là biến dạng tăng theo thời gian dưới tải không đổi ở nhiệt độ cao.",
-      "score": 0,
-      "nextReview": 1789435971174,
-      "mastered": false,
-      "updatedAt": 1789435971203
+      "score": 1,
+      "nextReview": 1789687565835,
+      "mastered": true,
+      "updatedAt": 1789601166714
     },
     {
       "id": "1789435971204",
@@ -11300,10 +11300,10 @@
       "meaning": "mô đun Young (mô đun đàn hồi dọc)",
       "exJp": "鋼のヤング率は約206GPaで合金にしてもほぼ一定である。",
       "exVi": "Mô đun Young của thép khoảng 206GPa, hợp kim hóa cũng gần như không đổi.",
-      "score": 0,
-      "nextReview": 1789435971174,
-      "mastered": false,
-      "updatedAt": 1789435971207
+      "score": 1,
+      "nextReview": 1789687569868,
+      "mastered": true,
+      "updatedAt": 1789601170469
     },
     {
       "id": "1789435971208",
@@ -11768,10 +11768,10 @@
       "meaning": "đỉnh (của miền)",
       "exJp": "頂点を全て調べ、目的関数値を比較する。",
       "exVi": "Xét hết các đỉnh rồi so sánh giá trị hàm mục tiêu.",
-      "score": 0,
-      "nextReview": 1789435971174,
+      "score": 1,
+      "nextReview": 1789687578818,
       "mastered": false,
-      "updatedAt": 1789435971246
+      "updatedAt": 1789601178818
     },
     {
       "id": "1789435971247",
@@ -14096,10 +14096,10 @@
       "meaning": "chuyển vị",
       "exJp": "不静定問題は釣り合いと変位適合で解く。",
       "exVi": "Bài siêu tĩnh giải bằng cân bằng lực và tương thích chuyển vị.",
-      "score": 0,
-      "nextReview": 1789435972438,
+      "score": 1,
+      "nextReview": 1789687581802,
       "mastered": false,
-      "updatedAt": 1789435972439
+      "updatedAt": 1789601181802
     },
     {
       "id": "1789435972440",
@@ -14108,10 +14108,10 @@
       "meaning": "định luật Hooke",
       "exJp": "弾性域ではフックの法則σ = E·εが成り立つ。",
       "exVi": "Trong miền đàn hồi, định luật Hooke σ = E·ε đúng.",
-      "score": 0,
-      "nextReview": 1789435972438,
+      "score": 1,
+      "nextReview": 1789687587504,
       "mastered": false,
-      "updatedAt": 1789435972440
+      "updatedAt": 1789601187504
     },
     {
       "id": "1789435972441",
