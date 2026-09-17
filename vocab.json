@@ -3968,10 +3968,10 @@
       "meaning": "(khoa học kỹ thuật cơ bản kế hoạch) Kế hoạch cơ bản về khoa học công nghệ",
       "exJp": "科学技術基本計画は5年ごとに策定される。",
       "exVi": "Kế hoạch cơ bản về khoa học công nghệ được lập 5 năm một lần.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1789704381090,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1789617981090
     },
     {
       "id": "1786573248380_fn9lzm",
@@ -4496,10 +4496,10 @@
       "meaning": "Tiêu hủy, loại bỏ",
       "exJp": "建設廃棄物は適正に廃棄しなければならない。",
       "exVi": "Phế thải xây dựng phải được thải bỏ đúng quy định.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1789704386777,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1789617986777
     },
     {
       "id": "1786573248380_3s2s05",
@@ -4712,10 +4712,10 @@
       "meaning": "Đôi bên, hai phía",
       "exJp": "双方の合意により契約を変更した。",
       "exVi": "Hợp đồng được sửa đổi theo thỏa thuận của đôi bên.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1789704392559,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1789617992559
     },
     {
       "id": "1786573248380_2l8ggh",
