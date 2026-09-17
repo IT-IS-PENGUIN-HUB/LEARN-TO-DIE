@@ -33,7 +33,7 @@ export default function SettingsModal({ onClose, sync }) {
   // Phạm vi từ nhắc: null = cả kho; {subject, key, label} = một chương/mục giáo trình
   const [reminderScope, setReminderScope] = useState(() => loadJSON(KEYS.reminderScope));
   const { vocab } = useVocab();
-  // Chỉ môn nào có ánh xạ chương ↔ từ mới hiện (専門 chưa có)
+  // Chỉ môn nào có ánh xạ chương ↔ từ mới hiện (17/9: cả 3 môn đều có)
   const scopeGroups = useMemo(
     () =>
       Object.values(SUBJECTS)
@@ -47,8 +47,8 @@ export default function SettingsModal({ onClose, sync }) {
     const [subject, key] = value.split('|');
     for (const { groups } of scopeGroups) {
       for (const g of groups) {
-        if (key === `doc:${g.docId}`) return setReminderScope({ subject, key, label: g.label });
-        const it = g.items.find((i) => key === `ch:${i.id}`);
+        if (key === g.key) return setReminderScope({ subject, key, label: g.label });
+        const it = g.items.find((i) => key === i.key);
         if (it) return setReminderScope({ subject, key, label: it.label });
       }
     }
@@ -207,10 +207,10 @@ export default function SettingsModal({ onClose, sync }) {
             <option value="">Cả kho từ (mọi môn)</option>
             {scopeGroups.map(({ subject: s, groups }) =>
               groups.map((g) => (
-                <optgroup key={`${s.id}:${g.docId}`} label={`${s.nameJp} · ${g.label}`}>
-                  <option value={`${s.id}|doc:${g.docId}`}>Cả {g.label} — {g.words.length} từ</option>
+                <optgroup key={`${s.id}:${g.key}`} label={`${s.nameJp} · ${g.label}`}>
+                  <option value={`${s.id}|${g.key}`}>Cả {g.label} — {g.words.length} từ</option>
                   {g.items.map((it) => (
-                    <option key={it.id} value={`${s.id}|ch:${it.id}`}>
+                    <option key={it.key} value={`${s.id}|${it.key}`}>
                       　{it.label} — {it.words.length} từ
                     </option>
                   ))}

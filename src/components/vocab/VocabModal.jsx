@@ -170,10 +170,10 @@ export default function VocabModal({ onClose, initialSubject = 'kiso', backupSlo
             >
               <option value="">Cả kho từ — {stats.total} từ</option>
               {chapterGroups.map((g) => (
-                <optgroup key={g.docId} label={g.label}>
-                  <option value={`doc:${g.docId}`}>Cả {g.label} — {g.words.length} từ</option>
+                <optgroup key={g.key} label={g.label}>
+                  <option value={g.key}>Cả {g.label} — {g.words.length} từ</option>
                   {g.items.map((it) => (
-                    <option key={it.id} value={`ch:${it.id}`}>
+                    <option key={it.key} value={it.key}>
                       　{it.label} — {it.words.length} từ
                     </option>
                   ))}

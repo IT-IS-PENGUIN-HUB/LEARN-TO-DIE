@@ -634,6 +634,69 @@ const CHAPTERS = {
 };
 
 /**
+ * CHƯƠNG DÙNG CHO Ô "ÔN THEO CHƯƠNG" BÊN TỪ VỰNG — gộp cả hai bộ sách.
+ *
+ * ロン 17/9: 前半/後半 chỉ là tên hai file PDF của bộ cũ, không phải chương; chia
+ * từ vựng theo đó là vô nghĩa. Ở đây mỗi mục là MỘT CHỦ ĐỀ, gom các mục cùng chủ
+ * đề của cả bộ 2025 lẫn bộ cũ — hai bên đặt tên hơi khác nhau thì vẫn gộp làm một.
+ *
+ *   docs:     lấy trọn các mục của file đó (dùng khi cả file là một chương).
+ *   sections: chỉ định từng mục (bộ 2025 của 適性 gộp 12 chủ đề vào MỘT file).
+ *
+ * Một mục được phép nằm trong hai chương khi nó dạy hai chủ đề (vd t25_03 vừa
+ * 倫理綱領 vừa ISO26000) — từ của nó hiện ở cả hai bên, đúng như sách.
+ * Môn không có bảng này (専門) thì mỗi file giáo trình đã là một chương, cứ gộp
+ * theo file như cũ.
+ */
+const VOCAB_CHAPTERS = {
+  kiso: [
+    { id: 'k1', docs: ['k25ch1', 'ch1'], label: '第1章 設計・計画', labelVi: 'Chương 1 — Thiết kế & Kế hoạch' },
+    { id: 'k2', docs: ['k25ch2', 'ch2'], label: '第2章 情報・論理', labelVi: 'Chương 2 — Thông tin & Logic' },
+    { id: 'k3', docs: ['k25ch3', 'ch3'], label: '第3章 解析', labelVi: 'Chương 3 — Giải tích' },
+    { id: 'k4', docs: ['k25ch4', 'ch4'], label: '第4章 材料・化学・バイオ', labelVi: 'Chương 4 — Vật liệu · Hóa học · Sinh học' },
+    { id: 'k5', docs: ['k25ch5', 'ch5'], label: '第5章 環境・エネルギー・技術', labelVi: 'Chương 5 — Môi trường · Năng lượng · Công nghệ' },
+  ],
+  tekisei: [
+    { id: 't01', sections: ['t25_02', 'ch01'], label: '① 技術士制度・技術士法・CPD・資質能力',
+      labelVi: 'Chế độ 技術士 · Luật 技術士法 · CPD · Năng lực' },
+    { id: 't02', sections: ['t25_11', 'ch02'], label: '② リスクマネジメント・安全',
+      labelVi: 'Quản lý rủi ro & an toàn' },
+    { id: 't03', sections: ['t25_03', 'ch03'], label: '③ 技術者倫理の基礎理論・倫理綱領',
+      labelVi: 'Lý thuyết đạo đức kỹ sư & quy tắc đạo đức' },
+    { id: 't04', sections: ['t25_12', 'ch04'], label: '④ SDGs・持続可能・環境',
+      labelVi: 'SDGs · Phát triển bền vững · Môi trường' },
+    { id: 't05', sections: ['t25_08', 'ch05'], label: '⑤ 知的財産権',
+      labelVi: 'Quyền sở hữu trí tuệ' },
+    { id: 't06', sections: ['t25_05', 'ch06'], label: '⑥ 製造物責任法（PL法）',
+      labelVi: 'Luật trách nhiệm sản phẩm' },
+    { id: 't07', sections: ['t25_04', 'ch07'], label: '⑦ 研究倫理・研究不正',
+      labelVi: 'Đạo đức nghiên cứu & gian lận nghiên cứu' },
+    { id: 't08', sections: ['ch08'], label: '⑧ 新技術と社会・倫理（AI等）',
+      labelVi: 'Công nghệ mới & xã hội · đạo đức (AI…)' },
+    { id: 't09', sections: ['t25_06', 't25_04', 'ch09'], label: '⑨ 公益通報者保護法',
+      labelVi: 'Luật bảo vệ người tố giác vì lợi ích công' },
+    { id: 't10', sections: ['ch10'], label: '⑩ 働き方・労働・ダイバーシティ',
+      labelVi: 'Cách làm việc · Lao động · Đa dạng' },
+    { id: 't11', sections: ['t25_09', 't25_04', 'ch11'], label: '⑪ ハラスメント',
+      labelVi: 'Quấy rối nơi làm việc' },
+    { id: 't12', sections: ['ch12'], label: '⑫ 組織不正・品質不正・失敗学',
+      labelVi: 'Gian lận tổ chức · chất lượng · khoa học thất bại' },
+    { id: 't13', sections: ['ch13'], label: '⑬ 公正取引・独占禁止',
+      labelVi: 'Thương mại công bằng · chống độc quyền' },
+    { id: 't14', sections: ['t25_07', 'ch14'], label: '⑭ 個人情報・情報セキュリティ',
+      labelVi: 'Thông tin cá nhân · an ninh thông tin' },
+    { id: 't15', sections: ['t25_10', 'ch15'], label: '⑮ 安全保障貿易管理',
+      labelVi: 'Quản lý thương mại an ninh' },
+    { id: 't16', sections: ['t25_03', 'ch16'], label: '⑯ ISO 26000・社会的責任・国際標準',
+      labelVi: 'ISO 26000 · trách nhiệm xã hội · tiêu chuẩn quốc tế' },
+    { id: 't17', sections: ['appendix'], label: '付録：ユニバーサルデザイン・バリアフリー',
+      labelVi: 'Phụ lục: Universal Design · Barrier-free' },
+    { id: 't00', sections: ['t25_01', 'trend1', 'trend2'], label: '目次・出題傾向',
+      labelVi: 'Mục lục & bảng tỷ lệ ra đề' },
+  ],
+};
+
+/**
  * Thư mục cha: 3 môn, kèm số chương hiện có (0 = chưa có giáo trình).
  * Đếm theo BỘ ĐANG HỌC thôi — cộng gộp cả bộ cũ thì thẻ ghi "125 chương" mà mở
  * ra chỉ thấy 67, sai lệch vô cớ.
@@ -705,3 +768,27 @@ export function editionOfChapter(subjectId, chapter) {
 }
 
 export const EDITION_LABEL = { 2025: 'Bộ 2025 (đang học)', old: 'Bộ cũ' };
+
+/** Nhãn ngắn của bản in, để ghi trước tên mục khi hai bộ nằm chung một chương. */
+export const EDITION_TAG = { 2025: '2025', old: 'Cũ' };
+
+/**
+ * Chương gộp hai bộ, đã giải ra danh sách mục thật (xem VOCAB_CHAPTERS).
+ * Trả null khi môn không có bảng gộp — nơi gọi tự quay về cách gộp theo file.
+ */
+export function getVocabChapters(subjectId) {
+  const rows = VOCAB_CHAPTERS[subjectId];
+  if (!rows) return null;
+  const chapters = getChapters(subjectId);
+  const byId = new Map(chapters.map((c) => [c.id, c]));
+  return rows.map((r) => {
+    const picked = [];
+    for (const docId of r.docs ?? []) picked.push(...chapters.filter((c) => c.doc === docId));
+    for (const id of r.sections ?? []) {
+      const c = byId.get(id);
+      if (c) picked.push(c);
+      else console.warn(`VOCAB_CHAPTERS ${subjectId}/${r.id}: không có mục ${id}`);
+    }
+    return { id: r.id, label: r.label, labelVi: r.labelVi, chapters: picked };
+  });
+}
