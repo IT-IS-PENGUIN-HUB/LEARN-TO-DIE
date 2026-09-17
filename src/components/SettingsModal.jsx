@@ -6,12 +6,30 @@ import { KEYS, loadJSON, loadString, saveJSON, saveString } from '../lib/storage
 import OfflinePanel from './OfflinePanel.jsx';
 import { IconCloudDown, IconCloudUp, IconGear, IconX } from './icons.jsx';
 
+// Chu kỳ nhắc từ (phút). ロン 17/9: sau một thời gian dùng, từ 10 phút trở lên
+// đều không khả thi → bỏ 20/30/60, thêm các mức dày 30 giây–4 phút.
+const REMINDER_OPTIONS = [
+  ['0', 'Tắt'],
+  ['0.5', 'Mỗi 30 giây'],
+  ['1', 'Mỗi 1 phút'],
+  ['1.5', 'Mỗi 1 phút 30 giây'],
+  ['2', 'Mỗi 2 phút'],
+  ['3', 'Mỗi 3 phút'],
+  ['4', 'Mỗi 4 phút'],
+  ['5', 'Mỗi 5 phút'],
+  ['10', 'Mỗi 10 phút'],
+];
+
 export default function SettingsModal({ onClose, sync }) {
   const [geminiKey, setGeminiKey] = useState(() => loadString(KEYS.geminiKey));
   const [ghUser, setGhUser] = useState(() => loadString(KEYS.ghUser));
   const [ghRepo, setGhRepo] = useState(() => loadString(KEYS.ghRepo));
   const [ghToken, setGhToken] = useState(() => loadString(KEYS.ghToken));
-  const [reminderMin, setReminderMin] = useState(() => loadString(KEYS.reminderMin) || '0');
+  const [reminderMin, setReminderMin] = useState(() => {
+    const v = loadString(KEYS.reminderMin) || '0';
+    // Máy còn lưu mức đã bỏ (20/30/60) thì coi như 10 phút
+    return REMINDER_OPTIONS.some(([value]) => value === v) ? v : '10';
+  });
   // Phạm vi từ nhắc: null = cả kho; {subject, key, label} = một chương/mục giáo trình
   const [reminderScope, setReminderScope] = useState(() => loadJSON(KEYS.reminderScope));
   const { vocab } = useVocab();
@@ -172,12 +190,11 @@ export default function SettingsModal({ onClose, sync }) {
             value={reminderMin}
             onChange={(e) => setReminderMin(e.target.value)}
           >
-            <option value="0">Tắt</option>
-            <option value="5">Mỗi 5 phút</option>
-            <option value="10">Mỗi 10 phút</option>
-            <option value="20">Mỗi 20 phút</option>
-            <option value="30">Mỗi 30 phút</option>
-            <option value="60">Mỗi 1 giờ</option>
+            {REMINDER_OPTIONS.map(([value, label]) => (
+              <option key={value} value={value}>
+                {label}
+              </option>
+            ))}
           </select>
           <label htmlFor="set-reminder-scope">Lấy từ để nhắc từ:</label>
           <select

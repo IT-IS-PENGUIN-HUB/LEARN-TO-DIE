@@ -1,9 +1,12 @@
 import { useEffect, useRef } from 'react';
-import { KEYS, loadJSON, loadString, saveString } from '../lib/storage.js';
+import { KEYS, loadJSON, loadString, saveJSON, saveString } from '../lib/storage.js';
 import { isDue } from '../lib/srs.js';
 import { resolveChapterKey } from '../lib/chapterVocab.js';
 
-const CHECK_EVERY_MS = 15 * 1000;
+// Chu kỳ ngắn nhất là 30 giây (ロン 17/9) nên phải soát dày hơn chu kỳ đó
+const CHECK_EVERY_MS = 5 * 1000;
+// Số từ vừa nhắc được nhớ để không hiện lại
+const RECENT_KEEP = 8;
 // Thông báo đứng yên trên màn hình chừng này rồi tự biến mất hẳn
 // (không trượt vào Action Center, không dồn đống thông báo cũ)
 const DISPLAY_MS = 7 * 1000;
@@ -122,7 +125,8 @@ export function useVocabReminder(allWords) {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      const minutes = parseInt(loadString(KEYS.reminderMin) || '0', 10);
+      // Lưu theo phút nhưng có mức lẻ (0.5 = 30 giây, 1.5) → parseFloat
+      const minutes = parseFloat(loadString(KEYS.reminderMin) || '0');
       if (!minutes || typeof Notification === 'undefined' || Notification.permission !== 'granted') return;
 
       const last = parseInt(loadString(KEYS.reminderLast) || '0', 10);
@@ -148,10 +152,23 @@ export function useVocabReminder(allWords) {
       }
       const due = words.filter((w) => isDue(w));
       const notMastered = words.filter((w) => !w.mastered);
-      const pool = due.length ? due : notMastered.length ? notMastered : words;
+      // Chỉ còn 1–2 từ đến hạn thì mở rộng sang từ chưa thuộc, kẻo một từ hiện đi
+      // hiện lại (ロン 17/9: 水準 hai lần liền). Từ đến hạn vẫn nằm trong pool nên
+      // vẫn được ưu tiên về xác suất.
+      let pool = due.length >= 3 ? due : [...new Set([...due, ...notMastered])];
+      if (!pool.length) pool = words;
       if (!pool.length) return;
 
-      const w = pool[Math.floor(Math.random() * pool.length)];
+      // Không lặp lại các từ vừa hiện; pool nhỏ hơn danh sách gần đây thì ít nhất
+      // cũng không hiện lại đúng từ ngay trước đó.
+      const recent = loadJSON(KEYS.reminderRecent, []);
+      const recentSet = new Set(recent);
+      let fresh = pool.filter((w) => !recentSet.has(w.id));
+      if (!fresh.length) fresh = pool.filter((w) => w.id !== recent[recent.length - 1]);
+      if (!fresh.length) fresh = pool;
+
+      const w = fresh[Math.floor(Math.random() * fresh.length)];
+      saveJSON(KEYS.reminderRecent, [...recent.filter((id) => id !== w.id), w.id].slice(-RECENT_KEEP));
       saveString(KEYS.reminderLast, String(Date.now()));
       showWordNotification(w, due.length, scopeLabel).catch((e) => console.warn('Không bắn được thông báo nhắc từ:', e));
     }, CHECK_EVERY_MS);

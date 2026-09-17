@@ -16,6 +16,8 @@ export const KEYS = {
   reminderLast: 'learn_to_die_reminder_last',
   // Phạm vi từ nhắc góc màn hình: {subject, key:'doc:<id>'|'ch:<id>', label}; null = cả kho
   reminderScope: 'learn_to_die_reminder_scope',
+  // id các từ vừa nhắc gần đây (mới nhất ở cuối) — để không hiện lại một từ liên tiếp
+  reminderRecent: 'learn_to_die_reminder_recent',
   textbookProgress: 'learn_to_die_textbook_progress',
   // Làm đề: SRS theo qid + đánh dấu + phiên đang làm dở. Để RIÊNG, không nhét
   // vào learn_to_die_vocab (migrateVocab cắt sạch field lạ).
