@@ -16,6 +16,9 @@
 #  2. Từ 1 ký tự bị loại: khớp chuỗi con thô nên chữ lẻ dính vào bất kỳ từ ghép nào.
 #  3. Bộ 2025 là ảnh → quét ra rất ít; bảng SUPPLEMENT bên dưới bù theo chủ đề. KHÔNG sửa tay
 #     chapterWords.json.
+#  4. Giáo trình 専門 2025 là slide đã DỊCH SANG TIẾNG VIỆT, thuật ngữ Nhật nằm trong ảnh →
+#     quét text ra gần như 0 từ. Những mục đó gán tay trong scripts/chapter_words_manual.json
+#     ({môn: {mã mục: [từ]}}) — file đó là NGUỒN, sửa ở đó, vẫn không sửa chapterWords.json.
 
 import json
 import re
@@ -30,6 +33,7 @@ ROOT = Path(__file__).resolve().parent.parent
 TEXTBOOKS_JS = ROOT / 'src' / 'data' / 'textbooks.js'
 VOCAB_JSON = ROOT / 'vocab.json'
 OUT_JSON = ROOT / 'src' / 'data' / 'chapterWords.json'
+MANUAL_JSON = Path(__file__).resolve().parent / 'chapter_words_manual.json'
 PUBLIC = ROOT / 'public'
 
 # Dòng ghi nguồn đề: nội dung đổi theo năm/số câu nên không lặp y hệt → lọc bằng mẫu.
@@ -153,8 +157,9 @@ def build(subject, vocab):
     docs, chapters = load_declarations(subject)
     if not docs or not chapters:
         return None
-    words = [w['jp'] for w in vocab.get(subject, [])
-             if not w.get('deleted') and w.get('jp') and len(w['jp']) >= 2]
+    live = [w['jp'] for w in vocab.get(subject, []) if not w.get('deleted') and w.get('jp')]
+    # Dò tự động bỏ từ 1 ký tự (bẫy 2); bảng gán tay thì không cần lọc vì người chọn sẵn.
+    words = [w for w in live if len(w) >= 2]
     cache = {}
     out = {}
     for cid, _kind, doc_id, start, end in chapters:
@@ -166,7 +171,12 @@ def build(subject, vocab):
             else:
                 cache[doc_id] = page_texts(path)
         text = ''.join(cache[doc_id][int(start) - 1:int(end)])
-        hit = sorted({w for w in words if any(s in text for s in stems(w))})
+        # PDF hay ngắt dòng GIỮA một từ nên dò trên bản đã bỏ hết khoảng trắng;
+        # để nguyên xuống dòng thì từ đúng trong sách vẫn trượt ánh xạ.
+        flat = re.sub(r'\s+', '', text)
+        # Từ trong kho cũng có thể mang khoảng trắng ("2 進数") -> bỏ luôn cho khớp.
+        hit = sorted({w for w in words
+                      if any(re.sub(r'\s+', '', s) in flat for s in stems(w))})
         if hit:
             out[cid] = hit
     # Cộng từ của các mục cũ cùng chủ đề vào mục 2025 (xem SUPPLEMENT)
@@ -182,6 +192,19 @@ def build(subject, vocab):
             merged.update(out.get(src, []))
         if merged:
             out[target] = sorted(merged)
+    # Gán tay (mục mà quét text không ra được từ) — xem ghi chú 4 ở đầu file.
+    manual = json.loads(MANUAL_JSON.read_text(encoding='utf-8')) if MANUAL_JSON.exists() else {}
+    known = set(live)
+    for cid, ws in manual.get(subject, {}).items():
+        if cid not in ids:
+            print(f'  ! gán tay: không có mục {cid} trong textbooks.js')
+            continue
+        miss = [w for w in ws if w not in known]
+        if miss:
+            print(f'  ! gán tay {cid}: {len(miss)} từ không có trong kho ({" ".join(miss[:5])})')
+        merged = set(out.get(cid, [])) | (set(ws) & known)
+        if merged:
+            out[cid] = sorted(merged)
     covered = len({w for ws in out.values() for w in ws})
     print(f'{subject}: {len(out)} mục · {sum(len(v) for v in out.values())} lượt gán · '
           f'{covered}/{len(words)} từ có trong giáo trình')
