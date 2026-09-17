@@ -3836,10 +3836,10 @@
       "meaning": "(phong tốc) tốc độ gió",
       "exJp": "風力発電の出力は風速の3乗に比例する。",
       "exVi": "Công suất điện gió tỷ lệ với lũy thừa bậc 3 của tốc độ gió.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1789704276513,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1789617876513
     },
     {
       "id": "1786573248380_twif97",
