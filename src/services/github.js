@@ -1,6 +1,7 @@
 // Đồng bộ vocab.json với repo GitHub qua Contents API.
 //
 // KHÁC BẢN CŨ (quan trọng):
+// 0. File >1MB phải đọc qua Git Blobs API — xem readBlob() bên dưới.
 // 1. Token KHÔNG BAO GIỜ hardcode trong code — chỉ đọc từ localStorage
 //    (user tự dán fine-grained PAT vào Cài đặt, mỗi thiết bị một lần).
 // 2. Push không ghi đè mù quáng nữa: luôn GET bản remote trước, merge từng
@@ -87,6 +88,21 @@ function authHeaders(cfg) {
   };
 }
 
+/**
+ * Nội dung file qua Git Blobs API (đọc được tới 100MB).
+ * Contents API chỉ nhét sẵn `content` cho file ≤ 1MB; lớn hơn thì trả
+ * encoding:'none' + content:'' — kho từ vượt 1MB ngày 17/9/2026 và "Tải về"
+ * chết ngay ở đó với lỗi "JSON hỏng?", nên phải có đường này.
+ */
+async function readBlob(cfg, sha) {
+  const url = `https://api.github.com/repos/${cfg.user}/${cfg.repo}/git/blobs/${sha}?t=${Date.now()}`;
+  const res = await fetch(url, {
+    headers: { ...authHeaders(cfg), Accept: 'application/vnd.github.raw' },
+  });
+  if (!res.ok) throw new Error(`GitHub trả lỗi HTTP ${res.status} khi đọc nội dung file lớn.`);
+  return res.text();
+}
+
 /** Đọc một file JSON trong repo. Chưa có file thì trả {data:null, sha:null}. */
 export async function readJsonFile(cfg, path) {
   const res = await fetch(apiUrl(cfg, path, true), { headers: authHeaders(cfg) });
@@ -96,8 +112,11 @@ export async function readJsonFile(cfg, path) {
   }
   if (!res.ok) throw new Error(`GitHub trả lỗi HTTP ${res.status}.`);
   const body = await res.json();
+  const raw = body.content
+    ? b64DecodeUtf8(body.content.replace(/\n/g, ''))
+    : await readBlob(cfg, body.sha);
   try {
-    return { data: JSON.parse(b64DecodeUtf8((body.content ?? '').replace(/\n/g, ''))), sha: body.sha };
+    return { data: JSON.parse(raw), sha: body.sha };
   } catch {
     throw new Error(`${path} trên GitHub không đọc được (JSON hỏng?).`);
   }
@@ -117,6 +136,13 @@ export async function writeJsonFile(cfg, path, content, sha, message) {
   }
   if (res.status === 401 || res.status === 403) {
     throw new Error('GitHub từ chối token khi ghi (401/403). Token cần quyền Contents Read/Write.');
+  }
+  // 413 = payload quá lớn: kho từ đã to tới mức Contents API không nhận nữa
+  // (giới hạn đọc là 1MB — đã đi vòng qua Blobs API — còn ghi thì vài chục MB).
+  if (res.status === 413 || res.status === 422) {
+    throw new Error(
+      `GitHub không nhận file (HTTP ${res.status}) — kho từ có thể đã quá lớn cho Contents API.`
+    );
   }
   if (!res.ok) throw new Error(`GitHub PUT lỗi HTTP ${res.status}.`);
 }
