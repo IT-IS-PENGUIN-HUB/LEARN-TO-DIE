@@ -106,9 +106,29 @@ async function readBlob(cfg, sha) {
 /** Đọc một file JSON trong repo. Chưa có file thì trả {data:null, sha:null}. */
 export async function readJsonFile(cfg, path) {
   const res = await fetch(apiUrl(cfg, path, true), { headers: authHeaders(cfg) });
-  if (res.status === 404) return { data: null, sha: null };
-  if (res.status === 401 || res.status === 403) {
-    throw new Error('GitHub từ chối token (401/403). Kiểm tra lại token trong Cài đặt.');
+  if (res.status === 401) {
+    throw new Error('GitHub từ chối token (401) — token sai hoặc đã hết hạn. Tạo token mới rồi dán lại trong Cài đặt.');
+  }
+  if (res.status === 403) {
+    throw new Error('GitHub từ chối token (403). Token cần quyền Contents: Read and write cho repo này.');
+  }
+  if (res.status === 404) {
+    // 404 ở đây KHÔNG chắc là thiếu file: fine-grained PAT không được chọn repo
+    // cũng trả 404 (GitHub giấu luôn sự tồn tại của repo). Hỏi thêm chính repo
+    // để biết là sai tên repo / token thiếu quyền, hay repo đúng mà chưa có file.
+    // 18/9/2026: iPhone tải được còn Huawei báo "không tìm thấy vocab.json".
+    const repoRes = await fetch(
+      `https://api.github.com/repos/${cfg.user}/${cfg.repo}?t=${Date.now()}`,
+      { headers: authHeaders(cfg) }
+    );
+    if (repoRes.status === 404) {
+      throw new Error(
+        `Máy này không mở được repo ${cfg.user}/${cfg.repo}: sai tên Username/Repository, ` +
+        'hoặc token của máy này chưa được cấp quyền cho repo đó (token fine-grained phải ' +
+        'tick đúng repo). Kiểm tra 3 ô GitHub trong Cài đặt.'
+      );
+    }
+    return { data: null, sha: null };
   }
   if (!res.ok) throw new Error(`GitHub trả lỗi HTTP ${res.status}.`);
   const body = await res.json();
