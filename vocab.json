@@ -5048,10 +5048,10 @@
       "meaning": "Đặc trưng, đặc tính",
       "exJp": "遺伝子組換えで新しい形質を持つ作物を作る。",
       "exVi": "Tạo ra cây trồng mang đặc tính mới bằng biến đổi gen.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1789818104549,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1789731704549
     },
     {
       "id": "1786573248380_5iognm",
@@ -5540,10 +5540,10 @@
       "meaning": "(xúc môi) chất xúc tác",
       "exJp": "触媒は反応速度を上げるが自身は変化しない。",
       "exVi": "Chất xúc tác làm tăng tốc độ phản ứng nhưng bản thân không thay đổi.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1789818110660,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1789731710660
     },
     {
       "id": "1786573248380_ea340z",
@@ -5576,10 +5576,10 @@
       "meaning": "(cơ chất) cơ chất (chất nền của enzyme)",
       "exJp": "酵素は特定の基質にのみ作用する。",
       "exVi": "Enzyme chỉ tác dụng lên cơ chất nhất định.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1789818118299,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1789731718299
     },
     {
       "id": "1786573248380_dyjxa3",
