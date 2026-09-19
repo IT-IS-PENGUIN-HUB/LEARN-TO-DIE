@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { useVocab } from '../../context/VocabProvider.jsx';
-import { SUBJECT_IDS } from '../../lib/migrate.js';
+import { SUBJECT_IDS, migrateVocab } from '../../lib/migrate.js';
 import { mergeVocab } from '../../services/github.js';
 import { IconCloudDown, IconCloudUp, IconDownload, IconUpload } from '../icons.jsx';
 
@@ -30,9 +30,14 @@ export default function BackupPanel({ sync }) {
       const parsed = JSON.parse(await file.text());
       const looksValid = Array.isArray(parsed) || SUBJECT_IDS.some((s) => Array.isArray(parsed?.[s]));
       if (!looksValid) throw new Error('File không đúng định dạng vocab.');
-      // Gộp thay vì ghi đè: không mất từ mới thêm trên máy này
-      replaceAll(mergeVocab(rawVocab, parsed));
-      setFileMsg({ ok: true, text: 'Đã nhập và gộp dữ liệu từ file ✓' });
+      // Chuẩn hoá TRƯỚC khi gộp: file đời cũ là một mảng phẳng, mà mergeVocab
+      // chỉ đọc theo nhóm kiso/tekisei/senmon → trước đây nhập xong báo ✓ mà
+      // không vào từ nào. migrateVocab dồn mảng cũ vào kiso.
+      const incoming = migrateVocab(parsed);
+      const n = SUBJECT_IDS.reduce((sum, s) => sum + incoming[s].length, 0);
+      if (!n) throw new Error('file không có từ nào đọc được.');
+      replaceAll(mergeVocab(rawVocab, incoming));
+      setFileMsg({ ok: true, text: `Đã nhập và gộp ${n} từ từ file ✓` });
     } catch (err) {
       setFileMsg({ ok: false, text: `Không nhập được: ${err.message}` });
     }

@@ -32,6 +32,9 @@ export const KEYS = {
   // Bậc hạng cao nhất ĐÃ chúc mừng (id trong TIERS) — để màn thăng bậc chỉ hiện
   // một lần cho mỗi bậc, kể cả khi acc 30 ngày sụt làm hạng tạm rơi rồi leo lại.
   lastRankTier: 'learn_to_die_last_rank_tier',
+  // '1' = còn thay đổi chưa đẩy lên GitHub (học lúc mất mạng, hoặc push lỗi).
+  // Sống qua lần tải lại trang để lần sau có mạng là tự đẩy nốt.
+  syncPending: 'learn_to_die_sync_pending',
 };
 
 export function loadJSON(key, fallback = null) {

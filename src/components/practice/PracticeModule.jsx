@@ -117,6 +117,11 @@ export default function PracticeModule({ onBack, sub }) {
       `back` = màn để quay về khi thoát: mặc định 'home', vào từ danh sách chuyên
       mục thì 'catlist' (bỏ qua bước này là thoát ra bị văng về trang chọn đề). */
   const begin = useCallback((list, nextMeta, restore = null, back = 'home') => {
+    // Đang xem lại câu sai mà bấm thẳng "Đề thi" ở menu trái thì không đi qua
+    // onExit, reviewMode còn bật → đề mới mở ra đã hiện lời giải và khoá hết
+    // lựa chọn. Mọi phiên làm bài đều qua đây nên tắt review ngay tại đây.
+    setReviewMode(false);
+    setReviewReturn('home');
     setQuestions(list);
     setMeta(nextMeta);
     setAnswers(restore?.answers ?? {});
