@@ -7604,10 +7604,10 @@
       "meaning": "enzyme cắt giới hạn",
       "exJp": "制限酵素でDNAを特定の位置で切断する。",
       "exVi": "Enzyme cắt giới hạn cắt DNA tại vị trí xác định.",
-      "score": 0,
-      "nextReview": 1789428357197,
-      "mastered": false,
-      "updatedAt": 1789428357332
+      "score": 1,
+      "nextReview": 1790012076995,
+      "mastered": true,
+      "updatedAt": 1789925678495
     },
     {
       "id": "1789428357333",
@@ -7616,10 +7616,10 @@
       "meaning": "ligase (enzyme nối DNA)",
       "exJp": "切断したDNAはリガーゼで連結する。",
       "exVi": "DNA đã cắt được nối lại bằng ligase.",
-      "score": 0,
-      "nextReview": 1789428357197,
-      "mastered": false,
-      "updatedAt": 1789428357333
+      "score": 1,
+      "nextReview": 1790012081712,
+      "mastered": true,
+      "updatedAt": 1789925682646
     },
     {
       "id": "1789428357334",
@@ -7628,10 +7628,10 @@
       "meaning": "vector (thể mang gen vào tế bào)",
       "exJp": "組換えDNAはベクターで細胞に導入する。",
       "exVi": "DNA tái tổ hợp được đưa vào tế bào nhờ vector.",
-      "score": 0,
-      "nextReview": 1789428357197,
-      "mastered": false,
-      "updatedAt": 1789428357334
+      "score": 1,
+      "nextReview": 1790012089013,
+      "mastered": true,
+      "updatedAt": 1789925689709
     },
     {
       "id": "1789428357335",
@@ -7640,10 +7640,10 @@
       "meaning": "sự khuếch đại (nhân lên)",
       "exJp": "PCRはDNAを指数的に増幅する。",
       "exVi": "PCR khuếch đại DNA theo cấp số nhân.",
-      "score": 0,
-      "nextReview": 1789428357197,
-      "mastered": false,
-      "updatedAt": 1789428357335
+      "score": 1,
+      "nextReview": 1790012093143,
+      "mastered": true,
+      "updatedAt": 1789925694627
     },
     {
       "id": "1789428357336",
@@ -7652,10 +7652,10 @@
       "meaning": "tính chịu nhiệt",
       "exJp": "PCRには耐熱性のDNAポリメラーゼが必要である。",
       "exVi": "PCR cần DNA polymerase chịu nhiệt.",
-      "score": 0,
-      "nextReview": 1789428357197,
-      "mastered": false,
-      "updatedAt": 1789428357336
+      "score": 1,
+      "nextReview": 1790012098928,
+      "mastered": true,
+      "updatedAt": 1789925700578
     },
     {
       "id": "1789428357337",
@@ -7664,10 +7664,10 @@
       "meaning": "primer (mồi)",
       "exJp": "増幅されたDNAにはプライマーの配列が含まれる。",
       "exVi": "DNA được khuếch đại có chứa trình tự primer.",
-      "score": 0,
-      "nextReview": 1789428357197,
-      "mastered": false,
-      "updatedAt": 1789428357337
+      "score": 1,
+      "nextReview": 1790012102714,
+      "mastered": true,
+      "updatedAt": 1789925703416
     },
     {
       "id": "1789428357338",
@@ -7676,10 +7676,10 @@
       "meaning": "sự gắn mồi (annealing)",
       "exJp": "アニーリング温度を上げると特異性が上がる。",
       "exVi": "Tăng nhiệt độ gắn mồi thì tính đặc hiệu tăng lên.",
-      "score": 0,
-      "nextReview": 1789428357197,
-      "mastered": false,
-      "updatedAt": 1789428357338
+      "score": 1,
+      "nextReview": 1790012106364,
+      "mastered": true,
+      "updatedAt": 1789925711716
     },
     {
       "id": "1789428357339",
@@ -7712,10 +7712,10 @@
       "meaning": "đại phân tử",
       "exJp": "巨大分子のうちタンパク質が最も重量比が大きい。",
       "exVi": "Trong các đại phân tử, protein chiếm tỉ lệ khối lượng lớn nhất.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1790012115798,
       "mastered": false,
-      "updatedAt": 1789428357341
+      "updatedAt": 1789925715798
     },
     {
       "id": "1789428357342",
