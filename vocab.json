@@ -7209,9 +7209,9 @@
       "exJp": "A–Tは水素結合2本、G–Cは3本で塩基対をつくる。",
       "exVi": "Cặp A–T có 2 liên kết hydro, G–C có 3.",
       "score": 0,
-      "nextReview": 1789428357197,
+      "nextReview": 1789924938628,
       "mastered": false,
-      "updatedAt": 1789428357299
+      "updatedAt": 1789924938628
     },
     {
       "id": "1789428357300",
@@ -7220,10 +7220,10 @@
       "meaning": "nucleotide (đường + phosphate + base)",
       "exJp": "DNAの構成単位はヌクレオチドである。",
       "exVi": "Đơn vị cấu tạo của DNA là nucleotide.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1790011345896,
       "mastered": false,
-      "updatedAt": 1789428357300
+      "updatedAt": 1789924945896
     },
     {
       "id": "1789428357301",
