@@ -7280,10 +7280,10 @@
       "meaning": "ngược chiều (antiparallel)",
       "exJp": "DNAの2本鎖は平行ではなく逆平行である。",
       "exVi": "Hai mạch DNA không song song mà ngược chiều nhau.",
-      "score": 0,
-      "nextReview": 1789428357197,
-      "mastered": false,
-      "updatedAt": 1789428357305
+      "score": 1,
+      "nextReview": 1790011431971,
+      "mastered": true,
+      "updatedAt": 1789925034239
     },
     {
       "id": "1789428357306",
@@ -7292,10 +7292,10 @@
       "meaning": "cao phân tử (polymer)",
       "exJp": "タンパク質はアミノ酸がつながった高分子である。",
       "exVi": "Protein là cao phân tử do các amino acid nối với nhau.",
-      "score": 0,
-      "nextReview": 1789428357197,
-      "mastered": false,
-      "updatedAt": 1789428357306
+      "score": 1,
+      "nextReview": 1790011442154,
+      "mastered": true,
+      "updatedAt": 1789925049424
     },
     {
       "id": "1789428357307",
