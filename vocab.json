@@ -7316,10 +7316,10 @@
       "meaning": "mạch khuôn, khuôn mẫu",
       "exJp": "DNAポリメラーゼは鋳型に沿って新しい鎖を合成する。",
       "exVi": "DNA polymerase tổng hợp mạch mới dọc theo mạch khuôn.",
-      "score": 0,
-      "nextReview": 1789428357197,
-      "mastered": false,
-      "updatedAt": 1789428357308
+      "score": 1,
+      "nextReview": 1790011488309,
+      "mastered": true,
+      "updatedAt": 1789925094329
     },
     {
       "id": "1789428357309",
@@ -7340,10 +7340,10 @@
       "meaning": "thymine (base T, chỉ có ở DNA)",
       "exJp": "DNAの塩基はチミンで、ウラシルではない。",
       "exVi": "Base của DNA là thymine chứ không phải uracil.",
-      "score": 0,
-      "nextReview": 1789428357197,
-      "mastered": false,
-      "updatedAt": 1789428357310
+      "score": 1,
+      "nextReview": 1790011499926,
+      "mastered": true,
+      "updatedAt": 1789925100695
     },
     {
       "id": "1789428357311",
@@ -7352,10 +7352,10 @@
       "meaning": "uracil (base U, chỉ có ở RNA)",
       "exJp": "ウラシルはRNA特有の塩基である。",
       "exVi": "Uracil là base đặc trưng của RNA.",
-      "score": 0,
-      "nextReview": 1789428357197,
-      "mastered": false,
-      "updatedAt": 1789428357311
+      "score": 1,
+      "nextReview": 1790011504760,
+      "mastered": true,
+      "updatedAt": 1789925105629
     },
     {
       "id": "1789428357312",
@@ -7364,10 +7364,10 @@
       "meaning": "adenine (base A)",
       "exJp": "アデニンはチミンと2本の水素結合で対合する。",
       "exVi": "Adenine bắt cặp với thymine bằng 2 liên kết hydro.",
-      "score": 0,
-      "nextReview": 1789428357197,
-      "mastered": false,
-      "updatedAt": 1789428357312
+      "score": 1,
+      "nextReview": 1790011508027,
+      "mastered": true,
+      "updatedAt": 1789925108696
     },
     {
       "id": "1789428357313",
