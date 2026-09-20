@@ -7172,10 +7172,10 @@
       "meaning": "thông tin di truyền",
       "exJp": "DNAは遺伝情報を担う二本鎖の高分子である。",
       "exVi": "DNA là cao phân tử mạch kép mang thông tin di truyền.",
-      "score": 0,
-      "nextReview": 1789924898624,
-      "mastered": false,
-      "updatedAt": 1789924898624
+      "score": 1,
+      "nextReview": 1790011463606,
+      "mastered": true,
+      "updatedAt": 1789925064292
     },
     {
       "id": "1789428357297",
@@ -7208,10 +7208,10 @@
       "meaning": "cặp base (bắt cặp bổ sung)",
       "exJp": "A–Tは水素結合2本、G–Cは3本で塩基対をつくる。",
       "exVi": "Cặp A–T có 2 liên kết hydro, G–C có 3.",
-      "score": 0,
-      "nextReview": 1789924938628,
-      "mastered": false,
-      "updatedAt": 1789924938628
+      "score": 1,
+      "nextReview": 1790011471240,
+      "mastered": true,
+      "updatedAt": 1789925073975
     },
     {
       "id": "1789428357300",
@@ -7304,10 +7304,10 @@
       "meaning": "quy tắc Chargaff (A=T, G=C)",
       "exJp": "シャルガフの法則から相補鎖の塩基組成を計算できる。",
       "exVi": "Từ quy tắc Chargaff có thể tính thành phần base của mạch bổ sung.",
-      "score": 0,
-      "nextReview": 1789428357197,
-      "mastered": false,
-      "updatedAt": 1789428357307
+      "score": 1,
+      "nextReview": 1790011458589,
+      "mastered": true,
+      "updatedAt": 1789925060341
     },
     {
       "id": "1789428357308",
