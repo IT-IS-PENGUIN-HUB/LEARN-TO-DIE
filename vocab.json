@@ -7376,10 +7376,10 @@
       "meaning": "cytosine (base C)",
       "exJp": "シトシンはグアニンと3本の水素結合で対合する。",
       "exVi": "Cytosine bắt cặp với guanine bằng 3 liên kết hydro.",
-      "score": 0,
-      "nextReview": 1789428357197,
-      "mastered": false,
-      "updatedAt": 1789428357313
+      "score": 1,
+      "nextReview": 1790011890963,
+      "mastered": true,
+      "updatedAt": 1789925495497
     },
     {
       "id": "1789428357314",
@@ -7388,10 +7388,10 @@
       "meaning": "guanine (base G)",
       "exJp": "グアニンとシトシンの数は等しい。",
       "exVi": "Số guanine bằng số cytosine.",
-      "score": 0,
-      "nextReview": 1789428357197,
-      "mastered": false,
-      "updatedAt": 1789428357314
+      "score": 1,
+      "nextReview": 1790011901729,
+      "mastered": true,
+      "updatedAt": 1789925502781
     },
     {
       "id": "1789428357315",
@@ -7400,10 +7400,10 @@
       "meaning": "sự methyl hóa",
       "exJp": "DNAのメチル化で遺伝子発現が継承される。",
       "exVi": "Methyl hóa DNA giúp di truyền lại trạng thái biểu hiện gen.",
-      "score": 0,
-      "nextReview": 1789428357197,
-      "mastered": false,
-      "updatedAt": 1789428357315
+      "score": 1,
+      "nextReview": 1790011908563,
+      "mastered": true,
+      "updatedAt": 1789925510264
     },
     {
       "id": "1789428357316",
@@ -7436,10 +7436,10 @@
       "meaning": "liên kết peptide (–CO–NH–)",
       "exJp": "アミノ酸はペプチド結合で連結される。",
       "exVi": "Các amino acid nối với nhau bằng liên kết peptide.",
-      "score": 0,
-      "nextReview": 1789428357197,
-      "mastered": false,
-      "updatedAt": 1789428357318
+      "score": 1,
+      "nextReview": 1790011917531,
+      "mastered": true,
+      "updatedAt": 1789925519815
     },
     {
       "id": "1789428357319",
