@@ -7532,10 +7532,10 @@
       "meaning": "tính đặc hiệu cơ chất",
       "exJp": "酵素は基質特異性をもち決まった相手にだけ働く。",
       "exVi": "Enzyme có tính đặc hiệu cơ chất, chỉ tác dụng lên chất nhất định.",
-      "score": 0,
-      "nextReview": 1789428357197,
-      "mastered": false,
-      "updatedAt": 1789428357326
+      "score": 1,
+      "nextReview": 1790012034191,
+      "mastered": true,
+      "updatedAt": 1789925635905
     },
     {
       "id": "1789428357327",
@@ -7544,10 +7544,10 @@
       "meaning": "amylase (enzyme phân giải tinh bột)",
       "exJp": "アミラーゼはデンプンを加水分解する。",
       "exVi": "Amylase thủy phân tinh bột.",
-      "score": 0,
-      "nextReview": 1789428357197,
-      "mastered": false,
-      "updatedAt": 1789428357327
+      "score": 1,
+      "nextReview": 1790012040308,
+      "mastered": true,
+      "updatedAt": 1789925641155
     },
     {
       "id": "1789428357328",
@@ -7556,10 +7556,10 @@
       "meaning": "lipase (enzyme phân giải chất béo)",
       "exJp": "リパーゼは脂肪のエステル結合を加水分解する。",
       "exVi": "Lipase thủy phân liên kết este của chất béo.",
-      "score": 0,
-      "nextReview": 1789428357197,
-      "mastered": false,
-      "updatedAt": 1789428357328
+      "score": 1,
+      "nextReview": 1790012045789,
+      "mastered": true,
+      "updatedAt": 1789925647859
     },
     {
       "id": "1789428357329",
@@ -7568,10 +7568,10 @@
       "meaning": "tinh bột",
       "exJp": "デンプンはアミラーゼによって分解される。",
       "exVi": "Tinh bột bị phân giải bởi amylase.",
-      "score": 0,
-      "nextReview": 1789428357197,
-      "mastered": false,
-      "updatedAt": 1789428357329
+      "score": 1,
+      "nextReview": 1790012055710,
+      "mastered": true,
+      "updatedAt": 1789925658461
     },
     {
       "id": "1789428357330",
@@ -7580,10 +7580,10 @@
       "meaning": "chất béo",
       "exJp": "脂肪はリパーゼで加水分解される。",
       "exVi": "Chất béo bị thủy phân bởi lipase.",
-      "score": 0,
-      "nextReview": 1789428357197,
-      "mastered": false,
-      "updatedAt": 1789428357330
+      "score": 1,
+      "nextReview": 1790012061160,
+      "mastered": true,
+      "updatedAt": 1789925662312
     },
     {
       "id": "1789428357331",
@@ -7592,10 +7592,10 @@
       "meaning": "tái tổ hợp gen",
       "exJp": "遺伝子組換えでは制限酵素とリガーゼを使う。",
       "exVi": "Tái tổ hợp gen sử dụng enzyme cắt giới hạn và ligase.",
-      "score": 0,
-      "nextReview": 1789428357197,
+      "score": 1,
+      "nextReview": 1790012068159,
       "mastered": false,
-      "updatedAt": 1789428357331
+      "updatedAt": 1789925668159
     },
     {
       "id": "1789428357332",
