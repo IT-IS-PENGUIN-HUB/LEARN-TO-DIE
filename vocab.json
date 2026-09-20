@@ -7448,10 +7448,10 @@
       "meaning": "amino acid thiết yếu (phải lấy từ thức ăn)",
       "exJp": "ヒトの必須アミノ酸は9種で、プロリンは含まない。",
       "exVi": "Người có 9 amino acid thiết yếu, không gồm proline.",
-      "score": 0,
-      "nextReview": 1789428357197,
-      "mastered": false,
-      "updatedAt": 1789428357319
+      "score": 1,
+      "nextReview": 1790011931148,
+      "mastered": true,
+      "updatedAt": 1789925532400
     },
     {
       "id": "1789428357320",
@@ -7460,10 +7460,10 @@
       "meaning": "codon (bộ ba mã hóa)",
       "exJp": "3つの塩基からなるコドンが1個のアミノ酸を指定する。",
       "exVi": "Một codon gồm 3 base mã hóa cho 1 amino acid.",
-      "score": 0,
-      "nextReview": 1789428357197,
-      "mastered": false,
-      "updatedAt": 1789428357320
+      "score": 1,
+      "nextReview": 1790011936466,
+      "mastered": true,
+      "updatedAt": 1789925537384
     },
     {
       "id": "1789428357321",
