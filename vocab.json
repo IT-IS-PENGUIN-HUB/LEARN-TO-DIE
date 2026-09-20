@@ -7520,10 +7520,10 @@
       "meaning": "nhiệt độ tối thích",
       "exJp": "酵素には至適温度と至適pHがある。",
       "exVi": "Enzyme có nhiệt độ tối thích và pH tối thích.",
-      "score": 0,
-      "nextReview": 1789428357197,
-      "mastered": false,
-      "updatedAt": 1789428357325
+      "score": 1,
+      "nextReview": 1790012021590,
+      "mastered": true,
+      "updatedAt": 1789925625858
     },
     {
       "id": "1789428357326",
