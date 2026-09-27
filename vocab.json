@@ -5168,10 +5168,10 @@
       "meaning": "Giảm xuống, thấp hơn",
       "exJp": "測定値が基準値を下回る場合は再試験を行う。",
       "exVi": "Nếu giá trị đo thấp hơn giá trị tiêu chuẩn thì tiến hành thử lại.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1790634724106,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1790548324106
     },
     {
       "id": "1786573248380_u9n5ht",
