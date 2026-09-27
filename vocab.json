@@ -7784,10 +7784,10 @@
       "meaning": "kiềm chế phát sinh (Reduce)",
       "exJp": "3Rの優先順位は発生抑制→再使用→再生利用の順である。",
       "exVi": "Thứ tự ưu tiên 3R là giảm phát sinh → tái sử dụng → tái chế.",
-      "score": 0,
-      "nextReview": 1789434723042,
+      "score": 1,
+      "nextReview": 1790635063969,
       "mastered": false,
-      "updatedAt": 1789434723045
+      "updatedAt": 1790548663969
     },
     {
       "id": "1789434723046",
@@ -7796,10 +7796,10 @@
       "meaning": "tái sử dụng (Reuse)",
       "exJp": "再使用は発生抑制の次に優先される。",
       "exVi": "Tái sử dụng được ưu tiên ngay sau giảm phát sinh.",
-      "score": 0,
-      "nextReview": 1789434723042,
+      "score": 1,
+      "nextReview": 1790635073468,
       "mastered": false,
-      "updatedAt": 1789434723046
+      "updatedAt": 1790548673468
     },
     {
       "id": "1789434723047",
@@ -7808,10 +7808,10 @@
       "meaning": "tái chế, tái sinh sử dụng (Recycle)",
       "exJp": "再生利用は3Rの中で最後の優先順位である。",
       "exVi": "Tái chế là ưu tiên cuối cùng trong 3R.",
-      "score": 0,
-      "nextReview": 1789434723042,
+      "score": 1,
+      "nextReview": 1790635080353,
       "mastered": false,
-      "updatedAt": 1789434723047
+      "updatedAt": 1790548680353
     },
     {
       "id": "1789434723048",
