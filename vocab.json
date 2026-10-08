@@ -26776,10 +26776,10 @@
       "meaning": "(Hoạt, cốt)Sự trơn tru, trôi chảy",
       "exJp": "止端を滑らかに仕上げて疲労強度を高める。",
       "exVi": "Hoàn thiện chân mối hàn trơn nhẵn để tăng cường độ mỏi.",
-      "score": 0,
-      "nextReview": 1791501561653,
+      "score": 1,
+      "nextReview": 1791588037211,
       "mastered": false,
-      "updatedAt": 1791501561653
+      "updatedAt": 1791501637211
     },
     {
       "id": "1786573248380_pe2fk9",
@@ -26788,10 +26788,10 @@
       "meaning": "(Chấn phúc)Biên độ chấn động",
       "exJp": "応力振幅が大きいほど疲労寿命は短い。",
       "exVi": "Biên độ ứng suất càng lớn thì tuổi thọ mỏi càng ngắn.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1791587995458,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1791501595458
     },
     {
       "id": "1786573248380_gac5a8",
@@ -26800,10 +26800,10 @@
       "meaning": "Dài ngắn, điểm mạnh yếu",
       "exJp": "各工法の長短を比較して選定する。",
       "exVi": "So sánh ưu nhược điểm của từng phương pháp thi công để lựa chọn.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1791588000704,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1791501600704
     },
     {
       "id": "1786573248380_1azsyx",
@@ -26812,10 +26812,10 @@
       "meaning": "(Hủ thực)ăn mòn",
       "exJp": "鋼材は塩分により腐食が進行する。",
       "exVi": "Thép bị ăn mòn tiến triển do muối.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1791588006011,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1791501606011
     },
     {
       "id": "1786573248380_hfxyt9",
@@ -26824,10 +26824,10 @@
       "meaning": "(Đối hậu tính)Tính bền thời tiết",
       "exJp": "塗料の対候性を試験で確認する。",
       "exVi": "Kiểm tra tính bền thời tiết của sơn bằng thí nghiệm.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1791588011009,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1791501611009
     },
     {
       "id": "1786573248380_d5a8no",
@@ -26836,10 +26836,10 @@
       "meaning": "(Thiêm gia) Thêm vào",
       "exJp": "コンクリートに混和剤を添加する。",
       "exVi": "Thêm phụ gia vào bê tông.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1791588017928,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1791501617928
     },
     {
       "id": "1786573248380_81b4t4",
@@ -26848,10 +26848,10 @@
       "meaning": "(Đê hợp kim)Hợp kim thấp",
       "exJp": "低合金鋼は耐候性に優れる。",
       "exVi": "Thép hợp kim thấp có tính bền thời tiết tốt.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1791588025343,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1791501625343
     },
     {
       "id": "1786573248380_ium3ad",
@@ -26860,10 +26860,10 @@
       "meaning": "(Kiền thấp) độ ẩm và độ khô",
       "exJp": "乾湿の繰返しで鋼材の腐食が進む。",
       "exVi": "Sự lặp lại khô ướt làm thép bị ăn mòn nhanh hơn.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1791588030761,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1791501630761
     },
     {
       "id": "1786573248380_fc4ob0",
