@@ -26452,10 +26452,10 @@
       "meaning": "đất sét",
       "exJp": "粘土は透水性が低く圧密に時間がかかる。",
       "exVi": "Đất sét có tính thấm thấp nên cố kết mất nhiều thời gian.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1791587770020,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1791501370020
     },
     {
       "id": "1786573248380_cjcwtw",
@@ -26464,10 +26464,10 @@
       "meaning": "lịch sử",
       "exJp": "土の応力履歴が圧縮特性に影響する。",
       "exVi": "Lịch sử ứng suất của đất ảnh hưởng đến đặc tính nén.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1791587773377,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1791501373377
     },
     {
       "id": "1786573248380_kv81w4",
@@ -26476,10 +26476,10 @@
       "meaning": "diễn biến, biến chuyển (theo thời gian)",
       "exJp": "沈下量の推移を長期間観測する。",
       "exVi": "Quan trắc diễn biến độ lún trong thời gian dài.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1791587779975,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1791501379975
     },
     {
       "id": "1786573248380_pc94vt",
@@ -26488,10 +26488,10 @@
       "meaning": "mẫu thử (thí nghiệm)",
       "exJp": "円柱形の供試体で一軸圧縮試験を行う。",
       "exVi": "Thí nghiệm nén một trục với mẫu thử hình trụ.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1791587787758,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1791501387758
     },
     {
       "id": "1786573248380_55z0cu",
@@ -26500,10 +26500,10 @@
       "meaning": "hình trụ tròn",
       "exJp": "供試体は円柱形に成形する。",
       "exVi": "Mẫu thử được tạo hình trụ tròn.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1791587795256,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1791501395256
     },
     {
       "id": "1786573248380_4zcjkv",
@@ -26512,10 +26512,10 @@
       "meaning": "(bảo trì) giữ, duy trì",
       "exJp": "荷重を一定に保持して沈下を測定する。",
       "exVi": "Giữ tải trọng không đổi và đo độ lún.",
-      "score": 0,
-      "nextReview": 0,
-      "mastered": false,
-      "updatedAt": 1786573248380
+      "score": 1,
+      "nextReview": 1791587799891,
+      "mastered": true,
+      "updatedAt": 1791501400844
     },
     {
       "id": "1786573248380_dnx0kp",
@@ -26524,10 +26524,10 @@
       "meaning": "phép tính",
       "exJp": "沈下量を理論式により算定する。",
       "exVi": "Tính toán độ lún theo công thức lý thuyết.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1791587803522,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1791501403522
     },
     {
       "id": "1786573248380_hqkv3v",
@@ -26536,10 +26536,10 @@
       "meaning": "sơ kỳ",
       "exJp": "初期の間隙比を試験前に測定する。",
       "exVi": "Đo hệ số rỗng ban đầu trước khi thí nghiệm.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1791587807272,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1791501407272
     },
     {
       "id": "1786573248380_4tttan",
