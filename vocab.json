@@ -7916,10 +7916,10 @@
       "meaning": "tái thương phẩm hóa (tái chế thành hàng hóa)",
       "exJp": "ガラス製容器やPETボトルは再商品化義務の対象である。",
       "exVi": "Chai thủy tinh và chai PET thuộc diện bắt buộc tái thương phẩm hóa.",
-      "score": 0,
-      "nextReview": 1789434723042,
+      "score": 1,
+      "nextReview": 1790635265379,
       "mastered": false,
-      "updatedAt": 1789434723056
+      "updatedAt": 1790548865379
     },
     {
       "id": "1789434723057",
@@ -7928,10 +7928,10 @@
       "meaning": "thu hồi nhiệt",
       "exJp": "処理の優先順位は再生利用の次に熱回収である。",
       "exVi": "Trong thứ tự ưu tiên xử lý, thu hồi nhiệt đứng sau tái chế.",
-      "score": 0,
-      "nextReview": 1789434723042,
+      "score": 1,
+      "nextReview": 1790635279244,
       "mastered": false,
-      "updatedAt": 1789434723057
+      "updatedAt": 1790548879244
     },
     {
       "id": "1789434723058",
@@ -7940,10 +7940,10 @@
       "meaning": "xử lý (thải bỏ) đúng quy định",
       "exJp": "熱回収もできないものは適正処分する。",
       "exVi": "Thứ không thể thu hồi nhiệt thì được xử lý đúng quy định.",
-      "score": 0,
-      "nextReview": 1789434723042,
+      "score": 1,
+      "nextReview": 1790635282594,
       "mastered": false,
-      "updatedAt": 1789434723058
+      "updatedAt": 1790548882594
     },
     {
       "id": "1789434723059",
@@ -7952,10 +7952,10 @@
       "meaning": "tài nguyên tuần hoàn",
       "exJp": "廃棄物等のうち有用なものを循環資源と位置付ける。",
       "exVi": "Phần hữu ích trong chất thải được coi là tài nguyên tuần hoàn.",
-      "score": 0,
-      "nextReview": 1789434723042,
+      "score": 1,
+      "nextReview": 1790635291959,
       "mastered": false,
-      "updatedAt": 1789434723059
+      "updatedAt": 1790548891959
     },
     {
       "id": "1789434723060",
@@ -7964,10 +7964,10 @@
       "meaning": "tuần hoàn tài nguyên",
       "exJp": "プラスチック資源循環戦略は3R+Renewableを掲げる。",
       "exVi": "Chiến lược tuần hoàn tài nguyên nhựa nêu 3R + Renewable.",
-      "score": 0,
-      "nextReview": 1789434723042,
+      "score": 1,
+      "nextReview": 1790635318920,
       "mastered": false,
-      "updatedAt": 1789434723060
+      "updatedAt": 1790548918920
     },
     {
       "id": "1789434723061",
@@ -7988,10 +7988,10 @@
       "meaning": "vật liệu xây dựng đặc định (thuộc diện tái chế)",
       "exJp": "特定建設資材はコンクリート・木材・アスファルトコンクリートなど4種類である。",
       "exVi": "Vật liệu xây dựng đặc định gồm 4 loại: bê tông, gỗ, bê tông nhựa...",
-      "score": 0,
-      "nextReview": 1789434723042,
+      "score": 1,
+      "nextReview": 1790635304164,
       "mastered": false,
-      "updatedAt": 1789434723062
+      "updatedAt": 1790548904164
     },
     {
       "id": "1789434723063",
@@ -8000,10 +8000,10 @@
       "meaning": "tháo dỡ có phân loại",
       "exJp": "建設リサイクル法は特定建設資材の分別解体を義務付けている。",
       "exVi": "Luật tái chế xây dựng bắt buộc tháo dỡ có phân loại vật liệu xây dựng đặc định.",
-      "score": 0,
-      "nextReview": 1789434723042,
+      "score": 1,
+      "nextReview": 1790635328987,
       "mastered": false,
-      "updatedAt": 1789434723063
+      "updatedAt": 1790548928987
     },
     {
       "id": "1789434723064",
@@ -8012,10 +8012,10 @@
       "meaning": "tái tài nguyên hóa",
       "exJp": "パソコンや小形二次電池は再資源化が義務付けられている。",
       "exVi": "Máy tính và pin sạc cỡ nhỏ bắt buộc phải được tái tài nguyên hóa.",
-      "score": 0,
-      "nextReview": 1789434723042,
+      "score": 1,
+      "nextReview": 1790635337920,
       "mastered": false,
-      "updatedAt": 1789434723064
+      "updatedAt": 1790548937920
     },
     {
       "id": "1789434723065",
@@ -8024,10 +8024,10 @@
       "meaning": "chất thải thực phẩm",
       "exJp": "食品廃棄物は飼料や肥料として再生利用される。",
       "exVi": "Chất thải thực phẩm được tái chế làm thức ăn chăn nuôi và phân bón.",
-      "score": 0,
-      "nextReview": 1789434723042,
+      "score": 1,
+      "nextReview": 1790635356824,
       "mastered": false,
-      "updatedAt": 1789434723065
+      "updatedAt": 1790548956824
     },
     {
       "id": "1789434723066",
@@ -8036,10 +8036,10 @@
       "meaning": "thức ăn chăn nuôi",
       "exJp": "食品循環資源を飼料の原材料として再生利用する。",
       "exVi": "Tái chế tài nguyên thực phẩm tuần hoàn làm nguyên liệu thức ăn chăn nuôi.",
-      "score": 0,
-      "nextReview": 1789434723042,
+      "score": 1,
+      "nextReview": 1790635369644,
       "mastered": false,
-      "updatedAt": 1789434723066
+      "updatedAt": 1790548969644
     },
     {
       "id": "1789434723067",
@@ -8048,10 +8048,10 @@
       "meaning": "phân bón",
       "exJp": "食べ残しは肥料としても再生利用できる。",
       "exVi": "Thức ăn thừa cũng có thể tái chế thành phân bón.",
-      "score": 0,
-      "nextReview": 1789434723042,
+      "score": 1,
+      "nextReview": 1790635383410,
       "mastered": false,
-      "updatedAt": 1789434723067
+      "updatedAt": 1790548983410
     },
     {
       "id": "1789434723068",
@@ -8060,10 +8060,10 @@
       "meaning": "giảm khối lượng",
       "exJp": "食品廃棄物は発生抑制と減量化で最終処分量を減らす。",
       "exVi": "Chất thải thực phẩm giảm lượng xử lý cuối nhờ kiềm chế phát sinh và giảm khối lượng.",
-      "score": 0,
-      "nextReview": 1789434723042,
+      "score": 1,
+      "nextReview": 1790635394695,
       "mastered": false,
-      "updatedAt": 1789434723068
+      "updatedAt": 1790548994695
     },
     {
       "id": "1789434723069",
@@ -8072,10 +8072,10 @@
       "meaning": "khử nước, tách nước",
       "exJp": "食品廃棄物の減量には乾燥・脱水・発酵・炭化がある。",
       "exVi": "Giảm khối lượng chất thải thực phẩm gồm sấy, tách nước, lên men, than hóa.",
-      "score": 0,
-      "nextReview": 1789434723042,
+      "score": 1,
+      "nextReview": 1790635400262,
       "mastered": false,
-      "updatedAt": 1789434723069
+      "updatedAt": 1790549000262
     },
     {
       "id": "1789434723070",
@@ -8084,10 +8084,10 @@
       "meaning": "than hóa",
       "exJp": "炭化も食品廃棄物の減量手法の一つである。",
       "exVi": "Than hóa cũng là một cách giảm khối lượng chất thải thực phẩm.",
-      "score": 0,
-      "nextReview": 1789434723042,
+      "score": 1,
+      "nextReview": 1790635404796,
       "mastered": false,
-      "updatedAt": 1789434723070
+      "updatedAt": 1790549004796
     },
     {
       "id": "1789434723071",
@@ -8096,10 +8096,10 @@
       "meaning": "vi nhựa (hạt nhựa từ 5mm trở xuống)",
       "exJp": "マイクロプラスチックは5mm以下のプラスチック粒子である。",
       "exVi": "Vi nhựa là các hạt nhựa có kích thước từ 5mm trở xuống.",
-      "score": 0,
-      "nextReview": 1789434723042,
+      "score": 1,
+      "nextReview": 1790635414047,
       "mastered": false,
-      "updatedAt": 1789434723071
+      "updatedAt": 1790549014047
     },
     {
       "id": "1789434723072",
@@ -8108,10 +8108,10 @@
       "meaning": "vận chuyển xuyên biên giới",
       "exJp": "有害廃棄物の越境移動は国際条約で規制される。",
       "exVi": "Việc vận chuyển chất thải nguy hại xuyên biên giới bị điều ước quốc tế kiểm soát.",
-      "score": 0,
-      "nextReview": 1789434723042,
+      "score": 1,
+      "nextReview": 1790635420163,
       "mastered": false,
-      "updatedAt": 1789434723072
+      "updatedAt": 1790549020163
     },
     {
       "id": "1789434723073",
@@ -8120,10 +8120,10 @@
       "meaning": "nước quá cảnh",
       "exJp": "有害廃棄物の輸出には輸入国・通過国への事前通告が必要である。",
       "exVi": "Xuất khẩu chất thải nguy hại cần thông báo trước cho nước nhập và nước quá cảnh.",
-      "score": 0,
-      "nextReview": 1789434723042,
+      "score": 1,
+      "nextReview": 1790635432648,
       "mastered": false,
-      "updatedAt": 1789434723073
+      "updatedAt": 1790549032648
     },
     {
       "id": "1789434723074",
@@ -8132,10 +8132,10 @@
       "meaning": "thông báo trước",
       "exJp": "バーゼル条約は事前通告と同意取得を義務付ける。",
       "exVi": "Công ước Basel bắt buộc thông báo trước và lấy sự đồng ý.",
-      "score": 0,
-      "nextReview": 1789434723042,
+      "score": 1,
+      "nextReview": 1790635451250,
       "mastered": false,
-      "updatedAt": 1789434723074
+      "updatedAt": 1790549051250
     },
     {
       "id": "1789434723075",
@@ -8144,10 +8144,10 @@
       "meaning": "vật có giá trị (bán được)",
       "exJp": "アルミ缶は分別収集の段階で有価物となる。",
       "exVi": "Lon nhôm trở thành vật có giá trị ngay khi được thu gom phân loại.",
-      "score": 0,
-      "nextReview": 1789434723042,
+      "score": 1,
+      "nextReview": 1790635454432,
       "mastered": false,
-      "updatedAt": 1789434723075
+      "updatedAt": 1790549054432
     },
     {
       "id": "1789434723076",
@@ -8156,10 +8156,10 @@
       "meaning": "đồ điện gia dụng",
       "exJp": "家電リサイクル法はエアコン・テレビ・洗濯機・冷蔵庫の4品目が対象である。",
       "exVi": "Luật tái chế đồ điện gia dụng áp dụng cho 4 mặt hàng: máy lạnh, TV, máy giặt, tủ lạnh.",
-      "score": 0,
-      "nextReview": 1789434723042,
+      "score": 1,
+      "nextReview": 1790635468869,
       "mastered": false,
-      "updatedAt": 1789434723076
+      "updatedAt": 1790549068869
     },
     {
       "id": "1789434723077",
@@ -8168,10 +8168,10 @@
       "meaning": "nhà bán lẻ",
       "exJp": "小売業者は消費者から廃家電を引き取る義務がある。",
       "exVi": "Nhà bán lẻ có nghĩa vụ thu nhận đồ điện cũ từ người tiêu dùng.",
-      "score": 0,
-      "nextReview": 1789434723042,
+      "score": 1,
+      "nextReview": 1790635492635,
       "mastered": false,
-      "updatedAt": 1789434723077
+      "updatedAt": 1790549092635
     },
     {
       "id": "1789434723078",
@@ -8180,10 +8180,10 @@
       "meaning": "sự thu nhận, thu hồi (hàng cũ)",
       "exJp": "家電の引き取りと製造者への引き渡しが義務付けられている。",
       "exVi": "Việc thu nhận đồ điện và bàn giao cho nhà sản xuất là bắt buộc.",
-      "score": 0,
-      "nextReview": 1789434723042,
+      "score": 1,
+      "nextReview": 1790635522836,
       "mastered": false,
-      "updatedAt": 1789434723078
+      "updatedAt": 1790549122836
     },
     {
       "id": "1789434723079",
@@ -8192,10 +8192,10 @@
       "meaning": "công trình phá dỡ",
       "exJp": "建設リサイクル法は解体工事業者の登録制度を定める。",
       "exVi": "Luật tái chế xây dựng quy định chế độ đăng ký nhà thầu phá dỡ.",
-      "score": 0,
-      "nextReview": 1789434723042,
-      "mastered": false,
-      "updatedAt": 1789434723079
+      "score": 1,
+      "nextReview": 1790635534244,
+      "mastered": true,
+      "updatedAt": 1790549135493
     },
     {
       "id": "1789434723080",
@@ -8204,10 +8204,10 @@
       "meaning": "khai báo trước",
       "exJp": "発注者による工事の事前届出制度が定められている。",
       "exVi": "Có chế độ chủ đầu tư phải khai báo công trình trước.",
-      "score": 0,
-      "nextReview": 1789434723042,
+      "score": 1,
+      "nextReview": 1790635541278,
       "mastered": false,
-      "updatedAt": 1789434723080
+      "updatedAt": 1790549141278
     },
     {
       "id": "1789434723081",
@@ -8216,10 +8216,10 @@
       "meaning": "thiết bị điện, điện tử",
       "exJp": "E-wasteは電気電子機器廃棄物のことである。",
       "exVi": "E-waste là chất thải thiết bị điện, điện tử.",
-      "score": 0,
-      "nextReview": 1789434723042,
+      "score": 1,
+      "nextReview": 1790635551445,
       "mastered": false,
-      "updatedAt": 1789434723081
+      "updatedAt": 1790549151445
     },
     {
       "id": "1789434723082",
@@ -8228,10 +8228,10 @@
       "meaning": "vệ sinh công cộng, y tế công cộng",
       "exJp": "廃棄物処理法は生活環境の保全と公衆衛生の向上を目的とする。",
       "exVi": "Luật xử lý chất thải nhằm bảo vệ môi trường sống và nâng cao vệ sinh công cộng.",
-      "score": 0,
-      "nextReview": 1789434723042,
+      "score": 1,
+      "nextReview": 1790635557463,
       "mastered": false,
-      "updatedAt": 1789434723082
+      "updatedAt": 1790549157463
     },
     {
       "id": "1789434723083",
@@ -8240,10 +8240,10 @@
       "meaning": "sự nóng lên toàn cầu",
       "exJp": "人間活動が地球温暖化を引き起こしたことに疑う余地はない。",
       "exVi": "Không còn nghi ngờ gì việc hoạt động con người gây ra nóng lên toàn cầu.",
-      "score": 0,
-      "nextReview": 1789434723042,
+      "score": 1,
+      "nextReview": 1790635566613,
       "mastered": false,
-      "updatedAt": 1789434723083
+      "updatedAt": 1790549166613
     },
     {
       "id": "1789434723084",
@@ -8252,10 +8252,10 @@
       "meaning": "khí nhà kính",
       "exJp": "主な温室効果ガスはCO2・メタン・一酸化二窒素・フロン類である。",
       "exVi": "Các khí nhà kính chính là CO2, metan, N2O và các khí flo.",
-      "score": 0,
-      "nextReview": 1789434723042,
+      "score": 1,
+      "nextReview": 1790635571480,
       "mastered": false,
-      "updatedAt": 1789434723084
+      "updatedAt": 1790549171480
     },
     {
       "id": "1789434723085",
