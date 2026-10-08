@@ -26380,10 +26380,10 @@
       "meaning": "tính trên một đơn vị thể tích",
       "exJp": "単位体積当たりの質量を密度という。",
       "exVi": "Khối lượng trên một đơn vị thể tích gọi là mật độ.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1791587554618,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1791501154618
     },
     {
       "id": "1786573248380_mgsqom",
@@ -26392,10 +26392,10 @@
       "meaning": "khối lượng trung bình",
       "exJp": "試料の平均質量を計算して記録する。",
       "exVi": "Tính và ghi lại khối lượng trung bình của mẫu.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1791587559968,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1791501159968
     },
     {
       "id": "1786573248380_kd1upn",
@@ -26404,10 +26404,10 @@
       "meaning": "Nước thoát ra ngoài, thể tích giảm. Cố kết của đất",
       "exJp": "粘土層の圧密により地盤沈下が生じる。",
       "exVi": "Do cố kết của lớp sét, nền đất bị lún.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1791587563885,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1791501163885
     },
     {
       "id": "1786573248380_ydyn4c",
