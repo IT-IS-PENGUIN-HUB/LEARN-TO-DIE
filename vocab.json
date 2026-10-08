@@ -26740,10 +26740,10 @@
       "meaning": "(Quy liệt)Vết rạn nứt",
       "exJp": "溶接部に亀裂が発生した。",
       "exVi": "Vết nứt phát sinh tại vị trí mối hàn.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1791587930970,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1791501530970
     },
     {
       "id": "1786573248380_fn7kdy",
@@ -26752,10 +26752,10 @@
       "meaning": "(Kế thủ)Mối nối, khớp nối",
       "exJp": "鉄筋の継手は重ね継手が一般的である。",
       "exVi": "Mối nối cốt thép thường dùng là mối nối chồng.",
-      "score": 0,
-      "nextReview": 0,
-      "mastered": false,
-      "updatedAt": 1786573248380
+      "score": 1,
+      "nextReview": 1791587939236,
+      "mastered": true,
+      "updatedAt": 1791501539839
     },
     {
       "id": "1786573248380_hfhn44",
@@ -26764,10 +26764,10 @@
       "meaning": "(Chỉ đoan)Điểm tiếp xúc giữa thép cơ bản và mối hàn",
       "exJp": "溶接止端部から疲労亀裂が発生しやすい。",
       "exVi": "Vết nứt mỏi dễ phát sinh từ chân mối hàn.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1791587943702,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1791501543702
     },
     {
       "id": "1786573248380_nbbxc3",
