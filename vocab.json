@@ -27064,10 +27064,10 @@
       "meaning": "(phong khổng) Niêm phong",
       "exJp": "アルマイト処理の後に封孔処理を行う。",
       "exVi": "Sau khi xử lý anod hóa thì tiến hành xử lý bịt lỗ (niêm phong lỗ).",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1791588345470,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1791501945470
     },
     {
       "id": "1786573248380_9ytt7e",
@@ -27076,10 +27076,10 @@
       "meaning": "(tẩm tí) nhúng chìm xuống, ngâm cho ngấm chất lỏng",
       "exJp": "供試体を水中に浸漬して強度を測定する。",
       "exVi": "Ngâm mẫu thử trong nước rồi đo cường độ.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1791588371539,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1791501971539
     },
     {
       "id": "1786573248380_kf8ed5",
@@ -27088,10 +27088,10 @@
       "meaning": "(Luyện) đã nhào",
       "exJp": "練上がり直後のコンクリートの温度を測定する。",
       "exVi": "Đo nhiệt độ bê tông ngay sau khi trộn xong.",
-      "score": 0,
-      "nextReview": 0,
+      "score": 1,
+      "nextReview": 1791588387036,
       "mastered": false,
-      "updatedAt": 1786573248380
+      "updatedAt": 1791501987036
     },
     {
       "id": "1786573248380_g2wc1s",
